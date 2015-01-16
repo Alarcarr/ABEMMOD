@@ -1,0 +1,60 @@
+Effector: HeavyRailgun
+	Value: Range
+	Value: Damage
+	Value: Reload
+	Value: Speed
+	Value: Tracking = 1.5
+	Value: CapOnTarget = 1
+	Value: Spread = 0.05
+	Value: FireArc = 0.5 * pi
+	Value: TargetTolerance = 0
+	Value: FireTolerance = 0
+	Value: Pierce = 0.5
+	Value: SupplyCost = 0
+
+	Range: Range
+	Speed: Speed
+	Tracking: Tracking
+	Lifetime: 1.1*Range / Speed
+	CapTarget: CapOnTarget
+	Spread: Spread
+	FireArc: FireArc
+	FireTolerance: FireTolerance
+	TargetTolerance: TargetTolerance
+
+	TargetAlgorithm: SingleTarget
+	CanTarget: isAttackable && !isPlanet
+	AutoTarget: isEnemy && (isShip || (isOrbital || isColonyShip || isCivilian) * 0.5)
+
+	EfficiencyMode: Duration Partial
+	Activation: StaggeredTimed(Reload, 0.25)
+	OnTrigger: combat::WeaponFire(SupplyCost)
+
+	Effect: ProjDamage
+		Amount = Damage
+		Pierce = Pierce
+		Suppression = 0
+
+	PhysicalType: Missile
+	GfxType: Sprite
+	GfxSize: 0.5
+	Material: Railgun
+	Color: #ff0000
+	Color: #ff0000
+	PhysicalSize: 3
+	FirePitchVariance: 0.2
+	ImpactSfx: impactrail
+	FireSfx: heavyrail
+	ImpactGfx: ImpactFlareRailBlue
+
+	Skin: Skin1
+		ImpactGfx: ImpactFlareRailRed
+		TrailCol: ff8888ff, 00000000
+
+	Skin: Skin2
+		ImpactGfx: ImpactFlareRailYellow
+		TrailCol: ff88ffff, 00000000
+
+	Skin: Skin3
+		ImpactGfx: ImpactFlareRailTurquise
+		TrailCol: 88ffffff, 00000000

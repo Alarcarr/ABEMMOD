@@ -1,0 +1,9 @@
+Technology: GateTech
+	Name: Gate Technology
+	Icon: OrbitalIcons::1
+	Point Cost: 4000
+	Time Cost: 400
+	Description: #R_ORB_GATE_DESC
+	SecondaryInfluenceCost(80)
+	UnlockTag(HasGate)
+	UnlockSubsystem(Gate)

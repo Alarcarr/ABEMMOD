@@ -1,0 +1,14 @@
+Technology: DevCultivation
+	Name: Sustainability
+	Blurb: 1x Cultivation
+
+	Point Cost: 700
+	Time Cost: 60
+
+	Icon: CardIcons::19
+	Color: #00ffa4
+	Description: #R_DEV_CULTIVATION_DESC
+
+	GainInfluenceCard(Cultivation)
+
+	SecondaryMoneyCost(700)

@@ -1,0 +1,17 @@
+Building: TaxCenter
+	Size: 3x3
+	Base Cost: 400
+	Tile Cost: 100
+	Tile Maintenance: 100
+	Build Time:
+	Sprite: tax2
+	Name: Taxation Center
+	Description: #B_TAXCENTER_DESC
+	Category: Infrastructure
+	Labor Cost: 100
+	Maintenance Affinity: Oceanic
+	Base Maintenance: 100
+	RequireUnlockTag(Tax)
+	ModPopulationGrowth(0.8)
+	ModLoyalty(-10)
+	PerPopulationAddResource(0.5, Money)

@@ -1,0 +1,16 @@
+Artifact: RevenantChassis
+	Name: #ART_REVENANT_CHASSIS
+	Description: #ART_REVENANT_CHASSIS_DESC
+
+	Size: 20
+	Ability: RevenantChassis
+
+	Strategic Icon: TechIcons::31
+
+	Mass: 1000
+
+	Spread Variable: ENABLE_REVENANT_PARTS
+	Require Contestation: 60
+	Icon: TechIcons::31
+	Icon Size: 0.06
+	Orbit: True

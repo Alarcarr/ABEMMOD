@@ -1,0 +1,10 @@
+Status: MEL
+	Name: Mask Energy Levels
+	Visible To: Owner
+	Unique: True
+	Collapses: True
+	Icon: VolkurFleetIcons::1
+	Description: #STATUS_MEL_DESC
+	Color: #aeff0e
+	RecordBonusDPS(-1000)
+Status: HamSensors

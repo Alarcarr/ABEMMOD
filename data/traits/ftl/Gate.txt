@@ -1,0 +1,13 @@
+Trait: Gate
+	Name: #TRAIT_GATE
+	Description: #TRAIT_GATE_DESC
+	Category: FTL
+
+	Icon: GuiOrbitalIcons::1
+
+	Unique: FTL
+
+	UnlockTag(HasGate)
+	UnlockSubsystem(Gate)
+	LoadDesigns(not_hyperdrive)
+	LoadDesigns(gate)

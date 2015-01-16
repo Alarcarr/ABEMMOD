@@ -1,0 +1,32 @@
+Subsystem: HDSupplyModule
+	Name: High Density Supply Storage
+	Description: #HDSUPPLYMODULE_DESC
+	Picture: SubsystemButtonArt::8 * #b3ffef
+	BaseColor: #2fd6b3
+	Elevation: 3
+
+	Tags: NonContiguous, NoCore, HasInternals, Category:Power and Supply
+	Hull: Flagship, Station
+
+	Size := HexSize * Hexes
+	SupplyCapacity := Size * 12000
+	SupplyRate := 0
+
+	Hex.LaborCost := 1 * HexSize + 0.8
+	Hex.BuildCost := 7 * HexSize + 2
+	Hex.MaintainCost := 16 * HexSize + 5
+
+	Hex.Resistance := 0.2
+	Hex.HP := 18 * HexSize
+	Hex.Mass := HexSize
+	Requires:
+		Power = 0.5 * HexSize
+
+	Modifier: SupplyCapacityFactor(factor)
+		SupplyCapacity := SupplyCapacity * factor
+
+	Effect: LeakSupply
+		LeakPctPerSec = 1 / 15
+
+	Module: Default
+		Sprite: SupplyStorage*#9e17ff

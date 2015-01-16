@@ -1,0 +1,8 @@
+Artifact: IonCannon
+	Name: #ART_ION_CANNON
+	Description: #ART_ION_CANNON_DESC
+
+	Ability: EquipIonCannon
+	Icon: HexagonSubsystems::6
+	Strategic Icon: TechIcons::18
+	Icon Size: 0.04

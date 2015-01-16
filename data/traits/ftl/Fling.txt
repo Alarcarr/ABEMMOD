@@ -1,0 +1,13 @@
+Trait: Fling
+	Name: #TRAIT_FLING
+	Description: #TRAIT_FLING_DESC
+	Category: FTL
+
+	Icon: GuiOrbitalIcons::2
+
+	Unique: FTL
+
+	UnlockSubsystem(Fling)
+	UnlockTag(HasFling)
+	LoadDesigns(not_hyperdrive)
+	SpawnOrbital(FlingCore, Free = True)

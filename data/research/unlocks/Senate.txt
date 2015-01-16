@@ -1,0 +1,14 @@
+Technology: Senate
+	Name: #F_SENATE_NAME
+	Description: #R_BLD_SENATE_DESC
+
+	Point Cost: 1000
+	Time Cost: 100
+
+	Icon: PoliticalStrengthIcon
+	Color: #00f3ff
+	Blurb:
+
+	UnlockTag(Senate)
+
+	SecondaryMoneyCost(1500)

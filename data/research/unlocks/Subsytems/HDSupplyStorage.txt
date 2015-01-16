@@ -1,0 +1,8 @@
+Technology: HDSupply
+	Name: High-Density Supply Storage
+	Icon: SupplyStorage*#9e17ff
+	Point Cost: 600
+	Time Cost: 60
+	Description: #HDSUPPLYMODULE_DESC
+	UnlockSubsystem(HDSupplyModule)
+	SecondaryEnergyCost(700)

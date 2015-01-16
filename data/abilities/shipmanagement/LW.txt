@@ -1,0 +1,12 @@
+Ability: LW
+	Name: Rally Cry
+	Target: OwnShip = Object
+	Range: 100
+	Icon: GDF
+	Description: #ABL_LW_DESC
+	TargetFilterNotStatus(OwnShip, GDF)
+	TargetFilterNotStatus(OwnShip, LW)
+	TargetFilterNotStatus(OwnShip, Exhausted)
+	TargetFilterOwned(OwnShip)
+	TargetFilterFlagship(OwnShip)
+	AddStatusTo(OwnShip, LW, Duration = 65)

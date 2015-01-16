@@ -1,0 +1,45 @@
+System: Orathi
+	Position: (0, 0, 0)
+	Homeworld: False
+
+	MakeStar(Temperature = 1000, Radius = 200)
+	ExpandSystem(500)
+
+	MakePlanet(AncientCity, Radius = 24, Grid Size = (30, 20) Conditions = False)
+		Rename(Orathi Prime)
+
+		AddPlanetResource(Water)
+		AddPlanetResource(Grain)
+		AddPlanetResource(Grain)
+		AddPlanetResource(Oil)
+		AddPlanetResource(AncientCity)
+		AddPlanetResource(BlackHole)
+
+		SpawnBuilding(Factory, (1, 1))
+		SpawnBuilding(Factory, (4, 1))
+		Trigger(DevelopTiles(1000))
+
+		AddResource(Money, +2.5)
+
+	MakePlanet(RandomLevel:1, Radius = 16, Conditions = False)
+		AddPlanetResource(Water)
+		AddPlanetResource(Meat)
+
+	MakePlanet(RandomLevel:1, Radius = 16, Conditions = False)
+		AddPlanetResource(Water)
+		AddPlanetResource(Fruit)
+
+	ExpandSystem(1000)
+
+	MakeAsteroid()
+	MakeAsteroid()
+	MakeAsteroid()
+	MakeAsteroid()
+	MakeAsteroid()
+	MakeCreepCamp(BlackHoleCamp)
+
+	MakeArtifact()
+	MakeArtifact()
+	MakeArtifact()
+	MakeArtifact()
+	MakeArtifact()

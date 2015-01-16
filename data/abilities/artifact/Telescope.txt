@@ -1,0 +1,13 @@
+Ability: Telescope
+	Name: #ABL_TELESCOPE
+	Description: #ABL_TELESCOPE_DESC
+	Icon: VoteIcons::3
+
+	Energy Cost: 700
+
+	Target: targ = Object
+	TargetFilterRegion(targ)
+
+	Trigger(targ, GrantRegionVision(900, Hops = 1))
+
+	GiveAchievement(ACH_USE_ARTIFACT)

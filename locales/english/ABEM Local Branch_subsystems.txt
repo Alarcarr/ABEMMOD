@@ -1,0 +1,149 @@
+STUZ:29
+IONENGINE_DESC: <<
+	Uses high amounts of power to expel small amounts of particles at extreme speeds.
+
+	[img=Plus]Low fuel requirements translate into low maintenance costs.[/img]
+	[img=Plus]At higher sizes, provides more thrust than Rocket Engines. Always provides more thrust than Graviton Engines.[/img]
+	[img=Minus]Requires power.[/img]
+	[img=Minus]Lower thrust than Rocket Engines at small sizes.[/img]
+>>
+S_RESEARCHLAB_DESC: <<
+	A site where people can do science. Without blowing stuff up.
+
+	[img=Plus]Generates a small amount of research.[/img]
+	[img=Minus]Requires a high amount of power and Control.[/img]
+>>
+S_RESUPPLYMODULE_DESC: <<
+	A system which assembles and disseminates supply packages for all fleets in a star system.
+
+	[img=Plus]Increases the resupply rate of all units in a star system.[/img]
+	[img=Minus]Requires a high amount of Control.[/img]
+	[img=Minus]Making it bigger than is absolutely necessary does nothing but use up space.[/img]
+>>
+S_FTLJAMMER_DESC: <<
+	A series of hyperfield exciters which disrupts all enemy FTL technology in a star system.
+
+	[img=Plus]Jams all enemy FTL in its star system.[/img]
+	[img=Minus]Requires a high amount of power and Control.[/img]
+	[img=Minus]Making it bigger than is absolutely necessary does nothing but use up space.[/img]
+>>
+S_CRYSTAL_ARMOR_DESC: <<
+	A resilient crystalline lattice capable of absorbing energy from attacks and channeling it into a ship's shields.
+
+	[img=Plus]All damage resisted is channeled into shields.[/img]
+	[img=MenuIcons::3;20]Particularly resistant to energy weapons, weakest against projectile weapons with a moderate explosive resistance.[/img]
+	[img=MenuIcons::3;20]Goes very well with low-regeneration shields, such as the Covariant shield.[/img]
+	[img=Minus]Somewhat wasteful if ship has no shields.[/img]
+	
+	>>
+S_NANO_ARMOR_DESC: <<
+	A pseudo-liquid block of armor consisting of a high quantity of nanites. The nanites use power from the ship's reactor to repair each other, resulting in an armor with considerable regenerative ability.
+
+	[img=Plus]Significantly increases the [b][color=#80ff80]health[/color][/b] of surrounding hexes.[/img]
+	[img=Plus]Regenerates over time. Regeneration is not affected by combat conditions or lack of supply.[/img]
+	[img=Plus]Extremely low mass.[/img]
+	[img=Minus]High power requirements.[/img]
+	[img=Minus]Low health.[/img]
+	[img=Minus]Initial assembly of the nanites is very labor-intensive. It is also slightly less expensive than synthesizing Neutronium.[/img]
+	[img=Minus]Significant maintenance costs due to having to completely reconstruct any nanites that are blown off into space.[/img]
+>>
+S_COMPOSITE_ARMOR_DESC: <<
+	A uniform, seamless coat of a highly resistant composite material.
+
+	[img=Plus]Reduces all incoming damage by 15%.[/img]
+	[img=MenuIcons::3;20]Just as heavy as Remnant or Reactive Armor. Slightly tougher than Ablative, but weaker than Plate Armor.[/img]
+	[img=Minus]Requires a low amount of maintenance, and is twice as labor-intensive as - and slightly more expensive than - Plate Armor.[/img]
+>>
+S_POWERED_ARMOR_DESC: <<
+	Targeted electromagnetic deflectors placed on the ship's exterior.
+
+	[img=Plus]Impervious to all damage below or at the listed damage resistance.[/img]
+	[img=Plus]Extremely low mass.[/img]
+	[img=Minus]Half the damage resistance of - and just as little health as - Ablative Armor.[/img]
+	[img=Minus]Just as costly as Composite Armor, but also requires power.[/img]
+>>
+S_ZPG_DESC: <<
+	An artificial quantum singularity harnessed to provide immense quantities of power.
+
+	[img=ResourceIcon::2;22]Provides a [b][color=#0f0]huge[/color][/b] amount of [b][color=#42b4bd]Power[/color][/b] to operate other subsystems.[/img]
+	[img=AttributeIcons::4;22]Provides a [b][color=#0f0]high[/color][/b] [color=#fefc61]Resupply Rate[/color][/b], somewhat lower than that of Antimatter Generators.[/img]
+	[img=Plus]No maintenance cost.[/img]
+	[img=Minus]Very high construction and labor costs.[/img]
+	>>
+S_SUPERLASER_DESC: <<
+	A powerful laser cannon capable of channeling enough power to destroy planets.
+
+	[img=Plus]Very powerful.[/img]
+	[img=Plus]Can target ships as well as planets, unlike the Buster Machine.[/img]
+	[img=Minus]Extremely high power requirements.[/img]
+	[img=Minus]High minimum size.[/img]
+	[img=Minus]High cooldown time. If you miss your target the first time, it could be some time before you can fire again.[/img]
+	[img=Minus]Very limited firing arc.[/img]
+	[img=Minus]Requires high amounts of Control.[/img]
+>>
+S_ROBOTICSHIPYARD_DESC: <<
+	Salvages raw materials from space, using them to construct new support ships.
+
+	[img=Plus]Constructs support ships for its flagship at any location.[/img]
+	[img=Plus]If the flagship has no support capacity left, half of its Defense generation is added to the global pool.[/img]
+	[img=Minus]Does not operate in combat.[/img]
+	[img=Minus]Cannot construct ships with a maintenance cost.[/img]
+	[img=Minus]Requires power and a high amount of Control.[/img]
+>>
+S_SPYMODULE_DESC: <<
+	A covert transporter system capable of sending infiltrators to enemy ships and planets. Grants the Infiltrate ability.
+
+	[i][bbloc=#ABL_INFILTRATE_DESC/][/i]
+>>
+SYS_ADMIRALBAY_DESC: <<
+	A command center of sufficient quality to coordinate multiple fleets. Ships with this sort of equipment are always commanded by an Admiral.
+
+	[img=Plus]Grants the "Go Down Fighting", "Rally Cry" and "Mask Energy Levels" abilities.[/img]
+	[img=Minus]Gives less Control than a regular bridge and crew.[/img]
+	[img=MenuIcons:3;20]Go Down Fighting: [i][bbloc=#ABL_GDF_DESC/][/i][/img]
+	[img=MenuIcons:3;20]Rally Cry: [i][bbloc=#ABL_LW_DESC/][/i][/img]
+	[img=MenuIcons:3;20]Mask Energy Levels: [i][bbloc=#ABL_MEL_DESC/][/i][/img]
+>>
+	SHIELDGEN_DESC: <<
+	Creates a shield around the vessel, blocking some incoming damage.
+
+	[img=Plus]Creates regenerating barrier against damage.[/img]
+	[img=Minus]Weakened shields allow some damage through.[/img]
+>>
+S_SUPSHIELD_DESC: <<
+	Creates a shield around the vessel, blocking some incoming damage. This shield's capacitors must be charged by the support ship's inferior power supply, so it regenerates at a slower rate compared to flagship shielding.
+
+	[img=Plus]Creates regenerating barrier against damage.[/img]
+	[img=Minus]Weakened shields allow some damage through.[/img]
+>>
+S_COVARIANT_SHIELD_DESC: <<
+	Creates a shield around the vessel, blocking some incoming damage. Covariant shields are more powerful, but they regenerate at a slower rate than their standard counterparts.
+
+	[img=Plus]Creates regenerating barrier against damage.[/img]
+	[img=Minus]Weakened shields allow some damage through.[/img]
+	[img=Plus]Increased capacity.[/img]
+	[img=Minus]Reduced regenration.[/img]
+>>
+
+S_QUANTUM_ARMOR_DESC: <<
+	Neutronium armor mostly shifted out of our physical universe to reduce mass, only to reappear prior to impact and withstand the same amount of firepower.
+
+	[img=Plus]Very high health, slightly weaker than Neutronium Armor.[/img]
+	[img=Plus]Lower mass than that of Neutronium Armor.[/img]
+	[img=Minus]Expensive.[/img]
+	[img=Minus]High labor cost.[/img]
+>>
+S_REPAIRBAY_DESC: <<
+	Dedicated damage control teams and equipment for the entire fleet. Nearly four times as effective at repairing the flagship as regular crew, but incapable of contributing to the day-to-day operation of the ship.
+
+	Slowly repairs the rest of the fleet. The more ships are in the fleet, the less HP is repaired on each ship.
+>>
+S_FLAK_DESC: <<
+	A magnetic cannon that fires explosive shrapnel-filled canisters at immense velocities.
+
+	[img=Plus]Moderate area-of-effect damage per hit.[/img]
+	[img=Plus]Can damage many targets at once.[/img]
+	[img=Minus]Slightly inaccurate projectiles.[/img]
+	[img=Minus]Limited turret firing arc.[/img]
+	[img=Minus]Small explosion radius.[/img]
+>>

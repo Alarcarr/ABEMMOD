@@ -1,0 +1,19 @@
+Card: Cultivation
+	Name: #CARD_CULTIVATION
+	Description: #CARD_CULTIVATION_DESC
+
+	Icon: CardIcons::19
+
+	Color: #206080
+	Class: Action
+	Rarity: Rare
+
+	Base Purchase Cost: 4
+	Base Play Cost: 5
+
+	Target: planet = Object
+	TargetFilterOwned(planet)
+	TargetFilterType(planet, Planet)
+	ApplyRegionTargetCostMod(planet)
+
+	OnPlanet(planet, AddPlanetResource(Fruit))

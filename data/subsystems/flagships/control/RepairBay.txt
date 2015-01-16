@@ -1,0 +1,30 @@
+Subsystem: RepairBay
+	Name: Repair Bay
+	BaseColor: #f9d363
+	Picture: SubsystemButtonArt::8
+	Elevation: 4
+
+	Tags: NoCore, NonContiguous, BaseCost, Category:Control
+	Tags: HasInternals
+	Tags: NoBulkhead
+	Hull: Flagship, Station
+
+	EvaluationOrder: -10
+
+	Size := HexSize * Hexes
+
+	RepairSupplyCost := 2.0 * (RepairFleet * 2)
+	out SupplyDrain := RepairSupplyCost
+
+	Hex.Resistance := 0.4
+	Hex.HP := 20 * HexSize
+	Hex.Mass := HexSize
+	Description: #S_REPAIRBAY_DESC
+	Requires:
+		Command = 1
+		Power = 20* Size
+
+	RepairFleet := 16 * Size
+	Hook: HealFleetPerSecond(RepairFleet)
+	Module: Default
+		Sprite: techShipYard

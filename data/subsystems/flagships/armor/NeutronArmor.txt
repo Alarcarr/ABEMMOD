@@ -1,0 +1,28 @@
+Subsystem: NeutronArmor
+	Name: #NEUTRONARMOR_NAME
+	Description: #NEUTRONARMOR_DESC
+	BaseColor: #898989
+	Elevation: 1
+
+	Tags:  Category:Armor
+	Tags: NoCore, NonContiguous, Defense, IsArmor, TankArmor
+	Hull: Flagship, Station
+
+	Size := HexSize * Hexes
+
+	Hex.Resistance := 0.5
+	Hex.HP := 125 * HexSize
+	Hex.Mass := 6 * HexSize
+	Hex.LaborCost := 0.5 * HexSize 
+	Hex.BuildCost := 0.5 * HexSize 
+	Hex.MaintainCost := 0
+	
+	DamageResist := ShipSize /30
+	Effect: DamageResist
+		Resist = DamageResist
+
+	Module: Default
+		
+		Sprite: PlateArmor * #449944
+
+		

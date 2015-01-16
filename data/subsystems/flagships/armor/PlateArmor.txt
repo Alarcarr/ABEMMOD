@@ -1,0 +1,29 @@
+Subsystem: PlateArmor
+	Name: #PLATEARMOR_NAME
+	Description: #PLATEARMOR_DESC
+	BaseColor: #a9a9a9
+	Elevation: 1
+
+	Tags: Category:Armor, NoWall
+	Tags: NoCore, NonContiguous, DefaultUnlock, Defense, IsArmor, TankArmor
+	Hull: Flagship, Station
+
+	Size := HexSize * Hexes
+
+	Hex.Resistance := 0.5
+	Hex.HP := 60 * HexSize
+	Hex.Mass := 3.5* HexSize
+	
+	Hex.LaborCost := 0.2 * HexSize 
+	Hex.BuildCost := 0.3 * HexSize 
+	Hex.MaintainCost := 0
+	
+	//DamageResist := ShipSize /70.0
+	//Effect: DamageResist
+	//	Resist = DamageResist
+
+	Module: Default
+		
+		Sprite: PlateArmor
+
+	

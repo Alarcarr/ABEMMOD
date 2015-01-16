@@ -1,0 +1,97 @@
+//Requirements for unlocking planet levels
+Level: 0
+	Name: Fringe
+	Icon: PlanetIcon0
+	Population: 1
+	PopGrowth: 0.75
+	BasePressure: 0
+	BaseIncome: -80
+	BaseLoyalty: 2
+	NeighbourLoyalty: 0.15
+	Points: 25
+
+Level: 1
+	Name: Core
+	Icon: PlanetIcon1
+	Required: 1 WaterType, 1 Food
+	Population: 3
+	PopGrowth: 1.2
+	RequiredPop: 2
+	BasePressure: 1
+	BaseIncome: 80
+	ResourceIncome: 170
+	BaseLoyalty: 4
+	NeighbourLoyalty: 1
+	Points: 100
+
+Level: 2
+	Name: Renowned
+	Icon: PlanetIcon2
+	Required: 1 WaterType, 2 Food, 1 Level1
+	PopGrowth: 1.6
+	Population: 8
+	RequiredPop: 6
+	BasePressure: 14
+	ExportPressurePenalty: 6
+	BaseIncome: 350
+	ResourceIncome: 150
+	BaseLoyalty: 8
+	NeighbourLoyalty: 1.5
+	Points: 400
+
+Level: 3
+	Name: Capital
+	Icon: PlanetIcon3
+	Required: 1 WaterType, 3 Food, 2 Level1, 1 Level2
+	PopGrowth: 1.7
+	Population: 16
+	RequiredPop: 8
+	BasePressure: 32
+	ExportPressurePenalty: 16
+	BaseIncome: 500
+	ResourceIncome: 300
+	BaseLoyalty: 12
+	NeighbourLoyalty: 2
+	Points: 1000
+
+Level: 4
+	Name: Master
+	Icon: PlanetIcon4
+	Required: 1 WaterType, 4 Food, 4 Level1, 4 Level2
+	PopGrowth: 1.8
+	Population: 24
+	RequiredPop: 16
+	BasePressure: 60
+	ExportPressurePenalty: 16
+	BaseIncome: 1000
+	BaseLoyalty: 16
+	NeighbourLoyalty: 2.5
+	Points: 2500
+
+Level: 5
+	Name: Unique
+	Icon: PlanetIcon4
+	Required: 1 WaterType, 4 Food, 5 Level1, 6 Level2 , 1 Level3
+	PopGrowth: 1.9
+	Population: 50
+	RequiredPop: 32
+	BasePressure: 90
+	ExportPressurePenalty: 16
+	BaseIncome: 1500
+	BaseLoyalty: 20
+	NeighbourLoyalty: 3.0
+	Points: 4000
+	
+Level: 6
+	Name: Mythical
+	Icon: PlanetIcon4
+	Required: 1 WaterType, 4 Food, 5 Level1, 6 Level2 , 5 Level3
+	PopGrowth: 2
+	Population: 100
+	RequiredPop: 50
+	BasePressure: 120
+	ExportPressurePenalty: 16
+	BaseIncome: 3000
+	BaseLoyalty: 30
+	NeighbourLoyalty: 3.0
+	Points: 6000

@@ -1,0 +1,26 @@
+STATUS_POWER_CELL_DESC: <<
+	Upgraded in an ancient shipyard.
+
+	Fleet Effectiveness increased by 40%.
+>>
+STATUS_POWER_CELL: Ancient Retrofit
+STATUS_GDF_DESC: <<
+	Overloading its primary reactor.
+
+	Will gain up to 65% effectiveness before exploding, dealing 5*Power damage to up to 4+(Power/100) enemies in a 2*Power radius.
+>>
+STATUS_LW_DESC: <<
+	Rallied by a nearby Admiral.
+
+	Will gain up to 27.5% effectiveness over 60 seconds, then have -50% effectiveness for 4 minutes.
+>>
+STATUS_EXHAUSTED_DESC: <<
+	Exhausted after a difficult battle.
+
+	Fleet effectiveness reduced by 50% for 4 minutes.
+>>
+STATUS_MEL_DESC: <<
+	Has had its energy signature masked by an Admiral's flagship.
+
+	Apparent fleet DPS reduced by 100 for 5 minutes, reducing strength. (Does not actually weaken the fleet.) Must be reapplied after expiration.
+>>

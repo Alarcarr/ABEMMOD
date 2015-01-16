@@ -1,0 +1,126 @@
+R_BLD_SENATE_DESC: <<
+	[i][bbloc=#F_SENATE_DESC/][/i]
+
+	Unlocks the Government Center building for construction on planets.
+
+	[color=#d1cb6a][b]Alternate Unlock:[/b] Spend ง1.5M.[/color]
+>>
+
+SUPPORT_EQUIPMENT_BLURB: for Supports
+
+SUPPORT_REACTIVEARMOR_DESC: <<
+	A sheet of independent explosives that detonate nearly instantly in response to incoming weapon fire, adapted for use on smaller support ships.
+
+	[img=Plus]Damage hits exceeding the [b][color=#c33ac6]damage threshold[/color][/b] are reduced significantly.[/img]
+	[img=Plus]Increases the [b][color=#80ff80]health[/color][/b] of surrounding hexes.[/img]
+	[img=MenuIcons::3;20]Effective against massive single hits.[/img]
+	[img=MenuIcons::3;20]Small size makes the maximum damage reduction lower than on flagships.[/img]
+	[img=Minus]High labor cost.[/img]
+>>
+
+R_SYS_HYPERDRIVE_DESC: <<
+	[i][color=#aaa]A device capable of opening a window into - or out of - hyperspace.[/color][/i]
+
+	Unlocks the Hyperdrive subsystem for use on flagships if it is not already available.
+
+	[i]Allows for hyperdrive navigation. The larger the hyperdrive the faster the FTL speed.[/i]
+>>
+
+R_IMP_POP_LVL1PLANET: Soil Improvement
+R_IMP_POP_LVL1PLANET_BLURB: +0.3 population on Level 1+ planets
+R_IMP_POP_LVL1PLANET_DESC: <<
+	[i][color=#aaa]Use of fertilizers and small-scale terraforming improves local food production.[/color][/i]
+
+	Increases the maximum population of Level 1+ planets by 0.3.
+>>
+
+R_IMP_POP_LVL2PLANET: Habitat Development
+R_IMP_POP_LVL2PLANET_BLURB: +0.5 pop on Level 2+ planets
+R_IMP_POP_LVL2PLANET_DESC: <<
+	[i][color=#aaa]Improved architecture and more efficient use of available space boost population density in cities.[/color][/i]
+
+	Increases the maximum population of Level 2+ planets by 0.5.
+
+	[color=#d1cb6a][b]Alternate Unlock:[/b] Spend ง1.5M.[/color]
+>>
+R_SYS_COVARIANT_BLURB: Anti-Burst Shield
+
+R_SYS_FLAK_DESC: <<
+	[color=#aaa][i]Ages ago, explosive canisters filled with small bits of metal were used extensively in early ground-to-air weapons. Now, we can take that highly advanced knowledge, and bring down swarms of small craft with it.[/i][/color]
+
+	Unlocks the Flak Cannon for use on flagships.
+
+	[bbloc=#S_FLAK_DESC/]
+>>
+R_SYS_SHIELDGEN: Shield Generator
+R_SYS_SUPSHIELD_DESC: <<
+	[color=#aaa][i]Unlocks the Shield Generator for use on support ships.[/i][/color]
+
+	[bbloc=#S_SUPSHIELD_DESC/]
+
+	[color=#42b4bd][b]Alternate Unlock:[/b] Spend 500 energy.[/color]
+>>
+R_SYS_QUANTUM_ARMOR_DESC: <<
+	[color=#aaa][i]After years of research, we have managed to improve upon Neutronium Armor. Most of this new armor's mass is stored outside our physical universe, only reappearing just before impact to withstand devastating blows without impairing mobility. Unfortunately, as this technology is applied to existing Neutronium Armor, the process is just as expensive as - and more difficult than - producing regular Neutronium Armor.[/i][/color]
+
+	Unlocks the Quantum Armor subsystem.
+
+	[i][bbloc=#S_QUANTUM_ARMOR_DESC/][/i]
+
+	[color=#d1cb6a][b]Alternate Unlock:[/b] Spend ยง2M.[/color]
+>>
+R_ORB_FLING_DESC: <<
+	[i][color=#aaa]A device capable of catapulting nearby vessels into hyperspace. The ships then proceed to exit from hyperspace under their own power.[/color][/i]
+
+	Unlocks Fling Beacons if they are not already available.
+
+	[i][bbloc=#ORB_FLING_CORE_DESC][/bbloc][/i]
+>>
+R_ORB_GATE_DESC: <<
+	[i][color=#aaa]A space station capable of maintaining a node in an artificial wormhole network. Each gate network operates on a slightly different frequency, so fleets cannot use gates belonging to other empires.[/color][/i]
+
+	Unlocks Gates and the Gate Constructor subsystem if they are not already available.
+
+	[i][bbloc=#ORB_GATE_CORE_DESC][/bbloc][/i]
+
+	[color=#0087c7][b]Alternate Unlock:[/b] Spend 80 influence points.[/color]
+>>
+R_SYS_SLIPSTREAM_DESC: <<
+	[i][color=#aaa]A device capable of penetrating subspace on a level far greater than - and considerably different from - conventional hyperdrives. 'Slipstream tears', while similar to wormholes, decay much more rapidly than known stable wormholes; with a bigger generator, the created rift will last longer.[/color][/i]
+
+	Unlocks the Slipstream Generator subsystem if they are not already available.
+
+	[i]Grants the ability to generate slipstream portals.[/i]
+>>
+
+R_BLD_POWERPLANT_DESC: <<
+	[i][bbloc=#F_POWERPLANT_DESC/][/i]
+
+	Unlocks the Power Plant building for construction on planets.
+
+	[color=#d1cb6a][b]Alternate Unlock:[/b] Spend ง1.5M.[/color]
+>>
+
+R_NANO_REPAIR_DESC: <<
+	[color=#aaa][i]After many years of research, we have managed to found the nanotechnology. Most of this new nanotechnology repair is stored outside our physical universe, thus this will increase heal entire flagship or station. Unfortunately, as this technology is applied to existing normal repair, the process is just as expensive as - and more difficult than - producing normal repair such as crew.[/i][/color]
+
+	Unlocks the Nano Repair subsystem.
+
+	[i][bbloc=#S_NANO_REPAIR_DESC/][/i]
+
+	[color=#d1cb6a][b]Alternate Unlock:[/b] Spend ยง2M.[/color]
+
+
+>>
+R_NANO_ARMOR_DESC: <<
+	[color=#aaa][i]After many years of research, we have managed to found new nanotechnology armor. it's most advanced armor than any armor except remnant armor, thus this will increase hp entire flagship or station. Unfortunately, as this technology is applied to existing power to function the nanotechnology. Even process is just as still expensive as - and more difficult than - producing normal armor such as labour cost. It also can't heal itself even that it's too way beyond that technology.[/i][/color]
+
+	Unlocks the Nano armor subsystem.
+
+	[i][bbloc=#S_NANO_ARMOR_DESC/][/i]
+
+>>
+R_NANO_DESC: <<
+	[color=#aaa][i]After many years of research, we have found harness the nanotechnology.
+	Unlock the nanotechnology tree to unknown technology.
+>>

@@ -1,0 +1,6 @@
+Sound: heavyrail
+	File: data\sounds\weapons\hyper_railgun.ogg
+	Volume: 0.10
+Sound: impactrail
+	File: data\sounds\weapons\impact_particle.ogg
+	Volume: 0.10

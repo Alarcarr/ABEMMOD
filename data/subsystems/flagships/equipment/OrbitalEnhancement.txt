@@ -1,0 +1,33 @@
+Subsystem: EngBay
+
+	Name: Engineers Bay
+
+	Tags: HighMaint, Category:Manufacturing, NoBackWall
+	Tags: Ability:BuyTurretL
+	Hull: Flagship
+	Description: Allow the constructions of some upgrades for the orbitals.
+
+	Size := HexSize * Hexes
+	Hex.Resistance := 0.2
+	Hex.HP := 36 * HexSize
+	Hex.Mass := HexSize
+
+	Repair := max((Size-5)*8,0)
+	RepairSupplyCost := 1.5 * Repair
+	out SupplyDrain := RepairSupplyCost
+	Assert: Size>5
+
+
+
+
+
+	Module: Core
+		Vital: True
+		Name: Core
+		Sprite: TechIcons::50*#32ff58
+		Color: #32ff58
+		Required: True
+
+	Hook: GrantAbility(SpawnOrbital)
+	Hook: GrantAbility(BuyTurretR)
+	Hook: GrantAbility(BuyTurretM)

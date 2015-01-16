@@ -1,0 +1,27 @@
+Module: RevenantEngine
+	Name: #ORB_REVENANT_ENGINE
+	Icon: IonEngine
+
+	Core: True
+	Standalone: True
+
+	Health: 20000
+	Armor: 5000
+
+	Model: Research_Station
+	Material: ResearchStation
+	Size: 32
+
+	Strategic Icon: TechIcons::24
+
+	CannotBuildManually()
+	EnableModifier(ThrustFactor(1.5))
+	EnableModifier(Hyperdrive::SpeedFactor(1.3))
+
+	OnDisable( SpawnArtifact(RevenantEngine) )
+	OnDisable( Destroy() )
+
+	ModEmpireAttribute(RevenantParts, Add, 1)
+	OnEmpireAttributeLT(RevenantParts, 0, Destroy())
+
+	GloballyVisible()

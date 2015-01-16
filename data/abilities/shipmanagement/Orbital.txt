@@ -1,0 +1,68 @@
+Ability: BuyTurretL
+	Name: Install Laser Turret
+	Target: Orbital = Object
+	Icon: LaserTurret
+	Cooldown: 120
+	Range: 200
+
+	AddStatusTo(Orbital, LaserTurret)
+	TargetFilterNotStatus(Orbital, LaserTurret)
+
+
+	ShowMoneyValue(300)
+	TargetFilterAllied(Orbital)
+	ConsumeMoney(300)
+	ShareCooldown(BuyTurretL)
+	ShareCooldown(BuyTurretR)
+	ShareCooldown(BuyTurretM)
+Ability: BuyTurretR
+	Name: Install Railgun Turret
+	Icon: RailTurret
+	Target: Orbital = Object
+
+	Cooldown: 120
+	Range: 200
+
+	AddStatusTo(Orbital, RailgunTurret)
+	TargetFilterNotStatus(Orbital, RailgunTurret)
+
+
+
+	ShareCooldown(BuyTurretL)
+	ShareCooldown(BuyTurretR)
+	ShareCooldown(BuyTurretM)
+	ShowMoneyValue(300)
+	ConsumeMoney(300)
+	
+	TargetFilterAllied(Orbital)
+Ability: BuyTurretM
+	Name: Install Missile Turret
+	Target: Orbital = Object
+	Icon: MissileTurret
+	Cooldown: 120
+	Range: 200
+
+	AddStatusTo(Orbital, MissileTurret)
+	TargetFilterNotStatus(Orbital, MissileTurret)
+
+	TargetFilterAllied(Orbital)
+	ShareCooldown(BuyTurretL)
+	ShareCooldown(BuyTurretR)
+	ShareCooldown(BuyTurretM)
+	ShowMoneyValue(300)
+	ConsumeMoney(300)
+	
+	
+	
+Ability: SpawnOrbital
+	Target: Place = Point
+	Cooldown: 120
+	Energy Cost: 250
+	Name: Place  an  Outpost
+	Range: 100
+	Icon: OrbitalIcons::0
+	TargetFilterInSystem(Place)
+	
+	ShowMoneyValue(300)
+	ConsumeMoney(300)
+	SpawnOrbital(TradeOutpost)

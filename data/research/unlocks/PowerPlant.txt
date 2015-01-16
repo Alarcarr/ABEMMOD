@@ -1,0 +1,14 @@
+Technology: PowerPlant
+	Name: Power Plant
+
+	Point Cost: 1000
+	Time Cost: 100
+
+	Icon: TechIcons::6
+	Color: #00f3ff
+	Blurb:
+	Description: #R_BLD_POWERPLANT_DESC
+
+	UnlockTag(PowerPlant)
+
+	SecondaryMoneyCost(1500)

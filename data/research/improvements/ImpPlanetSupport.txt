@@ -1,0 +1,26 @@
+Technology: ImpPlanetSupport
+	Name: #R_IMP_PLANET_SUPPORT
+	Blurb: #R_IMP_PLANET_SUPPORT_BLURB:256
+	Description: #R_IMP_PLANET_SUPPORT_DESC:256
+
+	Icon: ActionBarIcons::2 * #fff080
+	Color: #40df8e
+
+	Point Cost: 600
+	Time Cost: 100
+
+	ModAttribute(PlanetSupplyMod, Add, 256)
+
+	SecondaryMoneyCost(600)
+Technology: ImpPlanetSupport2
+	Name: #R_IMP_PLANET_SUPPORT2
+	Blurb: #R_IMP_PLANET_SUPPORT_BLURB:512
+	Description: #R_IMP_PLANET_SUPPORT_DESC:512
+
+	Icon: ActionBarIcons::2 * #fff080
+	Color: #40df8e
+
+	Point Cost: 900
+	Time Cost: 100
+
+	ModAttribute(PlanetSupplyMod, Add, 512)

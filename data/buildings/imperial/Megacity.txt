@@ -1,0 +1,23 @@
+Building: Megacity
+	Name: #BLD_MEGACITY
+	Description: #BLD_MEGACITY_DESC
+	Sprite: city2* #bbbb99
+
+	Category: Infrastructure
+
+	Size: 4x3
+	Base Cost: 500
+	Tile Cost: 25
+	Build Time: 140
+
+	Base Maintenance: 150
+	Tile Maintenance: 25
+
+	RequireUnlockTag(MegacityUnlock)
+
+	ModCivResourceMult(Research, 0.25)
+	ModCivResourceMult(Influence, 0.25)
+	ModCivResourceMult(Energy, 0.25)
+
+	AddPressureCap(9)
+	ReplacesCities(16)

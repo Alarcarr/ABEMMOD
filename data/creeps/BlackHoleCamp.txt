@@ -1,0 +1,21 @@
+Camp: BlackHoleCamp
+	Frequency: 0
+
+	Ship: Guardian [Remnant Guardian]
+	Ship: 10x Remnant Lecythos
+	Ship: 18x Remnant Vastabat
+
+
+	Region Status: BlockedColonization
+	Remnant Status: FastResupply
+	Remnant Status: Overcharged
+	Region Status: InterdictFTL
+
+
+	Pickup: RemnantArmor
+		Name: Crippled Remnant Guardian
+		Description: Allows you to attempt to salvage the Guardian.
+		Model: Flagship
+		Material: Flagship
+		Verb: #VERB_PICKUP_GUARDIAN
+		SpawnAnomaly(Type = BlackHole)

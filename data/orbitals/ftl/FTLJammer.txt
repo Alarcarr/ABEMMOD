@@ -1,0 +1,23 @@
+Module: FTLJammer
+	Name: #ORB_FTL_JAMMER
+	Blurb: #ORB_FTL_JAMMER_BLURB
+	Description: #ORB_FTL_JAMMER_DESC
+	Icon: OrbitalIcons::9
+
+	Core: True
+	Standalone: True
+
+	Build Cost: 600
+	Maintenance: 250
+	Labor Cost: 20
+
+	Health: 10000
+	Armor: 1000
+
+	Model: Research_Station
+	Material: ResearchStation
+
+	Strategic Icon: OrbitalIcons::9
+
+	BlockSystemFTL()
+	FTLMaintenance(0.15)

@@ -1,0 +1,17 @@
+Artifact: Comet
+	Name: #ART_COMET
+	Description: #ART_COMET_DESC
+	Natural: True
+
+	Model: Sphere_high
+	Material: PlanetIce
+	Size: 2
+
+	Icon: CometIcon::0
+	Strategic Icon: CometIcon::0
+	Icon Size: 0.013
+
+	Orbit: True
+
+	Ability: GenerateWater
+	Time Frequency: 0.2

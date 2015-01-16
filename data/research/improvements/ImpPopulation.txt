@@ -1,0 +1,41 @@
+Technology: ImpPopLvl1
+	Name: #R_IMP_POP_LVL1PLANET
+	Icon: ResourceIcons::38
+	Blurb: #R_IMP_POP_LVL1PLANET_BLURB
+	Description: #R_IMP_POP_LVL1PLANET_DESC
+	Point Cost: 500
+	Time Cost: 60
+Technology: ImpPopLvl2
+	Name: #R_IMP_POP_LVL2PLANET
+	Blurb: #R_IMP_POP_LVL2PLANET_BLURB
+	Point Cost: 1000
+	Time Cost: 120
+	Icon: DesignationIcons::10
+	Description: #R_IMP_POP_LVL2PLANET_DESC
+	SecondaryMoneyCost(1500)
+	ModAttribute(PopulationLevel3Mod, Add, 0.5)
+	ModAttribute(PopulationLevel2Mod, Add, 0.5)
+Technology: ImpPopLvl3
+	Description: #R_IMP_POP_PERCENT_LVL2PLANET_DESC
+	Blurb: +1 pop on Level 2+ planets
+	Name: (I) Metropolitan Engineering
+	Icon: DesignationIcons::10*#a5ff0b
+	Point Cost: 2000
+	Time Cost: 240
+	ResetWhenUnlocked()
+	SecondaryMoneyCost(6000)
+	ModAttribute(PopulationLevel3Mod, Add, 1)
+	ModAttribute(PopulationLevel2Mod, Add, 1)
+Technology: Housing
+	Name: Housing
+	Icon: city3
+	Point Cost: 500
+	Time Cost: 60
+	UnlockTag(Housing1)
+Technology: TileDev
+	Name: Surface Development
+	Description: Tiles Develop Faster 30%
+	Point Cost: 500
+	Time Cost: 60
+	Icon: DesignationIcons::10
+	ModAttribute(TileDevelopmentFactor, AddBase, 0.3)

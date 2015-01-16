@@ -1,0 +1,60 @@
+Subsystem: HeavyRailgunBattery
+	Name: Heavy Railgun
+	Description: #RAILBATTERY_DESC
+	BaseColor: #79992b
+	TypeColor: #c5f946
+	Picture: SubsystemButtonArt::2
+	Elevation: 2
+
+	Tags: BaseCost, Category:Weapons
+	Tags: WeaponBase, Rotatable, HexLimitArc
+	Tags: ExteriorCore, Weapon, IsProjWeapon, IsRailgun, HasInternals, MainDPS
+	Hull: Flagship
+
+	Size := HexSize * Hexes
+
+	Range := Size + 500
+	Damage := Size * 0.64*9
+	Reload := 0.2*8
+	Speed := 75 * log(Size * 0.075 + 2) / log(2)
+	Spread := 0.04
+	Tracking := 0.4
+	FireArc := 0.4
+	Pierce := 0.8
+	SupplyCost := Size * 2
+
+	Hex.HP := 18 * HexSize
+	Hex.Resistance := 0.2
+	Hex.Mass := HexSize*1.2
+
+	Requires:
+		Command = 1
+		Power = 2.5 * Size
+
+	Module: Default
+
+	Module: Core
+		Hex.HP := Hex.HP * 2
+		Hex.BuildCost := 5.0 * Hex.BuildCost
+		Hex.Mass := 5.0 * Hex.Mass
+
+		Sprite: HeavyRailgun*#ff6557
+
+		Hex.DamageResist := ShipSize / 64.0
+		DrawMode: 1
+		Effect: DamageResist
+			Resist = Hex.DamageResist
+
+	Effector: HeavyRailgun
+		Range = Range
+		Damage = Damage
+		Reload = Reload
+		Speed = Speed
+		Tracking = Tracking
+		Spread = Spread
+		FireArc = FireArc
+		TargetTolerance = max(pi,FireArc + pi/8)
+		FireTolerance = Spread
+		Pierce = Pierce
+		SupplyCost = SupplyCost * Reload
+		CapOnTarget = 24

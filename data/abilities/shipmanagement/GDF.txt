@@ -1,0 +1,12 @@
+Ability: GDF
+	Target: OwnShip = Object
+	Name: Go Down Fighting
+	Icon: GDF*#ff1010
+	Range: 100
+	Description: #ABL_GDF_DESC
+	TargetFilterNotStatus(OwnShip, GDF)
+	TargetFilterNotStatus(OwnShip, LW)
+	TargetFilterNotStatus(OwnShip, Exhausted)
+	TargetFilterOwned(OwnShip)
+	TargetFilterFlagship(OwnShip)
+	AddStatusTo(OwnShip, GDF, Duration = 60)

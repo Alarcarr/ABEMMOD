@@ -1,0 +1,7 @@
+Technology: PlanetDefense1
+	Name: Defense Organization
+	Blurb: +10% Strength to Planets
+	Icon: Fortified
+	Color: #94ff3d
+	Point Cost: 200
+	Time Cost: 60

@@ -1,0 +1,1 @@
+TEXTILES_DESC: Increases population growth by 20%.

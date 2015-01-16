@@ -1,0 +1,50 @@
+Subsystem: SupportLaser
+	Name: #LASER_NAME
+	Description: #LASER_DESC
+	BaseColor: #f9464d
+	TypeColor: #f9464d
+	Picture: SubsystemButtonArt::7
+	Elevation: 2
+
+	Tags: BeamBase, Rotatable, HexLimitArc, Category:Weapons
+	Tags: ExteriorCore, Weapon, DefaultUnlock, IsBeamWeapon, HasInternals
+	Hull: Support
+
+	Size := HexSize * Hexes
+	BeamDPS := 2.0 * Size
+	Duration := 4
+	Cooldown := 6
+	Range := Size + 300
+	Tracking := 0.5
+	SupplyCost := Size * 1
+	FireArc := 0.3 * pi
+
+	Hex.HP := 12 * HexSize
+	Hex.Resistance := 0.2
+	Hex.Mass := HexSize
+
+	Hex.BuildCost := 2 * HexSize
+	Hex.LaborCost := 0.14 * HexSize
+
+	Requires:
+		Command = 1
+
+	Module: Default
+
+	Module: Core
+		Hex.HP := Hex.HP * 2
+		Sprite: Laser::0
+		DrawMode: 1
+
+		Hex.DamageResist := ShipSize / 28.0
+		Effect: DamageResist
+			Resist = Hex.DamageResist
+
+	Effector: Laser
+		Range = Range
+		DPS = BeamDPS
+		Duration = Duration
+		Cooldown = Cooldown
+		Tracking = Tracking
+		SupplyCost = SupplyCost * Duration
+		FireArc = FireArc

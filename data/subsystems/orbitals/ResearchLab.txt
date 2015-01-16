@@ -1,0 +1,31 @@
+Subsystem: ResearchLab
+	Name: Research Lab
+	Description: #S_RESEARCHLAB_DESC
+	BaseColor: #b88b00
+	TypeColor: #b88b00
+	Elevation: 2
+
+	Tags: BaseCost, Category:Equipment, HasInternals
+	Hull: Station
+
+	Size := HexSize * Hexes
+	Hex.Mass := HexSize
+
+
+	Hex.Resistance := 0
+	Hex.HP := 12 * HexSize
+
+	Research := Size/1000
+	Hex.LaborCost := 3* HexSize +5
+	Assert: Size>=15
+		Message: Research Lab must be at least size 15. Add more hexes to the lab or increase the station's size.
+	Hook: AddResearchIncome(Research)
+	Requires:
+		Command = Hexes
+
+		Power = Size*40
+	Module: Default
+		Sprite: techHyperfield
+
+	Module: Core
+		Sprite: TechIcons::50

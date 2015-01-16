@@ -1,0 +1,53 @@
+Subsystem: AdmiralBay
+	Name: Improved Command Deck
+	Description: #SYS_ADMIRALBAY_DESC
+	BaseColor: #c5f946
+	Picture: SubsystemButtonArt::8
+	Elevation: 5
+
+
+
+	Tags: BaseCost, Category:Control,NoBulkhead,Ability:LW
+	Tags: Crewed, Control, ControlCore, HasInternals
+	Hull: Flagship, Station
+
+	EvaluationOrder: -10
+
+	Size := HexSize * Hexes
+	Crew := floor(40 * Size)
+	Command := Hexes * 1
+
+	Repair := 3 * HexSize * (Hexes-1)
+	RepairSupplyCost := 1.5 * Repair
+	out SupplyDrain := RepairSupplyCost
+
+	Hex.Resistance := 0.2
+	Hex.HP := 36 * HexSize
+	Hex.Mass := HexSize
+
+
+	Hook: GrantAbility(GDF)
+
+	Hook: GrantAbility(MEL)
+	Effect: ControlCore
+
+	Provides:
+		Crew = Crew
+		Command = Command
+
+	Module: Default
+		Sprite: CrewQuarters*#5686ff
+
+	Module: Core
+		Sprite: Bridge*#5686ff
+		Hex.HP := 2 * Hex.HP
+		Hex.Resistance := 0.35
+
+		Hex.BuildCost := 5 * Hex.BuildCost
+		Hex.Mass := 5 * Hex.Mass
+		Color: #5686ff
+	
+	Ship.AdmiralBay := Ship.AdmiralBay + 1
+	Assert: Ship.AdmiralBay <= 1
+		Unique: True //Only display message once instead of once per subsystem
+		Message: Only one Admiral can operate from a flagship at any time, and no Admiral needs two command centers, right?! Right!

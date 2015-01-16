@@ -1,0 +1,19 @@
+Resource: FTL
+	Name: #FTL_CRYSTALS
+	Description: #FTL_CRYSTALS_DESC
+	Native Biome: Crystallic
+
+	Icon: ResourceIcons::22
+	Small Icon: ResourceIconsSmall::21
+	Distant Icon: DistantResourceIcon::21
+
+	Level: 2
+	Rarity: Rare
+	Frequency: 5.0
+	Mode: Non Requirement
+	Pressure: 2 Energy
+	Pressure: 2 Research
+
+
+	IfType(Planet, AddFTLIncome(+1))
+	IfType(Planet, AddFTLStorage(+250))

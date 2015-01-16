@@ -1,0 +1,11 @@
+Technology: EngBay
+	Name: Engeniering Bay
+	Point Cost: 500
+	Time Cost: 60
+	Icon: TechIcons::50
+	Description: <<
+		Allow the contruction of basic defenses on orbitals and planets.
+		Repair the ship.
+	>>
+	Color: #44ff47
+	UnlockSubsystem(EngBay)

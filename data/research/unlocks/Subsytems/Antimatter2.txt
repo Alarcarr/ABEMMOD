@@ -1,0 +1,9 @@
+Technology: Antimatter2
+	Name: Shielded Antimatter Generator
+	Blurb: In-Combat Resupply
+	Point Cost: 1500
+	Time Cost: 180
+	Icon: TechIcons::7
+	Description: #R_SYS_SHIELDED_AMGEN_DESC
+	SecondaryEnergyCost(1700)
+	UnlockSubsystem(ShieldedAntimatter)

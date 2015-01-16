@@ -1,0 +1,41 @@
+Subsystem: CompositeArmor
+	Name: CompositeArmor
+	Description: #S_COMPOSITE_ARMOR_DESC
+	BaseColor: #0208888
+	Elevation: 1
+
+	Tags: Category:Armor
+	Tags: NoCore, NonContiguous, Defense, IsArmor, TankArmor
+	Hull: Flagship, Station
+
+	Size := HexSize * Hexes
+
+	// 0.1 = 10%
+	ProjResist := 0.15
+	EnergyResist := 0.15
+	ExplosiveResist := 0.15
+	
+	// Dummies for design_stats.txt
+	DummyProjResist := ProjResist * 100
+	DummyEnergyResist := EnergyResist * 100
+	DummyExplosiveResist := ExplosiveResist * 100
+
+	Hex.HP := 40 * HexSize
+	Hex.Mass :=2.5 * HexSize
+	Hex.LaborCost := 0.4 * HexSize 
+	Hex.BuildCost := 0.4 * HexSize 
+	Hex.MaintainCost := 0.1*HexSize
+	
+
+	Effect: ReduceDamagePercentile
+		ProjResist = ProjResist
+		EnergyResist = EnergyResist
+		ExplResist = ExplosiveResist
+
+
+
+	Module: Default
+
+		Sprite: CompositeArmor
+
+		Color: #ff08ee

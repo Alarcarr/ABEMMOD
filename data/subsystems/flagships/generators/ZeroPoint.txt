@@ -1,0 +1,37 @@
+Subsystem: ZeroPoint
+	Name: Singularity Core
+	Description: #S_ZPG_DESC
+	BaseColor: #5ade8b
+	Elevation: 1
+
+	Tags: IsReactor, Category:Power and Supply
+	Hull: Flagship, Station
+
+	Size := HexSize * Hexes
+	Power := (60*log((Size/70)^2)+128)*Size
+	SupplyCapacity := Size * 1200
+	SupplyRate := Size * 70
+
+	Hex.Resistance := 0.5
+	Hex.HP := 18 * HexSize
+	Hex.Mass := 3 * HexSize
+
+	Hex.LaborCost := 1 * HexSize + 1
+	Hex.BuildCost := 20 * HexSize + 2
+	Hex.MaintainCost := 0
+	Assert: Size >= 100
+		Message: Singularity Core must be at least size 100. Add more hexes to the core or increase the ship's size.
+
+	Provides:
+		Power = Power
+
+	Module: Core
+		Sprite: ZeroPoint
+
+	Module: Default
+
+	Modifier: SupplyCapacityFactor(factor)
+		SupplyCapacity := SupplyCapacity * factor
+
+	Modifier: PowerFactor(factor)
+		Power := Power * factor

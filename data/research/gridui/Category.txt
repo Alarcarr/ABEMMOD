@@ -1,0 +1,41 @@
+Technology: MillitaryResearch
+	Name: Millitary Research
+	Icon: MilitaryStrengthIcon
+	AutomaticallyUnlocks()
+Technology: EnergyScience
+	Name: Energy Research
+	Icon: DesignationIcons::2
+	AutomaticallyUnlocks()
+Technology: PlanetDev
+	Name: Planet Development
+	Icon: PlanetImage
+	AutomaticallyUnlocks()
+Technology: PolSci
+	Name: Political Science
+	Icon: DesignationIcons::1
+	AutomaticallyUnlocks()
+Technology: Metallurgy
+	Name: Metallurgy
+	Icon: ResourceIcon::6
+	AutomaticallyUnlocks()
+Technology: FTLT
+	Name: Dynamics
+	Icon: ActionBarIcons::6
+	AutomaticallyUnlocks()
+
+Technology: SelfDetermination
+	Name: Self-Determination
+	Icon: Revolutionaries
+	AutomaticallyUnlocks()
+Technology: Empire
+	Name: Empire
+	Icon: MilitaryStrengthIcon
+	AddModifier(FlagshipHull::MaintCostFactor(0.25))
+	ModAttribute()
+Technology: Pacifist
+	Icon: CardIcons::6
+Technology: Warmonger
+Technology: Researcher
+Technology: Merchantilist
+Technology: Expansionist
+	Name: lñ

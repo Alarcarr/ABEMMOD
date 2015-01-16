@@ -1,0 +1,30 @@
+Resource: BlackHole
+	Name: Gate World
+	Small Icon: emp_flag_flag7
+	Level: 5
+	Native Biome: Forest
+	Exportable: False
+	Artificial: True
+	Rarity: Unique
+	Unique: True
+	Pressure: 5 Defense
+	Pressure: 5 Influence
+	Pressure: 5 Labor
+	Pressure: 5 Research
+	Pressure: 5 Money
+	Pressure: 5 Energy
+	Frequency: 0
+	Icon: emp_flag_flag7
+	Description: #RESOURCE_GATEWORLD_DESC
+	Distribution: 0
+	Affinity: ALL
+
+
+	FreeFTLSystem()
+	ModTileDevelopRate(0.25)
+	AddPressureCap(10)
+	IsGate()
+	IsFlingBeacon()
+	AddFleetCommand(2048)
+	AddMaxPopulation(-3)
+	ModLocalLoyalty(-10)

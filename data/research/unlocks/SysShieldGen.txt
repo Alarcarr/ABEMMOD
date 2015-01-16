@@ -1,0 +1,33 @@
+Technology: SysShieldGen
+	Name: #R_SYS_SHIELDGEN
+	Description: #R_SYS_SHIELDGEN_DESC
+
+	Point Cost: 800
+	Time Cost: 120
+
+	Icon: FusionReactor
+	Color: #000bde
+
+	UnlockSubsystem(ShieldGen)
+
+	UnlockSubsystem(SupShieldGen)
+	SecondaryEnergyCost(750)
+Technology: SupShieldGen
+	Name: #R_SYS_SHIELDGEN
+	Description: #R_SYS_SUPSHIELD_DESC
+	Icon: FusionReactor
+	Color: #000bde
+	Point Cost: 600
+	Time Cost: 120
+	Blurb: #SUPPORT_EQUIPMENT_BLURB
+	SecondaryEnergyCost(500)
+	UnlockSubsystem(SupShieldGen)
+Technology: CovariantShield
+	Name: Covariant Shield Generator
+	Blurb: #R_SYS_COVARIANT_BLURB
+	Description: #S_COVARIANT_SHIELD_DESC
+	Icon: TechIcons::6
+	Color: #000bde
+	Point Cost: 700
+	Time Cost: 100
+	UnlockSubsystem(CovariantShield)

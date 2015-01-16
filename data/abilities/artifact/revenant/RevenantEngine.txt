@@ -1,0 +1,13 @@
+Ability: RevenantEngine
+	Name: #ABL_REVENANT_ENGINE
+	Description: #ABL_REVENANT_ENGINE_DESC
+	Icon: IonEngine
+
+	Energy Cost: 1000
+
+	OnAnyEmpireAttributeLT(RevenantParts, 0, Destroy())
+
+	GiveAchievement(ACH_USE_ARTIFACT)
+	ReplaceWithOrbital(RevenantEngine, Free = True)
+
+	NotifyAll(#NOTIFY_REVENANT_ENGINE, Icon = IonEngine)

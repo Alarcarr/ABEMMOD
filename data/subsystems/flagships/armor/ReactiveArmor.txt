@@ -1,0 +1,32 @@
+Subsystem: ReactiveArmor
+	Name: #REACTIVEARMOR_NAME
+	Description: #REACTIVEARMOR_DESC
+	BaseColor: #b9a9a9
+	Elevation: 1
+
+	Tags:  Category:Armor
+	Tags: NoCore, NonContiguous, DefaultUnlock, Defense, IsArmor, BlockArmor
+	Hull: Flagship, Station
+
+	Size := HexSize * Hexes
+	ImpactLevel := ShipSize
+	MinPct := 1/6
+
+	Hex.Resistance := 0.4
+	Hex.HP := 30 * HexSize
+	Hex.Mass := 2.5 * HexSize
+	Hex.LaborCost := 0.3 * HexSize 
+	Hex.BuildCost := 0.3 * HexSize 
+	Hex.MaintainCost := 0
+	
+	Effect: CapDamage
+		MaxDamage = ImpactLevel
+		MinimumPercent = MinPct
+
+	Modifier: ImpactFactor(factor)
+		MinPct := MinPct / factor
+
+	Module: Default
+		Sprite: PlateArmor * #ff9999
+
+		

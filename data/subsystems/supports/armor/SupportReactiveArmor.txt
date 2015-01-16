@@ -1,0 +1,31 @@
+Subsystem: SupportReactiveArmor
+	Name: #REACTIVEARMOR_NAME
+	Description: #SUPPORT_REACTIVEARMOR_DESC
+	BaseColor: #a9a9a9
+	Picture: SubsystemButtonArt::0
+	Elevation: 1
+
+	Tags: NoCore, NonContiguous,  Defense, IsArmor, TankArmor
+	Tags: NoWall, Category:Armor
+	Hull: Support
+
+	Size := HexSize * Hexes
+
+	Hex.Resistance := 0.5
+	Hex.HP := 35 * HexSize
+	Hex.Mass := 2.5 * HexSize
+
+	Hex.BuildCost := 1.7 * HexSize
+	Hex.LaborCost := 0.4 * HexSize
+
+	ImpactLevel := ShipSize/2
+	MinPct := 1/4
+	Modifier: ImpactFactor(factor)
+		MinPct := MinPct / factor
+	Effect: CapDamage
+		MaxDamage = ImpactLevel
+		MinimumPercent = MinPct
+	Module: Default
+		Sprite: PlateArmor * #ff9999
+
+		AddAdjacentModifier: !tag/IsArmor,hexVar/HP::AddHP(Hex.HP / 6.0)

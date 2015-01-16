@@ -1,0 +1,13 @@
+Technology: CrystalineArmor
+	Name: Crystalline Armor
+	Description: #R_CRYSTAL_ARMOR_DESC
+
+	Point Cost: 1500
+	Time Cost: 240
+
+	Icon: techArmor
+	Color: #449212
+
+	UnlockSubsystem(CrystalArmor)
+
+	SecondaryMoneyCost(2000)

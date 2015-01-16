@@ -1,0 +1,8 @@
+Technology: FlingBeacons
+	Name: Fling Beacons
+	Icon: OrbitalIcons::2
+	Point Cost: 4000
+	Time Cost: 400
+	Description: #R_ORB_FLING_DESC
+	UnlockSubsystem(Fling)
+	UnlockTag(HasFling)

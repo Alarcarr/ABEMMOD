@@ -1,0 +1,31 @@
+Technology: ImpThrust
+	Name: #R_IMP_THRUST
+	Blurb: #R_IMP_THRUST_BLURB:10%
+	Description: #R_IMP_THRUST_DESC:10%:800k
+
+	Icon: AttributeIcons::0
+	Color: #a77751
+
+	Point Cost: 500
+	Time Cost: 60
+
+	AddModifier(ThrustFactor(1.1))
+	AddModifier(Hyperdrive::SpeedFactor(1.1))
+
+	SecondaryMoneyCost(800)
+
+Technology: ImpThrust2
+	Name: #R_IMP_THRUST2
+	Blurb: #R_IMP_THRUST_BLURB:20%
+	Description: #R_IMP_THRUST_DESC:20%:1.2M
+
+	Icon: AttributeIcons::0
+	Color: #a77751
+
+	Point Cost: 750
+	Time Cost: 120
+
+	AddModifier(ThrustFactor(1.2))
+	AddModifier(Hyperdrive::SpeedFactor(1.2))
+
+	SecondaryMoneyCost(1200)

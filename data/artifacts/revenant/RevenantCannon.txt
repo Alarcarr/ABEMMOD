@@ -1,0 +1,16 @@
+Artifact: RevenantCannon
+	Name: #ART_REVENANT_CANNON
+	Description: #ART_REVENANT_CANNON_DESC
+
+	Size: 20
+	Ability: RevenantCannon
+
+	Strategic Icon: TechIcons::11
+
+	Mass: 800
+
+	Spread Variable: ENABLE_REVENANT_PARTS
+	Require Contestation: 60
+	Icon: TechIcons::11
+	Icon Size: 0.05
+	Orbit: True

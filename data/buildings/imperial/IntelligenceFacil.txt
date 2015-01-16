@@ -1,0 +1,13 @@
+Building: IntelligenceFacil
+	Name: #F_INTEL_NAME
+	Sprite: techScanner
+	Base Cost: 100
+	Base Maintenance: 200
+	Tile Maintenance: 75
+	Size: 4x4
+	Tile Cost: 50
+	Build Time: 360
+	Description: #F_INTEL_DESC
+	Category: Intelligence
+	RequireUnlockTag(IntelligenceFacil)
+	PeriodicNearbyIntelligence(Timer = 120)

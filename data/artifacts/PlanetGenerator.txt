@@ -1,0 +1,7 @@
+Artifact: PlanetGenerator
+	Name: #ART_PLANET_GENERATOR
+	Description: #ART_PLANET_GENERATOR_DESC
+
+	Ability: GeneratePlanet
+	Frequency: 0.5
+	Time Frequency: 0.1

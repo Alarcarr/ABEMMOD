@@ -1,0 +1,13 @@
+CARD_INTELLIGENCE_DESC: <<
+	Anonymously releasing intelligence obtained against one of the other empires lets us create opposition for their position without revealing our identity.
+
+	Alternatively, we can use this intelligence to try to discover the identity of enemy operatives on our flagships or planets - or those of our allies, exposing and removing them.
+
+	[b]The support added by this card is anonymous and cannot be traced back to you.[/b]
+
+	[i]Can only be played if the $1 has voted on the opposite side of the proposition. Each subsequent intelligence against the same empire played in the same vote loses 2 weight.
+
+	You can only have 3 Intelligence about one empire at any time. If no intelligence is being actively generated, your existing intelligence will expire over time.
+
+	Any Intelligence can be used outside of a vote to remove infiltrators planted by the "Infiltrate" ability; but be certain that the target has been infiltrated, and be careful not to remove your own infiltrators.[/i]
+>>

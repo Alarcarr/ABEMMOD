@@ -1,0 +1,14 @@
+Technology: DePlanet
+	Name: Planetary Branding
+	Blurb: 1x Name Planet(***)
+
+	Point Cost: 500
+	Time Cost: 60
+
+	Icon: CardIcons::15
+	Color: #00ffa4
+	Description: #R_DEV_PLANET_DESC
+
+	GainInfluenceCard(NamePlanet, Quality = 3)
+
+	SecondaryMoneyCost(500)

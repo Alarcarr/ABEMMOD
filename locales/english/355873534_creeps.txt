@@ -1,0 +1,1 @@
+VERB_PICKUP_GUARDIAN: Move in closer to the $1

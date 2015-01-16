@@ -1,0 +1,37 @@
+Subsystem: BussardRamjet
+	Name: Bussard Ramjet
+	Description: <<
+		A large scoop that collects particulate matter floating in space and uses them to propel itself.
+
+		[img=Plus]Lack of fuel requirements makes its maintenance requirements negligible.[/img]
+		[img=Plus]Core does not have to be at the rear of the ship.[/img]
+		[img=Minus]Extremely low thrust.[/img]
+	>>
+	BaseColor: #f99a77
+	Picture: RocketEngine
+	Elevation: 0
+
+	Tags: BaseCost,Category:Propulsion, NoBackWall
+	Tags: ExteriorCore, DefaultUnlock, Engine, GivesThrust, HasInternals
+	Hull: Flagship
+
+	OnCheckErrors: designs::checkCoreFacingBackwards
+
+	Size := HexSize * Hexes
+	Thrust := 7 * Size
+	Hex.Mass := HexSize
+
+	Hex.Resistance := 0.2
+	Hex.HP := 18 * HexSize
+
+	Hex.MaintainCost := 0
+	Requires:
+		Command = 1
+
+	Module: Default
+
+	Module: Core
+		Sprite: TechIcons::49
+		Hex.HP := 2 * Hex.HP
+		Hex.Resistance := 0.35
+		Hex.BuildCost := 2 * Hex.BuildCost

@@ -1,0 +1,7 @@
+BLD_METROPOLIS_DESC: <<
+	A large urban area covering and connecting multiple smaller population centers.
+
+	Replaces up to 6 regular cities.
+
+	Increases the planet's total pressure capacity by 8.
+>>

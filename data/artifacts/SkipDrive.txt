@@ -1,0 +1,8 @@
+Artifact: SkipDrive
+	Name: #ART_SKIP_DRIVE
+	Description: #ART_SKIP_DRIVE_DESC
+
+	Ability: EquipSkipDrive
+	Icon: TechIcons::41
+	Strategic Icon: TechIcons::41
+	Icon Size: 0.03

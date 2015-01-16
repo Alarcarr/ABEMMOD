@@ -1,0 +1,11 @@
+Technology: NanoArmor
+	Name: Nanite Armor
+
+	Point Cost: 1800
+	Time Cost: 360
+
+	Icon: NanoArmor
+	Color: #676210
+	Description: #R_NANO_ARMOR_DESC
+
+	UnlockSubsystem(NanoArmor)

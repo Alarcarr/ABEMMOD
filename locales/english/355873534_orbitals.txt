@@ -1,0 +1,7 @@
+ORB_SHIPYARD_DESC: <<
+	A massive orbital shipyard capable of constructing fleets in space.
+
+	Has 6 innate Labor generation per minute. Planets can export their own labor to shipyards within trade range at a 75% reduced rate.
+
+	Gains Labor from Metallurgy factory research at a 75% reduced rate.
+>>

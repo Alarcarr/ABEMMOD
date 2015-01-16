@@ -1,0 +1,7 @@
+Technology: SS
+	Name: Slipstream
+	Icon: TechIcons::57
+	Point Cost: 2500
+	Time Cost: 300
+	Description: #R_SYS_SLIPSTREAM_DESC
+	UnlockSubsystem(Slipstream)

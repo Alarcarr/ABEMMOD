@@ -1,0 +1,20 @@
+Status: LW
+
+	Name: Rally Cry
+	Icon: GDF
+	Unique: True
+	Description: #STATUS_LW_DESC
+	Color: #f1acff
+	TriggerPeriodic(AddPermanentEffectiveness(-0.275), Interval = 60)
+	TriggerPeriodic(AddStatus(Exhausted, Duration = 240), Interval = 60)
+	TriggerPeriodic(AddPermanentEffectiveness(0.025), Interval = 5)
+
+Status: Exhausted
+
+	Name: Exhausted
+	Icon: Exhaust
+	Description: #STATUS_EXHAUSTED_DESC
+	Unique: True
+	AddFleetEffectiveness(-0.5)
+	TriggerPeriodic(RemoveStatus(LW), Interval = 1)
+	

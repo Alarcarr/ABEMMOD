@@ -1,0 +1,16 @@
+Artifact: Arcology
+	Name: #ART_ARCOLOGY
+	Description: #ART_ARCOLOGY_DESC
+	Frequency: 0.5
+	Natural: True
+
+	Ability: DevelopPlanet
+	Strategic Icon: ResourceIcon::8
+	Time Frequency: 0.1
+
+Artifact: NatureDevice
+	Name: #ART_ARCOLOGY
+	Description: #ART_ARCOLOGY_DESC
+	Frequency: 0
+
+	Ability: DevelopPlanet

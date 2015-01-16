@@ -1,0 +1,6 @@
+Technology: PoliticalChoices
+	Name: Goverment
+	Color: #4110aa
+
+	Default Unlock: True
+	Icon: PoliticalStrengthIcon

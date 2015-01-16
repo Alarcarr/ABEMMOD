@@ -1,0 +1,7 @@
+Technology: ResearchLab
+	Name: Research Lab
+	Description: #R_SYS_RESEARCHLAB_DESC 
+	Point Cost: 1500
+	Time Cost: 420
+	Icon: techHyperfield
+	UnlockSubsystem(ResearchLab)

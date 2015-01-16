@@ -1,0 +1,10 @@
+Artifact: StellarGenerator
+	Name: #ART_STELLAR_GENERATOR
+	Description: #ART_STELLAR_GENERATOR_DESC
+	Frequency: 0.25
+
+	Ability: GenerateStar
+	Icon: ResourceIcons::29
+	Strategic Icon: ResourceIcons::29
+	Icon Size: 0.04
+	Time Frequency: 0.1

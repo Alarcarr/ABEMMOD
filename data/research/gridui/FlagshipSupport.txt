@@ -1,0 +1,112 @@
+Technology: Flagship
+	Name: Flagship Dev.
+	Icon: GevronFleetIcons::1
+	Color: #ff0021
+	Description: Flagship cost 10% less but Supports cost 5% more.
+	Blurb: Specialization
+	Time Cost: 60
+	Point Cost: 1
+	UnlockTag(FlagshipTech)
+	ConflictUnlockTag(SupportTech)
+	SecondaryMoneyCost(1)
+	AddModifier(hull/Support::BuildCostFactor(1.05))
+	AddModifier( hull/Flagship::BuildCostFactor(0.90) )
+
+Technology: Flagship2
+	Name: Flagship Dev II.
+	Icon: GevronFleetIcons::1
+	Color: #ff0021
+	Description: Flagship can hold 20% less Supports but cost to maintain 10% less
+	Blurb: Specialization
+	Time Cost: 120
+	Point Cost: 1
+	UnlockTag(FlagshipTech)
+	ConflictUnlockTag(SupportTech)
+	SecondaryMoneyCost(1)
+	AddModifier(hull/Flagship::SupportCapacityFactor(0.80))
+	AddModifier(hull/Flagship::MaintCostFactor(0.90) )
+
+Technology: Flagship3
+	Name: Flagship Dev 3.
+	Icon: GevronFleetIcons::1
+	Color: #ff0021
+	Description: Flagship takes 10% less labor but Supports labor is increased by 15% more.
+	Blurb: Specialization
+	Time Cost: 240
+	Point Cost: 1
+	UnlockTag(FlagshipTech)
+	ConflictUnlockTag(SupportTech)
+	SecondaryMoneyCost(1)
+	AddModifier(hull/Support::LaborCostFactor(1.15))
+	AddModifier( hull/Flagship::BuildCostFactor(0.90) )
+
+Technology: Flagship4
+	Name: Flagship Dev 4.
+	Icon: GevronFleetIcons::1
+	Color: #ff0021
+	Description: Shields and materials and reinforced.
+	Blurb: 10% Shields and Ship  HP
+	Time Cost: 300
+	Point Cost: 1
+	UnlockTag(FlagshipTech)
+	ConflictUnlockTag(SupportTech)
+	SecondaryMoneyCost(1)
+	AddModifier(hull/Flagship::HpFactor(1.1))
+	AddModifier( hull/Flagship::ShieldCapacityFactor(1.1))
+
+
+Technology: Support
+	Name: Support Dev.
+	Icon: SupportTech
+	Description: Supports cost 10% less but flagships cost 5% more.
+	Blurb: Support Revolution
+	Point Cost: 1
+	Time Cost: 60
+	Color: #ff8f0fd2
+	UnlockTag(SupportTech)
+	ConflictUnlockTag(FlagshipTech)
+	AddModifier( hull/Flagship::BuildCostFactor(1.05) )
+	AddModifier(hull/Support::BuildCostFactor(0.90))
+
+
+Technology: Support2
+	Name: Support Dev. 2
+	Icon: SupportTech
+	Description: Supports/flagships do 10%/-10% damage.
+	Blurb: Support Revolution
+	Point Cost: 1
+	Time Cost: 180
+	Color: #ff8f0fd2
+	UnlockTag(SupportTech)
+	ConflictUnlockTag(FlagShipTech)
+	AddModifier( hull/Flagship::DamageFactor(0.9) )
+	AddModifier(hull/Support::DamageFactor(1.1))
+
+Technology: Support3
+	Name: Support Dev. 3
+	Icon: SupportTech
+	Description: Support/FlagShip +10/-10 %Range
+	Blurb: Support Revolution
+	Point Cost: 1
+	Time Cost: 240
+	Color: #ff8f0fd2
+	UnlockTag(SupportTech)
+	ConflictUnlockTag(FlagShipTech)
+	AddModifier(hull/Support::RangeFactor(1.10))
+	AddModifier(hull/Flagship::RangeFactor(0.9))
+
+Technology: Support4
+	Name: Support Dev. 4
+	Icon: SupportTech
+	Description: <<
+		Support Build cost Reduced to 90%.
+		Support Labor cost Reduced to 70%.
+	>>
+	Blurb: Support Revolution
+	Point Cost: 1
+	Time Cost: 300
+	Color: #ff8f0fd2
+	AddModifier(hull/Support::LaborCostFactor(0.7))
+	UnlockTag(SupportTech)
+	ConflictUnlockTag(FlagShipTech)
+	AddModifier(hull/Support::BuildCostFactor(0.90))

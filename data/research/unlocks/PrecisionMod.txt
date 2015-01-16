@@ -1,0 +1,14 @@
+Technology: PrecisionMod
+	Name: Beam Amplifiers
+	Description: #R_MOD_PRECISION_DESC
+
+	Point Cost: 400
+	Time Cost: 60
+
+	Icon: SpaceProgram
+	Color: #eda1ff
+	Blurb: Beam Sniping
+
+	UnlockModule(PrecisionMod)
+
+	SecondaryMoneyCost(750)

@@ -1,0 +1,31 @@
+Subsystem: Fling
+	Name: #ORB_FLING_CORE
+	BaseColor: #595783
+	TypeColor: #595783
+	Elevation: 2
+
+	Tags: Category:FTL, HasInternals
+	Hull: Station
+
+	Size := HexSize * Hexes
+	Hex.Mass := HexSize
+
+
+	Hex.Resistance := 0
+	Hex.HP := 7000/Hexes
+
+	Hex.LaborCost := 3* HexSize +5
+	Description: #ORB_FLING_CORE_DESC
+	Hook: IsFlingBeacon()
+	Assert: Size >= 100
+		Message: The Fling Beacon must be at least size 100. Increase the beacon's hex count or the station's size.
+	Requires:
+		Command = Hexes
+
+		Power = Size*40
+	Module: Default
+
+	Module: Core
+		Sprite: TechIcons::34*#21cfff
+		Hex.BuildCost := 400
+		Hex.MaintainCost := 200

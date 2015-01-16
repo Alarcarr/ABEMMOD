@@ -1,0 +1,17 @@
+Building: Hydrogenator
+	Name: #BLD_HYDROGENATOR
+	Description: #BLD_HYDROGENATOR_DESC
+	Sprite: Hydrogenator
+
+	Category: Resource
+	Build Affinity: Oceanic
+
+	Size: 3x3
+	Base Cost: 120
+	Tile Cost: 20
+	Base Maintenance: 100
+	Tile Maintenance: 10
+
+	Build Time: 240
+	Maintenance Affinity: Oceanic
+	AddPlanetResource(BuildingWater)

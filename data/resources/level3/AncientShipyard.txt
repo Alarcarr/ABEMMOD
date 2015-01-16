@@ -1,0 +1,12 @@
+Resource: Ancient Shipyard
+	Name: Ancient Shipyard
+	Level: 3
+	Pressure: 10 Defense
+	Small Icon: TechIcons::33
+	Icon: TechIcons::33
+	Affinity: Defense
+	Exportable: False
+	Description: #RESOURCE_SHIPYARD_DESC
+	Artificial: True
+	Unique: True
+	GrantAbility(OverchargeFleet)

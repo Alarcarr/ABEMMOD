@@ -1,0 +1,37 @@
+Technology: ImpAllHealth
+	Name: #R_IMP_ALL_HEALTH
+	Blurb: #R_IMP_ALL_HEALTH_BLURB:7%
+	Description: #R_IMP_ALL_HEALTH_DESC:7%
+
+	Icon: AttributeIcons::6
+	Color: #80ff80
+
+	Point Cost: 1000
+	Time Cost: 180
+
+	AddModifier(HpFactor(1.07))
+	ModAttribute(OrbitalHealthMod, Multiply, 1.07)
+
+Technology: ImpAllHealth2
+	Name: #R_IMP_ALL_HEALTH2
+	Blurb: #R_IMP_ALL_HEALTH_BLURB:14%
+	Description: #R_IMP_ALL_HEALTH_DESC:14%
+
+	Icon: AttributeIcons::6
+	Color: #80ff80
+
+	Point Cost: 1500
+	Time Cost: 180
+
+	AddModifier(HpFactor(1.14))
+	ModAttribute(OrbitalHealthMod, Multiply, 1.14)
+Technology: Further Development
+	Name: (I) Material Development
+	Blurb: +10% HP and DR to Armor
+	Icon: techArmor
+	Point Cost: 2000
+	Time Cost: 200
+	ModAttribute(OrbitalHealthMod, Multiply, 1.1)
+	ResetWhenUnlocked()
+	AddModifier(tag/IsArmor::HpFactor(1.10))
+	AddModifier(ArmorResistFactor(1.10))

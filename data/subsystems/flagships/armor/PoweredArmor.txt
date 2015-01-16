@@ -1,0 +1,27 @@
+Subsystem: PoweredArmor
+	Name: Powered Armor
+	Description: #S_POWERED_ARMOR_DESC
+	BaseColor: #a9a9b9
+	Elevation: 1
+
+	Tags: Category:Armor
+	Tags: NoCore, NonContiguous, Defense, IsArmor, ResistArmor
+	Hull: Flagship, Station
+
+	Size := HexSize * Hexes
+	Hex.Resistance := 0.4
+	Hex.HP := 30 * HexSize
+	Hex.Mass := 1.5 * HexSize
+	Hex.LaborCost := 0.4 * HexSize
+	Hex.BuildCost := 0.4 * HexSize
+	Hex.MaintainCost := 0.1
+
+	DamageResist := ShipSize / 30
+	Requires:
+		Power = 3*Size
+	Effect: DamageResist
+		Resist = DamageResist
+
+		MinimumPercent = 0
+	Module: Default
+		Sprite: PoweredArmor

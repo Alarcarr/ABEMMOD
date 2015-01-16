@@ -1,0 +1,24 @@
+Subsystem: SpyModule
+	Name: Infiltration Module
+	BaseColor: #7b56ff
+	TypeColor: #fff980
+	Elevation: 3
+
+	Tags: Ability:Infiltrate ,BaseCost, Category:Equipment, HasInternals
+	Hull: Flagship,Station
+
+	Size := HexSize * Hexes
+	Hex.Mass := HexSize
+
+	Hex.Resistance := 0.2
+	Hex.HP := 18 * HexSize
+	Description: #S_SPYMODULE_DESC
+	Assert: Size>5
+		Message: Infiltration Module must be at least size 5. Add more hexes or increase the ship's size.
+
+
+	Requires:
+		Command = 1
+
+	Module: Core
+		Sprite: TechIcons::42

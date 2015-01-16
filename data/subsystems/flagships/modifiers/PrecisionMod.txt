@@ -1,0 +1,14 @@
+Template: hexVar/LaborCost, hexVar/HP, tag/IsBeamWeapon, var/BeamDPS, var/Range, var/Cooldown, var/Duration, !tag/SupportHull
+	Module: PrecisionMod
+		Name: Beam Amplifiers
+
+		Color: #00ff00
+		Sprite: SpaceProgram
+
+
+		Range := Range *2
+		Duration := Duration/4
+		Cooldown := Cooldown*2
+		Description: #BEAM_AMPLIFIER_DESC
+		BeamDPS := BeamDPS*4
+		AddModifier: LaborCostFactor(1.2)

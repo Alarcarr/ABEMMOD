@@ -1,0 +1,26 @@
+Module: RevenantCore
+	Name: #ORB_REVENANT_CORE
+	Icon: ComputerCore
+
+	Core: True
+	Standalone: True
+
+	Health: 20000
+	Armor: 5000
+
+	Model: Research_Station
+	Material: ResearchStation
+	Size: 32
+
+	Strategic Icon: TechIcons::47
+
+	CannotBuildManually()
+	EnableModifier(SupportCapacityFactor(1.40))
+
+	OnDisable( SpawnArtifact(RevenantCore) )
+	OnDisable( Destroy() )
+
+	ModEmpireAttribute(RevenantParts, Add, 1)
+	OnEmpireAttributeLT(RevenantParts, 0, Destroy())
+
+	GloballyVisible()

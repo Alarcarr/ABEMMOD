@@ -1,0 +1,10 @@
+Ability: MEL
+	Name: Mask Energy Levels
+	Icon: VolkurFleetIcons::1
+	Target: Flag1 = Object
+	Energy Cost: 200
+	Description: #ABL_MEL_DESC
+	TargetFilterFlagship(Flag1)
+	TargetFilterAllied(Flag1)
+	TargetFilterNotStatus(Flag1, MEL)
+	AddStatusTo(Flag1, MEL, Duration = 300)

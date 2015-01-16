@@ -1,0 +1,11 @@
+Trait: Charismatic
+	Name: #TRAIT_CHARISMATIC
+	Description: #TRAIT_CHARISMATIC_DESC
+	Category: Personality
+
+	Color: #aaffaa
+	Icon: ThumbsUp
+
+	Costs Points: 2
+
+	ModAttribute(VoteStartSupport, Add, +3.0)

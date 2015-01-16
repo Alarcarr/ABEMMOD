@@ -1,0 +1,42 @@
+Subsystem: NanoArmor
+	Name: Nanite Armor
+	Description: #S_NANO_ARMOR_DESC
+	BaseColor: #0208888
+	Elevation: 1
+
+	Tags: LowMaint, Category:Armor
+	Tags: NoCore, NonContiguous, Defense, IsArmor, TankArmor
+	Hull: Flagship, Station
+
+	Size := HexSize * Hexes
+
+	Hex.Resistance := 1
+	Hex.HP := 35 * HexSize
+	Hex.Mass := 1.5 * HexSize
+	Hex.LaborCost := 1 * HexSize 
+	Hex.BuildCost := 0.5 * HexSize 
+	Hex.MaintainCost := 0.5
+	Regeneration := ShipSize / 32
+
+	Hook: ABEM_hooks::Regeneration(Regeneration, false);
+	
+	//DamageResist := ShipSize / 30
+	
+	//ImpactLevel := ShipSize*4
+	MinPct := 1/6
+	Requires:
+		Power = Size*10
+
+	//Effect: CapDamage
+	//	MaxDamage = ImpactLevel
+	//	MinimumPercent = MinPct
+
+	//Effect: DamageResist
+	//	Resist = DamageResist
+
+	Module: Default
+		
+		Sprite: NanoArmor
+
+		AddAdjacentModifier: !tag/IsArmor,hexVar/HP::AddHP(Hex.HP / 3.0)
+		Color: #ff08ee

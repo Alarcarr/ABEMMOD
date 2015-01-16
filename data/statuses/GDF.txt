@@ -1,0 +1,17 @@
+Status: GDF
+	Unique: True
+	Name: Go Down Fighting
+	Icon: GDF*#ff1010
+	Color: #ff1010
+	Description: This Fleet  is fighting for a lost cause sure of its own destruction it will combat braverly.
+	TriggerPeriodic(AddPermanentEffectiveness(0.05), Interval = 5)
+	// The arguments for ReactorOverload() are, from left to right:
+	// Power damage multiplier - this is the number by which the ship's power output is multiplied when calculating the blast damage.
+	// Power radius multiplier - the number by which the power output is multiplied when calculating the blast radius.
+	// Power target multiplier - the number by which the power output is multiplied when calculating the target count.
+	// Base damage - the amount of damage added to the damage calculated by the abovementioned damage multiplier.
+	// Base radius - the radius added to the radius calculated by the abovementioned radius multiplier.
+	// Base target count - the number added to the target count calculated by the abovementioned target multiplier.
+	ABEM_hooks::ReactorOverloadHook(5, 2, 0.01, 0, 0, 4)
+	AddFleetEffectiveness(0.10)
+

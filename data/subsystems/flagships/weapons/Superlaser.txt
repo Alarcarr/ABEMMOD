@@ -1,0 +1,53 @@
+Subsystem: SuperLaser
+	Name: Super Laser
+	Description: S_SUPERLASER_DESC
+	BaseColor: #f9464d
+	TypeColor: #f9464d
+	Picture: SubsystemButtonArt::7
+	Elevation: 2
+
+	Tags: BaseCost
+	Tags: BeamBase, Rotatable, HexLimitArc, Category:Weapons, Ability:BusterBeam
+	Tags: ExteriorCore, Weapon, IsBeamWeapon, HasInternals, MainDPS
+	Hull: Flagship, Station
+
+	Size := HexSize * Hexes
+	BeamDPS := 5 * Size*30
+	Duration := 5
+	Cooldown := 6*10
+	Range := Size + 700
+	Tracking := 0.5
+	SupplyCost := Size * 100
+	FireArc := 0.25 * pi
+
+	Hex.HP := 12 * HexSize
+	Hex.Resistance := 0.2
+	Hex.Mass := HexSize
+	Assert: Size >= 200
+		Message: Superlaser must be at least size 200. Add more hexes to the superlaser or increase the ship's size.
+
+	Requires:
+		Command = Hexes
+		Power = 75* Size
+
+	Module: Default
+
+	Module: Core
+		Hex.HP := Hex.HP *10
+		Hex.BuildCost := 20 * Hex.BuildCost
+		Hex.Mass := 10.0 * Hex.Mass
+
+		Sprite: SLaser
+
+		Hex.DamageResist := ShipSize / 64.0
+		Effect: DamageResist
+			Resist = Hex.DamageResist
+
+	Effector: SuperLaser
+		Range = Range
+		DPS = BeamDPS
+		Duration = Duration
+		Cooldown = Cooldown
+		Tracking = Tracking
+		SupplyCost = SupplyCost * Duration
+		FireArc = FireArc

@@ -1,0 +1,7 @@
+Technology: Hyperdrive
+	Name: Hyperdrive
+	Point Cost: 2500
+	Time Cost: 300
+	Icon: TechIcons::34
+	Description: #R_SYS_HYPERDRIVE_DESC
+	UnlockSubsystem(Hyperdrive)

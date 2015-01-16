@@ -1,0 +1,9 @@
+Technology: IntelFacilities
+	Name: Intelligence Facilities
+	Point Cost: 1000
+	Time Cost: 120
+	Icon: techScanner
+	Description: #F_INTEL_DESC
+	Color: #aa19ff
+	Blurb: Generates Intelligence Cards
+	UnlockTag(IntelligenceFacil)

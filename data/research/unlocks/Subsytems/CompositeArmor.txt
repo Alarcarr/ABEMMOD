@@ -1,0 +1,11 @@
+Technology: CompositeArmor
+	Name: Composite Armor
+
+	Point Cost: 700
+	Time Cost: 180
+
+	Icon: CompositeArmor
+	Color: #676210
+	Description: #R_COMPOSITE_ARMOR_DESC
+
+	UnlockSubsystem(CompositeArmor)

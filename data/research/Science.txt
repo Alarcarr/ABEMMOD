@@ -1,0 +1,7 @@
+Technology: Science
+	Name: #R_SCIENCE
+	Description: #R_SCIENCE_DESC
+	Color: #aaaaaa
+
+	Default Unlock: True
+	Icon: DesignationIcons::5

@@ -1,0 +1,26 @@
+	Name: Alternate Balance Expansion Mod
+	Description: <<
+		[h1]V 0.121[/h1]
+
+		Note :Some images are of the older versions of the game .
+
+		Currently includes:
+		[img]http://i.imgur.com/kZfGL7N.png[/img]
+		- New Subsystems 
+		- New Resources
+		- New Research Tree/Techs
+		- New Planetary facilities
+		- New Black Hole system
+		- Changes to diplomacy cards
+		- Balance changes to make the experience different from vanilla.
+
+		[img]http://s15.postimg.org/sc8ejh0y3/Ship.jpg [/img]
+
+
+		Feel free to throw suggestions into the forum.
+		Note: The localization (tooltips, names, descriptions etc.) will be updated as we go. Some of them are not done yet.
+
+		Full patch notes in the Discussion Thread.
+
+		Special Thanks to the Star Ruler 2 developer team for their constant support with everything ranging from coding advice, bug fixes and new hooks to even the mod's logo - thanks for that one, Firgof!!
+	>>

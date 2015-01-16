@@ -1,0 +1,13 @@
+Building: PowerPlantImp
+	Name: #F_POWERPLANT_NAME
+	Sprite: TechIcons::6
+	Description: #F_POWERPLANT_DESC
+	Base Cost: 600
+	Base Maintenance: 400
+	Tile Maintenance: 50
+	Size: 4x4
+	Labor Cost: 100
+	Tile Cost: 25
+	Category: Infrastructure
+	RequireUnlockTag(PowerPlant)
+	AddResource(Energy, 10)

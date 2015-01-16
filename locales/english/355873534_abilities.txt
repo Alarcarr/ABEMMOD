@@ -1,0 +1,63 @@
+﻿STUFF: BLARGH
+ABL_OVERCHARGE_FLEET_DESC: <<
+	Increase the targeted fleet's effectiveness by 40%.
+
+	A fleet can only be upgraded once.
+>>
+ABL_OVERCHARGE_FLEET: Perform Ancient Retrofit
+ABL_REVENANT_CANNON_DESC: <<
+	Activate the cannon of The Revenant, a dark ship of legend.
+
+	While active, the cannon provides all your designs with [b]50% increased weapon range/speed[/b].
+
+	When the activated cannon loses all its HP, it reverts back to its deactivated state.
+
+	[b]Having all 4 parts of The Revenant activated at the same time will grant you control over the most powerful warship in the universe.[/b]
+>>
+ABL_REVENANT_CHASSIS_DESC: <<
+	Activate the chassis of The Revenant, a dark ship of legend.
+
+	While active, the chassis provides all your designs with [b]30% reduced build costs[/b].
+
+	When the activated chassis loses all its HP, it reverts back to its deactivated state.
+
+	[b]Having all 4 parts of The Revenant activated at the same time will grant you control over the most powerful warship in the universe.[/b]
+>>
+ABL_REVENANT_CORE_DESC: <<
+	Activate the core of The Revenant, a dark ship of legend.
+
+	While active, the core provides all your designs with [b]40% increased support capacity[/b].
+
+	When the activated core loses all its HP, it reverts back to its deactivated state.
+
+	[b]Having all 4 parts of The Revenant activated at the same time will grant you control over the most powerful warship in the universe.[/b]
+>>
+ABL_REVENANT_ENGINE_DESC: <<
+	Activate the engine of The Revenant, a dark ship of legend.
+
+	While active, the engine provides all your designs with [b]50% more thrust/acceleration[/b] and designs with hyperdrives with a [b]30% increase to hyperdrive speed[/b].
+
+	When the activated engine loses all its HP, it reverts back to its deactivated state.
+
+	[b]Having all 4 parts of The Revenant activated at the same time will grant you control over the most powerful warship in the universe.[/b]
+>>
+ABL_INFILTRATE_DESC: <<
+	Uses a high amount of energy to teleport a well-trained operative onto an enemy flagship.
+
+	Training the operative costs §200k.
+>>
+ABL_GDF_DESC: <<
+	Orders a flagship to overcharge its primary reactors. Boosts the damage output of the fleet, but the flagship is destroyed in a catastrophic overload.
+
+	Effectiveness boost starts at 10%, increasing by 5% every 5 seconds until the ship explodes 60 seconds after activation. Explosion deals damage equivalent to 5 times the output of the target ship's power generators (Power) to up to 4 (plus 1 for every 100 Power) targets within a radius of 2*Power units. Cannot be used on a fleet that is under the effects of - or recovering from - Rally Cry.
+>>
+ABL_LW_DESC: <<
+	Orders a fleet to redouble its efforts to defeat an enemy. The additional effort is a significant strain on the fleet's personnel and equipment, however, and they will need to recuperate before they can fight again.
+
+	Boosts effectiveness by 2.5% every 5 seconds for 60 seconds, then halves effectiveness for 240 seconds. Rally Cry cannot be used on a fleet that is still recovering from a previous Rally Cry, or under the effects of Go Down Fighting.
+>>
+ABL_MEL_DESC: <<
+	Uses special technology on the Admiral's flagship to mask the energy levels of a fleet, making them appear less powerful to an enemy's sensors. The deception must be maintained, though; every 5 minutes, the effect must be applied again.
+
+	Reduces fleet's apparent DPS by 100. Consumes 200 energy. Cannot stack.
+>>

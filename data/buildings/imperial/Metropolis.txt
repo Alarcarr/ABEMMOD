@@ -1,0 +1,19 @@
+Building: Metropolis
+	Name: #BLD_METROPOLIS
+	Description: #BLD_METROPOLIS_DESC
+	Sprite: city1
+
+	Category: Infrastructure
+	Maintenance Affinity: Forest
+
+	Size: 2x2
+	Base Cost: 150
+	Tile Cost: 65
+	Build Time: 90
+
+	Base Maintenance: 50
+	Tile Maintenance: 30
+
+	RequireUnlockTag(Metropolis)
+	AddPressureCap(8)
+	ReplacesCities(6)

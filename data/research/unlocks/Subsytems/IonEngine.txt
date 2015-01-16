@@ -1,0 +1,13 @@
+Technology: IonEngine
+	Name: #IONENGINE_NAME
+	Description: #IONENGINE_DESC
+
+	Point Cost: 400
+	Time Cost: 90
+
+	Icon: techRocket
+	Color: #e0f946
+
+	UnlockSubsystem(IonEngine)
+
+	SecondaryMoneyCost(400)

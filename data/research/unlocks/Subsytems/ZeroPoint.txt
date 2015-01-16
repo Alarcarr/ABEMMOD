@@ -1,0 +1,8 @@
+Technology: ZeroPoint
+	Name: Singularity Core
+	Point Cost: 2000
+	Time Cost: 180
+	Icon: ZeroPoint
+	Description: #R_SYS_ZPG_DESC
+	SecondaryEnergyCost(2000)
+	UnlockSubsystem(ZeroPoint)

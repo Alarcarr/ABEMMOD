@@ -1,0 +1,30 @@
+Subsystem: CovariantShield
+	Name: Covariant Shield Generator
+	Description: #S_COVARIANT_SHIELD_DESC
+	BaseColor: #0044db
+	Elevation: 1
+
+	Tags: BaseCost
+	Tags: IsShield, Defense, Category:Shields, HasInternals
+	Tags: SecondaryDefense
+	Hull: Flagship, Station
+
+	Size := HexSize * Hexes
+	ShieldCapacity := Size * 200
+	ShieldRegen := Size * 0.2
+
+	Hex.Resistance := 0.5
+	Hex.HP := 12 * HexSize
+	Hex.Mass := 2.5 * HexSize
+	
+	Hex.LaborCost := 0.5 * HexSize 
+	Hex.BuildCost := 0.1 * HexSize 
+	Hex.MaintainCost := 1
+	
+	Requires:
+		Command = 1
+		Power = 25 * Size
+
+	Module: Core
+		Sprite: TechIcons::6
+		

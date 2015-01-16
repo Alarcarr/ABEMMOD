@@ -1,0 +1,113 @@
+Material: Subsystem
+	Culling: None
+	Alpha: True
+	DepthTest: NoDepthTest
+	Mipmap: False
+	Lighting: False
+
+Material: SupportTech
+	Inherit: Subsystem
+	Texture: data/images/techs/support_tech.png
+
+
+
+
+Material: GDF
+	Inherit: Subsystem
+	Texture: data/images/status/GDF.png
+Material: Exhaust
+	Inherit: Subsystem
+	Texture: data/images/status/exhaust.png
+
+	
+Material: MissileTurret
+	Inherit: Subsystem
+	Texture: data/images/status/MissileTurret.png
+Material: LaserTurret
+	Inherit: Subsystem
+	Texture: data/images/status/LaserTurret.png	
+Material: RailTurret
+	Inherit: Subsystem
+	Texture: data/images/status/RailTurret.png	
+	
+	
+	
+
+Material: HeavyRailgun
+	Inherit: Subsystem
+	Texture: data/images/subsystems/twin_turret_railgun.png
+Material: SLaser
+	Inherit: Subsystem
+	Texture: data/images/subsystems/slaser.png
+
+Material: NanoArmor
+	Inherit: Subsystem
+	Texture: data/images/subsystems/armor_nano.png
+Material: CompositeArmor
+	Inherit: Subsystem
+	Texture: data/images/subsystems/armor_composite.png
+Material: QuantumArmor
+	Inherit: Subsystem
+	Texture: data/images/subsystems/armor_quantum.png
+Material: RemnantArmor
+	Inherit: Subsystem
+	Texture: data/images/subsystems/armor_remnant.png
+
+Material: PoweredArmor
+	Inherit: Subsystem
+	Texture: data/images/subsystems/armor_powered.png
+Material: CrystalArmor
+	Inherit: Subsystem
+	Texture: data/images/subsystems/armor_crystal.png
+
+
+
+
+Material: Stargate
+	Inherit: Subsystem
+	Texture: data/images/subsystems/stargate.png
+Material: FtlGen
+	Inherit: Subsystem
+	Texture: data/images/subsystems/am_converter.png
+Material: ZeroPoint
+	Inherit: Subsystem
+	Texture: data/images/subsystems/zero_point_generator.png
+Material: MassMount
+	Inherit: Subsystem
+	Texture: data/images/subsystems/mass_mount.png
+
+Material: WaveEmitter
+	Inherit: Subsystem
+	Texture: data/images/subsystems/wave_emitter.png
+Material: FusionTorpedo
+	Inherit: Subsystem
+	Texture: data/images/subsystems/fusion_torpedo.png
+
+
+Material: city1
+	Inherit: Subsystem
+	Texture: data/images/city1.png
+Material: city2
+	Inherit: Subsystem
+	Texture: data/images/city2.png
+Material: city3
+	Inherit: Subsystem
+	Texture: data/images/city3.png
+Material: tax1
+	Inherit: Subsystem
+	Texture: data/images/tax1.png
+Material: tax2
+	Inherit: Subsystem
+	Texture: data/images/tax2.png
+
+
+
+Material: c1
+	Inherit: Subsystem
+	Texture: data/images/c1.png
+Material: c2
+	Inherit: Subsystem
+	Texture: data/images/c2.png
+Material: c3
+	Inherit: Subsystem
+	Texture: data/images/c3.png

@@ -1,0 +1,8 @@
+Technology: HeavyRailgun
+	Name: Heavy Railgun
+	Point Cost: 700
+	Time Cost: 120
+	Icon: HeavyRailgun
+	Description: #R_SYS_HEAVYRAIL_DESC
+	Color: #ff0235
+	UnlockSubsystem(HeavyRailgunBattery)

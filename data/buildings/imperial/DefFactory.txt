@@ -1,0 +1,13 @@
+Building: DefenseFactory
+	Name: Command Center
+	Sprite: DesignationIcons::3
+	Base Cost: 300
+	Size: 2x2
+	Tile Cost: 100
+	Base Maintenance: 150
+	Tile Maintenance: 100
+	Build Time: 250
+	Category: Military
+	Description: #B_DEFENSEFACTORY_DESC
+	AddResource(Defense, 2)
+	AddFleetCommand(128)

@@ -1,0 +1,13 @@
+Technology: NanoRepair
+	Name: Nano-repair
+
+	Point Cost: 1500
+	Time Cost: 240
+
+	Icon: SystemUnderAttack
+	Color: #449212
+	Description: #R_NANO_REPAIR_DESC
+
+	UnlockSubsystem(NanoRepair)
+
+	SecondaryMoneyCost(2000)

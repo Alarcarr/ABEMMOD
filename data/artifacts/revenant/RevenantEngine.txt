@@ -1,0 +1,16 @@
+Artifact: RevenantEngine
+	Name: #ART_REVENANT_ENGINE
+	Description: #ART_REVENANT_ENGINE_DESC
+
+	Size: 20
+	Ability: RevenantEngine
+
+	Strategic Icon: TechIcons::24
+
+	Mass: 500
+
+	Spread Variable: ENABLE_REVENANT_PARTS
+	Require Contestation: 60
+	Icon: TechIcons::24
+	Icon Size: 0.05
+	Orbit: True

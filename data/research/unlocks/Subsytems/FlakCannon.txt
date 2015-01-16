@@ -1,0 +1,8 @@
+Technology: Flak
+	Name: Flak Cannon
+	Icon: TechIcons::11
+	Point Cost: 600
+	Time Cost: 60
+	Description: #R_SYS_FLAK_DESC
+	Blurb: AoE Projectile Weapon
+	UnlockSubsystem(FlakCannon)

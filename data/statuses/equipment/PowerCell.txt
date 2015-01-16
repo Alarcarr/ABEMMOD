@@ -1,0 +1,6 @@
+Status: PowerCell
+	Name: #STATUS_POWER_CELL
+	Description: #STATUS_POWER_CELL_DESC
+	Icon: ResourceIcon::2
+
+	AddFleetEffectiveness(+0.4)

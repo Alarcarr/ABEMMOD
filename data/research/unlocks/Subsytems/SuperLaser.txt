@@ -1,0 +1,7 @@
+Technology: SuperLaser
+	Name: Superlaser
+	Point Cost: 2500
+	Description: #R_SYS_SUPERLASER_DESC
+	Icon: SLaser
+	UnlockSubsystem(SuperLaser)
+	SecondaryEnergyCost(2000)

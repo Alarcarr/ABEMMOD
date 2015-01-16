@@ -1,0 +1,14 @@
+Building: Residential
+	Name: Residential Area
+	Description: #BLD_HOUSING_DESC
+	Sprite: city3
+	Size: 2x2
+	Base Cost: 400
+	Tile Cost: 50
+	Base Maintenance: 50
+	Tile Maintenance: 50
+	Build Time: 90
+	Category: Infrastructure
+	RequireUnlockTag(Housing1)
+	ReplacesCities(Amount = 4)
+	AddMaxPopulation(2)

@@ -1,0 +1,42 @@
+RESOURCE_SHIPYARD_DESC: <<
+	An ancient shipyard. While its purpose is unknown, you can repurpose its technology to upgrade your own ships' systems and build defense ships.
+
+	Cannot be exported.
+>>
+RESOURCE_INTEL_DESC: <<
+	Abandoned ancient facilities that were designed to control an entire empire. Gives full vision of adjacent systems. Generates Intelligence cards against empires in adjacent systems. If none can be found, generates Intelligence against a random empire. Grants the 'Telescope' ability.
+
+	Cannot be exported.
+>>
+RESOURCE_RESEARCH_DESC: <<
+	A massive ancient research facility. Converts Labor and energy into Research. Civilian research on the planet is increased by 20%.
+
+	Cannot be exported.
+>>
+RESOURCE_GATEWORLD_DESC: <<
+	A sort of core world for the galaxy, this planet's surface is littered with all sorts of ancient technology; indeed, considering its advanced defensive fleet, this world may have been home to the ancient race that built the automated warships known as the 'Remnants'.
+
+	Ancient technology increases the planet's pressure capacity by 10. A unique wormhole generator on the planet's surface allows the planet to tie into the empire's gate network, and an incredibly advanced planetary fling beacon allows the planet to send fleets out anywhere into the galaxy at incredible speeds. An advanced defense coordination computer allows the planet to support much greater defense fleets than most, with an additional 2048 units of support.
+
+	Due to the heavily contested nature of the planet, the largely science-minded population's loyalty suffers a drastic -10 decrease, as they seek to protect themselves from invaders while studying its vast technological treasures. The presence of the ancient ruins makes it difficult to find free space to settle, reducing its population capacity by 3.
+>>
+ASTEROID_LABOR_DESC: <<
+	Adds 6 flat labor generation to the consuming planet.
+	Increases labor generation by 50%.
+
+	Only ticks down while the planet has active constructions.
+>>
+ELECTRONICS_DESC: Gives 0.2 energy generation.
+LOCAL_ASTEROID_FIELD_DESC: <<
+	Increases pressure cap by 6. Adds 0.2 Labor generation for every imported resource.
+
+	[color=#ff7070][b]Cannot be exported.[/b][/color]
+>>
+TECHNOFARM_DESC: Generates a Cultivation card every 6 minutes. Increases population growth by 50%.
+PARADISE_DESC: <<
+	A carefree, peaceful planet, this world attracts many people, some simply for holidays, others as permanent residents.
+
+	+100% population growth. +10 maximum population. +5 bonus to planet loyalty.
+
+	-50% to civilian Labor, Research, Defense or Energy generation on this planet. Cannot be exported.
+>>

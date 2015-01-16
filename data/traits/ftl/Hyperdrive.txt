@@ -1,0 +1,13 @@
+Trait: Hyperdrive
+	Name: #TRAIT_HYPERDRIVE
+	Description: #TRAIT_HYPERDRIVE_DESC
+	Category: FTL
+
+	Icon: HexagonSubsystems::10
+
+	Default: True
+	Unique: FTL
+
+	UnlockTag(HD)
+	UnlockSubsystem(Hyperdrive)
+	LoadDesigns(hyperdrive)
