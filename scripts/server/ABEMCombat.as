@@ -118,15 +118,13 @@ DamageEventStatus ReduceDamagePercentile(DamageEvent& evt, const vec2u& position
 	return DE_Continue;
 }
 
-void ReactorOverload(Object& obj, double PowerAmountMult, double PowerRadiusMult, double PowerHitsMult, double BaseAmount, double BaseRadius, double BaseHits) {
+void ReactorOverload(Object& obj, double PowerAmountMult, double PowerRadiusMult, double BaseAmount, double BaseRadius) {
 	Ship@ ship = cast<Ship>(obj);
 	if(ship !is null) {
 		double power = ship.blueprint.getEfficiencySum(SV_Power);
-		debug();
 		double amount = BaseAmount + sqrt(power * PowerAmountMult);
 		double radius = BaseRadius + sqrt(power * PowerRadiusMult);
-		double hits = BaseHits + sqrt(power * PowerHitsMult);
-		ObjectAreaExplDamage(obj, amount, radius, hits);
+		ObjectAreaExplDamage(obj, amount, radius, 4);
 		obj.destroy();
 	}
 }
