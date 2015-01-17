@@ -9,6 +9,8 @@ Subsystem: SupportReactiveArmor
 	Tags: NoWall, Category:Armor
 	Hull: Support
 
+	Tags: FauxExterior
+	Ship.ExternalHexes := Ship.ExternalHexes + ExteriorHexes
 	Size := HexSize * Hexes
 
 	Hex.Resistance := 0.5

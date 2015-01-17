@@ -6,6 +6,11 @@ Subsystem: AblativeArmor
 
 	Tags: Category:Armor
 	Tags: NoCore, NonContiguous, DefaultUnlock, Defense, IsArmor, ResistArmor
+	
+	Tags: FauxExterior
+	Ship.ExternalHexes := Ship.ExternalHexes + ExteriorHexes
+	
+	
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes

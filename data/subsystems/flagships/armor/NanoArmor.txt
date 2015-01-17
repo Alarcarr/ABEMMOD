@@ -7,7 +7,10 @@ Subsystem: NanoArmor
 	Tags: LowMaint, Category:Armor
 	Tags: NoCore, NonContiguous, Defense, IsArmor, TankArmor
 	Hull: Flagship, Station
-
+	
+	Tags: FauxExterior
+	Ship.ExternalHexes := Ship.ExternalHexes + ExteriorHexes
+	
 	Size := HexSize * Hexes
 
 	Hex.Resistance := 1

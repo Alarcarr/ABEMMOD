@@ -9,7 +9,9 @@ Subsystem: CompositeArmor
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes
-
+	Tags: FauxExterior
+	Ship.ExternalHexes := Ship.ExternalHexes + ExteriorHexes
+	
 	// 0.1 = 10%
 	ProjResist := 0.15
 	EnergyResist := 0.15

@@ -8,6 +8,9 @@ Subsystem: ReactiveArmor
 	Tags: NoCore, NonContiguous, DefaultUnlock, Defense, IsArmor, BlockArmor
 	Hull: Flagship, Station
 
+	Tags: FauxExterior
+	Ship.ExternalHexes := Ship.ExternalHexes + ExteriorHexes
+	
 	Size := HexSize * Hexes
 	ImpactLevel := ShipSize
 	MinPct := 1/6
