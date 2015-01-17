@@ -5,7 +5,6 @@ Artifact: Arcology
 	Natural: True
 
 	Ability: DevelopPlanet
-	Strategic Icon: ResourceIcon::8
 	Time Frequency: 0.1
 
 Artifact: NatureDevice

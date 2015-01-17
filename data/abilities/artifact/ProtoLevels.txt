@@ -27,3 +27,10 @@ Ability: ProtoLevel2
 
 	GiveAchievement(ACH_USE_ARTIFACT)
 	SpawnPlanet(RandomLevel:2)
+Ability: ProtoLevel3
+	Name: Form Planet (Tier 3)
+	Description: Manipulate the planet's formation by expending a large amount of energy. The planet will produce a random tier 3resource.
+	Icon: ResourceClassIcons::2
+	Energy Cost: 2000
+	SpawnPlanet(RandomLevel:3)
+	GiveAchievement(ACH_USE_ARTIFACT)
