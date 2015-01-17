@@ -1,3 +1,4 @@
+TRASHCAN: Trash.
 STATUS_POWER_CELL_DESC: <<
 	Upgraded in an ancient shipyard.
 
@@ -7,7 +8,7 @@ STATUS_POWER_CELL: Ancient Retrofit
 STATUS_GDF_DESC: <<
 	Overloading its primary reactor.
 
-	Will gain up to 65% effectiveness before exploding, dealing 5*Power damage to up to 4+(Power/100) enemies in a 2*Power radius.
+	Will gain up to 65% effectiveness before exploding, dealing (5*Power)^(1/2) damage to all enemies in a (2*Power)^(1/2) radius.
 >>
 STATUS_LW_DESC: <<
 	Rallied by a nearby Admiral.
@@ -23,4 +24,9 @@ STATUS_MEL_DESC: <<
 	Has had its energy signature masked by an Admiral's flagship.
 
 	Apparent fleet DPS reduced by 100 for 5 minutes, reducing strength. (Does not actually weaken the fleet.) Must be reapplied after expiration.
+>>
+STATUS_ABEMINFILTRATED_DESC: <<
+	Is the victim of a covert insertion by a saboteur. While the saboteur's presence is known to the vessel's crew - or planetary defense coordinators - they lack the equipment and training required to capture him.
+
+	Fleet effectiveness reduced by 10% (also applies to planetary defense fleets). The saboteur frequently transmits data to his superiors, granting vision of the star system.
 >>
