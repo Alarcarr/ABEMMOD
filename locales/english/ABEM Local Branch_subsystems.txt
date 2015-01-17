@@ -91,18 +91,15 @@ S_ROBOTICSHIPYARD_DESC: <<
 	[img=Minus]Requires power and a high amount of Control.[/img]
 >>
 S_SPYMODULE_DESC: <<
-	A covert transporter system capable of sending infiltrators to enemy ships and planets. Grants the Infiltrate ability.
+	A covert transporter system capable of sending infiltrators to enemy ships and planets. Grants the Transport Saboteur and Counterintelligence abilities.
 
-	[i][bbloc=#ABL_INFILTRATE_DESC/][/i]
+	[img=Plus]The only subsystem capable of countering "Infiltrate" cards or enemy Saboteurs.[/img]
 >>
 SYS_ADMIRALBAY_DESC: <<
 	A command center of sufficient quality to coordinate multiple fleets. Ships with this sort of equipment are always commanded by an Admiral.
 
 	[img=Plus]Grants the "Go Down Fighting", "Rally Cry" and "Mask Energy Levels" abilities.[/img]
 	[img=Minus]Gives less Control than a regular bridge and crew.[/img]
-	[img=MenuIcons:3;20]Go Down Fighting: [i][bbloc=#ABL_GDF_DESC/][/i][/img]
-	[img=MenuIcons:3;20]Rally Cry: [i][bbloc=#ABL_LW_DESC/][/i][/img]
-	[img=MenuIcons:3;20]Mask Energy Levels: [i][bbloc=#ABL_MEL_DESC/][/i][/img]
 >>
 	SHIELDGEN_DESC: <<
 	Creates a shield around the vessel, blocking some incoming damage.
