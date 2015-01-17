@@ -1,4 +1,4 @@
-﻿STUFF: BLARGH
+STUFF: BLARGH
 ABL_OVERCHARGE_FLEET_DESC: <<
 	Increase the targeted fleet's effectiveness by 40%.
 
@@ -42,14 +42,14 @@ ABL_REVENANT_ENGINE_DESC: <<
 	[b]Having all 4 parts of The Revenant activated at the same time will grant you control over the most powerful warship in the universe.[/b]
 >>
 ABL_INFILTRATE_DESC: <<
-	Uses a high amount of energy to teleport a well-trained operative onto an enemy flagship.
+	Uses a high amount of energy to teleport a well-trained saboteur onto a flagship or orbital, or into a planetary defense center to disrupt its operations and transmit its sensor data back to the empire. Can be used in tandem with the "Infiltrate" influence card.
 
-	Training the operative costs §200k.
+	Training the saboteur and preparing his personal cloaking device costs §200k.
 >>
 ABL_GDF_DESC: <<
 	Orders a flagship to overcharge its primary reactors. Boosts the damage output of the fleet, but the flagship is destroyed in a catastrophic overload.
 
-	Effectiveness boost starts at 10%, increasing by 5% every 5 seconds until the ship explodes 60 seconds after activation. Explosion deals damage equivalent to 5 times the output of the target ship's power generators (Power) to up to 4 (plus 1 for every 100 Power) targets within a radius of 2*Power units. Cannot be used on a fleet that is under the effects of - or recovering from - Rally Cry.
+	Effectiveness boost starts at 10%, increasing by 5% every 5 seconds until the ship explodes 60 seconds after activation. Explosion deals damage equivalent to the square root of 5*Power to all targets within a radius of the square root of 2*Power units. Cannot be used on a fleet that is under the effects of - or recovering from - Rally Cry.
 >>
 ABL_LW_DESC: <<
 	Orders a fleet to redouble its efforts to defeat an enemy. The additional effort is a significant strain on the fleet's personnel and equipment, however, and they will need to recuperate before they can fight again.
@@ -60,4 +60,29 @@ ABL_MEL_DESC: <<
 	Uses special technology on the Admiral's flagship to mask the energy levels of a fleet, making them appear less powerful to an enemy's sensors. The deception must be maintained, though; every 5 minutes, the effect must be applied again.
 
 	Reduces fleet's apparent DPS by 100. Consumes 200 energy. Cannot stack.
+>>
+ABL_COUNTERINTEL_DESC: <<
+	Uses a moderate amount of energy to disrupt the cloaking devices of saboteurs on a friendly flagship, orbital or planet and capture them. Also takes advantage of the empire's intelligence database to uncover and capture infiltrators from other empires aboard flagships.
+
+	The operation costs §250k to perform.
+>>
+ABL_TURRET_LASER_DESC: <<
+	Installs a laser turret onto a target flagship or orbital. The bulk of the turret's power generator prohibits the use of additional laser turrets on the object.
+
+	Shares a cooldown with other turret construction.
+>>
+ABL_TURRET_RAIL_DESC: <<
+	Installs a pair of railgun turrets onto a target flagship or orbital. The bulk of the turrets' ammo fabricators, reloading mechanisms and induction coils prohibits the use of additional railgun turrets on the object.
+
+	Shares a cooldown with other turret construction.
+>>
+ABL_TURRET_MISSILE_DESC: <<
+	Installs a dual missile turret onto a target flagship or orbital. The bulk of the turret's ammo fabricator prohibits the use of additional missile turrets on the object.
+
+	Shares a cooldown with other turret construction.
+>>
+ABL_BUILD_OUTPOST_DESC: <<
+	Uses a moderate amount of energy to immediately fabricate an outpost at a target location.
+
+	Preparing the components required for the project costs §300k.
 >>

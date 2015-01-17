@@ -1,7 +1,0 @@
-PLATEARMOR_DESC: <<
-	Heavy, interlocked plates of metal that protect the ship from damage.
-
-	[img=Plus]High [b][color=#80ff80]health[/color][/b].[/img]
-	[img=Plus]Resists and reduces incoming damage.[/img]
-	[img=Minus]Heavy.[/img]
->>

@@ -12,7 +12,6 @@ Effector: Flak
 	Value: Pierce = 0.5
 	Value: SupplyCost = 0
 	Value: Radius
-	Value: Hits
 
 	Range: Range
 	Speed: Speed
@@ -45,7 +44,7 @@ Effector: Flak
 
 		Amount = Damage
 		Radius = Radius
-		Hits = Hits
+		Hits = 4
 	Skin: Skin1
 		ImpactGfx: ImpactFlareRailRed
 		TrailCol: ff8888ff, 00000000

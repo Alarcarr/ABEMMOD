@@ -26,7 +26,6 @@ Subsystem: FlakCannon
 	Description: #S_FLAK_DESC
 
 	FireArc := pi
-	Hits := round(Size/10) + 2
 	Radius := 1.0 + (log(Size) / log(2) * 4.0)
 	Requires:
 		Command = 1
@@ -61,4 +60,3 @@ Subsystem: FlakCannon
 		SupplyCost = SupplyCost * Reload
 		CapOnTarget = 24
 		Radius = Radius
-		Hits = Hits

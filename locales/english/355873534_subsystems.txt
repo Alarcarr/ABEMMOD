@@ -11,6 +11,16 @@ BEAM_AMPLIFIER_DESC: <<
 
 	[i][color=#aaa]Placing more than one beam amplifier on a weapon will continue to increase its range and burst damage, but will also skyrocket its labor costs.[/color][/i]
 >>
+EXTRA_GUN_DESC: <<
+	Sophisticated ammo feeds, power conduits, capacitors and emitters allow for two turrets' worth of weapons to be mounted on a single turret. While this conserves space and building materials, it is more difficult to assemble and maintain. In effect, beam turrets receive improved emitters which double the amount of energy they can channel, while other weapons receive a second barrel/launcher which is discharged halfway through the reloading process of the first one to maintain a consistent rate of fire.
+
+	[img=Plus;22;#cf00ff]Can be placed on weapon subsystems.[/img]
+	[img=Plus]Halves the reload time of non-beam weapons and doubles the damage of beam weapons, effectively doubling the weapon's damage per second.[/img]
+	[img=Plus]Construction cost is slightly lower than the price of building two separate weapon subsystems of the same firepower. Does not require more power than two separate weapons.[/img]
+	[img=Plus][img=Minus]Does not count as an additional hex group in ship design, as opposed to two separate weapons - and does not increase hex health.[/img][/img]
+	[img=Minus]Somewhat increases labor cost and significantly increases maintenance cost compared to building two separate weapons.[/img]
+	[img=Minus]Only one module per subsystem.[/img]
+>>
 S_SHIELDED_AMGEN_DESC: <<
 	A sustained matter-antimatter annihilation reaction provides continuous power for the ship. This generator comes with a built-in shield generator to protect it, allowing it to operate at full output - though much of it is used by the shield - even in combat.
 
