@@ -9,6 +9,6 @@ Resource: Supercarbons
 	Level: 2
 	Affinity: Labor
 
-	Pressure: 9 Labor
+	Pressure: 15 Labor
 	Asteroid Frequency: 0.01
 	Asteroid Labor: 100
