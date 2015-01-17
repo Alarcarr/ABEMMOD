@@ -1,5 +1,6 @@
 Ability: BuyTurretL
 	Name: Install Laser Turret
+	Description: #ABL_TURRET_LASER_DESC
 	Target: Orbital = Object
 	Icon: LaserTurret
 	Cooldown: 120
@@ -7,6 +8,8 @@ Ability: BuyTurretL
 
 	AddStatusTo(Orbital, LaserTurret)
 	TargetFilterNotStatus(Orbital, LaserTurret)
+	ABEM_hooks::TargetFilterNotType(Orbital, Planet)
+	ABEM_hooks::TargetRequireCommand(Orbital)
 
 
 	ShowMoneyValue(300)
@@ -17,6 +20,7 @@ Ability: BuyTurretL
 	ShareCooldown(BuyTurretM)
 Ability: BuyTurretR
 	Name: Install Railgun Turret
+	Description: #ABL_TURRET_RAIL_DESC
 	Icon: RailTurret
 	Target: Orbital = Object
 
@@ -25,6 +29,8 @@ Ability: BuyTurretR
 
 	AddStatusTo(Orbital, RailgunTurret)
 	TargetFilterNotStatus(Orbital, RailgunTurret)
+	ABEM_hooks::TargetFilterNotType(Orbital, Planet)
+	ABEM_hooks::TargetRequireCommand(Orbital)
 
 
 
@@ -37,6 +43,7 @@ Ability: BuyTurretR
 	TargetFilterAllied(Orbital)
 Ability: BuyTurretM
 	Name: Install Missile Turret
+	Description: #ABL_TURRET_MISSILE_DESC
 	Target: Orbital = Object
 	Icon: MissileTurret
 	Cooldown: 120
@@ -44,6 +51,8 @@ Ability: BuyTurretM
 
 	AddStatusTo(Orbital, MissileTurret)
 	TargetFilterNotStatus(Orbital, MissileTurret)
+	ABEM_hooks::TargetFilterNotType(Orbital, Planet)
+	ABEM_hooks::TargetRequireCommand(Orbital)
 
 	TargetFilterAllied(Orbital)
 	ShareCooldown(BuyTurretL)
@@ -58,11 +67,11 @@ Ability: SpawnOrbital
 	Target: Place = Point
 	Cooldown: 120
 	Energy Cost: 250
-	Name: Place  an  Outpost
+	Name: Construct Outpost
+	Description: #ABL_BUILD_OUTPOST_DESC
 	Range: 100
 	Icon: OrbitalIcons::0
-	TargetFilterInSystem(Place)
 	
 	ShowMoneyValue(300)
 	ConsumeMoney(300)
-	SpawnOrbital(TradeOutpost)
+	SpawnOrbitalAt(Place, TradeOutpost)
