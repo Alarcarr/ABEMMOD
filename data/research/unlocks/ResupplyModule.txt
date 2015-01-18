@@ -1,0 +1,7 @@
+Technology: ResupplyMod
+	Name: Resupply Module
+	Point Cost: 250
+	Time Cost: 60
+	Icon: GuiOrbitalIcons::7
+	Description: Unlocks the resupply module for Stations
+	UnlockSubsystem(ResupplyModule)

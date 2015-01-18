@@ -9,7 +9,10 @@ Subsystem: PlateArmor
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes
-
+	
+	Tags: FauxExterior
+	Ship.ExternalHexes := Ship.ExternalHexes + ExteriorHexes
+	
 	Hex.Resistance := 0.5
 	Hex.HP := 60 * HexSize
 	Hex.Mass := 3.5* HexSize

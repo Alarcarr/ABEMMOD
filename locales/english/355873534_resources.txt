@@ -9,7 +9,7 @@ RESOURCE_INTEL_DESC: <<
 	Cannot be exported.
 >>
 RESOURCE_RESEARCH_DESC: <<
-	A massive ancient research facility. Converts Labor and energy into Research. Civilian research on the planet is increased by 20%.
+	A massive ancient research facility. Converts Labor and Energy into Research. Civilian research on the planet is increased by 20%.
 
 	Cannot be exported.
 >>

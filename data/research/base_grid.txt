@@ -153,8 +153,6 @@ Grid: Base
 	ImpFlagDamage: 7,4
 	ImpAllRange2: 9,-1
 	ImpProjSpeed: 9,1
-	ImpPlanetSupport: -2,-6
-	ImpPlanetSupport: -2,-7
 	ImpFireRate: 10,-1
 	ImpAllHealth2: 10,1
 	ImpAllRange: 5,-4
@@ -193,8 +191,6 @@ Grid: Base
 	ImpShieldAll: 10,7
 	c1: -1,-11
 	Further Development: -1,-12
-	OrbitalEnhancement: -3,-5
-	ImpPlanetSupport2: -3,-7
 	c3: 15,4
 	HeavyRailgun: 15,5
 	SuperLaser: 15,3
@@ -219,3 +215,11 @@ Grid: Base
 	ImpAllRange: 12,0
 	AdmiralCrew: 13,0
 	SysGravitonCondenser: 17,5
+	c2: -3,-5
+	OrbitalEnhancement: -2,-6
+	ImpPlanetSupport: -2,-7
+	ResupplyMod: -3,-7
+	OrbitalEnhancement: -2,-8
+	ImpPlanetSupport2: -3,-8
+	ImpPlanetSupport2: -3,-9
+	OrbitalEnhancement: -4,-9

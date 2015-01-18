@@ -12,7 +12,7 @@ Subsystem: BussardRamjet
 	Elevation: 0
 
 	Tags: BaseCost,Category:Propulsion, NoBackWall
-	Tags: ExteriorCore, DefaultUnlock, Engine, GivesThrust, HasInternals
+	Tags: ExteriorCore, DefaultUnlock, Engine, HasInternals
 	Hull: Flagship
 
 	OnCheckErrors: designs::checkCoreFacingBackwards

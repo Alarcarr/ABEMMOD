@@ -9,6 +9,9 @@ Subsystem: RemnantArmor
 
 	Size := HexSize * Hexes
 
+	Tags: FauxExterior
+	Ship.ExternalHexes := Ship.ExternalHexes + ExteriorHexes
+	
 	Hex.Resistance := 1
 	Hex.HP := 200 * HexSize
 	Hex.Mass := 2 * HexSize

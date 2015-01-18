@@ -2,15 +2,16 @@ Resource: Technofarm
 	Name: Technofarm
 	Small Icon: ResourceIconsSmall::72
 	Icon: ResourceIconsSmall::72
-	Native Biome: Oceanic
+	Native Biome: Forest
 	Level: 2
-	Pressure: 2 Money
-	Pressure: 2 Research
+	Pressure: 3 Money
+	Pressure: 3 Research
 	Description: #TECHNOFARM_DESC
 	Exportable: False
 	Artificial: True
 	Affinity: Money
 	Affinity: Research
 	Distribution: 0.5
+	AddDummyResource(Soylent1)
 	PeriodicInfluenceCard(Cultivation, Timer = 360)
 	ModPopulationGrowth(0.5)
