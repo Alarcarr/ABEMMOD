@@ -21,7 +21,7 @@ Subsystem: MatterDisruptor
 	Tracking := 0.4
 	FireArc := 1.5
 	SupplyCost := Size * 1.5
-	PowerRequirement := 2.5 * Size
+	PowerUse := 2.5 * Size
 	SizeMultiplier := 1 // Basically, the difference in scale multiplies the damage. No extra factors.
 	AmountPerSize := 0 // This is a tricky one. If the enemy is double size, you deal this amount multiplied by 2. Really not sure what I was thinking.
 	MinRatio := 0.5 // Basically, the scaling cuts off at 50% of our ship's size. Could have set it to 1, which meant that damage only GREW with relative size, but couldn't be decreased.
@@ -35,7 +35,7 @@ Subsystem: MatterDisruptor
 	
 	Requires:
 		Command = 1
-		Power = PowerRequirement
+		Power = PowerUse
 	
 	Module: Default
 
