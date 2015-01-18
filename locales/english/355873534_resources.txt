@@ -40,3 +40,4 @@ PARADISE_DESC: <<
 
 	-50% to civilian Labor, Research, Defense or Energy generation on this planet. Cannot be exported.
 >>
+ALUMINUM_DESC: Increases pressure capacity by 6.
