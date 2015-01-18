@@ -211,7 +211,7 @@ void IncreasingEnergyDamage(Event& evt, double Amount, double Status, double Sta
 	if(evt.target.hasStatuses && type !is null) {
 		// If it already has the status, find the status and check its stack count to apply some math.
 		uint stacks = 0;
-		stacks = getStatusStackCount(type.id, evt.obj);
+		stacks = getStatusStackCount(type.id, evt.obj, dummyEmp);
 		dmg.damage = dmg.damage + (dmg.damage * stacks * StatusMultiplier) + (stacks * StatusAmount * double(evt.efficiency) * double(evt.partiality));
 		print("Stacks: "+stacks);
 		for(i = 0; i < Increment; ++i) {
@@ -245,7 +245,7 @@ void DamageFromRelativeSize(Event& evt, double Amount, double SizeMultiplier, do
 		if(evt.target.isShip)
 			theirScale = cast<Ship>(evt.target).blueprint.design.size;
 
-		double ratio = theirScale / myScale // Just to wrap my mind around it: If they're size 200, and we're size 100, then this will yield a ratio of 2, which is 200%. Good.
+		double ratio = theirScale / myScale; // Just to wrap my mind around it: If they're size 200, and we're size 100, then this will yield a ratio of 2, which is 200%. Good.
 		dmg.damage *= clamp(ratio, MinRatio, MaxRatio) * SizeMultiplier;
 		dmg.damage += AmountPerSize * clamp(ratio, minRatio, MaxRatio) * double(evt.efficiency) * double(evt.partiality);
 		print("Size ratio: "+ratio);
