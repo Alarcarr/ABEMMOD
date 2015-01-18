@@ -23,8 +23,8 @@ Subsystem: SupportLaser
 	Hex.Resistance := 0.2
 	Hex.Mass := HexSize
 
-	Hex.BuildCost := 2 * HexSize
-	Hex.LaborCost := 0.14 * HexSize
+	Hex.BuildCost :=1 * HexSize
+	Hex.LaborCost := 0.07 * HexSize
 
 	Requires:
 		Command = 1
