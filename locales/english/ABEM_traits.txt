@@ -1,1 +1,0 @@
-TRAIT_VIRILE_DESC: The population on your homeworld grows 30% faster.

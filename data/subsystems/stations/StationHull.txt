@@ -21,4 +21,3 @@ Subsystem: StationHull
 	AddShipModifier: FireArcFactor(2.0)
 	AddShipModifier: TrackingFactor(2.0)
 	AddShipModifier: DamageFactor(1.2)
-	OnCheckErrors: designs::checkGlobalDesign
