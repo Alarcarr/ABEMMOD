@@ -1,0 +1,9 @@
+Effect: VoidRay
+	Value: Amount
+	Value: Status
+	Value: StatusMultiplier
+	Value: StatusAmount
+	Value: StatusIncrement
+	Value: Duration = 10
+
+	End: ABEMCombat::IncreasingEnergyDamage
