@@ -19,7 +19,7 @@ Subsystem: VoidRay
 	Tracking := 0.5
 	SupplyCost := Size * 0.75
 	FireArc := 0.25 * pi
-	PowerRequirement := 5 * Size
+	PowerUse := 5 * Size
 	Multiplier := 0.025
 	Amount := 0
 	StatusIncrement := 1
@@ -35,7 +35,7 @@ Subsystem: VoidRay
 	
 	Requires:
 		Command = 1
-		Power = PowerRequirement
+		Power = PowerUse
 
 	Module: Default
 
