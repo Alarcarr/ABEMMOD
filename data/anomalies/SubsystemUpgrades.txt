@@ -1,0 +1,25 @@
+Anomaly: SubsystemsUpgrade
+	Name: Subsystems Upgrade
+	Frequency: 0
+	Description: Reward for Remnant camp need to be scanned .
+	Option: Weapons
+		Icon: FusionTorpedo
+		Description: Improve Weapons Damage by 10%
+		AddModifier(tag/Weapon::DamageFactor(1.10))
+	Option: Supply
+		Icon: SupplyStorage
+		Description: Improve Supply Capactity by 20%
+		AddModifier(SupplyCapacityFactor(1.2))
+	Option: Engines
+		Icon: techRocket
+		Description: Improve Engine Thrust by 10%
+		AddModifier(ThrustFactor(1.1))
+	Option: Armor
+		Description: Improve Armor Hp by 15%
+		Icon: PlateArmor
+		AddModifier(tag/IsArmor::HpFactor(1.15))
+	State: SubsystemUpg
+		Choice: Armor
+		Choice: Engines
+		Choice: Supply
+		Choice: Weapons
