@@ -2,9 +2,11 @@ Subsystem: StationHull
 	Tags: DefaultUnlock, NoCore, HullSystem
 	Hull: Station
 	EvaluationOrder: -100
-
-	Repair := HexSize * 12
-
+	HexLimit := 160
+	Repair := (ShipSize / HexLimit) * 8
+	
+	Assert: ShipTotalHexes - Ship.ExternalHexes < HexLimit
+ 		Message: #ERROR_HEX_COUNT
 	Assert: Ship.Command > 0
 		Message: #ERROR_NEED_CONTROL
 
@@ -21,4 +23,3 @@ Subsystem: StationHull
 	AddShipModifier: FireArcFactor(2.0)
 	AddShipModifier: TrackingFactor(2.0)
 	AddShipModifier: DamageFactor(1.2)
-	OnCheckErrors: designs::checkGlobalDesign

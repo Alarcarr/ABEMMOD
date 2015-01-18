@@ -5,7 +5,7 @@ Subsystem: SupportPlateArmor
 	Picture: SubsystemButtonArt::0
 	Elevation: 1
 
-	Tags: NoCore, NonContiguous, DefaultUnlock, Defense, IsArmor, TankArmor
+	Tags: NoCore, NonContiguous, DefaultUnlock, Defense, IsArmor, TankArmor, FauxExterior
 	Tags: NoWall, Category:Armor
 	Hull: Support
 	
@@ -19,8 +19,8 @@ Subsystem: SupportPlateArmor
 	Hex.HP := 80* HexSize
 	Hex.Mass := 2.5 * HexSize
 
-	Hex.BuildCost := 1.5 * HexSize
-	Hex.LaborCost := 0.14 * HexSize
+	Hex.BuildCost := 0.75 * HexSize
+	Hex.LaborCost := 0.07 * HexSize
 
 	DamageResist := ShipSize / 19.0
 	Effect: DamageResist
