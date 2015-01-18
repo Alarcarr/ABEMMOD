@@ -1,0 +1,13 @@
+Template: tag/Weapon, !tag/SupportHull
+	Module: ExtraGun
+		Name: Dual Mount
+		Description: #EXTRA_GUN_DESC
+
+		Sprite: techTanks
+
+		AddModifier: BuildCostFactor(1.7)
+		AddModifier: LaborCostFactor(2.2)
+		AddModifier: optional MaintCostFactor(2.5)
+		AddModifier: tag/BeamBase::DamageFactor(2)
+		AddModifier: optional ReloadFactor(0.5)
+		AddModifier: optional PowerUseFactor(2)
