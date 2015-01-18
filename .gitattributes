@@ -1,5 +1,8 @@
-# Auto detect text files and perform LF normalization
+# Automatically set files to CRLF.
 * text eol=crlf
+
+# Make sure binary files aren't tampered with.
+*.png binary
 
 # Custom for Visual Studio
 *.cs     diff=csharp
