@@ -26,10 +26,11 @@ Subsystem: HeavyRailgunBattery
 	Hex.HP := 18 * HexSize
 	Hex.Resistance := 0.2
 	Hex.Mass := HexSize*1.2
+	PowerRequirement := 2.5 * Size
 
 	Requires:
 		Command = 1
-		Power = 2.5 * Size
+		Power = PowerRequirement
 
 	Module: Default
 
