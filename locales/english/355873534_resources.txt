@@ -16,7 +16,7 @@ RESOURCE_RESEARCH_DESC: <<
 RESOURCE_GATEWORLD_DESC: <<
 	A sort of core world for the galaxy, this planet's surface is littered with all sorts of ancient technology; indeed, considering its advanced defensive fleet, this world may have been home to the ancient race that built the automated warships known as the 'Remnants'.
 
-	Ancient technology increases the planet's pressure capacity by 10. A unique wormhole generator on the planet's surface allows the planet to tie into the empire's gate network, and an incredibly advanced planetary fling beacon allows the planet to send fleets out anywhere into the galaxy at incredible speeds. An advanced defense coordination computer allows the planet to support much greater defense fleets than most, with an additional 2048 units of support.
+	Ancient technology increases the planet's pressure capacity by 10. A unique wormhole generator on the planet's surface allows the planet to tie into the empire's gate network, and an incredibly advanced planetary fling beacon allows the planet to send fleets out anywhere into the galaxy at incredible speeds. An advanced defense coordination computer allows the planet to support much greater defense fleets than most, with an additional 2048 units of support, and a powerful graviton engine built inside the planet's mantle demonstrates the original inhabitants' technological prowess, managing not only to survive in such an extreme environment for eons, but also provide thrust equivalent to a Planetary Engine!
 
 	Due to the heavily contested nature of the planet, the largely science-minded population's loyalty suffers a drastic -10 decrease, as they seek to protect themselves from invaders while studying its vast technological treasures. The presence of the ancient ruins makes it difficult to find free space to settle, reducing its population capacity by 3.
 >>
@@ -40,3 +40,4 @@ PARADISE_DESC: <<
 
 	-50% to civilian Labor, Research, Defense or Energy generation on this planet. Cannot be exported.
 >>
+ALUMINUM_DESC: Increases pressure capacity by 6.

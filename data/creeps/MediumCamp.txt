@@ -7,13 +7,13 @@ Camp: MediumCamp
 	Ship: 4-17x Beamship
 	Ship: 0-10x Heavy Gunship
 	Pickup: SubsystemsUpgrade
-		Name: Subsystems Upgrades
-		Description: Choose bettwen engines , supply , weapons and armor.
+		Name: Equipment Stash
+		Description: A Remnant equipment stash you can improve your technology with.
 		SpawnAnomaly(Type = SubsystemsUpgrade, Start Scanned = True)
 	Pickup: SolarOrbital
 		Name: Solar Engine
-		Description: Give a Solar Engine Orbital.
-		Verb:
+		Description: A dormant Remnant Solar Engine. Will generate energy when reactivated, and does not require maintenance.
+		Verb: Reactivate
 		SpawnOrbital(SolarOrbital, Free = True)
 
 	Pickup: AncientKnowledge
