@@ -182,15 +182,15 @@ void ObjectAreaExplDamage(Object& obj, double Amount, double Radius, double Hits
 		vec2d dir = vec2d(off.x, off.z).normalized();
 
 		for(uint n = 0; n < hits; ++n) {
-			dmg.partiality = 0.5 / double(hits);
-			dmg.damage = deal * double(0.5) * double(dmg.partiality);
+			dmg.partiality = 1 / double(hits);
+			dmg.damage = deal * double(1) * double(dmg.partiality);
 
 			target.damage(dmg, -1.0, dir);
 		}
 	}
 }
 
-void IncreasingEnergyDamage(Event& evt, double Amount, double Status, double StatusMultiplier, double StatusAmount, double StatusIncrement, double Duration) {
+void IncreasingDamage(Event& evt, double Amount, double Status, double StatusMultiplier, double StatusAmount, double StatusIncrement, double DamageType) {
 	DamageEvent dmg;
 	int i;
 	int StatusInt = int(Status);
@@ -205,11 +205,12 @@ void IncreasingEnergyDamage(Event& evt, double Amount, double Status, double Sta
 	dmg.damage = Amount * double(evt.efficiency) * double(evt.partiality);
 	dmg.partiality = evt.partiality;
 	dmg.impact = evt.impact;
+	int dmgType = getDamageType(DamageType);
 
 	@dmg.obj = evt.obj;
 	@dmg.target = evt.target;
 	dmg.source_index = evt.source_index;
-	dmg.flags |= DT_Energy | ReachedInternals;
+	dmg.flags |= dmgType | ReachedInternals;
 
 	// If there was an invalid Status, then we need to detect it before we try to do anything else.
 	if(evt.target.hasStatuses && type !is null) {
@@ -219,11 +220,9 @@ void IncreasingEnergyDamage(Event& evt, double Amount, double Status, double Sta
 		dmg.damage += (dmg.damage * stacks * StatusMultiplier) + (stacks * StatusAmount * double(evt.efficiency) * double(evt.partiality));
 		print("Stacks: "+stacks);
 		for(i = 0; i < IncrementCount; ++i) {
-			evt.target.addStatus(Duration, type.id, dummyEmp, dummyReg, dummyEmp, evt.obj);
+			evt.target.addStatus(-1, type.id, dummyEmp, dummyReg, dummyEmp, evt.obj);
 		}
 	}
-	print("Damage: "+(Amount * double(evt.efficiency) * double(evt.partiality)));
-	print("Final Damage: "+dmg.damage);
 	evt.target.damage(dmg, -1.0, evt.direction);
 }
 					
