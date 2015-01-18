@@ -18,6 +18,7 @@ Subsystem: FlakCannon
 	Tracking := 0.6
 	Pierce := 0.3
 	SupplyCost := Size * 1.5
+	PowerRequirement = 2.5 * Size
 
 	Hex.HP := 18 * HexSize
 	Hex.Resistance := 0.2
@@ -29,7 +30,7 @@ Subsystem: FlakCannon
 	Radius := 1.0 + (log(Size) / log(2) * 4.0)
 	Requires:
 		Command = 1
-		Power = 2.5 * Size
+		Power = PowerRequirement
 
 	Module: Default
 		Color: #59ff61
