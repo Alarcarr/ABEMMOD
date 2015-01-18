@@ -216,11 +216,11 @@ void IncreasingDamage(Event& evt, double Amount, double Status, double StatusMul
 	if(evt.target.hasStatuses && type !is null) {
 		// If it already has the status, find the status and check its stack count to apply some math.
 		uint stacks = 0;
-		stacks = evt.target.getStatusStackCount(type.id, evt.obj, dummyEmp);
+		stacks = evt.target.getStatusStackCount(type.id, evt.obj, evt.obj.owner);
 		dmg.damage += (dmg.damage * stacks * StatusMultiplier) + (stacks * StatusAmount * double(evt.efficiency) * double(evt.partiality));
 		print("Stacks: "+stacks);
 		for(i = 0; i < IncrementCount; ++i) {
-			evt.target.addStatus(-1, type.id, dummyEmp, dummyReg, dummyEmp, evt.obj);
+			evt.target.addStatus(-1, type.id, dummyEmp, dummyReg, evt.obj.owner, evt.obj);
 		}
 	}
 	evt.target.damage(dmg, -1.0, evt.direction);
