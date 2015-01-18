@@ -23,10 +23,11 @@ Subsystem: VoidRay
 	Multiplier := 0.025
 	Amount := 0
 	StatusIncrement := 1
-	StatusDuration := 10.0
 
 	// This number is NOT selected at random. Look into scripts/definitions/ABEM_data.as before changing it.
 	Status := 1
+	// This number is also random. Look into the getDamageType() function in scripts/server/ABEMCombat.as before changing.
+	DamageType := 2
 	
 	Hex.HP := 12 * HexSize
 	Hex.Resistance := 0.2
@@ -60,6 +61,6 @@ Subsystem: VoidRay
 		StatusAmount = Amount
 		Status = Status
 		StatusIncrement = StatusIncrement
-		StatusDuration = StatusDuration
+		DamageType = DamageType
 		SupplyCost = SupplyCost * Duration
 		FireArc = FireArc
