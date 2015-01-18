@@ -1,4 +1,4 @@
 BLD_HOUSING_DESC: <<
-	Add 2 Maximimun population.
-	Replace up to 6 citys
+	Add 2 Maximum population.
+	Replaces up to 6 cities.
 >>
