@@ -194,7 +194,11 @@ void IncreasingEnergyDamage(Event& evt, double Amount, double Status, double Sta
 	DamageEvent dmg;
 	int i;
 	int StatusInt = int(Status);
-	int Increment = int(StatusIncrement);
+	double Increment = StatusIncrement * double(evt.partiality) * double(evt.efficiency);
+	int IncrementCount = int(Increment);
+	Increment -= IncrementCount;
+	if(Increment > 0.00001 && randomd() < Increment)
+		IncrementCount += 1; 
 	Empire@ dummyEmp = null;
 	Region@ dummyReg = null;
 	const StatusType@ type = getABEMStatus(StatusInt);
@@ -211,13 +215,12 @@ void IncreasingEnergyDamage(Event& evt, double Amount, double Status, double Sta
 	if(evt.target.hasStatuses && type !is null) {
 		// If it already has the status, find the status and check its stack count to apply some math.
 		uint stacks = 0;
-		stacks = getStatusStackCount(type.id, evt.obj, dummyEmp);
-		dmg.damage = dmg.damage + (dmg.damage * stacks * StatusMultiplier) + (stacks * StatusAmount * double(evt.efficiency) * double(evt.partiality));
+		stacks = evt.target.getStatusStackCount(type.id, evt.obj, dummyEmp);
+		dmg.damage += (dmg.damage * stacks * StatusMultiplier) + (stacks * StatusAmount * double(evt.efficiency) * double(evt.partiality));
 		print("Stacks: "+stacks);
-		for(i = 0; i < Increment; ++i) {
+		for(i = 0; i < IncrementCount; ++i) {
 			evt.target.addStatus(Duration, type.id, dummyEmp, dummyReg, dummyEmp, evt.obj);
 		}
-		print("Increment: "+Increment);
 	}
 	print("Damage: "+(Amount * double(evt.efficiency) * double(evt.partiality)));
 	print("Final Damage: "+dmg.damage);
@@ -247,10 +250,7 @@ void DamageFromRelativeSize(Event& evt, double Amount, double SizeMultiplier, do
 
 		double ratio = theirScale / myScale; // Just to wrap my mind around it: If they're size 200, and we're size 100, then this will yield a ratio of 2, which is 200%. Good.
 		dmg.damage *= clamp(ratio, MinRatio, MaxRatio) * SizeMultiplier;
-		dmg.damage += AmountPerSize * clamp(ratio, minRatio, MaxRatio) * double(evt.efficiency) * double(evt.partiality);
-		print("Size ratio: "+ratio);
+		dmg.damage += AmountPerSize * clamp(ratio, MinRatio, MaxRatio) * double(evt.efficiency) * double(evt.partiality);
 	}
-	print("Damage: "+(Amount * double(evt.efficiency) * double(evt.partiality)));
-	print("Final Damage: "+dmg.damage);
 	evt.target.damage(dmg, -1.0, evt.direction);
 }
