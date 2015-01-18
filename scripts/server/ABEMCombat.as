@@ -1,5 +1,22 @@
 import statuses;
 import combat;
+import generic_effects;
+import components.Statuses;
+import ABEM_data;
+
+int getDamageType(double type) {
+	int iType = int(type);
+	switch(iType) {
+		case 1: 
+			return DT_Projectile;
+		case 2: 
+			return DT_Energy;
+		case 3:
+			return DT_Explosive;
+		default: return DT_Generic;
+	}
+	return DT_Generic;
+}
 
 DamageEventStatus ChannelDamage(DamageEvent& evt, const vec2u& position,
 	double ProjResist, double EnergyResist, double ExplResist, double MinPct, double RechargePercent)
@@ -171,4 +188,69 @@ void ObjectAreaExplDamage(Object& obj, double Amount, double Radius, double Hits
 			target.damage(dmg, -1.0, dir);
 		}
 	}
+}
+
+void IncreasingEnergyDamage(Event& evt, double Amount, double Status, double StatusMultiplier, double StatusAmount, double StatusIncrement, double Duration) {
+	DamageEvent dmg;
+	int i;
+	int StatusInt = int(Status);
+	int Increment = int(StatusIncrement);
+	Empire@ dummyEmp = null;
+	Region@ dummyReg = null;
+	const StatusType@ type = getABEMStatus(StatusInt);
+	dmg.damage = Amount * double(evt.efficiency) * double(evt.partiality);
+	dmg.partiality = evt.partiality;
+	dmg.impact = evt.impact;
+
+	@dmg.obj = evt.obj;
+	@dmg.target = evt.target;
+	dmg.source_index = evt.source_index;
+	dmg.flags |= DT_Energy | ReachedInternals;
+
+	// If there was an invalid Status, then we need to detect it before we try to do anything else.
+	if(evt.target.hasStatuses && type !is null) {
+		// If it already has the status, find the status and check its stack count to apply some math.
+		uint stacks = 0;
+		stacks = getStatusStackCount(type.id, evt.obj);
+		dmg.damage = dmg.damage + (dmg.damage * stacks * StatusMultiplier) + (stacks * StatusAmount * double(evt.efficiency) * double(evt.partiality));
+		print("Stacks: "+stacks);
+		for(i = 0; i < Increment; ++i) {
+			evt.target.addStatus(Duration, type.id, dummyEmp, dummyReg, dummyEmp, evt.obj);
+		}
+		print("Increment: "+Increment);
+	}
+	print("Damage: "+(Amount * double(evt.efficiency) * double(evt.partiality)));
+	print("Final Damage: "+dmg.damage);
+	evt.target.damage(dmg, -1.0, evt.direction);
+}
+					
+void DamageFromRelativeSize(Event& evt, double Amount, double SizeMultiplier, double AmountPerSize, double MinRatio, double MaxRatio, double DamageType) {
+	DamageEvent dmg;
+	dmg.damage = Amount * double(evt.efficiency) * double(evt.partiality);
+	dmg.partiality = evt.partiality;
+	dmg.impact = evt.impact;
+	int dmgType = getDamageType(DamageType);
+
+	@dmg.obj = evt.obj;
+	@dmg.target = evt.target;
+	dmg.source_index = evt.source_index;
+	dmg.flags |= dmgType | ReachedInternals;
+
+	if(evt.obj !is null) { // This particular bit of code is probably unneeded, but better safe than sorry.
+		// This whole section is just copy-pasted with renamed variables from RelativeSizeEnergyCost, the AbilityHook.
+		double myScale = sqr(evt.obj.radius);
+		if(evt.obj.isShip)
+			myScale = cast<Ship>(evt.obj).blueprint.design.size;
+		double theirScale = sqr(evt.target.radius);
+		if(evt.target.isShip)
+			theirScale = cast<Ship>(evt.target).blueprint.design.size;
+
+		double ratio = theirScale / myScale // Just to wrap my mind around it: If they're size 200, and we're size 100, then this will yield a ratio of 2, which is 200%. Good.
+		dmg.damage *= clamp(ratio, MinRatio, MaxRatio) * SizeMultiplier;
+		dmg.damage += AmountPerSize * clamp(ratio, minRatio, MaxRatio) * double(evt.efficiency) * double(evt.partiality);
+		print("Size ratio: "+ratio);
+	}
+	print("Damage: "+(Amount * double(evt.efficiency) * double(evt.partiality)));
+	print("Final Damage: "+dmg.damage);
+	evt.target.damage(dmg, -1.0, evt.direction);
 }
