@@ -225,7 +225,23 @@ class MaxStacks : StatusHook {
 	#section all
 };
 
-
+class CombinedExpiration : StatusHook {
+	Document doc("All stacks of the status expire simultaneously.");
+	Argument duration("Duration", AT_Decimal, "10.0", doc="How long the status persists after its last application before expiring.");
+	
+	#section server
+	void onAddStack(Object& obj, Status@ status, StatusInstance@ instance, any@ data) override {
+		double timer = 0;
+		data.store(timer);
+	}
+	
+	bool onTick(Object& obj, Status@ status, any@ data, double time) override {
+		double timer = 0;
+		data.retrieve(timer);
+		return (timer + time) < arguments[0].decimal;
+	}
+	#section all
+}
 class DisplayStatus : StatusHook {
 	Document doc("Displays a dummy status on the origin object, IF that object isn't also the object the status is on.");
 	Argument statustype("Status", AT_Status, doc="Status to display.");
