@@ -19,7 +19,7 @@ Subsystem: SuperLaser
 	Tracking := 0.5
 	SupplyCost := Size * 100
 	FireArc := 0.25 * pi
-	PowerRequirement := 75 * Size
+	PowerUse := 75 * Size
 
 	Hex.HP := 12 * HexSize
 	Hex.Resistance := 0.2
@@ -29,7 +29,7 @@ Subsystem: SuperLaser
 
 	Requires:
 		Command = Hexes
-		Power = PowerRequirement
+		Power = PowerUse
 
 	Module: Default
 
