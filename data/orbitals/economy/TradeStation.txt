@@ -1,0 +1,29 @@
+Module: TradeStation
+	Name: #ORB_TRADE_STATION
+	Blurb: #ORB_TRADE_STATION_BLURB
+	Description: #ORB_TRADE_STATION_DESC
+	Icon: GuiOrbitalIcons::0
+	Strategic Icon: OrbitalIcons::0
+
+	Core: True
+	Standalone: True
+
+	Build Cost: 500
+	Maintenance: 200
+	Labor Cost: 15
+	Size: 16
+
+	Health: 5000
+	Armor: 1000
+
+	Model: Research_Station
+	Material: ResearchStation
+
+	GrantAbility(BuyInfluence) #version>=93
+	GrantAbility(BuyEnergy) #version>=93
+	GrantAbility(BuyResearch) #version>=93
+	GrantAbility(BuyLabor) #version>=93
+
+	FriendlyPlanetMoney(To Other = 40)
+	GiveTrade()
+	GlobalTradeNode()

@@ -1,20 +1,20 @@
 Technology: ImpDamage
 	Name: #R_IMP_DAMAGE
-	Blurb: #R_IMP_DAMAGE_BLURB:20%
-	Description: #R_IMP_DAMAGE_DESC:20%
+	Blurb: #R_IMP_DAMAGE_BLURB:15%
+	Description: #R_IMP_DAMAGE_DESC:15%
 
 	Icon: AttributeIcons::3 * #ff8000
 	Color: #ff8000
 
 	Point Cost: 1000
-	Time Cost: 180
+	Time Cost: 120
 
-	AddModifier( tag/Weapon::DamageFactor(1.2) )
+	AddModifier(tag/Weapon::DamageFactor(1.15))
 
 Technology: ImpDamage2
 	Name: #R_IMP_DAMAGE2
-	Blurb: #R_IMP_DAMAGE_BLURB:40%
-	Description: #R_IMP_DAMAGE_DESC:40%
+	Blurb: #R_IMP_DAMAGE_BLURB:30%
+	Description: #R_IMP_DAMAGE_DESC:30%
 
 	Icon: AttributeIcons::3 * #ff8000
 	Color: #ff8000
@@ -22,7 +22,7 @@ Technology: ImpDamage2
 	Point Cost: 1500
 	Time Cost: 180
 
-	AddModifier( tag/Weapon::DamageFactor(1.4) )
+	AddModifier(tag/Weapon::DamageFactor(1.3))
 
 Technology: ImpDamageSmall
 	Name: #R_IMP_DAMAGE_SMALL

@@ -61,7 +61,7 @@ Grid: Base
 	ImpSupportCap: 2,6
 	DevEnergy: 1,6
 	ImpFactoryLabor: 0,-5
-	DevMoney: 1,-6
+	ImpArmorHealth: 1,-6
 	ImpPlanetSupport: -1,8
 	DevFTL: -1,10
 	DevFTLIncome: -3,10
@@ -165,7 +165,6 @@ Grid: Base
 	Support4: 11,-7
 	Flagship3: 11,4
 	Flagship4: 14,4
-	SpyModule: 7,3
 	ImpAoE: 10,4
 	Flak: 10,3
 	HDSupply: 13,3
@@ -223,3 +222,7 @@ Grid: Base
 	ImpPlanetSupport2: -3,-8
 	ImpPlanetSupport2: -3,-9
 	OrbitalEnhancement: -4,-9
+	ImpArmorHealth: 3,-7
+	ImpArmorHealth2: 12,-1
+	ImpArmorDR2: 12,1
+	ImpAllHealth: 13,-7

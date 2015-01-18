@@ -1,7 +1,7 @@
 {
 	"__VERSION__": 1,
 	"name": "Guardian",
-	"size": 12000,
+	"size": 9000,
 	"hull": "TyrantTitan",
 	"class": "Combat",
 	"subsystems": [
@@ -285,7 +285,6 @@
 				[
 					13,
 					8,
-					"PrecisionMod"
 				],
 				[
 					14,
@@ -325,7 +324,7 @@
 				[
 					11,
 					8,
-					"PrecisionMod"
+					
 				],
 				[
 					9,
@@ -361,7 +360,7 @@
 				[
 					11,
 					18,
-					"PrecisionMod"
+					
 				],
 				[
 					10,
@@ -913,7 +912,7 @@
 				[
 					20,
 					9,
-					"TargetingSensor"
+					
 				]
 			]
 		},
@@ -965,7 +964,7 @@
 				[
 					20,
 					18,
-					"TargetingSensor"
+					
 				]
 			]
 		},
@@ -1115,12 +1114,12 @@
 				[
 					23,
 					13,
-					"PrecisionMod"
+					
 				],
 				[
 					23,
 					12,
-					"TargetingSensor"
+					
 				],
 				[
 					23,
