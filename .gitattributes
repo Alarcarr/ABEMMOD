@@ -1,5 +1,7 @@
 # Automatically set files to CRLF.
-* text eol=crlf
+* text=auto
+*.txt eol=crlf
+*.as eol=crlf
 
 # Make sure binary files aren't tampered with.
 *.png binary
