@@ -1,7 +1,7 @@
 Status: LaserTurret
 	Name: Laser
 	Icon: LaserTurret
-    AddTurret(Laser, Range=300, DPS=50, Duration=2, Cooldown=5, Tracking=0.4)
+	AddTurret(Laser, Range=300, DPS=50, Duration=2, Cooldown=5, Tracking=0.4)
 
 
 Status: RailgunTurret
@@ -12,4 +12,4 @@ Status: RailgunTurret
 Status: MissileTurret
 	Name: Missile Turret
 	Icon: MissileTurret
-	Repeat(2, AddTurret(Missile, Range=600, Damage=100, Reload=2, Speed=90, Tracking=3))
+	Repeat(2, AddTurret(Missile, Range=600, Damage=50, Reload=2, Speed=90, Tracking=3))

@@ -46,8 +46,9 @@ Subsystem: AdmiralBay
 		Hex.BuildCost := 5 * Hex.BuildCost
 		Hex.Mass := 5 * Hex.Mass
 		Color: #5686ff
-	
+
 	Ship.AdmiralBay := Ship.AdmiralBay + 1
+	Hook: GrantAbility(SensorHammer)
 	Assert: Ship.AdmiralBay <= 1
-		Unique: True //Only display message once instead of once per subsystem
+		Unique: False
 		Message: Only one Admiral can operate from a flagship at any time, and no Admiral needs two command centers, right?! Right!

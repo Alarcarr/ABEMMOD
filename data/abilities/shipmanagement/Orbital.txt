@@ -39,7 +39,7 @@ Ability: BuyTurretR
 	ShareCooldown(BuyTurretM)
 	ShowMoneyValue(300)
 	ConsumeMoney(300)
-	
+
 	TargetFilterAllied(Orbital)
 Ability: BuyTurretM
 	Name: Install Missile Turret
@@ -59,10 +59,10 @@ Ability: BuyTurretM
 	ShareCooldown(BuyTurretR)
 	ShareCooldown(BuyTurretM)
 	ShowMoneyValue(300)
-	ConsumeMoney(300)
-	
-	
-	
+	ConsumeMoney(500)
+
+
+
 Ability: SpawnOrbital
 	Target: Place = Point
 	Cooldown: 120
@@ -71,7 +71,7 @@ Ability: SpawnOrbital
 	Description: #ABL_BUILD_OUTPOST_DESC
 	Range: 100
 	Icon: OrbitalIcons::0
-	
+
 	ShowMoneyValue(300)
 	ConsumeMoney(300)
 	SpawnOrbitalAt(Place, TradeOutpost)

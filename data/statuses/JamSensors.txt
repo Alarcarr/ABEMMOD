@@ -8,3 +8,7 @@ Status: MEL
 	Color: #aeff0e
 	RecordBonusDPS(-1000)
 Status: HamSensors
+	Name: Sensor Hammer
+	Icon: TechIcons::54*#ff00ff
+	Description: Long Range Sensors of this ship are offline
+	LimitSightRange(2000)
