@@ -238,7 +238,9 @@ class CombinedExpiration : StatusHook {
 	bool onTick(Object& obj, Status@ status, any@ data, double time) override {
 		double timer = 0;
 		data.retrieve(timer);
-		return (timer + time) < arguments[0].decimal;
+		timer += time;
+		data.store(timer);
+		return timer < arguments[0].decimal;
 	}
 	#section all
 }
