@@ -10,7 +10,7 @@ Effector: VoidRay
 	Value: StatusAmount
 	Value: Status
 	Value: StatusIncrement
-	Value: StatusDuration
+	Value: DamageType
 
 	Range: Range
 	Lifetime: Duration
@@ -31,7 +31,7 @@ Effector: VoidRay
 		StatusMultiplier = StatusMultiplier
 		StatusAmount = StatusAmount
 		StatusIncrement = StatusIncrement
-		Duration = StatusDuration
+		DamageType = DamageType
 		
 
 	GfxSize: 1
