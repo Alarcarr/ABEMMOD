@@ -1,0 +1,31 @@
+Subsystem: OrbitalControl
+	Name: OrbitalControl
+	BaseColor: #f99a77
+	Picture: RocketEngine
+	Elevation: 2
+
+	Tags: BaseCost,Category:Propulsion, NoBackWall
+	Tags: ExteriorCore, Engine, HasInternals
+	Hull: Station
+
+
+	Size := HexSize * Hexes
+	Hex.Mass := HexSize
+
+	Hex.Resistance := 0.2
+	Hex.HP := 6 * HexSize
+
+	Hex.MaintainCost := 0
+	Accel := 1* Size / ShipSize
+	Description: Add aceleration based on the porcetange the orbital control size is in relation with the ship size
+	Hook: AddAccelerationBonus(Accel)
+	Requires:
+		Command = 1
+
+	Module: Default
+
+	Module: Core
+		Sprite: TechIcons::49
+		Hex.HP := 2 * Hex.HP
+		Hex.Resistance := 0.35
+		Hex.BuildCost := 2 * Hex.BuildCost
