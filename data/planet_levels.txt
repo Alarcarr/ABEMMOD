@@ -85,7 +85,7 @@ Level: 5
 Level: 6
 	Name: Mythical
 	Icon: PlanetIcon4
-	Required: 1 WaterType, 4 Food, 5 Level1, 6 Level2 , 5 Level3
+	Required: 1 WaterType, 4 Food, 5 Level1, 8 Level2 , 2 Level3
 	PopGrowth: 2
 	Population: 100
 	RequiredPop: 50

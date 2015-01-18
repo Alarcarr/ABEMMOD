@@ -21,12 +21,7 @@ Subsystem: GateCore
 		Amount = 0.20
 	Assert: Size >= 100
 		Message: The Gate must be at least size 100. Increase the gate's hex count or the station's size.
-	Requires:
-		Command = Hexes
-
-		Power = Size*40
-	Module: Default
-
+	
 	Module: Core
 		Sprite: Stargate
 		Hex.BuildCost := 400

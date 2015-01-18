@@ -19,10 +19,7 @@ Subsystem: Fling
 	Hook: IsFlingBeacon()
 	Assert: Size >= 100
 		Message: The Fling Beacon must be at least size 100. Increase the beacon's hex count or the station's size.
-	Requires:
-		Command = Hexes
-
-		Power = Size*40
+	
 	Module: Default
 
 	Module: Core
