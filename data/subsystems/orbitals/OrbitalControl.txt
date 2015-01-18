@@ -25,7 +25,7 @@ Subsystem: OrbitalControl
 	Module: Default
 
 	Module: Core
-		Sprite: TechIcons::49
+		Sprite: OrbitalEngine
 		Hex.HP := 2 * Hex.HP
 		Hex.Resistance := 0.35
 		Hex.BuildCost := 2 * Hex.BuildCost

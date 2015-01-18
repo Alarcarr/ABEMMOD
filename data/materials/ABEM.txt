@@ -40,6 +40,9 @@ Material: SLaser
 	Inherit: Subsystem
 	Texture: data/images/subsystems/slaser.png
 
+Material: OrbitalEngine
+	Inherit: Subsystem
+	Texture: data/images/subsystems/OrbitalEngine.png
 Material: NanoArmor
 	Inherit: Subsystem
 	Texture: data/images/subsystems/armor_nano.png
