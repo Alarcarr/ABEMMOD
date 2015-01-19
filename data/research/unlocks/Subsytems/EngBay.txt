@@ -1,6 +1,6 @@
 Technology: EngBay
 	Name: Engeniering Bay
-	Point Cost: 500
+	Point Cost: 300
 	Time Cost: 60
 	Icon: TechIcons::50
 	Description: <<
