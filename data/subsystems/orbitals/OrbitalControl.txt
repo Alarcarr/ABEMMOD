@@ -22,7 +22,7 @@ Subsystem: OrbitalControl
 
 		[img=Plus]Lack of fuel requirements makes its maintenance requirements negligible.[/img]
 		[img=Minus]Extremely low thrust.[/img]
-	Hook: AddThrustBonus(Thrust)
+	Hook: ABEM_hooks::AddThrustBonus(Thrust)
 	Requires:
 		Command = 1
 

@@ -18,7 +18,7 @@ Subsystem: FlakCannon
 	Tracking := 0.6
 	Pierce := 0.3
 	SupplyCost := Size * 1.5
-	PowerUse = 2.5 * Size
+	PowerUse := 2.5 * Size
 
 	Hex.HP := 18 * HexSize
 	Hex.Resistance := 0.2

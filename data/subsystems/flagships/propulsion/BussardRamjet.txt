@@ -4,11 +4,10 @@ Subsystem: BussardRamjet
 		A large scoop that collects particulate matter floating in space and uses them to propel itself.
 
 		[img=Plus]Lack of fuel requirements makes its maintenance requirements negligible.[/img]
-		[img=Plus]Core does not have to be at the rear of the ship.[/img]
 		[img=Minus]Extremely low thrust.[/img]
 	>>
 	BaseColor: #f99a77
-	Picture: RocketEngine
+	Picture: OrbitalEngine
 	Elevation: 0
 
 	Tags: BaseCost,Category:Propulsion, NoBackWall
