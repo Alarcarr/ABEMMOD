@@ -1,4 +1,4 @@
-STUFF: BLARGH
+﻿STUFF: BLARGH
 ABL_OVERCHARGE_FLEET_DESC: <<
 	Increase the targeted fleet's effectiveness by 40%.
 
@@ -59,7 +59,7 @@ ABL_LW_DESC: <<
 ABL_MEL_DESC: <<
 	Uses special technology on the Admiral's flagship to mask the energy levels of a fleet, making them appear less powerful to an enemy's sensors. The deception must be maintained, though; every 5 minutes, the effect must be applied again.
 
-	Reduces fleet's apparent DPS by 100. Consumes 200 energy. Cannot stack.
+	Reduces fleet's apparent DPS by 1000. Consumes 200 energy. Cannot stack.
 >>
 ABL_COUNTERINTEL_DESC: <<
 	Uses a moderate amount of energy to disrupt the cloaking devices of saboteurs on a friendly flagship, orbital or planet and capture them. Also takes advantage of the empire's intelligence database to uncover and capture infiltrators from other empires aboard flagships.

@@ -58,7 +58,7 @@ Ability: BuyTurretM
 	ShareCooldown(BuyTurretL)
 	ShareCooldown(BuyTurretR)
 	ShareCooldown(BuyTurretM)
-	ShowMoneyValue(300)
+	ShowMoneyValue(500)
 	ConsumeMoney(500)
 
 

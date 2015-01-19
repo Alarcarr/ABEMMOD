@@ -23,7 +23,7 @@ STATUS_EXHAUSTED_DESC: <<
 STATUS_MEL_DESC: <<
 	Has had its energy signature masked by an Admiral's flagship.
 
-	Apparent fleet DPS reduced by 100 for 5 minutes, reducing strength. (Does not actually weaken the fleet.) Must be reapplied after expiration.
+	Apparent fleet DPS reduced by 1000 for 5 minutes, reducing strength. (Does not actually weaken the fleet.) Must be reapplied after expiration.
 >>
 STATUS_ABEMINFILTRATED_DESC: <<
 	Is the victim of a covert insertion by a saboteur. While the saboteur's presence is known to the vessel's crew - or planetary defense coordinators - they lack the equipment and training required to capture him.
