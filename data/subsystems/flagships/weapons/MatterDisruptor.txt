@@ -12,7 +12,7 @@ Subsystem: MatterDisruptor
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes
-	
+
 	Range := Size + 500
 	Damage := Size * 2
 	Reload := 2
@@ -32,11 +32,11 @@ Subsystem: MatterDisruptor
 	Hex.HP := 18 * HexSize
 	Hex.Resistance := 0.2
 	Hex.Mass := HexSize
-	
+
 	Requires:
 		Command = 1
 		Power = PowerUse
-	
+
 	Module: Default
 
 	Module: Core
@@ -44,8 +44,7 @@ Subsystem: MatterDisruptor
 		Hex.BuildCost := 5.0 * Hex.BuildCost
 		Hex.Mass := 5.0 * Hex.Mass
 
-		Sprite: Railgun::0
-		DrawMode: 1
+		Sprite: WaveEmitter
 
 		Hex.DamageResist := ShipSize / 64.0
 		Effect: DamageResist
@@ -68,4 +67,3 @@ Subsystem: MatterDisruptor
 		MinRatio = MinRatio
 		MaxRatio = MaxRatio
 		DamageType = DamageType
-		

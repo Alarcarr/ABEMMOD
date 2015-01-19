@@ -20,7 +20,7 @@ Grid: Base
 	DevMoney: -3,1
 	ImpFactoryLabor: 1,-4
 	ImpAllHealth: 2,-4
-	DevInfluence: -4,1
+	DevMoney: -4,1
 	DevBudget: -4,-1
 	TileDev: -2,-4
 	ImpPopLvl2: -4,-4
@@ -43,7 +43,6 @@ Grid: Base
 	DevFTLIncome: -4,9
 	ImpThrust: -3,9
 	DevMoney: -2,6
-	BldMetropolis: -5,-5
 	ImpPopLvl2: -5,-6
 	DevMoney: -4,-2
 	DevMoney: -3,-4
@@ -141,8 +140,7 @@ Grid: Base
 	ImpDamage: 9,0
 	DevBudgetSmall: -3,0
 	TaxCenter: -4,0
-	DevNegotiate: -5,1
-	Senate: -7,0
+	DevMoney: -5,1
 	DevInfluence: -5,-1
 	DevInfluence: -6,1
 	DevMoney: -6,-1
@@ -210,7 +208,6 @@ Grid: Base
 	ImpDamage2: 11,0
 	ImpThrust2: -7,4
 	BldPlanetaryEngine: -6,-7
-	Housing: -3,-3
 	ImpAllRange: 12,0
 	AdmiralCrew: 13,0
 	SysGravitonCondenser: 17,5
@@ -220,9 +217,17 @@ Grid: Base
 	ResupplyMod: -3,-7
 	OrbitalEnhancement: -2,-8
 	ImpPlanetSupport2: -3,-8
-	ImpPlanetSupport2: -3,-9
 	OrbitalEnhancement: -4,-9
 	ImpArmorHealth: 3,-7
 	ImpArmorHealth2: 12,-1
 	ImpArmorDR2: 12,1
 	ImpAllHealth: 13,-7
+	BldMetropolis: -3,-3
+	Housing: -5,-5
+	DevMoney: -7,0
+	DevInfluence: -8,-1
+	DevMoney: -8,1
+	PoliticalChoices: -9,0
+	DevNegotiate: -9,-1
+	DePlanet: -9,1
+	ImpPlanetSupport: -3,-9
