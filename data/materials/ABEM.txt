@@ -1,3 +1,10 @@
+Material: Subsystem
+	Culling: None
+	Alpha: True
+	DepthTest: NoDepthTest
+	Mipmap: False
+	Lighting: False
+
 Material: SupportTech
 	Inherit: Subsystem
 	Texture: data/images/techs/support_tech.png
