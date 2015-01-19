@@ -1,8 +1,9 @@
-Ability: SensorHammer
-	Name: Sensor Hammer
+Ability: SensorJammer
+	Name: Sensor Jammer
 	Target: Ship = Object
 	Energy Cost: 300
 	Icon: TechIcons::54
-	Cooldown:
-	AddStatusTo(Ship, HamSensors, Duration = 80, Duration Efficiency = True)
+	Cooldown: 120
+	AddStatusTo(Ship, JamSensors, Duration = 80, Duration Efficiency = True)
 	TargetFilterFlagship(Ship)
+	TargetFilterOtherEmpire(Ship)
