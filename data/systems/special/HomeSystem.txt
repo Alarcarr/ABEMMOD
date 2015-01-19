@@ -1,0 +1,34 @@
+System: HomeSystem
+	MakeStar(Temperature = 400:13000, Radius = 65:85)
+		BonusHealth(20000000000)
+
+	RepeatHomeworlds()
+		MakePlanet(Meat:Grain:Fish, Radius = 10, Grid Size = (17, 10), Conditions = False)
+			BonusHealth(5000000000)
+			AddPlanetResource(Water)
+			AddResource(Labor, +1)
+			AddResource(Money, +1.7)
+			AddPopulation(3.0)
+			SpawnBuilding(Factory, (4, 3))
+			OnPlanet( AddPressureCap(2) )
+			NoNeedPopulationForLevel()
+
+	MakePlanet(RandomType:Food:Common, Conditions = False)
+	MakePlanet(Water, Conditions = False)
+	MakePlanet(RandomLevel:1:Common, Conditions = False)
+	ExpandSystem(-50:100)
+
+	MakeAsteroid()
+	AddAdjacentArtifacts(2)
+	MakeAdjacentCreepCamp(SmallCamp, Place Far = True)
+
+	GuaranteeAdjacentResource(Water)
+	GuaranteeAdjacentResource(RandomType:Food:Common)
+	GuaranteeAdjacentResource(RandomLevel:1:Common)
+	GuaranteeAdjacentResource(RandomLevel:2:Common)
+	GuaranteeAdjacentResource(RandomType:Food:Common, Distance = 2)
+	GuaranteeAdjacentResource(RandomType:Food:Common, Distance = 2)
+	GuaranteeAdjacentResource(Water, Distance = 2)
+
+	
+	NoRegionVision()

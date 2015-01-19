@@ -7,3 +7,5 @@ System: AncientSystem
 
 	RepeatModified(3, $PLANET_FREQUENCY)
 		MakePlanet()
+
+	NoRegionVision()

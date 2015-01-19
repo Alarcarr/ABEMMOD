@@ -10,3 +10,4 @@ System: Blackhole
 		MakePlanet(Orbit Spacing = 800:1000)
 	MakePlanet(BlackHole, Grid Size = (26, 15), Conditions = False)
 	MakeCreepCamp(BlackHoleCamp)
+	NoRegionVision()
