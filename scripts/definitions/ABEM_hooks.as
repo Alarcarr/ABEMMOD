@@ -54,6 +54,31 @@ class Regeneration : SubsystemEffect {
 #section all
 };
 
+
+class AddThrustBonus : GenericEffect, TriggerableGeneric {
+	Document doc("Add a bonus amount of thrust to the object. In case it is a planet, also allow the planet to move.");
+	Argument amount(AT_Decimal, doc="Thrust amount to add.");
+
+#section server
+	void enable(Object& obj, any@ data) const override {
+		if(obj.isPlanet) {
+			Planet@ pl = cast<Planet>(obj);
+			if(!pl.hasMover) {
+				pl.activateMover();
+				pl.maxAcceleration = 0;
+			}
+		}
+		if(obj.hasMover)
+			obj.modAccelerationBonus(+(amount.decimal * obj.mass));
+	}
+
+	void disable(Object& obj, any@ data) const override {
+		if(obj.hasMover)
+			obj.modAccelerationBonus(-(amount.decimal * obj.mass));
+	}
+#section all
+};
+
 class ReactorOverloadHook : StatusHook {
 	Document doc("Handles the power-boosted explosion of a ship. Do not try to use on anything that isn't a ship.");
 	Argument powerdamage(AT_Decimal, "5", doc="Number by which the ship's power output is multiplied when calculating damage.");
