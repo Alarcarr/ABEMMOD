@@ -11,23 +11,23 @@ Subsystem: CompositeArmor
 	Size := HexSize * Hexes
 	Tags: FauxExterior
 	Ship.ExternalHexes := Ship.ExternalHexes + ExteriorHexes
-	
+
 	// 0.1 = 10%
-	ProjResist := 0.15
-	EnergyResist := 0.15
+	ProjResist := 0.10
+	EnergyResist := 0.3
 	ExplosiveResist := 0.15
-	
+
 	// Dummies for design_stats.txt
 	DummyProjResist := ProjResist * 100
 	DummyEnergyResist := EnergyResist * 100
 	DummyExplosiveResist := ExplosiveResist * 100
 
 	Hex.HP := 40 * HexSize
-	Hex.Mass :=2.5 * HexSize
-	Hex.LaborCost := 0.4 * HexSize 
-	Hex.BuildCost := 0.4 * HexSize 
+	Hex.Mass := 2.5 * HexSize
+	Hex.LaborCost := 0.4 * HexSize
+	Hex.BuildCost := 0.4 * HexSize
 	Hex.MaintainCost := 0.1*HexSize
-	
+
 
 	Effect: ReduceDamagePercentile
 		ProjResist = ProjResist

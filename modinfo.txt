@@ -22,5 +22,7 @@
 
 		Full patch notes in the Discussion Thread.
 
-		Special Thanks to the Star Ruler 2 developer team for their constant support with everything ranging from coding advice, bug fixes and new hooks to even the mod's logo - thanks for that one, Firgof!!
+		Special Thanks to the Star Ruler 2 developer team (GGLucas , Firgof and ThyReaper)  for their constant support with everything ranging from coding advice, bug fixes and new hooks to even the mod's logo - thanks for that one, Firgof!!
+
+		Credits: To all the Galactic Armory (Awesome SR1 mod) team for inspiring us and and some of the art.
 	>>

@@ -4,12 +4,15 @@ Status: LaserTurret
 	AddTurret(Laser, Range=300, DPS=50, Duration=2, Cooldown=5, Tracking=0.4)
 
 
+	RecordBonusDPS(20)
 Status: RailgunTurret
 	Name: Railgun
 	Icon: RailTurret
 	Repeat(2, AddTurret(Railgun, Range=500, Damage=5, Reload=0.25, Speed=150, Spread=0.03, FireArc=3.14, Tracking=0.4, FireTolerance=0.78))
 
+	RecordBonusDPS(40)
 Status: MissileTurret
 	Name: Missile Turret
 	Icon: MissileTurret
+	RecordBonusDPS(50)
 	Repeat(2, AddTurret(Missile, Range=600, Damage=50, Reload=2, Speed=90, Tracking=3))
