@@ -1,28 +1,24 @@
 Subsystem: OrbitalControl
-	Name: Orbital Thruster
+	Name: OrbitalControl
 	BaseColor: #f99a77
-	Picture: OrbitalEngine
+	Picture: RocketEngine
 	Elevation: 2
 
-	Tags: BaseCost,Category:Propulsion, NoBackWall, FauxExterior
+	Tags: BaseCost,Category:Propulsion, NoBackWall
 	Tags: ExteriorCore, Engine, HasInternals
 	Hull: Station
 
-	Ship.ExternalHexes := Ship.ExternalHexes + ExteriorHexes
 
 	Size := HexSize * Hexes
 	Hex.Mass := HexSize
 
 	Hex.Resistance := 0.2
 	Hex.HP := 6 * HexSize
-	Hex.MaintainCost := 0
-	Thrust := 7 * Size
-	Description: <<
-		A large scoop that collects particulate matter floating in space and uses it to propel the station.
 
-		[img=Plus]Lack of fuel requirements makes its maintenance requirements negligible.[/img]
-		[img=Minus]Extremely low thrust.[/img]
-	Hook: AddThrustBonus(Thrust)
+	Hex.MaintainCost := 0
+	Accel := 1* Size / ShipSize
+	Description: Add aceleration based on the porcetange the orbital control size is in relation with the ship size
+	Hook: AddAccelerationBonus(Accel)
 	Requires:
 		Command = 1
 
