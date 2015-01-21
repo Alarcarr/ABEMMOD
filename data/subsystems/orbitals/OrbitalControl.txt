@@ -1,7 +1,7 @@
 Subsystem: OrbitalControl
 	Name: Orbital Thruster
 	BaseColor: #f99a77
-	Picture: OrbitalEngine
+	Picture: RocketEngine
 	Elevation: 2
 
 	Tags: BaseCost,Category:Propulsion, NoBackWall, FauxExterior
@@ -22,6 +22,7 @@ Subsystem: OrbitalControl
 
 		[img=Plus]Lack of fuel requirements makes its maintenance requirements negligible.[/img]
 		[img=Minus]Extremely low thrust.[/img]
+		>>
 	Hook: ABEM_hooks::AddThrustBonus(Thrust)
 	Requires:
 		Command = 1
@@ -29,7 +30,7 @@ Subsystem: OrbitalControl
 	Module: Default
 
 	Module: Core
-		Sprite: OrbitalEngine
+		Sprite: RocketEngine
 		Hex.HP := 2 * Hex.HP
 		Hex.Resistance := 0.35
 		Hex.BuildCost := 2 * Hex.BuildCost
