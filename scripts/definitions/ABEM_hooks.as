@@ -55,6 +55,7 @@ class Regeneration : SubsystemEffect {
 #section all
 };
 
+<<<<<<< HEAD
 
 class AddThrustBonus : GenericEffect, TriggerableGeneric {
 	Document doc("Add a bonus amount of thrust to the object. In case it is a planet, also allow the planet to move.");
