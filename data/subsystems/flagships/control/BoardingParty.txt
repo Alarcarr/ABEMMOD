@@ -1,0 +1,40 @@
+﻿Subsystem: BoardingParty
+	Name: Boarding Parties
+	Description: <<
+		Contains all the equipment required to send boarding parties onto an object in space, and attempt to capture it.
+
+		[img=Plus]Allows a ship to attempt to capture enemy flagships, orbitals, or asteroid mines.[/img]
+		[img=Plus]Can also be used for defense against boarders.[/img]
+		[img=Minus]Only one boarding party can attempt to capture an object at any given moment.[/img]
+		[img=Minus]Stuffs.[/img]
+	>>
+
+	BaseColor: #c5f946
+	Picture: SubsystemButtonArt::8
+	Elevation: 5
+
+	Tags: BaseCost, NonContiguous, NoCore, Category:Equipment, Ability:BoardingParty
+	Tags: HasInternals
+	Hull: Flagship, Station
+
+	EvaluationOrder: -10
+
+	Size := HexSize * Hexes
+	BoardOffense := floor(40 * Size)
+	BoardDefense := BoardOffense
+
+	Hex.Resistance := 0.2
+	Hex.HP := 36 * HexSize
+	Hex.Mass := HexSize
+
+	Module: Default
+		Sprite: CrewQuarters*#5686ff
+
+	Module: Core
+		Sprite: Bridge*#5686ff
+		Hex.HP := 2 * Hex.HP
+		Hex.Resistance := 0.35
+
+		Hex.BuildCost := 5 * Hex.BuildCost
+		Hex.Mass := 5 * Hex.Mass
+		Color: #5686ff

@@ -3,6 +3,7 @@ import hooks;
 import subsystem_effects;
 import statuses;
 import status_effects;
+import ability_effects;
 #section server
 import ABEMCombat;
 #section all
@@ -32,7 +33,7 @@ class Regeneration : SubsystemEffect {
 
 #section server
 	void tick(SubsystemEvent& event, double time) const override {
-		uint Hexes = event.subsystem.get_hexCount();
+		uint Hexes = event.subsystem.hexCount;
 		uint i = 0;
 		double amount = arguments[0].decimal;
 		double excess = 0;
@@ -69,12 +70,12 @@ class AddThrustBonus : GenericEffect, TriggerableGeneric {
 			}
 		}
 		if(obj.hasMover)
-			obj.modAccelerationBonus(+(amount.decimal * obj.mass));
+			obj.modAccelerationBonus(+(amount.decimal * getMassFor(obj)));
 	}
 
 	void disable(Object& obj, any@ data) const override {
 		if(obj.hasMover)
-			obj.modAccelerationBonus(-(amount.decimal * obj.mass));
+			obj.modAccelerationBonus(-(amount.decimal * getMassFor(obj)));
 	}
 #section all
 };
@@ -280,6 +281,78 @@ class DisplayStatus : StatusHook {
 				status.originObject.addStatus(getStatusID(arguments[1].str));
 			}
 		}
+	}
+	#section all
+};
+
+class BoardingData {
+	double boarders;
+	double defenders;
+	any data;
+};
+
+class Boarders : StatusHook {
+	Document doc("Calculates the boarding strength of the origin object from a subsystem value, calculates the boarding strength of the target from another subsystem value and half of its crew. After a certain amount of time, either the boarders are repelled or the target is captured.");
+	Argument offense("Offense Subsystem Value", AT_String, doc="Subsystem value to calculate strength from.");
+	Argument defense("Defense Subsystem Value", AT_String, doc="Subsystem value to calculate defensive strength from.");
+	Argument defaultboarders("Default Boarder Strength", AT_Decimal, "200.0", doc="If the subsystem value can't be found or is zero on the origin object, this is how strong the boarders will be. Defaults to 200.");
+	Argument defaultdefenders("Default Defender Strength", AT_Decimal, "100.0", doc="If the subsystem value can't be found or is zero on the target object, and the object has no crew, this is how strong the defenders will be. Defaults to 100. Multiplied by 10000 if the target is a planet.");
+
+	#section server
+	void onCreate(Object& obj, Status@ status, any@ data) override {
+		// Calculating boarder strength.
+		double boarders = 0;
+		Ship@ caster = cast<Ship>(status.originObject);
+		if(caster !is null)
+			boarders = caster.blueprint.getEfficiencySum(SubsystemVariable(getSubsystemVariable(offense.str)));
+		if(boarders <= 0)
+			boarders = defaultboarders.decimal;
+		
+		// Calculating defender strength.
+		double defenders = 0;
+		Ship@ ship = cast<Ship>(obj);
+		if(ship !is null)
+			// We want regular crew to count as half value; they're not as well-equipped or trained to repel boarders.
+			defenders = ship.blueprint.getEfficiencySum(SubsystemVariable(getSubsystemVariable(defense.str))) + (ship.blueprint.getEfficiencySum(SV_Crew) / 2);
+		if(defenders <= 0)
+			defenders = defaultdefenders.decimal;
+		// We want a planet to be 10 thousand times as hard to capture via 'boarding' as other objects.
+		// This means you need quite a dedicated force to conquer a world like this, even if someone allowed planets to be targeted with this ability.
+		if(obj.isPlanet)
+			defenders *= 10000;
+
+		BoardingData info;
+		info.boarders = boarders;
+		info.defenders = defenders;
+		data.store(@info);
+	}
+
+	bool onTick(Object& obj, Status@ status, any@ data, double time) override {
+		BoardingData info;
+		double boarders = 0;
+		double defenders = 0;
+		data.retrieve(@info);
+		boarders = info.boarders;
+		defenders = info.defenders;
+
+		double ratio = boarders / defenders;
+		// Basically, if there are 100 boarders and 100 defenders, 1 of each are lost per second. 
+		// If there are 200 boarders, 0.55% of the boarders - incidentally, also 1 - are lost, but 2% of the defenders are lost.
+		// This means that boarding operations will last a maximum of 100 seconds, though it will usually last less as one side will have an advantage over the other.
+		// Hopefully, 100 seconds will give the boarded player enough time to respond, without allowing him to wait too long before acting. (And thus needlessly prolonging the battle.)
+		boarders -= (boarders * 0.01) * ratio * time;
+		defenders -= (defenders * 0.01) / ratio * time;
+
+		if(defenders <= 0) {
+			@obj.owner = status.originEmpire;
+			return false;
+		}
+		if(boarders <= 0)
+			return false;
+		info.boarders = boarders;
+		info.defenders = defenders;
+		data.store(@info);
+		return true;
 	}
 	#section all
 };

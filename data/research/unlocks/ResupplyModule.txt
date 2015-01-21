@@ -1,4 +1,4 @@
-Technology: ResupplyMod
+﻿Technology: ResupplyMod
 	Name: Resupply Module
 	Point Cost: 250
 	Time Cost: 60

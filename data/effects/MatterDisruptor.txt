@@ -1,4 +1,4 @@
-Effect: MatterDisruptor
+﻿Effect: MatterDisruptor
 	Value: Amount
 	Value: SizeMultiplier
 	Value: AmountPerSize

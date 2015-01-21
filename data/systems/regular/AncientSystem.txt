@@ -1,4 +1,4 @@
-System: AncientSystem
+﻿System: AncientSystem
 	Inherit: BaseSystem
 	Frequency: 0.24
 

@@ -1,4 +1,4 @@
-Technology: ImpAllHealth
+﻿Technology: ImpAllHealth
 	Name: #R_IMP_ALL_HEALTH
 	Blurb: #R_IMP_ALL_HEALTH_BLURB:7%
 	Description: #R_IMP_ALL_HEALTH_DESC:7%

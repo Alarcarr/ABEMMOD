@@ -1,4 +1,4 @@
-Technology: SupportReactive
+﻿Technology: SupportReactive
 	Name: Reactive Armor
 	Point Cost: 1000
 	Time Cost: 300

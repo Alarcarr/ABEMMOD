@@ -1,4 +1,4 @@
-Technology: ResearchLab
+﻿Technology: ResearchLab
 	Name: Research Lab
 	Description: #R_SYS_RESEARCHLAB_DESC 
 	Point Cost: 1500

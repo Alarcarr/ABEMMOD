@@ -1,4 +1,4 @@
-System: HomeSystem
+﻿System: HomeSystem
 	MakeStar(Temperature = 400:13000, Radius = 65:85)
 		BonusHealth(20000000000)
 

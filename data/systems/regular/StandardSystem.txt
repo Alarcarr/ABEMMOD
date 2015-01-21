@@ -1,4 +1,4 @@
-System: StandardSystem
+﻿System: StandardSystem
 	Inherit: BaseSystem
 	Frequency: 0.50
 

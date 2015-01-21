@@ -1,4 +1,4 @@
-Template: tag/Weapon, !tag/SupportHull
+﻿Template: tag/Weapon, !tag/SupportHull
 	Module: ExtraGun
 		Name: Dual Mount
 		Description: #EXTRA_GUN_DESC

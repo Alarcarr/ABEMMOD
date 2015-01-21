@@ -1,4 +1,4 @@
-System: RichAsteroidBelt
+﻿System: RichAsteroidBelt
 	Frequency: 0.01
 	Unique: Galaxy
 

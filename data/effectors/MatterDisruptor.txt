@@ -1,4 +1,4 @@
-Effector: MatterDisruptor
+﻿Effector: MatterDisruptor
 	Value: Range
 	Value: Damage
 	Value: Reload

@@ -1,4 +1,4 @@
-Status: VoidRay
+﻿Status: VoidRay
 	Name: Laser Adaptation
 	Description: An Adaptive Laser is dealing 2.5% more damage to this ship for every stack of Laser Adaptation.
 	Visible To: Origin Empire
