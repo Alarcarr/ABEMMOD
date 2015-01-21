@@ -1,4 +1,4 @@
-﻿Subsystem: VoidRay
+Subsystem: VoidRay
 	Name: Adaptive Laser
 	Description: A weapon which deals more damage the longer it fires. At maximum charge, it deals 125% of listed Beam DPS.
 	BaseColor: #f9464d
