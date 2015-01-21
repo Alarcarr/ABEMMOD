@@ -292,8 +292,8 @@ class BoardingData {
 
 class Boarders : StatusHook {
 	Document doc("Calculates the boarding strength of the origin object from a subsystem value, calculates the boarding strength of the target from another subsystem value and half of its crew. After a certain amount of time, either the boarders are repelled or the target is captured.");
-	Argument offense("Offense Subsystem Value", AT_String, doc="Subsystem value to calculate strength from.");
-	Argument defense("Defense Subsystem Value", AT_String, doc="Subsystem value to calculate defensive strength from.");
+	Argument offense("Offense Subsystem Value", AT_Custom, doc="Subsystem value to calculate strength from.");
+	Argument defense("Defense Subsystem Value", AT_Custom, doc="Subsystem value to calculate defensive strength from.");
 	Argument defaultboarders("Default Boarder Strength", AT_Decimal, "200.0", doc="If the subsystem value can't be found or is zero on the origin object, this is how strong the boarders will be. Defaults to 200.");
 	Argument defaultdefenders("Default Defender Strength", AT_Decimal, "100.0", doc="If the subsystem value can't be found or is zero on the target object, and the object has no crew, this is how strong the defenders will be. Defaults to 100. Multiplied by 10000 if the target is a planet.");
 
