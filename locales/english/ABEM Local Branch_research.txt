@@ -3,7 +3,7 @@ R_BLD_SENATE_DESC: <<
 
 	Unlocks the Government Center building for construction on planets.
 
-	[color=#d1cb6a][b]Alternate Unlock:[/b] Spend ง1.5M.[/color]
+	[color=#d1cb6a][b]Alternate Unlock:[/b] Spend ยง1.5M.[/color]
 >>
 
 SUPPORT_EQUIPMENT_BLURB: for Supports
@@ -41,7 +41,7 @@ R_IMP_POP_LVL2PLANET_DESC: <<
 
 	Increases the maximum population of Level 2+ planets by 0.5.
 
-	[color=#d1cb6a][b]Alternate Unlock:[/b] Spend ง1.5M.[/color]
+	[color=#d1cb6a][b]Alternate Unlock:[/b] Spend ยง1.5M.[/color]
 >>
 R_SYS_COVARIANT_BLURB: Anti-Burst Shield
 
@@ -98,7 +98,7 @@ R_BLD_POWERPLANT_DESC: <<
 
 	Unlocks the Power Plant building for construction on planets.
 
-	[color=#d1cb6a][b]Alternate Unlock:[/b] Spend ง1.5M.[/color]
+	[color=#d1cb6a][b]Alternate Unlock:[/b] Spend ยง1.5M.[/color]
 >>
 
 R_NANO_REPAIR_DESC: <<

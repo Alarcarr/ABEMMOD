@@ -1,4 +1,3 @@
-DONOTDELETE:DONOTDELETE
 BEAM_AMPLIFIER_DESC: <<
 	Sophisticated targeting sensors and focused emitters allow a beam weapon to more accurately find its destination and deliver more power per second, increasing its effective range and armor penetration. Unfortunately, the new systems drain the weapon's capacitors faster, and the increased capacitor size is not matched by the power conduits feeding them.
 

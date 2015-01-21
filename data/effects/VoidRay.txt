@@ -1,4 +1,4 @@
-﻿Effect: VoidRay
+Effect: VoidRay
 	Value: Amount
 	Value: Status
 	Value: StatusMultiplier

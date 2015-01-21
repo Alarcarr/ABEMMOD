@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Material: ABEMSubsystem
 	Culling: None
 	Alpha: True

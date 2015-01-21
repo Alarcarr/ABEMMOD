@@ -1,9 +1,0 @@
-LASER_DESC: <<
-	[i]This weapon had the external appearance of a bowl several kilometers wide. When activated, eight separate beams were each activated by a crystal through the Particle accelerator tubes, amplified through rings, and conjoined to form one of eight separate beams that would focus outside the dish, focusing into a point to form a single incredibly powerful superlaser beam. The power settings of the superlaser were adjustable, allowing for the destruction of naval vessels and planets alike. Blasts with the power to destroy naval vessels could be fired roughly once every minute. This superlaser was powerful enough to destroy even a shielded planet with one shot.[/i]
-
-	[img=Plus]Accurate and instant beam lock-on.[/img]
-	[img=Plus]Low [b][color=#fefc61]supply cost[/color][/b].[/img]
-	[img=Minus]Ineffective against armor.[/img]
-	[img=Minus]Very limited turret firing arc.[/img]
-	[img=Minus]Very high [b][color=#ff0000]power[/color] [/b]use.[/img]
->>

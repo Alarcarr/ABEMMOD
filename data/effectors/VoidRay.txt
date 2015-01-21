@@ -1,4 +1,4 @@
-﻿Effector: VoidRay
+Effector: VoidRay
 	Value: Range
 	Value: DPS
 	Value: Duration

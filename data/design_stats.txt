@@ -1,4 +1,4 @@
-﻿// {{{ Global design stats
+// {{{ Global design stats
 GlobalStat: DefenseBuild
 	Name: #S_DEFENSEGENERATION
 	Description: #STT_DEFENSEGENERATION

@@ -1,4 +1,4 @@
-﻿System: YoungSystem
+System: YoungSystem
 	Inherit: BaseSystem
 	Frequency: 0.15
 

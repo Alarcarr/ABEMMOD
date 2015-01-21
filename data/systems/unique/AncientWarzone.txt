@@ -1,4 +1,4 @@
-﻿System: AncientWarzone
+System: AncientWarzone
 	Frequency: 0.01
 	Unique: Global
 

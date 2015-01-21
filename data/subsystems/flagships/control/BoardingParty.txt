@@ -1,4 +1,4 @@
-﻿Subsystem: BoardingParty
+Subsystem: BoardingParty
 	Name: Boarding Parties
 	Description: <<
 		Contains all the equipment required to send boarding parties onto an object in space, and attempt to capture it.

@@ -1,4 +1,4 @@
-﻿System: Blackhole
+System: Blackhole
 
 	Frequency: 0.01
 	MakeBlackhole(Radius = 30.0)

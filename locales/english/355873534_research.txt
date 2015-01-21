@@ -1,4 +1,3 @@
-﻿BARL:DONOTDELETE
 R_DEV_FTL_INCOME_DESC: <<
 	[i][color=#aaa]Better control over the collection and refinement of FTL energy.[/color][/i]
 
@@ -23,7 +22,7 @@ R_DEV_PLANET_DESC: <<
 R_DEV_FTL_DESC: <<
 	[i][color=#aaa]New technologies to store and transport FTL energy.[/color][/i]
 
-	When unlocked, immediately increases your stored ftl and ftl storage capacity by $1.
+	When unlocked, immediately increases your stored FTL and FTL storage capacity by $1.
 
 	[color=#d1cb6a][b]Alternate Unlock:[/b] Spend §800k.[/color]
 >>

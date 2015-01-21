@@ -1,4 +1,3 @@
-﻿STUFF: BLARGH
 ABL_OVERCHARGE_FLEET_DESC: <<
 	Increase the targeted fleet's effectiveness by 40%.
 

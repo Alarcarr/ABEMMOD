@@ -1,4 +1,4 @@
-﻿System: AncientToyshop
+System: AncientToyshop
 	Frequency: 0.01
 	Unique: Global
 

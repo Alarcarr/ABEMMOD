@@ -1,4 +1,4 @@
-﻿System: MorphSystem
+System: MorphSystem
 	Frequency: 0.01
 	Unique: Global
 

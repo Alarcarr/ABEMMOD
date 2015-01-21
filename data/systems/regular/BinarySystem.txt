@@ -1,4 +1,4 @@
-﻿System: BinarySystem
+System: BinarySystem
 	Inherit: BaseSystem
 	Frequency: 0.1
 

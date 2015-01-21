@@ -1,4 +1,3 @@
-TRASHCAN: Trash.
 STATUS_POWER_CELL_DESC: <<
 	Upgraded in an ancient shipyard.
 

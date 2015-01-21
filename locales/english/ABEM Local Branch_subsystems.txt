@@ -1,4 +1,3 @@
-STUZ:29
 IONENGINE_DESC: <<
 	Uses high amounts of power to expel small amounts of particles at extreme speeds.
 
