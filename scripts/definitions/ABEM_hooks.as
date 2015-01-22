@@ -69,12 +69,12 @@ class AddThrustBonus : GenericEffect, TriggerableGeneric {
 			}
 		}
 		if(obj.hasMover)
-			obj.modAccelerationBonus(+(amount.decimal * getMassFor(obj)));
+			obj.modAccelerationBonus(+(amount.decimal / getMassFor(obj)));
 	}
 
 	void disable(Object& obj, any@ data) const override {
 		if(obj.hasMover)
-			obj.modAccelerationBonus(-(amount.decimal * getMassFor(obj)));
+			obj.modAccelerationBonus(-(amount.decimal / getMassFor(obj)));
 	}
 #section all
 };
@@ -327,7 +327,7 @@ class Boarders : StatusHook {
 	}
 
 	bool onTick(Object& obj, Status@ status, any@ data, double time) override {
-		BoardingData info;
+		BoardingData@ info;
 		double boarders = 0;
 		double defenders = 0;
 		data.retrieve(@info);

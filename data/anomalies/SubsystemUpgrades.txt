@@ -1,7 +1,7 @@
 Anomaly: SubsystemsUpgrade
 	Name: Equipment Stash
 	Frequency: 0
-	Model: ResearchStation
+	Model: Research_Station
 	Material: ResearchStation
 	Option: Weapons
 		Icon: FusionTorpedo
@@ -26,7 +26,7 @@ Anomaly: SubsystemsUpgrade
 			Unfortunately, this will trigger a self-destruct mechanism, destroying the other containers and the station itself. You must decide what sort of technology you require most.
 		>>
 		
-		Model: ResearchStation
+		Model: Research_Station
 		Material: ResearchStation
 		Choice: Armor
 		Choice: Engines
