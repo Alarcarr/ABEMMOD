@@ -3,6 +3,7 @@ import combat;
 import generic_effects;
 import components.Statuses;
 import ABEM_data;
+from empire import Creeps, Pirates;
 
 int getDamageType(double type) {
 	int iType = int(type);
@@ -16,6 +17,20 @@ int getDamageType(double type) {
 		default: return DT_Generic;
 	}
 	return DT_Generic;
+}
+
+void ABEMControlDestroyed(Event& evt) {
+	Ship@ ship = cast<Ship>(evt.obj);
+
+	//Make sure we still have a bridge or something with control up
+	if(!ship.blueprint.hasTagActive(ST_ControlCore)) {
+		if(!ship.hasLeaderAI() || ship.owner == Creeps || ship.owner == Pirates)			
+			ship.destroy();
+		else {
+				ship.addStatus(-1, getStatusID("DerelictShip"));
+				@ship.owner = defaultEmpire;
+		}
+	}
 }
 
 DamageEventStatus ChannelDamage(DamageEvent& evt, const vec2u& position,

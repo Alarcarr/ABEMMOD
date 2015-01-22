@@ -547,3 +547,27 @@ class ApplyToShips : StatusHook {
 		return obj !is null && obj.isShip;
 	}
 };
+
+class AddOwnedStatus : AbilityHook {
+	Document doc("Adds a status belonging to the specific object (and empire) activating the ability.");
+	Argument objTarg(TT_Object);
+	Argument status(AT_Status, doc="Type of status effect to create.");
+	Argument duration(AT_Decimal, "-1", doc="How long the status effect should last. If set to -1, the status effect acts as long as this effect hook does.");
+	
+	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const {
+		if(index != uint(objTarg.integer))
+			return true;
+		if(targ.obj is null)
+			return false;
+		return targ.obj.hasStatuses;
+	}
+	
+#section server
+	void activate(Ability@ abl, any@ data, const Targets@ targs) const {
+		Object@ targ = objTarg.fromConstTarget(targs).obj;
+		Empire@ dummyEmp = null;
+		Region@ dummyReg = null;
+		targ.addStatus(duration.decimal, getStatusType(status.str).id, dummyEmp, dummyReg, abl.obj.owner, abl.obj);
+	}
+#section all
+};
