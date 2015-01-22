@@ -5,6 +5,7 @@ Template: tag/Weapon, !tag/SupportHull
 
 		Sprite: techTanks
 
+		Unique: true
 		AddModifier: BuildCostFactor(1.7)
 		AddModifier: LaborCostFactor(2.2)
 		AddModifier: optional MaintCostFactor(2.5)
