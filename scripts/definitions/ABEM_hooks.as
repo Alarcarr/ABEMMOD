@@ -26,6 +26,25 @@ from regions.regions import getRegion, isOutsideUniverseExtents;
 #section all
 import target_filters;
 
+import hooks;
+import abilities;
+from abilities import AbilityHook;
+from generic_effects import GenericEffect;
+import bonus_effects;
+from map_effects import MakePlanet, MakeStar;
+import listed_values;
+#section server
+from objects.Artifact import createArtifact;
+import bool getCheatsEverOn() from "cheats";
+from game_start import generateNewSystem;
+#section all
+
+import statuses;
+from statuses import StatusHook;
+import planet_effects;
+import tile_resources;
+from bonus_effects import BonusEffect;
+
 class Regeneration : SubsystemEffect {
 	Document doc("Regenerates itself over time.");
 	Argument amount(AT_Decimal, doc="Amount of health to heal per second.");
@@ -354,4 +373,167 @@ class Boarders : StatusHook {
 		return true;
 	}
 	#section all
+};
+
+class TransferSupplyFromSubsystem : AbilityHook {
+	Document doc("Gives supplies to its target while draining its own supplies, with a rate determined by a subsystem value. If the caster is not a ship, the default transfer rate is used instead, and the supply rate is irrelevant.");
+	Argument objTarg(TT_Object);
+	Argument value("Subsystem Value", AT_SysVar, doc="The subsystem value you wish to use to regulate the transfer. For example, HyperdriveSpeed would be Sys.HyperdriveSpeed (SV_HyperdriveSpeed in the old version outlined in my edit at the top of this post) - the transfer rate is 1 unit of supply per unit of HyperdriveSpeed in such a case.");
+	Argument default("Default Rate", AT_Decimal, "500.0", doc="The default transfer rate, used if the subsystem value could not be found (or is less than 0). Defaults to 500.");
+
+	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const override {
+		Ship@ caster = cast<Ship>(abl.obj);
+		if(caster !is null && caster.Supply == 0)
+			return false;
+		return true;
+	}
+
+	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const override {
+		if(index != uint(objTarget.integer))
+			return true;
+		if(targ.obj is null)
+			return false;
+		if(targ.obj.isShip) {
+			Ship@ target = cast<Ship>(targ.obj);
+			return target.Supply < target.MaxSupply;
+		}
+		return false;
+	}		
+
+#section server
+	void tick(Ability@ abl, any@ data, double time) const {
+		if(abl.obj is null)
+			return;
+		Target@ storeTarg = objTarg.fromTarget(abl.targets);
+		if(storeTarg is null)
+			return; 
+
+		Object@ target = storeTarg.obj;
+		if(target is null)
+			return; 
+
+		Ship@ targetShip = cast<Ship>(target);
+		if(targetShip is null || targetShip.Supply == targetShip.MaxSupply)
+			return;
+
+		Ship@ caster = cast<Ship>(abl.obj);
+		bool castedByShip = caster !is null; 
+		if(castedByShip && caster.Supply == 0) 
+			return;
+
+		float resupply = targetShip.MaxSupply - targetShip.Supply; 
+		float resupplyCap = 0; 
+		
+		
+		if(castedByShip && value.fromSys(abl.subsystem, efficiencyObj=abl.obj) > 0) { 
+			resupplyCap = value.fromSys(abl.subsystem, efficiencyObj=abl.obj) * time;
+		}
+		else {
+			resupplyCap = default.decimal * time; // The 'default' value is now only called if whoever wrote the ability didn't set a default value for 'value'. Still, better safe than sorry.
+		}
+		if(resupplyCap < resupply)
+			resupply = resupplyCap;
+
+		if(castedByShip && caster.Supply < resupply)
+			resupply = caster.Supply;
+		
+		if(castedByShip)
+			caster.consumeSupply(resupply);
+		targetShip.refundSupply(resupply);
+	}
+#section all
+};
+
+class TransferShieldFromSubsystem : AbilityHook {
+	Document doc("Gives shields to its target while draining its own shields, with a rate determined by a subsystem value. If the caster is not a ship, the default transfer rate is used instead, and the subsystem value is irrelevant.");
+	Argument objTarg(TT_Object);
+	Argument value("Subsystem Value", AT_SysVar, doc="The subsystem value you wish to use to regulate the transfer. For example, HyperdriveSpeed would be Sys.HyperdriveSpeed - the transfer rate is 1 shield HP per unit of HyperdriveSpeed in such a case.");
+	Argument default("Default Rate", AT_Decimal, "500.0", doc="The default transfer rate, used if the subsystem value could not be found (or is less than 0). Defaults to 500.");
+
+	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const override {
+		Ship@ caster = cast<Ship>(abl.obj);
+		if(caster !is null && caster.Shield == 0)
+			return false;
+		return true;
+	}
+
+	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const override {
+		if(index != uint(objTarget.integer))
+			return true;
+		if(targ.obj is null)
+			return false;
+		if(targ.obj.isShip) {
+			Ship@ target = cast<Ship>(targ.obj);
+			return target.Shield < target.MaxShield;
+		}
+		return false;
+	}		
+
+#section server
+	void tick(Ability@ abl, any@ data, double time) const {
+		if(abl.obj is null)
+			return;
+		Target@ storeTarg = objTarg.fromTarget(abl.targets);
+		if(storeTarg is null)
+			return; 
+
+		Object@ target = storeTarg.obj;
+		if(target is null)
+			return; 
+
+		Ship@ targetShip = cast<Ship>(target);
+		if(targetShip is null || targetShip.Shield == targetShip.MaxShield)
+			return;
+
+		Ship@ caster = cast<Ship>(abl.obj);
+		bool castedByShip = caster !is null; 
+		if(castedByShip && caster.Supply == 0) 
+			return;
+
+		float resupply = targetShip.MaxShield - targetShip.Shield; 
+		float resupplyCap = 0; 
+		
+		
+		if(castedByShip && value.fromSys(abl.subsystem, efficiencyObj=abl.obj) > 0) { 
+			resupplyCap = value.fromSys(abl.subsystem, efficiencyObj=abl.obj) * time;
+		}
+		else {
+			resupplyCap = default.decimal * time; // The 'default' value is now only called if whoever wrote the ability didn't set a default value for 'value'. Still, better safe than sorry.
+		}
+		if(resupplyCap < resupply)
+			resupply = resupplyCap;
+
+		if(castedByShip && caster.Shield < resupply)
+			resupply = caster.Shield;
+		
+		if(castedByShip)
+			caster.Shield -= resupply;
+		targetShip.Shield += resupply;
+	}
+#section all
+};
+
+class RechargeShields : GenericEffect {
+	Document doc("Recharge the fleet's shields over time.");
+	Argument base(AT_Decimal, doc="Base rate to recharge at per second.");
+	Argument percent(AT_Decimal, "0", doc="Percentage of maximum shields to recharge per second.");
+	Argument in_combat(AT_Boolean, "False", doc="Whether the recharge rate should apply in combat.");
+
+#section server
+	void tick(Object& obj, any@ data, double time) const override {
+		if(!obj.isShip)
+			return;
+		if(!in_combat.boolean && obj.inCombat)
+			return;
+
+		Ship@ ship = cast<Ship>(obj);
+		if(ship.Shield >= ship.MaxShield)
+			return;
+
+		double rate = time * base.decimal;
+		if(percent.decimal != 0)
+			rate += time * percent.decimal * ship.MaxShield;
+		ship.Shield += rate;
+	}
+#section all
 };
