@@ -10,7 +10,6 @@ Subsystem: AdmiralBay
 	Tags: BaseCost, Category:Control,NoBulkhead,Ability:LW
 	Tags: Ability:GDF
 	Tags: Ability:MEL
-	Tags: Ability:SensorHammer
 	Tags: Crewed, Control, ControlCore, HasInternals
 	Hull: Flagship, Station
 

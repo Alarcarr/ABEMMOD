@@ -378,18 +378,18 @@ class Boarders : StatusHook {
 class TransferSupplyFromSubsystem : AbilityHook {
 	Document doc("Gives supplies to its target while draining its own supplies, with a rate determined by a subsystem value. If the caster is not a ship, the default transfer rate is used instead, and the supply rate is irrelevant.");
 	Argument objTarg(TT_Object);
-	Argument value("Subsystem Value", AT_SysVar, doc="The subsystem value you wish to use to regulate the transfer. For example, HyperdriveSpeed would be Sys.HyperdriveSpeed (SV_HyperdriveSpeed in the old version outlined in my edit at the top of this post) - the transfer rate is 1 unit of supply per unit of HyperdriveSpeed in such a case.");
-	Argument default("Default Rate", AT_Decimal, "500.0", doc="The default transfer rate, used if the subsystem value could not be found (or is less than 0). Defaults to 500.");
+	Argument value("Subsystem Value", AT_SysVar, doc="The subsystem value you wish to use to regulate the transfer. For example, HyperdriveSpeed would be Sys.HyperdriveSpeed - the transfer rate is 1 unit of supply per unit of HyperdriveSpeed in such a case.");
+	Argument preset("Default Rate", AT_Decimal, "500.0", doc="The default transfer rate, used if the subsystem value could not be found (or is less than 0). Defaults to 500.");
 
-	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const override {
+	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const {
 		Ship@ caster = cast<Ship>(abl.obj);
 		if(caster !is null && caster.Supply == 0)
 			return false;
 		return true;
 	}
 
-	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const override {
-		if(index != uint(objTarget.integer))
+	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const {
+		if(index != uint(objTarg.integer))
 			return true;
 		if(targ.obj is null)
 			return false;
@@ -429,7 +429,7 @@ class TransferSupplyFromSubsystem : AbilityHook {
 			resupplyCap = value.fromSys(abl.subsystem, efficiencyObj=abl.obj) * time;
 		}
 		else {
-			resupplyCap = default.decimal * time; // The 'default' value is now only called if whoever wrote the ability didn't set a default value for 'value'. Still, better safe than sorry.
+			resupplyCap = preset.decimal * time; // The 'default' value is now only called if whoever wrote the ability didn't set a default value for 'value'. Still, better safe than sorry.
 		}
 		if(resupplyCap < resupply)
 			resupply = resupplyCap;
@@ -448,17 +448,17 @@ class TransferShieldFromSubsystem : AbilityHook {
 	Document doc("Gives shields to its target while draining its own shields, with a rate determined by a subsystem value. If the caster is not a ship, the default transfer rate is used instead, and the subsystem value is irrelevant.");
 	Argument objTarg(TT_Object);
 	Argument value("Subsystem Value", AT_SysVar, doc="The subsystem value you wish to use to regulate the transfer. For example, HyperdriveSpeed would be Sys.HyperdriveSpeed - the transfer rate is 1 shield HP per unit of HyperdriveSpeed in such a case.");
-	Argument default("Default Rate", AT_Decimal, "500.0", doc="The default transfer rate, used if the subsystem value could not be found (or is less than 0). Defaults to 500.");
+	Argument preset("Default Rate", AT_Decimal, "500.0", doc="The default transfer rate, used if the subsystem value could not be found (or is less than 0). Defaults to 500.");
 
-	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const override {
+	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const {
 		Ship@ caster = cast<Ship>(abl.obj);
 		if(caster !is null && caster.Shield == 0)
 			return false;
 		return true;
 	}
 
-	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const override {
-		if(index != uint(objTarget.integer))
+	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const {
+		if(index != uint(objTarg.integer))
 			return true;
 		if(targ.obj is null)
 			return false;
@@ -498,7 +498,7 @@ class TransferShieldFromSubsystem : AbilityHook {
 			resupplyCap = value.fromSys(abl.subsystem, efficiencyObj=abl.obj) * time;
 		}
 		else {
-			resupplyCap = default.decimal * time; // The 'default' value is now only called if whoever wrote the ability didn't set a default value for 'value'. Still, better safe than sorry.
+			resupplyCap = preset.decimal * time; // The 'default' value is now only called if whoever wrote the ability didn't set a default value for 'value'. Still, better safe than sorry.
 		}
 		if(resupplyCap < resupply)
 			resupply = resupplyCap;
@@ -534,6 +534,16 @@ class RechargeShields : GenericEffect {
 		if(percent.decimal != 0)
 			rate += time * percent.decimal * ship.MaxShield;
 		ship.Shield += rate;
+		if(ship.Shield > ship.MaxShield)
+			ship.Shield = ship.MaxShield;
 	}
 #section all
+};
+
+class ApplyToShips : StatusHook {
+	Document doc("When this status is added to a system, it only applies to ships.");
+	
+	bool shouldApply(Empire@ emp, Region@ region, Object@ obj) const override {
+		return obj !is null && obj.isShip;
+	}
 };

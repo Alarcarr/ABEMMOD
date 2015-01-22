@@ -1,0 +1,30 @@
+Subsystem: RechargerModule
+	Name: Recharger Module
+	BaseColor: #683db8
+	TypeColor: #683db8
+	Elevation: 2
+
+	Tags: Category:Equipment, HasInternals,
+	Hull: Station
+
+	Size := HexSize * Hexes
+	Hex.Mass := HexSize
+
+
+	Hex.Resistance := 0
+	Hex.HP := 12 * HexSize
+
+	Hex.LaborCost := 3* HexSize +5
+	Description:
+	Hook: AddRegionStatus(FastRecharge)
+	Assert: Size >= 20
+		Message: The Resupply Module must be at least size 20. Add more hexes to the module or increase the station's size.
+	Requires:
+		Command = Hexes
+
+	Module: Default
+
+	Module: Core
+		Sprite: TechIcons::48
+		Hex.BuildCost := 450
+		Hex.MaintainCost := 100
