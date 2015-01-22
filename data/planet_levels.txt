@@ -57,38 +57,38 @@ Level: 3
 Level: 4
 	Name: Master
 	Icon: PlanetIcon4
-	Required: 1 WaterType, 4 Food, 4 Level1, 4 Level2
+	Required: 1 WaterType, 4 Food, 4 Level1, 2 Level2
 	PopGrowth: 1.8
 	Population: 24
-	RequiredPop: 16
+	RequiredPop: 14
 	BasePressure: 60
 	ExportPressurePenalty: 16
 	BaseIncome: 1000
 	BaseLoyalty: 16
 	NeighbourLoyalty: 2.5
-	Points: 2500
+	Points: 1600
 
 Level: 5
 	Name: Unique
-	Icon: PlanetIcon4
-	Required: 1 WaterType, 4 Food, 5 Level1, 6 Level2 , 1 Level3
-	PopGrowth: 1.9
-	Population: 50
-	RequiredPop: 32
-	BasePressure: 90
+	Icon: PlanetIcon5
+	Required: 1 WaterType, 5 Food, 6 Level1, 4 Level2
+	PopGrowth: 1.8
+	Population: 36
+	RequiredPop: 20
+	BasePressure: 100
 	ExportPressurePenalty: 16
-	BaseIncome: 1500
+	BaseIncome: 1600
 	BaseLoyalty: 20
-	NeighbourLoyalty: 3.0
-	Points: 4000
+	NeighbourLoyalty: 3
+	Points: 2600
 	
 Level: 6
 	Name: Mythical
-	Icon: PlanetIcon4
-	Required: 1 WaterType, 4 Food, 5 Level1, 8 Level2 , 2 Level3
+	Icon: PlanetIcon5
+	Required: 1 WaterType, 6 Food, 6 Level1, 6 Level2 , 1 Level3
 	PopGrowth: 2
-	Population: 100
-	RequiredPop: 50
+	Population: 60
+	RequiredPop: 30
 	BasePressure: 120
 	ExportPressurePenalty: 16
 	BaseIncome: 3000
