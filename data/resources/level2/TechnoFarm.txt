@@ -10,7 +10,7 @@ Resource: Technofarm
 	Exportable: False
 	Artificial: True
 	Affinity: Money
-	Affinity: Research
+	Affinity: Money + Influence
 	Distribution: 0.5
 	AddDummyResource(Soylent1)
 	PeriodicInfluenceCard(Cultivation, Timer = 360)
