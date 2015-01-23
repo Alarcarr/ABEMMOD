@@ -18,7 +18,7 @@ Resource: BlackHole
 	IfLevel(1, AddStatus(FastResupply))
 	RegenSurface(25, 17)
 	IfLevel(4, ProtectOtherPlanets())
-	IfLevel(3, ABEM_hooks::RechargeShields(0, Percent = 0.5))
+	IfLevel(3, AddRegionStatus(FastRecharge))
 	IfLevel(3, GiveGlobalTrade())
 	IfLevel(2, IsFlingBeacon())
 	IfLevel(2, IsGate())

@@ -1,0 +1,10 @@
+Building: CloackFacility
+	Name: Cloack Facility
+	Sprite: cloack
+	Size: 6x6
+	Base Cost: 2000
+	Tile Cost: 50
+	Base Maintenance: 500
+	Tile Maintenance: 10
+	Labor Cost: 120
+	AddRegionStatus(Cloaked)

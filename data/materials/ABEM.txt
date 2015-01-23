@@ -102,6 +102,9 @@ Material: tax1
 Material: tax2
 	Inherit: ABEMSubsystem
 	Texture: data/images/tax2.png
+Material: cloack
+	Inherit: ABEMSubsystem
+	Texture: data/images/Cloack.png
 
 
 
