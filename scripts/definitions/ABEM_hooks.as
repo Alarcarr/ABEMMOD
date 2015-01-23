@@ -360,7 +360,7 @@ class Boarders : StatusHook {
 		// EDIT: No more than 10% of all troops can be lost by either side in the engagement, so a minimum battle length is 10 seconds.
 		boarders -= min((boarders * 0.01) * ratio, boarders * 0.1) * time;
 		defenders -= min((defenders * 0.01) / ratio, boarders * 0.1) * time;
-
+		debug();
 		if(defenders <= 0) {
 			@obj.owner = status.originEmpire;
 			if(obj.hasStatuses) {
@@ -374,6 +374,7 @@ class Boarders : StatusHook {
 		info.boarders = boarders;
 		info.defenders = defenders;
 		data.store(@info);
+		debug();
 		return true;
 	}
 	#section all
@@ -578,15 +579,22 @@ class AddOwnedStatus : AbilityHook {
 
 class UserMustNotHaveStatus : AbilityHook {
 	Document doc("The object using this ability must not be under the effects of the specified status.");
+	Argument objTarg(TT_Object,  doc="Not a target, just a dummy to stave off null pointers...");
 	Argument status(AT_Status, doc="Type of status effect to avoid.");
-	
+#section server
 	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const {
-		if(!abl.obj.hasStatuses)
-			return true;
-		if(abl.obj.hasStatusEffect(getStatusType(status.str).id))
+		if(abl.obj is null)
 			return false;
+		if(!abl.obj.hasStatuses) {
+			return true;
+		}
+		else {
+				if(abl.obj.hasStatusEffect(getStatusType(status.str).id))
+					return false;
+		}
 		return true;
 	}
+#section all
 }
 
 class DerelictData {
@@ -596,7 +604,7 @@ class DerelictData {
 }
 
 class IsDerelict : StatusHook {
-	Document doc("Marks the object as a derelict ship. Derelicts have 0 maximum shields and 0 maximum supply - which is part of what makes them incapable of repairing or otherwise defending themselves in any way. Should never be done without setting the ship's owner to defaultEmpire beforehand. Deals 1 damage per second to the object.");
+	Document doc("Marks the object as a derelict ship. Derelicts have 0 maximum shields and 0 maximum supply - which is part of what makes them incapable of repairing or otherwise defending themselves in any way. Should never be done without setting the ship's owner to defaultEmpire beforehand. Deals 1 damage per second as the ship is ravaged by time and the harsh, cold environment of space.");
 
 #section server
 	void onCreate(Object& obj, Status@ status, any@ data) override {
@@ -607,8 +615,13 @@ class IsDerelict : StatusHook {
 			ship.modSupplyBonus(-info.supply);
 			info.shield = ship.MaxShield;
 			ship.MaxShield -= info.shield;
+			ship.Supply = 0;
+			ship.Shield = 0;
 			data.store(@info);
 		}
+		obj.engaged = true;
+		obj.rotationSpeed = 0;
+		obj.clearOrders();
 	}
 	
 	void onDestroy(Object& obj, Status@ status, any@ data) override {
@@ -619,6 +632,7 @@ class IsDerelict : StatusHook {
 			ship.modSupplyBonus(+info.supply);
 			ship.MaxShield += info.shield;
 		}
+		obj.rotationSpeed = 0.1;
 	}
 
 	bool onTick(Object& obj, Status@ status, any@ data, double time) override {
@@ -630,19 +644,19 @@ class IsDerelict : StatusHook {
 				info.supply += ship.MaxSupply;
 			if(ship.MaxShield > 0)
 				info.shield += ship.MaxShield;
+			ship.Supply = 0;
+			ship.Shield = 0;
 			ship.modSupplyBonus(-ship.MaxSupply);
 			ship.MaxShield -= ship.MaxShield;
-			ship.internalDamage(ship, 1.0 * time);
 		}
-		if(ship is null) {
-			DamageEvent dmg;
-			dmg.damage = 1.0 * time;
-			dmg.partiality = 1;
-			dmg.impact = 0;
-			dmg.obj = null;
-			@dmg.target = obj;
-			obj.damage(dmg, -1.0, vec2d(0, 0));
-		}
+		DamageEvent dmg;
+		dmg.damage = 1.0;
+		dmg.partiality = 1;
+		dmg.impact = 0;
+		@dmg.obj = null;
+		@dmg.target = obj;
+		obj.damage(dmg, -1.0, vec2d(0, 0));
+		obj.engaged = true;
 		return true;
 	}
 #section all

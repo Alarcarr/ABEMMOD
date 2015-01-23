@@ -5,6 +5,7 @@ Ability: ScuttleDerelict
 	
 	Cooldown: 5
 	Target: targ = Object
+	Range: 300
 	
 	ABEM_hooks::TargetFilterStatus(targ, DerelictShip)
-	DestroyTarget(targ)
+	ABEM_hooks::DestroyTarget(targ)

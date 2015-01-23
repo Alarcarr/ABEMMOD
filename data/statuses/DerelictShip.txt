@@ -1,5 +1,5 @@
 Status: DerelictShip
-	Visible To: None
+	Visible To: Nobody
 	Unique: True
 	
 	AddFleetEffectiveness(-100)
