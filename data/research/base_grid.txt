@@ -22,8 +22,6 @@ Grid: Base
 	ImpAllHealth: 2,-4
 	DevMoney: -4,1
 	DevBudget: -4,-1
-	TileDev: -2,-4
-	ImpPopLvl2: -4,-4
 	c2: -1,2
 	FTLT: -2,3
 	DevFTLIncome: -2,4
@@ -43,7 +41,6 @@ Grid: Base
 	DevFTLIncome: -4,9
 	ImpThrust: -3,9
 	DevMoney: -2,6
-	ImpPopLvl2: -5,-6
 	DevMoney: -4,-2
 	DevMoney: -3,-4
 	DevInfluence: -3,-1
@@ -74,7 +71,6 @@ Grid: Base
 	IntelFacilities: -5,-4
 	ImpArmorHealth: 0,-6
 	ImpFactoryLabor2: 1,-7
-	ImpPopLvl3: -6,-6
 	ImpAoE: 3,6
 	SysAntimatterGen: 4,6
 	ImpProjSpeed: 3,7
@@ -84,7 +80,6 @@ Grid: Base
 	DevEnergy: 3,10
 	SysIonCannon: 1,8
 	SysHyperLaser: 2,9
-	PowerPlant: 1,11
 	DevEnergy: 2,10
 	CompositeArmor: 0,-7
 	ImpCivHealth: 3,-6
@@ -96,7 +91,6 @@ Grid: Base
 	c1: 7,10
 	ImpAoE2: 5,11
 	ImpSupportSupplyUse2: 7,11
-	DevEnergy: 5,6
 	ImpDamageSmall: 3,8
 	c3: 7,9
 	DevEnergy: 8,9
@@ -191,7 +185,6 @@ Grid: Base
 	c3: 15,4
 	HeavyRailgun: 15,5
 	SuperLaser: 15,3
-	BldMegacity: -4,-6
 	SysNeutronArmor: 1,-9
 	c2: 2,-10
 	ImpArmorDR: 2,-11
@@ -203,11 +196,8 @@ Grid: Base
 	ImpAllHealth: 17,4
 	ImpArmorHealth: 18,4
 	SlavePopulation: -6,2
-	TileDev: -4,-5
-	TileDev: -5,-7
 	ImpDamage2: 11,0
 	ImpThrust2: -7,4
-	BldPlanetaryEngine: -6,-7
 	ImpAllRange: 12,0
 	AdmiralCrew: 13,0
 	SysGravitonCondenser: 17,5
@@ -223,7 +213,6 @@ Grid: Base
 	ImpArmorDR2: 12,1
 	ImpAllHealth: 13,-7
 	BldMetropolis: -3,-3
-	Housing: -5,-5
 	DevMoney: -7,0
 	DevInfluence: -8,-1
 	DevMoney: -8,1
@@ -231,3 +220,7 @@ Grid: Base
 	DevNegotiate: -9,-1
 	DePlanet: -9,1
 	ImpPlanetSupport: -3,-9
+	ImpTileDevelopment: -4,-5
+	ImpTileDevelopment: -2,-4
+	PowerPlant: 1,11
+	DevEnergyIncome: 4,5
