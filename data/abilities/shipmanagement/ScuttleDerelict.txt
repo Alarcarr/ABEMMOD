@@ -1,0 +1,10 @@
+Ability: ScuttleDerelict
+	Name: Scuttle Derelict Ship
+	Description: Sends a demolition crew to plant charges on the target derelict. The remains of the target ship are destroyed.
+	Icon: Explosion_color
+	
+	Cooldown: 5
+	Target: targ = Object
+	
+	ABEM_hooks::TargetFilterStatus(targ, DerelictShip)
+	DestroyTarget(targ)

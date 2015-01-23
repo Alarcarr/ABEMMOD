@@ -1,0 +1,15 @@
+Ability: BoardingParty
+	Name: #ABL_BOARDING_PARTY
+	Description: #ABL_BOARDING_PARTY_DESC
+	Icon: CrewQuarters*#9686ff
+	
+	Cooldown: 300
+	
+	Target: targ = Object
+	ABEM_hooks::TargetFilterNotType(targ, Planet)
+	ABEM_hooks::TargetRequireCommand(targ)
+	ABEM_hooks::UserMustNotHaveStatus(BoardingParty)
+	TargetFilterNotStatus(BoardingParty)
+	Either(TargetFilterNotAllied(targ), ABEM_hooks::TargetFilterStatus(targ, DerelictShip))
+	
+	ABEM_hooks::AddOwnedStatus(targ, BoardingParty)

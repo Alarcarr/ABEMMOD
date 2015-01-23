@@ -4,37 +4,28 @@ Subsystem: BoardingParty
 		Contains all the equipment required to send boarding parties onto an object in space, and attempt to capture it.
 
 		[img=Plus]Allows a ship to attempt to capture enemy flagships, orbitals, or asteroid mines.[/img]
-		[img=Plus]Can also be used for defense against boarders.[/img]
+		[img=Plus]Can also be used for defense against boarders, or to take control of derelict ships.[/img]
 		[img=Minus]Only one boarding party can attempt to capture an object at any given moment.[/img]
-		[img=Minus]Stuffs.[/img]
+		[img=Minus]Can take up to 100 seconds to complete, and has a high cooldown.[/img]
 	>>
 
 	BaseColor: #c5f946
-	Picture: SubsystemButtonArt::8
+	Picture: CrewQuarters*#9686ff
 	Elevation: 5
 
 	Tags: BaseCost, NonContiguous, NoCore, Category:Equipment, Ability:BoardingParty
+	Tags: Boarders // DO NOT REMOVE OR CHANGE THIS. 'Boarders' is used to tell the scripts that this subsystem can participate in an offensive boarding action as well as a defensive one. Without it, BoardingStrength is only used for defense.
 	Tags: HasInternals
 	Hull: Flagship, Station
 
 	EvaluationOrder: -10
 
 	Size := HexSize * Hexes
-	BoardOffense := floor(40 * Size)
-	BoardDefense := BoardOffense
+	BoardingStrength := floor(40 * Size)
 
 	Hex.Resistance := 0.2
 	Hex.HP := 36 * HexSize
 	Hex.Mass := HexSize
 
 	Module: Default
-		Sprite: CrewQuarters*#5686ff
-
-	Module: Core
-		Sprite: Bridge*#5686ff
-		Hex.HP := 2 * Hex.HP
-		Hex.Resistance := 0.35
-
-		Hex.BuildCost := 5 * Hex.BuildCost
-		Hex.Mass := 5 * Hex.Mass
-		Color: #5686ff
+		Sprite: CrewQuarters*#9686ff

@@ -24,11 +24,18 @@ void ABEMControlDestroyed(Event& evt) {
 
 	//Make sure we still have a bridge or something with control up
 	if(!ship.blueprint.hasTagActive(ST_ControlCore)) {
-		if(!ship.hasLeaderAI() || ship.owner == Creeps || ship.owner == Pirates)			
+		if(!ship.hasLeaderAI || ship.owner == Creeps || ship.owner == Pirates)			
 			ship.destroy();
 		else {
-				ship.addStatus(-1, getStatusID("DerelictShip"));
+			double chance = ship.blueprint.currentHP / ship.blueprint.design.totalHP;
+			if(randomd() < chance) {
+				const uint type = getStatusID("DerelictShip");
+				ship.addStatus(-1, type);
 				@ship.owner = defaultEmpire;
+			}
+			else {
+				ship.destroy();
+			}
 		}
 	}
 }

@@ -18,6 +18,8 @@ Subsystem: AdmiralBay
 	Size := HexSize * Hexes
 	Crew := floor(40 * Size)
 	Command := Hexes * 1
+	
+	BoardingStrength := 0.7 * Crew
 
 	Repair := 3 * HexSize * (Hexes-1)
 	RepairSupplyCost := 1.5 * Repair
@@ -29,7 +31,7 @@ Subsystem: AdmiralBay
 
 
 
-	Effect: ControlCore
+	Effect: ABEMControlCore
 
 	Provides:
 		Crew = Crew

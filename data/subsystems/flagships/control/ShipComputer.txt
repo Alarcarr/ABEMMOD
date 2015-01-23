@@ -15,12 +15,14 @@ Subsystem: ShipComputer
 	Command := Hexes * 10
 	Repair := 4 * HexSize * (Hexes-1)
 	PowerUse := 30 * Size
+	
+	BoardingStrength := 20 * Size
 
 	Hex.Resistance := 0.2
 	Hex.HP := 18 * HexSize
 	Hex.Mass := HexSize
 
-	Effect: ControlCore
+	Effect: ABEMControlCore
 
 	Requires:
 		Power = PowerUse

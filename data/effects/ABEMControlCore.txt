@@ -1,2 +1,2 @@
-Effect: ControlCore
+Effect: ABEMControlCore
 	End: ABEMCombat::ABEMControlDestroyed

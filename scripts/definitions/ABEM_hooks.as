@@ -312,9 +312,9 @@ class BoardingData {
 class Boarders : StatusHook {
 	Document doc("Calculates the boarding strength of the origin object from a subsystem value, calculates the boarding strength of the target from another subsystem value and half of its crew. After a certain amount of time, either the boarders are repelled or the target is captured.");
 	Argument offense("Offense Subsystem Value", AT_Custom, doc="Subsystem value to calculate strength from.");
-	Argument defense("Defense Subsystem Value", AT_Custom, doc="Subsystem value to calculate defensive strength from.");
+	Argument defense("Defense Subsystem Value", AT_Custom, doc="Subsystem value to calculate defensive strength from. Defense is always multiplied by 10000 if the target is a planet.");
 	Argument defaultboarders("Default Boarder Strength", AT_Decimal, "200.0", doc="If the subsystem value can't be found or is zero on the origin object, this is how strong the boarders will be. Defaults to 200.");
-	Argument defaultdefenders("Default Defender Strength", AT_Decimal, "100.0", doc="If the subsystem value can't be found or is zero on the target object, and the object has no crew, this is how strong the defenders will be. Defaults to 100. Multiplied by 10000 if the target is a planet.");
+	Argument defaultdefenders("Default Defender Strength", AT_Decimal, "100.0", doc="If the subsystem value can't be found or is zero on the target object, and the object has no crew, this is how strong the defenders will be. Defaults to 100.");
 
 	#section server
 	void onCreate(Object& obj, Status@ status, any@ data) override {
@@ -322,7 +322,7 @@ class Boarders : StatusHook {
 		double boarders = 0;
 		Ship@ caster = cast<Ship>(status.originObject);
 		if(caster !is null)
-			boarders = caster.blueprint.getEfficiencySum(SubsystemVariable(getSubsystemVariable(offense.str)));
+			boarders = caster.blueprint.getEfficiencySum(SubsystemVariable(getSubsystemVariable(offense.str)), ST_Boarders);
 		if(boarders <= 0)
 			boarders = defaultboarders.decimal;
 		
@@ -330,8 +330,7 @@ class Boarders : StatusHook {
 		double defenders = 0;
 		Ship@ ship = cast<Ship>(obj);
 		if(ship !is null)
-			// We want regular crew to count as half value; they're not as well-equipped or trained to repel boarders.
-			defenders = ship.blueprint.getEfficiencySum(SubsystemVariable(getSubsystemVariable(defense.str))) + (ship.blueprint.getEfficiencySum(SV_Crew) / 2);
+			defenders = ship.blueprint.getEfficiencySum(SubsystemVariable(getSubsystemVariable(offense.str)));
 		if(defenders <= 0)
 			defenders = defaultdefenders.decimal;
 		// We want a planet to be 10 thousand times as hard to capture via 'boarding' as other objects.
@@ -355,14 +354,19 @@ class Boarders : StatusHook {
 
 		double ratio = boarders / defenders;
 		// Basically, if there are 100 boarders and 100 defenders, 1 of each are lost per second. 
-		// If there are 200 boarders, 0.55% of the boarders - incidentally, also 1 - are lost, but 2% of the defenders are lost.
+		// If there are 200 boarders, 0.5% of the boarders - incidentally, also 1 - are lost, but 2% of the defenders are lost.
 		// This means that boarding operations will last a maximum of 100 seconds, though it will usually last less as one side will have an advantage over the other.
 		// Hopefully, 100 seconds will give the boarded player enough time to respond, without allowing him to wait too long before acting. (And thus needlessly prolonging the battle.)
-		boarders -= (boarders * 0.01) * ratio * time;
-		defenders -= (defenders * 0.01) / ratio * time;
+		// EDIT: No more than 10% of all troops can be lost by either side in the engagement, so a minimum battle length is 10 seconds.
+		boarders -= min((boarders * 0.01) * ratio, boarders * 0.1) * time;
+		defenders -= min((defenders * 0.01 / ratio, boarders * 0.1) * time;
 
 		if(defenders <= 0) {
 			@obj.owner = status.originEmpire;
+			if(obj.hasStatuses) {
+				if(obj.hasStatusEffect(getStatusID("DerelictShip")))
+					obj.removeStatus(getStatusID("DerelictShip"));
+			}
 			return false;
 		}
 		if(boarders <= 0)
@@ -571,3 +575,85 @@ class AddOwnedStatus : AbilityHook {
 	}
 #section all
 };
+
+class UserMustNotHaveStatus : AbilityHook {
+	Document doc("The object using this ability must not be under the effects of the specified status.");
+	Argument status(AT_Status, doc="Type of status effect to avoid.");
+	
+	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const {
+		if(!abl.obj.hasStatuses)
+			return true;
+		if(abl.obj.hasStatusEffect(getStatusType(status).id))
+			return false;
+		return true;
+	}
+}
+
+class DerelictData {
+	double supply;
+	double shield;
+	any data;
+}
+
+class IsDerelict : StatusHook {
+	Document doc("Marks the object as a derelict ship. Derelicts have 0 maximum shields and 0 maximum supply - which is part of what makes them incapable of repairing or otherwise defending themselves in any way. Should never be done without setting the ship's owner to defaultEmpire beforehand. Deals 1 damage per second to the object.");
+	
+	void onCreate(Object& obj, Status@ status, any@ data) override {
+		Ship@ ship = cast<Ship>(obj);
+		DerelictData info;
+		if(ship !is null) {
+			info.supply = ship.MaxSupply;
+			ship.modSupplyBonus(-info.supply);
+			info.shield = ship.MaxShield;
+			ship.MaxShield -= info.shield;
+			data.store(@info);
+		}
+	}
+	
+	void onDestroy(Object& obj, Status@ status, any@ data) override {
+		DerelictData@ info;
+		data.retrieve(@info);
+		Ship@ ship = cast<Ship>(obj);
+		if(ship !is null) {
+			ship.modSupplyBonus(+info.supply);
+			ship.MaxShield += info.shield;
+		}
+	}
+
+	bool onTick(Object& obj, Status@ status, any@ data, double time) override {
+		DerelictData@ info;
+		data.retrieve(@info);
+		Ship@ ship = cast<Ship>(obj);
+		if(ship !is null) {
+			if(ship.MaxSupply > 0)
+				info.supply += ship.MaxSupply;
+			if(ship.MaxShield > 0)
+				info.shield += ship.MaxShield;
+			ship.modSupplyBonus(-ship.MaxSupply);
+			ship.MaxShield -= ship.MaxShield;
+			ship.internalDamage(1.0 * time);
+		}
+		if(ship is null) {
+			DamageEvent dmg;
+			dmg.damage = 1.0 * time;
+			dmg.partiality = 1;
+			dmg.impact = 0;
+			dmg.obj = null;
+			@dmg.target = obj;
+			obj.damage(dmg, -1.0, vec2d(0, 0));
+		}
+		return true;
+	}
+}
+
+class DestroyTarget: AbilityHook {
+	Document doc("Destroys the target object.");
+	Argument objTarg(TT_Object);
+	
+	void activate(Ability@ abl, any@ data, const Targets@ targs) const {
+		Object@ obj = objTarg.fromConstTarget(targs).obj;
+		if(obj !is null && obj.valid)
+			obj.destroy();
+	}
+
+}

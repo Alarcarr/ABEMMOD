@@ -1,0 +1,6 @@
+Status: DerelictShip
+	Visible To: None
+	Unique: True
+	
+	AddFleetEffectiveness(-100)
+	ABEM_hooks::IsDerelict()

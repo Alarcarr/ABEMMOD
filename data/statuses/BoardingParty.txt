@@ -1,0 +1,7 @@
+Status: BoardingParty
+	Name: Boarded
+	Description: This ship is currently being boarded. It may soon be captured. No more boarding parties can be sent to the ship until the boarding action ends.
+	Visible To: All
+	Unique: True
+	
+	Boarders(BoardingStrength, BoardingStrength, 200, 100)
