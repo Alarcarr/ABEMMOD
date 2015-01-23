@@ -1,0 +1,3 @@
+Template: tag/IsArmor
+	Modifier: ArmorHpFactor(factor)
+		Hex.HP := Hex.HP * factor
