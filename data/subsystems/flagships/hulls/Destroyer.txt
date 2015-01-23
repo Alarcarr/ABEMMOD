@@ -13,10 +13,11 @@ Subsystem: Destroyer
 
 	AddShipModifier: HyperdriveSpeedFactor(0.9)
 	AddShipModifier: MassFactor(1.1)
-	AddShipModifier: BuildCostFactor(1.0 - 0.5 * min(sqrt((ShipSize - 500) / 3000), 1.0))
-	AddShipModifier: FireArcFactor(2.0)
+	AddShipModifier: BuildCostFactor(1.0 - 0.8 * min(sqrt((ShipSize - 500) / 3000), 1.0))
+	AddShipModifier: FireArcFactor(0.5)
+	AddShipModifier: ArmorHpFactor(1)
 
-	Assert: ShipSize >= 500
+	Assert: ShipSize >= 100
 		Message: #ERROR_MIN_SIZE:$1:500
 
 	Module: Default
