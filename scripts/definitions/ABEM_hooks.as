@@ -322,7 +322,7 @@ class Boarders : StatusHook {
 		double boarders = 0;
 		Ship@ caster = cast<Ship>(status.originObject);
 		if(caster !is null)
-			boarders = caster.blueprint.getEfficiencySum(SubsystemVariable(getSubsystemVariable(offense.str)), ST_Boarders);
+			boarders = caster.blueprint.getEfficiencySum(SubsystemVariable(getSubsystemVariable(offense.str)), ST_Boarders, true);
 		if(boarders <= 0)
 			boarders = defaultboarders.decimal;
 		
@@ -583,7 +583,7 @@ class UserMustNotHaveStatus : AbilityHook {
 	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const {
 		if(!abl.obj.hasStatuses)
 			return true;
-		if(abl.obj.hasStatusEffect(getStatusType(status).id))
+		if(abl.obj.hasStatusEffect(getStatusType(status.str).id))
 			return false;
 		return true;
 	}
@@ -597,7 +597,8 @@ class DerelictData {
 
 class IsDerelict : StatusHook {
 	Document doc("Marks the object as a derelict ship. Derelicts have 0 maximum shields and 0 maximum supply - which is part of what makes them incapable of repairing or otherwise defending themselves in any way. Should never be done without setting the ship's owner to defaultEmpire beforehand. Deals 1 damage per second to the object.");
-	
+
+#section server
 	void onCreate(Object& obj, Status@ status, any@ data) override {
 		Ship@ ship = cast<Ship>(obj);
 		DerelictData info;
@@ -631,7 +632,7 @@ class IsDerelict : StatusHook {
 				info.shield += ship.MaxShield;
 			ship.modSupplyBonus(-ship.MaxSupply);
 			ship.MaxShield -= ship.MaxShield;
-			ship.internalDamage(1.0 * time);
+			ship.internalDamage(ship, 1.0 * time);
 		}
 		if(ship is null) {
 			DamageEvent dmg;
@@ -639,21 +640,23 @@ class IsDerelict : StatusHook {
 			dmg.partiality = 1;
 			dmg.impact = 0;
 			dmg.obj = null;
-			@dmg.target = obj;
+			&dmg.target = obj;
 			obj.damage(dmg, -1.0, vec2d(0, 0));
 		}
 		return true;
 	}
-}
+#section all
+};
 
 class DestroyTarget: AbilityHook {
 	Document doc("Destroys the target object.");
 	Argument objTarg(TT_Object);
 	
+#section server
 	void activate(Ability@ abl, any@ data, const Targets@ targs) const {
 		Object@ obj = objTarg.fromConstTarget(targs).obj;
 		if(obj !is null && obj.valid)
 			obj.destroy();
 	}
-
-}
+#section all
+};

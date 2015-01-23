@@ -24,7 +24,7 @@ void ABEMControlDestroyed(Event& evt) {
 
 	//Make sure we still have a bridge or something with control up
 	if(!ship.blueprint.hasTagActive(ST_ControlCore)) {
-		if(!ship.hasLeaderAI || ship.owner == Creeps || ship.owner == Pirates)			
+		if(!ship.hasLeaderAI || ship.owner is Creeps || ship.owner is Pirates)			
 			ship.destroy();
 		else {
 			double chance = ship.blueprint.currentHP / ship.blueprint.design.totalHP;
