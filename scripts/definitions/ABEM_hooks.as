@@ -359,7 +359,7 @@ class Boarders : StatusHook {
 		// Hopefully, 100 seconds will give the boarded player enough time to respond, without allowing him to wait too long before acting. (And thus needlessly prolonging the battle.)
 		// EDIT: No more than 10% of all troops can be lost by either side in the engagement, so a minimum battle length is 10 seconds.
 		boarders -= min((boarders * 0.01) * ratio, boarders * 0.1) * time;
-		defenders -= min((defenders * 0.01 / ratio, boarders * 0.1) * time;
+		defenders -= min((defenders * 0.01) / ratio, boarders * 0.1) * time;
 
 		if(defenders <= 0) {
 			@obj.owner = status.originEmpire;
@@ -640,7 +640,7 @@ class IsDerelict : StatusHook {
 			dmg.partiality = 1;
 			dmg.impact = 0;
 			dmg.obj = null;
-			&dmg.target = obj;
+			@dmg.target = obj;
 			obj.damage(dmg, -1.0, vec2d(0, 0));
 		}
 		return true;
