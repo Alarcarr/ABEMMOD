@@ -1,0 +1,23 @@
+Subsystem: Carrier
+	Name: Carrier
+	Description: #S_TITAN_HULL_DESC
+
+	Tags: Applied:Hull, Category:Hulls, NoCore
+	Hull: Flagship
+	EvaluationOrder: -200
+	BaseColor: #cc6a3a
+
+	AddShipModifier: FlagshipHull::GridWidthFactor(sqrt(1.2))
+	AddShipModifier: FlagshipHull::GridHeightFactor(sqrt(1.2))
+
+	AddShipModifier: MassFactor(0.75)
+	AddShipModifier: ShieldCapacityFactor(1.5)
+	AddShipModifier: SupportCapacityFactor(1.5)
+	AddShipModifier: ArmorHpFactor(0.50)
+
+	Assert: ShipSize >= 100
+		Message: #ERROR_MIN_SIZE:$1:100
+
+	Module: Default
+		Sprite: DesignationIcons::16
+		DrawMode: 3

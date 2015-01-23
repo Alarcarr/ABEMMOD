@@ -1,9 +1,0 @@
-Building: Industry
-	Name: #BLD_INDUSTRY
-	Description: #BLD_INDUSTRY_DESC
-	Sprite: BuildingSprites::4
-
-	Civilian: True
-
-	Saturation: 1.5 Labor
-	Production: 1.5 Labor
