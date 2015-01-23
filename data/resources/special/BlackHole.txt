@@ -7,12 +7,6 @@ Resource: BlackHole
 	Artificial: True
 	Rarity: Unique
 	Unique: True
-	Pressure: 7 Defense
-	Pressure: 7 Influence
-	Pressure: 7 Labor
-	Pressure: 7 Research
-	Pressure: 7 Money
-	Pressure: 7 Energy
 	Frequency: 0
 	Icon: emp_flag_flag7
 	Description: #RESOURCE_GATEWORLD_DESC
@@ -21,14 +15,4 @@ Resource: BlackHole
 
 	Limitless Level: True
 
-	IfLevel(1, AddFleetCommand(2048))
-	IfLevel(2, AddPressureCap(10))
-	IfLevel(3, IsGate())
-	IfLevel(4, IsFlingBeacon())
-	IfLevel(5, FreeFTLSystem())
-	IfLevel(6, AddAccelerationBonus(0.5))
-	IfLevel(6, AddMaxPopulation(3))
-	IfLevel(6, ModLocalLoyalty(10))
-	
-	AddMaxPopulation(-3)
-	ModLocalLoyalty(-10)
+
