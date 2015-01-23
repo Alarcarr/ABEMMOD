@@ -14,6 +14,5 @@ Building: Metropolis
 	Base Maintenance: 50
 	Tile Maintenance: 30
 
-	RequireUnlockTag(Metropolis)
 	AddPressureCap(8)
 	ReplacesCities(6)
