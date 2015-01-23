@@ -46,7 +46,6 @@ Grid: Base
 	c2: 3,-1
 	ImpSupportCap: 2,6
 	DevEnergy: 1,6
-	ImpFactoryLabor: 0,-5
 	ImpArmorHealth: 1,-6
 	DevFTL: -1,10
 	DevFTLIncome: -3,10
@@ -63,7 +62,6 @@ Grid: Base
 	SysHyperLaser: 2,9
 	DevEnergy: 2,10
 	CompositeArmor: 0,-7
-	ImpCivHealth: 3,-6
 	ImpAllHealth: 4,0
 	c1: 6,8
 	Antimatter2: 6,9
@@ -88,7 +86,6 @@ Grid: Base
 	Merchantilist: -11,1
 	SysGravityEngine: -6,4
 	ImpAllHealth: 2,-7
-	DevEnergy: 2,-6
 	ModBulkhead: 1,-5
 	ImpArmorDR: 1,-8
 	ImpAllHealth: 2,-8
@@ -179,7 +176,6 @@ Grid: Base
 	DePlanet: -9,1
 	PowerPlant: 1,11
 	ImpAllHealth2: 4,-8
-	SysTitanHull: 4,-9
 	ImpAllHealth2: 14,0
 	SysMuonCannon: 9,0
 	DevInfluenceIncome: -3,1
@@ -204,3 +200,4 @@ Grid: Base
 	OrbitalEnhancement: -1,-8
 	DevInfluenceIncome2: -7,0
 	ImpAllRange: -1,5
+	ImpCivConstructionRate: 2,-6
