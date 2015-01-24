@@ -1,4 +1,4 @@
-Subsystem: TorpedoLauncher
+Subsystem: STorpedoLauncher
 	Name: Torpedo Launcher
 	Description: Launches massive, slow-moving, guided bombs. These bombs explode in an area around their target.
 	BaseColor: #7946f9

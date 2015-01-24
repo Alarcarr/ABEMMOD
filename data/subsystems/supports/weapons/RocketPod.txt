@@ -1,4 +1,4 @@
-Subsystem: RocketPod
+Subsystem: SRocketPod
 	Name: Rocket Pod
 	Description: <<
 		A concealed tube of rockets rapidly extends, launches a volley of short range rockets, and receeds to reload.
@@ -17,7 +17,7 @@ Subsystem: RocketPod
 	Tags: BaseCost
 	Tags: WeaponBase, MissileBase, Category:Weapons, Rotatable
 	Tags: ExteriorCore, Weapon, DefaultUnlock, HasInternals, MainDPS, Homing
-	Hull: Flagship, Station
+	Hull: Support
 
 	Size := HexSize * Hexes
 	Range := Size + 300
