@@ -5,26 +5,22 @@ Anomaly: SubsystemsUpgrade
 	Material: ResearchStation
 	Option: Weapons
 		Icon: FusionTorpedo
-		Description: This container is full of advanced capacitors, warheads and cannons. Analysis will undoubtedly provide a 10% boost to weapon damage.
+		Description: #A_EQUIPMENTSTASH_WEAPONS
 		AddModifier(tag/Weapon::DamageFactor(1.10))
 	Option: Supply
 		Icon: SupplyStorage
-		Description: This container is mostly full of ammunition. While it is incompatible with our weapons, it is remarkably well stored and compressed; we could learn to improve the capacity of our supply stores by as much as 20%!
+		Description: #A_EQUIPMENTSTASH_SUPPLY
 		AddModifier(SupplyCapacityFactor(1.2))
 	Option: Engines
 		Icon: techRocket
-		Description: This container houses advanced engine injector assemblies, fuel lines, thrusters and similar engine components. Reverse-engineering them will boost all thrust by 10%. (Does not apply to Planetary Engines.)
+		Description: #A_EQUIPMENTSTASH_ENGINES
 		AddModifier(ThrustFactor(1.1))
 	Option: Armor
-		Description: This container is filled with advanced alloys and composites used in armor fabrication. Analyzing them will yield a 15% boost to all armor health.
+		Description: #A_EQUIPMENTSTASH_ARMOR
 		Icon: PlateArmor
 		AddModifier(tag/IsArmor::HpFactor(1.15))
 	State: SubsystemUpg
-		Narrative: <<
-			This station appears to have served as a resupply facility for the creators of the robotic 'Remnants'. It is now dormant, but your scientists believe they can command the station to jettison one of its supply containers into space, allowing you to analyze the advanced technology within. They are also certain that they have deciphered the cargo manifests, so they know what the contents of each container are.
-			
-			Unfortunately, this will trigger a self-destruct mechanism, destroying the other containers and the station itself. You must decide what sort of technology you require most.
-		>>
+		Narrative: #A_EQUIPMENTSTASH_NARRATIVE
 		
 		Model: Research_Station
 		Material: ResearchStation

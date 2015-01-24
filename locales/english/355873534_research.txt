@@ -175,3 +175,29 @@ R_BLD_SLAVE_DESC: <<
 
 	[color=#42b4bd][b]Alternate Unlock:[/b] Spend 500 energy.[/color]
 >>
+R_SYS_HEAVYRAIL_DESC: <<
+	[color=#aaa][i]Improved capacitors and superconducting magnets allow for much greater power spikes in railguns; this allows for the construction of comparably larger, 'heavy' rail cannons.[/i][/color]
+	
+	Unlocks the Heavy Railgun.
+	
+	[i][bbloc=#S_HEAVYRAIL_DESC/][/i]
+>>
+R_BLD_METROPOLIS_DESC: <<
+	Unlocks Metropolii.
+	
+	[i][bbloc=#BLD_METROPOLIS_DESC/][/i]
+	
+	[i][color=#0087c7][b]Alternate Unlock:[/b] Spend 5 influence points.[/color][/i]
+>>
+R_BLD_TAX_DESC: <<
+	Unlocks Taxation Centers.
+	
+	[i][bbloc=#B_TAXCENTER_DESC/][/i]
+>>
+R_SYS_RESUPPLY_MODULE:
+	[color=#aaa][i]New supply package dispersal systems allow for facilities equivalent to Supply Depots to be built into a space station without sacrificing defensive capabilities.[/i][/color]
+	
+	Unlocks the Resupply Module subsystem for use on stations.
+	
+	[i][bbloc=#S_RESUPPLYMODULE_DESC/][/i]
+>>

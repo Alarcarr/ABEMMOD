@@ -23,7 +23,7 @@ R_SYS_HYPERDRIVE_DESC: <<
 
 	Unlocks the Hyperdrive subsystem for use on flagships if it is not already available.
 
-	[i]Allows for hyperdrive navigation. The larger the hyperdrive the faster the FTL speed.[/i]
+	[i]Allows for hyperspace navigation. The larger the hyperdrive the faster the FTL speed.[/i]
 >>
 
 R_IMP_POP_LVL1PLANET: Soil Improvement
