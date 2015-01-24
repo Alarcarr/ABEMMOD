@@ -1,6 +1,6 @@
 Subsystem: MatterDisruptor
 	Name: Matter Disruptor
-	Description: Modifies its damage based on the relative size of the target to the ship it's on. Ranges from 50% (target is half size) to 400% (target is quadruple size) listed damage.
+	Description: #S_MATTERDISRUPTOR_DESC
 	BaseColor: #c5f946
 	TypeColor: #c5f946
 	Picture: SubsystemButtonArt::2
@@ -14,7 +14,7 @@ Subsystem: MatterDisruptor
 	Size := HexSize * Hexes
 
 	Range := Size + 500
-	Damage := Size * 2
+	Damage := Size * 3.2
 	Reload := 2
 	Speed := 110 * log(Size * 0.075 + 2) / log(2)
 	Spread := 0.04

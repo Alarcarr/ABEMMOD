@@ -1,6 +1,6 @@
 Subsystem: HeavyRailgunBattery
 	Name: Heavy Railgun
-	Description: #RAILBATTERY_DESC
+	Description: #S_HEAVYRAIL_DESC
 	BaseColor: #79992b
 	TypeColor: #c5f946
 	Picture: SubsystemButtonArt::2
@@ -14,8 +14,8 @@ Subsystem: HeavyRailgunBattery
 	Size := HexSize * Hexes
 
 	Range := Size + 500
-	Damage := Size * 0.64*9
-	Reload := 0.2*8
+	Damage := Size * 5.76
+	Reload := 1.6
 	Speed := 75 * log(Size * 0.075 + 2) / log(2)
 	Spread := 0.04
 	Tracking := 0.4

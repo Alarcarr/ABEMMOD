@@ -1,11 +1,6 @@
 Subsystem: BussardRamjet
 	Name: Bussard Ramjet
-	Description: <<
-		A large scoop that collects particulate matter floating in space and uses them to propel itself.
-
-		[img=Plus]Lack of fuel requirements makes its maintenance requirements negligible.[/img]
-		[img=Minus]Extremely low thrust.[/img]
-	>>
+	Description: #S_RAMJET_DESC
 	BaseColor: #f99a77
 	Picture: OrbitalEngine
 	Elevation: 0

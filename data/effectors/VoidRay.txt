@@ -22,7 +22,7 @@ Effector: VoidRay
 	AutoTarget: isEnemy && (isShip || (isOrbital || isColonyShip || isCivilian) * 0.5)
 
 	EfficiencyMode: Normal
-	Activation: VariableTimed(Duration-0.001, 0)
+	Activation: VariableTimed(Duration+Cooldown, 0.25)
 	OnTrigger: combat::WeaponFire(SupplyCost)
 
 	Effect: VoidRay
