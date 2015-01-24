@@ -372,7 +372,7 @@ class Boarders : StatusHook {
 			@obj.owner = status.originEmpire;
 			if(obj.hasStatuses) {
 				if(obj.hasStatusEffect(getStatusID("DerelictShip")))
-					obj.removeStatus(getStatusID("DerelictShip"));
+					obj.removeStatusType(getStatusID("DerelictShip"));
 			}
 			return false;
 		}
@@ -640,6 +640,7 @@ class IsDerelict : StatusHook {
 			ship.modSupplyBonus(+info.supply);
 			ship.MaxShield += info.shield;
 		}
+		obj.engaged = false;
 		obj.rotationSpeed = 0.1;
 	}
 
