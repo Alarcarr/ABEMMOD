@@ -14,4 +14,5 @@ Ability: BoardingParty
 	TargetFilterNotStatus(targ, BoardingParty)
 	Either(TargetFilterNotAllied(targ), ABEM_hooks::TargetFilterStatus(targ, DerelictShip))
 	
+	OffensiveToTarget(targ)
 	ABEM_hooks::AddOwnedStatus(targ, BoardingParty)

@@ -704,7 +704,8 @@ class Interdict : StatusHook {
 		if(arguments[0].integer == 1) {
 			Ship@ object = cast<Ship>(obj);
 			if(arguments[1].boolean) {
-				double initialCost = object.blueprint.getEfficiencySum(SV_InterdictInitCost);
+			//	double initialCost = object.blueprint.getEfficiencySum(SV_InterdictInitCost);
+				double initialCost = 0.0;
 				if(initialCost > 0) {
 					double consumed = obj.owner.consumeFTL(initialCost, false);
 					if(consumed < initialCost) {
@@ -716,7 +717,7 @@ class Interdict : StatusHook {
 				}
 			}
 			if(arguments[2].boolean) {
-				maintenance = object.blueprint.design.total(SV_InterdictMaintenance);
+			//	maintenance = object.blueprint.design.total(SV_InterdictMaintenance);
 				if(maintenance > 0) {
 					obj.owner.modFTLUse(maintenance);
 				}
@@ -732,7 +733,7 @@ class Interdict : StatusHook {
 		data.retrieve(failed);
 		if(arguments[0].integer == 1) {
 			Ship@ object = cast<Ship>(obj);
-			maintenance = object.blueprint.design.total(SV_InterdictMaintenance);
+		//	maintenance = object.blueprint.design.total(SV_InterdictMaintenance);
 		}
 		if(maintenance > 0 && !failed) {
 			obj.owner.modFTLUse(-maintenance);
@@ -750,7 +751,7 @@ class Interdict : StatusHook {
 		data.retrieve(failed);
 		if(arguments[0].integer == 1) {
 			Ship@ object = cast<Ship>(obj);
-			maintenance = object.blueprint.design.total(SV_InterdictMaintenance);
+		//	maintenance = object.blueprint.design.total(SV_InterdictMaintenance);
 		}
 		if(maintenance > 0 && !failed) {
 			obj.owner.modFTLUse(-maintenance);
@@ -795,4 +796,47 @@ class Interdict : StatusHook {
 	#section all
 		return true;
 	}
+};
+
+class TeleportTargetToSelf : AbilityHook {
+	Document doc("Teleport the target to the casting object.");
+	Argument objTarg(TT_Object);
+	
+#section server
+	void activate(Ability@ abl, any@ data, const Targets@ targs) const override {
+		Object@ targ = objTarg.fromConstTarget(targs).obj;
+		if(targ is null)
+			return;
+		
+		vec3d point = abl.obj.position + vec3d(randomd(-100.0, 100.0), randomd(-100.0, 100.0), 0);
+		if(targ.hasLeaderAI)
+			targ.teleportTo(point);
+		if(targ.hasOrbit) {
+			targ.stopOrbit();
+			targ.position = point;
+			targ.remakeStandardOrbit();
+		}
+	}
+#section all
+};
+
+class PlayParticlesAtObject : AbilityHook {
+	Document doc("Play particles at the target object's location when activated.");
+	Argument objTarg(TT_Object);
+	Argument type(AT_Custom, doc="Which particle effect to play.");
+	Argument scale(AT_Decimal, "1.0", doc="Scale of the particle effect.");
+	Argument object_scale(AT_Boolean, "True", doc="Whether to scale the particle effect to the target's scale as well.");
+
+#section server
+	void activate(Ability@ abl, any@ data, const Targets@ targs) const override {
+		Object@ targ = objTarg.fromConstTarget(targs).obj;
+		if(targ is null)
+			return;
+		
+		double size = scale.decimal;
+		if(object_scale.boolean)
+			size *= targ.radius;
+		playParticleSystem(type.str, targ.position, quaterniond(), size);
+	}
+#section all
 };

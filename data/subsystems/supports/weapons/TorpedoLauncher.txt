@@ -9,7 +9,7 @@ Subsystem: STorpedoLauncher
 	Tags: BaseCost
 	Tags: WeaponBase, MissileBase, Category:Weapons, Rotatable
 	Tags: ExteriorCore, Weapon, DefaultUnlock, IsExplosiveWeapon, HasInternals, SecondaryDPS, Homing
-	Hull: Flagship, Station
+	Hull: Support
 
 	Size := HexSize * Hexes
 	Range := Size + 1200

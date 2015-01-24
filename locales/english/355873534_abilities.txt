@@ -96,3 +96,6 @@ ABL_BOARDING_PARTY_DESC: <<
 	
 	Only one boarding action can be running on an object at any given time.
 >>
+ABL_RECALL_DESC: <<
+	Opens a wormhole engulfing the target allied object and immediately depositing it in close proximity to the Hubworld.
+>>

@@ -14,7 +14,7 @@ Resource: BlackHole
 	Affinity: ALL
 
 	Limitless Level: True
-	IfLevel(6, GrantAbility())
+	IfLevel(6, GrantAbility(Recall))
 	IfLevel(1, AddStatus(FastResupply))
 	RegenSurface(25, 17)
 	IfLevel(4, ProtectOtherPlanets())

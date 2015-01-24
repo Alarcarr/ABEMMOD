@@ -1,0 +1,17 @@
+Ability: Recall
+	Name: Recall
+	Description: #ABL_RECALL_DESC
+	
+	Energy Cost: 100
+	Cooldown: 10
+	
+	
+	Target: targ = Object
+	ABEM_hooks::TargetRequireCommand(targ)
+	ABEM_hooks::TargetFilterNotType(targ, Planet)
+	TargetFilterAllied(targ)
+	RelativeSizeEnergyCost(targ)
+	
+	ABEM_hooks::PlayParticlesAtObject(targ, FTLEnter)
+	ABEM_hooks::TeleportTargetToSelf(targ)
+	ABEM_hooks::PlayParticlesAtObject(targ, FTLExit)
