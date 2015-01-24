@@ -306,13 +306,14 @@ class DisplayStatus : StatusHook {
 class BoardingData {
 	double boarders;
 	double defenders;
+	double originalboarders;
+	double originaldefenders;
 	any data;
 };
 
 class Boarders : StatusHook {
-	Document doc("Calculates the boarding strength of the origin object from a subsystem value, calculates the boarding strength of the target from another subsystem value and half of its crew. After a certain amount of time, either the boarders are repelled or the target is captured.");
-	Argument offense("Offense Subsystem Value", AT_Custom, doc="Subsystem value to calculate strength from.");
-	Argument defense("Defense Subsystem Value", AT_Custom, doc="Subsystem value to calculate defensive strength from. Defense is always multiplied by 10000 if the target is a planet.");
+	Document doc("Calculates the boarding strength of the origin object from a subsystem value, and calculates the boarding strength of the target from the same subsystem value. After a certain amount of time, either the boarders are repelled or the target is captured.");
+	Argument value("Subsystem Value", AT_Custom, doc="Subsystem value to calculate boarding strength from.");
 	Argument defaultboarders("Default Boarder Strength", AT_Decimal, "200.0", doc="If the subsystem value can't be found or is zero on the origin object, this is how strong the boarders will be. Defaults to 200.");
 	Argument defaultdefenders("Default Defender Strength", AT_Decimal, "100.0", doc="If the subsystem value can't be found or is zero on the target object, and the object has no crew, this is how strong the defenders will be. Defaults to 100.");
 
@@ -341,6 +342,8 @@ class Boarders : StatusHook {
 		BoardingData info;
 		info.boarders = boarders;
 		info.defenders = defenders;
+		info.originalboarders = boarders;
+		info.originaldefenders = defenders;
 		data.store(@info);
 	}
 
@@ -348,19 +351,23 @@ class Boarders : StatusHook {
 		BoardingData@ info;
 		double boarders = 0;
 		double defenders = 0;
+		double originalboarders = 0;
+		double originaldefenders = 0;
+		double ratio = 0;
 		data.retrieve(@info);
 		boarders = info.boarders;
 		defenders = info.defenders;
-
-		double ratio = boarders / defenders;
+		originalboarders = info.originalboarders;
+		originaldefenders = info.originaldefenders;
+		
+		ratio = boarders / defenders;
 		// Basically, if there are 100 boarders and 100 defenders, 1 of each are lost per second. 
 		// If there are 200 boarders, 0.5% of the boarders - incidentally, also 1 - are lost, but 2% of the defenders are lost.
 		// This means that boarding operations will last a maximum of 100 seconds, though it will usually last less as one side will have an advantage over the other.
 		// Hopefully, 100 seconds will give the boarded player enough time to respond, without allowing him to wait too long before acting. (And thus needlessly prolonging the battle.)
 		// EDIT: No more than 10% of all troops can be lost by either side in the engagement, so a minimum battle length is 10 seconds.
-		boarders -= min((boarders * 0.01) * ratio, boarders * 0.1) * time;
-		defenders -= min((defenders * 0.01) / ratio, boarders * 0.1) * time;
-		debug();
+		boarders -= min((originalboarders * 0.01) / ratio, originalboarders * 0.1) * time;
+		defenders -= min((originaldefenders * 0.01) * ratio, originaldefenders * 0.1) * time;¸
 		if(defenders <= 0) {
 			@obj.owner = status.originEmpire;
 			if(obj.hasStatuses) {
@@ -374,7 +381,6 @@ class Boarders : StatusHook {
 		info.boarders = boarders;
 		info.defenders = defenders;
 		data.store(@info);
-		debug();
 		return true;
 	}
 	#section all
@@ -556,7 +562,7 @@ class ApplyToShips : StatusHook {
 class AddOwnedStatus : AbilityHook {
 	Document doc("Adds a status belonging to the specific object (and empire) activating the ability.");
 	Argument objTarg(TT_Object);
-	Argument status(AT_Status, doc="Type of status effect to create.");
+	Argument status(AT_Custom, doc="Type of status effect to create.");
 	Argument duration(AT_Decimal, "-1", doc="How long the status effect should last. If set to -1, the status effect acts as long as this effect hook does.");
 	
 	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const {
@@ -572,15 +578,16 @@ class AddOwnedStatus : AbilityHook {
 		Object@ targ = objTarg.fromConstTarget(targs).obj;
 		Empire@ dummyEmp = null;
 		Region@ dummyReg = null;
-		targ.addStatus(duration.decimal, getStatusType(status.str).id, dummyEmp, dummyReg, abl.obj.owner, abl.obj);
+		const StatusType@ type = getStatusType(status.str);
+		if(targ !is null)
+			targ.addStatus(duration.decimal, type.id, dummyEmp, dummyReg, abl.obj.owner, abl.obj);
 	}
 #section all
 };
 
 class UserMustNotHaveStatus : AbilityHook {
 	Document doc("The object using this ability must not be under the effects of the specified status.");
-	Argument objTarg(TT_Object,  doc="Not a target, just a dummy to stave off null pointers...");
-	Argument status(AT_Status, doc="Type of status effect to avoid.");
+	Argument status(AT_Custom, doc="Type of status effect to avoid.");
 #section server
 	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const {
 		if(abl.obj is null)
@@ -589,8 +596,9 @@ class UserMustNotHaveStatus : AbilityHook {
 			return true;
 		}
 		else {
-				if(abl.obj.hasStatusEffect(getStatusType(status.str).id))
-					return false;
+			const StatusType@ type = getStatusType(status.str);
+			if(abl.obj.hasStatusEffect(type.id))
+				return false;
 		}
 		return true;
 	}
@@ -655,7 +663,7 @@ class IsDerelict : StatusHook {
 		dmg.impact = 0;
 		@dmg.obj = null;
 		@dmg.target = obj;
-		obj.damage(dmg, -1.0, vec2d(0, 0));
+		obj.damage(dmg, -1.0, vec2d(randomi(-1, 1), randomi(-1, 1)));
 		obj.engaged = true;
 		return true;
 	}

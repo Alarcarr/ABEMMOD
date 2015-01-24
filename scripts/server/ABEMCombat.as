@@ -240,7 +240,6 @@ void IncreasingDamage(Event& evt, double Amount, double Status, double StatusMul
 		uint stacks = 0;
 		stacks = evt.target.getStatusStackCount(type.id, evt.obj, evt.obj.owner);
 		dmg.damage += (dmg.damage * stacks * StatusMultiplier) + (stacks * StatusAmount * double(evt.efficiency) * double(evt.partiality));
-		print("Stacks: "+stacks);
 		for(i = 0; i < IncrementCount; ++i) {
 			evt.target.addStatus(-1, type.id, dummyEmp, dummyReg, evt.obj.owner, evt.obj);
 		}
