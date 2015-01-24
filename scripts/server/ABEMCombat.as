@@ -70,7 +70,7 @@ DamageEventStatus ChannelDamage(DamageEvent& evt, const vec2u& position,
 	evt.damage = dmg;
 	Ship@ ship = cast<Ship>(evt.target);
 	if(ship !is null) {
-		double Recharge = dr * RechargePercent;
+		double Recharge = min(dr * evt.partiality, minDmg) * RechargePercent;
 		if((ship.Shield + Recharge) > ship.MaxShield) {
 			ship.Shield = ship.MaxShield;
 		}

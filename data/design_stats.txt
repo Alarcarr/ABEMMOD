@@ -1,12 +1,4 @@
 // {{{ Global design stats
-GlobalStat: DefenseBuild
-	Name: #S_DEFENSEGENERATION
-	Description: #STT_DEFENSEGENERATION
-	Icon: DesignationIcons::3
-	Color: #aaaaaa
-
-	Variable: Defense
-	
 GlobalStat: HP
 	Name: #S_HP
 	Description: #STT_HP
@@ -172,7 +164,7 @@ GlobalStat: SlipstreamTime
 
 	Variable: SlipstreamDuration
 
-GlobalStat: DefenseBuild
+GlobalStat: DefenseGeneration
 	Name: #S_DEFENSEGENERATION
 	Description: #STT_DEFENSEGENERATION
 	Icon: DesignationIcons::3
@@ -185,6 +177,7 @@ GlobalStat: ResearchGeneration
 	Description: #STT_RESEARCHGENERATION
 	Icon: DesignationIcons::5
 	Color: #00c0ff
+	Suffix: /s
 
 	Variable: Research
 

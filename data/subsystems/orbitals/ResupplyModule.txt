@@ -15,7 +15,7 @@ Subsystem: ResupplyModule
 	Hex.HP := 12 * HexSize
 
 	Hex.LaborCost := 3* HexSize +5
-	Description:
+	Description: #S_RESUPPLYMODULE_DESC
 	Hook: AddRegionStatus(FastResupply)
 	Assert: Size >= 20
 		Message: The Resupply Module must be at least size 20. Add more hexes to the module or increase the station's size.

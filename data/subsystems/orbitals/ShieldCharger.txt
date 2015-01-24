@@ -1,5 +1,5 @@
 Subsystem: RechargerModule
-	Name: Recharger Module
+	Name: Power Transmission Array
 	BaseColor: #683db8
 	TypeColor: #683db8
 	Elevation: 2
@@ -15,10 +15,10 @@ Subsystem: RechargerModule
 	Hex.HP := 12 * HexSize
 
 	Hex.LaborCost := 3* HexSize +5
-	Description:
+	Description: 
 	Hook: AddRegionStatus(FastRecharge)
 	Assert: Size >= 20
-		Message: The Resupply Module must be at least size 20. Add more hexes to the module or increase the station's size.
+		Message: The Power Transmission Array must be at least size 20. Add more hexes to the array or increase the station's size.
 	Requires:
 		Command = Hexes
 
