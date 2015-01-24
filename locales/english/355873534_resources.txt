@@ -14,11 +14,19 @@ RESOURCE_RESEARCH_DESC: <<
 	Cannot be exported.
 >>
 RESOURCE_GATEWORLD_DESC: <<
-	A sort of core world for the galaxy, this planet's surface is littered with all sorts of ancient technology; indeed, considering its advanced defensive fleet, this world may have been home to the ancient race that built the automated warships known as the 'Remnants'.
-
-	Ancient technology increases the planet's pressure capacity by 10. A unique wormhole generator on the planet's surface allows the planet to tie into the empire's gate network, and an incredibly advanced planetary fling beacon allows the planet to send fleets out anywhere into the galaxy at incredible speeds. An advanced defense coordination computer allows the planet to support much greater defense fleets than most, with an additional 2048 units of support, and a powerful graviton engine built inside the planet's mantle demonstrates the original inhabitants' technological prowess, managing not only to survive in such an extreme environment for eons, but also provide thrust equivalent to a Planetary Engine!
-
-	Due to the heavily contested nature of the planet, the largely science-minded population's loyalty suffers a drastic -10 decrease, as they seek to protect themselves from invaders while studying its vast technological treasures. The presence of the ancient ruins makes it difficult to find free space to settle, reducing its population capacity by 3.
+	A sort of galactic hub, this planet's immense surface is littered with all sorts of ancient technology; indeed, considering its advanced defensive fleet, this world may have been home to the ancient race that built the automated warships known as the 'Remnants'.
+	
+	Exploring the ruins adds [levels]1;2;3;4;5;6;7[/levels] pressure of every kind, based on the planet's level.
+	
+	An advanced defense coordination system allows the planet to support an additional 1024 support ships and act as a Supply Depot once reactivated at level 1.
+	
+	A unique wormhole generator on the planet's surface and an incredibly advanced planetary fling beacon allow the planet to tie into the empire's gate network as well as send fleets out into any location in the galaxy at incredible speeds once reactivated at level 2.
+	
+	A series of shield projectors in the upper atmosphere allows the planet to act as a Power Transmitter, while the wormhole generator is repaired and opened for civilian use, allowing the planet to trade with any other gate or Commerce Station in the empire at level 3.
+	
+	At level 4, the planet's shield projectors are restored to full capacity, allowing it to protect all other planets in the system from loyalty loss.
+	
+	The wormhole generator is brought to full capacity at level 6, allowing any of the empire's fleets in the galaxy to be instantly transported to the Hubworld.
 >>
 ASTEROID_LABOR_DESC: <<
 	Adds 6 flat labor generation to the consuming planet.
