@@ -97,7 +97,6 @@ Grid: Base
 	CrystalineArmor: 9,8
 	ImpSupportCapSmall: 3,-2
 	c3: 4,-2
-	Support: 5,-2
 	c3: 4,2
 	ImpAllHealth: 6,0
 	ImpTracking: 6,1
@@ -108,7 +107,6 @@ Grid: Base
 	TaxCenter: -4,0
 	DevInfluence: -5,-1
 	DevInfluence: -6,1
-	Flagship: 5,2
 	ImpAllHealth: 5,3
 	ImpSupplyStorage: 6,3
 	ImpArmorDR: 6,4

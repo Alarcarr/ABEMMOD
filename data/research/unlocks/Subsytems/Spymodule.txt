@@ -1,8 +1,0 @@
-Technology: SpyModule
-	Name: Infiltration Module
-	Description: #R_SYS_SPYMODULE_DESC
-	Icon: emp_portrait_eyegon
-	Color: #ff0a3b
-	Point Cost: 700
-	Time Cost: 60
-	UnlockSubsystem(SpyModule)
