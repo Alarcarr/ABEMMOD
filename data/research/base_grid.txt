@@ -188,6 +188,7 @@ Grid: Base
 	QuantumArmor: 4,-11
 	NanoArmor: 1,-9
 	ImpArmorHealth: 1,-10
+	NanoRepair: 0,-11
 	c2: 2,-10
 	c1: 3,-10
 	Further Development: 2,-11
