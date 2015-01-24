@@ -8,7 +8,7 @@ Subsystem: MatterDisruptor
 
 	Tags: BaseCost, Category:Weapons
 	Tags: WeaponBase, Rotatable, HexLimitArc
-	Tags: ExteriorCore, Weapon, DefaultUnlock, IsProjWeapon, IsRailgun, HasInternals, MainDPS
+	Tags: ExteriorCore, Weapon,  IsProjWeapon, IsRailgun, HasInternals, MainDPS
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes

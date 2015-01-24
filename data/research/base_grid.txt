@@ -16,8 +16,6 @@ Grid: Base
 	Metallurgy: 1,-3
 	EnergyScience: 1,3
 	c1: -1,-2
-	PlanetDev: -2,-3
-	ImpAllHealth: 2,-4
 	DevMoney: -4,1
 	DevBudget: -4,-1
 	c2: -1,2
@@ -27,7 +25,6 @@ Grid: Base
 	IonEngine: -3,4
 	ImpThrust: -4,4
 	ImpThrust: -5,4
-	DevFTL: -3,5
 	SysSkipDrive: -3,6
 	DevFTLIncome: -4,7
 	DevFTL: -3,7
@@ -37,31 +34,23 @@ Grid: Base
 	ImpThrust: -3,9
 	DevMoney: -2,6
 	DevInfluence: -3,-1
-	ImpSupplyStorage: 0,4
 	DevEnergyIncome: 1,4
 	ImpThrust: 0,6
-	ImpSupportCapSmall: 2,4
 	PoweredArmor: 1,5
 	c1: 3,1
 	c2: 3,-1
 	ImpSupportCap: 2,6
 	DevEnergy: 1,6
-	ImpArmorHealth: 1,-6
 	DevFTL: -1,10
 	DevFTLIncome: -3,10
 	GateTech: -4,11
 	FlingBeacons: -1,11
 	DevFTLIncome: -2,9
 	DevEnergy: -2,10
-	EngBay: 2,-5
 	DevMoney: 1,7
-	ImpArmorHealth: 0,-6
 	ZeroPoint: 3,11
-	DevEnergy: 3,10
 	SysIonCannon: 1,8
 	SysHyperLaser: 2,9
-	DevEnergy: 2,10
-	CompositeArmor: 0,-7
 	ImpAllHealth: 4,0
 	c1: 6,8
 	Antimatter2: 6,9
@@ -78,26 +67,11 @@ Grid: Base
 	ImpShieldReg: 7,7
 	ImpShieldCap2: 8,7
 	CovariantShield: 8,6
-	ImpFactoryLabor: -1,-7
-	SelfDetermination: -11,0
-	Empire: -11,-1
-	Pacifist: -12,-1
-	Warmonger: -12,1
-	Merchantilist: -11,1
 	SysGravityEngine: -6,4
-	ImpAllHealth: 2,-7
-	ModBulkhead: 1,-5
-	ImpArmorDR: 1,-8
-	ImpAllHealth: 2,-8
 	ImpDamageSmall: 5,0
-	ImpArmorDR: 0,-8
-	ImpFactoryLabor2: 0,-9
-	ImpArmorHealth: 0,-10
-	ImpCivHealth: -1,-9
 	CrystalineArmor: 9,8
 	ImpSupportCapSmall: 3,-2
 	c3: 4,-2
-	c3: 4,2
 	ImpAllHealth: 6,0
 	ImpTracking: 6,1
 	ImpFireRate: 7,1
@@ -119,12 +93,7 @@ Grid: Base
 	ImpSupportCapSmall: 5,-3
 	ImpSupportSupplyUse: 6,-4
 	ImpSupportDamage: 5,-5
-	Flagship2: 8,4
-	Support2: 6,-5
-	Support3: 8,-7
 	Support4: 11,-7
-	Flagship3: 11,4
-	Flagship4: 14,4
 	ImpAoE: 10,4
 	ImpAllHealth: 12,4
 	ImpArmorDR2: 13,4
@@ -143,18 +112,9 @@ Grid: Base
 	InfiniteSupport: 13,-8
 	c3: 9,7
 	ImpShieldAll: 10,7
-	c1: -1,-11
-	Further Development: -1,-12
 	c3: 15,4
 	HeavyRailgun: 15,5
 	SuperLaser: 15,3
-	SysNeutronArmor: 1,-9
-	c2: 2,-10
-	ImpArmorDR: 2,-11
-	QuantumArmor: 3,-12
-	ImpArmorDR2: 1,-11
-	NanoArmor: 1,-12
-	ImpFactoryLaborB: 3,-8
 	ImpArmorHealth2: 16,4
 	ImpAllHealth: 17,4
 	ImpArmorHealth: 18,4
@@ -164,7 +124,6 @@ Grid: Base
 	ImpAllRange: 12,0
 	AdmiralCrew: 13,0
 	SysGravitonCondenser: 17,5
-	ImpArmorHealth: 3,-7
 	ImpArmorHealth2: 12,-1
 	ImpArmorDR2: 12,1
 	ImpAllHealth: 13,-7
@@ -173,7 +132,6 @@ Grid: Base
 	DevNegotiate: -9,-1
 	DePlanet: -9,1
 	PowerPlant: 1,11
-	ImpAllHealth2: 4,-8
 	ImpAllHealth2: 14,0
 	SysMuonCannon: 9,0
 	DevInfluenceIncome: -3,1
@@ -181,11 +139,7 @@ Grid: Base
 	DevInfluenceIncome: -6,-1
 	PoliticalChoices: -6,0
 	DevInfluenceIncome2: -9,0
-	ImpTileDevelopment: -2,-4
-	DePlanet: -1,-4
-	DevDefense: -3,-3
 	Flak: 6,-1
-	ImpPlanetDamage: -4,-3
 	ImpSupplyRegen: 2,5
 	c1: 5,6
 	DevEnergyIncome: 3,5
@@ -195,7 +149,55 @@ Grid: Base
 	ImpAllRange: 3,7
 	ImpFireRate: 3,8
 	ImpSpread: -1,4
-	OrbitalEnhancement: -1,-8
 	DevInfluenceIncome2: -7,0
 	ImpAllRange: -1,5
-	ImpCivConstructionRate: 2,-6
+	Carrier: 4,-3
+	Destroyer: 4,2
+	Flagship: 8,4
+	Flagship2: 11,4
+	Flagship3: 14,4
+	ImpSupplyUse: 5,2
+	c1: -2,-3
+	PlanetDev: -2,-4
+	c1: 1,-4
+	c2: 2,-4
+	ImpFactoryLabor: 0,-5
+	ImpAllHealth: 2,-5
+	ImpSupplyStorage: 2,4
+	ImpFactoryLabor: 0,-6
+	ImpCivConstructionRate: 1,-6
+	ImpArmorHealth: 2,-6
+	DevEnergyIncome: 3,10
+	ImpEnergyStorage: 2,10
+	ImpEnergyStorage: 2,3
+	DevFTLIncome: -3,5
+	ImpTileDevelopment: -3,-4
+	ImpPopLvl2: -4,-4
+	ImpAllHealth: 3,-7
+	ImpArmorDR2: 3,-8
+	ImpTileDevelopment: -5,-5
+	DevCultivation: -5,-4
+	ImpArmorHealth: 2,-8
+	ImpAllHealth: 1,-7
+	SysNeutronArmor: 3,-9
+	ModBulkhead: 3,-6
+	Support: 6,-5
+	Support2: 8,-7
+	SysCloakPlating: 0,4
+	ImpAllHealth2: 4,-10
+	QuantumArmor: 4,-11
+	NanoArmor: 1,-9
+	ImpArmorHealth: 1,-10
+	NanoRepair: 0,-11
+	c2: 2,-10
+	c1: 3,-10
+	Further Development: 2,-11
+	EngBay: 4,-7
+	c1: -1,-7
+	ImpFactoryLabor2: -1,-8
+	ImpCivConstructionRate: -1,-9
+	ImpImpConstructionRate: -2,-8
+	c1: -2,-9
+	ImpFactoryLaborB: -2,-10
+	c3: -1,-6
+	OrbitalEnhancement: -2,-6
