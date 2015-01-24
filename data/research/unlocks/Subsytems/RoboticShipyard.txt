@@ -5,4 +5,5 @@ Technology: RoboticShipyard
 	Time Cost: 120
 	Icon: TechIcons::51
 	Color: #ff0739
+	SkipOnUnlockedSubsystem(RoboticShipyard)
 	UnlockSubsystem(RoboticShipyard)

@@ -5,4 +5,5 @@ Technology: HeavyRailgun
 	Icon: HeavyRailgun
 	Description: #R_SYS_HEAVYRAIL_DESC
 	Color: #ff0235
+	SkipOnUnlockedSubsystem(HeavyRailgunBattery)
 	UnlockSubsystem(HeavyRailgunBattery)

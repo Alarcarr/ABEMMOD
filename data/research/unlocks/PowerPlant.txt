@@ -11,4 +11,5 @@ Technology: PowerPlant
 
 	UnlockTag(PowerPlant)
 
+	SkipOnUnlockedTag(PowerPlant)
 	SecondaryMoneyCost(1500)

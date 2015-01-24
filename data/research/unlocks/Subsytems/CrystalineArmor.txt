@@ -5,9 +5,10 @@ Technology: CrystalineArmor
 	Point Cost: 1500
 	Time Cost: 240
 
-	Icon: techArmor
+	Icon: CrystalArmor
 	Color: #449212
 
 	UnlockSubsystem(CrystalArmor)
 
+	SkipOnUnlockedSubsystem(CrystalArmor)
 	SecondaryMoneyCost(2000)

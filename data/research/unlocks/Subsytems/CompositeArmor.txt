@@ -8,4 +8,5 @@ Technology: CompositeArmor
 	Color: #676210
 	Description: #R_COMPOSITE_ARMOR_DESC
 
+	SkipOnUnlockedSubsystem(CompositeArmor)
 	UnlockSubsystem(CompositeArmor)

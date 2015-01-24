@@ -10,4 +10,5 @@ Technology: QuantumArmor
 
 	UnlockSubsystem(QuantumArmor)
 
+	SkipOnUnlockedSubsystem(QuantumArmor)
 	SecondaryMoneyCost(3000)

@@ -5,21 +5,23 @@ Technology: BldMegacity
 	Point Cost: 600
 	Time Cost: 100
 
-	Icon: BuildingSprites::0*#ff3fff
+	Icon: city2 * #bbbb99
 	Color: #00f3ff
 
 	UnlockTag(MegacityUnlock)
 
+	SkipOnUnlockedTag(MegacityUnlock)
 	SecondaryInfluenceCost(16)
 Technology: BldMetropolis
 	Name: #BLD_METROPOLIS
 	Description: #BLD_METROPOLIS_DESC
 	Icon: city1
+	SkipOnUnlockedTag(Metropolis)
 	UnlockTag(Metropolis)
 	SecondaryInfluenceCost(5)
 Technology: TaxCenter
-	Name: Tax Center
-	Description: Tax Center
+	Name: Taxation Centers
+	Description: #R_BLD_TAX_DESC
 	Icon: tax2
 	Point Cost: 600
 	Time Cost: 60

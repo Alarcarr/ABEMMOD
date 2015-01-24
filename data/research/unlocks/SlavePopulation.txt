@@ -5,5 +5,6 @@ Technology: SlavePopulation
 	Description: #R_BLD_SLAVE_DESC
 	Point Cost: 500
 	Time Cost: 60
+	SkipOnUnlockedTag(Slave Barracks)
 	SecondaryEnergyCost(500)
 	UnlockTag(Slave Barracks)

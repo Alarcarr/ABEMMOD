@@ -10,4 +10,5 @@ Technology: IonEngine
 
 	UnlockSubsystem(IonEngine)
 
+	SkipOnUnlockedSubsystem(IonEngine)
 	SecondaryMoneyCost(400)

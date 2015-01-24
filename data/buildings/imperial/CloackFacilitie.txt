@@ -7,4 +7,5 @@ Building: CloackFacility
 	Base Maintenance: 500
 	Tile Maintenance: 10
 	Labor Cost: 120
+	RequireUnlockTag(CloakFacility)
 	AddRegionStatus(Cloaked)

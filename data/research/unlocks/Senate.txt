@@ -11,4 +11,5 @@ Technology: Senate
 
 	UnlockTag(Senate)
 
+	SkipOnUnlockedTag(Senate)
 	SecondaryMoneyCost(1500)

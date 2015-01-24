@@ -4,4 +4,5 @@ Technology: SS
 	Point Cost: 2500
 	Time Cost: 300
 	Description: #R_SYS_SLIPSTREAM_DESC
+	SkipOnUnlockedSubsystem(Slipstream)
 	UnlockSubsystem(Slipstream)

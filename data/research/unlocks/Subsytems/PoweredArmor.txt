@@ -6,3 +6,4 @@ Technology: PoweredArmor
 	Point Cost: 800
 	Time Cost: 120
 	UnlockSubsystem(PoweredArmor)
+	UnlockSubsystem(PoweredArmor)

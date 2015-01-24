@@ -11,4 +11,5 @@ Technology: PrecisionMod
 
 	UnlockModule(PrecisionMod)
 
+	SkipOnUnlockedModule(PrecisionMod)
 	SecondaryMoneyCost(750)

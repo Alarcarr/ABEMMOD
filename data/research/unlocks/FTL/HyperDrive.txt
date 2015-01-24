@@ -4,4 +4,5 @@ Technology: Hyperdrive
 	Time Cost: 300
 	Icon: TechIcons::34
 	Description: #R_SYS_HYPERDRIVE_DESC
+	SkipOnUnlockedSubsystem(Hyperdrive)
 	UnlockSubsystem(Hyperdrive)

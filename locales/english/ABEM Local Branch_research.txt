@@ -88,7 +88,7 @@ R_ORB_GATE_DESC: <<
 R_SYS_SLIPSTREAM_DESC: <<
 	[i][color=#aaa]A device capable of penetrating subspace on a level far greater than - and considerably different from - conventional hyperdrives. 'Slipstream tears', while similar to wormholes, decay much more rapidly than known stable wormholes; with a bigger generator, the created rift will last longer.[/color][/i]
 
-	Unlocks the Slipstream Generator subsystem if they are not already available.
+	Unlocks the Slipstream Generator subsystem if it is not already available.
 
 	[i]Grants the ability to generate slipstream portals.[/i]
 >>
@@ -113,9 +113,9 @@ R_NANO_REPAIR_DESC: <<
 
 >>
 R_NANO_ARMOR_DESC: <<
-	[color=#aaa][i]After many years of research, we have managed to found new nanotechnology armor. it's most advanced armor than any armor except remnant armor, thus this will increase hp entire flagship or station. Unfortunately, as this technology is applied to existing power to function the nanotechnology. Even process is just as still expensive as - and more difficult than - producing normal armor such as labour cost. It also can't heal itself even that it's too way beyond that technology.[/i][/color]
+	[color=#aaa][i]Advances in nanotechnology and material sciences allow for new defensive applications of large groups of nanites.[/i][/color]
 
-	Unlocks the Nano armor subsystem.
+	Unlocks the Nanite Armor subsystem.
 
 	[i][bbloc=#S_NANO_ARMOR_DESC/][/i]
 

@@ -5,4 +5,5 @@ Technology: Flak
 	Time Cost: 60
 	Description: #R_SYS_FLAK_DESC
 	Blurb: AoE Projectile Weapon
+	SkipOnUnlockedSubsystem(FlakCannon)
 	UnlockSubsystem(FlakCannon)

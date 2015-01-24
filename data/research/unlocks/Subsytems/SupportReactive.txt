@@ -5,4 +5,5 @@ Technology: SupportReactive
 	Icon: TechIcons::14
 	Blurb: #SUPPORT_EQUIPMENT_BLURB
 	Description: #SUPPORT_REACTIVEARMOR_DESC
+	SkipOnUnlockedSubsystem(SupportReactiveArmor)
 	UnlockSubsystem(SupportReactiveArmor)

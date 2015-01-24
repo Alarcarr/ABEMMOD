@@ -10,6 +10,8 @@ Technology: SysShieldGen
 
 	UnlockSubsystem(ShieldGen)
 
+	SkipOnUnlockedSubsystem(SupShieldGen)
+	SkipOnUnlockedSubsystem(ShieldGen)
 	UnlockSubsystem(SupShieldGen)
 	SecondaryEnergyCost(750)
 Technology: SupShieldGen
@@ -30,4 +32,5 @@ Technology: CovariantShield
 	Color: #000bde
 	Point Cost: 700
 	Time Cost: 100
+	SkipOnUnlockedSubsystem(CovariantShield)
 	UnlockSubsystem(CovariantShield)

@@ -6,4 +6,5 @@ Technology: IntelFacilities
 	Description: #F_INTEL_DESC
 	Color: #aa19ff
 	Blurb: Generates Intelligence Cards
+	SkipOnUnlockedTag(IntelligenceFacil)
 	UnlockTag(IntelligenceFacil)
