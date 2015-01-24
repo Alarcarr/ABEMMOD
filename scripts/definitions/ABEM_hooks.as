@@ -323,7 +323,7 @@ class Boarders : StatusHook {
 		double boarders = 0;
 		Ship@ caster = cast<Ship>(status.originObject);
 		if(caster !is null)
-			boarders = caster.blueprint.getEfficiencySum(SubsystemVariable(getSubsystemVariable(offense.str)), ST_Boarders, true);
+			boarders = caster.blueprint.getEfficiencySum(SubsystemVariable(getSubsystemVariable(value.str)), ST_Boarders, true);
 		if(boarders <= 0)
 			boarders = defaultboarders.decimal;
 		
@@ -331,7 +331,7 @@ class Boarders : StatusHook {
 		double defenders = 0;
 		Ship@ ship = cast<Ship>(obj);
 		if(ship !is null)
-			defenders = ship.blueprint.getEfficiencySum(SubsystemVariable(getSubsystemVariable(offense.str)));
+			defenders = ship.blueprint.getEfficiencySum(SubsystemVariable(getSubsystemVariable(value.str)));
 		if(defenders <= 0)
 			defenders = defaultdefenders.decimal;
 		// We want a planet to be 10 thousand times as hard to capture via 'boarding' as other objects.
