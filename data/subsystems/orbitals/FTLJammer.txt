@@ -15,13 +15,12 @@ Subsystem: FTLJammer
 	Hex.HP := 12 * HexSize
 
 	Hex.LaborCost := 40
-	Description: #ORB_FTL_JAMMER_DESC
-	Hook:
+	Description: #S_FTLJAMMER_DESC
 	Effect: FTLUpkeep
-		Amount = 0.20
-	Hook: AddRegionStatus(InterdictFTL)
-	Assert: Size>100
-		Message: The FTL Jammer subsystem need to be bigger.
+		Amount = 0.15
+	Hook: AddStatus(Interdict)
+	Assert: Size >= 100
+		Message: The FTL Jammer must be at least size 100. Increase the jammer's hex count or the station's size.
 	Requires:
 		Command = Hexes
 

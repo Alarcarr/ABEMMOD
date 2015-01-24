@@ -45,6 +45,8 @@ import planet_effects;
 import tile_resources;
 from bonus_effects import BonusEffect;
 
+import ftl;
+
 class Regeneration : SubsystemEffect {
 	Document doc("Regenerates itself over time.");
 	Argument amount(AT_Decimal, doc="Amount of health to heal per second.");
@@ -682,4 +684,115 @@ class DestroyTarget: AbilityHook {
 			obj.destroy();
 	}
 #section all
+};
+
+// Dalo: Repurposing some old code of mine.
+class Interdict : StatusHook {
+	Document doc("An old, badly implemented bit of code. Consult Dalo Lorn before using this; it's unintuitive, rigid and all sorts of other bad stuff.");
+	// Currently: 1 - Ship.
+	Argument type("Type", AT_Integer, "1", doc="Type of object performing interdiction.");
+	// The booleans are what they say on the tin.
+	Argument hasinitialcost("Has Initial Cost", AT_Boolean, "True", doc="What it says on the tin.");
+	Argument hasmaintenance("Has Maintenance", AT_Boolean, "True", doc="What it says on the tin.");
+	// 1 - All, 2 - Non-Owner, 3 - Hostile.
+	Argument friendlytype("Parameters", AT_Integer, "1", doc="What sort of interdiction the object is performing.");
+
+	void onCreate(Object& obj, Status@ status, any@ data) {
+		double maintenance = 0.0;
+		bool failed = false;
+	#section server
+		if(arguments[0].integer == 1) {
+			Ship@ object = cast<Ship>(obj);
+			if(arguments[1].boolean) {
+				double initialCost = object.blueprint.getEfficiencySum(SV_InterdictInitCost);
+				if(initialCost > 0) {
+					double consumed = obj.owner.consumeFTL(initialCost, false);
+					if(consumed < initialCost) {
+						obj.removeStatusType(status.type.id);
+						failed = true;
+						data.store(failed);
+						return;
+					}
+				}
+			}
+			if(arguments[2].boolean) {
+				maintenance = object.blueprint.design.total(SV_InterdictMaintenance);
+				if(maintenance > 0) {
+					obj.owner.modFTLUse(maintenance);
+				}
+			}
+		}
+	#section all
+	}
+
+	void onDestroy(Object& obj, Status@ status, any@ data) {
+	#section server
+		double maintenance = 0.0;
+		bool failed = false;
+		data.retrieve(failed);
+		if(arguments[0].integer == 1) {
+			Ship@ object = cast<Ship>(obj);
+			maintenance = object.blueprint.design.total(SV_InterdictMaintenance);
+		}
+		if(maintenance > 0 && !failed) {
+			obj.owner.modFTLUse(-maintenance);
+		}
+		if(obj.region !is null) {
+			obj.region.BlockFTLMask = 0;
+		}
+	#section all
+	}
+
+	void onObjectDestroy(Object& obj, Status@ status, any@ data) {
+	#section server
+		double maintenance = 0.0;
+		bool failed = false;
+		data.retrieve(failed);
+		if(arguments[0].integer == 1) {
+			Ship@ object = cast<Ship>(obj);
+			maintenance = object.blueprint.design.total(SV_InterdictMaintenance);
+		}
+		if(maintenance > 0 && !failed) {
+			obj.owner.modFTLUse(-maintenance);
+		}
+		if(obj.region !is null) {
+			obj.region.BlockFTLMask = 0;
+		}
+	#section all
+	}
+
+	bool onTick(Object& obj, Status@ status, any@ data, double time) {
+	#section server
+		bool failed = false;
+		data.retrieve(failed);
+		if(failed) {
+			obj.removeStatusType(status.type.id);
+			return false;
+		}
+		if(obj.owner.FTLShortage) {
+			obj.removeStatusType(status.type.id);
+		}
+
+		if(obj.region !is null) {
+			uint mask = ~0;
+			if(arguments[3].integer == 2 && obj.owner !is null)
+				mask &= ~obj.owner.mask;
+			if(arguments[3].integer == 3 && obj.owner !is null) {
+				mask &= obj.owner.hostileMask;
+				mask &= ~obj.owner.mask;
+			}
+			obj.region.BlockFTLMask |= mask;
+		}
+	#section all
+		return true;
+	}
+
+	bool onRegionChange(Object& obj, Status@ status, any@ data, Region@ prevRegion, Region@ newRegion) {
+	#section server
+		if(prevRegion !is null) {
+			prevRegion.BlockFTLMask = 0;
+		}
+	#section all
+		return true;
+	}
 };

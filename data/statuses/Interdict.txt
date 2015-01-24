@@ -1,0 +1,4 @@
+Status: Interdict
+	Visible To: Nobody
+	
+	ABEM_hooks::Interdict(1, false, false, 3)
