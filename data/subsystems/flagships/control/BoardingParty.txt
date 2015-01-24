@@ -1,13 +1,7 @@
 Subsystem: BoardingParty
 	Name: Boarding Parties
-	Description: <<
-		Contains all the equipment required to send boarding parties onto an object in space, and attempt to capture it.
-
-		[img=Plus]Allows a ship to attempt to capture enemy flagships, orbitals, or asteroid mines.[/img]
-		[img=Plus]Can also be used for defense against boarders, or to take control of derelict ships.[/img]
-		[img=Minus]Only one boarding party can attempt to capture an object at any given moment.[/img]
-		[img=Minus]Can take up to 100 seconds to complete, and has a high cooldown.[/img]
-	>>
+	Description: #S_BOARDING_PARTY_DESC
+		
 
 	BaseColor: #c5f946
 	Picture: CrewQuarters*#9686ff

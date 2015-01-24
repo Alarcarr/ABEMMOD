@@ -1,8 +1,9 @@
 Status: BoardingParty
 	Name: Boarded
-	Description: This ship is currently being boarded. It may soon be captured. No more boarding parties can be sent to the ship until the boarding action ends.
+	Description: #STATUS_BOARDED_DESC
 	Visible To: Everybody
 	Unique: True
-	Icon: CrewQuarters*#9686ff*#ff0000
+	Icon: CrewQuarters*#9686ff
+	Color: #ff1010
 	
 	ABEM_hooks::Boarders(BoardingStrength, 200, 100)

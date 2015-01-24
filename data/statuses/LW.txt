@@ -1,5 +1,4 @@
 Status: LW
-
 	Name: Rally Cry
 	Icon: GDF
 	Unique: True

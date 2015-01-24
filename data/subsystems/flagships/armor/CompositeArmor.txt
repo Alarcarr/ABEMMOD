@@ -13,14 +13,14 @@ Subsystem: CompositeArmor
 	Ship.ExternalHexes := Ship.ExternalHexes + ExteriorHexes
 
 	// 0.1 = 10%
-	ProjResist := 0.10
-	EnergyResist := 0.3
-	ExplosiveResist := 0.15
+	CompProjResist := 0.10
+	CompEnergyResist := 0.3
+	CompExplosiveResist := 0.15
 
 	// Dummies for design_stats.txt
-	DummyProjResist := ProjResist * 100
-	DummyEnergyResist := EnergyResist * 100
-	DummyExplosiveResist := ExplosiveResist * 100
+	DummyProjResist := CompProjResist * 100
+	DummyEnergyResist := CompEnergyResist * 100
+	DummyExplosiveResist := CompExplosiveResist * 100
 
 	Hex.HP := 40 * HexSize
 	Hex.Mass := 2.5 * HexSize
@@ -30,9 +30,9 @@ Subsystem: CompositeArmor
 
 
 	Effect: ReduceDamagePercentile
-		ProjResist = ProjResist
-		EnergyResist = EnergyResist
-		ExplResist = ExplosiveResist
+		ProjResist = CompProjResist
+		EnergyResist = CompEnergyResist
+		ExplResist = CompExplosiveResist
 
 
 

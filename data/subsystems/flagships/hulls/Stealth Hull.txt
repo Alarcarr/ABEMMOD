@@ -1,6 +1,6 @@
 Subsystem: StealthHull
-	Name: StealthHull
-	Description: #S_TITAN_HULL_DESC
+	Name: Stealth Hull
+	Description: #S_STEALTH_HULL_DESC
 
 	Tags: Applied:Hull, Category:Hulls, NoCore
 	Hull: Flagship

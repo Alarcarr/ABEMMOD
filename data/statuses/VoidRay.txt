@@ -1,6 +1,6 @@
 Status: VoidRay
-	Name: Laser Adaptation
-	Description: An Adaptive Laser is dealing 2.5% more damage to this ship for every stack of Laser Adaptation.
+	Name: #STATUS_VOIDRAY
+	Description: #STATUS_VOIDRAY_DESC
 	Visible To: Origin Empire
 	Collapses: True
 	ABEM_hooks::MaxStacks(10)

@@ -1,6 +1,6 @@
 Subsystem: Destroyer
-	Name: Destroyer
-	Description: #S_TITAN_HULL_DESC
+	Name: Destroyer Hull
+	Description: #S_DESTROYER_HULL_DESC
 
 	Tags: Applied:Hull, Category:Hulls, NoCore
 	Hull: Flagship
@@ -13,12 +13,12 @@ Subsystem: Destroyer
 
 	AddShipModifier: HyperdriveSpeedFactor(0.9)
 	AddShipModifier: MassFactor(1.1)
-	AddShipModifier: BuildCostFactor(1.0 - 0.8 * min(sqrt((ShipSize - 500) / 3000), 1.0))
+	AddShipModifier: BuildCostFactor(1.0 - 0.8 * min(sqrt((ShipSize - 100) / 3000), 1.0))
 	AddShipModifier: FireArcFactor(0.5)
 	AddShipModifier: ArmorHpFactor(1)
 
 	Assert: ShipSize >= 100
-		Message: #ERROR_MIN_SIZE:$1:500
+		Message: #ERROR_MIN_SIZE:$1:100
 
 	Module: Default
 		Sprite: DesignationIcons::16

@@ -29,3 +29,20 @@ STATUS_ABEMINFILTRATED_DESC: <<
 
 	Fleet effectiveness reduced by 10% (also applies to planetary defense fleets). The saboteur frequently transmits data to his superiors, granting vision of the star system.
 >>
+STATUS_BOARDED_DESC: <<
+	This object is currently being boarded. Depending on the strength of the boarding party, it may soon be captured. No more boarding parties can be sent to the object until the boarding action ends.
+	
+	Boarding actions last between 10 and 100 seconds.
+>>
+STATUS_FAST_RECHARGE: Shield Recharge
+STATUS_FAST_RECHARGE_DESC: <<
+	Is receiving power from a Power Transmitter.
+
+	Shield regeneration increased by 25, plus 0.01% of the ship's shield capacity.
+>>
+STATUS_VOIDRAY: Laser Tuning
+STATUS_VOIDRAY_DESC: <<
+	An Adaptive Laser is dealing 2.5% more damage to this ship for every stack of Laser Tuning.
+	
+	Stacks up to 10 times.
+>>

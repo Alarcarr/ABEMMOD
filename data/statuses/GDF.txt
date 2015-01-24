@@ -3,7 +3,7 @@ Status: GDF
 	Name: Go Down Fighting
 	Icon: GDF*#ff1010
 	Color: #ff1010
-	Description: This Fleet  is fighting for a lost cause sure of its own destruction it will combat braverly.
+	Description: #STATUS_GDF_DESC
 	TriggerPeriodic(AddPermanentEffectiveness(0.05), Interval = 5)
 	// Power damage multiplier - this is the number by which the ship's power output is multiplied when calculating the blast damage.
 	// Power radius multiplier - the number by which the power output is multiplied when calculating the blast radius.
