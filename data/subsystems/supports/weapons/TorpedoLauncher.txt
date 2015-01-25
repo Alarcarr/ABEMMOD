@@ -23,6 +23,7 @@ Subsystem: STorpedoLauncher
 
 	Hex.HP := 18 * HexSize
 	Hex.Resistance := 0.2
+	Hex.MaintainCost := 0
 	Modifier: AoERadiusFactor(Factor)
 		Radius := Radius * Factor
 

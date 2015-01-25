@@ -22,7 +22,7 @@ Subsystem: SRocketPod
 	Size := HexSize * Hexes
 	Range := Size + 300
 	Damage := Size * 6.6
-	Reload := 8
+	Reload := 12
 	Speed := max(65, Range / 12)
 	Tracking := 6.0
 	SupplyCost := Size * 7.0
@@ -32,6 +32,7 @@ Subsystem: SRocketPod
 	Hex.HP := 18 * HexSize
 	Hex.Resistance := 0.2
 	Hex.Mass := HexSize
+	Hex.MaintainCost := 0
 	Requires:
 		Command = 1
 

@@ -2,6 +2,7 @@ Technology: VoidRay
 	Name: Adaptive Laser
 	Point Cost: 800
 	Time Cost: 120
+	Icon: Laser::0*#32ff17
 <<<<<<< HEAD
 	Icon: Laser::0*#32ff17
 	Color: #ff0314
