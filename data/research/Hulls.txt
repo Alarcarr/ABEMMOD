@@ -3,12 +3,16 @@ Technology: Carrier
 	Name: Carrier
 	Point Cost: 500
 	Time Cost: 60
+	SkipOnUnlockedSubsystem(Carrier)
 	UnlockSubsystem(Carrier)
 Technology: Destroyer
 	Icon: DesignationIcons::16
 	Name: Destroyer
 	Point Cost: 500
 	Time Cost: 60
+	SkipOnUnlockedSubsystem(Destroyer)
 	UnlockSubsystem(Destroyer)
 Technology: Cloack
 	Icon: DesignationIcons::16*#5b09ff
+	SkipOnUnlockedSubsystem(StealthHull)
+	UnlockSubsystem(StealthHull)

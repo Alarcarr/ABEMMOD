@@ -166,17 +166,19 @@ S_DESTROYER_HULL_DESC: <<
 	
 	[img=Plus]Somewhat reduces construction costs.[/img]
 	[img=Plus]Increases hex limit and grid size.[/img]
+	[img=Plus]Increases armor health and shield capacity by 30%.[/img]
 	[img=Minus]Reduces hyperdrive speeds by 10%, and increases mass by 10%.[/img]
+	[img=Minus]Halves support capacity.[/img]
 	[img=Minus]Halves firing arcs.[/img]
-	[img=Minus]Is nearly pointless.[/img]
 	[img=MenuIcons::3;20]Cannot be used on ships under size 100.[/img]
 >>
 S_STEALTH_HULL_DESC: <<
-	Specialized hull architecture allows for easier construction of stealth ships.
+	Specialized hull architecture allows for easier construction of maneuverable stealth ships.
 
 	[img=Plus]Reduces mass by 25%.[/img]
-	[img=Plus]Can cloack[/img]
-	[img=Minus]Cant use Hyperdrive.[/img]
+	[img=Plus]Can cloak without the need for Cloaking Mesh.[/img]
+	[img=Minus]Sets hyperdrive speed to 0.[/img]
+	[img=Minus]Significantly reduces hex limit and grid size.[/img]
 	[img=Minus]Reduces firing arcs by 25%.[/img]
 	[img=Minus]Halves armor health.[/img]
 
@@ -191,7 +193,7 @@ S_HEAVYRAIL_DESC: <<
 	A powerful cannon based on the principles behind railgun technology.
 	
 	[img=Plus]Deals as much damage as 9 shots from a Railgun Battery.[/img]
-	[img=Plus]More effective at piercing armor than a Railgun Battery.
+	[img=Plus]More effective at piercing armor than a Railgun Battery.[/img]
 	[img=Minus]Fires 8 times slower than a Railgun Battery.[/img]
 	[img=Minus]Has a smaller firing arc than a Railgun Battery.[/img]
 	[img=Minus]Drains more supplies than a Railgun Battery.[/img]

@@ -2,4 +2,6 @@ Technology: VoidRay
 	Name: Adaptive Laser
 	Point Cost: 800
 	Time Cost: 120
+	Icon: Laser::2
+	SkipOnUnlockedSubsystem(VoidRay)
 	UnlockSubsystem(VoidRay)
