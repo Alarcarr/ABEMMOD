@@ -16,8 +16,8 @@ S_RESUPPLYMODULE_DESC: <<
 	A system which assembles and disseminates supply packages for all fleets in a star system.
 
 	[img=Plus]Increases the resupply rate of all units in a star system.[/img]
-	[img=Minus]Requires a high amount of Control.[/img]
-	[img=Minus]Making it bigger than is absolutely necessary does nothing but use up space.[/img]
+
+	Warning : Just the core its necesary.Adicional hexes gives no HP or benefits.
 >>
 S_FTLJAMMER_DESC: <<
 	A series of hyperfield exciters which disrupts all enemy FTL technology in a star system.

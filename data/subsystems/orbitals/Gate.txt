@@ -12,18 +12,16 @@ Subsystem: GateCore
 
 
 	Hex.Resistance := 0
-	Hex.HP := 10000/Hexes
 
-	
+
 	Description: #ORB_GATE_CORE_DESC
+	Hex.HP := 0
 	Hook: IsGate()
 	Effect: FTLUpkeep
 		Amount = 0.20
-	Assert: Size >= 100
-		Message: The Gate must be at least size 100. Increase the gate's hex count or the station's size.
-	
 	Module: Core
 		Sprite: Stargate
 		Hex.BuildCost := 400
 		Hex.MaintainCost := 200
-		Hex.LaborCost :=20
+		Hex.LaborCost := 20
+		Hex.HP := 7000
