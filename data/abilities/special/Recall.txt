@@ -8,7 +8,7 @@ Ability: Recall
 	
 	
 	Target: targ = Object
-	ABEM_hooks::TargetRequireCommand(targ)
+	Either(ABEM_hooks::TargetRequireCommand(targ), TargetFilterType(targ, Orbital))
 	ABEM_hooks::TargetFilterNotType(targ, Planet)
 	TargetFilterAllied(targ)
 	RelativeSizeEnergyCost(targ)

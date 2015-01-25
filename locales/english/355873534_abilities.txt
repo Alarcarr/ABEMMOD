@@ -94,7 +94,7 @@ ABL_BOARDING_PARTY_DESC: <<
 	
 	Boarding takes between 10 (overwhelming force on either side) and 100 (completely equal numbers) seconds to complete. If the defenders are defeated, control of the object is immediately transferred to the attacking empire. If not, nothing happens.
 	
-	Only one boarding action can be running on an object at any given time.
+	Only one boarding action can be running on an object at any given time. Boarding actions cannot be initiated by ships which are already being boarded. Asteroids and orbitals always have 100 boarding strength.
 >>
 ABL_RECALL_DESC: <<
 	Opens a wormhole engulfing the target allied object and immediately depositing it in close proximity to the Hubworld.

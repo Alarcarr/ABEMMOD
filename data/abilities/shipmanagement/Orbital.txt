@@ -9,7 +9,7 @@ Ability: BuyTurretL
 	AddStatusTo(Orbital, LaserTurret)
 	TargetFilterNotStatus(Orbital, LaserTurret)
 	ABEM_hooks::TargetFilterNotType(Orbital, Planet)
-	ABEM_hooks::TargetRequireCommand(Orbital)
+	Either(TargetFilterFlagship(Orbital), TargetFilterType(Orbital, Orbital))
 
 
 	ShowMoneyValue(300)
@@ -30,7 +30,7 @@ Ability: BuyTurretR
 	AddStatusTo(Orbital, RailgunTurret)
 	TargetFilterNotStatus(Orbital, RailgunTurret)
 	ABEM_hooks::TargetFilterNotType(Orbital, Planet)
-	ABEM_hooks::TargetRequireCommand(Orbital)
+	Either(TargetFilterFlagship(Orbital), TargetFilterType(Orbital, Orbital))
 
 
 
@@ -52,7 +52,7 @@ Ability: BuyTurretM
 	AddStatusTo(Orbital, MissileTurret)
 	TargetFilterNotStatus(Orbital, MissileTurret)
 	ABEM_hooks::TargetFilterNotType(Orbital, Planet)
-	ABEM_hooks::TargetRequireCommand(Orbital)
+	Either(TargetFilterFlagship(Orbital), TargetFilterType(Orbital, Orbital))
 
 	TargetFilterAllied(Orbital)
 	ShareCooldown(BuyTurretL)
