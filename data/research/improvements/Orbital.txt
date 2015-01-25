@@ -1,6 +1,6 @@
 Technology: OrbitalEnhancement
 	Name: Orbital Enhancement
-	Description: Increases Orbital health by 30% and Station damage by 20%
+	Description: Increases Orbital health by 30% and Station damage by 20%.
 	Icon: Fortified
 	Point Cost: 500
 	Time Cost: 60
