@@ -16,7 +16,7 @@ Resource: BlackHole
 	Limitless Level: True
 	IfLevel(6, GrantAbility(Recall))
 	IfLevel(1, AddStatus(FastResupply))
-	RegenSurface(25, 17)
+	RegenSurface(30, 20)
 	IfLevel(4, ProtectOtherPlanets())
 	IfLevel(3, AddRegionStatus(FastRecharge))
 	IfLevel(3, GiveGlobalTrade())

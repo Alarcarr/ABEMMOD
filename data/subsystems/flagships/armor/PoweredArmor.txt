@@ -7,10 +7,10 @@ Subsystem: PoweredArmor
 	Tags: Category:Armor
 	Tags: NoCore, NonContiguous, Defense, IsArmor, ResistArmor
 	Hull: Flagship, Station
-	
+
 	Tags: FauxExterior
 	Ship.ExternalHexes := Ship.ExternalHexes + ExteriorHexes
-	
+
 	Size := HexSize * Hexes
 	Hex.Resistance := 0.4
 	Hex.HP := 30 * HexSize
@@ -20,6 +20,9 @@ Subsystem: PoweredArmor
 	Hex.MaintainCost := 0.1
 
 	DamageResist := ShipSize / 30
+	EnergyResist := 0.5
+	Effect: ReduceDamagePercentile
+		EnergyResist = EnergyResist
 	Requires:
 		Power = 3*Size
 	Effect: DamageResist
