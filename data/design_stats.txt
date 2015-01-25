@@ -145,6 +145,15 @@ GlobalStat: Control
 
 	Variable: Ship.Command
 	UsedVariable: Ship.REQUIRES_Command
+	
+		GlobalStat: BoardingDefense
+			Name: #S_BOARDTOTAL
+			Description: #STT_BOARDTOTAL
+			Icon: CrewControl*#9686ff
+			Color: #ff8000
+			Secondary: Control
+			
+			Variable: BoardingStrength
 
 GlobalStat: HyperdriveSpeed
 	Name: #S_HYPERDRIVESPEED
@@ -370,6 +379,13 @@ SubsystemStat: ChannelPercentage
 
 	Variable: RechargePct
 
+SubsystemStat: BoardingSubsys
+	Name: #S_BOARDSUBSYS
+	Description: #STT_BOARDSUBSYS
+	Icon: CrewControl*#9686ff
+	Color: #ff8000
+	
+	Variable: BoardingStrength
 // }}}
 // {{{ Stats for single hexes
 HexStat: HP

@@ -35,11 +35,6 @@ ASTEROID_LABOR_DESC: <<
 	Only ticks down while the planet has active constructions.
 >>
 ELECTRONICS_DESC: Gives 0.2 energy generation.
-LOCAL_ASTEROID_FIELD_DESC: <<
-	Increases pressure cap by 6. Adds 0.2 Labor generation for every imported resource.
-
-	[color=#ff7070][b]Cannot be exported.[/b][/color]
->>
 TECHNOFARM_DESC: Generates a Cultivation card every 6 minutes. Increases population growth by 50%.
 PARADISE_DESC: <<
 	A carefree, peaceful planet, this world attracts many people, some simply for holidays, others as permanent residents.
@@ -48,4 +43,3 @@ PARADISE_DESC: <<
 
 	-50% to civilian Labor, Research, Defense or Energy generation on this planet. Cannot be exported.
 >>
-ALUMINUM_DESC: Increases pressure capacity by 6.

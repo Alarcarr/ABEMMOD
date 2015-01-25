@@ -1,6 +1,7 @@
 Ability: Recall
 	Name: Recall
 	Description: #ABL_RECALL_DESC
+	Icon: ActionBarIcons::7
 	
 	Energy Cost: 100
 	Cooldown: 10
