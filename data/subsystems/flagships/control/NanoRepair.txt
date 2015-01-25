@@ -1,7 +1,7 @@
 Subsystem: NanoRepair
 	Name: Nano repair
 	Description: #S_NANO_REPAIR_DESC
-	Tags: LowMaint, Category:control
+	Tags: LowMaint, Category:Control
 	Tags: BaseCost, ControlCore, HasInternals, Category:Control
 	BaseColor: #845
 

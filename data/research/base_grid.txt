@@ -93,7 +93,6 @@ Grid: Base
 	ImpSupportCapSmall: 5,-3
 	ImpSupportSupplyUse: 6,-4
 	ImpSupportDamage: 5,-5
-	Support4: 11,-7
 	ImpAoE: 10,4
 	ImpAllHealth: 12,4
 	ImpArmorDR2: 13,4
@@ -213,3 +212,5 @@ Grid: Base
 	ImpPopLvl3: -7,-7
 	DevDefenseIncome: -4,-8
 	SysTitanHull: 5,-1
+	BldPlanetaryEngine: -6,-8
+	Support3: 11,-7
