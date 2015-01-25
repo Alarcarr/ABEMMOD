@@ -173,15 +173,13 @@ S_DESTROYER_HULL_DESC: <<
 >>
 S_STEALTH_HULL_DESC: <<
 	Specialized hull architecture allows for easier construction of stealth ships.
-	
+
 	[img=Plus]Reduces mass by 25%.[/img]
-	[img=Plus]Reduces constructio costs.[/img]
-	[img=Minus]Significantly decreases hex limit and grid size.[/img]
-	[img=Minus]Sets hyperdrive speed to 0.[/img]
+	[img=Plus]Can cloack[/img]
+	[img=Minus]Cant use Hyperdrive.[/img]
 	[img=Minus]Reduces firing arcs by 25%.[/img]
 	[img=Minus]Halves armor health.[/img]
-	[img=Minus]Is ABSOLUTELY pointless.[/img]
-	[img=MenuIcons::3;20]Cannot be used on ships under size 500.[/img]
+
 >>
 S_RAMJET_DESC: <<
 	A large scoop that collects particulate matter floating in space and uses them to propel itself.

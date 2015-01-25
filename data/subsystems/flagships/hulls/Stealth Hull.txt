@@ -5,7 +5,7 @@ Subsystem: StealthHull
 	Tags: Applied:Hull, Category:Hulls, NoCore
 	Hull: Flagship
 	EvaluationOrder: -200
-	BaseColor: #cc6a3a
+	BaseColor: #a702cc
 
 	AddShipModifier: FlagshipHull::HexLimitFactor(0.5)
 	AddShipModifier: FlagshipHull::GridWidthFactor(sqrt(0.8))
@@ -13,13 +13,11 @@ Subsystem: StealthHull
 
 	AddShipModifier: HyperdriveSpeedFactor(0)
 	AddShipModifier: MassFactor(0.75)
-	AddShipModifier: BuildCostFactor(1.0 + 0.5 * min(sqrt((ShipSize - 200) / 3000), 1.0))
+	AddShipModifier: BuildCostFactor(0.5 + 2 * min(sqrt((ShipSize - 200) / 3000), 1.0))
 	AddShipModifier: FireArcFactor(0.75)
 	AddShipModifier: ArmorHpFactor(0.5)
 
-	Assert: ShipSize <= 500
-		Message: #ERROR_MIN_SIZE:$1:500
-
+	Hook: GrantAbility(Cloak)
 	Module: Default
 		Sprite: DesignationIcons::16
 		DrawMode: 3
