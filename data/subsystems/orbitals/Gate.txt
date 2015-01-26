@@ -14,11 +14,14 @@ Subsystem: GateCore
 	Hex.Resistance := 0
 
 
-	Description: #ORB_GATE_CORE_DESC
+	Description: #S_GATE_CORE_DESC
 	Hex.HP := 0
 	Hook: IsGate()
 	Effect: FTLUpkeep
-		Amount = 0.20
+		Amount = 0.15
+		
+	Module: Default
+	
 	Module: Core
 		Sprite: Stargate
 		Hex.BuildCost := 400

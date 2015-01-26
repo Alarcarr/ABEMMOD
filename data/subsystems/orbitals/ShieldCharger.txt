@@ -12,13 +12,11 @@ Subsystem: RechargerModule
 
 
 	Hex.Resistance := 0
-	Hex.HP := 12 * HexSize
+	Hex.HP := 0
 
-	Hex.LaborCost := 3* HexSize +5
+	Hex.LaborCost := 0
 	Description: 
 	Hook: AddRegionStatus(FastRecharge)
-	Assert: Size >= 20
-		Message: The Power Transmission Array must be at least size 20. Add more hexes to the array or increase the station's size.
 	Requires:
 		Command = Hexes
 
@@ -28,3 +26,5 @@ Subsystem: RechargerModule
 		Sprite: TechIcons::48
 		Hex.BuildCost := 450
 		Hex.MaintainCost := 100
+		Hex.HP := 5000
+		Hex.LaborCost := 15

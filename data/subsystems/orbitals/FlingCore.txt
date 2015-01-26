@@ -15,10 +15,8 @@ Subsystem: Fling
 	Hex.HP := 0
 
 	Hex.LaborCost := 0
-	Description: #ORB_FLING_CORE_DESC
+	Description: #S_FLING_DESC
 	Hook: IsFlingBeacon()
-	Assert: Size >= 100
-		Message: The Fling Beacon must be at least size 100. Increase the beacon's hex count or the station's size.
 
 	Module: Default
 

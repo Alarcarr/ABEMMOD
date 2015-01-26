@@ -16,8 +16,7 @@ S_RESUPPLYMODULE_DESC: <<
 	A system which assembles and disseminates supply packages for all fleets in a star system.
 
 	[img=Plus]Increases the resupply rate of all units in a star system.[/img]
-
-	Warning : Just the core its necesary.Adicional hexes gives no HP or benefits.
+	[img=MenuIcons::3;20]Only the core is required for the subsystem to operate. Additional hexes provide no benefits whatsoever.[/img]
 >>
 S_FTLJAMMER_DESC: <<
 	A series of hyperfield exciters which disrupts all enemy FTL technology in a star system.
@@ -27,6 +26,24 @@ S_FTLJAMMER_DESC: <<
 	[img=Minus]Making it bigger than is absolutely necessary does nothing but use up space.[/img]
 	[img=Minus]Costs 0.15 FTL per second.[/img]
 >>
+S_FLING_DESC: <<
+	A compact fling accelerator is fitted to the station's hull, allowing fling-based FTL near it.
+	
+	[img=Plus]Ships and stations within 10 thousand units of the station can be FTLed to anywhere in the galaxy.[/img]
+	[img=Plus]Takes 25 seconds to reach any destination, no matter what the distance is.[/img]
+	[img=Plus]FTL cost is determined solely by the size of the fleet being flinged.[/img]
+	[img=Plus]Can be flinged by other beacons and defend itself from attackers, unlike a standard fling beacon.[/img]
+	[img=Minus]Without a Hyperdrive or Slipstream Generator, at least one flagship/station must remain at the target location or use sublight propulsion for the return trip.[/img]
+	[img=MenuIcons::3;20]Only the core is required for the subsystem to operate. Additional hexes provide no benefits whatsoever.[/img]
+>>
+S_GATE_CORE_DESC: <<
+	An artificial wormhole is suspended and maintained just beyond the station's outer hull.
+	
+	[img=Plus]Allows instantaneous travel to any other gate, provided the traveler has at least a small sublight engine.[/img]
+	[img=Plus]Can be flinged by fling beacons and defend itself from attackers unlike a standard gate.[/img]
+	[img=Plus][img=Minus]No spike FTL cost. Instead, costs 0.15 FTL per second to maintain.[/img][/img]
+	[img=MenuIcons::3;20]Only the core is required for the subsystem to operate. Additional hexes provide no benefits whatsoever.[/img]
+>>
 S_CRYSTAL_ARMOR_DESC: <<
 	A resilient crystalline lattice capable of absorbing energy from attacks and channeling it into a ship's shields.
 
@@ -34,8 +51,7 @@ S_CRYSTAL_ARMOR_DESC: <<
 	[img=MenuIcons::3;20]Particularly resistant to energy weapons, weakest against projectile weapons with a moderate explosive resistance.[/img]
 	[img=MenuIcons::3;20]Goes very well with low-regeneration shields, such as the Covariant shield.[/img]
 	[img=Minus]Somewhat wasteful if ship has no shields.[/img]
-	
-	>>
+>>
 S_NANO_ARMOR_DESC: <<
 	A pseudo-liquid block of armor consisting of a high quantity of nanites. The nanites use power from the ship's reactor to repair each other, resulting in an armor with considerable regenerative ability.
 
@@ -167,20 +183,21 @@ S_DESTROYER_HULL_DESC: <<
 	
 	[img=Plus]Somewhat reduces construction costs.[/img]
 	[img=Plus]Increases hex limit and grid size.[/img]
+	[img=Plus]Increases armor health and shield capacity by 30%.[/img]
 	[img=Minus]Reduces hyperdrive speeds by 10%, and increases mass by 10%.[/img]
+	[img=Minus]Halves support capacity.[/img]
 	[img=Minus]Halves firing arcs.[/img]
-	[img=Minus]Is nearly pointless.[/img]
 	[img=MenuIcons::3;20]Cannot be used on ships under size 100.[/img]
 >>
 S_STEALTH_HULL_DESC: <<
-	Specialized hull architecture allows for easier construction of stealth ships.
+	Specialized hull architecture allows for easier construction of maneuverable stealth ships.
 
 	[img=Plus]Reduces mass by 25%.[/img]
-	[img=Plus]Can cloack[/img]
-	[img=Minus]Cant use Hyperdrive.[/img]
+	[img=Plus]Can cloak without the need for Cloaking Mesh.[/img]
+	[img=Minus]Sets hyperdrive speed to 0.[/img]
+	[img=Minus]Significantly reduces hex limit and grid size.[/img]
 	[img=Minus]Reduces firing arcs by 25%.[/img]
 	[img=Minus]Halves armor health.[/img]
-
 >>
 S_RAMJET_DESC: <<
 	A large scoop that collects particulate matter floating in space and uses them to propel itself.
@@ -192,7 +209,7 @@ S_HEAVYRAIL_DESC: <<
 	A powerful cannon based on the principles behind railgun technology.
 	
 	[img=Plus]Deals as much damage as 9 shots from a Railgun Battery.[/img]
-	[img=Plus]More effective at piercing armor than a Railgun Battery.
+	[img=Plus]More effective at piercing armor than a Railgun Battery.[/img]
 	[img=Minus]Fires 8 times slower than a Railgun Battery.[/img]
 	[img=Minus]Has a smaller firing arc than a Railgun Battery.[/img]
 	[img=Minus]Drains more supplies than a Railgun Battery.[/img]
@@ -221,8 +238,7 @@ S_RECHARGERMODULE_DESC: <<
 	
 	[img=Plus]Increases system-wide shield regeneration by 25, plus 0.01% of the ships' shield capacities.[/img]
 	[img=Minus]Additional regeneration does not apply in combat.[/img]
-	[img=Minus]Requires a high amount of Control.[/img]
-	[img=Minus]Making it bigger than is absolutely necessary does nothing but use up space.[/img]
+	[img=MenuIcons::3;20]Only the core is required for the subsystem to operate. Additional hexes provide no benefits whatsoever.[/img]
 >>
 S_FLEETREPAIR: Fleet Repair Rate
 STT_FLEETREPAIR: <<
