@@ -73,6 +73,7 @@ S_COMPOSITE_ARMOR_DESC: <<
 S_POWERED_ARMOR_DESC: <<
 	Targeted electromagnetic deflectors placed on the ship's exterior.
 
+	[img=Plus]Halves damage from energy weapons before applying damage resistance.[/img]
 	[img=Plus]Impervious to all damage below or at the listed damage resistance.[/img]
 	[img=Plus]Extremely low mass.[/img]
 	[img=Minus]Half the damage resistance of - and just as little health as - Ablative Armor.[/img]

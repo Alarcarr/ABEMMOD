@@ -19,10 +19,14 @@ Subsystem: PoweredArmor
 	Hex.BuildCost := 0.4 * HexSize
 	Hex.MaintainCost := 0.1
 
+	CompEnergyResist := 0.5
+	DummyEnergyResist := 100 * CompEnergyResist
 	DamageResist := ShipSize / 30
-	EnergyResist := 0.5
+	
 	Effect: ReduceDamagePercentile
-		EnergyResist = EnergyResist
+		EnergyResist = CompEnergyResist
+		ProjResist = 0
+		ExplResist = 0
 	Requires:
 		Power = 3*Size
 	Effect: DamageResist
