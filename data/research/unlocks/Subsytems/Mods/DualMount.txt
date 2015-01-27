@@ -1,0 +1,7 @@
+Technology: DualMount
+	Icon: MassMount
+	Name: DualMount
+	Description: #EXTRA_GUN_DESC
+	Point Cost: 500
+	Time Cost: 60
+	UnlockModule(ExtraGun)

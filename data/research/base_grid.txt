@@ -73,7 +73,6 @@ Grid: Base
 	ImpSupportCapSmall: 3,-2
 	c3: 4,-2
 	ImpAllHealth: 6,0
-	ImpTracking: 6,1
 	ImpFireRate: 7,1
 	ImpAllRange: 7,-1
 	ImpAllHealth: 8,0
@@ -159,7 +158,6 @@ Grid: Base
 	c2: 2,-4
 	ImpFactoryLabor: 0,-5
 	ImpAllHealth: 2,-5
-	ImpSupplyStorage: 2,4
 	ImpFactoryLabor: 0,-6
 	ImpCivConstructionRate: 1,-6
 	ImpArmorHealth: 2,-6
@@ -214,3 +212,7 @@ Grid: Base
 	SysTitanHull: 5,-1
 	BldPlanetaryEngine: -6,-8
 	Support3: 11,-7
+	ImpSupplyStorage: 2,2
+	ImpSupportSupplyUse: 2,4
+	ImpSupplyStorage: 4,4
+	DualMount: 6,1
