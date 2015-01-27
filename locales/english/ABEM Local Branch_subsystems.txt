@@ -195,7 +195,7 @@ S_STEALTH_HULL_DESC: <<
 
 	[img=Plus]Reduces mass by 25%.[/img]
 	[img=Plus]Can cloak without the need for Cloaking Mesh.[/img]
-	[img=Minus]Sets hyperdrive speed to 0.[/img]
+	[img=Minus]Cannot use hyperdrives.[/img]
 	[img=Minus]Significantly reduces hex limit and grid size.[/img]
 	[img=Minus]Reduces firing arcs by 25%.[/img]
 	[img=Minus]Halves armor health.[/img]

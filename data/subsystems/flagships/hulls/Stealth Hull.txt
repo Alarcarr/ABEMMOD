@@ -11,7 +11,6 @@ Subsystem: StealthHull
 	AddShipModifier: FlagshipHull::GridWidthFactor(sqrt(0.8))
 	AddShipModifier: FlagshipHull::GridHeightFactor(sqrt(0.4))
 
-	AddShipModifier: HyperdriveSpeedFactor(0)
 	AddShipModifier: MassFactor(0.75)
 	AddShipModifier: BuildCostFactor(0.5 + 2 * min(sqrt((ShipSize - 200) / 3000), 1.0))
 	AddShipModifier: FireArcFactor(0.75)
@@ -21,3 +20,6 @@ Subsystem: StealthHull
 	Module: Default
 		Sprite: DesignationIcons::16
 		DrawMode: 3
+
+	Assert: Sum.HyperdriveSpeed > 0
+		Message: Stealth ships cannot use hyperdrives.
