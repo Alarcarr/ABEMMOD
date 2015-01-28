@@ -105,7 +105,9 @@ Material: tax2
 Material: cloack
 	Inherit: ABEMSubsystem
 	Texture: data/images/Cloack.png
-
+Material: orbital
+	Inherit: ABEMSubsystem
+	Texture: data/images/orbital.png
 
 
 Material: c1

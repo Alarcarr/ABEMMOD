@@ -216,3 +216,6 @@ Grid: Base
 	ImpSupportSupplyUse: 2,4
 	ImpSupplyStorage: 4,4
 	DualMount: 6,1
+	DevDefenseIncome: -3,-8
+	ImpPlanetSupport: -4,-9
+	OrbitalEnhancement: -4,-10

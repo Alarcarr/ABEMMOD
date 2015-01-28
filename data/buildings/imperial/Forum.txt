@@ -11,6 +11,7 @@ Building: TaxCenter
 	Labor Cost: 100
 	Maintenance Affinity: Oceanic
 	Base Maintenance: 100
+	GloballyVisible()
 	RequireUnlockTag(Tax)
 	ModPopulationGrowth(0.8)
 	ModLoyalty(-10)
