@@ -11,6 +11,7 @@ Technology: ImpSupportDamage
 
 	AddModifier( tag/Weapon,hull/Support::DamageFactor(1.15) )
 
+	ModAttribute(WeaponsDmg, Add, 1)
 Technology: ImpSupportDamage2
 	Name: #R_IMP_SUPPORT_DAMAGE2
 	Blurb: #R_IMP_SUPPORT_DAMAGE_BLURB:30%
@@ -22,4 +23,5 @@ Technology: ImpSupportDamage2
 	Point Cost: 1500
 	Time Cost: 180
 
+	ModAttribute(WeaponsDmg, Add, 2)
 	AddModifier(tag/Weapon,hull/Support::DamageFactor(1.3))

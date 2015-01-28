@@ -11,6 +11,7 @@ Technology: ImpDamage
 
 	AddModifier(tag/Weapon::DamageFactor(1.15))
 
+	ModAttribute(WeaponsDmg, Add, 1)
 Technology: ImpDamage2
 	Name: #R_IMP_DAMAGE2
 	Blurb: #R_IMP_DAMAGE_BLURB:30%
@@ -24,6 +25,7 @@ Technology: ImpDamage2
 
 	AddModifier(tag/Weapon::DamageFactor(1.3))
 
+	ModAttribute(WeaponsDmg, Add, 2)
 Technology: ImpDamageSmall
 	Name: #R_IMP_DAMAGE_SMALL
 	Blurb: #R_IMP_DAMAGE_BLURB:10%
