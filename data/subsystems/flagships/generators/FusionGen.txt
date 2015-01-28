@@ -4,7 +4,7 @@ Subsystem: FusionGen
 	BaseColor: #db0083
 	Elevation: 1
 
-	Tags: DefaultUnlock, IsReactor, Category:Power and Supply
+	Tags: DefaultUnlock, IsReactor, Category:Power
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes

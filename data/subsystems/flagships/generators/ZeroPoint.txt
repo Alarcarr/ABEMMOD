@@ -4,7 +4,7 @@ Subsystem: ZeroPoint
 	BaseColor: #5ade8b
 	Elevation: 1
 
-	Tags: IsReactor, Category:Power and Supply
+	Tags: IsReactor, Category:Power
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes
