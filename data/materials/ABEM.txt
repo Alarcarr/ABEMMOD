@@ -55,7 +55,11 @@ Material: QuantumArmor
 Material: RemnantArmor
 	Inherit: ABEMSubsystem
 	Texture: data/images/subsystems/armor_remnant.png
-
+Material: Armor2
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/armor2.png
+	
+	
 Material: PoweredArmor
 	Inherit: ABEMSubsystem
 	Texture: data/images/subsystems/armor_powered.png
