@@ -5,7 +5,7 @@ Subsystem: HDSupplyModule
 	BaseColor: #2fd6b3
 	Elevation: 3
 
-	Tags: NonContiguous, NoCore, HasInternals, Category:Power and Supply
+	Tags: NonContiguous, NoCore, HasInternals, Category:Power
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes
