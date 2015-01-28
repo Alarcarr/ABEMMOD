@@ -1,0 +1,14 @@
+Subsystem: GuardianHull
+	Name: Guardian Hull
+	Description: Dummy subsystem only used by the Remnant Guardian. Cannot be boarded.
+	
+	Tags: Applied:Hull, Category:Hulls, NoCore
+	Hull: Flagship
+	EvaluationOrder: -200
+	BaseColor: #a702cc
+	
+	Module: Default
+		Sprite: DesignationIcons::16
+		DrawMode: 3
+	
+	Hook: AddStatus(IsGuardian)

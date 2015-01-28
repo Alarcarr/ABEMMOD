@@ -1435,5 +1435,8 @@
 				]
 			]
 		}
+	],
+	"appliedSubsystems": [
+		"GuardianHull"
 	]
 }
