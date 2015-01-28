@@ -9,7 +9,7 @@ Module: TradeStation
 	Standalone: True
 
 	Build Cost: 500
-	Maintenance: 200
+	Maintenance: 400
 	Labor Cost: 15
 	Size: 16
 
@@ -27,3 +27,4 @@ Module: TradeStation
 	FriendlyPlanetMoney(To Other = 40)
 	GiveTrade()
 	GlobalTradeNode()
+	UnlimitedAsteroidSystem()
