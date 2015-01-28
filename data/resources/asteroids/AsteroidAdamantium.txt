@@ -1,0 +1,7 @@
+Resource: Adamantium
+	Name: Adamantium
+	Exportable: False
+	Asteroid Labor: 200
+	Frequency: 0
+	Icon: adamantium
+	Distribution: 0

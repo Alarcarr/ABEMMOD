@@ -108,6 +108,9 @@ Material: cloack
 Material: orbital
 	Inherit: ABEMSubsystem
 	Texture: data/images/orbital.png
+Material: adamantium
+	Inherit: ABEMSubsystem
+	Texture: data/images/Adamantium.png
 
 
 Material: c1
