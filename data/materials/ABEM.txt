@@ -58,7 +58,12 @@ Material: RemnantArmor
 Material: Armor2
 	Inherit: ABEMSubsystem
 	Texture: data/images/subsystems/armor2.png
-	
+Material: Armor3
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/armor3.png
+Material: Armor4
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/armor4.png	
 	
 Material: PoweredArmor
 	Inherit: ABEMSubsystem
