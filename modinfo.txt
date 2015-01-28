@@ -1,6 +1,6 @@
 	Name: Alternate Balance Expansion Mod
 	Description: <<
-		[h1]V 0.127[/h1]
+		[h1]V 0.170[/h1]
 
 		Note :Some images are of the older versions of the game .
 

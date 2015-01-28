@@ -1,0 +1,6 @@
+Status: Transported
+	Name: Transported
+	Description: This ship is being transported by a Hauler wont be effective in a batle
+	Icon: TechModIcons::3*#6cff11
+	Unique: True
+	AddFleetEffectiveness(-0.5)

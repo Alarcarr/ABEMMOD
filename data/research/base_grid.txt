@@ -132,7 +132,6 @@ Grid: Base
 	DevInfluenceIncome: -3,1
 	DevInfluenceIncome: -5,1
 	DevInfluenceIncome: -6,-1
-	PoliticalChoices: -6,0
 	DevInfluenceIncome2: -9,0
 	Flak: 6,-1
 	ImpSupplyRegen: 2,5
@@ -219,3 +218,4 @@ Grid: Base
 	DevDefenseIncome: -3,-8
 	ImpPlanetSupport: -4,-9
 	OrbitalEnhancement: -4,-10
+	Senate: -6,0

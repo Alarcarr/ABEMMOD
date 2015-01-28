@@ -18,7 +18,7 @@ Subsystem: Hauler
 	AddShipModifier: MaintCostFactor(0.20)
 	AddShipModifier: SupplyCapacityFactor(0)
 
-	Hook: AddFleetEffectiveness(-0.7)
+	Hook: AddStatus(Transported)
 	Assert: ShipSize >= 50
 		Message: #ERROR_MIN_SIZE:$1:50
 

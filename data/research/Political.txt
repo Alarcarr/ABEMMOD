@@ -1,5 +1,5 @@
-Technology: PoliticalChoices
-	Name: Goverment
+Technology: GovermentChoices
+	Name: GovermentChoices
 	Color: #4110aa
 
 	Default Unlock: True
