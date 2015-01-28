@@ -9,6 +9,7 @@ Building: SlaveBarracks
 	Base Maintenance: 100
 	Tile Maintenance: 5
 	Build Time: 360
+	GloballyVisible()
 	ReplacesCities(Amount = 4)
 	ModCivResourceMult(Research, -0.9)
 	ModCivResourceMult(Influence, -0.9)

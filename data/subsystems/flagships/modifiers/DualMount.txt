@@ -3,9 +3,9 @@ Template: tag/Weapon, !tag/SupportHull
 		Name: Dual Mount
 		Description: #EXTRA_GUN_DESC
 
-		Sprite: techTanks
+		Sprite: MassMount
 
-		Unique: true
+		Unique: True
 		AddModifier: BuildCostFactor(1.7)
 		AddModifier: LaborCostFactor(2.2)
 		AddModifier: optional MaintCostFactor(2.5)

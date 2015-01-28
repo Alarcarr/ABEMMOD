@@ -6,12 +6,11 @@ Resource: AsteroidLabor
 	Small Icon: ResourceIconsSmall::46
 
 	Distribution: 0
-	Asteroid Frequency: 1.7
-	Asteroid Labor:  10
+	Asteroid Frequency: 1.5
+	Asteroid Labor: 10
 
-	Vanish Time: 250
+	Vanish Time: 300
 	Vanish Mode: Custom
 	VanishWhenConstructing()
 
-	ModCivResourceMult(Labor, +0.5)
-	AddLaborIncome(Amount = 6)
+	AddLaborIncome(Amount = 8)
