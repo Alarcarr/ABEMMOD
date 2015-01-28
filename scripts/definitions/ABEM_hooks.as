@@ -46,6 +46,9 @@ import tile_resources;
 from bonus_effects import BonusEffect;
 
 import ftl;
+#section server
+import empire;
+#section all
 
 class Regeneration : SubsystemEffect {
 	Document doc("Regenerates itself over time.");
@@ -661,8 +664,8 @@ class IsDerelict : StatusHook {
 			ship.MaxShield -= ship.MaxShield;
 		}
 		DamageEvent dmg;
-		dmg.damage = 1.0;
-		dmg.partiality = 1;
+		dmg.damage = 1.0 * time;
+		dmg.partiality = time;
 		dmg.impact = 0;
 		@dmg.obj = null;
 		@dmg.target = obj;
@@ -840,3 +843,22 @@ class PlayParticlesAtObject : AbilityHook {
 	}
 #section all
 };
+
+class TargetFilterNotRemnantOrPirate : TargetFilter {
+	Document doc("Target must not be a Remnant or pirate-controlled object.");
+	Argument targ(TT_Object);
+	
+	string getFailReason(Empire@ emp, uint index, const Target@ targ) const override {
+		return "Cannot target Remnants and pirates.";
+	}
+#section server
+	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const override {
+		if(index != uint(arguments[0].integer))
+			return true;
+		Object@ obj = targ.obj;
+		if(obj is null)
+			return false;
+		return obj.owner is Creeps || obj.owner is Pirates;
+	}
+#section all
+}

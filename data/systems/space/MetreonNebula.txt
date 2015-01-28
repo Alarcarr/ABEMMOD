@@ -1,0 +1,18 @@
+System: MetreonNebula
+	Frequency: 0.01
+	
+	ExpandSystem(1000)
+	
+	Repeat(2:5)
+		MakeAnomaly()
+	Repeat(0:3)
+		MakeArtifact()
+	Repeat(0:1)
+		MakeAsteroid()
+	
+	MakeNebula(#800000)
+	
+	AddRegionStatus(Metreon) // Damages shields over time. If shields fail, damages hull instead. Also obscures sensors somewhat.
+	
+	NoRegionVision()
+	SetStaticSeeableRange(750)

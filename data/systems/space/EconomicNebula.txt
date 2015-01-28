@@ -1,0 +1,22 @@
+System: EconomicNebula
+	Frequency: 0.005
+	
+	ExpandSystem(1000)
+	
+	Repeat(2:5)
+		MakeAnomaly()
+	Repeat(0:3)
+		MakeArtifact()
+	Repeat(0:3)
+		MakeAsteroid()
+	Repeat(2:5)
+		MakeAsteroid(NativeGold:RareMetals)
+	Repeat(1:3)
+		MakeCreepCamp(Offset = 700)
+		
+	MakeNebula(#feadc4)
+	
+	AddRegionStatus(Economic)
+	
+	NoRegionVision()
+	SetStaticSeeableRange(1000)

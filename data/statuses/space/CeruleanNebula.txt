@@ -1,0 +1,11 @@
+Status: Cerulean
+	Name: Sicutmarian Nebula
+	Description: #NEBULA_CERULEAN_DESC
+	Icon: ResourceIcon::5 * #00ff00
+	
+	ABEM_nebulae::DisableShields()
+	ABEM_nebulae::DisableStatus(Cloaked)
+	ForceHoldFire()
+	ABEM_nebulae::StatusBlockFTLSystem()
+	LimitSightRange(1000)
+	LimitSeeableRange(1000)

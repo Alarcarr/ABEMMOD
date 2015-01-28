@@ -1,0 +1,8 @@
+Status: Economic
+	Name: Pretiosian Nebula
+	Description: #NEBULA_ECONOMIC_DESC
+	Icon: ResourceIcons::30 * #00aa00
+	Color: #00aa00
+	
+	LimitSightRange(1000)
+	LimitSeeableRange(1000)

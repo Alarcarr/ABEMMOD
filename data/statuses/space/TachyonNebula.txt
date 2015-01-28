@@ -1,0 +1,9 @@
+Status: Tachyon
+	Name: Tachyon Nebula
+	Description: #NEBULA_TACHYON_DESC
+	Icon: ActionBarIcons::5 * #00aa00
+	Color: #00aa00
+	
+	ABEM_nebulae::StatusFreeFTLSystem()
+	LimitSightRange(750)
+	LimitSeeableRange(750)

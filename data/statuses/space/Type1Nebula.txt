@@ -1,0 +1,8 @@
+Status: Type1Nebula
+	Name: Interstellar Gas Cloud
+	Description: #NEBULA_TYPE1_DESC
+	Icon: VoteIcons::3
+	Color: #ff0000
+	
+	LimitSightRange(500)
+	LimitSeeableRange(500)

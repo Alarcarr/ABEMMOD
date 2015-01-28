@@ -1,0 +1,7 @@
+Status: EmptySpace
+	Name: Empty Space
+	Description: #EMPTY_SPACE_DESC
+	Icon: ResourceIcon::5 * #429cffff * #00ff00
+	
+	ABEM_hooks::ApplyToShips()
+	ABEM_nebulae::ShieldRegenBoost(0.05)
