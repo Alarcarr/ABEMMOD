@@ -194,10 +194,17 @@ R_BLD_TAX_DESC: <<
 	
 	[i][bbloc=#B_TAXCENTER_DESC/][/i]
 >>
-R_SYS_RESUPPLY_MODULE:
+R_SYS_RESUPPLY_MODULE: <<
 	[color=#aaa][i]New supply package dispersal systems allow for facilities equivalent to Supply Depots to be built into a space station without sacrificing defensive capabilities.[/i][/color]
 	
 	Unlocks the Resupply Module subsystem for use on stations.
 	
 	[i][bbloc=#S_RESUPPLYMODULE_DESC/][/i]
+>>
+R_SYS_ENGINEERING: <<
+	[color=#aaa][i]Advances in engineering technology allow for engineering feats that previously required entire squadrons of ships to be accomplished by a single craft.[/i][/color]
+	
+	Unlocks the Engineering Bay subsystem.
+	
+	[i][bbloc=#S_ENGINEERING_BAY_DESC/][/i]
 >>
