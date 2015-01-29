@@ -241,6 +241,13 @@ S_RECHARGERMODULE_DESC: <<
 	[img=Minus]Additional regeneration does not apply in combat.[/img]
 	[img=MenuIcons::3;20]Only the core is required for the subsystem to operate. Additional hexes provide no benefits whatsoever.[/img]
 >>
+S_ENGINEERING_BAY_DESC: <<
+	Specialized equipment and personnel for battlefield assembly or repairs.
+	
+	[img=Plus]Allows use of Engineering abilities.[/img]
+	[img=Plus]Has a high repair rate.[/img]
+	[img=Minus]Does not grant any Control.[/img]
+>>
 S_FLEETREPAIR: Fleet Repair Rate
 STT_FLEETREPAIR: <<
 	The rate at which this ship heals its fleet. Does not consume Supply.
