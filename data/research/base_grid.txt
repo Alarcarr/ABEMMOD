@@ -97,7 +97,6 @@ Grid: Base
 	ImpArmorDR2: 13,4
 	ImpFlagDamage: 9,4
 	RoboticShipyard: 11,-8
-	RepairBay: 8,-8
 	ImpSupportSupplyUse: 7,-7
 	ImpSupportCap2: 8,-6
 	ImpAllHealth: 7,-6
