@@ -47,6 +47,7 @@ Subsystem: MatterDisruptor
 		Sprite: WaveEmitter
 
 		Hex.DamageResist := ShipSize / 64.0
+		DrawMode: 1
 		Effect: DamageResist
 			Resist = Hex.DamageResist
 

@@ -71,7 +71,9 @@ Material: PoweredArmor
 Material: CrystalArmor
 	Inherit: ABEMSubsystem
 	Texture: data/images/subsystems/armor_crystal.png
-
+Material:shuttle
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/shuttle.png	
 
 
 

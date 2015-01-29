@@ -7,7 +7,7 @@ STATUS_POWER_CELL: Ancient Retrofit
 STATUS_GDF_DESC: <<
 	Overloading its primary reactor.
 
-	Will gain up to 65% effectiveness before exploding, dealing (5*Power)^(1/2) damage to all enemies in a (2*Power)^(1/2) radius.
+	Will gain up to 130% effectiveness before exploding, dealing (5*Power)^(1/2) damage to all enemies in a (2*Power)^(1/2) radius.
 >>
 STATUS_LW_DESC: <<
 	Rallied by a nearby Admiral.

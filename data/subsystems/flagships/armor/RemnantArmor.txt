@@ -11,7 +11,7 @@ Subsystem: RemnantArmor
 
 	Tags: FauxExterior
 	Ship.ExternalHexes := Ship.ExternalHexes + ExteriorHexes
-	
+
 	Hex.Resistance := 1
 	Hex.HP := 200 * HexSize
 	Hex.Mass := 2 * HexSize
@@ -30,7 +30,7 @@ Subsystem: RemnantArmor
 
 	Module: Default
 		Hex.BuildCost := Hex.BuildCost * 5
-		Sprite: RemnantArmor
+		Sprite: Armor4
 
 		AddAdjacentModifier: !tag/IsArmor,hexVar/HP::AddHP(Hex.HP / 6.0)
 		Hex.LaborCost := 3 * HexSize

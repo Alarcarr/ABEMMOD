@@ -1,14 +1,14 @@
 Subsystem: BoardingParty
 	Name: Boarding Parties
 	Description: #S_BOARDING_PARTY_DESC
-		
+
 
 	BaseColor: #c5f946
 	Picture: CrewQuarters*#9686ff
 	Elevation: 5
 
-	Tags: BaseCost, NonContiguous, NoCore, Category:Equipment, Ability:BoardingParty
-	Tags: Boarders // DO NOT REMOVE OR CHANGE THIS. 'Boarders' is used to tell the scripts that this subsystem can participate in an offensive boarding action as well as a defensive one. Without it, BoardingStrength is only used for defense.
+	Tags: BaseCost, NonContiguous,Category:Equipment, Ability:BoardingParty
+	Tags: Boarders,ExteriorCore
 	Tags: HasInternals
 	Hull: Flagship, Station
 
@@ -20,6 +20,9 @@ Subsystem: BoardingParty
 	Hex.Resistance := 0.2
 	Hex.HP := 36 * HexSize
 	Hex.Mass := HexSize
+	Module: Core
+		Name: Boarding Parties
+		Sprite: shuttle
 
 	Module: Default
 		Sprite: CrewQuarters*#9686ff

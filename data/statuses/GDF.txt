@@ -4,10 +4,11 @@ Status: GDF
 	Icon: GDF*#ff1010
 	Color: #ff1010
 	Description: #STATUS_GDF_DESC
-	TriggerPeriodic(AddPermanentEffectiveness(0.05), Interval = 5)
+	TriggerPeriodic(AddPermanentEffectiveness(0.10), Interval = 5)
 	// Power damage multiplier - this is the number by which the ship's power output is multiplied when calculating the blast damage.
 	// Power radius multiplier - the number by which the power output is multiplied when calculating the blast radius.
 	// Base damage - the amount of damage added to the damage calculated by the abovementioned damage multiplier.
 	// Base radius - the radius added to the radius calculated by the abovementioned radius multiplier.
+	PersistentParticles(GDF, Fleet Scale = True)
 	ABEM_hooks::ReactorOverloadHook(5, 2, 0, 0)
 	AddFleetEffectiveness(0.10)
