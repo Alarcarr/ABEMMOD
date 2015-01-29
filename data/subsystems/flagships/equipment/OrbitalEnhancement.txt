@@ -18,7 +18,7 @@ Subsystem: EngBay
 	Repair := max((Size-5)*8, 0)
 	RepairSupplyCost := 1.5 * Repair
 	out SupplyDrain := RepairSupplyCost
-	Assert: Size>5
+	Assert: Size >= 5
 		Message: Engineering Bay must be at least size 5. Increase the bay's hex count or the ship's size.
 
 
