@@ -5,7 +5,7 @@ Subsystem: QuantumArmor
 
 	Tags: Category:Armor
 	Tags: NoCore, NonContiguous, Defense, IsArmor, TankArmor
-	Hull: Flagship, Station,Support
+	Hull: Flagship, Station
 
 	Tags: FauxExterior
 	Ship.ExternalHexes := Ship.ExternalHexes + ExteriorHexes
