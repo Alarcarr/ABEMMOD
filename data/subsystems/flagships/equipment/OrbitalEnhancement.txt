@@ -8,7 +8,7 @@ Subsystem: EngBay
 	Tags: Ability:BuyTurretM
 	Tags: Ability:SpawnOrbital
 	Hull: Flagship
-	Description: Specialized equipment and personnel allow for basic engineering operations and an improved repair rate.
+	Description: #S_ENGINEERING_BAY_DESC
 
 	Size := HexSize * Hexes
 	Hex.Resistance := 0.2
