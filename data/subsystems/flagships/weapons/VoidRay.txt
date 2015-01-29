@@ -8,7 +8,7 @@ Subsystem: VoidRay
 
 	Tags: BaseCost
 	Tags: BeamBase, Rotatable, HexLimitArc, Category:Weapons
-	Tags: ExteriorCore, Weapon, DefaultUnlock, IsBeamWeapon, HasInternals, MainDPS
+	Tags: ExteriorCore, Weapon, IsBeamWeapon, HasInternals, MainDPS
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes
