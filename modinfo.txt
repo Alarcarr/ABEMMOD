@@ -1,9 +1,28 @@
 	Name: Alternate Balance Expansion Mod
 	Description: <<
-		[h1]V 0.170[/h1]
+		[h1]V 0.171[/h1]
 
+
+
+		A quick summary of what is new:
+
+		-Multiple types of Nebulaes
+		-Adaptive Laser (Protoss Void Ray)
+		-Mass Disruptors
+		-Derelics and Ship Capturing (not fully implemented yet , works butt lack visuals)
+		-Reworked BlackHole Systems
+		-New types of hull (Carrier ,Destroyer, Hauler)
+		-New anomalys
+		-Some progress with the mod art.
+		
+		-FIXED THE BUG AROUND V120 on savegames.
+		
+		-Detailed Patch Notes soon on the thread
+
+		[h1]V 0.120[/h1]
+		
 		Note :Some images are of the older versions of the game .
-
+		
 		Currently includes:
 		[img]http://i.imgur.com/kZfGL7N.png[/img]
 		- New Subsystems 
@@ -13,16 +32,14 @@
 		- New Black Hole system
 		- Changes to diplomacy cards
 		- Balance changes to make the experience different from vanilla.
-
+		
 		[img]http://s15.postimg.org/sc8ejh0y3/Ship.jpg [/img]
-
-
+		
+		
 		Feel free to throw suggestions into the forum.
 		Note: The localization (tooltips, names, descriptions etc.) will be updated as we go. Some of them are not done yet.
-
+		
 		Full patch notes in the Discussion Thread.
-
-		Special Thanks to the Star Ruler 2 developer team (GGLucas , Firgof and ThyReaper)  for their constant support with everything ranging from coding advice, bug fixes and new hooks to even the mod's logo - thanks for that one, Firgof!!
-
-		Credits: To all the Galactic Armory (Awesome SR1 mod) team for inspiring us and and some of the art.
+		
+		Special Thanks to the Star Ruler 2 developer team for their constant support with everything ranging from coding advice, bug fixes and new hooks to even the mod's logo - thanks for that one, Firgof!!
 	>>
