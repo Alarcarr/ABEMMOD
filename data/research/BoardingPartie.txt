@@ -1,0 +1,8 @@
+Technology: BoardingParty
+	Name: Boarding Parties
+	Description: #S_BOARDING_PARTY_DESC
+	Icon: shuttle
+	Color: #710cff
+	Point Cost: 500
+	Time Cost: 120
+	UnlockSubsystem(BoardingParty)

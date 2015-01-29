@@ -1,7 +1,7 @@
 Resource: Ancient Shipyard
 	Name: Ancient Shipyard
-	Level: 3
-	Pressure: 10 Defense
+	Level: 4
+	Pressure: 16 Defense
 	Small Icon: TechIcons::33
 	Icon: TechIcons::33
 	Affinity: Defense
@@ -9,4 +9,6 @@ Resource: Ancient Shipyard
 	Description: #RESOURCE_SHIPYARD_DESC
 	Artificial: True
 	Unique: True
+	Native Biome: Mountains
+	AddLaborIncome(Amount = 16)
 	GrantAbility(OverchargeFleet)

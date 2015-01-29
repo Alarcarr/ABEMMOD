@@ -35,7 +35,6 @@ Grid: Base
 	DevMoney: -2,6
 	DevInfluence: -3,-1
 	DevEnergyIncome: 1,4
-	ImpThrust: 0,6
 	PoweredArmor: 1,5
 	c1: 3,1
 	c2: 3,-1
@@ -114,7 +113,6 @@ Grid: Base
 	ImpAllHealth: 17,4
 	ImpArmorHealth: 18,4
 	SlavePopulation: -6,2
-	ImpDamage2: 11,0
 	ImpThrust2: -7,4
 	ImpAllRange: 12,0
 	AdmiralCrew: 13,0
@@ -127,7 +125,6 @@ Grid: Base
 	DevNegotiate: -9,-1
 	DePlanet: -9,1
 	ImpAllHealth2: 14,0
-	SysMuonCannon: 9,0
 	DevInfluenceIncome: -3,1
 	DevInfluenceIncome: -5,1
 	DevInfluenceIncome: -6,-1
@@ -218,3 +215,10 @@ Grid: Base
 	ImpPlanetSupport: -4,-9
 	OrbitalEnhancement: -4,-10
 	Senate: -6,0
+	BoardingParty: 9,0
+	SysMuonCannon: 0,6
+	ImpDamage: 14,-1
+	ImpDamage: 11,0
+	ImpArmorHealth: 14,1
+	Flagship4: 19,4
+	Support4: 14,-7
