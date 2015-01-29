@@ -4,7 +4,7 @@ Subsystem: ResupplyModule
 	TypeColor: #683db8
 	Elevation: 2
 
-	Tags: Category:Equipment, HasInternals
+	Tags: Category:Equipment, DefaultUnlock
 	Hull: Station
 
 	Size := HexSize * Hexes

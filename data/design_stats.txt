@@ -334,7 +334,7 @@ SubsystemStat: ProjResist
 
 SubsystemStat: CompProjResist
 	Name: Projectile Resistance
-	Icon: DesignationIcons::16
+	Icon: AttributeIcons::4
 	Color: #aaaaaa
 	Unit: %
 
@@ -342,7 +342,7 @@ SubsystemStat: CompProjResist
 
 SubsystemStat: CompEnergyResist
 	Name: Energy Resistance
-	Icon: DesignationIcons::16
+	Icon: DesignationIcons::2
 	Color: #aaaaaa
 	Unit: %
 
@@ -350,7 +350,7 @@ SubsystemStat: CompEnergyResist
 	
 SubsystemStat: CompExplResist
 	Name: Explosive Resistance
-	Icon: DesignationIcons::16
+	Icon: ResourceIconsSmall::134
 	Color: #aaaaaa
 	Unit: %
 
@@ -358,14 +358,14 @@ SubsystemStat: CompExplResist
 
 SubsystemStat: CrystalEnergyResist
 	Name: Energy Resistance
-	Icon: DesignationIcons::16
+	Icon: DesignationIcons::2
 	Color: #aaaaaa
 
 	Variable: CrystalEnergyResist
 	
 SubsystemStat: CrystalExplResist
 	Name: Explosive Resistance
-	Icon: DesignationIcons::16
+	Icon: ResourceIconsSmall::134
 	Color: #aaaaaa
 
 	Variable: CrystalExplResist
