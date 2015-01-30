@@ -24,7 +24,7 @@ S_FTLJAMMER_DESC: <<
 	[img=Plus]Jams all enemy FTL in its star system.[/img]
 	[img=Minus]Requires a high amount of power and Control.[/img]
 	[img=Minus]Making it bigger than is absolutely necessary does nothing but use up space.[/img]
-	[img=Minus]Costs 0.15 FTL per second.[/img]
+	[img=Minus]Costs 0.25 FTL per second.[/img]
 >>
 S_FLING_DESC: <<
 	A compact fling accelerator is fitted to the station's hull, allowing fling-based FTL near it.

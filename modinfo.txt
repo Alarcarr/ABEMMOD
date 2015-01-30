@@ -1,43 +1,20 @@
 	Name: Alternate Balance Expansion Mod
 	Description: <<
-		[h1]V 0.171[/h1]
+		[h1]V 0.172[/h1]
 
+		A quick summary of what is new in 0.170:
 
-
-		A quick summary of what is new:
-
-		-Multiple types of Nebulaes
-		-Adaptive Laser (Protoss Void Ray)
-		-Mass Disruptors
-		-Derelics and Ship Capturing (not fully implemented yet , works butt lack visuals)
-		-Reworked BlackHole Systems
-		-New types of hull (Carrier ,Destroyer, Hauler)
-		-New anomalys
-		-Some progress with the mod art.
-		
-		-FIXED THE BUG AROUND V120 on savegames.
-		
-		-Detailed Patch Notes soon on the thread
-
-		[h1]V 0.120[/h1]
-		
-		Note :Some images are of the older versions of the game .
-		
-		Currently includes:
-		[img]http://i.imgur.com/kZfGL7N.png[/img]
-		- New Subsystems 
-		- New Resources
-		- New Research Tree/Techs
-		- New Planetary facilities
-		- New Black Hole system
-		- Changes to diplomacy cards
-		- Balance changes to make the experience different from vanilla.
-		
-		[img]http://s15.postimg.org/sc8ejh0y3/Ship.jpg [/img]
+		- Multiple nebula types
+		- New weapons
+		- Derelicts and Boarding Parties (Dalo: Graphics TBA, but all functionality has been implemented.)
+		- Reworked the Black Hole system (Dalo: Again.)
+		- New hull types (Carrier, Destroyer, Hauler)
+		- New pickups for the Kyllaros
+		- Added and changed some art
 		
 		
 		Feel free to throw suggestions into the forum.
-		Note: The localization (tooltips, names, descriptions etc.) will be updated as we go. Some of them are not done yet.
+		Note: The localization (tooltips, names, descriptions etc.) will be updated as we go. Some of it is not done yet.
 		
 		Full patch notes in the Discussion Thread.
 		
