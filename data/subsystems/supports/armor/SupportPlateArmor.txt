@@ -16,7 +16,7 @@ Subsystem: SupportPlateArmor
 	Size := HexSize * Hexes
 
 	Hex.Resistance := 0.5
-	Hex.HP := 160* HexSize
+	Hex.HP := 80* HexSize
 	Hex.Mass := 2.5 * HexSize
 
 	Hex.BuildCost := 0.75 * HexSize
