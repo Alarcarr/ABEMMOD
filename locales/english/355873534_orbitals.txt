@@ -12,3 +12,10 @@ ORB_SHIELD_CHARGER_DESC: <<
 	
 	Increases the shield recharge rate of all ships in the system by 25, plus 0.01% of the ships' shield capacity.
 >>
+ORB_TRADE_STATION_DESC: <<|
+	A large and bustling station of commerce allows global resource trade between any territories with Commerce Stations.
+	
+	In addition, on each commerce station you can purchase a quantity of research, energy, influence or labor in exchange for money every 3 minutes. Commerce Stations also generate §40k for each friendly planet in the system they are located in, and allow all resources on an asteroid to be mined simultaneously.
+	
+	[i]Normally, planets in separated territories cannot export to each other. Construct a Commerce Station in both territories in order to allow import and export of resources from planets in your distinct territories. Similarly, asteroids can only mine one resource under normal circumstances, however a Commerce Station in the system will remove that limit.[/i]
+>>

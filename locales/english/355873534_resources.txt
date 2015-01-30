@@ -1,7 +1,7 @@
 RESOURCE_SHIPYARD_DESC: <<
 	An ancient shipyard. While its purpose is unknown, you can repurpose its technology to upgrade your own ships' systems and build defense ships.
 
-	Cannot be exported.
+	Adds 16 Labor generation. Cannot be exported.
 >>
 RESOURCE_INTEL_DESC: <<
 	Abandoned ancient facilities that were designed to control an entire empire. Gives full vision of adjacent systems. Generates Intelligence cards against empires in adjacent systems. If none can be found, generates Intelligence against a random empire. Grants the 'Telescope' ability.
