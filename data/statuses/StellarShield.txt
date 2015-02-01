@@ -1,0 +1,9 @@
+Status: StellarShield
+	Name: Stellar Shielding
+	Description: This stellar object is being protected from Graviton Condenser attacks. If the shield is powerful enough, the only way to destroy the object will be to destroy the shield generator located on a nearby flagship, orbital or planet.
+	Collapses: True
+	Visible To: Everybody
+	Icon: ResourceIcon::5 * #429cffff * #00ff00
+	
+	ABEM_hooks::ApplyToStars()
+	RepeatStacks(ABEM_hooks::AddStellarShield(SV_StellarShieldCap, SV_StellarShieldRegen))

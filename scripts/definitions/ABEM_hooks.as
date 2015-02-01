@@ -564,6 +564,14 @@ class ApplyToShips : StatusHook {
 	}
 };
 
+class ApplyToStars : StatusHook {
+	Document doc("When this status is added to a system, it only applies to stars.");
+	
+	bool shouldApply(Empire@emp, Region@ region, Object@ obj) const override {
+		return obj !is null && obj.isStar;
+	}
+}
+
 class AddOwnedStatus : AbilityHook {
 	Document doc("Adds a status belonging to the specific object (and empire) activating the ability.");
 	Argument objTarg(TT_Object);
@@ -859,6 +867,211 @@ class TargetFilterNotRemnantOrPirate : TargetFilter {
 		if(obj is null)
 			return false;
 		return obj.owner is Creeps || obj.owner is Pirates;
+	}
+#section all
+}
+
+class HealFromSubsystem : AbilityHook {
+	Document doc("Heals the target object (or fleet) at a rate determined by a subsystem value, while draining supplies (if applicable). If the caster does not have the subsystem, uses a default value.");
+	Argument objTarg(TT_Object);
+	Argument value("Subsystem Value", AT_SysVar, doc="The subsystem value you wish to use to regulate the healing. For example, HyperdriveSpeed would be Sys.HyperdriveSpeed - the healing rate is 1 HP per unit of HyperdriveSpeed in such a case.");
+	Argument cost("Cost per HP", AT_Decimal, "2.0", doc="Amount of supplies drained per HP of repairs. Does not apply if the caster is not a ship. Defaults to 2.0. Is fully applied even if not all repairs are used in modes 1 and 2.");
+	Argument preset("Default Rate", AT_Decimal, "500.0", doc="The default healing rate, used if the subsystem value could not be found (or is less than 0). Defaults to 500.");
+	Argument mode("Mode", AT_Integer, "2", doc="How the healing behaves. Mode 0 heals only the target object, mode 1 heals each ship in the target fleet by the value, and mode 2 divides the healing evenly across every member of the target fleet. Defaults to mode 2, and uses mode 2 if an invalid mode is passed to the hook.");
+
+	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const {
+		Ship@ caster = cast<Ship>(abl.obj);
+		if(caster !is null && caster.Supply == 0)
+			return false;
+		return true;
+	}
+
+	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const {
+		if(index != uint(objTarg.integer))
+			return true;
+		if(targ.obj is null)
+			return false;
+		if(targ.obj.isShip || targ.obj.isOrbital && mode.integer == 0)
+			return true;
+		if(targ.obj.hasLeaderAI || targ.obj.isOrbital)
+			return true;
+		return false;
+	}		
+
+#section server
+	void tick(Ability@ abl, any@ data, double time) const {
+		if(abl.obj is null)
+			return;
+		Target@ storeTarg = objTarg.fromTarget(abl.targets);
+		if(storeTarg is null)
+			return; 
+
+		Object@ target = storeTarg.obj;
+		if(target is null)
+			return; 
+
+		Ship@ caster = cast<Ship>(abl.obj);
+		bool castedByShip = caster !is null; 
+		if(castedByShip && caster.Supply == 0) 
+			return;
+
+			
+		float repair = 0;
+		if(mode.integer == 0) {
+			if(target.isShip)
+				repair = cast<Ship>(target).blueprint.design.totalHP - cast<Ship>(target).blueprint.currentHP;
+			else if(target.isOrbital)
+				repair = (cast<Orbital>(target).maxHealth + cast<Orbital>(target).maxArmor) - (cast<Orbital>(target).health + cast<Orbital>(target).armor);
+		}
+		else if(castedByShip && value.fromSys(abl.subsystem, efficiencyObj=abl.obj) > 0)
+			repair = value.fromSys(abl.subsystem, efficiencyObj=abl.obj) * time;
+		else
+			repair = preset.decimal * time;
+		float repairCap = 0; 
+		
+		
+		if(castedByShip && value.fromSys(abl.subsystem, efficiencyObj=abl.obj) > 0) { 
+			repairCap = value.fromSys(abl.subsystem, efficiencyObj=abl.obj) * time;
+		}
+		else {
+			repairCap = preset.decimal * time; // The 'preset' value is now only called if whoever wrote the ability didn't set a default value for 'value'. Still, better safe than sorry.
+		}
+		if(repairCap < repair)
+			repair = repairCap;
+
+		if(castedByShip && caster.Supply < (repair * cost.decimal))
+			repair = caster.Supply / cost.decimal;
+		
+		if(castedByShip)
+			caster.consumeSupply(repair * cost.decimal);
+		if(mode.integer == 0){
+			if(target.isShip)
+				cast<Ship>(target).repairShip(repair);
+			else if(target.isOrbital)
+				cast<Orbital>(target).repairOrbital(repair);
+		}
+		else{
+			if(mode.integer == 1){
+				if(target.hasLeaderAI)
+					target.repairFleet(repair, spread=false);
+			}
+			else{
+				if(target.hasLeaderAI)
+					target.repairFleet(repair, spread=true);
+			}
+		}
+	}
+#section all
+};
+
+class ABEMDealStellarDamageOverTime : AbilityHook {
+	Document doc("Deal damage to the stored target stellar object over time. Damages things like stars and planets. This one correctly displays shield visuals if applicable.");
+	Argument objTarg(TT_Object);
+	Argument dmg_per_second(AT_SysVar, doc="Damage to deal per second.");
+
+#section server
+	void tick(Ability@ abl, any@ data, double time) const {
+		if(abl.obj is null)
+			return;
+		Target@ storeTarg = objTarg.fromTarget(abl.targets);
+		if(storeTarg is null)
+			return;
+
+		Object@ obj = storeTarg.obj;
+		if(obj is null)
+			return;
+
+		const vec3d position = abl.obj.position;
+		
+		double amt = dmg_per_second.fromSys(abl.subsystem, efficiencyObj=abl.obj) * time;
+		if(obj.isPlanet)
+			cast<Planet>(obj).dealPlanetDamage(amt);
+		else if(obj.isStar)
+			cast<Star>(obj).dealStarDamage(amt, position);
+	}
+#section all
+};
+
+class ShieldData {
+	double bonus;
+	bool castedBySubsystem;
+}
+
+class AddStellarShield : StatusHook {
+	Document doc("Adds shield capacity to the star or black hole affected by this status.");
+	Argument value("Capacity Subsystem Value", AT_Custom, doc="Subsystem value to use if applicable.");
+	Argument regenValue("Regeneration Subsystem Value", AT_Custom, doc="Subsystem value to use for shield regeneration if applicable.");
+	Argument defaultShield("Default Capacity", AT_Decimal, "1000.0", doc="Used if the subsystem value specified for capacity does not exist or is zero on the origin object. Measured in millions. Defaults to 1000.0, or 1G shield capacity.");
+	Argument holeMult("Black Hole Multiplier", AT_Decimal, "10.0", doc="How much the added shielding is multiplied for black holes. Defaults to 10.0 - the difference between a typical star and a black hole.");
+	Argument defaultRegen("Default Regeneration", AT_Decimal, "1.0", doc="Used if the subsystem value specified for regeneration does not exist or is zero on the origin object. Measured in millions. Defaults to 1.0, or 1M shields per second.");
+	Argument startOn("Start On", AT_Boolean, "false", doc="Whether the shield should start at maximum capacity. Defaults to false (starts with no shields).");
+	
+#section server
+	void onCreate(Object& obj, Status@ status, any@ data) override {
+		// Calculating shield power.
+		double bonus = 0;
+		bool castedBySubsystem = true;
+		Star@ star = cast<Star>(obj);
+		Ship@ caster = cast<Ship>(status.originObject);
+		if(caster !is null)
+			bonus = caster.blueprint.getEfficiencySum(SubsystemVariable(getSubsystemVariable(value.str)));
+		if(bonus <= 0)
+			castedBySubsystem = false;
+			bonus = defaultShield.decimal * 1000000; // 1M
+		if(star.temperature == 0)
+			bonus *= holeMult.decimal;
+		
+		star.MaxShield += bonus;
+		if(startOn.boolean)
+			star.Shield += bonus;
+		ShieldData info;
+		info.bonus = bonus;
+		info.castedBySubsystem = castedBySubsystem;
+		data.store(@info);
+	}
+	
+	void onDestroy(Object& obj, Status@ status, any@ data) override {
+		Star@ star = cast<Star>(obj);
+		double bonus = 0;
+		ShieldData@ info;
+		data.retrieve(@info);
+		bonus = info.bonus;
+		star.MaxShield -= bonus;
+		if(star.MaxShield < star.Shield)
+			star.Shield = star.MaxShield;
+	}
+
+	bool onTick(Object& obj, Status@ status, any@ data, double time) override {
+		Star@ star = cast<Star>(obj);
+		ShieldData@ info;
+		double bonus = 0;
+		bool castedBySubsystem = false;
+		double regen = 0;
+		data.retrieve(@info);
+		bonus = info.bonus;
+		castedBySubsystem = info.castedBySubsystem;
+		
+		if(castedBySubsystem) {
+			Ship@ caster = cast<Ship>(status.originObject);
+			if(caster is null)
+				return false;
+			else {
+				double newBonus = caster.blueprint.getEfficiencySum(SubsystemVariable(getSubsystemVariable(value.str)));
+				if(bonus != newBonus) {
+					star.MaxShield -= newBonus - bonus;
+					bonus = newBonus;
+				}
+				regen = caster.blueprint.getEfficiencySum(SubsystemVariable(getSubsystemVariable(regenValue.str))) * time;
+			}
+		}
+		else {
+			regen = defaultRegen.decimal * 1000000 * time;
+		}
+		star.Shield = min(star.Shield + regen, star.MaxShield);
+		info.bonus = bonus;
+		info.castedBySubsystem = castedBySubsystem;
+		data.store(@info);
+		return true;
 	}
 #section all
 }
