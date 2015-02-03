@@ -578,6 +578,10 @@ class AddOwnedStatus : AbilityHook {
 	Argument status(AT_Custom, doc="Type of status effect to create.");
 	Argument duration(AT_Decimal, "-1", doc="How long the status effect should last. If set to -1, the status effect acts as long as this effect hook does.");
 	
+	string getFailReason(Empire@ emp, uint index, const Target@ targ) const override {
+		return "Target must be capable of having statuses.";
+	}
+	
 	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const {
 		if(index != uint(objTarg.integer))
 			return true;
@@ -601,6 +605,7 @@ class AddOwnedStatus : AbilityHook {
 class UserMustNotHaveStatus : AbilityHook {
 	Document doc("The object using this ability must not be under the effects of the specified status.");
 	Argument status(AT_Custom, doc="Type of status effect to avoid.");
+		
 #section server
 	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const {
 		if(abl.obj is null)
@@ -881,7 +886,7 @@ class HealFromSubsystem : AbilityHook {
 
 	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const {
 		Ship@ caster = cast<Ship>(abl.obj);
-		if(caster !is null && caster.Supply == 0)
+		if(caster !is null && caster.Supply == 0 && cost > 0)
 			return false;
 		return true;
 	}
@@ -995,6 +1000,7 @@ class ABEMDealStellarDamageOverTime : AbilityHook {
 class ShieldData {
 	double bonus;
 	bool castedBySubsystem;
+	any data;
 }
 
 class AddStellarShield : StatusHook {
@@ -1012,6 +1018,8 @@ class AddStellarShield : StatusHook {
 		double bonus = 0;
 		bool castedBySubsystem = true;
 		Star@ star = cast<Star>(obj);
+		if(star is null)
+			return;
 		Ship@ caster = cast<Ship>(status.originObject);
 		if(caster !is null)
 			bonus = caster.blueprint.getEfficiencySum(SubsystemVariable(getSubsystemVariable(value.str)));
@@ -1032,6 +1040,8 @@ class AddStellarShield : StatusHook {
 	
 	void onDestroy(Object& obj, Status@ status, any@ data) override {
 		Star@ star = cast<Star>(obj);
+		if(star is null)
+			return;
 		double bonus = 0;
 		ShieldData@ info;
 		data.retrieve(@info);
@@ -1043,6 +1053,8 @@ class AddStellarShield : StatusHook {
 
 	bool onTick(Object& obj, Status@ status, any@ data, double time) override {
 		Star@ star = cast<Star>(obj);
+		if(star is null)
+			return false;
 		ShieldData@ info;
 		double bonus = 0;
 		bool castedBySubsystem = false;
@@ -1075,3 +1087,156 @@ class AddStellarShield : StatusHook {
 	}
 #section all
 }
+
+class AddShieldCapacity : StatusHook {
+	Document doc("Temporarily adds a certain amount of shield capacity to the ship affected by this status.");
+	Argument value("Capacity Subsystem Value", AT_Custom, doc="The subsystem value to use when calculating the added shield capacity.");
+	Argument preset("Default Capacity", AT_Decimal, "500.0", doc="The default amount of shield capacity to add if the subsystem value cannot be found or is zero. Defaults to 500.0.");
+	Argument startOn("Start On", AT_Boolean, "true", doc="Whether to add additional shield HP equivalent to the added capacity. Defaults to true.");
+		
+#section server
+	void onCreate(Object& obj, Status@ status, any@ data) override {
+		// Calculating shield power.
+		double bonus = 0;
+		bool castedBySubsystem = true;
+		Ship@ ship = cast<Ship>(obj);
+		if(ship is null)
+			return;
+		Ship@ caster = cast<Ship>(status.originObject);
+		if(caster !is null)
+			bonus = caster.blueprint.getEfficiencySum(SubsystemVariable(getSubsystemVariable(value.str)));
+		if(bonus <= 0)
+			castedBySubsystem = false;
+			bonus = preset.decimal;
+		
+		ship.MaxShield += bonus;
+		if(startOn.boolean)
+			ship.Shield += bonus;
+		ShieldData info;
+		info.bonus = bonus;
+		info.castedBySubsystem = castedBySubsystem;
+		data.store(@info);
+	}
+	
+	void onDestroy(Object& obj, Status@ status, any@ data) override {
+		Ship@ ship = cast<Ship>(obj);
+		double bonus = 0;
+		ShieldData@ info;
+		data.retrieve(@info);
+		bonus = info.bonus;
+		ship.MaxShield -= bonus;
+		if(ship.MaxShield < ship.Shield)
+			ship.Shield = ship.MaxShield;
+	}
+#section all	
+}
+
+class HealShieldFromSubsystem : AbilityHook {
+	Document doc("Heals the target object's (or fleet's) shields at a rate determined by a subsystem value, while draining supplies (if applicable). If the caster does not have the subsystem, uses a default value.");
+	Argument objTarg(TT_Object);
+	Argument value("Subsystem Value", AT_SysVar, doc="The subsystem value you wish to use to regulate the healing. For example, HyperdriveSpeed would be Sys.HyperdriveSpeed - the healing rate is 1 HP per unit of HyperdriveSpeed in such a case.");
+	Argument cost("Cost per HP", AT_Decimal, "2.0", doc="Amount of supplies drained per HP of regeneration. Does not apply if the caster is not a ship. Defaults to 2.0. Is fully applied even if not all regeneration is used in modes 1 and 2.");
+	Argument preset("Default Rate", AT_Decimal, "500.0", doc="The default healing rate, used if the subsystem value could not be found (or is less than 0). Defaults to 500.");
+	Argument mode("Mode", AT_Integer, "2", doc="How the healing behaves. Mode 0 heals only the target object, mode 1 heals each ship in the target fleet by the value, and mode 2 divides the healing evenly across every member of the target fleet with shield capacity. Defaults to mode 2, and uses mode 2 if an invalid mode is passed to the hook.");
+
+	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const {
+		Ship@ caster = cast<Ship>(abl.obj);
+		if(caster !is null && caster.Supply == 0 && cost > 0)
+			return false;
+		return true;
+	}
+
+	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const {
+		if(index != uint(objTarg.integer))
+			return true;
+		if(targ.obj is null)
+			return false;
+		if(targ.obj.isShip && mode.integer == 0)
+			return true;
+		if(targ.obj.hasLeaderAI && (targ.obj.supportCount > 0 || targ.obj.isShip))
+			return true;
+		return false;
+	}		
+
+#section server
+	void tick(Ability@ abl, any@ data, double time) const {
+		if(abl.obj is null)
+			return;
+		Target@ storeTarg = objTarg.fromTarget(abl.targets);
+		if(storeTarg is null)
+			return; 
+
+		Object@ target = storeTarg.obj;
+		if(target is null)
+			return; 
+
+		Ship@ caster = cast<Ship>(abl.obj);
+		bool castedByShip = caster !is null; 
+		if(castedByShip && caster.Supply == 0) 
+			return;
+
+			
+		float repair = 0;
+		if(mode.integer == 0) {
+			if(target.isShip)
+				repair = cast<Ship>(target).MaxShield - cast<Ship>(target).Shield;
+		}
+		else if(castedByShip && value.fromSys(abl.subsystem, efficiencyObj=abl.obj) > 0)
+			repair = value.fromSys(abl.subsystem, efficiencyObj=abl.obj) * time;
+		else
+			repair = preset.decimal * time;
+		float repairCap = 0; 
+		
+		
+		if(castedByShip && value.fromSys(abl.subsystem, efficiencyObj=abl.obj) > 0) { 
+			repairCap = value.fromSys(abl.subsystem, efficiencyObj=abl.obj) * time;
+		}
+		else {
+			repairCap = preset.decimal * time; // The 'preset' value is now only called if whoever wrote the ability didn't set a default value for 'value'. Still, better safe than sorry.
+		}
+		if(repairCap < repair)
+			repair = repairCap;
+
+		if(castedByShip && caster.Supply < (repair * cost.decimal))
+			repair = caster.Supply / cost.decimal;
+		
+		if(castedByShip)
+			caster.consumeSupply(repair * cost.decimal);
+		if(mode.integer == 0){
+			if(target.isShip)
+				cast<Ship>(target).Shield += repair;
+		}
+		else{
+			if(target.supportCount > 0) {
+				Ship@ support;
+				int shieldlessCount = 0;
+				if(mode != 1) {
+					for(uint i = 0, count = target.supportCount; i < count; ++i) {
+						@support = cast<Ship>(target.supportShip[i]);
+						if(support !is null) {
+							if(support.MaxShield <= 0)
+								++shieldlessCount;
+						}
+					}
+				}
+				for(uint i = 0, count = target.supportCount; i < count; ++i) {
+					@support = cast<Ship>(target.supportShip[i]);
+					if(support !is null) {
+						if(mode != 1)
+							support.Shield += repair / (count + 1 - shieldlessCount);
+						else 
+							support.Shield += repair;
+						if(support.Shield > support.MaxShield) {
+							support.Shield = support.MaxShield;
+						}
+					}
+				}
+				if(mode != 1)
+					repair /= count + 1 - shieldlessCount;
+			}
+			if(target.isShip)
+				cast<Ship>(target).Shield = min(cast<Ship>(target).Shield + repair, cast<Ship>(target).MaxShield);
+		}
+	}
+#section all
+};
