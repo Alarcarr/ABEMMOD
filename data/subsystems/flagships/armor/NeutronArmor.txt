@@ -5,7 +5,7 @@ Subsystem: NeutronArmor
 	Elevation: 1
 
 	Tags:  Category:Armor
-	Tags: NoCore, NonContiguous, Defense, IsArmor, TankArmor
+	Tags: NoCore, NonContiguous, Defense, IsArmor, TankArmor, ExternalSpace
 	Hull: Flagship, Station
 	
 	Tags: FauxExterior

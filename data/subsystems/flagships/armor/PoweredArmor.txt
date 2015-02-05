@@ -5,7 +5,7 @@ Subsystem: PoweredArmor
 	Elevation: 1
 
 	Tags: Category:Armor
-	Tags: NoCore, NonContiguous, Defense, IsArmor, ResistArmor
+	Tags: NoCore, NonContiguous, Defense, IsArmor, ResistArmor, ExternalSpace
 	Hull: Flagship, Station
 
 	Tags: FauxExterior

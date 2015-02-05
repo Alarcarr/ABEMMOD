@@ -5,7 +5,7 @@ Subsystem: AblativeArmor
 	Elevation: 1
 
 	Tags: Category:Armor
-	Tags: NoCore, NonContiguous, DefaultUnlock, Defense, IsArmor, ResistArmor
+	Tags: NoCore, NonContiguous, DefaultUnlock, Defense, IsArmor, ResistArmor, ExternalSpace
 	
 	Tags: FauxExterior
 	Ship.ExternalHexes := Ship.ExternalHexes + ExteriorHexes

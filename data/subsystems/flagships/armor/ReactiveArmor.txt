@@ -5,7 +5,7 @@ Subsystem: ReactiveArmor
 	Elevation: 1
 
 	Tags:  Category:Armor
-	Tags: NoCore, NonContiguous, DefaultUnlock, Defense, IsArmor, BlockArmor
+	Tags: NoCore, NonContiguous, DefaultUnlock, Defense, IsArmor, BlockArmor, ExternalSpace
 	Hull: Flagship, Station
 
 	Tags: FauxExterior
