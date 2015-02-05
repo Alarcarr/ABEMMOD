@@ -5,7 +5,7 @@ Subsystem: SupportPlateArmor
 	Picture: SubsystemButtonArt::0
 	Elevation: 1
 
-	Tags: NoCore, NonContiguous, DefaultUnlock, Defense, IsArmor, TankArmor, FauxExterior
+	Tags: NoCore, NonContiguous, DefaultUnlock, Defense, IsArmor, TankArmor, FauxExterior, ExternalSpace
 	Tags: NoWall, Category:Armor
 	Hull: Support
 
