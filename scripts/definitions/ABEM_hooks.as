@@ -578,7 +578,7 @@ class AddOwnedStatus : AbilityHook {
 	Argument status(AT_Custom, doc="Type of status effect to create.");
 	Argument duration(AT_Decimal, "-1", doc="How long the status effect should last. If set to -1, the status effect acts as long as this effect hook does.");
 	
-	string getFailReason(Empire@ emp, uint index, const Target@ targ) const override {
+	string getFailReason(Empire@ emp, uint index, const Target@ targ) const {
 		return "Target must be capable of having statuses.";
 	}
 	
@@ -886,7 +886,7 @@ class HealFromSubsystem : AbilityHook {
 
 	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const {
 		Ship@ caster = cast<Ship>(abl.obj);
-		if(caster !is null && caster.Supply == 0 && cost > 0)
+		if(caster !is null && caster.Supply == 0 && cost.decimal > 0)
 			return false;
 		return true;
 	}
@@ -1141,7 +1141,7 @@ class HealShieldFromSubsystem : AbilityHook {
 
 	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const {
 		Ship@ caster = cast<Ship>(abl.obj);
-		if(caster !is null && caster.Supply == 0 && cost > 0)
+		if(caster !is null && caster.Supply == 0 && cost.decimal > 0)
 			return false;
 		return true;
 	}
@@ -1210,7 +1210,7 @@ class HealShieldFromSubsystem : AbilityHook {
 			if(target.supportCount > 0) {
 				Ship@ support;
 				int shieldlessCount = 0;
-				if(mode != 1) {
+				if(mode.integer != 1) {
 					for(uint i = 0, count = target.supportCount; i < count; ++i) {
 						@support = cast<Ship>(target.supportShip[i]);
 						if(support !is null) {
@@ -1222,7 +1222,7 @@ class HealShieldFromSubsystem : AbilityHook {
 				for(uint i = 0, count = target.supportCount; i < count; ++i) {
 					@support = cast<Ship>(target.supportShip[i]);
 					if(support !is null) {
-						if(mode != 1)
+						if(mode.integer != 1)
 							support.Shield += repair / (count + 1 - shieldlessCount);
 						else 
 							support.Shield += repair;
@@ -1231,8 +1231,8 @@ class HealShieldFromSubsystem : AbilityHook {
 						}
 					}
 				}
-				if(mode != 1)
-					repair /= count + 1 - shieldlessCount;
+				if(mode.integer != 1)
+					repair /= target.supportCount + 1 - shieldlessCount;
 			}
 			if(target.isShip)
 				cast<Ship>(target).Shield = min(cast<Ship>(target).Shield + repair, cast<Ship>(target).MaxShield);
