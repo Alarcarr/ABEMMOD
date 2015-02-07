@@ -11,6 +11,6 @@ Trait: Fling
 	UnlockTag(HasFling)
 
 	IfHaveTrait(Verdant, LoadDesigns(verdant/default), LoadDesigns(default))
-	ifHaveTrait(Verdant, LoadDesigns(verdant/not_hyperdrive), LoadDesigns(not_hyperdrive))
+	IfHaveTrait(Verdant, LoadDesigns(verdant/not_hyperdrive), LoadDesigns(not_hyperdrive))
 
 	SpawnOrbital(FlingCore, Free = True)
