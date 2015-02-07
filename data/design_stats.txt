@@ -336,7 +336,7 @@ SubsystemStat: CompProjResist
 	Name: Projectile Resistance
 	Icon: AttributeIcons::4
 	Color: #aaaaaa
-	Unit: %
+	Suffix: %
 
 	Variable: DummyProjResist
 
@@ -344,7 +344,7 @@ SubsystemStat: CompEnergyResist
 	Name: Energy Resistance
 	Icon: DesignationIcons::2
 	Color: #aaaaaa
-	Unit: %
+	Suffix: %
 
 	Variable: DummyEnergyResist
 	
@@ -352,7 +352,7 @@ SubsystemStat: CompExplResist
 	Name: Explosive Resistance
 	Icon: ResourceIconsSmall::134
 	Color: #aaaaaa
-	Unit: %
+	Suffix: %
 
 	Variable: DummyExplResist
 
@@ -375,7 +375,7 @@ SubsystemStat: ChannelPercentage
 	Description: #STT_CHANNELPERCENTAGE
 	Icon: AttributeIcons::6
 	Color: #8080ff
-	Unit: %
+	Suffix: %
 
 	Variable: RechargePct
 
@@ -386,6 +386,15 @@ SubsystemStat: BoardingSubsys
 	Color: #ff8000
 	
 	Variable: BoardingStrength
+	
+SubsystemStat: StellarDamage
+	Name: #S_STELLAR_DAMAGE
+	Icon: AttributeIcons::3 * #ff8000
+	Color: #ff8000
+	Suffix: /s
+
+	Variable: StellarDamage
+	
 // }}}
 // {{{ Stats for single hexes
 HexStat: HP
