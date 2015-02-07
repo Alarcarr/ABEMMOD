@@ -16,3 +16,5 @@ Building: Metropolis
 
 	AddPressureCap(8)
 	ReplacesCities(6)
+
+	ConstructibleIfAttribute(ForbidCityConstruction, 0)

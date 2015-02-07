@@ -10,4 +10,6 @@ Trait: Hyperdrive
 
 	UnlockTag(HD)
 	UnlockSubsystem(Hyperdrive)
-	LoadDesigns(hyperdrive)
+	
+	IfHaveTrait(Verdant, LoadDesigns(verdant/default), LoadDesigns(default))
+	IfHaveTrait(Verdant, LoadDesigns(verdant/hyperdrive), LoadDesigns(hyperdrive))

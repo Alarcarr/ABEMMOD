@@ -9,5 +9,7 @@ Trait: Gate
 
 	UnlockTag(HasGate)
 	UnlockSubsystem(Gate)
-	LoadDesigns(not_hyperdrive)
-	LoadDesigns(gate)
+
+	IfHaveTrait(Verdant, LoadDesigns(verdant/default), LoadDesigns(default))
+	IfHaveTrait(Verdant, LoadDesigns(verdant/not_hyperdrive), LoadDesigns(not_hyperdrive))
+	IfHaveTrait(Verdant, LoadDesigns(verdant/gate), LoadDesigns(gate))

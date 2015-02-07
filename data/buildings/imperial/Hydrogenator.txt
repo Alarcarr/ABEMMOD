@@ -15,3 +15,5 @@ Building: Hydrogenator
 	Build Time: 240
 	Maintenance Affinity: Oceanic
 	AddPlanetResource(BuildingWater)
+
+	RequireNotTrait(Mechanoid)

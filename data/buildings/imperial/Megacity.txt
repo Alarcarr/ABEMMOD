@@ -21,3 +21,5 @@ Building: Megacity
 
 	AddPressureCap(9)
 	ReplacesCities(16)
+
+	ConstructibleIfAttribute(ForbidCityConstruction, 0)

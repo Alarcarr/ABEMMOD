@@ -12,3 +12,5 @@ Building: Residential
 	RequireUnlockTag(Housing1)
 	ReplacesCities(Amount = 6)
 	AddMaxPopulation(2)
+
+	ConstructibleIfAttribute(ForbidCityConstruction, 0)
