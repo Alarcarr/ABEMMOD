@@ -13,6 +13,7 @@ Ship : objects.Ship::ShipScript {
 	SupportAI@ supportAI = null
 	Abilities@ abilities = null
 	Statuses@ statuses = null
+	Construction@ construction = null
 visible:
 	float MaxEnergy = 0
 	float Energy = 0
@@ -105,10 +106,14 @@ visible:
 	double Health = 1000000000 // 1G
 	double MaxHealth = 1000000000 // 1G
 	
+	local safe uint get_moonCount() const;
+	
 server:
 	void giveHistoricMemory(Empire@ emp);
 	void dealPlanetDamage(double amount);
 	void setRing(uint ring);
+	void destroyQuiet();
+	void addMoon(float size = 0, uint style = 0);
 }
 
 ColonyShip : objects.ColonyShip::ColonyShipScript {
@@ -297,6 +302,11 @@ invisible:
 	Object$ Origin
 	Object$ Target
 	Mover mover
+	int StatusId = -1
+	double StatusDuration = 180.0
+	bool SetOrigin = False
+	int MinLevel = 0
+	bool VisitHostile = False
 visible:
 	synced double Health = 50
 }
