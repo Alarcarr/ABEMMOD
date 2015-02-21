@@ -46,3 +46,10 @@ STATUS_VOIDRAY_DESC: <<
 	
 	Stacks up to 10 times.
 >>
+STATUS_TRANSPORTED: Hauler
+STATUS_TRANSPORTED_DESC: <<
+	This fleet is being led by a Hauler. Combat effectiveness is reduced by 50%.
+>>
+STATUS_STELLAR_SHIELD_DESC: <<
+	This stellar object is being protected from Graviton Condenser attacks. If the shield is powerful enough, the only way to destroy the object is to destroy the shield generator, which is probably located on a nearby flagship, orbital or planet.
+>>

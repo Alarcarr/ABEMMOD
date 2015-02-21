@@ -1,6 +1,6 @@
 Subsystem: Hauler
 	Name: Hauler Hull
-	Description: Transport of ships
+	Description: #S_HAULER_HULL_DESC
 
 	Tags: Applied:Hull, Category:Hulls, NoCore,DefaultUnlock
 	Hull: Flagship

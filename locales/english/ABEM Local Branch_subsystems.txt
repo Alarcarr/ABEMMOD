@@ -248,6 +248,18 @@ S_ENGINEERING_BAY_DESC: <<
 	[img=Plus]Has a high repair rate.[/img]
 	[img=Minus]Does not grant any Control.[/img]
 >>
+S_HAULER_HULL_DESC: <<
+	A specialized hull designed for the transportation of large quantities of support craft between star systems.
+
+	[img=Plus]Increases shield capacity by 50%.[/img]
+	[img=Plus]Support capacity is multiplied tenfold.[/img]
+	[img=Plus]Maintenance costs are reduced by 80%.[/img]
+	[img=Plus]Slightly increases grid size.[/img]
+	[img=Minus]Mass is increased by 100%.[/img]
+	[img=Minus]Weapon base damage is reduced by 70%. This is in addition to being unable to hold supplies.[/img]
+	[img=Minus]Base fleet effectiveness is reduced by 50%.[/img]
+	[img=MenuIcons::3;20]Cannot be used on ships under size 50.[/img]
+>>
 S_FLEETREPAIR: Fleet Repair Rate
 STT_FLEETREPAIR: <<
 	The rate at which this ship heals its fleet. Does not consume Supply.
