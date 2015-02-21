@@ -43,6 +43,9 @@ void ABEMControlDestroyed(Event& evt) {
 DamageEventStatus ChannelDamage(DamageEvent& evt, const vec2u& position,
 	double ProjResist, double EnergyResist, double ExplResist, double MinPct, double RechargePercent)
 {
+	if(evt.flags & DT_IgnoreDR != 0)
+		return DE_Continue;
+
 	//Prevent internal-only effects
 	evt.flags &= ~ReachedInternals;
 
@@ -84,6 +87,9 @@ DamageEventStatus ChannelDamage(DamageEvent& evt, const vec2u& position,
 DamageEventStatus ChannelDamagePercentile(DamageEvent& evt, const vec2u& position,
 	double ProjResist, double EnergyResist, double ExplResist, double MinPct, double RechargePercent)
 {
+	if(evt.flags & DT_IgnoreDR != 0)
+		return DE_Continue;
+
 	//Prevent internal-only effects
 	evt.flags &= ~ReachedInternals;
 
@@ -127,6 +133,9 @@ DamageEventStatus ChannelDamagePercentile(DamageEvent& evt, const vec2u& positio
 DamageEventStatus ReduceDamagePercentile(DamageEvent& evt, const vec2u& position,
 	double ProjResist, double EnergyResist, double ExplResist, double MinPct)
 {
+	if(evt.flags & DT_IgnoreDR != 0)
+		return DE_Continue;
+
 	//Prevent internal-only effects
 	evt.flags &= ~ReachedInternals;
 
@@ -163,12 +172,12 @@ void ReactorOverload(Object& obj, double PowerAmountMult, double PowerRadiusMult
 		double power = ship.blueprint.getEfficiencySum(SV_Power);
 		double amount = BaseAmount + sqrt(power * PowerAmountMult);
 		double radius = BaseRadius + sqrt(power * PowerRadiusMult);
-		ObjectAreaExplDamage(obj, amount, radius, 4);
+		ObjectAreaExplDamage(obj, amount, radius, 4, 1);
 		obj.destroy();
 	}
 }
 
-void ObjectAreaExplDamage(Object& obj, double Amount, double Radius, double Hits) {
+void ObjectAreaExplDamage(Object& obj, double Amount, double Radius, double Hits, double Spillable) {
 	vec3d center = obj.position;
 	array<Object@>@ objs = findInBox(center - vec3d(Radius), center + vec3d(Radius), obj.owner.hostileMask);
 
@@ -200,6 +209,7 @@ void ObjectAreaExplDamage(Object& obj, double Amount, double Radius, double Hits
 		@dmg.target = target;
 		dmg.flags |= DT_Projectile;
 		dmg.impact = off.normalized(target.radius);
+		dmg.spillable = Spillable != 0;
 		
 		vec2d dir = vec2d(off.x, off.z).normalized();
 
