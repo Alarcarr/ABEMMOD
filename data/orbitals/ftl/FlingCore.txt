@@ -25,3 +25,4 @@ Module: FlingCore
 	IsFlingBeacon()
 	RequireUnlockTag(HasFling)
 	DisableOnFTLBlock()
+	BreakOrbitOnFTL()
