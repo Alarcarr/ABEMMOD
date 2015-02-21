@@ -11,6 +11,7 @@ Effector: HeavyRailgun
 	Value: FireTolerance = 0
 	Value: Pierce = 0.5
 	Value: SupplyCost = 0
+	Value: IgnoreDR = 0
 
 	Range: Range
 	Speed: Speed
@@ -23,8 +24,8 @@ Effector: HeavyRailgun
 	TargetTolerance: TargetTolerance
 
 	TargetAlgorithm: SingleTarget
-	CanTarget: isAttackable && !isPlanet
-	AutoTarget: isEnemy && (isShip || (isOrbital || isColonyShip || isCivilian) * 0.5)
+	CanTarget: isEnemy && isDamageable
+	AutoTarget: isEnemy && (isShip || (isOrbital || isColonyShip || isCivilian || isFreighter) * 0.5)
 
 	EfficiencyMode: Duration Partial
 	Activation: StaggeredTimed(Reload, 0.25)
@@ -34,6 +35,7 @@ Effector: HeavyRailgun
 		Amount = Damage
 		Pierce = Pierce
 		Suppression = 0
+		IgnoreDR = IgnoreDR
 
 	PhysicalType: Missile
 	GfxType: Sprite

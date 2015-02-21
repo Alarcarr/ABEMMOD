@@ -1,4 +1,4 @@
-Effector: PurpleLaser
+﻿Effector: PurpleLaser
 	Value: Range
 	Value: DPS
 	Value: Duration
@@ -11,8 +11,8 @@ Effector: PurpleLaser
 	Tracking: Tracking
 
 	TargetAlgorithm: SingleTarget
-	CanTarget: isAttackable && !isPlanet
-	AutoTarget: isEnemy && (isShip || (isOrbital || isColonyShip || isCivilian) * 0.5)
+	CanTarget: isEnemy && isDamageable
+	AutoTarget: isEnemy && (isShip || (isOrbital || isColonyShip || isCivilian || isFreighter) * 0.5)
 
 	EfficiencyMode: Duration Partial
 	Activation: VariableTimed(Cooldown+Duration, 0.25)
@@ -45,8 +45,8 @@ Effector: Rockets
 	Lifetime: Range / Speed
 
 	TargetAlgorithm: SingleTarget
-	CanTarget: isAttackable && !isPlanet
-	AutoTarget: isEnemy && (isShip || (isOrbital || isColonyShip || isCivilian) * 0.5)
+	CanTarget: isEnemy && isDamageable
+	AutoTarget: isEnemy && (isShip || (isOrbital || isColonyShip || isCivilian || isFreighter) * 0.5)
 
 	EfficiencyMode: Reload Only
 	Activation: Magazine(FireDelay, PodSize, Reload)
@@ -80,8 +80,8 @@ Effector: Torpedo
 	Lifetime: 1.25*Range / Speed
 
 	TargetAlgorithm: SingleTarget
-	CanTarget: isAttackable && !isPlanet
-	AutoTarget: ñ
+	CanTarget: isEnemy && isDamageable
+	AutoTarget: isEnemy && (isShip || (isOrbital || isColonyShip || isCivilian || isFreighter) * 0.5)
 
 	Activation: VariableTimed(Reload, 0.025)
 	OnTrigger: combat::WeaponFire(SupplyCost)
@@ -150,8 +150,8 @@ Effector: WaveBeam
 	Tracking: Tracking
 
 	TargetAlgorithm: SingleTarget
-	CanTarget: isAttackable && !isPlanet
-	AutoTarget: isEnemy && (isShip || (isOrbital || isColonyShip || isCivilian) * 0.5)
+	CCanTarget: isEnemy && isDamageable
+	AutoTarget: isEnemy && (isShip || (isOrbital || isColonyShip || isCivilian || isFreighter) * 0.5)
 
 	EfficiencyMode: Duration Partial
 	Activation: VariableTimed(Cooldown+Duration, 0.25)
@@ -195,8 +195,8 @@ Effector: StationArtillery
 	TargetTolerance: TargetTolerance
 
 	TargetAlgorithm: SingleTarget
-	CanTarget: isAttackable && !isPlanet
-	AutoTarget: isEnemy && (isOrbital || isShip * 0.5)
+	CanTarget: isEnemy && isDamageable
+	AutoTarget: isEnemy && (isShip || (isOrbital || isColonyShip || isCivilian || isFreighter) * 0.5)
 
 	EfficiencyMode: Reload Partial
 	Activation: VariableTimed(Reload, 0.25)

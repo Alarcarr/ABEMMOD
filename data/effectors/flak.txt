@@ -24,8 +24,8 @@ Effector: Flak
 	TargetTolerance: TargetTolerance
 
 	TargetAlgorithm: SingleTarget
-	CanTarget: isAttackable && !isPlanet
-	AutoTarget: isEnemy && (isShip || (isOrbital || isColonyShip || isCivilian) * 0.5)
+	CanTarget: isEnemy && isDamageable
+	AutoTarget: isEnemy && (isShip || (isOrbital || isColonyShip || isCivilian || isFreighter) * 0.5)
 
 	Activation: StaggeredTimed(Reload, 0.25)
 	OnTrigger: combat::WeaponFire(SupplyCost)

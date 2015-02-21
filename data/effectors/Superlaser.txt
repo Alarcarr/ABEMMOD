@@ -13,8 +13,8 @@ Effector: SuperLaser
 	FireArc: FireArc
 
 	TargetAlgorithm: SingleTarget
-	CanTarget: isAttackable && !isPlanet
-	AutoTarget: isEnemy && (isShip || (isOrbital || isColonyShip || isCivilian) * 0.5)
+	CanTarget: isEnemy && isDamageable
+	AutoTarget: isEnemy && (isShip || (isOrbital || isColonyShip || isCivilian || isFreighter) * 0.5)
 
 	EfficiencyMode: Duration Partial
 	Activation: VariableTimed(Cooldown+Duration, 0.25)

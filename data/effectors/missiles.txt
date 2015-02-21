@@ -12,8 +12,8 @@ Effector: Missile
 	Lifetime: 1.05 * Range / Speed
 
 	TargetAlgorithm: SingleTarget
-	CanTarget: isAttackable && !isPlanet
-	AutoTarget: isEnemy && (isShip || (isOrbital ) * 0.5)
+	CanTarget: isEnemy && isDamageable
+	AutoTarget: isEnemy && (isShip || (isOrbital || isColonyShip || isCivilian || isFreighter) * 0.5)
 
 	EfficiencyMode: Reload Only
 	Activation: StaggeredTimed(Reload, 1.0)
