@@ -1113,7 +1113,7 @@
 			]
 		},
 		{
-			"type": "Hyperdrive",
+			"type": "GuardianHyperdrive",
 			"hexes": [
 				[
 					9,
@@ -1321,19 +1321,6 @@
 			]
 		},
 		{
-			"type": "BoardingParty",
-			"hexes": [
-				[
-					22,
-					14
-				],
-				[
-					21,
-					14
-				]
-			]
-		},
-		{
 			"type": "GravitonCondenser",
 			"hexes": [
 				[
@@ -1432,6 +1419,20 @@
 					15,
 					16,
 					"Core"
+				]
+			]
+		},
+		{
+			"type": "BoardingParty",
+			"hexes": [
+				[
+					21,
+					14,
+					"Core"
+				],
+				[
+					22,
+					14
 				]
 			]
 		}
