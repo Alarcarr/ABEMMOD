@@ -825,12 +825,13 @@ class TeleportTargetToSelf : AbilityHook {
 			return;
 		
 		vec3d point = abl.obj.position + vec3d(randomd(-100.0, 100.0), randomd(-100.0, 100.0), 0);
-		if(targ.hasLeaderAI)
+		if(targ.hasOrbit && targ.inOrbit) {
+ 			targ.stopOrbit();
+ 			targ.position = point;
+ 			targ.remakeStandardOrbit();
+ 		}
+		else if(targ.hasLeaderAI) {
 			targ.teleportTo(point);
-		if(targ.hasOrbit) {
-			targ.stopOrbit();
-			targ.position = point;
-			targ.remakeStandardOrbit();
 		}
 	}
 #section all
