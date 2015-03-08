@@ -1,5 +1,6 @@
 import regions.regions;
 import saving;
+import systems;
 
 LightDesc lightDesc;
 
@@ -167,7 +168,21 @@ final class StarScript {
 
 	void destroy(Star& star) {
 		if(!game_ending) {
-			playParticleSystem("StarExplosion", star.position, star.rotation, star.radius);
+			double explRad = star.radius;
+			if(star.temperature == 0.0) {
+				explRad *= 20.0;
+
+				for(uint i = 0, cnt = systemCount; i < cnt; ++i) {
+					auto@ sys = getSystem(i);
+					double dist = star.position.distanceTo(sys.position);
+					if(dist < 100000.0) {
+						double factor = sqr(1.0 - (dist / 100000));
+						sys.object.addStarDPS(factor * star.MaxHealth * 0.08);
+					}
+				}
+			}
+			playParticleSystem("StarExplosion", star.position, star.rotation, explRad);
+			
 			//auto@ node = createNode("NovaNode");
 			//if(node !is null)
 			//	node.position = star.position;
