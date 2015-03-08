@@ -1,0 +1,106 @@
+GlobalStat: CombatSupplyRegen
+		Name: #S_COMBATSUPPLYREGEN
+		Description: #STT_COMBATSUPPLYREGEN
+		Color: #aaa
+		Secondary: SupplyCap
+		Suffix: /s
+
+		Variable: CombatSupplyRate
+		
+GlobalStat: BoardingDefense
+			Name: #S_BOARDTOTAL
+			Description: #STT_BOARDTOTAL
+			Icon: CrewControl*#9686ff
+			Color: #ff8000
+			Secondary: Control
+			
+			Variable: BoardingStrength
+			
+GlobalStat: DefenseGeneration
+	Name: #S_DEFENSEGENERATION
+	Description: #STT_DEFENSEGENERATION
+	Icon: DesignationIcons::3
+	Color: #aaaaaa
+
+	Variable: Defense
+
+GlobalStat: ResearchGeneration
+	Name: #S_RESEARCHGENERATION
+	Description: #STT_RESEARCHGENERATION
+	Icon: DesignationIcons::5
+	Color: #00c0ff
+	Suffix: /s
+
+	Variable: Research
+	
+// *************************************
+// ******SUBSYSTEM-SPECIFIC STATS*******
+// *************************************
+
+SubsystemStat: ProjResist
+	Name: Projectile Resistance
+	Icon: DesignationIcons::16
+	Color: #aaaaaa
+
+	Variable: ProjResist
+
+SubsystemStat: CompProjResist
+	Name: Projectile Resistance
+	Icon: AttributeIcons::4
+	Color: #aaaaaa
+	Suffix: %
+
+	Variable: DummyProjResist
+
+SubsystemStat: CompEnergyResist
+	Name: Energy Resistance
+	Icon: DesignationIcons::2
+	Color: #aaaaaa
+	Suffix: %
+
+	Variable: DummyEnergyResist
+	
+SubsystemStat: CompExplResist
+	Name: Explosive Resistance
+	Icon: ResourceIconsSmall::134
+	Color: #aaaaaa
+	Suffix: %
+
+	Variable: DummyExplResist
+
+SubsystemStat: CrystalEnergyResist
+	Name: Energy Resistance
+	Icon: DesignationIcons::2
+	Color: #aaaaaa
+
+	Variable: CrystalEnergyResist
+	
+SubsystemStat: CrystalExplResist
+	Name: Explosive Resistance
+	Icon: ResourceIconsSmall::134
+	Color: #aaaaaa
+
+	Variable: CrystalExplResist
+
+SubsystemStat: ChannelPercentage
+	Name: #S_CHANNELPERCENTAGE
+	Description: #STT_CHANNELPERCENTAGE
+	Icon: AttributeIcons::6
+	Color: #8080ff
+	Suffix: %
+
+	Variable: RechargePct
+
+SubsystemStat: BoardingSubsys
+	Name: #S_BOARDSUBSYS
+	Description: #STT_BOARDSUBSYS
+	Icon: CrewControl*#9686ff
+	Color: #ff8000
+	
+	Variable: BoardingStrength
+	
+// *************************************
+// *********HEX-SPECIFIC STATS**********
+// *************************************
+
+// NONE AVAILABLE AT THE MOMENT.
