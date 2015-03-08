@@ -8,6 +8,7 @@ Level: 0
 	BaseIncome: -80
 	BaseLoyalty: 2
 	NeighbourLoyalty: 0.15
+	BaseSupport: 150
 	Points: 25
 
 Level: 1
@@ -22,6 +23,7 @@ Level: 1
 	ResourceIncome: 170
 	BaseLoyalty: 4
 	NeighbourLoyalty: 1
+	BaseSupport: 250
 	Points: 100
 
 Level: 2
@@ -37,6 +39,7 @@ Level: 2
 	ResourceIncome: 150
 	BaseLoyalty: 8
 	NeighbourLoyalty: 1.5
+	BaseSupport: 500
 	Points: 400
 
 Level: 3
@@ -52,6 +55,7 @@ Level: 3
 	ResourceIncome: 300
 	BaseLoyalty: 12
 	NeighbourLoyalty: 2
+	BaseSupport: 750
 	Points: 1000
 
 Level: 4
@@ -66,6 +70,7 @@ Level: 4
 	BaseIncome: 1000
 	BaseLoyalty: 16
 	NeighbourLoyalty: 2.5
+	BaseSupport: 1000
 	Points: 1600
 
 Level: 5
@@ -80,12 +85,13 @@ Level: 5
 	BaseIncome: 1600
 	BaseLoyalty: 20
 	NeighbourLoyalty: 3
+	BaseSupport: 1500
 	Points: 2600
 	
 Level: 6
 	Name: Mythical
 	Icon: PlanetIcon5
-	Required: 1 WaterType, 6 Food, 6 Level1, 6 Level2 , 1 Level3
+	Required: 1 WaterType, 6 Food, 6 Level1, 6 Level2, 1 Level3
 	PopGrowth: 2
 	Population: 60
 	RequiredPop: 30
@@ -94,4 +100,5 @@ Level: 6
 	BaseIncome: 3000
 	BaseLoyalty: 30
 	NeighbourLoyalty: 3.0
+	BaseSupport: 2500
 	Points: 6000
