@@ -2,7 +2,7 @@ System: CoreBlackhole
 	MakeBlackhole(Radius = 30.0)
 	
 	MakePlanet(Orbit Spacing = 700:750)
-	MakeAsteroidBelt(12, 0.5)
+	MakeAsteroidBelt(12)
 	MakePlanet(Orbit Spacing = 850:900)
 	MakePlanet(BlackHole, Grid Size = (26, 15), Conditions = False)
 	MakeCreepCamp(BlackHoleCamp)

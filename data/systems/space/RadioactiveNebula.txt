@@ -10,7 +10,7 @@ System: RadioactiveNebula
 	Repeat(2:5)
 		MakeAsteroid()
 	Repeat(1:3)
-		MakeAsteroid(Uranium)
+		MakeAsteroid(Ore, 4000:7000)
 	
 	Repeat(0:3)
 		MakeCreepCamp(Offset = 1200)

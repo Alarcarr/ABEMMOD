@@ -6,7 +6,7 @@ System: RichAsteroidBelt
 	AddQuality(-300)
 
 	MakePlanet()
-	MakeAsteroidBelt(7, 0.6)
+	MakeAsteroidBelt(7)
 	
 	Repeat(2)
 		MakePlanet()

@@ -20,7 +20,7 @@ System: HomeSystem
 		MakeMoon()
 	ExpandSystem(-50:100)
 
-	MakeAsteroid()
+	MakeAsteroid(Ore, 2000)
 	AddAdjacentArtifacts(2)
 	MakeAdjacentCreepCamp(SmallCamp, Place Far = True)
 
