@@ -1,5 +1,6 @@
 Technology: CompositeArmor
 	Name: Composite Armor
+	Class: Unlock
 
 	Point Cost: 700
 	Time Cost: 180

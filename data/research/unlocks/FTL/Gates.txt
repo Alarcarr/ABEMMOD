@@ -4,6 +4,7 @@ Technology: GateTech
 	Point Cost: 4000
 	Time Cost: 400
 	Description: #R_ORB_GATE_DESC
+	Class: Unlock
 	UnlockSubsystem(GateCore)
 	SkipOnUnlockedTag(HasGate)
 	SecondaryInfluenceCost(80)

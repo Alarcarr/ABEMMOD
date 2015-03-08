@@ -1,6 +1,7 @@
 Technology: DePlanet
 	Name: Planetary Branding
 	Blurb: 1x Name Planet(***)
+	Class: Boost
 
 	Point Cost: 500
 	Time Cost: 60

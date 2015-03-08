@@ -1,6 +1,7 @@
 Technology: DevCultivation
 	Name: Sustainability
 	Blurb: 1x Cultivation
+	Class: Boost
 
 	Point Cost: 700
 	Time Cost: 60

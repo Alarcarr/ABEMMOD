@@ -1,5 +1,6 @@
 Technology: ResupplyMod
 	Name: Resupply Module
+	Class: Unlock
 	Point Cost: 250
 	Time Cost: 60
 	Icon: GuiOrbitalIcons::7

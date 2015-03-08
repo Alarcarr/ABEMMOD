@@ -1,6 +1,7 @@
 Technology: BoardingParty
 	Name: Boarding Parties
 	Description: #S_BOARDING_PARTY_DESC
+	Class: Unlock
 	Icon: shuttle
 	Color: #710cff
 	Point Cost: 500

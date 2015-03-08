@@ -1,6 +1,7 @@
 Technology: Senate
 	Name: #F_SENATE_NAME
 	Description: #R_BLD_SENATE_DESC
+	Class: Unlock
 
 	Point Cost: 1000
 	Time Cost: 100

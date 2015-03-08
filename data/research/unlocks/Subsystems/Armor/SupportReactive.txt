@@ -1,5 +1,6 @@
 Technology: SupportReactive
 	Name: Reactive Armor
+	Class: Unlock
 	Point Cost: 1000
 	Time Cost: 300
 	Icon: TechIcons::14

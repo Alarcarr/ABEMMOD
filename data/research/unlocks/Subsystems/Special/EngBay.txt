@@ -1,5 +1,6 @@
 Technology: EngBay
 	Name: Engineering Bay
+	Class: Unlock
 	Point Cost: 300
 	Time Cost: 60
 	Icon: TechIcons::50

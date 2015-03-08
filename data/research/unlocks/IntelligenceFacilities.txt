@@ -4,6 +4,7 @@ Technology: IntelFacilities
 	Time Cost: 120
 	Icon: techScanner
 	Description: #F_INTEL_DESC
+	Class: Unlock
 	Color: #aa19ff
 	Blurb: Generates Intelligence Cards
 	SkipOnUnlockedTag(IntelligenceFacil)

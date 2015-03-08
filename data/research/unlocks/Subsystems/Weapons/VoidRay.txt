@@ -1,5 +1,6 @@
 Technology: VoidRay
 	Name: Adaptive Laser
+	Class: Unlock
 	Point Cost: 800
 	Time Cost: 120
 	Icon: Laser::2*#32ff17

@@ -1,6 +1,7 @@
 Technology: Antimatter2
 	Name: Shielded Antimatter Generator
 	Blurb: In-Combat Resupply
+	Class: Unlock
 	Point Cost: 1500
 	Time Cost: 180
 	Icon: TechIcons::7

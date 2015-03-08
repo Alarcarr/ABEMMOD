@@ -1,6 +1,7 @@
 Technology: BldMegacity
 	Name: #R_BLD_MEGACITY
 	Description: #R_BLD_MEGACITY_DESC:16
+	Class: Unlock
 
 	Point Cost: 600
 	Time Cost: 100
@@ -15,6 +16,7 @@ Technology: BldMegacity
 Technology: BldMetropolis
 	Name: #BLD_METROPOLIS
 	Description: #BLD_METROPOLIS_DESC
+	Class: Unlock
 	Icon: city1
 	SkipOnUnlockedTag(Metropolis)
 	UnlockTag(Metropolis)
@@ -22,6 +24,7 @@ Technology: BldMetropolis
 Technology: TaxCenter
 	Name: Taxation Centers
 	Description: #R_BLD_TAX_DESC
+	Class: Unlock
 	Icon: tax2
 	Point Cost: 600
 	Time Cost: 60

@@ -1,5 +1,6 @@
 Technology: QuantumArmor
 	Name: Quantum Armor
+	Class: Unlock
 
 	Point Cost: 1500
 	Time Cost: 240

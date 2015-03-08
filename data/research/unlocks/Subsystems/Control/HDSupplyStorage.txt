@@ -1,6 +1,7 @@
 Technology: HDSupply
 	Name: High-Density Supply Storage
 	Icon: SupplyStorage*#9e17ff
+	Class: Unlock
 	Point Cost: 600
 	Time Cost: 60
 	Description: #HDSUPPLYMODULE_DESC

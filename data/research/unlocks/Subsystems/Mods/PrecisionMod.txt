@@ -1,6 +1,7 @@
 Technology: PrecisionMod
 	Name: Beam Amplifiers
 	Description: #R_MOD_PRECISION_DESC
+	Class: Unlock
 
 	Point Cost: 400
 	Time Cost: 60

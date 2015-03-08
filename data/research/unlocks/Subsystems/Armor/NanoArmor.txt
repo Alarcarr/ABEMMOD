@@ -1,5 +1,6 @@
 Technology: NanoArmor
 	Name: Nanite Armor
+	Class: Unlock
 
 	Point Cost: 1800
 	Time Cost: 360

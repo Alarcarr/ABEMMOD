@@ -1,5 +1,6 @@
 Technology: PoweredArmor
 	Name: Powered Armor
+	Class: Unlock
 	Icon: PoweredArmor
 	Color: #97c0ff
 	Description: #R_POWERED_ARMOR_DESC

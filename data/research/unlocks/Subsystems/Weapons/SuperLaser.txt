@@ -1,6 +1,7 @@
 Technology: SuperLaser
 	Name: Superlaser
 	Point Cost: 2500
+	Class: Unlock
 	Description: #R_SYS_SUPERLASER_DESC
 	Icon: SLaser
 	SkipOnUnlockedSubsystem(SuperLaser)

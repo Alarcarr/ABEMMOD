@@ -1,5 +1,6 @@
 Technology: PowerPlant
 	Name: Power Plant
+	Class: Unlock
 
 	Point Cost: 1000
 	Time Cost: 100

@@ -1,6 +1,7 @@
 Technology: AdmiralCrew
 	Name: Improved Command Deck
 	Description: #R_SYS_ADMIRAL_DESC
+	Class: Unlock
 	Point Cost: 1000
 	Time Cost: 120
 	Icon: Bridge*#5686ff

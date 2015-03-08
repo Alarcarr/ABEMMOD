@@ -3,6 +3,7 @@ Technology: SlavePopulation
 	Icon: TechIcons::21
 	Color: #ff073d
 	Description: #R_BLD_SLAVE_DESC
+	Class: Unlock
 	Point Cost: 500
 	Time Cost: 60
 	SkipOnUnlockedTag(Slave Barracks)
