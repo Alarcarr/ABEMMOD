@@ -24,7 +24,6 @@ Module: TradeStation
 	GrantAbility(BuyResearch) #version>=93
 	GrantAbility(BuyLabor) #version>=93
 
-	FriendlyPlanetMoney(To Other = 40)
+	FriendlyPlanetMoney(To Other = 60, Count Self = True)
 	GiveTrade()
 	GlobalTradeNode()
-	UnlimitedAsteroidSystem()
