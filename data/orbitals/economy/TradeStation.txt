@@ -19,11 +19,13 @@ Module: TradeStation
 	Model: Research_Station
 	Material: ResearchStation
 
+	SetSystemFlag(CommerceStation)
+
 	GrantAbility(BuyInfluence) #version>=93
 	GrantAbility(BuyEnergy) #version>=93
 	GrantAbility(BuyResearch) #version>=93
 	GrantAbility(BuyLabor) #version>=93
 
-	FriendlyPlanetMoney(To Other = 60, Count Self = True)
+	FriendlyPlanetMoney(To Other = 60)
 	GiveTrade()
 	GlobalTradeNode()
