@@ -305,6 +305,8 @@ Artifact : objects.Artifact::ArtifactScript {
 	Orbit orbit
 visible:
 	int ArtifactType = -1
+server:
+	void setExpire(double time);
 };
 
 Civilian : objects.Civilian::CivilianScript {
