@@ -872,7 +872,7 @@ class TargetFilterNotRemnantOrPirate : TargetFilter {
 		Object@ obj = targ.obj;
 		if(obj is null)
 			return false;
-		return obj.owner is Creeps || obj.owner is Pirates;
+		return !(obj.owner is Creeps || obj.owner is Pirates);
 	}
 #section all
 }
