@@ -42,3 +42,4 @@ PARADISE_DESC: <<
 
 	-50% to civilian Labor, Research, Defense or Energy generation on this planet. Cannot be exported.
 >>
+TEXTILES_DESC: Increases population growth by 20%.

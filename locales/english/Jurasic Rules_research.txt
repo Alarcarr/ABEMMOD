@@ -1,7 +1,0 @@
-R_IMP_THRUST_DESC: <<
-	[i][color=#aaa]Studies and experiments on improving the thrust output of starship engines, conventional and otherwise.[/color][/i]
-
-	Increases all ship engine thrust (including hyperdrives) by $1.
-
-	[color=#d1cb6a][b]Alternate Unlock:[/b] Spend §$2.[/color]
->>
