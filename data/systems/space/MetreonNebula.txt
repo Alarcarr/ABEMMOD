@@ -8,7 +8,7 @@ System: MetreonNebula
 	Repeat(0:3)
 		MakeArtifact()
 	Repeat(0:1)
-		MakeAsteroid()
+		MakeAsteroid(Cargo = Ore, Resource = Distributed)
 	
 	MakeNebula(#800000)
 	

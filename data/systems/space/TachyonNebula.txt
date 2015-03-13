@@ -8,7 +8,7 @@ System: TachyonNebula
 	Repeat(1:4)
 		MakeArtifact()
 	Repeat(1:3)
-		MakeAsteroid()
+		MakeAsteroid(Cargo = Ore, Resource = Distributed)
 	Repeat(0:3)
 		MakeCreepCamp(Offset = 700)
 		

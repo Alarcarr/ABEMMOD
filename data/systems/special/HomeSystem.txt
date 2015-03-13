@@ -20,7 +20,9 @@ System: HomeSystem
 		MakeMoon()
 	ExpandSystem(-50:100)
 
-	MakeAsteroid(Ore, 2000)
+	MakeAsteroid(Cargo = Ore, Cargo Amount = 6000)
+	MakeAsteroid(Resource = Distributed)
+
 	AddAdjacentArtifacts(2)
 	MakeAdjacentCreepCamp(SmallCamp, Place Far = True)
 

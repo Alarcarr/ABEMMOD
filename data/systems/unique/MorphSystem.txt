@@ -8,7 +8,7 @@ System: MorphSystem
 		MakePlanet(AsteroidAffinity)
 
 	Repeat(2)
-		MakeAsteroid()
+		MakeAsteroid(Resource = AsteroidAffinity)
 
 
 	MakeAnomaly(MorphRed)

@@ -8,7 +8,7 @@ System: CeruleanNebula
 	Repeat(3:7)
 		MakeArtifact()
 	Repeat(0:4)
-		MakeAsteroid()
+		MakeAsteroid(Cargo = Ore, Resource = Distributed)
 		
 	MakeNebula(#80ffff)
 	

@@ -8,7 +8,7 @@ System: Type1Nebula
 	Repeat(0:4)
 		MakeArtifact()
 	Repeat(0:4)
-		MakeAsteroid()
+		MakeAsteroid(Cargo = Ore, Resource = Distributed)
 
 	MakeNebula(#f0c870)
 

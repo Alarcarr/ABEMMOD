@@ -29,10 +29,9 @@ RESOURCE_GATEWORLD_DESC: <<
 	The wormhole generator is brought to full capacity at level 6, allowing any of the empire's fleets in the galaxy to be instantly transported to the Hubworld.
 >>
 ASTEROID_LABOR_DESC: <<
-	Adds 6 flat labor generation to the consuming planet.
-	Increases labor generation by 50%.
+	Adds 8 flat Labor generation to the consuming planet.
 
-	Only ticks down while the planet has active constructions.
+	Only counts down while the planet is using Labor.
 >>
 ELECTRONICS_DESC: Gives 0.2 energy generation.
 TECHNOFARM_DESC: Generates a Cultivation card every 6 minutes. Increases population growth by 50%.

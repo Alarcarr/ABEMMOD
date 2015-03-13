@@ -237,9 +237,23 @@ visible:
 Asteroid : objects.Asteroid::AsteroidScript {
 	Orbit orbit
 	Cargo cargo
-	Resources@ resources = null
+	Resources resources
+visible:
+	Object origin
 local:
 	vec3d get_strategicIconPosition();
+	uint getAvailableCount();
+	uint getAvailable(uint index);
+	double getAvailableCost(uint index);
+	double getAvailableCostFor(uint resId);
+	safe bool canDevelop(Empire@ emp);
+	safe bool canGainLimit(Empire@ emp);
+server:
+	void setup(Object@ origin, Empire@ emp, uint resource);
+	void addAvailable(uint resource, double cost);
+	void setResourceLimit(uint limit);
+	void modResourceLimitMod(int mod);
+	void morphTo(uint resource, double cost = 10.0);
 }
 
 Anomaly : objects.Anomaly::AnomalyScript {

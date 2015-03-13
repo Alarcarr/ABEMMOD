@@ -8,7 +8,7 @@ System: MetaphasicNebula
 	Repeat(1:4)
 		MakeArtifact()
 	Repeat(0:7)
-		MakeAsteroid()
+		MakeAsteroid(Cargo = Ore, Resource = Distributed)
 	Repeat(0:3)
 		MakeCreepCamp(Offset = 700)
 		

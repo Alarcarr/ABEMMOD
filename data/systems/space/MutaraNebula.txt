@@ -8,7 +8,7 @@ System: MutaraNebula
 	Repeat(0:2)
 		MakeArtifact()
 	Repeat(0:2)
-		MakeAsteroid()
+		MakeAsteroid(Cargo = Ore, Resource = Distributed)
 		
 	Repeat(0:2)
 		MakeCreepCamp(Offset = 1200)
