@@ -197,9 +197,14 @@ class KillCrew : StatusHook {
 		if(timeLeft < 0 && obj.owner !is Creeps) {
 			if(obj.isShip && !obj.hasLeaderAI)
 				obj.destroy();
-			@obj.owner = defaultEmpire;
-			if(obj.hasStatuses)
-				obj.addStatus(getStatusID("DerelictShip"));
+			if(!obj.isPlanet)
+			{
+				@obj.owner = defaultEmpire;
+				if(obj.hasStatuses)
+					obj.addStatus(getStatusID("DerelictShip"));
+			}
+			else
+				obj.forceAbandon();
 			return false;
 		}
 		data.store(timeLeft);
