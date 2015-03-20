@@ -1,0 +1,14 @@
+Ability: RemnantCommandCodes
+  Name: #ABL_PROGENITOR_COMMANDCODES
+  Description: #ABL_PROGENITOR_COMMANDCODES_DESC
+  Icon: techHyperfield
+  
+  Cooldown: 5
+  Range: 1000
+  Target: targ = Object
+  
+  ABEM_hooks::TargetFilterRemnant(targ)
+  Either(ABEM_hooks::TargetRequireCommand(targ), TargetFilterType(targ, Orbital))
+  TargetFilterNotStatus(targ, IsGuardian)
+  
+  ABEM_races::ConvertRemnants(targ)
