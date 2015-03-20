@@ -1,0 +1,9 @@
+Status: Progenitors
+	Visible To: Nobody
+	
+	ModCivResourceMult(Influence, -0.8)
+	ModCivResourceMult(Money, -0.8)
+	ModCivResourceMult(Research, -0.8)
+	ModCivResourceMult(Defense, -0.8)
+	ModCivResourceMult(Labor, -0.8)
+	ModCivResourceMult(Energy, -0.8)

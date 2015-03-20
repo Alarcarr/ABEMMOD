@@ -11,6 +11,7 @@ Trait: Berserkers
 	
 	AddStatusOwnedPlanets(Berserkers)
 	AddStatusOwnedFleets(BerserkerFleet)
+//	ABEM_races::IfAtWar(AddStatusOwnedPlanets(Happy))
 	
 	ModAttribute(VoteCardCostMod, Add, 4.0)
 	ModAttribute(SupportCardCostMod, Add, 2.0)

@@ -11,6 +11,7 @@ Trait: Pacifists
 	
 	AddStatusOwnedPlanets(Pacifists)
 	AddStatusOwnedFleets(PacifistFleet)
+//	ABEM_races::IfNotAtWar(AddStatusOwnedPlanets(Happy))
 	
 	ModAttribute(VoteCardCostMod, Add, -2.0)
 	ModAttribute(SupportCardCostMod, Add, -1.0)
