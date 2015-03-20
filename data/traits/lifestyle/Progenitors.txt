@@ -22,5 +22,5 @@ Trait: Progenitors
 	AddModifier(SupplyCostFactor(0.75))
 	AddModifier(SupportCapacityFactor(0.5))
 	
-//	GrantAbility(RemnantCommandCodes)
+	GrantAbility(RemnantCommandCodes)
 //	ABEM_races::AllyRemnants()

@@ -12,7 +12,7 @@ Status: Pacifists
 Status: PacifistFleet
 	Visible To: Nobody
 	
-	AddPermanentEffectiveness(-0.15)
+	AddFleetEffectiveness(-0.15)
 	
 Status: Envoy
 	
