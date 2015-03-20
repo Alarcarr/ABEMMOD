@@ -15,7 +15,6 @@ Status: PacifistFleet
 	AddPermanentEffectiveness(-0.15)
 	
 Status: Envoy
-	Visible To: Everyone
 	
 	RemoveOnWarWithOriginEmpire(Trigger Origin = RandomTrigger(0.1, TakeControl()))
 //	ABEM_races::IfAlliedWithOriginEmpire(ABEM_races::ProtectPlanet())
