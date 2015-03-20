@@ -1,0 +1,56 @@
+RACE_PROGENITOR: Ulthaar
+RACE_PROGENITOR_TAGLINE: Return of the Progenitors.
+RACE_PROGENITOR_LORE: <<
+[font=Medium]TIME INDEX: UNKNOWN
+DATABASE INTEGRITY: 0.23 PERCENT
+DIRECTIVES: PRESERVE CONTENTS OF STASIS UNITS ONE THROUGH FORTY-SEVEN
+
+SELF-DIAGNOSTIC RUNNING...
+
+[b]ERROR: POWER CORES ONE THROUGH FIVE OFFLINE. AUXILIARY POWER FAILURE IN FIFTEEN HOURS, NINE MINUTES AND FOUR SECONDS.[/b]
+
+INITIATING EMERGENCY PROTOCOLS. REVIVAL IN PROGRESS IN UNITS ONE THROUGH FORTY-SEVEN.[/font]
+[hr/]
+[font=Medium]TIME INDEX: FIVE DAYS SINCE AWAKENING
+DATABASE BREAKDOWN HALTED
+DIRECTIVES: NONE[/font]
+
+It has been a long time since our slumber began.
+
+We know not what has transpired in our absence, both on this world and throughout the galaxy; much has been lost, and of the countless billions of people on my world, only a handful remain.
+I have begun leading the reconstruction. With time, we shall return to the stars we once so proudly ruled.
+
+For now, however, we must concentrate our efforts elsewhere.
+With the database nearly obliterated, much of what we once knew is a mystery once again. We know more of what can be achieved than how to achieve it.
+Worse still, this once fertile world is no longer capable of supporting the civilization we once had - with a short supply of food and water, we must hurry to build starships to transport resources from other worlds.
+
+[hr/][font=Medium]TIME INDEX: TWO WEEKS SINCE AWAKENING[/font]
+
+I had considered evacuating to a more appropriate planet.
+
+I should not have done so. There is an abundance of useful substances here - the rich cyllium deposits here could help us recreate some of our technology or channel the vast amounts of energy required to reactivate the artifacts of old.
+If we are fortunate, we may even be able to reuse some of that energy in the matter fabricators. Ships may be easier to come by than I anticipated.
+
+Our luck does not come without a high price, though. While we retain the scientific knowledge needed to travel amongst the stars, our infrastructure is abysmal.
+The methods we use to obtain our resources these days have not been used for millennia [i]before[/i] we first developed spaceflight.
+With time, we may learn again. I can only hope so.
+
+[hr/][font=Medium]TIME INDEX: THREE MONTHS SINCE AWAKENING[/font]
+
+When we were preserved in stasis, we launched many fleets of Keepers to protect our interests during our long sleep.
+
+Had we known of their survival, or how lacking their abilities were...
+
+In order to communicate effectively with the scouts we sent out to explore the system, we had to rebuild our communication systems.
+Finally, we heard it - a signal from one of the Keepers. Even now they remain vigilant, ensuring the safety of so much Ulthaar technology...
+Perhaps, if it becomes necessary, we shall call upon the Keepers to protect their builders.
+If only we had the command codes for the greatest of the Keepers - the Guardians that stand watch above our hubworlds - or the seed ships that scatter our technology for all to use...
+They would be of more use to us than any others.
+
+What concerns me now, however, is that new life has made this galaxy its home during our eons of sleep.
+Life that may fear us. Act against us. Withhold vital resources.
+
+The question remains: Will they join us as we rebuild...
+
+... or will they seek to end us?
+>>
