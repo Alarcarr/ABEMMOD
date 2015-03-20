@@ -136,6 +136,7 @@ Orbital : objects.Orbital::OrbitalScript {
 	LeaderAI@ leader = null
 	Resources resources
 	Statuses statuses
+	Cargo@ cargo = null
 	bool usingLabor = false
 local visible:
 	safe uint get_coreModule();
