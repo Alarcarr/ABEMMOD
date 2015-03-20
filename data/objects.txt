@@ -209,6 +209,7 @@ visible:
 
 local:
 	safe bool getSystemFlag(Empire@ emp, uint flagIndex) const;
+	safe bool getSystemFlagAny(uint flagIndex) const;
 
 server:
 	uint SeenMask = 0
@@ -242,7 +243,7 @@ visible:
 	Object origin
 local:
 	vec3d get_strategicIconPosition();
-	uint getAvailableCount();
+	safe uint getAvailableCount();
 	uint getAvailable(uint index);
 	double getAvailableCost(uint index);
 	double getAvailableCostFor(uint resId);
