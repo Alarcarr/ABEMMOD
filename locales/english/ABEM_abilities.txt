@@ -99,3 +99,9 @@ ABL_BOARDING_PARTY_DESC: <<
 ABL_RECALL_DESC: <<
 	Opens a wormhole engulfing the target allied object and immediately depositing it in close proximity to the Hubworld.
 >>
+ABL_PROGENITOR_COMMANDCODES: Override Remnant Programming
+ABL_PROGENITOR_COMMANDCODES_DESC: <<
+	Using our command codes, we can access the control computers of Keeper fleets, overriding the ancient directives programmed by our ancestors so that they do our bidding.
+	
+	Properly reactivating the fleets will require some energy, though, and we do not have the codes for the great Guardians that watch over the Hubworlds.
+>>
