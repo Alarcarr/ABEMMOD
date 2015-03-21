@@ -26,8 +26,12 @@ Subsystem: StationHull
 	Assert: Ship.Command > 0
 		Message: #ERROR_NEED_CONTROL
 
+	RequirePrayer := 0
+	Assert: (RequirePrayer == 0) || (Sum.Prayer > 0)
+		Message: #ERROR_NEED_PRAYER
+
 	AddShipModifier: BuildCostFactor(0.75)
-	AddShipModifier: MaintCostFactor(0.20)
+	AddShipModifier: !tag/StaticMaintenance::MaintCostFactor(0.20)
 	AddShipModifier: LaborCostFactor(0.3)
 	AddShipModifier: SupportCapacityFactor(0.5)
 	AddShipModifier: HpFactor(3.5)

@@ -6,7 +6,7 @@ Subsystem: RocketEngine
 	Picture: RocketEngine
 	Elevation: 0
 
-	Tags: HighMaint, Category:Propulsion, NoBackWall
+	Tags: HighMaint, Category:Propulsion, NoBackWall, TurnToThrust
 	Tags: ExteriorCore, DefaultUnlock, Engine, GivesThrust, HasInternals
 	Hull: Flagship
 
@@ -14,6 +14,7 @@ Subsystem: RocketEngine
 
 	Size := HexSize * Hexes
 	Thrust := 35* Size
+	TurnThrust := 0.75 * Size
 	Hex.Mass := HexSize
 
 	Hex.Resistance := 0.2
