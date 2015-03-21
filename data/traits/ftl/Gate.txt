@@ -2,14 +2,23 @@ Trait: Gate
 	Name: #TRAIT_GATE
 	Description: #TRAIT_GATE_DESC
 	Category: FTL
+	Order: 2
 
 	Icon: GuiOrbitalIcons::1
+	Color: #8ed2ff
 
 	Unique: FTL
 
-	UnlockTag(HasGate)
-	UnlockSubsystem(Gate)
+	UnlockSubsystem(GateModule)
 
-	IfHaveTrait(Verdant, LoadDesigns(verdant/default), LoadDesigns(default))
-	IfHaveTrait(Verdant, LoadDesigns(verdant/not_hyperdrive), LoadDesigns(not_hyperdrive))
-	IfHaveTrait(Verdant, LoadDesigns(verdant/gate), LoadDesigns(gate))
+	LoadDesigns(default)
+	LoadDesigns(not_hyperdrive)
+	LoadDesigns(gate)
+
+	IfHaveTrait(Verdant, LoadDesigns(verdant/default))
+	IfHaveTrait(Verdant, LoadDesigns(verdant/not_hyperdrive))
+	IfHaveTrait(Verdant, LoadDesigns(verdant/gate))
+
+	IfHaveTrait(Devout, LoadDesigns(devout/default))
+	IfHaveTrait(Devout, LoadDesigns(devout/not_hyperdrive))
+	IfHaveTrait(Devout, LoadDesigns(devout/gate)

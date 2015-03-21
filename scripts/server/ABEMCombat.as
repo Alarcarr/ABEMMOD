@@ -43,7 +43,7 @@ void ABEMControlDestroyed(Event& evt) {
 DamageEventStatus ChannelDamage(DamageEvent& evt, const vec2u& position,
 	double ProjResist, double EnergyResist, double ExplResist, double MinPct, double RechargePercent)
 {
-	if(evt.flags & DT_IgnoreDR != 0)
+	if(evt.flags & DF_IgnoreDR != 0)
 		return DE_Continue;
 
 	//Prevent internal-only effects
@@ -62,10 +62,7 @@ DamageEventStatus ChannelDamage(DamageEvent& evt, const vec2u& position,
 		default:
 			dr = (ProjResist + EnergyResist + ExplResist) / 3.0; break;
 	}
-	
-	if(evt.flags & QuadDRPenalty == 0)
-		dr *= 4.0;
-	
+		
 	dmg -= dr * evt.partiality;
 	double minDmg = evt.damage * MinPct;
 	if(dmg < minDmg)
@@ -87,7 +84,7 @@ DamageEventStatus ChannelDamage(DamageEvent& evt, const vec2u& position,
 DamageEventStatus ChannelDamagePercentile(DamageEvent& evt, const vec2u& position,
 	double ProjResist, double EnergyResist, double ExplResist, double MinPct, double RechargePercent)
 {
-	if(evt.flags & DT_IgnoreDR != 0)
+	if(evt.flags & DF_IgnoreDR != 0)
 		return DE_Continue;
 
 	//Prevent internal-only effects
@@ -108,9 +105,6 @@ DamageEventStatus ChannelDamagePercentile(DamageEvent& evt, const vec2u& positio
 	}
 	
 	dr *= dmg;
-
-	if(evt.flags & QuadDRPenalty == 0)
-		dr *= 4.0;
 	
 	dmg -= dr * evt.partiality;
 	double minDmg = evt.damage * MinPct;
@@ -133,7 +127,7 @@ DamageEventStatus ChannelDamagePercentile(DamageEvent& evt, const vec2u& positio
 DamageEventStatus ReduceDamagePercentile(DamageEvent& evt, const vec2u& position,
 	double ProjResist, double EnergyResist, double ExplResist, double MinPct)
 {
-	if(evt.flags & DT_IgnoreDR != 0)
+	if(evt.flags & DF_IgnoreDR != 0)
 		return DE_Continue;
 
 	//Prevent internal-only effects
@@ -154,9 +148,6 @@ DamageEventStatus ReduceDamagePercentile(DamageEvent& evt, const vec2u& position
 	}
 	
 	dr *= dmg;
-	
-	if(evt.flags & QuadDRPenalty == 0)
-		dr *= 4.0;
 	
 	dmg -= dr * evt.partiality;
 	double minDmg = evt.damage * MinPct;

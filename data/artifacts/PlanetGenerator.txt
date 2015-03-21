@@ -1,6 +1,7 @@
 Artifact: PlanetGenerator
 	Name: #ART_PLANET_GENERATOR
 	Description: #ART_PLANET_GENERATOR_DESC
+	Model: ArtifactAdvanced
 
 	Ability: GeneratePlanet
 	Frequency: 0.5

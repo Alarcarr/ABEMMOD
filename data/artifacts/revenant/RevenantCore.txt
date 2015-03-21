@@ -4,6 +4,7 @@ Artifact: RevenantCore
 
 	Size: 20
 	Ability: RevenantCore
+	Model: ArtifactAdvanced
 
 	Strategic Icon: TechIcons::47
 
