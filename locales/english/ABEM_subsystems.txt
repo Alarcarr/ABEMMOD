@@ -99,6 +99,7 @@ S_REMNANT_ARMOR_DESC: <<
 IONENGINE_DESC: <<
 	Uses high amounts of power to expel small amounts of particles at extreme speeds.
 
+	[img=Minus]Very high turn rate.[/img]
 	[img=Plus]Low fuel requirements translate into low maintenance costs.[/img]
 	[img=Plus]At higher sizes, provides more thrust than Rocket Engines. Always provides more thrust than Graviton Engines.[/img]
 	[img=Minus]Requires power.[/img]
@@ -302,7 +303,7 @@ S_RAMJET_DESC: <<
 	A large scoop that collects particulate matter floating in space and uses them to propel itself.
 
 	[img=Plus]Lack of fuel requirements makes its maintenance requirements negligible.[/img]
-	[img=Minus]Extremely low thrust.[/img]
+	[img=Minus]Extremely low thrust and turn rate.[/img]
 >>
 S_HEAVYRAIL_DESC: <<
 	A powerful cannon based on the principles behind railgun technology.

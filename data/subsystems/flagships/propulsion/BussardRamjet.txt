@@ -5,7 +5,7 @@ Subsystem: BussardRamjet
 	Picture: OrbitalEngine
 	Elevation: 0
 
-	Tags: BaseCost,Category:Propulsion, NoBackWall
+	Tags: BaseCost,Category:Propulsion, NoBackWall, TurnToThrust
 	Tags: ExteriorCore, DefaultUnlock, Engine, HasInternals
 	Hull: Flagship
 
@@ -13,6 +13,7 @@ Subsystem: BussardRamjet
 
 	Size := HexSize * Hexes
 	Thrust := 7 * Size
+	TurnThrust := 0.3 * Size
 	Hex.Mass := HexSize
 
 	Hex.Resistance := 0.2

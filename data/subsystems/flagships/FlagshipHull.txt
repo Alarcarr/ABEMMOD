@@ -26,3 +26,7 @@ Subsystem: FlagshipHull
 
 	Assert: Ship.Command > 0
 		Message: #ERROR_NEED_CONTROL
+
+	RequirePrayer := 0
+	Assert: (RequirePrayer == 0) || (Sum.Prayer > 0)
+		Message: #ERROR_NEED_PRAYER
