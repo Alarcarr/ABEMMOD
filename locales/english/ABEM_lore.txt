@@ -10,6 +10,7 @@ SELF-DIAGNOSTIC RUNNING...
 [i]ERROR: POWER CORES ONE THROUGH FIVE OFFLINE. AUXILIARY POWER FAILURE IN FIFTEEN HOURS, NINE MINUTES AND FOUR SECONDS.[/i]
 
 INITIATING EMERGENCY PROTOCOLS. REVIVAL IN PROGRESS IN UNITS ONE THROUGH FORTY-SEVEN.[/b][/padding]
+
 [hr/]
 [padding=20][b]TIME INDEX: FIVE DAYS SINCE AWAKENING
 DATABASE BREAKDOWN HALTED
@@ -62,7 +63,6 @@ RACE_BERSERKERS_TAGLINE: Fight for honor and glory.
 RACE_BERSERKERS_LORE: <<
 [font=Medium]Archive footage, 42 years ago, Chambers of the Clan Council[/font]
 [hr/]
-
 Two guards bring a lone Raht before the Council.
 
 The nine council members - lords of the great master clans that ruled Rata'htat - sit in their great chairs, studying him carefully. "Speak," the leader of the Gd'ziil clan, and the Council itself, commands him. "What do you deem so important that you challenge the will of this Council? To cast aside your honor in such a futile act of defiance?"
@@ -77,7 +77,6 @@ The council leader, an elderly Raht by the name of Tanshir, takes a few moments 
 
 [font=Medium]A week later, in front of the Council halls[/font]
 [hr/]
-
 Zut stands again - this time, it is alongside the Council as Tanshir is about to announce their decision.
 
 "People of Rata'htat, a week ago we were faced with the prospect of civil war. Today, we face the future. It is with nothing but pleasure that I announce that great, glorious armies shall be gathered and trained to fight all who would oppose us. For the honor and glory of Ratha everywhere, ships shall be built to carry our warriors out amongst the stars and we will spread war to all of the universe. The power of the Ratha will be felt far and wide, and the weak shall be vanquished."
