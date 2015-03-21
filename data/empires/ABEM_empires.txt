@@ -3,7 +3,7 @@ Preset: Progenitors
 	Tagline: #RACE_PROGENITORS_TAGLINE
 	Lore: #RACE_PROGENITORS_LORE
 	Portrait: emp_portrait_cloak
-	Shipset: Volkur
+	Shipset: Progenitor
 	
 	Trait: Communism
 	Trait: Gate

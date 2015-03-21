@@ -1,0 +1,78 @@
+Model: TyrantSmallLod1
+	Tangents: on
+	Mesh: data/shipsets/tyrant/support_small_lod1_01.obj
+
+Model: TyrantSmall
+	LOD: TyrantSmallLod1 > 40
+	Tangents: on
+	Mesh: data/shipsets/tyrant/support_small_01.obj
+
+/////////////////////
+Model: TyrantMediumLod1
+	Tangents: on
+	Mesh: data/shipsets/tyrant/support_medium_lod1_01.obj
+
+Model: TyrantMedium
+	LOD: TyrantMediumLod1 > 40
+	Tangents: on
+	Mesh: data/shipsets/tyrant/support_medium_01.obj
+
+/////////////////////
+Model: TyrantMedium2LOD1
+	Tangents: on
+	Mesh: data/shipsets/tyrant/support_med1x_05_lod1.obj
+
+Model: TyrantMedium2
+	LOD: TyrantMedium2LOD1 > 40
+	Tangents: on
+	Mesh: data/shipsets/tyrant/support_med1x_06.obj
+
+/////////////////////
+Model: TyrantLargeLOD1
+	Tangents: on
+	Mesh: data/shipsets/tyrant/support_med2x_14_lod1.obj
+
+Model: TyrantLarge
+	LOD: TyrantLargeLOD1 > 40
+	Tangents: on
+	Mesh: data/shipsets/tyrant/support_med2x_14.obj
+
+/////////////////////
+Model: TyrantFlagTinyLOD1
+	Tangents: on
+	Mesh: data/shipsets/tyrant/flagship_small1x_10_lod1.obj
+
+Model: TyrantFlagTiny
+	LOD: TyrantFlagTinyLOD1 > 40
+	Tangents: on
+	Mesh: data/shipsets/tyrant/flagship_small1x_11.obj
+
+/////////////////////
+Model: TyrantFlagSmallLOD1
+	Tangents: on
+	Mesh: data/shipsets/tyrant/flagship_small3x_07_lod1.obj
+
+Model: TyrantFlagSmall
+	LOD: TyrantFlagSmallLOD1 > 40
+	Tangents: on
+	Mesh: data/shipsets/tyrant/flagship_small3x_07.obj
+
+/////////////////////
+Model: TyrantFlagMediumLOD1
+	Tangents: on
+	Mesh: data/shipsets/tyrant/flagship_med3x_12_lod1.obj
+
+Model: TyrantFlagMedium
+	LOD: TyrantFlagMediumLOD1 > 40
+        Tangents: on
+	Mesh: data/shipsets/tyrant/flagship_med3x_17.obj
+
+/////////////////////
+Model: TyrantFlagLargeLOD1
+	Tangents: on
+	Mesh: data/shipsets/tyrant/flagship_med_2xB_03ml_lod1.obj
+
+Model: TyrantFlagLarge
+	LOD: TyrantFlagLargeLOD1 > 40
+        Tangents: on
+	Mesh: data/shipsets/tyrant/flagship_med_2xB_03ml.obj

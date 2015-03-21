@@ -1,0 +1,141 @@
+Hull: RWCorvette
+	Name: Corvette
+	Background: TyrantSmallBlue
+	BackgroundScale: 0.95
+	Material: TyrantSmall
+	Model: TyrantSmall
+	
+	MinSize: 1
+
+	Shape: data/shipsets/tyrant/small.shape.png
+	
+	Subsystem: SupportHull
+	Tags: Support
+
+/////////////////////
+Hull: RWFrigate
+	Name: Frigate
+	Background: TyrantSmallBlue
+	BackgroundScale: 0.95
+	Material: TyrantMedium
+	Model: TyrantMedium
+	
+	MinSize: 2
+
+	Shape: data/shipsets/tyrant/medium.shape.png
+	
+	Subsystem: SupportHull
+	Tags: Support
+
+/////////////////////
+Hull: RWDestroyer
+	Name: Destroyer
+	Background: TyrantMediumBlue
+	BackgroundScale: 0.95
+	Material: TyrantMedium
+	Model: TyrantMedium2
+	
+	MinSize: 4
+
+	Shape: data/shipsets/tyrant/medium2.shape.png
+
+	Subsystem: SupportHull
+	Tags: Support
+
+/////////////////////
+Hull: RWCruiser
+	Name: Cruiser
+	Background: TyrantMediumBlue
+	BackgroundScale: 1.05
+	Material: TyrantMedium
+	Model: TyrantLarge
+	
+	MinSize: 8
+
+	Shape: data/shipsets/tyrant/large.shape.png
+
+	Subsystem: SupportHull
+	Tags: Support
+
+/////////////////////
+Hull: RWBattlecruiser
+	Name: Battlecruiser
+	Background: TyrantSmallBlue
+	BackgroundScale: 1.3
+	Material: TyrantSmall
+	Model: TyrantFlagTiny
+	
+
+	MaxSize: 64
+
+	Shape: data/shipsets/tyrant/flagtiny.shape.png
+
+	Subsystem: FlagshipHull
+	Tags: Flagship
+
+/////////////////////
+Hull: RWBattleship
+	Name: Battleship
+	Background: TyrantSmallBlue
+	BackgroundScale: 1.2
+	Material: TyrantSmall
+	Model: TyrantFlagSmall
+	
+	Shape: data/shipsets/tyrant/flagsmall.shape.png
+
+	Subsystem: FlagshipHull
+	Tags: Flagship
+
+/////////////////////
+Hull: RWTitan
+	Name: Dreadnaught
+	Background: TyrantMediumBlue
+	BackgroundScale: 1.35
+	Material: TyrantMedium
+	Model: TyrantFlagMedium
+
+	Shape: data/shipsets/tyrant/flagmed.shape.png	
+
+	Subsystem: FlagshipHull
+	Tags: Flagship
+
+/////////////////////
+Hull: RWHeavyCarrier
+	Name: Heavy Carrier
+	Background: TyrantMediumBlue
+	BackgroundScale: 1.35
+	Material: TyrantMedium
+	Model: TyrantFlagLarge
+
+	Shape: data/shipsets/tyrant/flaglarge.shape.png	
+
+	Subsystem: FlagshipHull
+	Tags: Flagship
+
+/////////////////////
+//Hull: RWSpecial
+//	Name: Heavy Carrier
+//	Background: TyrantMediumBlue
+//	BackgroundScale: 1.35
+//	Material: TyrantMedium
+//	Model: TyrantMedium
+//	
+//	Shape: data/shipsets/tyrant/special.shape.png
+//
+//	Subsystem: FlagshipHull
+//	Tags: Flagship
+
+/////////////////////
+Hull: RWStation
+	Name: Station
+	Background: TyrantMediumBlue
+	BackgroundScale: 0.9
+	Material: ResearchStation
+	Model: Research_Station
+	
+	MinSize: 16
+
+	Shape: data/shipsets/volkur/station.shape.png
+
+	Tags: Station
+	Subsystem: StationHull
