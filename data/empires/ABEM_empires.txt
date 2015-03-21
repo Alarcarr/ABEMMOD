@@ -1,0 +1,10 @@
+Preset: Progenitors
+	Name: #RACE_PROGENITORS
+	Tagline: #RACE_PROGENITORS_TAGLINE
+	Lore: #RACE_PROGENITORS_LORE
+	Portrait: emp_portrait_cloak
+	Shipset: Volkur
+	
+	Trait: Communism
+	Trait: Gate
+	Trait: Progenitors
