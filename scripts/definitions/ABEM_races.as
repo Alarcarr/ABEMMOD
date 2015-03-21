@@ -28,6 +28,7 @@ class IfAtWar : IfHook {
 		}
 		return false;
 	}
+#section all
 }
 
 class IfNotAtWar : IfHook {
@@ -54,5 +55,6 @@ class IfNotAtWar : IfHook {
 		}
 		return true;
 	}
+#section all
 }
 
