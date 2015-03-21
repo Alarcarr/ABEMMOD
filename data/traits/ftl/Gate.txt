@@ -21,4 +21,4 @@ Trait: Gate
 
 	IfHaveTrait(Devout, LoadDesigns(devout/default))
 	IfHaveTrait(Devout, LoadDesigns(devout/not_hyperdrive))
-	IfHaveTrait(Devout, LoadDesigns(devout/gate)
+	IfHaveTrait(Devout, LoadDesigns(devout/gate))
