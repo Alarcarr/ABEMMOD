@@ -8,3 +8,25 @@ Preset: Progenitors
 	Trait: Communism
 	Trait: Gate
 	Trait: Progenitors
+	
+Preset: Pacifists
+	Name: #RACE_PACIFISTS
+	Tagline: #RACE_PACIFISTS_TAGLINE
+	Lore: #RACE_PACIFISTS_LORE
+	Portrait: emp_portrait_slug
+	Shipset: Volkur
+	
+	Trait: Capitalism
+	Trait: Hyperdrive
+	Trait: Pacifists
+	
+Preset: Berserkers
+	Name: #RACE_BERSERKERS
+	Tagline: #RACE_BERSERKERS_TAGLINE
+	Lore: #RACE_BERSERKERS_LORE
+	Portrait: emp_portrait_berserker
+	Shipset: Volkur
+	
+	Trait: Empire
+	Trait: Slipstream
+	Trait: Berserkers
