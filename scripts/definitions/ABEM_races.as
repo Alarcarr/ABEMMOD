@@ -55,3 +55,4 @@ class IfNotAtWar : IfHook {
 		return true;
 	}
 }
+
