@@ -16,9 +16,8 @@ Trait: Progenitors
 	
 	TriggerHomeworld(TerraformTo(Quartz))
 	OnHomeworld(AddPlanetResource(Cyllium))
-	OnHomeworld(IfLevel(0, AddOverpopulation(2), Exact = True))
-	InHomeSystem(MakePlanet(Water), Conditions = False, Moons = False, Orbit Spacing = 200:400)
-	InHomeSystem(MakePlanet(RandomType:Food:Common), Conditions = False, Moons = False, Orbit Spacing = 200:400)
+	OnHomeworld(AddPlanetResource(Soylent1))
+	OnHomeworld(AddPlanetResource(BuildingWater))
 	
 	AddModifier(SupplyCostFactor(0.75))
 	AddModifier(SupportCapacityFactor(0.5))
