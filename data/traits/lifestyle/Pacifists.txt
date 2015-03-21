@@ -15,5 +15,5 @@ Trait: Pacifists
 	ModAttribute(VoteCardCostMod, Add, -2.0)
 	ModAttribute(SupportCardCostMod, Add, -1.0)
 	
-	TriggerHomeworld(AddPlanetResource(Allondium))
+	OnHomeworld(AddPlanetResource(Allondium))
 	

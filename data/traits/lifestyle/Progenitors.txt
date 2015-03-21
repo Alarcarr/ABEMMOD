@@ -15,7 +15,7 @@ Trait: Progenitors
 	ModAttribute(SupportCardCostMod, Add, 2.0)
 	
 	TriggerHomeworld(TerraformTo(Quartz))
-	TriggerHomeworld(AddPlanetResource(Cyllium))
+	OnHomeworld(AddPlanetResource(Cyllium))
 	InHomeSystem(MakePlanet(Water), Conditions = False, Moons = False)
 	InHomeSystem(MakePlanet(RandomType:Food:Common), Conditions = False, Moons = False)
 	
