@@ -4,6 +4,7 @@ Artifact: RevenantEngine
 
 	Size: 20
 	Ability: RevenantEngine
+	Model: ArtifactAdvanced
 
 	Strategic Icon: TechIcons::24
 

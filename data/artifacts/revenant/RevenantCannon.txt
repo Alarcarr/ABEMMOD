@@ -4,6 +4,7 @@ Artifact: RevenantCannon
 
 	Size: 20
 	Ability: RevenantCannon
+	Model: ArtifactAdvanced
 
 	Strategic Icon: TechIcons::11
 

@@ -4,6 +4,7 @@ Artifact: RevenantChassis
 
 	Size: 20
 	Ability: RevenantChassis
+	Model: ArtifactAdvanced
 
 	Strategic Icon: TechIcons::31
 
