@@ -1,5 +1,5 @@
 RACE_PROGENITORS: Ulthaar
-RACE_PROGENITORS_TAGLINE: Return of the Progenitors.
+RACE_PROGENITORS_TAGLINE: The return of the Progenitors.
 RACE_PROGENITORS_LORE: <<
 [padding=20][b]TIME INDEX: UNKNOWN
 DATABASE INTEGRITY: 0.23 PERCENT
@@ -82,4 +82,20 @@ Zut stands again - this time, it is alongside the Council as Tanshir is about to
 "People of Rata'htat, a week ago we were faced with the prospect of civil war. Today, we face the future. It is with nothing but pleasure that I announce that great, glorious armies shall be gathered and trained to fight all who would oppose us. For the honor and glory of Rahta everywhere, ships shall be built to carry our warriors out amongst the stars and we will spread war to all of the universe. The power of the Rahta will be felt far and wide, and the weak shall be vanquished."
 
 There is nothing but thunderous applause before the crowds disperse.
+>>
+RACE_PACIFISTS: Fasshi
+RACE_PACIFISTS_TAGLINE: A peaceful solution for any problem.
+RACE_PACIFISTS_LORE: <<
+We are a proud people, the Fasshi. Peaceful. Long-lived. It is not surprising, therefore, that we have remained on this beautiful world so long after learning how to leave it.
+
+However, times are changing. More Fasshi have been born in the past hundred years than the five hundred before, and Faa cannot support us anymore.
+We must venture out into the galaxy, and so we shall.
+
+There are those who would fear us. In the wrong hands, the telepathy of our kind can be a dangerous thing; yet it is that telepathy that has afforded us the peace we have had over the past millennia.
+We must remain vigilant, so that the powers of not even a single Fassh are abused. So that the peace can endure for another five thousand years.
+
+There will undoubtedly be less civilized peoples out there. We must not fear them.
+We must teach them the value of peace...
+
+... just as we had learnt it so long ago...
 >>
