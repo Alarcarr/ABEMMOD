@@ -6,6 +6,7 @@ import traits;
 import hooks;
 import bonus_effects;
 import generic_effects;
+import pickups;
 #section server
 import empire;
 #section all
@@ -127,4 +128,15 @@ class CostFromSize : AbilityHook {
 		double rat = theirScale / size.decimal;
 		cost *= clamp(rat * factor.decimal, min_pct.decimal, max_pct.decimal);
 	}
+}
+
+class CannotOverrideProtection: PickupHook {
+	Document doc("This pickup cannot be picked up if it is still protected, regardless of overrides such as those found in the Progenitor race.");
+	Argument allow_same(AT_Boolean, "True", doc="Whether the pickup can still be picked up if it is owned by the empire trying to pick it up.");
+	
+#section server
+	bool canPickup(Pickup& pickup, Object& obj) const override {
+		return pickup.isPickupProtected || (allow_same.boolean && pickup.owner is obj.owner);
+	}
+#section all
 }

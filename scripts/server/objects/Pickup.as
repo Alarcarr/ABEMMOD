@@ -167,7 +167,7 @@ class PickupControl : Component_PickupControl {
 		Pickup@ pickup = cast<Pickup>(obj);
 		if(!type.canPickup(pickup, by))
 			return;
-		if(isPickupProtected)
+		if(isPickupProtected && !by.owner.hasTrait("Progenitors"))
 			return;
 		type.onPickup(pickup, by);
 		obj.destroy();
