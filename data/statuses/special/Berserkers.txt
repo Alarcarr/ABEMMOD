@@ -21,4 +21,4 @@ Status: BerserkerFleet
 	Visible To: Nobody
 	
 	AddFleetEffectiveness(0.25)
-//	ABEM_races::GenerateResearchInCombat(0.2)
+	ABEM_races::GenerateResearchInCombat(0.2)

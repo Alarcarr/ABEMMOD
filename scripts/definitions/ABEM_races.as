@@ -135,8 +135,43 @@ class CannotOverrideProtection: PickupHook {
 	Argument allow_same(AT_Boolean, "True", doc="Whether the pickup can still be picked up if it is owned by the empire trying to pick it up.");
 	
 #section server
-	bool canPickup(Pickup& pickup, Object& obj) const override {
+	bool canPickup(Pickup& pickup, Object& obj) const {
 		return pickup.isPickupProtected || (allow_same.boolean && pickup.owner is obj.owner);
+	}
+#section all
+}
+
+class GenerateResearchInCombat : StatusHook {
+	Document doc("Fleets with this status generate research when in combat.");
+	Argument amount("AT_Decimal", doc="How much research is generated each second.");
+	
+#section server
+	void onDestroy(Object& obj, Status@ status, any@ data) override {
+		bool inCombat = false;
+		data.retrieve(inCombat);
+		if(inCombat)
+			obj.owner.modResearchRate(-amount.decimal);
+		data.store(false);
+	}
+
+	void onObjectDestroy(Object& obj, Status@ status, any@ data) {
+		bool inCombat = false;
+		data.retrieve(inCombat);
+		if(inCombat)
+			obj.owner.modResearchRate(-amount.decimal);
+		data.store(false);
+	}
+	
+	bool onTick(Object& obj, Status@ status, any@ data, double time) override {
+		bool inCombat = false;
+		data.retrieve(inCombat);
+		
+		if(inCombat && !obj.inCombat)
+			obj.owner.modResearchRate(-amount.decimal);
+		else if(!inCombat && obj.inCombat)
+			obj.owner.modResearchRate(+amount.decimal);
+		data.store(obj.inCombat);
+		return true;
 	}
 #section all
 }
