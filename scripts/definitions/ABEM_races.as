@@ -1,5 +1,8 @@
 import statuses;
 import abilities;
+import ability_effects;
+import trait_effects;
+import traits;
 import hooks;
 import bonus_effects;
 import generic_effects;
@@ -65,7 +68,7 @@ class AllyRemnants : TraitEffect {
 	Document doc("Empires with this trait cannot attack or be attacked by the Remnants.");
 
 #section server
-	void init(Empire& emp, any@ data) const {
+	void postInit(Empire& emp, any@ data) const {
 		Creeps.setHostile(emp, false);
 		emp.setHostile(Creeps, false);
 	}
@@ -79,7 +82,8 @@ class ConvertRemnants : AbilityHook {
 	string getFailReason(Empire@ emp, uint index, const Target@ targ) const {
 		return "Must target Remnants.";
 	}
-	
+
+#section server	
 	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const {
 		if(index != uint(objTarg.integer))
 			return true;
@@ -89,8 +93,6 @@ class ConvertRemnants : AbilityHook {
 			return false;
 		return targ.obj.owner is Creeps;
 	}
-
-#section server
 	void activate(Ability@ abl, any@ data, const Targets@ targs) const {
 		Object@ targ = objTarg.fromConstTarget(targs).obj;
 		if(targ is null)
@@ -106,7 +108,7 @@ class ConvertRemnants : AbilityHook {
 class CostFromSize : AbilityHook {
 	Document doc("Modifies the energy cost of this ability by comparing the object's size to another, fixed size.");
 	Argument targ(TT_Object);
-	Argument size(AT_Decimal, "256.0", doc="The size the object is being compared to.)
+	Argument size(AT_Decimal, "256.0", doc="The size the object is being compared to.");
 	Argument factor(AT_Decimal, "1.0", doc="The factor by which the size ratio is multiplied.");
 	Argument min_pct(AT_Decimal, "0", doc="The smallest ratio allowed. If the actual ratio is lower than this, this number is used instead.");
 	Argument max_pct(AT_Decimal, "1000.0", doc="The highest ratio allowed. If the actual ratio exceeds this, this number is used instead.");

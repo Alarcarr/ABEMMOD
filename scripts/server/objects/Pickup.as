@@ -2,6 +2,7 @@ import pickups;
 import camps;
 import saving;
 import regions.regions;
+import empire;
 
 class PickupScript {
 	void postInit(Pickup& obj) {
@@ -147,7 +148,7 @@ class PickupControl : Component_PickupControl {
 			pickup.acceleration = prot.acceleration;
 		}
 		for(uint i = 0, cnt = protectors.length; i < cnt; ++i) {
-			if(!protectors[i].valid || protectors[i].owner !is pickup.owner) {
+			if(!protectors[i].valid || (protectors[i].owner !is pickup.owner && protectors[i].owner !is Creeps)) {
 				protectors.removeAt(i);
 				pickupDelta = true;
 				--i; --cnt;
