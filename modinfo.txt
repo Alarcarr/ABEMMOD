@@ -17,6 +17,9 @@
 		Note: The localization (tooltips, names, descriptions etc.) will be updated as we go. Some of it is not done yet.
 		
 		Full patch notes in the Discussion Thread.
+
+		Progenitor shipset adapted (read: renamed) from 'Remnant Warlord' shipset by Exa.
+		New race portraits taken from Star Ruler 1, ported to Star Ruler 2 by Vincent.
 		
 		Special Thanks to the Star Ruler 2 developer team for their constant support with everything ranging from coding advice, bug fixes and new hooks to even the mod's logo - thanks for that one, Firgof!!
 	>>
