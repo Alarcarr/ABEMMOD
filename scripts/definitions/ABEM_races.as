@@ -7,6 +7,8 @@ import hooks;
 import bonus_effects;
 import generic_effects;
 import pickups;
+import pickup_effects;
+import status_effects;
 #section server
 import empire;
 #section all
@@ -146,7 +148,7 @@ class GenerateResearchInCombat : StatusHook {
 	Argument amount(AT_Decimal, doc="How much research is generated each second.");
 	
 #section server
-	void onDestroy(Object& obj, Status@ status, any@ data) override {
+	void onDestroy(Object& obj, Status@ status, any@ data) {
 		bool inCombat = false;
 		data.retrieve(inCombat);
 		if(inCombat)
@@ -162,7 +164,7 @@ class GenerateResearchInCombat : StatusHook {
 		data.store(false);
 	}
 	
-	bool onTick(Object& obj, Status@ status, any@ data, double time) override {
+	bool onTick(Object& obj, Status@ status, any@ data, double time) {
 		bool inCombat = false;
 		data.retrieve(inCombat);
 		
