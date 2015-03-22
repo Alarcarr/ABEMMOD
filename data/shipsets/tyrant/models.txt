@@ -70,9 +70,9 @@ Model: TyrantFlagMedium
 /////////////////////
 Model: TyrantFlagLargeLOD1
 	Tangents: on
-	Mesh: data/shipsets/tyrant/flagship_med_2xB_03ml_lod1.obj
+	Mesh: data/shipsets/tyrant/flagship_med_2xB_06ml_lod1.obj
 
 Model: TyrantFlagLarge
 	LOD: TyrantFlagLargeLOD1 > 40
         Tangents: on
-	Mesh: data/shipsets/tyrant/flagship_med_2xB_03ml.obj
+	Mesh: data/shipsets/tyrant/flagship_med_2xB_06ml.obj
