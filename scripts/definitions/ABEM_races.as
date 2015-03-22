@@ -143,7 +143,7 @@ class CannotOverrideProtection: PickupHook {
 
 class GenerateResearchInCombat : StatusHook {
 	Document doc("Fleets with this status generate research when in combat.");
-	Argument amount("AT_Decimal", doc="How much research is generated each second.");
+	Argument amount(AT_Decimal, doc="How much research is generated each second.");
 	
 #section server
 	void onDestroy(Object& obj, Status@ status, any@ data) override {
