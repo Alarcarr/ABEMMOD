@@ -3,6 +3,9 @@ import abilities;
 import hooks;
 import bonus_effects;
 import generic_effects;
+#section server
+import empire;
+#section all
 
 class IfAtWar : IfHook {
 	Document doc("Only applies the inner hook if the empire owning the object is currently at war with another player empire.");
@@ -58,3 +61,68 @@ class IfNotAtWar : IfHook {
 #section all
 }
 
+class AllyRemnants : TraitEffect {
+	Document doc("Empires with this trait cannot attack or be attacked by the Remnants.");
+
+#section server
+	void init(Empire& emp, any@ data) const {
+		Creeps.setHostile(emp, false);
+		emp.setHostile(Creeps, false);
+	}
+#section all
+}
+
+class ConvertRemnants : AbilityHook {
+	Document doc("Takes control of the target Remnant object. Also takes control of any support ships in the area.");
+	Argument objTarg(TT_Object);
+
+	string getFailReason(Empire@ emp, uint index, const Target@ targ) const {
+		return "Must target Remnants.";
+	}
+	
+	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const {
+		if(index != uint(objTarg.integer))
+			return true;
+		if(targ.obj is null)
+			return false;
+		if(emp is null)
+			return false;
+		return targ.obj.owner is Creeps;
+	}
+
+#section server
+	void activate(Ability@ abl, any@ data, const Targets@ targs) const {
+		Object@ targ = objTarg.fromConstTarget(targs).obj;
+		if(targ is null)
+			return;
+		if(targ.hasLeaderAI)
+			targ.takeoverFleet(abl.obj.owner, 1, false);
+		else
+			@targ.owner = abl.obj.owner;
+	}
+#section all
+}
+
+class CostFromSize : AbilityHook {
+	Document doc("Modifies the energy cost of this ability by comparing the object's size to another, fixed size.");
+	Argument targ(TT_Object);
+	Argument size(AT_Decimal, "256.0", doc="The size the object is being compared to.)
+	Argument factor(AT_Decimal, "1.0", doc="The factor by which the size ratio is multiplied.");
+	Argument min_pct(AT_Decimal, "0", doc="The smallest ratio allowed. If the actual ratio is lower than this, this number is used instead.");
+	Argument max_pct(AT_Decimal, "1000.0", doc="The highest ratio allowed. If the actual ratio exceeds this, this number is used instead.");
+
+	void modEnergyCost(const Ability@ abl, const Targets@ targs, double& cost) const override {
+		if(targs is null)
+			return;
+		const Target@ trigTarg = targ.fromConstTarget(targs);
+		if(trigTarg is null || trigTarg.obj is null)
+			return;
+
+		double theirScale = sqr(trigTarg.obj.radius);
+		if(trigTarg.obj.isShip)
+			theirScale = cast<Ship>(trigTarg.obj).blueprint.design.size;
+
+		double rat = theirScale / size.decimal;
+		cost *= clamp(rat * factor.decimal, min_pct.decimal, max_pct.decimal);
+	}
+}
