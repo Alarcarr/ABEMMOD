@@ -25,7 +25,7 @@ Preset: Berserkers
 	Tagline: #RACE_BERSERKERS_TAGLINE
 	Lore: #RACE_BERSERKERS_LORE
 	Portrait: emp_portrait_berserker
-	Shipset: Volkur
+	Shipset: Gevron
 	
 	Trait: Empire
 	Trait: Slipstream

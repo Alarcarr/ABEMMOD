@@ -34,7 +34,7 @@ I should not have done so. There is an abundance of useful substances here - the
 If we are fortunate, we may even be able to reuse some of that energy in the matter fabricators. Ships may be easier to come by than I anticipated.
 
 Our luck does not come without a high price, though. While we retain the scientific knowledge needed to travel amongst the stars, our infrastructure is abysmal.
-The methods we use to obtain our resources these days have not been used for millennia [i]before[/i] we first developed spaceflight.
+The methods we use to obtain our resources these days have not been used for millennia [b]before[/b] we first developed spaceflight.
 With time, we may learn again. I can only hope so.
 
 [hr/]
