@@ -11,6 +11,7 @@ import pickup_effects;
 import status_effects;
 #section server
 import empire;
+import influence_global;
 #section all
 
 class IfAtWar : IfHook {
@@ -171,10 +172,10 @@ class GenerateResearchInCombat : StatusHook {
 }
 
 class IfStatusHook: StatusHook {
-	StatusHook@ hook;
+	GenericEffect@ hook;
 
 	bool withHook(const string& str) {
-		@hook = cast<StatusHook>(parseHook(str, "planet_effects::"));
+		@hook = cast<GenericEffect>(parseHook(str, "planet_effects::"));
 		if(hook is null) {
 			error("If<>(): could not find inner hook: "+escape(str));
 			return false;
@@ -302,7 +303,9 @@ class ProtectPlanet : GenericEffect {
 	}
 
 	void tick(Object& obj, any@ data, double time) const {
-		uint mask ~= 1;
+		uint mask = ~0;
+		for(uint i = 0, cnt = getEmpireCount(); i < cnt; ++i)
+			mask &= getEmpire(i).mask;
 		if(obj.hasSurfaceComponent)
 			obj.protectFrom(mask);
 	}
