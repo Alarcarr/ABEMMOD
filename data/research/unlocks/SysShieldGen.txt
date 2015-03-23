@@ -29,7 +29,7 @@ Technology: SupShieldGen
 Technology: CovariantShield
 	Name: Covariant Shield Generator
 	Blurb: #R_SYS_COVARIANT_BLURB
-	Description: #S_COVARIANT_SHIELD_DESC
+	Description: #R_COVARIANTSHIELD_DESC
 	Class: Unlock
 	Icon: TechIcons::6
 	Color: #000bde

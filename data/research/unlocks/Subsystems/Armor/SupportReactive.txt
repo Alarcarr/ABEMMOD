@@ -5,6 +5,6 @@ Technology: SupportReactive
 	Time Cost: 300
 	Icon: TechIcons::14
 	Blurb: #SUPPORT_EQUIPMENT_BLURB
-	Description: #SUPPORT_REACTIVEARMOR_DESC
+	Description: #R_SUPPORT_REACTIVEARMOR_DESC
 	SkipOnUnlockedSubsystem(SupportReactiveArmor)
 	UnlockSubsystem(SupportReactiveArmor)

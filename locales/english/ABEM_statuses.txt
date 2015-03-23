@@ -53,3 +53,13 @@ STATUS_TRANSPORTED_DESC: <<
 STATUS_STELLAR_SHIELD_DESC: <<
 	This stellar object is being protected from Graviton Condenser attacks. If the shield is powerful enough, the only way to destroy the object is to destroy the shield generator, which is probably located on a nearby flagship, orbital or planet.
 >>
+STATUS_DEFENSIVEMATRIX: Defensive Matrix
+STATUS_DEFENSIVEMATRIX_DESC: <<
+	This ship has received additional shielding from a Defensive Matrix Generator on a nearby flagship.
+>>
+STATUS_ENVOY: Diplomatic Expedition
+STATUS_ENVOY_DESC: <<
+	This planet has been visited by an Envoy. The Envoy and his entourage reassure allied populations of their security, preventing loyalty loss for 60 seconds.
+	
+	Loyalty protection only takes effect if the planet's owner and the Envoy's owner are in an Alliance.
+>>
