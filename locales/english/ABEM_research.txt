@@ -224,7 +224,13 @@ R_BLD_SENATE_DESC: <<
 >>
 
 SUPPORT_EQUIPMENT_BLURB: for Supports
-
+R_SUPPORT_REACTIVEARMOR_DESC: <<
+	[color=#aaa][i]New explosives allow for more compact sheets of reactive armor to be constructed for use on small craft.[/i][/color]
+	
+	Unlocks Reactive Armor for support ships.
+	
+	[i][bbloc=#SUPPORT_REACTIVEARMOR_DESC/][/i]
+>>
 SUPPORT_REACTIVEARMOR_DESC: <<
 	A sheet of independent explosives that detonate nearly instantly in response to incoming weapon fire, adapted for use on smaller support ships.
 
@@ -324,10 +330,82 @@ R_NANO_ARMOR_DESC: <<
 
 	[i][bbloc=#S_NANO_ARMOR_DESC/][/i]
 >>
+R_IONENGINE_DESC: <<
+	[color=#aaa][i]The development of affordable ion thrusters sparks a revolution in ion propulsion.[/i][/color]
+	
+	Unlocks the Ion Engine subsystem.
+	
+	[i][bbloc=#IONENGINE_DESC/][/i]
+>>
+R_COVARIANTSHIELD_DESC: <<
+	[color=#aaa][i]New plasma containment methods allow for much greater amounts of energy to be deflected by a shield, at the cost of significantly lowering regeneration rates.[/i]
+	
+	Unlocks Covariant Shield Generators for use on flagships.
 
+	[i][bbloc=#S_COVARIANT_SHIELD_DESC/][/i]
+>>
+R_HDSUPPLY_DESC: <<
+	[color=#aaa][i]Improvements to quantum displacement technology allow for the safe storage of vast quantities of ordnance outside our physical universe.
+	
+	Unlocks High-Density Supply Storage for use on flagships.
+	
+	[i][bbloc=#HDSUPPLYMODULE_DESC/][/i]
+>>
+R_DUALMOUNT_DESC: <<
+	[color=#aaa][i]Brilliant advances in miniaturization allow for two weapons of the same firepower to be placed where there used to be only one.[/i][/color]
 
-
-
+	Unlocks the Dual Mount modifier.
+	
+	[i][bbloc=#EXTRA_GUN_DESC/][/i]
+>>
+R_BOARDING_PARTY_DESC: <<
+	[color=#aaa][i]Recent studies of old science fiction have taught us the value of capturing enemy ships intact. To that end, we have started designing boarding pods for our flagships to launch.[/i][/color]
+	
+	Unlocks Boarding Parties for use on flagships.
+	
+	[i][bbloc=#S_BOARDING_PARTY_DESC/][/i]
+>>
+R_MATTERDISRUPTOR_DESC: <<
+	[color=#aaa][i]By disrupting the molecular bonds of enemy hulls with a concentrated burst of energy, we can heavily damage ships much larger than our own. The technology is not so useful against small craft, however.[/i][/color]
+	
+	Unlocks the Matter Disruptor.
+	
+	[i][bbloc=#S_MATTERDISRUPTOR_DESC/][/i]
+>>
+R_VOIDRAY_DESC: <<
+	[color=#aaa][i]Careful tuning of a laser beam can allow us to deal more damage to a target. Recent advances in computing and sensor technology have finally made it possible for such adjustments to be made on the fly.[/i][/color]
+	
+	Unlocks the Adaptive Laser.
+	
+	[i][bbloc=#S_VOIDRAY_DESC/][/i]
+>>
+R_CAT_MILITARY_DESC: <<
+	[color=#aaa][i]The art of permanently removing an opponent. Or, well, semi-permanently. Or just not getting removed by the opponent.[/i][/color]
+>>
+R_CAT_ENERGY_DESC: <<
+	[color=#aaa][i]How to produce power out of thin air. No, seriously![/i][/color]
+>>
+R_CAT_PLANET_DESC: <<
+	[color=#aaa][i]Building... building... please come back in a few decades, my liege.[/i][/color]
+>>
+R_CAT_POLITICS_DESC: <<
+	[color=#aaa][i]I will not watch as this Republic that has stood for a thousand years is split in two! (Also known as the art of saying very little with as many words as possible.)[/i][/color]
+>>
+R_CAT_INDUSTRY_DESC: <<
+	[color=#aaa][i]Discovering a method for building galaxy-sized starships.[/i][/color]
+>>
+R_CAT_PROPULSION_DESC: <<
+	[color=#aaa][i]Remember, children, fasten your seatbelts before you go to Ludicrous--- AAAAARGH![/i][/color]
+>>
+R_INF_HULL_DESC: <<
+	[color=#aaa][i]Further advances in material sciences allow us to improve our hulls once more.[/i][/color]
+	
+	Increases orbital and armor health by 10%. Also increases armor damage resistance by 10%.
+>>
+	
+	
+	
+	
 
 // ARGH, DO WE STILL HAVE TO KEEP THIS STUFF?
 R_NANO_REPAIR_DESC: <<
