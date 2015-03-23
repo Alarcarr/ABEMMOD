@@ -298,7 +298,7 @@ R_ORB_GATE_DESC: <<
 
 	Unlocks Gates.
 
-	[i][bbloc=#ORB_GATE_CORE_DESC][/bbloc][/i]
+	[i][bbloc=#S_GATE_MODULE_DESC][/bbloc][/i]
 
 	[color=#0087c7][b]Alternate Unlock:[/b] Spend 80 influence points.[/color]
 >>
