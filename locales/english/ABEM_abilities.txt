@@ -83,7 +83,7 @@ ABL_TURRET_MISSILE_DESC: <<
 ABL_BUILD_OUTPOST_DESC: <<
 	Uses a moderate amount of energy to immediately fabricate an outpost at a target location.
 
-	Preparing the components required for the project costs §300k.
+	Preparing the components required for the project costs §300k. Evangelical races construct a Star Temple instead.
 >>
 ABL_SCUTTLEDERELICT_DESC: <<
 	Sends a demolition crew to plant charges on the target derelict. The remains of the target ship are destroyed.
@@ -98,4 +98,34 @@ ABL_BOARDING_PARTY_DESC: <<
 >>
 ABL_RECALL_DESC: <<
 	Opens a wormhole engulfing the target allied object and immediately depositing it in close proximity to the Hubworld.
+>>
+ABL_DEFENSIVEMATRIX: Engage Defensive Matrix
+ABL_DEFENSIVEMATRIX_DESC: <<
+	Engulfs an allied flagship in a charged plasma field, absorbing incoming damage until the field dissipates.
+	
+	Adds a certain amount of shield HP and capacity to the target flagship or station. Lasts 60 seconds.
+>>
+ABL_HULLHEAL: Nano-Repair
+ABL_HULLHEAL_DESC: <<
+	Emits a stream of repair nanites towards an allied fleet, repairing their ships.
+	
+	Heals the target fleet, spreading the repairs evenly across the entire fleet. Drains 2 Supply for each HP of healing.
+>>
+ABL_SHIELDHEAL: Regenerate Shields
+ABL_SHIELDHEAL_DESC: <<
+	Transmits a stream of energy towards an allied fleet, which is channeled into the fleet's shield generators, effectively regenerating their shields.
+	
+	Heals the target fleet's shields, spreading the regeneration evenly across all shield-capable ships. Drains 2 Supply for each HP of regeneration.
+>>
+ABL_SUPPLYTRANSFER: Transfer Energy
+ABL_SUPPLYTRANSFER_DESC: <<
+	Transmits a stream of energy towards an allied fleet, which is stored in the flagship's batteries.
+	
+	Transfers Supply to the target flagship.
+>>
+ABL_SHIELDTRANSFER: Transfer Shields
+ABL_SHIELDTRANSFER_DESC: <<
+	Bleeds off plasma from the flagship's shields, transmitting it towards an allied flagship for use.
+	
+	Transfers shield HP to the target flagship.
 >>
