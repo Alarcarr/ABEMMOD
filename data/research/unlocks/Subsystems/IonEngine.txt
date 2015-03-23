@@ -1,6 +1,6 @@
 Technology: IonEngine
 	Name: #IONENGINE_NAME
-	Description: #IONENGINE_DESC
+	Description: #R_IONENGINE_DESC
 	Class: Unlock
 
 	Point Cost: 400

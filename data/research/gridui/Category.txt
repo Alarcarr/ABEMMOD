@@ -1,25 +1,31 @@
-Technology: MillitaryResearch
-	Name: Millitary Research
+﻿Technology: MillitaryResearch
+	Name: Military Research
 	Icon: MilitaryStrengthIcon
+	Description: #R_CAT_MILITARY_DESC
 	AutomaticallyUnlocks()
 Technology: EnergyScience
-	Name: Energy Research
+	Name: Energetics
+	Description: #R_CAT_ENERGY_DESC
 	Icon: DesignationIcons::2
 	AutomaticallyUnlocks()
 Technology: PlanetDev
-	Name: Planet Development
+	Name: Planetary Development
+	Description: #R_CAT_PLANET_DESC
 	Icon: PlanetImage
 	AutomaticallyUnlocks()
 Technology: PolSci
 	Name: Political Science
+	Description: #R_CAT_POLITICS_DESC
 	Icon: DesignationIcons::1
 	AutomaticallyUnlocks()
 Technology: Metallurgy
-	Name: Metallurgy
+	Name: Industry
+	Description: #R_CAT_INDUSTRY_DESC
 	Icon: ResourceIcon::6
 	AutomaticallyUnlocks()
 Technology: FTLT
 	Name: Dynamics
+	Description: #R_CAT_PROPULSION_DESC
 	Icon: ActionBarIcons::6
 	AutomaticallyUnlocks()
 

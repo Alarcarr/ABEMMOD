@@ -4,7 +4,7 @@ Technology: HDSupply
 	Class: Unlock
 	Point Cost: 600
 	Time Cost: 60
-	Description: #HDSUPPLYMODULE_DESC
+	Description: #R_HDSUPPLY_DESC
 	SkipOnUnlockedSubsystem(HDSupplyModule)
 	UnlockSubsystem(HDSupplyModule)
 	SecondaryEnergyCost(700)
