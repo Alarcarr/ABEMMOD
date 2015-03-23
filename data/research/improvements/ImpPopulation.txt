@@ -27,7 +27,8 @@ Technology: ImpPopLvl3
 	ModAttribute(PopulationLevel3Mod, Add, 1)
 	ModAttribute(PopulationLevel2Mod, Add, 1)
 Technology: Housing
-	Name: Housing
+	Name: Residential Area
+	Description: #R_BLD_HOUSING_DESC
 	Icon: city3
 	Point Cost: 500
 	Time Cost: 60
