@@ -1,6 +1,6 @@
 Module: Embassy
 	Name: #ORB_EMBASSY
-	Blurb: #ORB_TEMPLE_BLURB
+	Blurb: #ORB_EMBASSY_BLURB
 	Description: #ORB_EMBASSY_DESC
 	Icon: GuiOrbitalIcons::0
 	Distant Icon: OrbitalIcons::0
