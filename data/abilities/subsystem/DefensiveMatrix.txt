@@ -1,0 +1,10 @@
+Ability:
+	Name: #ABL_DEFENSIVEMATRIX
+	Description: #ABL_DEFENSIVEMATRIX_DESC
+	Icon: techNeutronium * #00aaff
+	Target: targ = Object
+	Range: 500
+	Cooldown: 60
+	TargetFilterType(targ, Type = Ship)
+	TargetFilterAllied(targ)
+	ABEM_hooks::AddOwnedStatus(targ, DefensiveMatrix, Duration = 90)

@@ -7,17 +7,18 @@ Module: StellarShieldGenerator
 	Core: True
 	Standalone: True
 
-	Build Cost: 500
-	Maintenance: 100
-	Labor Cost: 10
+	Build Cost: 1000
+	Maintenance: 250
+	Labor Cost: 30
 
-	Health: 4000
-	Armor: 1000
+	Health: 5000
+	Armor: 2500
 
 	Model: Research_Station
 	Material: ResearchStation
 
 	Strategic Icon: OrbitalIcons::7
+	Size: 18
 
 	AddRegionStatus(StellarShield, false) // This 'false' says that the status must apply to all objects in the system regardless of owner.
 
