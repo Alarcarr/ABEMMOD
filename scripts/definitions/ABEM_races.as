@@ -144,19 +144,11 @@ class CannotOverrideProtection: PickupHook {
 }
 
 class GenerateResearchInCombat : StatusHook {
-	Document doc("Fleets with this status generate research when in combat.");
+	Document doc("Objects with this status generate research when in combat.");
 	Argument amount(AT_Decimal, doc="How much research is generated each second.");
 	
 #section server
 	void onDestroy(Object& obj, Status@ status, any@ data) {
-		bool inCombat = false;
-		data.retrieve(inCombat);
-		if(inCombat)
-			obj.owner.modResearchRate(-amount.decimal);
-		data.store(false);
-	}
-
-	void onObjectDestroy(Object& obj, Status@ status, any@ data) {
 		bool inCombat = false;
 		data.retrieve(inCombat);
 		if(inCombat)
@@ -174,6 +166,145 @@ class GenerateResearchInCombat : StatusHook {
 			obj.owner.modResearchRate(+amount.decimal);
 		data.store(obj.inCombat);
 		return true;
+	}
+#section all
+}
+
+class IfStatusHook: StatusHook {
+	StatusHook@ hook;
+
+	bool withHook(const string& str) {
+		@hook = cast<StatusHook>(parseHook(str, "planet_effects::"));
+		if(hook is null) {
+			error("If<>(): could not find inner hook: "+escape(str));
+			return false;
+		}
+		return true;
+	}
+
+	bool condition(Object& obj, Status@ status) const {
+		return false;
+	}
+
+#section server
+	void onCreate(Object& obj, Status@ status, any@ data) const {
+		IfData info;
+		info.enabled = condition(obj, status);
+		data.store(@info);
+
+		if(info.enabled)
+			hook.onCreate(obj, status, info.data);
+	}
+
+	void onDestroy(Object& obj, Status@ status, any@ data) const {
+		IfData@ info;
+		data.retrieve(@info);
+
+		if(info.enabled)
+			hook.onDestroy(obj, status, info.data);
+	}
+
+	bool onTick(Object& obj, Status@ status, any@ data, double time) const {
+		IfData@ info;
+		data.retrieve(@info);
+
+		bool cond = condition(obj, status);
+		if(cond != info.enabled) {
+			if(info.enabled)
+				hook.onDestroy(obj, status, info.data);
+			else
+				hook.onCreate(obj, status, info.data);
+			info.enabled = cond;
+		}
+		if(info.enabled)
+			hook.onTick(obj, status, info.data, time);
+		data.store(@info);
+		return true;
+	}
+
+	void onOwnerChange(Object& obj, Status@ status, any@ data, Empire@ prevOwner, Empire@ newOwner) const {
+		IfData@ info;
+		data.retrieve(@info);
+
+		if(info.enabled)
+			hook.onOwnerChange(obj, status, info.data, prevOwner, newOwner);
+	}
+
+	void onRegionChange(Object& obj, Status@ status, any@ data, Region@ fromRegion, Region@ toRegion) const {
+		IfData@ info;
+		data.retrieve(@info);
+
+		if(info.enabled)
+			hook.onRegionChange(obj, status, info.data, fromRegion, toRegion);
+	}
+
+	void save(Status@ status, any@ data, SaveFile& file) const {
+		IfData@ info;
+		data.retrieve(@info);
+
+		if(info is null) {
+			bool enabled = false;
+			file << enabled;
+		}
+		else {
+			file << info.enabled;
+			if(info.enabled)
+				hook.save(status, info.data, file);
+		}
+	}
+
+	void load(Status@ status, any@ data, SaveFile& file) const {
+		IfData info;
+		data.store(@info);
+
+		file >> info.enabled;
+		if(info.enabled)
+			hook.load(status, info.data, file);
+	}
+#section all
+};
+
+
+class IfAlliedWithOriginEmpire : IfStatusHook {
+	Document doc("Only apply the inner hook if the owner of this object is allied to the status' origin empire.");
+	Argument hookID(AT_Hook);
+	Argument allow_null(AT_Boolean, "True", doc="Whether the hook executes if the status has no origin empire.");
+	Argument allow_self(AT_Boolean, "True", doc="Whether the hook executes if the object owner is the origin empire.");
+	
+	bool instantiate() override {
+		if(!withHook(hookID.str))
+			return false;
+		return StatusHook::instantiate();
+	}
+	
+#section server
+	bool condition(Object& obj, Status@ status) {
+		Empire@ owner = obj.owner;
+		if(owner is null)
+			return false;
+		Empire@ origin = status.originEmpire;
+		if(origin is null)
+			return allow_null.boolean;
+		if(origin is owner)
+			return allow_self.boolean;
+		return (origin.ForcedPeaceMask & owner.mask != 0) && (owner.ForcedPeaceMask & origin.mask != 0); 
+	}
+#section all
+}
+
+class ProtectPlanet : GenericEffect {
+	Document doc("Planets affected by this status cannot be captured.");
+	
+#section server
+	void disable(Object& obj, any@ data) const {
+		if(obj.hasSurfaceComponent)
+			obj.clearProtectedFrom();
+	}
+
+	void tick(Object& obj, any@ data, double time) const {
+		uint mask ~= 1;
+		if(obj.hasSurfaceComponent)
+			obj.protectFrom(mask);
 	}
 #section all
 }

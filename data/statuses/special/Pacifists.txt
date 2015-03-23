@@ -21,4 +21,4 @@ Status: Envoy
 	Collapses: True
 
 	RemoveOnWarWithOriginEmpire(Trigger Origin = RandomTrigger(0.1, TakeControl()))
-//	ABEM_races::IfAlliedWithOriginEmpire(ABEM_races::ProtectPlanet())
+	ABEM_races::IfAlliedWithOriginEmpire(ABEM_races::ProtectPlanet())
