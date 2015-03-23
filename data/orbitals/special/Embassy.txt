@@ -27,4 +27,4 @@ Module: Embassy
 
 	GlobalTradeNode()
 	OnKillSpreadLeverageToFriendlies(Quality Factor = 5.0)
-	SpawnFreighters(1, Status = Envoy, Duration = 600, Name = Envoy, Set Origin Empire = True, Visit Hostile = True)
+	SpawnFreighters(2, Status = Envoy, Duration = 60, Name = Envoy, Set Origin Empire = True, Visit Hostile = True)
