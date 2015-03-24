@@ -11,8 +11,8 @@ Building: Metropolis
 	Tile Cost: 65
 	Build Time: 90
 
-	Base Maintenance: 50
-	Tile Maintenance: 30
+	Base Maintenance: 30
+	Tile Maintenance: 15
 
 	AddPressureCap(8)
 	ReplacesCities(6)

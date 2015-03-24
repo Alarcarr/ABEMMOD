@@ -10,8 +10,8 @@ Building: Megacity
 	Tile Cost: 25
 	Build Time: 140
 
-	Base Maintenance: 150
-	Tile Maintenance: 25
+	Base Maintenance: 100
+	Tile Maintenance: 15
 
 	RequireUnlockTag(MegacityUnlock)
 
