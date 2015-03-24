@@ -18,6 +18,10 @@ class DisableShields : StatusHook {
 	void onCreate(Object& obj, Status@ status, any@ data) override {
 		Ship@ ship = cast<Ship>(obj);
 		if(ship !is null) {
+			if(preserve.boolean)
+				data.store(ship.Shield);
+			else
+				data.store(0);
 			ship.Shield = 0;
 			ship.MaxShield = 0;
 		}
@@ -25,8 +29,11 @@ class DisableShields : StatusHook {
 	
 	void onDestroy(Object& obj, Status@ status, any@ data) override {
 		Ship@ ship = cast<Ship>(obj);
+		double shield = 0;
 		if(ship !is null)
 			ship.MaxShield = ship.blueprint.getEfficiencySum(SV_ShieldCapacity);
+			data.retrieve(shield);
+			ship.Shield = shield;
 	}
 	
 	bool onTick(Object& obj, Status@ status, any@ data, double time) override {
@@ -186,14 +193,18 @@ class KillCrew : StatusHook {
 		double timeLeft = 0;
 		data.retrieve(timeLeft);
 		Ship@ ship = cast<Ship>(obj);
-		timeLeft -= time;
-		if(ship !is null && ship.Shield > 0) {
-			ship.Shield -= max(damage.decimal, 0.0) + damagepct.decimal * ship.MaxShield;
-			if(ship.Shield < 0)
-				ship.Shield = 0;
+		if(ship !is null) {
+			if(ship.Shield > 0) {
+				ship.Shield -= max(damage.decimal, 0.0) + damagepct.decimal * ship.MaxShield;
+				if(ship.Shield < 0)
+					ship.Shield = 0;
+			}
+			if(ship.blueprint.hasTagActive(RemnantComputer))
+				return true;
 			if(ship.Shield > 0 && damage.decimal != -1)
 				timeLeft += time;
 		}
+		timeLeft -= time;
 		if(timeLeft < 0 && obj.owner !is Creeps) {
 			if(obj.isShip && !obj.hasLeaderAI)
 				obj.destroy();
@@ -224,6 +235,10 @@ class StatusFreeFTLSystem : StatusHook {
 			region.FreeFTLMask |= owner.mask;
 		return true;
 	}
+	
+	bool onRegionChange(Object& obj, Status@ status, any@ data, Region@ prevRegion, Region@ newRegion) override {
+		return false;
+	}
 #section all
 }
 
@@ -236,6 +251,10 @@ class StatusBlockFTLSystem : StatusHook {
 			obj.region.BlockFTLMask |= obj.owner.mask;
 		}
 		return true;
+	}
+	
+	bool onRegionChange(Object& obj, Status@ status, any@ data, Region@ prevRegion, Region@ newRegion) override {
+		return false;
 	}
 #section all
 }
