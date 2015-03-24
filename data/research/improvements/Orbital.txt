@@ -1,6 +1,6 @@
 Technology: OrbitalEnhancement
 	Name: Orbital Enhancement
-	Description: Increases Orbital health by 30% and Station damage by 20%
+	Description: #R_IMP_ORBITAL_DESC
 	Icon: orbital
 	Point Cost: 500
 	Time Cost: 60
