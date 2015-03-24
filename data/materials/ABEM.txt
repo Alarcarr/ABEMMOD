@@ -133,3 +133,18 @@ Material: c2
 Material: c3
 	Inherit: ABEMSubsystem
 	Texture: data/images/c3.png
+
+
+// Supply and shield transfer beams.
+
+Material: EnergyTransfer
+	Shader: BeamFade
+	Texture: data/images/sprites/laser_beam.png
+	Lighting: No
+	DepthWrite: No
+	Culling: None
+	Blend: Add
+
+Material: ShieldTransfer
+	Inherit: EnergyTransfer
+	Texture: data/images/sprites/railgun.png
