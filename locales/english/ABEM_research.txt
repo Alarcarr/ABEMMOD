@@ -402,7 +402,11 @@ R_INF_HULL_DESC: <<
 	
 	Increases orbital and armor health by 10%. Also increases armor damage resistance by 10%.
 >>
+R_IMP_ORBITAL_DESC: <<
+	[color=#aaa][i]Improvements to the materials used in the construction of space stations.[/i][/color]
 	
+	Increases the health of orbitals by 30%, and the damage of Station weapons by 20%.
+>>
 	
 	
 	
