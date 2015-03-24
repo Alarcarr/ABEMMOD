@@ -15,6 +15,7 @@ Subsystem: RemnantHull
 	AddShipModifier: DamageFactor(0.9)
 	AddShipModifier: SpreadFactor(1.5)
 	AddShipModifier: ThrustFactor(4.0)
+	AddShipModifier: TurnThrustFactor(8.0)
 	AddShipModifier: SupportCapacityFactor(2.0)
 	AddShipModifier: tag/MissileBase::SpeedFactor(0.5)
 
@@ -46,5 +47,6 @@ Subsystem: SpecialRemnantHull
 	AddShipModifier: DamageFactor(0.9)
 	AddShipModifier: SpreadFactor(1.5)
 	AddShipModifier: ThrustFactor(4.0)
+	AddShipModifier: TurnThrustFactor(8.0)
 	AddShipModifier: SupportCapacityFactor(2.0)
 	AddShipModifier: tag/MissileBase::SpeedFactor(0.5)
