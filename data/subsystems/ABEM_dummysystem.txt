@@ -1,0 +1,7 @@
+Subsystem: ABEMDummy
+  Tags: Disabled
+
+  HullHealing := 0
+  ShieldHealing := 0
+  SupplyTransferRate := 0
+  ShieldTransferRate := 0

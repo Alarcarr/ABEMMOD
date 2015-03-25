@@ -1,0 +1,24 @@
+Ability: SupplyTransfer
+	Name: #ABL_SUPPLYTRANSFER
+	Description: #ABL_SUPPLYTRANSFER_DESC
+	Icon: AttributeIcons::4
+	Range: 500
+	Target: targ = Object
+	Either(ABEM_hooks::TargetRequireCommand(targ), TargetFilterType(targ, Orbital))
+	IsToggleTarget(targ)
+	TargetFilterNotSelf(targ)
+	TargetFilterAllied(targ, Allow Null = True)
+	PersistentBeamEffect(targ, #56c3c3, EnergyTransfer, Width = 1.0)
+	ABEM_hooks::TransferSupplyFromSubsystem(targ, Sys.SupplyTransferRate)
+Ability: ShieldTransfer
+	Name: #ABL_SHIELDTRANSFER
+	Description: #ABL_SHIELDTRANSFER_DESC
+	Icon: ResourceIcon::5 * #429cff
+	Target: targ = Object
+	Range: 500
+	ABEM_hooks::TransferShieldFromSubsystem(targ, Sys.ShieldTransferRate)
+	IsToggleTarget(targ)
+	TargetFilterAllied(targ, Allow Null = True)
+	TargetFilterNotSelf(targ)
+	PersistentBeamEffect(targ, #086786, ShieldTransfer, Width = 1.0)
+	ABEM_hooks::TargetRequireCommand(targ)

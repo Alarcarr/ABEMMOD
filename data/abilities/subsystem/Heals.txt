@@ -7,6 +7,7 @@ Ability: HullHeal
 	Either(ABEM_hooks::TargetRequireCommand(targ), TargetFilterType(targ, Orbital))
 	IsToggleTarget(targ)
 	TargetFilterAllied(targ, Allow Null = True)
+	PersistentBeamEffect(targ, #078507, Tractor, Width = 5.0)
 	ABEM_hooks::HealFromSubsystem(targ, Sys.Healing)
 	AutoCastNearby(Target = targ, Prioritize Combat = True, Prioritize Strongest = True, Require Priority = True)
 Ability: ShieldHeal
@@ -18,5 +19,6 @@ Ability: ShieldHeal
 	ABEM_hooks::HealShieldFromSubsystem(targ, Sys.ShieldHealing)
 	IsToggleTarget(targ)
 	TargetFilterAllied(targ, Allow Null = True)
+	PersistentBeamEffect(targ, #086786, Tractor, Width = 5.0)
 	AutoCastNearby(Target = targ, Prioritize Combat = True, Prioritize Strongest = True, Require Priority = True)
 	ABEM_hooks::TargetRequireCommand(targ)
