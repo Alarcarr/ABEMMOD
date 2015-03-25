@@ -138,7 +138,7 @@ Material: c3
 // Supply and shield transfer beams.
 
 Material: EnergyTransfer
-	Shader: BeamFade
+	Shader: Beam
 	Texture: data/images/sprites/laser_beam.png
 	Lighting: No
 	DepthWrite: No
@@ -147,4 +147,5 @@ Material: EnergyTransfer
 
 Material: ShieldTransfer
 	Inherit: EnergyTransfer
-	Texture: data/images/sprites/railgun.png
+	Shader: NoisyBeam
+	Texture: data/images/sprites/beam3.png
