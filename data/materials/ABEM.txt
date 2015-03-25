@@ -147,5 +147,5 @@ Material: EnergyTransfer
 
 Material: ShieldTransfer
 	Inherit: EnergyTransfer
-	Shader: NoisyBeam
+	Shader: Beam
 	Texture: data/images/sprites/beam3.png
