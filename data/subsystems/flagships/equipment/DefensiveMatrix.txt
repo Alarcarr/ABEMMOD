@@ -1,10 +1,10 @@
-Subsystem: RepairBay
-	Name: Nanite Dispenser
-	BaseColor: #5cf90e
+Subsystem: DefensiveMatrix
+	Name: Defensive Matrix Generator
+	BaseColor: #145cf9
 	Picture: SubsystemButtonArt::8
 	Elevation: 2
 
-	Tags: BaseCost, Category:Equipment, Ability:HullHeal
+	Tags: BaseCost, Category:Equipment, Ability:DefensiveMatrix
 	Tags: HasInternals, ExteriorCore
 	Hull: Flagship, Station
 
@@ -21,11 +21,11 @@ Subsystem: RepairBay
 		Command = 1
 		Power = Power
 
-	HullHealing := 24 * Size
-	TypeColor: #00ff18
-	Power := 15 * Size
+	DefensiveMatrixHP := 100 * Size
+	TypeColor: #145cf9
+	Power := 10 * Size
 	Module: Core
-		Sprite: HyperdenseLaser::0 * #5cf90e
+		Sprite: SLaser * #145cf9
 		Hex.BuildCost := Hex.BuildCost * 3
 		Hex.MaintainCost := Hex.MaintainCost * 3
 		DrawMode: 1
