@@ -16,7 +16,7 @@ Subsystem: DefensiveMatrix
 	Hex.Resistance := 0.4
 	Hex.HP := 20 * HexSize
 	Hex.Mass := HexSize
-	Description: #S_REPAIRBAY_DESC
+	Description: #S_DEFENSIVEMATRIX_DESC
 	Requires:
 		Command = 1
 		Power = Power

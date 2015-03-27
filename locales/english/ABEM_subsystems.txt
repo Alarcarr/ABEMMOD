@@ -35,6 +35,11 @@ S_BOARDSUBSYS: Boarding Strength
 STT_BOARDSUBSYS: <<
 	The strength this subsystem contributes to a boarding defense. Only Boarding Parties contribute to an offensive boarding action; their offensive strength is the same as their defensive strength.
 >>
+S_HULLHEAL: Repair Rate
+S_SHIELDHEAL: Regeneration Rate
+S_SUPPLYTRANSFER: Transfer Rate
+S_SHIELDTRANSFER: Transfer Rate
+S_DEFENSIVEMATRIX: Matrix Capacity
 
 // SUBSYSTEMS HERE!
 
@@ -248,9 +253,43 @@ S_QUANTUM_ARMOR_DESC: <<
 	[img=Minus]High labor cost.[/img]
 >>
 S_REPAIRBAY_DESC: <<
-	Dedicated damage control teams and equipment for the entire fleet. Nearly four times as effective at repairing the flagship as regular crew, but incapable of contributing to the day-to-day operation of the ship.
-
-	Slowly repairs the rest of the fleet. The more ships are in the fleet, the less HP is repaired on each ship.
+	Systems dedicated to assembling and dispensing copious quantities of nanites to repair an allied fleet.
+	
+	[img=Plus]Grants access to the 'Nano-Repair' ability.[/img]
+	[img=MenuIcons::3;20]For an increased build and maintenance cost, multiple Nanite Dispensers can repair multiple fleets simultaneously or focus their repairs on a single fleet.[/img]
+	[img=MenuIcons::3;20][i][bbloc=#ABL_HULLHEAL_DESC/][/i][/img]
+	[img=Minus]Does not contribute to the ship's self-repair capabilities.[/img]
+	[img=Minus]Repair spreading may render the magnitude of the repairs insignificant when healing large fleets.[/img]
+>>
+S_SHIELDREGENERATOR_DESC: <<
+	Systems dedicated to transmitting energy to an allied fleet in a manner that makes it easily usable by its shield generators.
+	
+	[img=Plus]Grants access to the 'Regenerate Shields' ability.[/img]
+	[img=MenuIcons::3;20]For an increased build and maintenance cost, multiple Shield Regenerators can assist multiple fleets simultaneously or focus their regeneration on a single fleet.[/img]
+	[img=MenuIcons::3;20][i][bbloc=#ABL_SHIELDHEAL_DESC/][/i][/img]
+	[img=Minus]Does not contribute to the ship's shields in any way.[/img]
+	[img=Minus]Regeneration spreading may render the magnitude of the regeneration insignificant when healing large fleets.[/img]
+>>
+S_SHIELDTRANSMITTER_DESC: <<
+	A plasma beam emitter which drains plasma from the ship's shields, transmitting it towards an allied flagship for integration in its shields.
+	
+	[img=Plus]Grants access to the 'Transfer Shields' ability.[/img]
+	[img=MenuIcons::3;20]For an increased build and maintenance cost, multiple Shield Transmitters can transfer shields to multiple flagships simultaneously or focus the transfer towards a single ship.[/img]
+	[img=MenuIcons::3;20][i][bbloc=#ABL_SHIELDTRANSFER_DESC/][/i][/img]
+>>
+S_ENERGYTRANSMITTER_DESC: <<
+	A particle beam configured to transfer energy to an allied flagship with remarkable efficiency.
+	
+	[img=Plus]Grants access to the 'Transfer Energy' ability.[/img]
+	[img=MenuIcons::3;20]For an increased build and maintenance cost, multiple Energy Transferral Beams can transfer supplies to multiple flagships simultaneously or focus the transfer towards a single ship.[/img]
+	[img=MenuIcons::3;20][i][bbloc=#ABL_SUPPLYTRANSFER_DESC/][/i][/img]
+>>
+S_DEFENSIVEMATRIX_DESC: <<
+	Generates a highly charged plasma field, acting as a temporary shield. The device is also capable of transmitting the plasma towards an allied flagship, attaching the field to that ship instead.
+	
+	[img=Plus]Grants access to the 'Engage Defensive Matrix' ability.[/img]
+	[img=MenuIcons::3;20]For an increased build and maintenance cost, multiple Defensive Matrix Generators can target several flagships simultaneously, be activated sequentially to avoid the 90-second cooldown, or focus on shielding a single ship for a specific period of time.[/img]
+	[img=MenuIcons::3;20][i][bbloc=#ABL_DEFENSIVEMATRIX_DESC/][/i][/img]
 >>
 S_FLAK_DESC: <<
 	A magnetic cannon that fires explosive shrapnel-filled canisters at immense velocities.
