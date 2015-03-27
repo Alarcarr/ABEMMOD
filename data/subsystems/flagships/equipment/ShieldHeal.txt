@@ -16,7 +16,7 @@ Subsystem: ShieldRegenerator
 	Hex.Resistance := 0.4
 	Hex.HP := 20 * HexSize
 	Hex.Mass := HexSize
-	Description: #S_REPAIRBAY_DESC
+	Description: #S_SHIELDREGENERATOR_DESC
 	Requires:
 		Command = 1
 		Power = Power

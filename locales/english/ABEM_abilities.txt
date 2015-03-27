@@ -109,19 +109,19 @@ ABL_HULLHEAL: Nano-Repair
 ABL_HULLHEAL_DESC: <<
 	Emits a stream of repair nanites towards an allied fleet, repairing their ships.
 	
-	Heals the target fleet, spreading the repairs evenly across the entire fleet. Drains 2 Supply for each HP of healing.
+	Heals the target fleet, spreading the repairs evenly across the entire fleet. Drains 2 Supply for each HP of healing. If inactive, will automatically target the strongest allied fleet currently in combat, then shut down after combat has ceased.
 >>
 ABL_SHIELDHEAL: Regenerate Shields
 ABL_SHIELDHEAL_DESC: <<
 	Transmits a stream of energy towards an allied fleet, which is channeled into the fleet's shield generators, effectively regenerating their shields.
 	
-	Heals the target fleet's shields, spreading the regeneration evenly across all shield-capable ships. Drains 2 Supply for each HP of regeneration.
+	Heals the target fleet's shields, spreading the regeneration evenly across all shield-capable ships. Drains 2 Supply for each HP of regeneration. If inactive, will automatically target the strongest allied fleet currently in combat, then shut down after combat has ceased.
 >>
 ABL_SUPPLYTRANSFER: Transfer Energy
 ABL_SUPPLYTRANSFER_DESC: <<
-	Transmits a stream of energy towards an allied fleet, which is stored in the flagship's batteries.
+	Transmits a stream of energy towards an allied fleet, which is stored in the target fleet's batteries.
 	
-	Transfers Supply to the target flagship.
+	Transfers Supply to the target fleet.
 >>
 ABL_SHIELDTRANSFER: Transfer Shields
 ABL_SHIELDTRANSFER_DESC: <<

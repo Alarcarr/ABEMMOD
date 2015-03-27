@@ -98,6 +98,45 @@ SubsystemStat: BoardingSubsys
 	Color: #ff8000
 	
 	Variable: BoardingStrength
+
+SubsystemStat: HullHealing
+	Name: #S_HULLHEALING
+	Icon: Plus
+	Color: #00ff00
+	Suffix: /s
+
+	Variable: HullHealing
+
+SubsystemStat: ShieldHealing
+	Name: #S_SHIELDHEALING
+	Icon: Plus * #00a0ff
+	Color: #00a0ff
+	Suffix: /s
+
+	Variable: ShieldHealing
+
+SubsystemStat: ShieldTransfer
+	Name: #S_SHIELDTRANSFER
+	Icon: ResourceIcon::5 * #429cff
+	Color: #00a0ff
+	Suffix: /s
+
+	Variable: ShieldTransferRate
+
+SubsystemStat: SupplyTransfer
+	Name: #S_SUPPLYTRANSFER
+	Icon: AttributeIcons::4
+	Color: #f3fc61
+	Suffix: /s
+
+	Variable: SupplyTransferRate
+
+SubsystemStat: DefensiveMatrix
+	Name: #S_DEFENSIVEMATRIX
+	Icon: ResourceIcon::5 * #429cff
+	Color: #00a0ff
+
+	Variable: DefensiveMatrixHP
 	
 // *************************************
 // *********HEX-SPECIFIC STATS**********
