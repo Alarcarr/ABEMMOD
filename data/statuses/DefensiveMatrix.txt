@@ -2,4 +2,4 @@ Status: DefensiveMatrix
 	Name: #STATUS_DEFENSIVEMATRIX
 	Description: #STATUS_DEFENSIVEMATRIX_DESC
 	Icon: techNeutronium * #00aaff
-	ABEM_hooks::AddShieldCapacity(SV_DefensiveMatrix, Start On = True)
+	ABEM_hooks::AddShieldCapacity(SV_DefensiveMatrixHP, Start On = True)

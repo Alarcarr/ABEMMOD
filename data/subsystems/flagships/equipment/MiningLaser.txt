@@ -1,0 +1,40 @@
+Subsystem: MiningLaser
+	Name: #S_MINING_LASER
+	Description: #S_MINING_LASER_DESC
+	BaseColor: #a1692c
+	TypeColor: #a1692c
+	Elevation: 3
+
+	Tags: DefaultUnlock, ScaledCost, Category:Manufacturing, HasInternals, ExteriorCore, Rotatable, StaticMaintenance
+	Tags: Ability:MineAsteroid, Ability:TransferCargo, Ability:DropoffPoint, Ability:AutoMine
+	Hull: Flagship
+
+	Size := HexSize * Hexes
+	Hex.Mass := HexSize
+
+	CargoStorage := Size / 4
+	MiningRate := Size / 28
+	MiningLasers := 1
+
+	PowerUse := Size
+
+	Hex.Resistance := 0.2
+	Hex.HP := 18 * HexSize
+
+	Hex.LaborCost := 0.1 * HexSize
+	Hex.BuildCost := 1.1 * HexSize
+	Hex.MaintainCost := HexSize / 3
+
+	Hook: AddCargoStorage(CargoStorage)
+
+	Assert: Sum.MiningLasers == 1
+		Unique: True
+		Message: #ERROR_ONLY_ONE
+
+	Requires:
+		Command = 1
+		Power = PowerUse
+
+	Module: Core
+		Sprite: Laser::0 * #91692c
+		DrawMode: 1

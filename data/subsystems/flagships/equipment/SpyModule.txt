@@ -4,7 +4,7 @@ Subsystem: SpyModule
 	TypeColor: #fff980
 	Elevation: 3
 
-	Tags: Ability:Infiltrate ,BaseCost, Category:Equipment, HasInternals
+	Tags: Ability:Infiltrate ,BaseCost, Category:Equipment, HasInternals, Disabled
 	Hull: Flagship,Station
 
 	Size := HexSize * Hexes

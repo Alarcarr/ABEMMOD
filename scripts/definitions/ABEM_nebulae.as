@@ -199,7 +199,7 @@ class KillCrew : StatusHook {
 				if(ship.Shield < 0)
 					ship.Shield = 0;
 			}
-			if(ship.blueprint.hasTagActive(RemnantComputer))
+			if(ship.blueprint.hasTagActive(ST_RemnantComputer))
 				return true;
 			if(ship.Shield > 0 && damage.decimal != -1)
 				timeLeft += time;
