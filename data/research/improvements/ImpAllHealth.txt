@@ -27,10 +27,10 @@ Technology: ImpAllHealth2
 	ModAttribute(OrbitalHealthMod, Multiply, 1.2)
 Technology: Further Development
 	Name: (I) Material Development
-	Blurb: +10% HP and DR to Armor
 	Icon: AttributeIcons::6
 	Point Cost: 2000
 	Time Cost: 200
+	Description: #R_INF_HULL_DESC
 	ModAttribute(OrbitalHealthMod, Multiply, 1.1)
 	ResetWhenUnlocked()
 	AddModifier(tag/IsArmor::HpFactor(1.10))

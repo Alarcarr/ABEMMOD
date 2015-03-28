@@ -1,4 +1,4 @@
-﻿R_DEV_FTL_INCOME_DESC: <<
+R_DEV_FTL_INCOME_DESC: <<
 	[i][color=#aaa]Better control over the collection and refinement of FTL energy.[/color][/i]
 
 	Increases empire FTL income by 0.5/s.
@@ -399,7 +399,7 @@ R_CAT_PROPULSION_DESC: <<
 >>
 R_INF_HULL_DESC: <<
 	[color=#aaa][i]Further advances in material sciences allow us to improve our hulls once more.[/i][/color]
-	
+
 	Increases orbital and armor health by 10%. Also increases armor damage resistance by 10%.
 >>
 R_IMP_ORBITAL_DESC: <<
