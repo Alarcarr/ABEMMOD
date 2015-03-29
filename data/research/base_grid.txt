@@ -50,7 +50,6 @@ Grid: Base
 	ZeroPoint: 3,11
 	SysIonCannon: 1,8
 	SysHyperLaser: 2,9
-	ImpAllHealth: 4,0
 	c1: 6,8
 	Antimatter2: 6,9
 	c2: 6,10
@@ -67,7 +66,6 @@ Grid: Base
 	ImpShieldCap2: 8,7
 	CovariantShield: 8,6
 	SysGravityEngine: -6,4
-	ImpDamageSmall: 5,0
 	CrystalineArmor: 9,8
 	ImpSupportCapSmall: 3,-2
 	c3: 4,-2
@@ -220,8 +218,6 @@ Grid: Base
 	Flagship4: 19,4
 	Support4: 14,-7
 	OrbStarForge: -3,-10
-	OrbArtificialPlanetoid: -7,-8
-	ImpCivConstructionRate2: -8,-7
 	OrbRingworld: -9,-7
 	OrbVacuumTelescope: -7,5
 	ImpSpread: 0,7
@@ -231,3 +227,12 @@ Grid: Base
 	SysLiquidArmor: 1,-9
 	ImpArmorHealth: 5,-12
 	NanoArmor: -3,-11
+	ImpDamageSmall: 4,0
+	ImpArmorHealth: 5,0
+	ImpEnergyStorage: 6,6
+	ImpEnergyStorage2: 9,9
+	OrbArtificialPlanetoid: -7,-9
+	ImpAllHealth: -8,-9
+	ImpAllHealth: -8,-8
+	ImpAoE: 15,-1
+	ImpAoE: 7,-2
