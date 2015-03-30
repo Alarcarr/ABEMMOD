@@ -32,7 +32,6 @@ Grid: Base
 	SS: -2,8
 	DevFTLIncome: -4,9
 	ImpThrust: -3,9
-	DevMoney: -2,6
 	DevInfluence: -3,-1
 	DevEnergyIncome: 1,4
 	PoweredArmor: 1,5
@@ -65,7 +64,7 @@ Grid: Base
 	CovariantShield: 8,6
 	SysGravityEngine: -6,4
 	ImpSupportCapSmall: 3,-2
-	c3: 4,-2
+	ImpSupportDamage: 4,-2
 	ImpAllHealth: 6,0
 	ImpFireRate: 7,1
 	ImpAllHealth: 8,0
@@ -122,7 +121,6 @@ Grid: Base
 	DevInfluenceIncome: -6,-1
 	DevInfluenceIncome2: -9,0
 	Flak: 6,-1
-	ImpSupplyRegen: 2,5
 	c1: 5,6
 	ImpSupplyStorage: 3,5
 	c3: 4,7
@@ -178,14 +176,11 @@ Grid: Base
 	OrbitalEnhancement: -2,-6
 	ImpFlagDamage: 2,10
 	VoidRay: 1,11
-	Housing: -4,-4
-	ImpPopLvl2: -5,-5
 	ImpPopLvl2: -6,-5
 	ImpCivHealth: -4,-3
 	ImpDecaySpeed: -6,-6
 	ImpTileDevelopment: -5,-6
 	ImpPlanetSupport: -3,-6
-	ImpPlanetDamage: -4,-6
 	IntelFacilities: -6,-4
 	ImpPlanetSupport: -6,-7
 	OrbitalEnhancement: -4,-7
@@ -245,3 +240,12 @@ Grid: Base
 	ImpShieldCap2: 12,8
 	ImpShieldAll: 12,7
 	ImpArmorHealth: 0,-5
+	ImpEnergyStorage: 2,5
+	ImpTracking: -2,5
+	ImpProjSpeed: -1,6
+	ImpProjSpeed2: 0,8
+	ImpFlagDamage2: 16,5
+	DePlanet: -4,-4
+	ImpPlanetSupport: -4,-5
+	Housing: -5,-5
+	BldMegacity: -5,-8

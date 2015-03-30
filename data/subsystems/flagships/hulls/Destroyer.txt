@@ -7,13 +7,13 @@ Subsystem: Destroyer
 	EvaluationOrder: -200
 	BaseColor: #cc0b04
 
-	AddShipModifier: FlagshipHull::HexLimitFactor(1.5)
+	AddShipModifier: FlagshipHull::HexLimitFactor(1.0)
 	AddShipModifier: FlagshipHull::GridWidthFactor(sqrt(2.0))
 	AddShipModifier: FlagshipHull::GridHeightFactor(sqrt(2.0))
 
 	AddShipModifier: HyperdriveSpeedFactor(0.9)
-	AddShipModifier: MassFactor(1.1)
-	AddShipModifier: BuildCostFactor(1.0 - 0.8 * min(sqrt((ShipSize - 100) / 3000), 1.0))
+	AddShipModifier: MassFactor(1.2)
+	AddShipModifier: BuildCostFactor(1.0 - 0.4 * min(sqrt((ShipSize - 100) / 3000), 1.0))
 	AddShipModifier: FireArcFactor(0.5)
 	AddShipModifier: ArmorHpFactor(1.3)
 	AddShipModifier: SupportCapacityFactor(0.5)

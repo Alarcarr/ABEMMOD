@@ -28,7 +28,7 @@ Technology: ImpAllHealth2
 Technology: Further Development
 	Name: (I) Material Development
 	Icon: AttributeIcons::6
-	Point Cost: 2000
+	Point Cost: 1500
 	Time Cost: 200
 	Description: #R_INF_HULL_DESC
 	ModAttribute(OrbitalHealthMod, Multiply, 1.1)
