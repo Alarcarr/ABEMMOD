@@ -53,7 +53,7 @@ Technology: ImpShieldAll
 	Icon: ActionBarIcons::21 * #4040ff
 	Color: #429f5c
 	Blurb: 10% Shield HP and Regen
-	SecondaryEnergyCost(2000)
+	SecondaryEnergyCost(1500)
 	ResetWhenUnlocked()
 	AddModifier(ShieldCapacityFactor(1.1))
 	AddModifier(ShieldRegenFactor(1.1))
