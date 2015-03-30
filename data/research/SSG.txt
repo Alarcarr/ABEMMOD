@@ -1,0 +1,7 @@
+Technology: SSG
+	Name: #ORB_STELLAR_SHIELD
+	Blurb: #ORB_STELLAR_SHIELD_DESC
+	Icon: ResourceIcon::5 * #429cffff
+	Point Cost: 700
+	Time Cost: 60
+	UnlockTag(StellarShieldOrbital)

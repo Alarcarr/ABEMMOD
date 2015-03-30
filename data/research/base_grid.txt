@@ -239,3 +239,7 @@ Grid: Base
 	ResearchLab: 8,9
 	c2: 9,8
 	SysOreProcessor: -5,-11
+	c3: -4,6
+	SysGravitonCondenser: -5,6
+	c2: -6,7
+	SSG: -6,8
