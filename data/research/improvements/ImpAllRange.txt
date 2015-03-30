@@ -1,7 +1,7 @@
 Technology: ImpAllRange
 	Name: #R_IMP_ALL_RANGE
-	Blurb: #R_IMP_ALL_RANGE_BLURB:5%
-	Description: #R_IMP_ALL_RANGE_DESC:5%:1000
+	Blurb: #R_IMP_ALL_RANGE_BLURB:7%
+	Description: #R_IMP_ALL_RANGE_DESC:7%:1000
 
 	Icon: ActionBarIcons::21
 	Color: #80ffea
@@ -9,14 +9,14 @@ Technology: ImpAllRange
 	Point Cost: 800
 	Time Cost: 180
 
-	AddModifier(tag/Weapon::RangeFactor(1.05))
+	AddModifier(tag/Weapon::RangeFactor(1.07))
 
-	SecondaryEnergyCost(1000)
+	SecondaryEnergyCost(900)
 
 Technology: ImpAllRange2
 	Name: #R_IMP_ALL_RANGE2
-	Blurb: #R_IMP_ALL_RANGE_BLURB:10%
-	Description: #R_IMP_ALL_RANGE_DESC:10%:1500
+	Blurb: #R_IMP_ALL_RANGE_BLURB:14%
+	Description: #R_IMP_ALL_RANGE_DESC:14%:1500
 
 	Icon: ActionBarIcons::21
 	Color: #80ffea
@@ -24,6 +24,6 @@ Technology: ImpAllRange2
 	Point Cost: 1200
 	Time Cost: 180
 
-	AddModifier(tag/Weapon::RangeFactor(1.1))
+	AddModifier(tag/Weapon::RangeFactor(1.14))
 
-	SecondaryEnergyCost(1500)
+	SecondaryEnergyCost(1400)

@@ -78,8 +78,8 @@ Grid: Base
 	ImpArmorDR: 6,4
 	ImpFlagDamage: 7,4
 	ImpAllRange2: 9,-1
-	ImpProjSpeed: 9,1
-	ImpFireRate: 10,-1
+	BoardingParty: 9,1
+	ImpSpread: 10,-1
 	ImpAllHealth2: 10,1
 	ImpAllRange: 5,-4
 	ImpSupportCapSmall: 5,-3
@@ -101,7 +101,6 @@ Grid: Base
 	ImpSupportDamage: 12,-7
 	InfiniteSupport: 13,-8
 	c3: 9,7
-	ImpShieldAll: 10,7
 	c3: 15,4
 	ImpArmorHealth2: 16,4
 	ImpAllHealth: 17,4
@@ -125,7 +124,7 @@ Grid: Base
 	Flak: 6,-1
 	ImpSupplyRegen: 2,5
 	c1: 5,6
-	DevEnergyIncome: 3,5
+	ImpSupplyStorage: 3,5
 	c3: 4,7
 	SysAntimatterGen: 4,5
 	SysShieldGen: 5,7
@@ -144,7 +143,6 @@ Grid: Base
 	PlanetDev: -2,-4
 	c1: 1,-4
 	c2: 2,-4
-	ImpFactoryLabor: 0,-5
 	ImpAllHealth: 2,-5
 	ImpFactoryLabor: 0,-6
 	ImpCivConstructionRate: 1,-6
@@ -200,13 +198,11 @@ Grid: Base
 	Support3: 11,-7
 	ImpSupplyStorage: 2,2
 	ImpSupportSupplyUse: 2,4
-	ImpSupplyStorage: 4,4
 	DualMount: 6,1
 	DevDefenseIncome: -3,-8
 	ImpPlanetSupport: -4,-9
 	OrbitalEnhancement: -4,-10
 	Senate: -6,0
-	BoardingParty: 9,0
 	SysMuonCannon: 0,6
 	ImpDamage: 14,-1
 	ImpDamage: 11,0
@@ -243,3 +239,9 @@ Grid: Base
 	SysGravitonCondenser: -5,6
 	c2: -6,7
 	SSG: -6,8
+	ImpDamage: 9,0
+	ImpShieldCap2: 10,7
+	ImpShieldReg2: 11,8
+	ImpShieldCap2: 12,8
+	ImpShieldAll: 12,7
+	ImpArmorHealth: 0,-5
