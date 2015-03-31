@@ -18,6 +18,8 @@ Trait: Mechanoid
 	TriggerHomeworld(MorphSystemPlanetResource(3, Iron))
 	TriggerHomeworld(AddStatus(MonoHomeworld))
 
+	ReplaceTechnologyNodes(ImpPopLvl3, MechPop)
+	ReplaceTechnologyNodes(ImpPopLvl2, MechPop)
 	RemoveTechnologyNodes(SlavePopulation)
 	ModAttribute(PopulationGrowthFactor, Multiply, 0)
 	ModAttribute(PopulationDecayFactor, Multiply, 0)

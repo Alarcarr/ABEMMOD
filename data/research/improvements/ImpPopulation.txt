@@ -33,3 +33,11 @@ Technology: TileDev
 	Time Cost: 60
 	Icon: DesignationIcons::10
 	ModAttribute(TileDevelopmentFactor, AddBase, 0.3)
+Technology: MechPop
+	Name: Population Matrix
+	Description: Reduced Labor cost for Mecha Pop
+	Icon: ResourceIconsSmall::3
+	Point Cost: 1000
+	Time Cost: 300
+	SecondaryEnergyCost(1500)
+	ModAttribute(MechPopulationBuilt, Multiply, 0.9)

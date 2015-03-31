@@ -1,0 +1,14 @@
+Technology: AdvShield
+	Name: Advanced Shielding
+	Point Cost: 1000
+	Time Cost: 120
+	Icon: FtlGen
+	Blurb: +20% Shield  HP
+	Class: Unlock
+	Color: #bf01ff
+	AddModifier(ShieldCapacityFactor(1.2))
+	SecondaryEnergyCost(1200)
+	UnlockSubsystem(ShieldRegenerator)
+	UnlockSubsystem(ShieldTransmitter)
+	UnlockSubsystem(ShieldBattery)
+	UnlockSubsystem(DefensiveMatrix)
