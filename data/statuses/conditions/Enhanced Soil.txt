@@ -1,0 +1,4 @@
+Status: SoilEnhanced
+	Name: SoilEnhanced
+	Visible To: Owner
+	Icon: PlanetImage

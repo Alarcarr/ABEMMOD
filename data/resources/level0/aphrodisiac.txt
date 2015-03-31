@@ -9,7 +9,7 @@ Resource: Aphrodisiac
 	Pressure: 5 Money
 	Pressure: 5 Influence
 	Affinity: Money + Influence
-	Require Contestation: 30
+	Require Contestation: 20
 	Unique: True
 	AddDummyResource(StellarWater)
 	ModCivResourceMult(Labor, -0.5)

@@ -1,6 +1,6 @@
 Building: DefenseFactory
 	Name: Command Center
-	Sprite: DesignationIcons::3
+	Sprite: orbital
 	Base Cost: 300
 	Size: 2x2
 	Tile Cost: 100

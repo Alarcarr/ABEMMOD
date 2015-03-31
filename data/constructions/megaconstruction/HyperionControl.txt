@@ -1,0 +1,10 @@
+Construction: HyperionControl
+	Name: Hyperion Fleet Control
+	Icon: ResourceIcons::38
+	Build Cost: 1000
+	Labor Cost: 400
+
+	RequireNotStatus(HyperionFleet)
+	ConsumeCargo(Ore, 2000)
+	ConsumeEnergy(1000)
+	AddStatus(HyperionFleet)

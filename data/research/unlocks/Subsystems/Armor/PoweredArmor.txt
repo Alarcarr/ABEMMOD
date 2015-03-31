@@ -6,5 +6,7 @@ Technology: PoweredArmor
 	Description: #R_POWERED_ARMOR_DESC
 	Point Cost: 800
 	Time Cost: 120
+	Blurb: +10% Armor HP
+	AddModifier(tag/IsArmor::HpFactor(1.10))
 	UnlockSubsystem(PoweredArmor)
 	UnlockSubsystem(PoweredArmor)

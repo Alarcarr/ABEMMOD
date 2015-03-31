@@ -1,0 +1,11 @@
+Construction: SoilEnhancement
+	Name: Expand Surface
+	Target: a = 
+	Labor Cost: 250
+	Icon: PlanetImage
+	Category: Infrastructure
+	RequireNotTrait(StarChildren)
+	ConsumeCargo(Ore, 1000)
+	RequireNotStatus(SoilEnhanced)
+	AddSurfaceArea(Artificial, (4,8), Separate = False, Developed = False)
+	AddStatus(SoilEnhanced)

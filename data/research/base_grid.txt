@@ -20,11 +20,6 @@ Grid: Base
 	DevBudget: -4,-1
 	c2: -1,2
 	FTLT: -2,3
-	DevFTLIncome: -2,4
-	ImpThrust: -3,3
-	IonEngine: -3,4
-	ImpThrust: -4,4
-	ImpThrust: -5,4
 	SysSkipDrive: -3,6
 	DevFTLIncome: -4,7
 	DevFTL: -3,7
@@ -62,7 +57,6 @@ Grid: Base
 	ImpShieldReg: 7,7
 	ImpShieldCap2: 8,7
 	CovariantShield: 8,6
-	SysGravityEngine: -6,4
 	ImpSupportCapSmall: 3,-2
 	ImpSupportDamage: 4,-2
 	ImpAllHealth: 6,0
@@ -104,8 +98,6 @@ Grid: Base
 	ImpArmorHealth2: 16,4
 	ImpAllHealth: 17,4
 	ImpArmorHealth: 18,4
-	SlavePopulation: -6,2
-	ImpThrust2: -7,4
 	ImpAllRange: 12,0
 	AdmiralCrew: 13,0
 	SysGravitonCondenser: 17,5
@@ -147,7 +139,6 @@ Grid: Base
 	ImpArmorHealth: 2,-6
 	DevEnergyIncome: 3,10
 	ImpEnergyStorage: 2,3
-	DevFTLIncome: -3,5
 	ImpTileDevelopment: -3,-4
 	ImpAllHealth: 3,-7
 	ImpArmorDR2: 3,-8
@@ -162,9 +153,6 @@ Grid: Base
 	ImpAllHealth2: 4,-10
 	QuantumArmor: 4,-11
 	ImpArmorHealth: 1,-10
-	c2: 2,-10
-	c1: 3,-10
-	Further Development: 2,-11
 	EngBay: 4,-7
 	c1: -1,-7
 	ImpFactoryLabor2: -1,-8
@@ -206,11 +194,9 @@ Grid: Base
 	Support4: 14,-7
 	OrbStarForge: -3,-10
 	OrbRingworld: -9,-7
-	OrbVacuumTelescope: -7,5
 	ImpSpread: 0,7
 	ModAugmentReload: 7,-1
 	ModAugmentDamage: 12,-1
-	ModAugmentSupply: 9,-6
 	ImpArmorHealth: 5,-12
 	NanoArmor: -3,-11
 	ImpDamageSmall: 4,0
@@ -247,5 +233,22 @@ Grid: Base
 	ImpFlagDamage2: 16,5
 	DePlanet: -4,-4
 	ImpPlanetSupport: -4,-5
-	Housing: -5,-5
 	BldMegacity: -5,-8
+	SysSelfDestruct: 4,4
+	c3: -3,3
+	ImpThrust: -4,3
+	IonEngine: -5,3
+	SlavePopulation: -5,0
+	ImpThrust: -6,3
+	SysGravityEngine: -7,3
+	ImpThrust2: -8,3
+	Further Development: 5,-13
+	Further Development: -1,-15
+	c2: 2,-10
+	c1: 3,-10
+	ImpProjSpeed: 0,5
+	Housing: -5,-5
+	DevFTLIncome: -3,5
+	ImpAllRange: -2,4
+	ImpSupportDamage: 6,-7
+	ModAugmentSupply: 4,-1

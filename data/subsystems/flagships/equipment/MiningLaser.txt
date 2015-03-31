@@ -23,7 +23,7 @@ Subsystem: MiningLaser
 
 	Hex.LaborCost := 0.1 * HexSize
 	Hex.BuildCost := 1.1 * HexSize
-	Hex.MaintainCost := HexSize / 3
+	Hex.MaintainCost := HexSize / 5
 
 	Hook: AddCargoStorage(CargoStorage)
 
