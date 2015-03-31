@@ -119,7 +119,7 @@ class ReactorOverloadHook : StatusHook {
 };
 
 class TargetRequireCommand : TargetFilter {
-	Document doc("Restricts target to objects with a leader AI. (Flagships, orbitals and planets.)");
+	Document doc("Restricts target to objects with a leader AI. (Flagships, certain orbitals and planets.)");
 	Argument targ(TT_Object);
 
 	string getFailReason(Empire@ emp, uint index, const Target@ targ) const override {

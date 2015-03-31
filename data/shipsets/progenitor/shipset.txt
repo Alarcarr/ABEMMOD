@@ -1,0 +1,15 @@
+Shipset: Progenitor
+	Name: Progenitor
+	Available: Yes
+	
+	Hull: RWTitan
+	Hull: RWBattleship
+	Hull: RWBattlecruiser
+	Hull: RWHeavyCarrier
+	Hull: RWCruiser
+	Hull: RWDestroyer
+	Hull: RWFrigate
+	Hull: RWCorvette
+	Hull: RWStation
+	//Hull: RWSpecial
+	

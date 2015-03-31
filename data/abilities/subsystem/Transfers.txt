@@ -8,7 +8,7 @@ Ability: SupplyTransfer
 	IsToggleTarget(targ)
 	TargetFilterNotSelf(targ)
 	TargetFilterAllied(targ, Allow Null = True)
-	PersistentBeamEffect(targ, #56c3c3, EnergyTransfer, Width = 1.0)
+	PersistentBeamEffect(targ, #56c3c3, EnergyTransfer, Width = 0.125)
 	ABEM_hooks::TransferSupplyFromSubsystem(targ, Sys.SupplyTransferRate)
 Ability: ShieldTransfer
 	Name: #ABL_SHIELDTRANSFER
@@ -20,5 +20,5 @@ Ability: ShieldTransfer
 	IsToggleTarget(targ)
 	TargetFilterAllied(targ, Allow Null = True)
 	TargetFilterNotSelf(targ)
-	PersistentBeamEffect(targ, #086786, ShieldTransfer, Width = 1.0)
+	PersistentBeamEffect(targ, #086786, ShieldTransfer, Width = 0.25)
 	ABEM_hooks::TargetRequireCommand(targ)

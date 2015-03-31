@@ -1,0 +1,32 @@
+Preset: Progenitors
+	Name: #RACE_PROGENITORS
+	Tagline: #RACE_PROGENITORS_TAGLINE
+	Lore: #RACE_PROGENITORS_LORE
+	Portrait: emp_portrait_cloak
+	Shipset: Progenitor
+	
+	Trait: Communism
+	Trait: Gate
+	Trait: Progenitors
+	
+Preset: Pacifists
+	Name: #RACE_PACIFISTS
+	Tagline: #RACE_PACIFISTS_TAGLINE
+	Lore: #RACE_PACIFISTS_LORE
+	Portrait: emp_portrait_slug
+	Shipset: Volkur
+	
+	Trait: Capitalism
+	Trait: Hyperdrive
+	Trait: Pacifists
+	
+Preset: Berserkers
+	Name: #RACE_BERSERKERS
+	Tagline: #RACE_BERSERKERS_TAGLINE
+	Lore: #RACE_BERSERKERS_LORE
+	Portrait: emp_portrait_berserker
+	Shipset: Gevron
+	
+	Trait: Empire
+	Trait: Slipstream
+	Trait: Berserkers

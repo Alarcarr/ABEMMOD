@@ -1,0 +1,49 @@
+Material: TyrantTemplate
+	Shader: SupportShip
+	Shininess: 12
+	
+//Takes 1 texture, a normal map
+Material: GhoooostTyrantTemplate
+	Shader: GhoooostShip
+	Shininess: 12
+	Alpha: True
+
+Material: TyrantBlueprint
+	Shader: Blueprint
+
+Material: TyrantSmall
+	Inherit: TyrantTemplate
+	Texture: data/shipsets/tyrant/support_small_diffuse.png
+	Texture2: data/shipsets/tyrant/support_small_normal.png
+	Texture3: data/shipsets/tyrant/support_small_specular.png
+	Texture4: data/shipsets/tyrant/support_small_gloss.png
+	Texture5: data/images/skybox.png
+	Texture6: data/shipsets/tyrant/support_small_masks.png
+
+Material: TyrantSmallBlue
+	Inherit: TyrantBlueprint
+	Texture: data/shipsets/tyrant/support_small_diffuse.png
+
+Material: TyrantMedium
+	Inherit: TyrantTemplate
+	Texture: data/shipsets/tyrant/support_medium_diffuse.png
+	Texture2: data/shipsets/tyrant/support_medium_normal.png
+	Texture3: data/shipsets/tyrant/support_medium_specular.png
+	Texture4: data/shipsets/tyrant/support_medium_gloss.png
+	Texture5: data/images/skybox.png
+	Texture6: data/shipsets/tyrant/support_medium_masks.png
+
+Material: TyrantMediumSpooky
+	Inherit: GhoooostTyrantTemplate
+	Texture: data/shipsets/tyrant/support_medium_normal.png
+
+Material: TyrantMediumBlue
+	Inherit: TyrantBlueprint
+	Texture: data/shipsets/tyrant/support_medium_diffuse.png
+
+//Material: TyrantFlagship
+//	Shader: GlowNormalLighting
+//	Texture: data/images/ships/flagship.png
+//	Texture2: data/images/ships/flagship_nrm.png
+//	Shininess: 20
+

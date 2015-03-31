@@ -19,3 +19,4 @@ Camp: BlackHoleCamp
 		Material: Flagship
 		Verb: #VERB_PICKUP_GUARDIAN
 		SpawnAnomaly(Type = BlackHole)
+		ABEM_races::CannotOverrideProtection()

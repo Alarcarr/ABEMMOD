@@ -1,0 +1,13 @@
+Shipset: Tyrant
+	Name: Tyrant
+	Available: No
+	
+	Hull: TyrantFrigate
+	Hull: TyrantDestroyer
+	Hull: TyrantCruiser
+	Hull: TyrantBattlecruiser
+	Hull: TyrantBattleship
+	Hull: TyrantTitan
+	Hull: TyrantHeavyCarrier
+	Hull: TyrantSpooky
+	Hull: TyrantSpecial
