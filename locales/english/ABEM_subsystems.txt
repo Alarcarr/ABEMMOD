@@ -398,3 +398,26 @@ S_HAULER_HULL_DESC: <<
 	[img=Minus]Base fleet effectiveness is reduced by 50%.[/img]
 	[img=MenuIcons::3;20]Cannot be used on ships under size 50.[/img]
 >>
+S_AUGMENT_RELOAD: Coolant System
+S_AUGMENT_RELOAD_DESC: <<
+	Augmenting the weapon's mechanism for reloading and cooling, faster fire rates can be achieved at the cost of fragility.
+
+	[img=Plus]Increases [b][color=#c680ff]reload speed[/color][/b] by 20%.[/img]
+	[img=Minus]Decreases [b][color=#80ff80]health[/color][/b] by 10%.[/img]
+>>
+
+S_AUGMENT_DAMAGE: Payload Amplifier
+S_AUGMENT_DAMAGE_DESC: <<
+	Augmenting the weapon's payload and energy allows for more damage to be dealt at the cost of range.
+
+	[img=Plus]Increases [b][color=#ff8000]damage[/color][/b] by 25%.[/img]
+	[img=Minus]Decreases [b][color=#c680ff]range[/color][/b] by 20%.[/img]
+>>
+
+S_AUGMENT_SUPPLY: Smoothed Mechanism
+S_AUGMENT_SUPPLY_DESC: <<
+	Augmenting the weapon's delivery and focusing systems decreases the supply cost of firing it at the cost of flexibilty and speed.
+
+	[img=Plus]Decreases [b][color=#fefc61]supply cost[/color][/b] to fire by 30%.[/img]
+	[img=Minus]Decreases [b]turret firing arc[/b] by 50%, where appropriate.[/img]
+>>
