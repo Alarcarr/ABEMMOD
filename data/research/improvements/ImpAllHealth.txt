@@ -6,7 +6,7 @@ Technology: ImpAllHealth
 	Icon: AttributeIcons::6
 	Color: #80ff80
 
-	Point Cost: 1000
+	Point Cost: 700
 	Time Cost: 180
 
 	AddModifier(HpFactor(1.1))
@@ -20,7 +20,7 @@ Technology: ImpAllHealth2
 	Icon: AttributeIcons::6
 	Color: #80ff80
 
-	Point Cost: 1500
+	Point Cost: 1000
 	Time Cost: 180
 
 	AddModifier(HpFactor(1.2))

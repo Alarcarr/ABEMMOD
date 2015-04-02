@@ -1,0 +1,60 @@
+Subsystem: Swarmer
+	Name: Swarmer
+	Description: <<
+		A concealed tube of rockets rapidly extends, launches a volley of short range rockets, and receeds to reload.
+
+		[img=Plus]High [b][color=#ff8080]damage[/color][/b].[/img]
+		[img=Plus]No firing arc limitations.[/img]
+		[img=Plus]Very effective at piercing armor.[/img]
+		[img=Minus]Must reload after several shots.[/img]
+		[img=Minus]High [b][color=#fefc61]supply cost[/color][/b].[/img]
+	>>
+	BaseColor: #f94694
+	TypeColor: #f94694
+	Picture: SubsystemButtonArt::1
+	Elevation: 2
+
+	Tags: BaseCost
+	Tags: WeaponBase, MissileBase, Category:Weapons, Rotatable
+	Tags: ExteriorCore, Weapon, DefaultUnlock, HasInternals, MainDPS, Homing
+	Hull: Flagship, Station
+
+	Size := HexSize * Hexes
+	Range := Size + 200
+	Damage := Size * 1
+	Reload := 4
+	Speed := max(65, Range / 12)
+	Tracking := 6.0
+	SupplyCost := Size * 7.0
+	out DPS := (Damage * 8) / (Reload * 2)
+	out SupplyDrain := SupplyCost / 2
+
+	Hex.HP := 18 * HexSize
+	Hex.Resistance := 0.2
+	Hex.Mass := HexSize
+	Requires:
+		Command = 1
+
+	Module: Default
+
+	Module: Core
+		Hex.HP := Hex.HP * 2
+		Hex.BuildCost := 5.0 * Hex.BuildCost
+		Hex.Mass := 5.0 * Hex.Mass
+
+		Sprite: RocketPod*#7d13ff
+		DrawMode: 1
+
+		Hex.DamageResist := ShipSize / 64.0
+		Effect: DamageResist
+			Resist = Hex.DamageResist
+
+	Effector: Rockets
+		Range = Range
+		Damage = Damage
+		FireDelay = Reload / 8
+		PodSize = 16
+		Reload = Reload
+		Speed = Speed
+		Tracking = Tracking
+		SupplyCost = SupplyCost * (Reload / 8)

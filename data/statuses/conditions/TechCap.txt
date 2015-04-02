@@ -1,0 +1,5 @@
+Status: TechCap
+	Name: TechCapital
+	AddResource(Research, 10)
+	ModCivResourceMult(Research, 0.5)
+	ModExistingPressure()

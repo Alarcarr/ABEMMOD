@@ -1,5 +1,5 @@
-Subsystem: Hauler
-	Name: Hauler Hull
+Subsystem: Miner
+	Name: Miner Hull
 	Description: #S_HAULER_HULL_DESC
 
 	Tags: Applied:Hull, Category:Hulls, NoCore,DefaultUnlock
@@ -14,7 +14,7 @@ Subsystem: Hauler
 	AddShipModifier: ShieldCapacityFactor(1.5)
 	AddShipModifier: SupportCapacityFactor(10)
 	AddShipModifier: ArmorHpFactor(1)
-	AddShipModifier: DamageFactor(0.2)
+	AddShipModifier: DamageFactor(0.1)
 	AddShipModifier: MaintCostFactor(0.20)
 	AddShipModifier: SupplyCapacityFactor(0)
 

@@ -1,0 +1,45 @@
+Subsystem: FighterHull
+	Tags: Applied:Hull, Category:Hulls, NoCore
+	Name: Fighter
+	Hull: Support
+	EvaluationOrder: -200
+	BaseColor: #cc0b04
+	
+	
+	AddShipModifier: SupportHull::HexLimitFactor(0.26)
+	AddShipModifier: SupportHull::GridWidthFactor(sqrt(0.5))
+	AddShipModifier: SupportHull::GridHeightFactor(sqrt(0.5))
+	
+	AddShipModifier: MassFactor(0.7)
+	AddShipModifier: ArmorHpFactor(0.5)
+	AddShipModifier: BuildCostFactor(0.7)
+	AddShipModifier: FireArcFactor(1.5)
+	Assert: ShipSize <= 5
+		Message: #ERROR_MIN_SIZE:$1:100
+	Module: Default
+		Sprite: DesignationIcons::16
+		DrawMode: 3
+		
+Subsystem: MFrigate
+	Tags: Applied:Hull, Category:Hulls, NoCore
+	Name: Missile Frigate
+	Hull: Support
+	EvaluationOrder: -200
+	BaseColor: #cc0b04
+	
+	
+	AddShipModifier: SupportHull::HexLimitFactor(0.40)
+	AddShipModifier: SupportHull::GridWidthFactor(sqrt(0.5))
+	AddShipModifier: SupportHull::GridHeightFactor(sqrt(0.5))
+	
+	AddShipModifier: MassFactor(1)
+	AddShipModifier: ArmorHpFactor(1)
+	AddShipModifier: BuildCostFactor(1.0)
+	AddShipModifier: FireArcFactor(0.2)
+	AddShipModifier: SupportHull::SupplyCostFactor(0.5)
+	Assert: ShipSize >= 10
+		
+		Message: #ERROR_MIN_SIZE:$1:10
+	Module: Default
+		Sprite: DesignationIcons::16
+		DrawMode: 3		

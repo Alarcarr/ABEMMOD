@@ -1,9 +1,10 @@
-Construction: SoilEnhancement
+Construction: Terraforming
 	Name: Expand Surface
 	Target: a = 
 	Labor Cost: 250
 	Icon: PlanetImage
-	Category: Infrastructure
+	Category: Upgrades
+	Description: WIP Add 32 tiles to the planet
 	RequireNotTrait(StarChildren)
 	ConsumeCargo(Ore, 1000)
 	RequireNotStatus(SoilEnhanced)

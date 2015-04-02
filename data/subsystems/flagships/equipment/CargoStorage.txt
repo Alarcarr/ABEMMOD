@@ -8,7 +8,7 @@ Subsystem: CargoStorage
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes
-	CargoStorage := Size * 4
+	CargoStorage := Size * 5
 
 	Hook: AddCargoStorage(CargoStorage)
 
@@ -16,9 +16,9 @@ Subsystem: CargoStorage
 	Hex.HP := 18 * HexSize
 	Hex.Mass := HexSize * 3
 
-	Hex.LaborCost := 0.1 * HexSize
-	Hex.BuildCost := 1.1 * HexSize
-	Hex.MaintainCost := HexSize / 3
+	Hex.LaborCost := 0.5 * HexSize
+	Hex.BuildCost := 0.5 * HexSize
+	Hex.MaintainCost := HexSize / 10
 
 	Module: Default
 		Sprite: SupplyStorage * #91692c

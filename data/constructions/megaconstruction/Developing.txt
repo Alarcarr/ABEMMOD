@@ -1,0 +1,10 @@
+Construction: Developing
+	Name: Develop 25 Tiles
+	Target: a = 
+	Labor Cost: 25
+	Icon: PlanetImage
+	Category: Infrastructure
+	ConsumeEnergy(100)
+	DevelopTiles(20)
+	RequireNotTrait(StarChildren)
+	ConsumeCargo(Ore, 200)

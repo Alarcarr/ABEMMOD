@@ -3,6 +3,9 @@ Construction: HyperionControl
 	Icon: ResourceIcons::38
 	Build Cost: 1000
 	Labor Cost: 400
+	Category: Orbital Modules
+	Target: planet = Empire
+	Description: Increases planet fleet support by over 9k
 
 	RequireNotStatus(HyperionFleet)
 	ConsumeCargo(Ore, 2000)

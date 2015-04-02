@@ -12,4 +12,4 @@ Template: tag/Weapon, !tag/SupportHull
 		AddModifier: optional BeamDamageFactor(2)
 		AddModifier: optional ReloadFactor(0.5)
 		AddModifier: optional PowerUseFactor(2)
-		AddModifier: optional SupplyCostFactor(2.0)
+		AddModifier: SupplyCostFactor(2.5)

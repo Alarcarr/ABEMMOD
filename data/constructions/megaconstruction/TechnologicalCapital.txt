@@ -1,0 +1,14 @@
+Construction: TechnologicalCapital
+	Name: TechnologicalCapital
+	Build Cost: 1000
+	Labor Cost: 400
+	Maintenance Cost: 100
+	Target: a = Object
+	Icon: AncientRuin
+	Category: Infrastructure
+	Description: WIP
+	RequireNotStatus(TechCap)
+	TargetFilterNotStatus(a, TechCap)
+	TargetFilterNotStatus(a, GalaxyMall)
+	TargetFilterNotStatus(a, UnitedResearch)
+	AddStatus(TechCap)

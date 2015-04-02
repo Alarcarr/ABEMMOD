@@ -111,10 +111,7 @@ Grid: Base
 	DevInfluenceIncome: -6,-1
 	DevInfluenceIncome2: -9,0
 	Flak: 6,-1
-	c1: 5,6
-	ImpSupplyStorage: 3,5
 	c3: 4,7
-	SysAntimatterGen: 4,5
 	SysShieldGen: 5,7
 	ImpAllRange: 3,7
 	ImpFireRate: 3,8
@@ -133,7 +130,6 @@ Grid: Base
 	c2: 2,-4
 	ImpAllHealth: 2,-5
 	ImpFactoryLabor: 0,-6
-	ImpCivConstructionRate: 1,-6
 	ImpArmorHealth: 2,-6
 	DevEnergyIncome: 3,10
 	ImpEnergyStorage: 2,3
@@ -142,7 +138,6 @@ Grid: Base
 	ImpArmorDR2: 3,-8
 	DevCultivation: -5,-4
 	ImpArmorHealth: 2,-8
-	ImpAllHealth: 1,-7
 	SysNeutronArmor: 3,-9
 	ModBulkhead: 3,-6
 	Support: 6,-5
@@ -178,7 +173,6 @@ Grid: Base
 	BldPlanetaryEngine: -6,-8
 	Support3: 11,-7
 	ImpSupplyStorage: 2,2
-	ImpSupportSupplyUse: 2,4
 	DualMount: 6,1
 	DevDefenseIncome: -3,-8
 	ImpPlanetSupport: -4,-9
@@ -205,7 +199,6 @@ Grid: Base
 	ImpAllHealth: -8,-8
 	ImpAoE: 15,-1
 	ImpAoE: 7,-2
-	CompositeArmor: 1,-9
 	SysLiquidArmor: 0,-11
 	c1: 0,-12
 	ImpArmorHealth: -1,-13
@@ -223,7 +216,6 @@ Grid: Base
 	ImpShieldCap2: 12,8
 	ImpShieldAll: 12,7
 	ImpArmorHealth: 0,-5
-	ImpEnergyStorage: 2,5
 	ImpTracking: -2,5
 	ImpProjSpeed: -1,6
 	ImpProjSpeed2: 0,8
@@ -231,7 +223,6 @@ Grid: Base
 	DePlanet: -4,-4
 	ImpPlanetSupport: -4,-5
 	BldMegacity: -5,-8
-	SysSelfDestruct: 4,4
 	c3: -3,3
 	ImpThrust: -4,3
 	IonEngine: -5,3
@@ -252,3 +243,11 @@ Grid: Base
 	SysGravitonCondenser: -7,7
 	DevEnergy: -5,6
 	AdvShield: 7,7
+	CompositeArmor: 1,-6
+	ImpAllHealth: 1,-7
+	ImpAllRange: 0,9
+	DevEnergy: 2,4
+	SysShieldGen: 2,5
+	ImpShieldCap: 3,5
+	SysAntimatterGen: 4,5
+	c1: 5,6
