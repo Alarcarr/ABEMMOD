@@ -1,7 +1,7 @@
 Technology: ImpAllRange
 	Name: #R_IMP_ALL_RANGE
 	Blurb: #R_IMP_ALL_RANGE_BLURB:7%
-	Description: #R_IMP_ALL_RANGE_DESC:7%:1000
+	Description: #R_IMP_ALL_RANGE_DESC:7%:900
 
 	Icon: ActionBarIcons::21
 	Color: #80ffea
@@ -16,7 +16,7 @@ Technology: ImpAllRange
 Technology: ImpAllRange2
 	Name: #R_IMP_ALL_RANGE2
 	Blurb: #R_IMP_ALL_RANGE_BLURB:14%
-	Description: #R_IMP_ALL_RANGE_DESC:14%:1500
+	Description: #R_IMP_ALL_RANGE_DESC:14%:1400
 
 	Icon: ActionBarIcons::21
 	Color: #80ffea
