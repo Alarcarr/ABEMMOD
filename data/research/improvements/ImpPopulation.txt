@@ -34,10 +34,19 @@ Technology: TileDev
 	Icon: DesignationIcons::10
 	ModAttribute(TileDevelopmentFactor, AddBase, 0.3)
 Technology: MechPop
-	Name: Population Matrix
-	Description: Reduced Labor cost for Mecha Pop
+	Name: Population Matrix Enhancements
+	Description: #R_MECHPOP_DESC
 	Icon: ResourceIconsSmall::3
 	Point Cost: 1000
 	Time Cost: 300
 	SecondaryEnergyCost(1500)
-	ModAttribute(MechPopulationBuilt, Multiply, 0.9)
+	ModAttribute(MechPopulationBuilt, Add, -5)
+Technology: InfMechPop
+	Name: (I) Improved Population Matrix
+	Description: #R_INF_MECHPOP_DESC
+	Icon: ResourceIconsSmall::3
+	Point Cost: 2000
+	Time Cost: 300
+	ResetWhenUnlocked()
+	SecondaryMoneyCost(6000)
+	ModAttribute(MechPopulationBuilt, Add, -10)

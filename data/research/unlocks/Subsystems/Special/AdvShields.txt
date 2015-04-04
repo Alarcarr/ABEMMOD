@@ -1,9 +1,10 @@
 Technology: AdvShield
-	Name: Advanced Shielding
+	Name: Advanced Shield Manipulation
 	Point Cost: 1000
 	Time Cost: 120
 	Icon: FtlGen
-	Blurb: +20% Shield  HP
+	Blurb: +20% Shield HP, Shield Tech
+	Description: #R_ADV_SHIELD_DESC
 	Class: Unlock
 	Color: #bf01ff
 	AddModifier(ShieldCapacityFactor(1.2))

@@ -392,7 +392,7 @@ R_CAT_POLITICS_DESC: <<
 	[color=#aaa][i]I will not watch as this Republic that has stood for a thousand years is split in two! (Also known as the art of saying very little with as many words as possible.)[/i][/color]
 >>
 R_CAT_INDUSTRY_DESC: <<
-	[color=#aaa][i]Discovering a method for building galaxy-sized starships.[/i][/color]
+	[color=#aaa][i]Discovering a method for building galaxy-sized starships, one star at a time.[/i][/color]
 >>
 R_CAT_PROPULSION_DESC: <<
 	[color=#aaa][i]Remember, children, fasten your seatbelts before you go to Ludicrous--- AAAAARGH![/i][/color]
@@ -406,6 +406,20 @@ R_IMP_ORBITAL_DESC: <<
 	[color=#aaa][i]Improvements to the materials used in the construction of space stations.[/i][/color]
 	
 	Increases the health of orbitals by 30%, and the damage of Station weapons by 20%.
+>>
+R_MECHPOP_DESC: <<
+	[color=#aaa][i]Advancements in programming and assembly of new units allow us to more quickly and easily assign them to new tasks.[/i][/color]
+	
+	Reduces the construction cost of new population by 12.5 Labor.
+	
+	[color=#42b4bd][b]Alternate Unlock:[/b] Spend 1500 energy.[/color]
+>>
+R_INF_MECHPOP_DESC: <<
+	[color=#aaa][i]Further refinements to unit programming increase the efficiency of constructing more units.[/i][/color]
+	
+	Reduces the construction cost of new population by 25 Labor.
+	
+	[color=#d1cb6a][b]Alternate Unlock:[/b] Spend §6M.[/color]
 >>
 	
 	
