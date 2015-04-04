@@ -10,18 +10,14 @@ Subsystem: Miner
 	AddShipModifier: FlagshipHull::GridWidthFactor(sqrt(1.2))
 	AddShipModifier: FlagshipHull::GridHeightFactor(sqrt(1.2))
 
-	AddShipModifier: MassFactor(2)
+	AddShipModifier: MassFactor(1)
 	AddShipModifier: ShieldCapacityFactor(1.5)
-	AddShipModifier: SupportCapacityFactor(10)
+	AddShipModifier: SupportCapacityFactor(0.0)
 	AddShipModifier: ArmorHpFactor(1)
 	AddShipModifier: DamageFactor(0.1)
-	AddShipModifier: MaintCostFactor(0.20)
+	AddShipModifier: MaintCostFactor(0.10)
 	AddShipModifier: SupplyCapacityFactor(0)
 
-	Hook: AddStatus(Transported)
-	Assert: ShipSize >= 50
-		Message: #ERROR_MIN_SIZE:$1:50
-
 	Module: Default
-		Sprite: DesignationIcons::16
+		Sprite: adamantium
 		DrawMode: 3

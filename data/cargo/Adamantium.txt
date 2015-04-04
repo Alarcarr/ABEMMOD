@@ -1,0 +1,3 @@
+Cargo: Adamantium
+	Name: Adamantium
+	Icon: adamantium
