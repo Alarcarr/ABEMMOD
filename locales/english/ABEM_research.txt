@@ -429,6 +429,13 @@ R_STELLAR_SHIELD_DESC: <<
 	
 	[i][bbloc=#ORB_STELLAR_SHIELD_DESC/][/i]
 >>
+R_ADV_SHIELD_DESC: <<
+	[color=#aaa][i]Extensive research into shields allows for new methods of manipulating shield plasma, from transferring it to organizing it on a moment's notice to maintaining sizable reserves of it.
+	
+	Quite a significant advance considering the fact that we just wanted to draw pretty pictures with the stuff...[/i][/color]
+	
+	Unlocks the Shield Regenerator, Defensive Matrix Generator, Shield Capacitor and Shield Transmitter subsystems for use on flagships.
+>>
 	
 	
 
