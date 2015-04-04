@@ -62,7 +62,8 @@ EXTRA_GUN_DESC: <<
 	[img=Plus]Halves the reload time of non-beam weapons and doubles the damage of beam weapons, effectively doubling the weapon's damage per second.[/img]
 	[img=Plus]Construction cost is slightly lower than the price of building two separate weapon subsystems of the same firepower. Does not require more power than two separate weapons.[/img]
 	[img=Plus][img=Minus]Does not count as an additional hex group in ship design, as opposed to two separate weapons - and does not increase hex health.[/img][/img]
-	[img=Minus]Somewhat increases labor cost and significantly increases maintenance cost compared to building two separate weapons.[/img]
+	[img=Minus]Somewhat increases Labor cost and significantly increases maintenance cost compared to building two separate weapons.[/img]
+	[img=Minus]Doubles the Supply cost of firing the weapon.
 	[img=Minus]Only one module per subsystem.[/img]
 >>
 S_SHIELDED_AMGEN_DESC: <<
@@ -320,10 +321,10 @@ S_CARRIER_HULL_DESC: <<
 S_DESTROYER_HULL_DESC: <<
 	Specialized hull architecture allows for easier construction of large, focused battleships.
 	
-	[img=Plus]Somewhat reduces construction costs.[/img]
-	[img=Plus]Increases hex limit and grid size.[/img]
+	[img=Plus]Somewhat reduces construction costs, particularly for large ships.[/img]
+	[img=Plus]Increases grid size.[/img]
 	[img=Plus]Increases armor health and shield capacity by 30%.[/img]
-	[img=Minus]Reduces hyperdrive speeds by 10%, and increases mass by 10%.[/img]
+	[img=Minus]Reduces hyperdrive speeds by 10%, and increases mass by 20%.[/img]
 	[img=Minus]Halves support capacity.[/img]
 	[img=Minus]Halves firing arcs.[/img]
 	[img=MenuIcons::3;20]Cannot be used on ships under size 100.[/img]
