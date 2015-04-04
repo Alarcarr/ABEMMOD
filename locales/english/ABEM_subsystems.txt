@@ -416,7 +416,7 @@ S_AUGMENT_DAMAGE_DESC: <<
 
 S_AUGMENT_SUPPLY: Smoothed Mechanism
 S_AUGMENT_SUPPLY_DESC: <<
-	Augmenting the weapon's delivery and focusing systems decreases the supply cost of firing it at the cost of flexibilty and speed.
+	Augmenting the weapon's delivery and focusing systems decreases the supply cost of firing it at the cost of flexibility.
 
 	[img=Plus]Decreases [b][color=#fefc61]supply cost[/color][/b] to fire by 30%.[/img]
 	[img=Minus]Decreases [b]turret firing arc[/b] by 50%, where appropriate.[/img]
