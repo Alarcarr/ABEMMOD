@@ -421,7 +421,14 @@ R_INF_MECHPOP_DESC: <<
 	
 	[color=#d1cb6a][b]Alternate Unlock:[/b] Spend §6M.[/color]
 >>
+R_STELLAR_SHIELD: Stellar Shielding
+R_STELLAR_SHIELD_DESC: <<
+	[color=#aaa][i]Advances in gravitational shielding allow us to protect entire stars from attack by graviton condensers.[/i][/color]
 	
+	Unlocks the Stellar Shield Generator orbital.
+	
+	[i][bbloc=#ORB_STELLAR_SHIELD_DESC/][/i]
+>>
 	
 	
 
