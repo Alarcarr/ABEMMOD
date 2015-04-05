@@ -20,7 +20,7 @@ Subsystem: SupportQuantumArmor
 	Hex.Mass := 2.5 * HexSize
 
 	Hex.BuildCost := 1.5 * HexSize
-	Hex.LaborCost := 0.30 * HexSize
+	Hex.LaborCost := 1 * HexSize
 
 	DamageResist := ShipSize / 19.0
 	Effect: DamageResist

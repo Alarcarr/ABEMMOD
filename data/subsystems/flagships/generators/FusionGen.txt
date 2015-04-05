@@ -8,7 +8,7 @@ Subsystem: FusionGen
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes
-	Power := 20 * Size
+	Power := 25 * Size
 	SupplyCapacity := Size * 1000
 	SupplyRate := Size * 20
 

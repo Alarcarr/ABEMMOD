@@ -35,6 +35,7 @@ Technology: ImpShieldReg
 	Color: #429f5c
 	Point Cost: 500
 	Time Cost: 90
+	SecondaryEnergyCost(800)
 	AddModifier(ShieldRegenFactor(1.2))
 Technology: ImpShieldReg2
 	Name: #R_IMP_SHIELDREG
@@ -44,6 +45,7 @@ Technology: ImpShieldReg2
 	Color: #429f5c
 	Point Cost: 1000
 	Time Cost: 180
+	SecondaryEnergyCost(1200)
 	AddModifier(ShieldRegenFactor(1.4))
 Technology: ImpShieldAll
 	Name: (I) Advanced Shielding
