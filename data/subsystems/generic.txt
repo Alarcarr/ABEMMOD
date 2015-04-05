@@ -49,7 +49,10 @@ Template: var/ShieldCapacity
 Template: var/ShieldRegen
 	Modifier: ShieldRegenFactor(factor)
 		ShieldRegen := ShieldRegen * factor
-		
+
 Template: var/PowerUse
 	Modifier: PowerUseFactor(factor)
 		PowerUse := PowerUse * factor
+Template: var/Repair
+	Modifier: RepairFactor(factor)
+		Repair := Repair * factor

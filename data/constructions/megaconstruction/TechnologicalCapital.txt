@@ -2,11 +2,12 @@ Construction: TechnologicalCapital
 	Name: TechnologicalCapital
 	Build Cost: 1000
 	Labor Cost: 400
-	Maintenance Cost: 100
-	Target: a = Object
+	Maintenance Cost: 200
+	Target: a = Empire
 	Icon: AncientRuin
 	Category: Infrastructure
-	Description: WIP
+	Description: Increase Research by 40% , Add 10 flat research.
+	RequireNotTrait(StarChildren)
 	RequireNotStatus(TechCap)
 	TargetFilterNotStatus(a, TechCap)
 	TargetFilterNotStatus(a, GalaxyMall)

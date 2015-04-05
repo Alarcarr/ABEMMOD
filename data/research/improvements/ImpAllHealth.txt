@@ -12,6 +12,7 @@ Technology: ImpAllHealth
 	AddModifier(HpFactor(1.1))
 	ModAttribute(OrbitalHealthMod, Multiply, 1.1)
 
+	AddModifier(RepairFactor(1.1))
 Technology: ImpAllHealth2
 	Name: #R_IMP_ALL_HEALTH2
 	Blurb: #R_IMP_ALL_HEALTH_BLURB:20%
@@ -23,6 +24,7 @@ Technology: ImpAllHealth2
 	Point Cost: 1000
 	Time Cost: 180
 
+	AddModifier(RepairFactor(1.2))
 	AddModifier(HpFactor(1.2))
 	ModAttribute(OrbitalHealthMod, Multiply, 1.2)
 Technology: Further Development
@@ -31,6 +33,8 @@ Technology: Further Development
 	Point Cost: 1500
 	Time Cost: 200
 	Description: #R_INF_HULL_DESC
+	Blurb: +10% Repair&Armor &HP
+	AddModifier(RepairFactor(1.1))
 	ModAttribute(OrbitalHealthMod, Multiply, 1.1)
 	ResetWhenUnlocked()
 	AddModifier(tag/IsArmor::HpFactor(1.10))

@@ -10,7 +10,6 @@ Subsystem: Swarmer
 		[img=Minus]High [b][color=#fefc61]supply cost[/color][/b].[/img]
 	>>
 	BaseColor: #f94694
-	TypeColor: #f94694
 	Picture: SubsystemButtonArt::1
 	Elevation: 2
 
@@ -20,10 +19,10 @@ Subsystem: Swarmer
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes
-	Range := Size + 200
-	Damage := Size * 1
-	Reload := 4
-	Speed := max(65, Range / 12)
+	Range := Size + 250
+	Damage := Size * 1.25
+	Reload := 8
+	Speed := max(65, Range / 6)
 	Tracking := 6.0
 	SupplyCost := Size * 7.0
 	out DPS := (Damage * 8) / (Reload * 2)
@@ -32,6 +31,7 @@ Subsystem: Swarmer
 	Hex.HP := 18 * HexSize
 	Hex.Resistance := 0.2
 	Hex.Mass := HexSize
+	TypeColor: #f94694
 	Requires:
 		Command = 1
 

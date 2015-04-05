@@ -6,7 +6,7 @@ Technology: BldMegacity
 	Point Cost: 600
 	Time Cost: 100
 
-	Icon: city2 * #bbbb99
+	Icon: Megacity
 	Color: #00f3ff
 
 	UnlockTag(MegacityUnlock)
@@ -17,7 +17,7 @@ Technology: BldMetropolis
 	Name: #BLD_METROPOLIS
 	Description: #BLD_METROPOLIS_DESC
 	Class: Unlock
-	Icon: city1
+	Icon: Metropolis
 	SkipOnUnlockedTag(Metropolis)
 	UnlockTag(Metropolis)
 	SecondaryInfluenceCost(5)

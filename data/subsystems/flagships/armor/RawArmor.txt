@@ -4,7 +4,7 @@ Subsystem: OreArmor
 	Elevation: 1
 
 	Tags: Category:Armor, NoWall
-	Tags: NoCore, NonContiguous, DefaultUnlock, Defense, IsArmor, TankArmor, ExternalSpace
+	Tags: NoCore, NonContiguous, DefaultUnlock, Defense,, TankArmor, ExternalSpace
 	Hull: Flagship, Station,Support
 
 	Size := HexSize * Hexes
@@ -13,12 +13,12 @@ Subsystem: OreArmor
 	Ship.ExternalHexes := Ship.ExternalHexes + ExteriorHexes
 
 	Hex.Resistance := 0.5
-	Hex.HP := 30 * HexSize
+	Hex.HP := 40 * HexSize
 	Hex.Mass := 1* HexSize
 
-	Hex.LaborCost := 0
-	Hex.OreCost := 0.5* HexSize
-	Hex.MaintainCost := 0
+	//Hex.LaborCost := 0
+	Hex.OreCost := 10*HexSize
+	//Hex.MaintainCost := 0
 
 	//DamageResist := ShipSize /70.0
 	Description: WIP Numbers Wall of text
