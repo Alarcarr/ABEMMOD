@@ -1,5 +1,5 @@
 System: EmptySpace
-	Frequency: 0.05
+	Frequency: 0.01
 	
 	ExpandSystem(1000)
 	

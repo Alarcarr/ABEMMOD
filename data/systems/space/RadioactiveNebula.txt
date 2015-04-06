@@ -1,5 +1,5 @@
 System: RadioactiveNebula
-	Frequency: 0.03
+	Frequency: 0.02
 	
 	ExpandSystem(1000)
 	
