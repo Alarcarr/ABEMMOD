@@ -23,8 +23,6 @@ Grid: Base
 	DevFTL: -3,7
 	Hyperdrive: -4,8
 	SS: -2,8
-	DevFTLIncome: -4,9
-	ImpThrust: -3,9
 	DevInfluence: -3,-1
 	DevEnergyIncome: 1,4
 	PoweredArmor: 1,5
@@ -32,12 +30,6 @@ Grid: Base
 	c2: 3,-1
 	ImpSupportCap: 2,6
 	DevEnergy: 1,6
-	DevFTL: -1,10
-	DevFTLIncome: -3,10
-	GateTech: -4,11
-	FlingBeacons: -1,11
-	DevFTLIncome: -2,9
-	DevEnergy: -2,10
 	DevMoney: 1,7
 	ZeroPoint: 3,11
 	SysIonCannon: 1,8
@@ -223,7 +215,6 @@ Grid: Base
 	IonEngine: -5,3
 	SlavePopulation: -5,0
 	ImpThrust: -6,3
-	OrbVacuumTelescope: -7,3
 	Further Development: 5,-13
 	Further Development: -1,-15
 	c2: 2,-10
@@ -239,7 +230,6 @@ Grid: Base
 	AdvShield: 7,7
 	CompositeArmor: 1,-6
 	ImpAllHealth: 1,-7
-	ImpAllRange: 0,9
 	DevEnergy: 2,4
 	SysShieldGen: 2,5
 	ImpShieldCap: 3,5
@@ -257,3 +247,17 @@ Grid: Base
 	ImpAllRange2: 1,12
 	ImpFactoryLabor: 0,-6
 	ImpThrust2: -8,3
+	SysGravityEngine: -7,3
+	OrbVacuumTelescope: -10,3
+	PowerPlant: -7,-6
+	DevMoney: 2,-11
+	ImpProjSpeed: -1,7
+	ModAugmentSupply: 0,9
+	DevFTLIncome: -5,9
+	DevFTL: -4,9
+	GateTech: -5,11
+	DevFTL: -2,10
+	FlingBeacons: -3,11
+	DevFTLIncome: -3,9
+	DevFTL: -2,9
+	OrbitalEnhancement: -5,10
