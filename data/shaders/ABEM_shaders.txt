@@ -4,7 +4,6 @@ Shader: Beam
 	
 	Variable: tex texture = 0
 	Variable: float cycle = game_time_cycle 2.0
-	Variable: float offset = unique
 
 Shader: NoisyBeam
 	Vertex: data/shaders/source/base_uv_vs.txt
