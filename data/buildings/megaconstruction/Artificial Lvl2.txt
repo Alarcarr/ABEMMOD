@@ -1,0 +1,72 @@
+Building: Lvl2Research
+	Name: Research Complex
+	Sprite: lvl2r
+
+	Category: Tier II Resources 
+
+	Size: 4x8
+	Base Cost: 2000
+
+	
+	Labor Cost: 500
+	Description: <<
+		A specialized processing plant that can replace a Level 2 Research and prodruce 7 Pressure  .
+
+		[img=ResourceIconsSmall::11;22;#91692c][b][color=#91692c]Requires large amounts of Ore mined from asteroids.[/color][/b][/img]
+	>>
+
+	ConsumeCargo(Ore, 6000)
+
+	RequireEither(RequireStatus(Ringworld), RequireEither(RequireStatus(RRInitialRingworld), RequireStatus(ReclusiveRingworlder)))
+	AddPressure(Research, 7)
+	AddDummyResource(Medicines, 1)
+
+Building: Lvl2Budget
+	Name: Space Market
+	Sprite: lvl2b
+
+	Category: Tier II Resources 
+
+	Size: 4x8
+	Base Cost: 2000
+
+
+	Labor Cost: 500
+	
+	Description: <<
+		A specialized processing plant that can replace a Level 2 Budget and produce 7 Pressure  .
+
+		[img=ResourceIconsSmall::11;22;#91692c][b][color=#91692c]Requires large amounts of Ore mined from asteroids.[/color][/b][/img]
+	>>
+
+	ConsumeCargo(Ore, 6000)
+
+	RequireEither(RequireStatus(Ringworld), RequireEither(RequireStatus(RRInitialRingworld), RequireStatus(ReclusiveRingworlder)))
+	AddPressure(Money, 7)
+	AddDummyResource(Medicines, 1)
+
+
+
+Building: Lvl2Defense
+	Name: Weapons Factory
+	Sprite: lvl2d
+
+	Category: Tier II Resources 
+
+	Size: 4x8
+	Base Cost: 2000
+
+	
+	Labor Cost: 500
+	
+	Description: <<
+		A specialized processing plant that can replace a Level 2 Defense and prodruce 7 Pressure  .
+
+		[img=ResourceIconsSmall::11;22;#91692c][b][color=#91692c]Requires large amounts of Ore mined from asteroids.[/color][/b][/img]
+	>>
+
+	ConsumeCargo(Ore, 6000)
+
+	RequireEither(RequireStatus(Ringworld), RequireEither(RequireStatus(RRInitialRingworld), RequireStatus(ReclusiveRingworlder)))
+	AddPressure(Defense, 7)
+	AddDummyResource(Medicines, 1)

@@ -122,8 +122,45 @@ Material: orbital
 Material: adamantium
 	Inherit: ABEMSubsystem
 	Texture: data/images/Adamantium.png
+	
+	
+	//Artificial Resources
+Material: lvl1r
+	Inherit: ABEMSubsystem
+	Texture: data/images/buildings/Lvl1Research.png
 
+Material: lvl1b
+	Inherit: ABEMSubsystem
+	Texture: data/images/buildings/Lvl1Budget.png
 
+Material: lvl1d
+	Inherit: ABEMSubsystem
+	Texture: data/images/buildings/Lvl1Defense.png
+	
+Material: lvl2r
+	Inherit: ABEMSubsystem
+	Texture: data/images/buildings/Lvl2Research.png
+
+Material: lvl2b
+	Inherit: ABEMSubsystem
+	Texture: data/images/buildings/Lvl2Budget.png
+
+Material: lvl2d
+	Inherit: ABEMSubsystem
+	Texture: data/images/buildings/Lvl2Defense.png	
+
+Material: c1
+	Inherit: ABEMSubsystem
+	Texture: data/images/c1.png
+Material: c1
+	Inherit: ABEMSubsystem
+	Texture: data/images/c1.png
+Material: c1
+	Inherit: ABEMSubsystem
+	Texture: data/images/c1.png	
+	
+	
+	
 Material: c1
 	Inherit: ABEMSubsystem
 	Texture: data/images/c1.png
