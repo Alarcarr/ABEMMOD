@@ -9,10 +9,10 @@ Building: TaxCenter
 	Description: #B_TAXCENTER_DESC
 	Category: Infrastructure
 	Labor Cost: 100
-	Maintenance Affinity: Oceanic
 	Base Maintenance: 100
 	GloballyVisible()
 	RequireUnlockTag(Tax)
 	ModPopulationGrowth(0.8)
 	ModLoyalty(-10)
 	PerPopulationAddResource(0.5, Money)
+	ConflictBuilding(TaxCenter)
