@@ -37,11 +37,9 @@ Technology: Empire
 	Name: Empire
 	Icon: MilitaryStrengthIcon
 	AddModifier(FlagshipHull::MaintCostFactor(0.25))
-	ModAttribute()
 Technology: Pacifist
 	Icon: CardIcons::6
 Technology: Warmonger
 Technology: Researcher
 Technology: Merchantilist
 Technology: Expansionist
-	Name: lñ
