@@ -29,6 +29,9 @@ Subsystem: CarpetBomb
 
 	Modifier: DamageFactor(factor)
 		BombardDuration := BombardDuration * factor
+		
+	Modifier: SupplyCostFactor(factor)
+		BombardCost := BombardCost * factor
 
 	Module: Default
 		Hex.BuildCost := 3 * Hex.BuildCost
