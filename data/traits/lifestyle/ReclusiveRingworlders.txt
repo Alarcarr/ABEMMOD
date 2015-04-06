@@ -1,0 +1,25 @@
+Trait: ReclusiveRingworlders
+	Name: Reclusive Ringworlders
+	Description: #TRAIT_RECLUSIVE_RINGWORLDERS_DESC
+	Order: 5
+
+	Icon: PlanetType::14
+	Color: #8f8f8f
+
+	Category: Lifestyle
+	Unique: Lifestyle
+
+	TriggerHomeworld(DestroySystemPlanet(1, Quiet = True))
+	TriggerHomeworld(DestroySystemPlanet(2, Quiet = True))
+	TriggerHomeworld(DestroySystemPlanet(3, Quiet = True))
+	TriggerHomeworld(SpawnPlanet(Ringworld, Owned = True, Add Status = RRInitialRingworld, Radius = 750, Physics = False))
+
+	SetColonizerInfo(Name = Exploitation Vessel)
+	ModAttribute(PopulationPerColonizer, Multiply, 16)
+	ReplaceTechnologyNodes(OrbArtificialPlanetoid, ImpFactoryLabor2)
+	ModEmpireAttribute(PlanetDecaySpeed, Multiply, 0.5)
+	AddStatusOwnedPlanets(ReclusiveRingworlder)
+	LoadDesigns(ringworlder, Limit Shipset = False)
+	ReplaceTechnologyNodes(OrbRingworld, Science)
+	TriggerHomeworld(DestroySystemPlanet(0, Quiet = True))
+	UnlockTag(RingworldUnlock)

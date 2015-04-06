@@ -1,0 +1,4 @@
+TRAIT_RECLUSIVE_RINGWORLDERS_DESC: <<
+	[vspace=3/][img=PlanetType::14;28]Instead of planets, starts with a ring world and the technology to build more.[/img] [vspace=3/][img=ActionBarIcons::1;22]Cannot properly colonize planets, instead set up exploitation platforms in orbit around uninhabited planets.  These grant access to the resource but only 1 virtual(or robot, or exile) population, and will eventually drain a planet dry, leaving a barren husk.[/img] [vspace=3/][img=ResourceIcon::6;22]Exploitation platforms around barren worlds will mine and damage them over time, converting world integrity into ore.[/img]
+	[color=#996622]Note: Currently conversion to barren worlds and mining barren worlds for ore is not working.  As such, worlds will keep their resource until they explode and then leave asteroids, which will usually have some ore - you will have to mine these as usual.[/color]
+>>

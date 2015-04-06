@@ -126,7 +126,6 @@ Grid: Base
 	c1: 1,-4
 	c2: 2,-4
 	ImpAllHealth: 2,-5
-	ImpFactoryLabor: 0,-6
 	ImpArmorHealth: 2,-6
 	DevEnergyIncome: 3,10
 	ImpEnergyStorage: 2,3
@@ -224,8 +223,7 @@ Grid: Base
 	IonEngine: -5,3
 	SlavePopulation: -5,0
 	ImpThrust: -6,3
-	SysGravityEngine: -7,3
-	OrbVacuumTelescope: -8,3
+	OrbVacuumTelescope: -7,3
 	Further Development: 5,-13
 	Further Development: -1,-15
 	c2: 2,-10
@@ -257,3 +255,5 @@ Grid: Base
 	SysShipComupter: 4,0
 	ImpSupportCap: 2,-1
 	ImpAllRange2: 1,12
+	ImpFactoryLabor: 0,-6
+	ImpThrust2: -8,3

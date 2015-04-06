@@ -1,0 +1,10 @@
+S_ORB_EXP_DELIVERY_HULL_DESC: <<
+	Orbital Exploitation Delivery vessels convert themselves into an appropriate amount of Orbital Exploitation Platforms to cover all planetary resources.
+
+	Planetary resources can then be exported to any friendly ringworld.  When exploitation is finished (or on command) the delivery vessel can pack up the platforms and move to another target.
+
+	[b]Exploitation Delivery vessels cannot fire or use supports! Do not put guns or support cap on them![/b]
+
+	[img=PlanetType::32;22][b][color=#1c9bb4]Only available when the 'Reclusive Ringworlders' race option is chosen.[/color][/b][/img]
+>>
+ERROR_SPECIFIC_SIZE: $1 must be exactly size $2.

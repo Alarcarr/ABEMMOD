@@ -1,0 +1,4 @@
+Status: ReclusiveRingworlder
+	Visible To: Nobody
+
+	IfNotHaveStatus(Ringworld, IfNotHaveStatus(OrbitalExploitationPlatforms, EnableAfter(OnEnable(SpawnOrbital(ExploitationPlatform, In Orbit = True)), Start Timer = 5)))
