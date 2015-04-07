@@ -147,6 +147,11 @@ class PickupControl : Component_PickupControl {
 			pickup.velocity = prot.velocity;
 			pickup.acceleration = prot.acceleration;
 		}
+		else {
+			pickup.velocity = vec3d();
+			pickup.acceleration = vec3d();
+		}
+		
 		for(uint i = 0, cnt = protectors.length; i < cnt; ++i) {
 			if(!protectors[i].valid || (protectors[i].owner !is pickup.owner && protectors[i].owner !is Creeps)) {
 				protectors.removeAt(i);
