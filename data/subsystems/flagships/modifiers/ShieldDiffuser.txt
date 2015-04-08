@@ -1,0 +1,13 @@
+Template: hexVar/BuildCost, hexVar/HP, tag/IsShield, !tag/SupportHull, !hexVar/Prayer
+	Module: ShieldDiffuser
+		Description: #SHIELDDIFFUSER_DESC
+
+		Color: #0dceff
+		Sprite: SupportCommand * #0dceff
+
+		AddModifier: BuildCostFactor(1.5)
+		AddModifier: ShieldRegenFactor(1.25)
+		AddModifier: ShieldCapacityFactor(0.85)
+
+		Name: Shield Diffuser
+		AddModifier: optional MaintCostFactor(1.25)

@@ -7,9 +7,10 @@ Technology: AdvShield
 	Description: #R_ADV_SHIELD_DESC
 	Class: Unlock
 	Color: #bf01ff
+	UnlockModule(ShieldDiffuser)
+	UnlockModule(ShieldCapacitor)
 	AddModifier(ShieldCapacityFactor(1.2))
 	SecondaryEnergyCost(1200)
 	UnlockSubsystem(ShieldRegenerator)
 	UnlockSubsystem(ShieldTransmitter)
-	UnlockSubsystem(ShieldBattery)
 	UnlockSubsystem(DefensiveMatrix)

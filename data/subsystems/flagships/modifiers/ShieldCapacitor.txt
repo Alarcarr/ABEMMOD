@@ -1,0 +1,13 @@
+Template: hexVar/BuildCost, hexVar/HP, tag/IsShield, !tag/SupportHull, !hexVar/Prayer
+	Module: ShieldCapacitor
+		Description: #SHIELDCAPACITOR_DESC
+
+		Color: #8a37ff
+		Sprite: SupportCommand * #8a37ff
+
+		AddModifier: BuildCostFactor(1.75)
+		AddModifier: ShieldRegenFactor(0.85)
+		AddModifier: ShieldCapacityFactor(1.25)
+
+		Name: Shield Capacitor
+		AddModifier: optional MaintCostFactor(1.3)

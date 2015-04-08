@@ -1,0 +1,36 @@
+Subsystem: Superstructure
+	Name: Superstructure
+	Description: <<
+		Light-weight metal scaffolding to give structure and definition to the ship.  Somewhat more resistant to damage than most other components, but not as protective per-weight as actual armor.
+
+		[img=Plus]Moderate [b][color=#80ff80]health[/color][/b].[/img]
+		[img=Plus]Slightly resists and reduces incoming damage.[/img]
+		[img=Plus]Superstructure on the outside of the ship does not use up
+		interior space.[/img]
+		[img=Plus]Cheap.[/img]
+	>>
+	BaseColor: #a9a9a9
+
+	Tags: Category:Armor, NoWall, FauxExterior
+	Tags: NoCore, NonContiguous, DefaultUnlock, Defense, IsArmor, TankArmor, ExternalSpace
+	Hull: Flagship, Station
+
+	Size := HexSize * Hexes
+
+	Hex.Resistance := 0
+	Hex.HP := 12 * HexSize
+
+	Hex.Mass := 0.7* HexSize
+
+	Ship.ExternalHexes := Ship.ExternalHexes + ExteriorHexes
+
+
+	Hex.BuildCost := HexSize * 0.4
+	Hex.LaborCost := HexSize * 0.04
+	Effect: DamageResist
+		Resist = DamageResist
+
+	Module: Default
+		Hex.BuildCost := Hex.BuildCost * 2
+		Hex.LaborCost := Hex.LaborCost * 4
+		Sprite: Superstructure

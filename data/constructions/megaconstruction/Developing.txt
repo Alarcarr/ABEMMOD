@@ -7,4 +7,4 @@ Construction: Developing
 	ConsumeEnergy(100)
 	DevelopTiles(20)
 	RequireNotTrait(StarChildren)
-	ConsumeCargo(Ore, 200)
+	ConsumeCargo(Ore, 150)

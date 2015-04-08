@@ -4,7 +4,7 @@ Subsystem: AdamantiumArmor
 	Elevation: 1
 
 	Tags: Category:Armor
-	Tags: NoCore, NonContiguous, Defense, IsArmor, TankArmor, ExternalSpace,DefaultUnlock
+	Tags: NoCore, NonContiguous, Defense, IsArmor, TankArmor, ExternalSpace
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes
@@ -26,6 +26,7 @@ Subsystem: AdamantiumArmor
 	Hex.LaborCost := 0.4 * HexSize
 	Hex.AdamantiumCost := 1 * HexSize
 	Hex.MaintainCost := 0
+	Description: Not Implemented
 
 
 	Effect: ReduceDamagePercentile

@@ -14,6 +14,9 @@ Trait: ReclusiveRingworlders
 	TriggerHomeworld(DestroySystemPlanet(3, Quiet = True))
 	TriggerHomeworld(SpawnPlanet(Ringworld, Owned = True, Add Status = RRInitialRingworld, Radius = 750, Physics = False))
 
+	TriggerHomeworld(SpawnShip(Miner, Supports = , Override Disable Starting = True))
+	ReplaceTechnologyNodes(ImpPopLvl3, ImpHabitat)
+	ReplaceTechnologyNodes(ImpPopLvl2, ImpHabitat)
 	SetColonizerInfo(Name = Exploitation Vessel)
 	ModAttribute(PopulationPerColonizer, Multiply, 16)
 	ReplaceTechnologyNodes(OrbArtificialPlanetoid, ImpFactoryLabor2)
