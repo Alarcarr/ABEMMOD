@@ -3,9 +3,19 @@ Technology: IntelFacilities
 	Point Cost: 1000
 	Time Cost: 120
 	Icon: techScanner
-	Description: #F_INTEL_DESC
+	Description: #R_BLD_INTEL_DESC
 	Class: Unlock
 	Color: #aa19ff
 	Blurb: Generates Intelligence Cards
 	SkipOnUnlockedTag(IntelligenceFacil)
 	UnlockTag(IntelligenceFacil)
+Technology: NylliIntel
+	Name: Intelligence Facilities
+	Description: #R_ORB_INTEL_DESC
+	Class: Unlock
+	Icon: techScanner
+	Color: #aa19ff
+	Point Cost: 1000
+	Time Cost: 120
+	SkipOnUnlockedTag(NylliIntel)
+	UnlockTag(NylliIntel)

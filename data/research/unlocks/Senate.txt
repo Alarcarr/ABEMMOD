@@ -14,3 +14,14 @@ Technology: Senate
 
 	SkipOnUnlockedTag(Senate)
 	SecondaryMoneyCost(1500)
+Technology: NylliSenate
+	Name: #F_SENATE_NAME
+	Description: #R_ORB_SENATE_DESC
+	Class: Unlock
+	Point Cost: 1000
+	Time Cost: 100
+	Icon: PoliticalStrengthIcon
+	Color: #00f3ff
+	SecondaryMoneyCost(1500)
+	SkipOnUnlockedTag(NylliSenate)
+	UnlockTag(NylliSenate)

@@ -1,0 +1,10 @@
+Status: NylliFood
+	Name: Hydroponics Station
+	Collapses: True
+	Visible To: Nobody
+	AddPlanetResource(Soylent1)
+Status: NylliWater
+	Name: Water Reclamation Facility
+	Collapses: True
+	Visible To: Owner and Origin Empire
+	AddPlanetResource(BuildingWater)

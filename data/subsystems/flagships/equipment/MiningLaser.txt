@@ -6,7 +6,7 @@ Subsystem: MiningLaser
 	Elevation: 3
 
 	Tags: DefaultUnlock, ScaledCost, Category:Manufacturing, HasInternals, ExteriorCore, Rotatable, StaticMaintenance
-	Tags: Ability:MineAsteroid, Ability:TransferCargo, Ability:DropoffPoint, Ability:AutoMine
+	Tags: Ability:MineAsteroid, Ability:DropoffPoint, Ability:AutoMine
 	Hull: Flagship
 
 	Size := HexSize * Hexes
@@ -27,6 +27,7 @@ Subsystem: MiningLaser
 
 	Hook: AddCargoStorage(CargoStorage)
 
+	Hook: AddPermanentStatus(CanGiveCargo)
 	Assert: Sum.MiningLasers == 1
 		Unique: True
 		Message: #ERROR_ONLY_ONE

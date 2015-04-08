@@ -19,6 +19,7 @@ Subsystem: OreProcessor
 	CargoStorage := OreProcessRate
 	Hook: AddCargoStorage(CargoStorage)
 
+	Hook: AddPermanentStatus(CanTakeCargo)
 	Assert: Sum.LaborIncome > 0
 		Message: #REQUIRE_CONSTRUCTION_BAY
 

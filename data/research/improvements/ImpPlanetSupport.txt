@@ -1,7 +1,7 @@
 Technology: ImpPlanetSupport
 	Name: #R_IMP_PLANET_SUPPORT
 	Blurb: #R_IMP_PLANET_SUPPORT_BLURB:128:64
-	Description: #R_IMP_PLANET_SUPPORT_DESC:128:42
+	Description: #R_IMP_PLANET_SUPPORT_DESC:128:64
 
 	Icon: ActionBarIcons::2 * #fff080
 	Color: #40df8e

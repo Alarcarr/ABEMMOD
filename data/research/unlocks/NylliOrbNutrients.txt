@@ -1,0 +1,12 @@
+Technology: NylliOrbNutrients
+	Name: #R_NYLLI_FOOD
+	Blurb: #R_NYLLI_FOOD_BLURB
+	Description: #R_NYLLI_FOOD_DESC
+	Class: Unlock
+	Icon: Plantation
+	Color: #19ff19
+	Point Cost: 1000
+	Time Cost: 100
+	SecondaryEnergyCost(1000)
+	SkipOnUnlockedTag(NylliNutrients)
+	UnlockTag(NylliNutrients)

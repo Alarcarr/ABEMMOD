@@ -1,0 +1,38 @@
+Module: TradeOutpost
+	Name: #ORB_TRADE_OUTPOST
+	Blurb: #ORB_TRADE_OUTPOST_BLURB
+	Description: #ORB_TRADE_OUTPOST_DESC
+	Icon: GuiOrbitalIcons::0
+	Distant Icon: OrbitalIcons::0
+
+	Core: True
+	Standalone: True
+
+	Build Cost: 300
+	Maintenance: 30
+	Labor Cost: 15
+	Size: 7
+
+	Health: 6000
+	Armor: 4000
+
+	Model: Research_Station
+	Material: ResearchStation
+
+	RequireNotTrait(Evangelical)
+
+	LimitOncePerSystem(OutpostFlag) #version>=94
+
+	AddFleetCommand(128) #version>=94
+	AddFleetCommandEmpireAttribute(OutpostBoost, 128) #version>=94
+	AddFleetEffectiveness(3.0) #version>=94
+
+	AddHealthEmpireAttribute(OutpostBoost, 10000)
+	AddLocalDefenseAdjacentFlags(OutpostFlag, 1.5, 3, Overflow Global = True, Local Boost = OutpostBoost) #version>=94
+
+	ProtectSystem(120) #version>=94
+	AddStatus(StartingProtection, Duration = 120) #version>=94
+
+	ABEM_races::IfRace(OnEnable(SpawnOrbital(Temple)), Evangelical, #RACE_SAAR)
+	ABEM_races::IfRace(OnEnable(Destroy(Quiet = True)), Evangelical, #RACE_SAAR)
+	GiveTrade()

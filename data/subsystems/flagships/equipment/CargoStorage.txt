@@ -20,5 +20,7 @@ Subsystem: CargoStorage
 	Hex.BuildCost := 0.5 * HexSize
 	Hex.MaintainCost := HexSize / 10
 
+	Hook: AddPermanentStatus(CanGiveCargo)
+	Hook: AddPermanentStatus(CanTakeCargo)
 	Module: Default
 		Sprite: SupplyStorage * #91692c

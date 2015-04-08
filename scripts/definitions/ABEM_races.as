@@ -9,6 +9,7 @@ import generic_effects;
 import pickups;
 import pickup_effects;
 import status_effects;
+import target_filters;
 #section server
 import empire;
 import influence_global;
@@ -308,6 +309,62 @@ class ProtectPlanet : GenericEffect {
 			mask &= getEmpire(i).mask;
 		if(obj.hasSurfaceComponent)
 			obj.protectFrom(mask);
+	}
+#section all
+}
+
+class TargetFilterNotRace : TargetFilter {
+	Document doc("Only allow targets that have an empire that is of a particular race.");
+	Argument targID(TT_Any);
+	Argument trait(AT_Trait, doc="Trait to select for on human empires.");
+	Argument name(AT_Locale, doc="Race name to require for AI empires.");
+
+	string getFailReason(Empire@ emp, uint index, const Target@ targ) const override {
+		return format(locale::NTRG_REQUIRE, getTrait(trait.integer).name);
+	}
+
+	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const override {
+		if(index != uint(targID.integer))
+			return true;
+		Empire@ check;
+		if(targ.type == TT_Empire) {
+			@check = targ.emp;
+		}
+		else if(targ.type == TT_Object) {
+			if(targ.obj is null)
+				return false;
+			@check = targ.obj.owner;
+		}
+		if(check is null)
+			return false;
+		if(check.isAI)
+			return check.RaceName != name.str;
+		else
+			return !check.hasTrait(trait.integer);
+	}
+};
+
+class IfRace : IfHook {
+	Document doc("Only apply the inner hook if the owner of this object is of a particular race.");
+	Argument hookID(AT_Hook, "generic_effects::GenericEffect");
+	Argument trait(AT_Trait, doc="Trait to search for on human empires.");
+	Argument name(AT_Locale, doc="Race name to require for AI empires.");
+
+	bool instantiate() override {
+		if(!withHook(hookID.str))
+			return false;
+		return GenericEffect::instantiate();
+	}
+	
+#section server
+	bool condition(Object& obj) const override {
+		Empire@ owner = obj.owner;
+		if(owner is null)
+			return false;
+		if(owner.isAI)
+			return owner.RaceName == name.str;
+		else
+			return owner.hasTrait(trait.integer);
 	}
 #section all
 }
