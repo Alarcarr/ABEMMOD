@@ -74,7 +74,7 @@ Technology: Support
 
 
 	ReplaceTechnologyNodes(Flagship, c3)
-	ReplaceTechnologyGrid()
+	
 Technology: Support2
 	Name: Support Dev. 2
 	Icon: SupportTech
