@@ -1,6 +1,0 @@
-R_IMP_ALL_HEALTH_DESC: <<
-	[i][color=#aaa]Research on how to improve the structural integrity of starship subsystems, letting them take more damage before ceasing to function.[/color][/i]
-
-	Increases all ship subsystem health by $1.
-	Increases Crew Repair Rate by $1.
->>

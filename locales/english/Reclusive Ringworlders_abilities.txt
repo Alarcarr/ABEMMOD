@@ -1,5 +1,0 @@
-ABL_DEPLOY_EXPLOITATION_PLATFORMS_DESC: <<
-	Construct a number of orbital exploitation platforms to strip-mine a planet.
-
-	Will automatically construct an amount of exploitation platforms to match the native resource level.
->>

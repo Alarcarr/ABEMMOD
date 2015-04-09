@@ -39,3 +39,4 @@ ORB_EMBASSY_DESC: <<
 	
 	Embassies act as Commerce Stations and Outposts in that they allow trade between separated territories, and expand your empire's borders, respectively.
 >>
+ORB_EXP_PLATFORM: Exploitation Platform

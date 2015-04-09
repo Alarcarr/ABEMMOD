@@ -1,1 +1,0 @@
-STATUS_ORB_EXP_PLATFORMS_DESC: This planet is being strip-mined by automated orbital exploitation platforms.

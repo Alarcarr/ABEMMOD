@@ -63,3 +63,4 @@ STATUS_ENVOY_DESC: <<
 	
 	Loyalty protection only takes effect if the planet's owner and the Envoy's owner are in an Alliance.
 >>
+STATUS_ORB_EXP_PLATFORMS_DESC: This planet is being strip-mined by automated orbital exploitation platforms.
