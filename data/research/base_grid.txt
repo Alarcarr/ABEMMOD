@@ -101,7 +101,7 @@ Grid: Base
 	DevInfluenceIncome2: -9,0
 	Flak: 6,-1
 	c3: 4,7
-	SysShieldGen: 5,7
+	CovariantShield: 5,7
 	ImpAllRange: 3,7
 	ImpFireRate: 3,8
 	ImpSpread: -1,4
@@ -261,3 +261,12 @@ Grid: Base
 	DevFTLIncome: -3,9
 	DevFTL: -2,9
 	OrbitalEnhancement: -5,10
+	ProgenitorScience: -17,-4
+	c2: -17,-5
+	c1: -18,-5
+	c3: -18,-4
+	c2: -18,-3
+	c1: -17,-3
+	c3: -16,-4
+	ProgenitorShield: -16,-6
+	ProgenitorArmor: -18,-6

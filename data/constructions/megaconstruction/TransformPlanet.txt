@@ -1,12 +1,11 @@
 Construction: Terraforming
 	Name: Expand Surface
-	Target: a = 
 	Labor Cost: 250
 	Icon: PlanetImage
 	Category: Upgrades
-	Description: WIP Add 32 tiles to the planet
+	Description: #C_TERRAFORMING_DESC
 	RequireNotTrait(StarChildren)
 	ConsumeCargo(Ore, 1000)
 	RequireNotStatus(SoilEnhanced)
-	AddSurfaceArea(Artificial, (4,8), Separate = False, Developed = False)
+	AddSurfaceArea(Artificial, (4,8), Separate = True, Developed = True)
 	AddStatus(SoilEnhanced)

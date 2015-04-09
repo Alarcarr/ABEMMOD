@@ -1,5 +1,5 @@
 RESOURCE_SHIPYARD_DESC: <<
-	An ancient shipyard. While its purpose is unknown, you can repurpose its technology to upgrade your own ships' systems and build defense ships.
+	An ancient shipyard. While its purpose is unknown, you can repurpose its technology to upgrade your own ships' systems and build new ships.
 
 	Adds 16 Labor generation. Cannot be exported.
 >>
@@ -15,18 +15,20 @@ RESOURCE_RESEARCH_DESC: <<
 >>
 RESOURCE_GATEWORLD_DESC: <<
 	A sort of galactic hub, this planet's immense surface is littered with all sorts of ancient technology; indeed, considering its advanced defensive fleet, this world may have been home to the ancient race that built the automated warships known as the 'Remnants'.
-	
-	Exploring the ruins adds [levels]1;2;3;4;5;6;7[/levels] pressure of every kind, based on the planet's level.
-	
+
+	Exploring the ruins adds [levels]1/2/3/4/5/6/7[/levels] pressure of every kind, based on the planet's level.
+
 	An advanced defense coordination system allows the planet to support an additional 1024 support ships and act as a Supply Depot once reactivated at level 1.
-	
+
 	A unique wormhole generator on the planet's surface and an incredibly advanced planetary fling beacon allow the planet to tie into the empire's gate network as well as send fleets out into any location in the galaxy at incredible speeds once reactivated at level 2.
-	
+
 	A series of shield projectors in the upper atmosphere allows the planet to act as a Power Transmitter, while the wormhole generator is repaired and opened for civilian use, allowing the planet to trade with any other gate or Commerce Station in the empire at level 3.
-	
+
 	At level 4, the planet's shield projectors are restored to full capacity, allowing it to protect all other planets in the system from loyalty loss.
-	
-	The wormhole generator is brought to full capacity at level 6, allowing any of the empire's fleets in the galaxy to be instantly transported to the Hubworld.
+
+	The wormhole generator is brought to full capacity at level 5, allowing any of the empire's fleets in the galaxy to be instantly transported to the Hubworld.
+
+	At level 6, the ancient archives on the planet are brought back online, unlocking access to the Progenitor tech tree for as long as the archives are active.
 >>
 ASTEROID_LABOR_DESC: <<
 	Adds 8 flat Labor generation to the consuming planet.

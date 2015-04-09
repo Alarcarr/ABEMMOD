@@ -45,6 +45,10 @@ Trait: StarChildren
 	ReplaceTechnologyNodes(ImpPlanetDamage, ImpHabitat)
 	ReplaceTechnologyNodes(ImpPlanetDamage2, ImpHabitat)
 
+	ReplaceTechnologyNodes(ImpFactoryLaborB, ImpMothershipLaborB)
+	ReplaceTechnologyNodes(SlavePopulation, ImpMothershipLabor2)
+	ReplaceTechnologyNodes(TaxCenter, ImpMothershipLabor2)
+	ReplaceTechnologyNodes(Housing, ImpHabitat)
 	ReplaceTechnologyNodes(PowerPlant, NylliPowerPlant)
 	ReplaceTechnologyNodes(Senate, NylliSenate)
 	ReplaceTechnologyNodes(IntelFacilities, NylliIntel)

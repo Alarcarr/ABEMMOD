@@ -86,7 +86,7 @@ HDSUPPLYMODULE_DESC: <<
 	[img=Minus]Does not regenerate supply on its own. Power generators and supply depots will still fill it, though.[/img]
 >>
 S_REMNANTSHIELD_DESC: <<
-	Advanced ancient technology salvaged from the Guardian. Creates a powerful shield around the vessel, blocking some incoming damage.
+	Incredibly advanced Progenitor technology. Creates a powerful shield around the vessel, blocking some incoming damage.
 
 	[img=Plus]Creates regenerating barrier against damage.[/img]
 	[img=Plus]Stronger than covariant shields.[/img]
@@ -95,7 +95,7 @@ S_REMNANTSHIELD_DESC: <<
 	[img=Minus]Very expensive, and requires a lot of power.[/img]
 >>
 S_REMNANT_ARMOR_DESC: <<
-	Highly advanced armor salvaged from the Guardian. Lighter than Quantum Armor, but tougher than Neutronium Armor.
+	Incredibly advanced Progenitor armor. Lighter than Quantum Armor, but tougher than Neutronium Armor.
 
 	[img=Plus]Damage hits exceeding the [b][color=#c33ac6]damage threshold[/color][/b] are reduced significantly.[/img]
 	[img=Plus]Increases the [b][color=#80ff80]health[/color][/b] of surrounding hexes. Resists damage and is impervious to armor penetration.[/img]

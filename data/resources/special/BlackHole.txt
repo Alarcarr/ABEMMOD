@@ -14,7 +14,9 @@ Resource: BlackHole
 	Affinity: ALL
 
 	Limitless Level: True
-	IfLevel(6, GrantAbility(Recall))
+	IfLevel(6, OnEnable(NotifyAll(Progenitor Archives Reactivated!, Description = The $1 have reactivated a Progenitor archive on $3! Tremendous knowledge is just a step away from their scientists!, Icon = TechIcons::45)))
+	IfLevel(6, UnlockTagWhileActive(ProgenitorTech))
+	IfLevel(5, GrantAbility(Recall))
 	IfLevel(1, AddStatus(FastResupply))
 	RegenSurface(30, 20)
 	IfLevel(4, ProtectOtherPlanets())

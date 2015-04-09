@@ -1,0 +1,12 @@
+Technology: ProgenitorArmor
+	Name: Progenitor Armoring
+	Icon: Armor4
+	Color: #39b0ff
+	Point Cost: 1500
+	Time Cost: 180
+	Class: Unlock
+	Blurb:
+	Description: #R_SYS_REMNANT_ARMOR_DESC
+	SkipOnUnlockedSubsystem(RemnantArmor)
+	UnlockSubsystem(RemnantArmor)
+	RequireUnlockTag(ProgenitorTech)

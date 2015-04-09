@@ -38,3 +38,14 @@ Technology: ImpFactoryLaborB
 	ResetWhenUnlocked()
 	SecondaryMoneyCost(2000)
 	ModAttribute(FactoryLaborMod, AddBase, 4)
+Technology: ImpMothershipLaborB
+	Icon: ResourceIcon::6
+	Color: #b1b4b6
+	Name: (I) Metallurgical Advances
+	Blurb: #R_IMP_MOTHERSHIP_LABOR_BLURB:8
+	Description: #R_IMP_MOTHERSHIP_LABOR_PERCENT_DESC
+	Point Cost: 2000
+	Time Cost: 400
+	ModAttribute(FactoryLaborMod, AddBase, 8)
+	SecondaryMoneyCost(2000)
+	ResetWhenUnlocked()

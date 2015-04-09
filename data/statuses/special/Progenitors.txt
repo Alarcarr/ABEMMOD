@@ -1,6 +1,6 @@
 Status: Progenitors
 	Visible To: Nobody
-	
+
 	ModCivResourceMult(Influence, -0.8)
 	ModCivResourceMult(Money, -0.8)
 	ModCivResourceMult(Research, -0.8)
@@ -8,8 +8,11 @@ Status: Progenitors
 	ModCivResourceMult(Labor, -0.8)
 	ModCivResourceMult(Energy, -0.8)
 	GrantAbility(RemnantCommandCodes)
-	
+
+	OnEmpireAttributeGTE(ProgenitorTechProgress, 15, SendMessage(#EVT_PROGENITOR_BREAKTHROUGH, Title = Technological Breakthrough!))
+	OnEmpireAttributeGTE(ProgenitorTechProgress, 15, NotifyAll(Progenitor Resurgence, Description = The $1 have begun rediscovering their most advanced technology!, Icon = emp_portrait_cloak))
+	OnEmpireAttributeGTE(ProgenitorTechProgress, 15, UnlockTag(ProgenitorTech))
 Status: ProgenitorFleet
 	Visible To: Nobody
-	
+
 	GrantAbility(RemnantCommandCodes)

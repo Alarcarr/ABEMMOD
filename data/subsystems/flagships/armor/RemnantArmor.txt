@@ -1,5 +1,5 @@
 Subsystem: RemnantArmor
-	Name: Remnant Armor
+	Name: Progenitor Armor
 	BaseColor: #008888
 	Elevation: 1
 

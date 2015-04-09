@@ -2,25 +2,25 @@ Trait: Progenitors
 	Name: #TRAIT_PROGENITORS
 	Description: #TRAIT_PROGENITORS_DESC
 	Order: 11
-	
+
 	Category: Lifestyle
 	Unique: Lifestyle
-	
+
 	Icon: emp_portrait_mono * #aaffaa
 	Color: #884faa
-	
+
 	AddStatusOwnedPlanets(Progenitors)
 	AddStatusOwnedFleets(ProgenitorFleet)
-	
+
 	ModAttribute(VoteCardCostMod, Add, 4.0)
 	ModAttribute(SupportCardCostMod, Add, 2.0)
-	
+
 	TriggerHomeworld(TerraformTo(Quartz))
 	OnHomeworld(AddPlanetResource(Cyllium))
 	OnHomeworld(AddPlanetResource(Soylent1))
 	OnHomeworld(AddPlanetResource(BuildingWater))
-	
+
 	AddModifier(SupplyCostFactor(0.75))
 	AddModifier(SupportCapacityFactor(0.5))
-	
+
 	ABEM_races::AllyRemnants()
