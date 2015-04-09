@@ -24,7 +24,7 @@ TRAIT_BERSERKERS_DESC: <<
   [vspace=3/][img=SubsystemButtonArt::8 * #fdffa8;22][/img]Personal quests for glory reduce support capacity by 50%.
   [vspace=3/][img=StatusWar;22][/img]Centuries of conflict have resulted in a 25% increase in fleet effectiveness and a 25% reduction in supply costs.
   [vspace=3/][img=SystemUnderAttack;22][/img]All planets are Happy when at war with another empire. All civilian non-Influence generations are increased by 5% when at war, and all civilian resource generations are halved when not at war. All planets receive +0.5 Defense generation when at war.
-  [vspace=3/][img=ResourceIcon::4;22][/img]Fleets generate 0.2 Research per second when in combat.
+  [vspace=3/][img=ResourceIcon::4;22][/img]Fleets generate 0.5 Research per second when in combat.
   [vspace=3/][img=ThumbsDown;22][/img]The Influence cost of playing support cards during a vote is increased by 2, while the cost of starting a vote is increased by 4.
   [vspace=3/][img=ResourceIcon::5;22][/img]All planets have an additional 256 Support Capacity.
 >>
