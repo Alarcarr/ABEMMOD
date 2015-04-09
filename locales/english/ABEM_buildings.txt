@@ -2,13 +2,6 @@ BLD_HOUSING_DESC: <<
 	Add 2 Maximum population.
 	Replaces up to 6 cities.
 >>
-BLD_METROPOLIS_DESC: <<
-	A large urban area covering and connecting multiple smaller population centers.
-
-	Replaces up to 6 regular cities.
-
-	Increases the planet's total pressure capacity by 8.
->>
 F_INTEL_NAME: Intelligence Facilities
 F_INTEL_DESC: <<
 	[color=#aaa][i]A facility for intelligence agencies to train operatives and coordinate missions from.[/i][/color]
