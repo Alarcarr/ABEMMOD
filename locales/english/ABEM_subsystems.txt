@@ -308,6 +308,7 @@ S_BOARDING_PARTY_DESC: <<
 	[img=Plus]Can also be used for defense against boarders, or to take control of derelict ships.[/img]
 	[img=Minus]Only one boarding party can attempt to capture an object at any given moment.[/img]
 	[img=Minus]Can take between 10 to 100 seconds to complete, and has a high cooldown.[/img]
+	[img=MenuIcons::3;20]Objects belonging to a Verdant race cannot be boarded.[/img]
 >>
 S_CARRIER_HULL_DESC: <<
 	Specialized hull architecture allows for easier construction of dedicated carriers.
