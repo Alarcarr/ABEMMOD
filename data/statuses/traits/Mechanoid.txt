@@ -2,7 +2,7 @@ Status: Mechanoid
 	Visible To: Nobody
 	Collapses: True
 
-	PerPopulationAddResource(1.0, Labor)
+	PerPopulationAddResource(1.0, Labor, Overpop Factor = False)
 
 	GrantAbility(MechanoidColonize)
 
