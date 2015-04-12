@@ -15,8 +15,7 @@ Camp: BlackHoleCamp
 	Pickup: RemnantArmor
 		Name: Crippled Remnant Guardian
 		Description: Allows you to attempt to salvage the Guardian.
-		Model: Flagship
-		Material: Flagship
+		Model: TyrantFlagLarge
+		Material: TyrantMedium
 		Verb: #VERB_PICKUP_GUARDIAN
 		SpawnAnomaly(Type = BlackHole)
-		ABEM_races::CannotOverrideProtection()

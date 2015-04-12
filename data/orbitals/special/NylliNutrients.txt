@@ -8,8 +8,8 @@ Module: NylliFood
 	Labor Cost: 10
 	Health: 7000
 	Armor: 7000
-	Model: Habitat
-	Material: VolkurGeneric
+	Model: CommerceStation
+	Material: VolkurGenericPBR
 	Size: 5
 
 	RequireUnlockTag(NylliNutrients)
@@ -25,8 +25,8 @@ Module: NylliWater
 	Labor Cost: 10
 	Health: 7000
 	Armor: 7000
-	Model: Habitat
-	Material: VolkurGeneric
+	Model: Depot
+	Material: VolkurGenericPBR
 	Size: 5
 	RequireUnlockTag(NylliNutrients)
 	AddHealthEmpireAttribute(StaticDamageFactor, Multiplier = 4000.0)

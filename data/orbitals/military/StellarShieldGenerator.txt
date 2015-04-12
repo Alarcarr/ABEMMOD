@@ -14,7 +14,7 @@ Module: StellarShieldGenerator
 	Health: 5000
 	Armor: 2500
 
-	Model: FTLJammer
+	Model: DefenseStation
 	Material: VolkurGenericPBR
 
 	Strategic Icon: SystemUnderAttack

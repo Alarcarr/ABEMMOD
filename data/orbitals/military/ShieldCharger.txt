@@ -14,7 +14,7 @@ Module: ShieldCharger
 	Health: 4000
 	Armor: 1000
 
-	Model: FTLJammer
+	Model: DefenseStation
 	Material: VolkurGenericPBR
 
 	Strategic Icon: OrbitalIcons::7

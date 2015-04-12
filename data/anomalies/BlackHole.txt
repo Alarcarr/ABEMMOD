@@ -3,7 +3,7 @@ Anomaly: BlackHole
 	Frequency: 0
 	Description: #A_GUARDIAN_UNSCANNED
 	Model: TyrantFlagLarge
-	Material: Flagship
+	Material: TyrantMedium
 	Narrative: #A_GUARDIAN_UNSCANNED
 	Option: Reactivate
 		Description: #A_GUARDIAN_REACTIVATE
@@ -32,5 +32,5 @@ Anomaly: BlackHole
 		Choice: RemnantArmor
 		Choice: RemnantShields
 		Model: TyrantFlagLarge
-		Material: Flagship
+		Material: TyrantMedium
 		Choice: Reactivate
