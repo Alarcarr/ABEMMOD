@@ -17,7 +17,7 @@ Subsystem: FTLJammer
 	Hex.LaborCost := 40
 	Description: #S_FTLJAMMER_DESC
 	Effect: FTLUpkeep
-		Amount = 0.25
+		Amount = 0.15
 	Hook: AddStatus(Interdict)
 	Assert: Size >= 100
 		Message: The FTL Jammer must be at least size 100. Increase the jammer's hex count or the station's size.
