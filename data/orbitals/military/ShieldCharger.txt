@@ -14,8 +14,8 @@ Module: ShieldCharger
 	Health: 4000
 	Armor: 1000
 
-	Model: Research_Station
-	Material: ResearchStation
+	Model: FTLJammer
+	Material: VolkurGenericPBR
 
 	Strategic Icon: OrbitalIcons::7
 

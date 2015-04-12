@@ -16,8 +16,8 @@ Module: TradeOutpost
 	Health: 6000
 	Armor: 4000
 
-	Model: Research_Station
-	Material: ResearchStation
+	Model: CommerceStation
+	Material: VolkurGenericPBR
 
 	RequireNotTrait(Evangelical)
 

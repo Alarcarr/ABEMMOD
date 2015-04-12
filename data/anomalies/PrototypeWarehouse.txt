@@ -6,8 +6,8 @@ Anomaly: PrototypeWarehouse
 	State: Initial
 		Narrative: #ANOMALY_NAR_PROTO_WARES
 
-		Model: Research_Station
-		Material: ResearchStation
+		Model: Depot
+		Material: VolkurGenericPBR
 
 		Choice: Study
 		Choice: Activate

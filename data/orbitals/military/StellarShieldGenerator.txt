@@ -14,8 +14,8 @@ Module: StellarShieldGenerator
 	Health: 5000
 	Armor: 2500
 
-	Model: Research_Station
-	Material: ResearchStation
+	Model: FTLJammer
+	Material: VolkurGenericPBR
 
 	Strategic Icon: SystemUnderAttack
 	Size: 18

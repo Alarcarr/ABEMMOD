@@ -8,8 +8,8 @@ Module: RevenantChassis
 	Health: 50000
 	Armor: 20000
 
-	Model: Research_Station
-	Material: ResearchStation
+	Model: Shipyard
+	Material: VolkurGenericPBR
 	Size: 48
 
 	Strategic Icon: TechIcons::31

@@ -8,8 +8,8 @@ Module: RevenantCannon
 	Health: 30000
 	Armor: 10000
 
-	Model: Research_Station
-	Material: ResearchStation
+	Model: DefenseStation
+	Material: VolkurGenericPBR
 	Size: 32
 
 	Strategic Icon: TechIcons::11

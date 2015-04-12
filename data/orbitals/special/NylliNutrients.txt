@@ -9,6 +9,7 @@ Module: NylliFood
 	Health: 7000
 	Armor: 7000
 	Model: Habitat
+	Material: VolkurGeneric
 	Size: 5
 
 	RequireUnlockTag(NylliNutrients)

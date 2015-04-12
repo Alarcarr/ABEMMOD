@@ -128,10 +128,10 @@ Hull: RWHeavyCarrier
 /////////////////////
 Hull: RWStation
 	Name: Station
-	Background: TyrantMediumBlue
+	Background: VolkurBlueprint
 	BackgroundScale: 0.9
-	Material: ResearchStation
-	Model: Research_Station
+	Material: VolkurGenericPBR
+	Model: DefenseStation
 	
 	MinSize: 16
 

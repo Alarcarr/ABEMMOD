@@ -6,7 +6,7 @@ Anomaly: SystemReactor
 		Narrative: #ANOMALY_NAR_SYSREACTOR
 
 		Model: Research_Station
-		Material: ResearchStation
+		Material: VolkurGenericPBR
 
 		Choice: Disassemble
 		Choice: Reactivate

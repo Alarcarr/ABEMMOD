@@ -2,7 +2,7 @@ Anomaly: BlackHole
 	Name: Crippled Remnant Guardian
 	Frequency: 0
 	Description: #A_GUARDIAN_UNSCANNED
-	Model: Flagship
+	Model: TyrantFlagLarge
 	Material: Flagship
 	Narrative: #A_GUARDIAN_UNSCANNED
 	Option: Reactivate
@@ -20,17 +20,17 @@ Anomaly: BlackHole
 	Option: RemnantShields
 		Description: Download the schematics for the flagship's advanced shields.
 		Icon: TechIcons::35*#60ffff
-		NotifyAll(Remnant Shielding Salvaged!, Description = Remnant shield technology has been salvaged from a Guardian!, Icon = TechIcons::35*#60ffff)
+		NotifyAll(Progenitor Shielding Salvaged!, Description = Progenitor shield technology has been salvaged from a Guardian!, Icon = TechIcons::35*#60ffff)
 		UnlockSubsystem(RemnantShield)
 	Option: RemnantArmor
 		Description: Download the data on the flagship's advanced armor.
 		Icon: TechIcons::20*#60ffff
-		NotifyAll(Remnant Armor Salvaged!, Description = Remnant armor technology has been salvaged from a Guardian!, Icon = TechIcons::20*#60ffff)
+		NotifyAll(Progenitor Armor Salvaged!, Description = Progenitor armor technology has been salvaged from a Guardian!, Icon = TechIcons::20*#60ffff)
 		UnlockSubsystem(RemnantArmor)
 	State: Initial
 		Narrative: #A_GUARDIAN_SCANNED
 		Choice: RemnantArmor
 		Choice: RemnantShields
-		Model: Flagship
+		Model: TyrantFlagLarge
 		Material: Flagship
 		Choice: Reactivate

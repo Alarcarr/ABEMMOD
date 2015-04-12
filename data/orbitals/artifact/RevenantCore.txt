@@ -8,8 +8,8 @@ Module: RevenantCore
 	Health: 20000
 	Armor: 5000
 
-	Model: Research_Station
-	Material: ResearchStation
+	Model: Mainframe
+	Material: VolkurGenericPBR
 	Size: 32
 
 	Strategic Icon: TechIcons::47

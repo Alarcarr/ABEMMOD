@@ -2,7 +2,7 @@ GlobalStat: CombatSupplyRegen
 		Name: #S_COMBATSUPPLYREGEN
 		Description: #STT_COMBATSUPPLYREGEN
 		Color: #aaa
-		Secondary: base::SupplyCap
+		Secondary: SupplyCap
 		Suffix: /s
 
 		Variable: CombatSupplyRate
@@ -12,7 +12,7 @@ GlobalStat: BoardingDefense
 			Description: #STT_BOARDTOTAL
 			Icon: CrewControl*#9686ff
 			Color: #ff8000
-			Secondary: base::Control
+			Secondary: Control
 			
 			Variable: BoardingStrength
 			

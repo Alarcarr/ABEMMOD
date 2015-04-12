@@ -16,7 +16,7 @@ Module: FlingCore
 	Armor: 2500
 
 	Model: Fling
-	Material: Fling
+	Material: VolkurGenericPBR
 	Size: 10
 
 	Strategic Icon: OrbitalIcons::2

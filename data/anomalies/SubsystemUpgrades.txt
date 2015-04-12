@@ -1,8 +1,8 @@
 Anomaly: SubsystemsUpgrade
 	Name: Equipment Stash
 	Frequency: 0
-	Model: Research_Station
-	Material: ResearchStation
+	Model: Depot
+	Material: VolkurGenericPBR
 	Description: If you see this, there is something terribly wrong with this anomaly. Contact one of ABEM's developers and tell them how you caused this text to appear.
 	Option: Weapons
 		Icon: FusionTorpedo
@@ -23,8 +23,8 @@ Anomaly: SubsystemsUpgrade
 	State: SubsystemUpg
 		Narrative: #A_EQUIPMENTSTASH_NARRATIVE
 		
-		Model: Research_Station
-		Material: ResearchStation
+		Model: Depot
+		Material: VolkurGenericPBR
 		Choice: Armor
 		Choice: Engines
 		Choice: Supply
