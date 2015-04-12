@@ -636,6 +636,8 @@ class IsDerelict : StatusHook {
 	void onCreate(Object& obj, Status@ status, any@ data) override {
 		Ship@ ship = cast<Ship>(obj);
 		DerelictData info;
+		if(obj is null || !obj.valid)
+			return;
 		if(ship !is null) {
 			info.supply = ship.MaxSupply;
 			ship.modSupplyBonus(-info.supply);
@@ -653,6 +655,8 @@ class IsDerelict : StatusHook {
 	void onDestroy(Object& obj, Status@ status, any@ data) override {
 		DerelictData@ info;
 		data.retrieve(@info);
+		if(obj is null || !obj.valid)
+			return;
 		Ship@ ship = cast<Ship>(obj);
 		if(ship !is null) {
 			ship.modSupplyBonus(+info.supply);
@@ -665,6 +669,8 @@ class IsDerelict : StatusHook {
 	bool onTick(Object& obj, Status@ status, any@ data, double time) override {
 		DerelictData@ info;
 		data.retrieve(@info);
+		if(obj is null || !obj.valid)
+			return false;
 		Ship@ ship = cast<Ship>(obj);
 		if(ship !is null) {
 			if(ship.MaxSupply > 0)

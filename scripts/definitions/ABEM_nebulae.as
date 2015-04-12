@@ -165,9 +165,10 @@ class ShieldRegenBoost : StatusHook {
 	bool onTick(Object& obj, Status@ status, any@ data, double time) override {
 		double regen = 0;
 		Ship@ ship = cast<Ship>(obj);
-		if(ship !is null)
+		if(ship !is null) {
 			regen = ship.blueprint.getEfficiencySum(SV_ShieldRegen) * percentage.decimal;
-		ship.Shield = min(ship.Shield + regen, ship.MaxShield);
+			ship.Shield = min(ship.Shield + regen, ship.MaxShield);
+		}
 		return true;
 	}
 #section all
