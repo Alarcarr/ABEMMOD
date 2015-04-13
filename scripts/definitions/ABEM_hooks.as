@@ -294,7 +294,7 @@ class CombinedExpiration : StatusHook {
 	
 	void save(Status@ status, any@ data, SaveFile& file) const {
 		double timer = 0;
-		data.retrieve(inCombat);
+		data.retrieve(timer);
 
 		file << timer;
 	}
