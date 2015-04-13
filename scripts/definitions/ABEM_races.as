@@ -169,6 +169,20 @@ class GenerateResearchInCombat : StatusHook {
 		data.store(obj.inCombat);
 		return true;
 	}
+	
+	void save(Status@ status, any@ data, SaveFile& file) const {
+		bool inCombat = false;
+		data.retrieve(inCombat);
+
+		file << inCombat;
+	}
+
+	void load(Status@ status, any@ data, SaveFile& file) const {
+		bool inCombat = false;
+		
+		file >> inCombat;
+		data.store(inCombat);
+	}
 #section all
 }
 
