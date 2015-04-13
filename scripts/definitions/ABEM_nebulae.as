@@ -44,6 +44,20 @@ class DisableShields : StatusHook {
 		}
 		return true;
 	}
+	
+	void save(Status@ status, any@ data, SaveFile& file) const {
+		double shield = 0;
+		data.retrieve(shield);
+
+		file << shield;
+	}
+
+	void load(Status@ status, any@ data, SaveFile& file) const {
+		double shield = 0;
+		
+		file >> shield;
+		data.store(shield);
+	}
 #section all
 }
 
@@ -67,6 +81,13 @@ class DisableStatus : StatusHook {
 			obj.removeStatusType(type.id);
 		}
 		return true;
+	}
+	
+	void load(Status@ status, any@ data, SaveFile& file) const {
+		const StatusType@ type = getStatusType(arg_type.str);
+		if(type !is null)
+			data.store(@type);
+		}
 	}
 #section all
 }
@@ -106,6 +127,14 @@ class DisableAbility : StatusHook {
 		}
 		return true;
 	}
+	
+	void load(Status@ status, any@ data, SaveFile& file) const {
+		const AbilityType@ type = getAbilityType(arg_type.str);
+		if(type !is null)
+			data.store(@type);
+		}
+	}
+#section all
 }
 
 class DealRandomDamage : StatusHook {
@@ -221,6 +250,20 @@ class KillCrew : StatusHook {
 		}
 		data.store(timeLeft);
 		return true;
+	}
+	
+	void save(Status@ status, any@ data, SaveFile& file) const {
+		double timeLeft = 0;
+		data.retrieve(timeLeft);
+
+		file << timeLeft;
+	}
+
+	void load(Status@ status, any@ data, SaveFile& file) const {
+		double timeLeft = 0;
+		
+		file >> timeLeft;
+		data.store(timeLeft);
 	}
 #section all
 }
