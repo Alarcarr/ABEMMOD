@@ -291,6 +291,20 @@ class CombinedExpiration : StatusHook {
 		data.store(timer);
 		return timer < arguments[0].decimal;
 	}
+	
+	void save(Status@ status, any@ data, SaveFile& file) const {
+		double timer = 0;
+		data.retrieve(inCombat);
+
+		file << timer;
+	}
+
+	void load(Status@ status, any@ data, SaveFile& file) const {
+		double timer = 0;
+		
+		file >> timer;
+		data.store(timer);
+	}
 	#section all
 }
 class DisplayStatus : StatusHook {
@@ -387,6 +401,34 @@ class Boarders : StatusHook {
 		info.defenders = defenders;
 		data.store(@info);
 		return true;
+	}
+	
+	void save(Status@ status, any@ data, SaveFile& file) const {
+		BoardingData@ info;
+		data.retrieve(@info);
+
+		if(info is null) {
+			file << 0.d;
+			file << 0.d;
+			file << 0.d;
+			file << 0.d;
+		}
+		else {
+			file << info.boarders;
+			file << info.defenders;
+			file << info.originalboarders;
+			file << info.originaldefenders;
+		}
+	}
+
+	void load(Status@ status, any@ data, SaveFile& file) const {
+		BoardingData info;
+		data.store(@info);
+
+		file >> info.boarders;
+		file >> info.defenders;
+		file >> info.originalboarders;
+		file >> info.originaldefenders;
 	}
 	#section all
 };
@@ -691,6 +733,28 @@ class IsDerelict : StatusHook {
 		obj.damage(dmg, -1.0, vec2d(randomi(-1, 1), randomi(-1, 1)));
 		obj.engaged = true;
 		return true;
+	}
+	
+	void save(Status@ status, any@ data, SaveFile& file) const {
+		DerelictData@ info;
+		data.retrieve(@info);
+
+		if(info is null) {
+			file << 0.d;
+			file << 0.d;
+		}
+		else {
+			file << info.supply;
+			file << info.shield;
+		}
+	}
+
+	void load(Status@ status, any@ data, SaveFile& file) const {
+		DerelictData info;
+		data.store(@info);
+
+		file >> info.supply;
+		file >> info.shield;
 	}
 #section all
 };
@@ -1092,6 +1156,28 @@ class AddStellarShield : StatusHook {
 		data.store(@info);
 		return true;
 	}
+	
+	void save(Status@ status, any@ data, SaveFile& file) const {
+		ShieldData@ info;
+		data.retrieve(@info);
+
+		if(info is null) {
+			file << 0.d;
+			file << false;
+		}
+		else {
+			file << info.bonus;
+			file << info.castedBySubsystem;
+		}
+	}
+
+	void load(Status@ status, any@ data, SaveFile& file) const {
+		ShieldData info;
+		data.store(@info);
+
+		file >> info.bonus;
+		file >> info.castedBySubsystem;
+	}
 #section all
 }
 
@@ -1134,6 +1220,28 @@ class AddShieldCapacity : StatusHook {
 		ship.MaxShield -= bonus;
 		if(ship.MaxShield < ship.Shield)
 			ship.Shield = ship.MaxShield;
+	}
+	
+	void save(Status@ status, any@ data, SaveFile& file) const {
+		ShieldData@ info;
+		data.retrieve(@info);
+
+		if(info is null) {
+			file << 0.d;
+			file << false;
+		}
+		else {
+			file << info.bonus;
+			file << info.castedBySubsystem;
+		}
+	}
+
+	void load(Status@ status, any@ data, SaveFile& file) const {
+		ShieldData info;
+		data.store(@info);
+
+		file >> info.bonus;
+		file >> info.castedBySubsystem;
 	}
 #section all	
 }
