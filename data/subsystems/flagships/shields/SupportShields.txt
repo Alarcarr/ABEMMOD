@@ -21,6 +21,9 @@ Subsystem: SupShieldGen
 
 	Requires:
 		Command = 1
+		
+	Modifier: LaborCostFactor(factor)
+		Hex.LaborCost := 0
 
 	Module: Core
 		Sprite: FissionReactor
