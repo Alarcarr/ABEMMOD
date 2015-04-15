@@ -87,10 +87,10 @@ class DisableStatus : StatusHook {
 		const StatusType@ type = getStatusType(arg_type.str);
 		if(type !is null)
 			data.store(@type);
-		}
 	}
 #section all
 }
+
 
 class DisableAbility : StatusHook {
 	Document doc("Disables a certain ability type on objects affected by this status.");
@@ -132,10 +132,11 @@ class DisableAbility : StatusHook {
 		const AbilityType@ type = getAbilityType(arg_type.str);
 		if(type !is null)
 			data.store(@type);
-		}
 	}
 #section all
 }
+
+
 
 class DealRandomDamage : StatusHook {
 	Document doc("Deals damage from random directions to objects affected by this status.");

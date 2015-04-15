@@ -3,7 +3,7 @@ Construction: TechnologicalCapital
 	Build Cost: 1000
 	Labor Cost: 400
 	Maintenance Cost: 200
-	Target: a = Empire
+	Target: a = Object
 	Icon: AncientRuin
 	Category: Infrastructure
 	Description: Increase Research by 40% , Add 10 flat research.

@@ -24,11 +24,12 @@ Subsystem: Superstructure
 
 	Ship.ExternalHexes := Ship.ExternalHexes + ExteriorHexes
 
+	//DamageResist := ShipSize / 70.0
 
 	Hex.BuildCost := HexSize * 0.4
 	Hex.LaborCost := HexSize * 0.04
-	Effect: DamageResist
-		Resist = DamageResist
+	//Effect: DamageResist
+	//	Resist = DamageResist
 
 	Module: Default
 		Hex.BuildCost := Hex.BuildCost * 2

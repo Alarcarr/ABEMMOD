@@ -408,10 +408,11 @@ class Boarders : StatusHook {
 		data.retrieve(@info);
 
 		if(info is null) {
-			file << 0.d;
-			file << 0.d;
-			file << 0.d;
-			file << 0.d;
+			double nil = 0;
+			file << nil;
+			file << nil;
+			file << nil;
+			file << nil;
 		}
 		else {
 			file << info.boarders;
@@ -740,8 +741,9 @@ class IsDerelict : StatusHook {
 		data.retrieve(@info);
 
 		if(info is null) {
-			file << 0.d;
-			file << 0.d;
+			double nil = 0;
+			file << nil;
+			file << nil;
 		}
 		else {
 			file << info.supply;
@@ -1162,7 +1164,8 @@ class AddStellarShield : StatusHook {
 		data.retrieve(@info);
 
 		if(info is null) {
-			file << 0.d;
+			double nil = 0;
+			file << nil;
 			file << false;
 		}
 		else {
@@ -1227,7 +1230,8 @@ class AddShieldCapacity : StatusHook {
 		data.retrieve(@info);
 
 		if(info is null) {
-			file << 0.d;
+			double nil = 0;
+			file << nil;
 			file << false;
 		}
 		else {

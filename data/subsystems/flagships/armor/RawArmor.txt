@@ -4,7 +4,7 @@ Subsystem: OreArmor
 	Elevation: 1
 
 	Tags: Category:Armor, NoWall
-	Tags: NoCore, NonContiguous, DefaultUnlock, Defense,, TankArmor, ExternalSpace
+	Tags: NoCore, NonContiguous, DefaultUnlock, Defense, TankArmor, ExternalSpace
 	Hull: Flagship, Station,Support
 
 	Size := HexSize * Hexes

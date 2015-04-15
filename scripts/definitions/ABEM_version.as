@@ -1,2 +1,4 @@
-const string MOD_VERSION = "0.2.0";
-const string MOD_REVISION = "r386";
+import version;
+
+const string MOD_REVISION = "390";
+const string MOD_VERSION = "ABEM 0.2.0 (revision " + MOD_REVISION + ") for Star Ruler 2 v1.0.1 (revision 4676)";

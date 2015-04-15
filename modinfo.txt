@@ -1,6 +1,9 @@
 	Name: Alternate Balance Expansion Mod
 	Description: <<
-		[h1]v0.386[/h1]
+		[h1]v0.2.0[/h1]
+		Various changes.
+
+		[h1]v0.180[/h1]
 		The new Races are here! (They are WIP but they are playable atm)
 		Changes on research.
 		New subsystems.

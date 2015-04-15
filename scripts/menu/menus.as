@@ -1,4 +1,4 @@
-#priority init 100
+#priority init 50
 import elements.BaseGuiElement;
 import elements.GuiButton;
 import elements.GuiListbox;
@@ -60,9 +60,9 @@ string latestSave;
 
 void init() {
 	//Show the version
-	@version = GuiText(null, Alignment(Right-200, Bottom-20, Right-4, Bottom));
+	@version = GuiText(null, Alignment(Right-600, Bottom-20, Right-4, Bottom));
 	version.horizAlign = 1.0;
-	version.text = format("Version: ABEM $1 ($2) for Star Ruler 2 $3 ($4)", MOD_VERSION, MOD_REVISION, GAME_VERSION, SCRIPT_VERSION);
+	version.text = "Mod: " + MOD_VERSION;
 	version.color = Color(0xaaaaaaaa);
 
 	//Create logo
