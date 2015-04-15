@@ -7,6 +7,7 @@ import elements.GuiSprite;
 import elements.GuiPanel;
 import dialogs.MessageDialog;
 import version;
+import ABEM_version;
 from gui import animate_speed, animate_time, animate_remove;
 
 enum MenuAnimation {
@@ -61,7 +62,7 @@ void init() {
 	//Show the version
 	@version = GuiText(null, Alignment(Right-200, Bottom-20, Right-4, Bottom));
 	version.horizAlign = 1.0;
-	version.text = format("Version: $1 ($2)", GAME_VERSION, SCRIPT_VERSION);
+	version.text = format("Version: ABEM $1 ($2) for Star Ruler 2 $3 ($4)", MOD_VERSION, MOD_REVISION, GAME_VERSION, SCRIPT_VERSION);
 	version.color = Color(0xaaaaaaaa);
 
 	//Create logo
