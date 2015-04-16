@@ -1,4 +1,4 @@
-#priority init 50
+#priority init 100
 import elements.BaseGuiElement;
 import elements.GuiButton;
 import elements.GuiListbox;
