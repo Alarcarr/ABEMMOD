@@ -1,6 +1,5 @@
 Construction: Developing
 	Name: Develop 25 Tiles
-	Target: a = 
 	Labor Cost: 25
 	Icon: PlanetImage
 	Category: Infrastructure

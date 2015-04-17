@@ -152,18 +152,6 @@ Material: lvl2d
 Material: c1
 	Inherit: ABEMSubsystem
 	Texture: data/images/c1.png
-Material: c1
-	Inherit: ABEMSubsystem
-	Texture: data/images/c1.png
-Material: c1
-	Inherit: ABEMSubsystem
-	Texture: data/images/c1.png	
-	
-	
-	
-Material: c1
-	Inherit: ABEMSubsystem
-	Texture: data/images/c1.png
 Material: c2
 	Inherit: ABEMSubsystem
 	Texture: data/images/c2.png
