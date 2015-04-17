@@ -1,4 +1,5 @@
 #priority init 100
+#priority draw 100
 import elements.BaseGuiElement;
 import elements.GuiButton;
 import elements.GuiListbox;
