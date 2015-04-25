@@ -673,7 +673,8 @@ class DerelictData {
 }
 
 class IsDerelict : StatusHook {
-	Document doc("Marks the object as a derelict ship. Derelicts have 0 maximum shields and 0 maximum supply - which is part of what makes them incapable of repairing or otherwise defending themselves in any way. Should never be done without setting the ship's owner to defaultEmpire beforehand. Deals 1 damage per second as the ship is ravaged by time and the harsh, cold environment of space.");
+	Document doc("Marks the object as a derelict (or otherwise deactivated) ship. Derelicts have 0 maximum shields and 0 maximum supply - which is part of what makes them incapable of repairing or otherwise defending themselves in any way. Should never be done without setting the ship's owner to defaultEmpire beforehand.");
+	Argument decay("Decay", AT_Boolean, "True", doc="If true, deals 1 damage per second as the ship is ravaged by time and the harsh, cold environment of space.");
 
 #section server
 	void onCreate(Object& obj, Status@ status, any@ data) override {
@@ -725,13 +726,15 @@ class IsDerelict : StatusHook {
 			ship.modSupplyBonus(-ship.MaxSupply);
 			ship.MaxShield -= ship.MaxShield;
 		}
-		DamageEvent dmg;
-		dmg.damage = 1.0 * time;
-		dmg.partiality = time;
-		dmg.impact = 0;
-		@dmg.obj = null;
-		@dmg.target = obj;
-		obj.damage(dmg, -1.0, vec2d(randomi(-1, 1), randomi(-1, 1)));
+		if(decay.boolean) {
+			DamageEvent dmg;
+			dmg.damage = 1.0 * time;
+			dmg.partiality = time;
+			dmg.impact = 0;
+			@dmg.obj = null;
+			@dmg.target = obj;
+			obj.damage(dmg, -1.0, vec2d(randomi(-1, 1), randomi(-1, 1)));
+		}
 		obj.engaged = true;
 		return true;
 	}
@@ -1359,3 +1362,20 @@ class HealShieldFromSubsystem : AbilityHook {
 	}
 #section all
 };
+
+class ChangeOriginOnOwnerChange : StatusHook {
+	Document doc("When the object affected by this status changes owners, the status' origin empire is also changed.");
+	Argument refresh("Refresh Status", AT_Boolean, "True", doc="If true, the status will be removed and replaced with an identical copy of itself. If in doubt, set to true.");
+	Argument refreshduration("Refreshed Duration", AT_Decimal, "-1", doc="The duration of the status after it is refreshed. Does not apply if Refresh Status is set to false. Defaults to -1 (never expires).");
+	
+#section server
+	bool onOwnerChange(Object& obj, Status@ status, any@ data, Empire@ prevOwner, Empire@ newOwner) {
+		if(newOwner !is null)
+			@status.originEmpire = newOwner;
+		if(refresh)
+			obj.addStatus(status.type.id, refreshduration.decimal);
+		return !refresh;
+	}
+#section all
+}
+

@@ -4,7 +4,7 @@ TRAIT_CAT_Handicaps:Handicaps
 TRAIT_PROGENITORS: Progenitor Race
 TRAIT_PROGENITORS_DESC: <<
   [vspace=3/]Starts with a [img=ResourceIconsSmall::60][/img]Quartz and a [img=ResourceIconsSmall::63][/img]Cyllium on their homeworld.
-  [vspace=3/][img=Plantation;22][/img]Homeworld has no food and water; instead, they are located on separate planets in the home system.
+  [vspace=3/][img=Plantation;22][/img]Homeworld cannot export its food or water.
   [vspace=3/][img=BuildingSprites::0;22][/img]All civilian resource generation is reduced by 80%.
   [vspace=3/][img=techHyperfield;22][/img]Cannot attack or be attacked by Remnant ships, but can use the Override Remnant Programming ability to take control of non-Guardian Remnant fleets.
 >>

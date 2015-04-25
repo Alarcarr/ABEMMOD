@@ -104,6 +104,7 @@ class ConvertRemnants : AbilityHook {
 			return;
 		if(targ.hasLeaderAI)
 			targ.takeoverFleet(abl.obj.owner, 1, false);
+			targ.sightRange = 1500; // THIS BAD. DELETE THIS WHEN IMPLEMENTING SENSORS.
 		else
 			@targ.owner = abl.obj.owner;
 	}
