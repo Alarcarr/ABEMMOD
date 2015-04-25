@@ -3,13 +3,14 @@ Subsystem: OreArmor
 	BaseColor: #a9a9a9
 	Elevation: 1
 
-	Tags: Category:Armor, NoWall
-	Tags: NoCore, NonContiguous, DefaultUnlock, Defense, TankArmor, ExternalSpace
+//	Tags: Category:Armor, NoWall
+//	Tags: NoCore, NonContiguous, DefaultUnlock, Defense, TankArmor, ExternalSpace
 	Hull: Flagship, Station,Support
 
 	Size := HexSize * Hexes
 
-	Tags: FauxExterior
+//	Tags: FauxExterior
+	Tags: Disabled
 	Ship.ExternalHexes := Ship.ExternalHexes + ExteriorHexes
 
 	Hex.Resistance := 0.5

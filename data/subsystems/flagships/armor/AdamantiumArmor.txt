@@ -3,12 +3,13 @@ Subsystem: AdamantiumArmor
 	BaseColor: #128cc1
 	Elevation: 1
 
-	Tags: Category:Armor
-	Tags: NoCore, NonContiguous, Defense, IsArmor, TankArmor, ExternalSpace
+//	Tags: Category:Armor
+//	Tags: NoCore, NonContiguous, Defense, IsArmor, TankArmor, ExternalSpace
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes
-	Tags: FauxExterior
+//	Tags: FauxExterior
+	Tags: Disabled
 	Ship.ExternalHexes := Ship.ExternalHexes + ExteriorHexes
 
 	// 0.1 = 10%
