@@ -1,0 +1,45 @@
+Module: NylliSenate
+	Name: Government Center
+	Description: #F_SENATE_DESC
+	Icon: PoliticalStrengthIcon
+	Strategic Icon: PoliticalStrengthIcon
+	Labor Cost: 125
+	Build Cost: 800
+	Maintenance: 1000
+	Health: 10000
+	Armor: 10000
+	Model: CommerceStation
+	Material: VolkurGenericPBR
+	AddHealthEmpireAttribute(StaticDamageFactor, Multiplier = 5000.0)
+	RequireUnlockTag(NylliSenate)
+	AddInfluenceStake(10)
+Module: NylliPowerPlant
+	Name: Power Plant
+	Description: #ORB_POWERPLANT_DESC
+	Icon: TechIcons::6
+	Strategic Icon: TechIcons::6
+	Health: 10000
+	Armor: 10000
+	Labor Cost: 100
+	Build Cost: 800
+	Maintenance: 1000
+	Model: Research_Station
+	Material: VolkurGenericPBR
+	AddHealthEmpireAttribute(StaticDamageFactor, Multiplier = 5000.0)
+	RequireUnlockTag(NylliPowerPlant)
+	AddEnergyIncome(5)
+Module: NylliIntel
+	Name: Intelligence Facility
+	Model: Observatory
+	Material: VolkurGenericPBR
+	Health: 10000
+	Armor: 10000
+	Build Cost: 800
+	Labor Cost: 15
+	Maintenance: 1200
+	Description: #ORB_INTEL_DESC
+	Icon: techScanner
+	Strategic Icon: techScanner
+	PeriodicNearbyIntelligence(Timer = 120)
+	RequireUnlockTag(NylliIntel)
+	AddHealthEmpireAttribute(StaticDamageFactor, Multiplier = 5000.0)

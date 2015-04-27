@@ -4,6 +4,7 @@ Technology: SuperLaser
 	Class: Unlock
 	Description: #R_SYS_SUPERLASER_DESC
 	Icon: SLaser
+	ModAttribute(ProgenitorTechProgress, Add, 2.5)
 	SkipOnUnlockedSubsystem(SuperLaser)
 	UnlockSubsystem(SuperLaser)
 	SecondaryEnergyCost(2000)

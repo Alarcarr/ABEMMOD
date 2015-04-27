@@ -11,6 +11,7 @@ Technology: SysShieldGen
 
 	UnlockSubsystem(ShieldGen)
 
+	ModAttribute(ProgenitorTechProgress, Add, 1)
 	SkipOnUnlockedSubsystem(SupShieldGen)
 	SkipOnUnlockedSubsystem(ShieldGen)
 	UnlockSubsystem(SupShieldGen)
@@ -35,5 +36,6 @@ Technology: CovariantShield
 	Color: #000bde
 	Point Cost: 700
 	Time Cost: 100
+	ModAttribute(ProgenitorTechProgress, Add, 2.5)
 	SkipOnUnlockedSubsystem(CovariantShield)
 	UnlockSubsystem(CovariantShield)

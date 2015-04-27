@@ -7,6 +7,7 @@ Technology: IntelFacilities
 	Class: Unlock
 	Color: #aa19ff
 	Blurb: Generates Intelligence Cards
+	ModAttribute(ProgenitorTechProgress, Add, 2)
 	SkipOnUnlockedTag(IntelligenceFacil)
 	UnlockTag(IntelligenceFacil)
 Technology: NylliIntel

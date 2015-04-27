@@ -11,6 +11,7 @@ Technology: BldMegacity
 
 	UnlockTag(MegacityUnlock)
 
+	ModAttribute(ProgenitorTechProgress, Add, 2)
 	SkipOnUnlockedTag(MegacityUnlock)
 	SecondaryInfluenceCost(16)
 Technology: BldMetropolis
@@ -28,6 +29,7 @@ Technology: TaxCenter
 	Icon: tax2
 	Point Cost: 600
 	Time Cost: 60
+	ModAttribute(ProgenitorTechProgress, Add, 0.5)
 	UnlockTag(Tax)
 	SkipOnUnlockedTag(Tax)
 Technology: Housing
@@ -36,5 +38,6 @@ Technology: Housing
 	Icon: city3
 	Point Cost: 500
 	Time Cost: 60
+	ModAttribute(ProgenitorTechProgress, Add, 0.5)
 	UnlockTag(Housing1)
 	SkipOnUnlockedTag(Housing1)

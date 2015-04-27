@@ -12,15 +12,11 @@ Trait: Progenitors
 	AddStatusOwnedPlanets(Progenitors)
 	AddStatusOwnedFleets(ProgenitorFleet)
 
-	ModAttribute(VoteCardCostMod, Add, 4.0)
-	ModAttribute(SupportCardCostMod, Add, 2.0)
 
 	TriggerHomeworld(TerraformTo(Quartz))
 	OnHomeworld(AddPlanetResource(Cyllium))
 	OnHomeworld(AddPlanetResource(Soylent1))
 	OnHomeworld(AddPlanetResource(BuildingWater))
 
-	AddModifier(SupplyCostFactor(0.75))
-	AddModifier(SupportCapacityFactor(0.5))
 
 	ABEM_races::AllyRemnants()

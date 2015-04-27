@@ -5,6 +5,7 @@ Technology: HDSupply
 	Point Cost: 600
 	Time Cost: 60
 	Description: #R_HDSUPPLY_DESC
+	ModAttribute(ProgenitorTechProgress, Add, 5)
 	SkipOnUnlockedSubsystem(HDSupplyModule)
 	UnlockSubsystem(HDSupplyModule)
 	SecondaryEnergyCost(700)

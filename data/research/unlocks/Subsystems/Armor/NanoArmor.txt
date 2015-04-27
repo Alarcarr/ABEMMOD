@@ -9,5 +9,6 @@ Technology: NanoArmor
 	Color: #676210
 	Description: #R_NANO_ARMOR_DESC
 
+	ModAttribute(ProgenitorTechProgress, Add, 5)
 	SkipOnUnlockedSubsystem(NanoArmor)
 	UnlockSubsystem(NanoArmor)

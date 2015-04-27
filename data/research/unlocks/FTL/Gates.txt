@@ -5,6 +5,7 @@ Technology: GateTech
 	Time Cost: 400
 	Description: #R_ORB_GATE_DESC
 	Class: Unlock
+	ModAttribute(ProgenitorTechProgress, Add, 5)
 	UnlockSubsystem(GateModule)
 	SkipOnUnlockedSubsystem(GateModule)
 	SecondaryInfluenceCost(80)

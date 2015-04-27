@@ -1379,3 +1379,6 @@ class ChangeOriginOnOwnerChange : StatusHook {
 #section all
 }
 
+class AddMaintenanceToOriginFromMaintenance : StatusHook {
+	Document doc("The origin empire of this status must pay a portion of this object's maintenance.");
+}

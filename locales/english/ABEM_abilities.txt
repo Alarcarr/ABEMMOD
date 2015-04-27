@@ -1,4 +1,4 @@
-ABL_OVERCHARGE_FLEET_DESC: <<
+﻿ABL_OVERCHARGE_FLEET_DESC: <<
 	Increase the targeted fleet's effectiveness by 40%.
 
 	A fleet can only be upgraded once.
@@ -104,6 +104,7 @@ ABL_PROGENITOR_COMMANDCODES_DESC: <<
 	Using our command codes, we can access the control computers of Keeper fleets, overriding the ancient directives programmed by our ancestors so that they do our bidding.
 	
 	Properly reactivating the fleets will require some energy, though, and we do not have the codes for the great Guardians that watch over the Hubworlds.
+>>
 ABL_DEFENSIVEMATRIX: Engage Defensive Matrix
 ABL_DEFENSIVEMATRIX_DESC: <<
 	Engulfs an allied flagship in a charged plasma field, absorbing incoming damage until the field dissipates.

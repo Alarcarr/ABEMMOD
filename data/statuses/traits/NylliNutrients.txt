@@ -3,6 +3,7 @@ Status: NylliFood
 	Collapses: True
 	Unique: False
 	Visible To: Nobody
+	Icon: Megafarm
 	RepeatStacks(AddPlanetResource(Soylent1))
 	RemoveOnOwnerChange()
 	ABEM_orbitals::ApplyToOwned()
@@ -11,6 +12,7 @@ Status: NylliWater
 	Collapses: True
 	Unique: False
 	Visible To: Nobody
+	Icon: Hydrogenator
 	RepeatStacks(AddPlanetResource(BuildingWater))
 	ABEM_orbitals::ApplyToOwned()
 	RemoveOnOwnerChange()

@@ -3,6 +3,6 @@ Technology: ProgenitorScience
 	Icon: emp_portrait_cloak
 	Color: #aaaaaa
 	Description: #R_PROGENITOR_SCIENCE_DESC
-	Blurb:  
+	Blurb:
 	RequireUnlockTag(ProgenitorTech)
 	AutoUnlockOnUnlockedTag(ProgenitorTech)

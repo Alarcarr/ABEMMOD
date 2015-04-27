@@ -5,4 +5,6 @@ Technology: Matter Disruptor
 	Time Cost: 120
 	Icon: WaveEmitter
 	Description: #R_MATTERDISRUPTOR_DESC
+	SkipOnUnlockedSubsystem(MatterDisruptor)
+	ModAttribute(ProgenitorTechProgress, Add, 2.5)
 	UnlockSubsystem(MatterDisruptor)

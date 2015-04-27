@@ -6,5 +6,6 @@ Technology: VoidRay
 	Icon: Laser::2*#32ff17
 	Color: #ff0314
 	Description: #R_VOIDRAY_DESC
+	ModAttribute(ProgenitorTechProgress, Add, 1.5)
 	SkipOnUnlockedSubsystem(VoidRay)
 	UnlockSubsystem(VoidRay)

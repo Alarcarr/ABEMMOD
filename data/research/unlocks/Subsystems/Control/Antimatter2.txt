@@ -6,6 +6,7 @@ Technology: Antimatter2
 	Time Cost: 180
 	Icon: TechIcons::7
 	Description: #R_SYS_SHIELDED_AMGEN_DESC
+	ModAttribute(ProgenitorTechProgress, Add, 5)
 	UnlockSubsystem(ShieldedAntimatter)
 	SecondaryEnergyCost(1700)
 	UnlockSubsystem(ShieldedAntimatter)

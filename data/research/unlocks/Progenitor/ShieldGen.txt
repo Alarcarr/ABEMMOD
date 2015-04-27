@@ -5,8 +5,9 @@ Technology: ProgenitorShield
 	Point Cost: 1500
 	Time Cost: 180
 	Class: Unlock
-	Blurb:  
+	Blurb:
 	Color: #000bde
+	ModAttribute(ProgenitorTechProgress, Add, 15)
 	RequireUnlockTag(ProgenitorTech)
 	SkipOnUnlockedSubsystem(RemnantShield)
 	UnlockSubsystem(RemnantShield)

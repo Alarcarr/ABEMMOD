@@ -12,7 +12,7 @@ F_POWERPLANT_NAME: Power Plant
 F_POWERPLANT_DESC: <<
 	[color=#aaa][i]A massive power plant dedicated to the production of large amounts of clean energy.[/i][/color]
 
-	Generates 10 energy.
+	Provides Energy generation equivalent to 10 pressure.
 >>
 F_SENATE_NAME: Government Center
 F_SENATE_DESC: <<

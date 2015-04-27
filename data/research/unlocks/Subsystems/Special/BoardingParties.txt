@@ -6,4 +6,5 @@ Technology: BoardingParty
 	Color: #710cff
 	Point Cost: 500
 	Time Cost: 120
+	ModAttribute(ProgenitorTechProgress, Add, 1)
 	UnlockSubsystem(BoardingParty)

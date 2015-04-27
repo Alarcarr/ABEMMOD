@@ -1,0 +1,14 @@
+Technology: OrbVacuumTelescope
+	Name: #R_ORB_VACUUM_TELESCOPE
+	Description: #R_ORB_VACUUM_TELESCOPE_DESC
+	Class: Unlock
+
+	Point Cost: 1500
+	Time Cost: 180
+
+	Icon: ResourceIconsSmall::69
+	Color: #fff300
+
+	ModAttribute(ProgenitorTechProgress, Add, 5)
+	UnlockTag(VacuumTelescopeUnlock)
+	SkipOnUnlockedTag(VacuumTelescopeUnlock)

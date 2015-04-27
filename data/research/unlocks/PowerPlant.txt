@@ -12,6 +12,7 @@ Technology: PowerPlant
 
 	UnlockTag(PowerPlant)
 
+	ModAttribute(ProgenitorTechProgress, Add, 1.5)
 	SkipOnUnlockedTag(PowerPlant)
 	SecondaryMoneyCost(1500)
 Technology: NylliPowerPlant

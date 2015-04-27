@@ -9,6 +9,7 @@ Ability: RemnantCommandCodes
 	Target: targ = Object
 
 	Either(ABEM_hooks::TargetRequireCommand(targ), TargetFilterType(targ, Orbital))
+	ABEM_races::TargetFilterRemnants(targ)
 	TargetFilterNotStatus(targ, IsGuardian)
 	TargetFilterNotStatus(targ, SeedShip)
 	ABEM_races::CostFromSize(targ, 256)

@@ -359,6 +359,26 @@ class TargetFilterNotRace : TargetFilter {
 	}
 };
 
+class TargetFilterRemnants : TargetFilter {
+	Document doc("Only allow targets belonging to the Remnants.");
+	Argument targID(TT_Object);
+	
+	string getFailReason(Empire@ emp, uint index, const Target@ targ) const override {
+		return "Must target Remnants.";
+	}
+
+	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const override {
+		if(index != uint(targID.integer))
+			return true;
+		if(targ.obj is null)
+			return false;
+		if(targ.obj.owner is null)
+			return false;
+		else
+			return targ.obj.owner is Creeps;
+	}
+};
+
 class IfRace : IfHook {
 	Document doc("Only apply the inner hook if the owner of this object is of a particular race.");
 	Argument hookID(AT_Hook, "generic_effects::GenericEffect");

@@ -7,5 +7,6 @@ Technology: EngBay
 	Description: #R_SYS_ENGINEERING
 	Color: #44ff47
 	Blurb: Onboard Assembly
+	ModAttribute(ProgenitorTechProgress, Add, 2.5)
 	UnlockSubsystem(EngBay)
-	UnlockSubsystem(EngBay)
+	SkipOnUnlockedSubsystem(EngBay)

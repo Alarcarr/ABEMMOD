@@ -4,5 +4,6 @@ Technology: SSG
 	Icon: SystemUnderAttack
 	Point Cost: 700
 	Time Cost: 60
+	ModAttribute(ProgenitorTechProgress, Add, 2.5)
 	UnlockTag(StellarShieldOrbital)
 	SkipOnUnlockedTag(StellarShieldOrbital)

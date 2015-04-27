@@ -1,9 +1,10 @@
 Technology: RepairBay
-	Name: Repair Bay
+	Name: Nanite Dispensers
 	Icon: techShipYard
 	Point Cost: 2000
 	Time Cost: 360
 	Description: #R_SYS_REPAIRBAY_DESC
+	ModAttribute(ProgenitorTechProgress, Add, 2.5)
 	SkipOnUnlockedSubsystem(RepairBay)
 	SecondaryMoneyCost(3000)
 	UnlockSubsystem(RepairBay)

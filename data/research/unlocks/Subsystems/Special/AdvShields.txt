@@ -7,6 +7,7 @@ Technology: AdvShield
 	Description: #R_ADV_SHIELD_DESC
 	Class: Unlock
 	Color: #bf01ff
+	ModAttribute(ProgenitorTechProgress, Add, 5)
 	UnlockModule(ShieldDiffuser)
 	UnlockModule(ShieldCapacitor)
 	AddModifier(ShieldCapacityFactor(1.2))

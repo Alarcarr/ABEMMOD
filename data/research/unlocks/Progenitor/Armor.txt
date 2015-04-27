@@ -7,6 +7,7 @@ Technology: ProgenitorArmor
 	Class: Unlock
 	Blurb:
 	Description: #R_SYS_REMNANT_ARMOR_DESC
+	ModAttribute(ProgenitorTechProgress, Add, 15)
 	SkipOnUnlockedSubsystem(RemnantArmor)
 	UnlockSubsystem(RemnantArmor)
 	RequireUnlockTag(ProgenitorTech)

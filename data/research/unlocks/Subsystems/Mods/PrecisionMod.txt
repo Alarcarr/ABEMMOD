@@ -12,5 +12,6 @@ Technology: PrecisionMod
 
 	UnlockModule(PrecisionMod)
 
+	ModAttribute(ProgenitorTechProgress, Add, 1)
 	SkipOnUnlockedModule(PrecisionMod)
 	SecondaryMoneyCost(750)

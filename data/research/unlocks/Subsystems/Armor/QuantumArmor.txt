@@ -11,5 +11,6 @@ Technology: QuantumArmor
 
 	UnlockSubsystem(QuantumArmor)
 
+	ModAttribute(ProgenitorTechProgress, Add, 5)
 	SkipOnUnlockedSubsystem(QuantumArmor)
 	SecondaryMoneyCost(3000)

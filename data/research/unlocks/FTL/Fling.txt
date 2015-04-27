@@ -5,6 +5,7 @@ Technology: FlingBeacons
 	Time Cost: 400
 	Description: #R_ORB_FLING_DESC
 	Class: Unlock
+	ModAttribute(ProgenitorTechProgress, Add, 5)
 	SkipOnUnlockedTag(HasFling)
 	UnlockSubsystem(Fling)
 	UnlockTag(HasFling)
