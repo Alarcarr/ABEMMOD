@@ -102,9 +102,10 @@ class ConvertRemnants : AbilityHook {
 		Object@ targ = objTarg.fromConstTarget(targs).obj;
 		if(targ is null)
 			return;
-		if(targ.hasLeaderAI)
+		if(targ.hasLeaderAI) {
 			targ.takeoverFleet(abl.obj.owner, 1, false);
 			targ.sightRange = 1500; // THIS BAD. DELETE THIS WHEN IMPLEMENTING SENSORS.
+		}
 		else
 			@targ.owner = abl.obj.owner;
 	}
@@ -366,7 +367,7 @@ class TargetFilterRemnants : TargetFilter {
 	string getFailReason(Empire@ emp, uint index, const Target@ targ) const override {
 		return "Must target Remnants.";
 	}
-
+#section server
 	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const override {
 		if(index != uint(targID.integer))
 			return true;
@@ -377,6 +378,7 @@ class TargetFilterRemnants : TargetFilter {
 		else
 			return targ.obj.owner is Creeps;
 	}
+#section all
 };
 
 class IfRace : IfHook {
@@ -402,4 +404,83 @@ class IfRace : IfHook {
 			return owner.hasTrait(trait.integer);
 	}
 #section all
-}
+};
+
+class IfInUnownedSpace : IfHook {
+	Document doc("Only applies the inner hook if the current object is in an unowned system; in other words, a system where the player owns no planets.");
+	Argument hookID(AT_Hook, "planet_effects::GenericEffect");
+	Argument allow_allies(AT_Boolean, "False", doc="Whether to count systems with allied planets as owned.");
+	Argument allow_space(AT_Boolean, "True", doc="Whether to count interstellar space as an unowned system.");
+
+	bool instantiate() override {
+		if(!withHook(hookID.str))
+			return false;
+		return GenericEffect::instantiate();
+	}
+
+#section server
+	bool condition(Object& obj) const override {
+		Region@ region = obj.region;
+		if(region is null)
+			return allow_space.boolean;
+		if(allow_allies.boolean)
+			return region.PlanetsMask & obj.owner.ForcedPeaceMask.value == 0;
+		else
+			return region.PlanetsMask & obj.owner.mask == 0;
+	}
+#section all
+};
+
+class EmpireOnEmpireAttributeGTE : EmpireEffect {
+	BonusEffect@ hook;
+
+	Document doc("Trigger a bonus effect when an empire attribute is at least the specified value. Designed for traits and other empire-wide effects.");
+	Argument attribute(AT_EmpAttribute);
+	Argument value(AT_Decimal);
+	Argument function(AT_Hook, "bonus_effects::BonusEffect");
+
+	bool instantiate() override {
+		@hook = cast<BonusEffect>(parseHook(function.str, "bonus_effects::", required=false));
+		if(hook is null) {
+			error("OnEnable(): could not find inner hook: "+escape(function.str));
+			return false;
+		}
+		return GenericEffect::instantiate();
+	}
+
+#section server
+	void tick(Empire& emp, any@ data, double time) const override {
+		if(emp is null || !emp.valid)
+			return;
+		if(emp.getAttribute(attribute.integer) >= value.decimal)
+			hook.activate(emp.HomeObj, emp);
+	}
+#section all
+};
+
+class EmpireOnEmpireAttributeLT : EmpireEffect {
+	BonusEffect@ hook;
+
+	Document doc("Trigger a bonus effect when an empire attribute is lower than the specified value. Designed for traits and other empire-wide effects.");
+	Argument attribute(AT_EmpAttribute);
+	Argument value(AT_Decimal);
+	Argument function(AT_Hook, "bonus_effects::BonusEffect");
+
+	bool instantiate() override {
+		@hook = cast<BonusEffect>(parseHook(function.str, "bonus_effects::", required=false));
+		if(hook is null) {
+			error("OnEnable(): could not find inner hook: "+escape(function.str));
+			return false;
+		}
+		return GenericEffect::instantiate();
+	}
+
+#section server
+	void tick(Empire& emp, any@ data, double time) const override {
+		if(emp is null || !emp.valid)
+			return;
+		if(emp.getAttribute(attribute.integer) < value.decimal)
+			hook.activate(emp.HomeObj, emp);
+	}
+#section all
+};

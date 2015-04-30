@@ -10,7 +10,7 @@ Anomaly: BlackHole
 		Safe: False
 		Icon: Bridge
 		Result: 5%
-			NotifyAll(Guardian Reactivated!, Description = A Guardian has been salvaged along with all of its advanced technology! Destroy the Guardian to set them back at least a little!, Icon = SubsystemButtonArt::6)
+			NotifyAll(#A_GUARDIAN_NOTIFY_FIXED, Description = #A_GUARDIAN_NOTIFY_FIXED_DESC, Icon = SubsystemButtonArt::6)
 			UnlockSubsystem(RemnantArmor)
 			UnlockSubsystem(RemnantShield)
 			SendMessage(#A_GUARDIAN_FIXED)
@@ -20,12 +20,12 @@ Anomaly: BlackHole
 	Option: RemnantShields
 		Description: Download the schematics for the flagship's advanced shields.
 		Icon: TechIcons::35*#60ffff
-		NotifyAll(Progenitor Shielding Salvaged!, Description = Progenitor shield technology has been salvaged from a Guardian!, Icon = TechIcons::35*#60ffff)
+		NotifyAll(#A_GUARDIAN_NOTIFY_SHIELD, Description = #A_GUARDIAN_NOTIFY_SHIELD_DESC, Icon = TechIcons::35*#60ffff)
 		UnlockSubsystem(RemnantShield)
 	Option: RemnantArmor
 		Description: Download the data on the flagship's advanced armor.
 		Icon: TechIcons::20*#60ffff
-		NotifyAll(Progenitor Armor Salvaged!, Description = Progenitor armor technology has been salvaged from a Guardian!, Icon = TechIcons::20*#60ffff)
+		NotifyAll(#A_GUARDIAN_NOTIFY_ARMOR, Description = #A_GUARDIAN_NOTIFY_ARMOR_DESC, Icon = TechIcons::20*#60ffff)
 		UnlockSubsystem(RemnantArmor)
 	State: Initial
 		Narrative: #A_GUARDIAN_SCANNED

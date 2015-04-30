@@ -1,0 +1,10 @@
+EVT_NOTIFY_HUBWORLD: Progenitor Archives Reactivated on [color=$4]$3[/color]!
+EVT_NOTIFY_HUBWORLD_DESC:The [color=$2]$1[/color] have reactivated a Progenitor archive on [color=$4]$3[/color]! Tremendous knowledge is just a step away from their scientists!
+EVT_NOTIFY_PROGENITOR_BREAKTHROUGH: Progenitor Resurgence
+EVT_NOTIFY_PROGENITOR_BREAKTHROUGH_DESC: The [color=$2]$1[/color] have begun rediscovering their most advanced technology!
+EVT_PROGENITOR_BREAKTHROUGH: Technological Breakthrough!
+EVT_PROGENITOR_BREAKTHROUGH_DESC: <<
+	After a long and arduous process, we have finally rediscovered enough of our old knowledge to have a contextual understanding of the remnants of our database.
+
+	Finally, we can start taking our first steps towards rebuilding and improving upon the great wonders of our past!
+>>

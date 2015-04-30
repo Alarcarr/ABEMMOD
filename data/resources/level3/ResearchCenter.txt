@@ -1,5 +1,6 @@
 Resource: ResearchCenter
 	Name: Research Center
+	Blurb: #RESOURCE_RESEARCH_BLURB
 	Description: #RESOURCE_RESEARCH_DESC
 	Small Icon: ResourceIcon::3
 	Icon: ResourceIcon::3

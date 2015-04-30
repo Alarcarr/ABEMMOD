@@ -6,6 +6,7 @@ Resource: Ancient Shipyard
 	Icon: TechIcons::33
 	Affinity: Defense
 	Exportable: False
+	Blurb: #RESOURCE_SHIPYARD_BLURB
 	Description: #RESOURCE_SHIPYARD_DESC
 	Artificial: True
 	Unique: True

@@ -15,7 +15,7 @@ Trait: Berserkers
 	ModAttribute(VoteCardCostMod, Add, 4.0)
 	ModAttribute(SupportCardCostMod, Add, 2.0)
 	
-	OnHomeworld(AddPlanetResource(Phosphate))
+	OnHomeworld(AddPlanetResource(Sulphate))
 	
 	AddModifier(SupplyCostFactor(0.75))
 	AddModifier(SupportCapacityFactor(0.5))

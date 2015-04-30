@@ -1,5 +1,6 @@
 Resource: Aphrodisiac
 	Name: Tropical Paradise
+	Blurb: #PARADISE_BLURB
 	Description: #PARADISE_DESC
 	Small Icon: DesignationIcons::15
 	Icon: DesignationIcons::15
@@ -11,12 +12,10 @@ Resource: Aphrodisiac
 	Affinity: Money + Influence
 	Require Contestation: 20
 	Unique: True
-	AddDummyResource(StellarWater)
 	ModCivResourceMult(Labor, -0.5)
 	ModCivResourceMult(Research, -0.5)
 	ModCivResourceMult(Defense, -0.5)
 	ModCivResourceMult(Energy, -0.5)
 	ModLoyalty(5)
-	AddDummyResource(Soylent1)
 	ModPopulationGrowth(1)
 	AddMaxPopulation(10)

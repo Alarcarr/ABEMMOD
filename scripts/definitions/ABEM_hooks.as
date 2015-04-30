@@ -1372,9 +1372,9 @@ class ChangeOriginOnOwnerChange : StatusHook {
 	bool onOwnerChange(Object& obj, Status@ status, any@ data, Empire@ prevOwner, Empire@ newOwner) {
 		if(newOwner !is null)
 			@status.originEmpire = newOwner;
-		if(refresh)
+		if(refresh.boolean)
 			obj.addStatus(status.type.id, refreshduration.decimal);
-		return !refresh;
+		return !refresh.boolean;
 	}
 #section all
 }

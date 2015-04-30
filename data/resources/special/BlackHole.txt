@@ -9,12 +9,13 @@ Resource: BlackHole
 	Unique: True
 	Frequency: 0
 	Icon: emp_flag_flag7
-	Description: #RESOURCE_GATEWORLD_DESC
+	Blurb: #RESOURCE_HUBWORLD_BLURB
+	Description: #RESOURCE_HUBWORLD_DESC
 	Distribution: 0
 	Affinity: ALL
 
 	Limitless Level: True
-	IfLevel(6, OnEnable(NotifyAll(Progenitor Archives Reactivated!, Description = The $1 have reactivated a Progenitor archive on $3! Tremendous knowledge is just a step away from their scientists!, Icon = TechIcons::45)))
+	IfLevel(6, OnEnable(NotifyAll(#EVT_NOTIFY_HUBWORLD, Description = #EVT_NOTIFY_HUBWORLD_DESC, Icon = TechIcons::45)))
 	IfLevel(6, UnlockTagWhileActive(ProgenitorTech))
 	IfLevel(5, GrantAbility(Recall))
 	IfLevel(1, AddStatus(FastResupply))

@@ -58,6 +58,7 @@ server:
 	void startEffects()j
 	void setHoldFire(bool value);
 	void setDisableRegionVision(bool value);
+	void restoreShield(double amount);
 	safe bool getDisableRegionVision();
 	safe bool getHoldFire();
 

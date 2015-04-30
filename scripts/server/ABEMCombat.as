@@ -275,3 +275,79 @@ void DamageFromRelativeSize(Event& evt, double Amount, double SizeMultiplier, do
 	}
 	evt.target.damage(dmg, -1.0, evt.direction);
 }
+
+// Takes a certain amount of damage, scales that damage based on the ratio of BaselineSize and the target's size, within the constraints of MinRatio and MaxRatio.
+void SizeScaledDamage(Event& evt, double BaselineAmount, double BaselineSize, double MinRatio, double MaxRatio, double DamageType) {
+	DamageEvent dmg;
+	dmg.damage = BaselineAmount * double(evt.efficiency) * double(evt.partiality);
+	dmg.partiality = evt.partiality;
+	dmg.impact = evt.impact;
+	int dmgType = getDamageType(DamageType);
+
+	@dmg.obj = evt.obj;
+	@dmg.target = evt.target;
+	dmg.source_index = evt.source_index;
+	dmg.flags |= dmgType | ReachedInternals;
+
+	double theirScale = sqr(evt.target.radius);
+	if(evt.target.isShip)
+		theirScale = cast<Ship>(evt.target).blueprint.design.size;
+
+	double ratio = theirScale / BaselineSize; // Just to wrap my mind around it: If they're size 200, and we're size 100, then this will yield a ratio of 2, which is 200%. Good.
+	dmg.damage *= clamp(ratio, MinRatio, MaxRatio);
+	evt.target.damage(dmg, -1.0, evt.direction);
+}
+
+// AOE version of SizeScaledDamage.
+void SizeScaledAreaDamage(Event& evt, double Radius, double BaselineAmount, double BaselineSize, double MinRatio, double MaxRatio, double DamageType) {
+	Object@ targ = evt.target !is null ? evt.target : evt.obj;
+
+	vec3d center = targ.position + evt.impact.normalize(targ.radius);
+	array<Object@>@ objs = findInBox(center - vec3d(Radius), center + vec3d(Radius), evt.obj.owner.hostileMask);
+
+	playParticleSystem("GravitonCollapse", center, quaterniond(), Radius / 3.0, targ.visibleMask);
+	int dmgType = getDamageType(DamageType);
+	double maxDSq = Radius * Radius;
+	
+	for(uint i = 0, cnt = objs.length; i < cnt; ++i) {
+		Object@ target = objs[i];
+		vec3d off = target.position - center;
+		vec3d revOff = center - target.position;
+		double dist = off.length - target.radius;
+		if(dist > Radius)
+			continue;
+		
+		double deal = BaselineAmount;
+
+		if(dist > 0.0)
+			deal *= 1.0 - (dist / Radius);
+		
+		//Rock the boat
+		if(target.hasMover) {
+			double amplitude = deal * 0.2 / (target.radius * target.radius);
+			target.impulse(revOff.normalize(min(amplitude,8.0)));
+			target.rotate(quaterniond_fromAxisAngle(off.cross(off.cross(target.rotation * vec3d_front())).normalize(), (randomi(0,1) == 0 ? 1.0 : -1.0) * atan(amplitude * 0.2) * 2.0));
+		}
+		
+		DamageEvent dmg;
+		@dmg.obj = evt.obj;
+		@dmg.target = target;
+		dmg.source_index = evt.source_index;
+		dmg.flags |= dmgType;
+		dmg.impact = off.normalized(target.radius);
+		
+		vec2d dir = vec2d(off.x, off.z).normalized();
+
+		double theirScale = sqr(target.radius);
+		if(target.isShip)
+			theirScale = cast<Ship>(target).blueprint.design.size;
+
+		double ratio = theirScale / BaselineSize; // Just to wrap my mind around it: If they're size 200, and we're size 100, then this will yield a ratio of 2, which is 200%. Good.
+		deal *= clamp(ratio, MinRatio, MaxRatio);
+
+		dmg.partiality = evt.partiality;
+		dmg.damage = deal * double(evt.efficiency) * double(dmg.partiality);
+
+		target.damage(dmg, -1.0, dir);
+	}
+}

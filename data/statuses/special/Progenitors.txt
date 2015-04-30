@@ -9,9 +9,7 @@ Status: Progenitors
 	RepeatExtended(ModCivResourceMult(Energy, -0.01), Base = 80, Per Gametime Bonus = -1)
 	GrantAbility(RemnantCommandCodes)
 
-	OnEmpireAttributeGTE(ProgenitorTechProgress, 100, SendMessage(#EVT_PROGENITOR_BREAKTHROUGH, Title = Technological Breakthrough!))
-	OnEmpireAttributeGTE(ProgenitorTechProgress, 100, NotifyAll(Progenitor Resurgence, Description = The $1 have begun rediscovering their most advanced technology!, Icon = emp_portrait_cloak))
-	OnEmpireAttributeGTE(ProgenitorTechProgress, 100, UnlockTag(ProgenitorTech))
 Status: ProgenitorFleet
+	Visible To: Nobody
 
 	GrantAbility(RemnantCommandCodes)

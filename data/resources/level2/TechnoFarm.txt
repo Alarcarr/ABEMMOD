@@ -6,11 +6,12 @@ Resource: Technofarm
 	Level: 2
 	Pressure: 3 Money
 	Pressure: 3 Research
+	Blurb: #TECHNOFARM_BLURB
 	Description: #TECHNOFARM_DESC
 	Exportable: False
 	Artificial: True
 	Affinity: Money
-	Affinity: Money + Influence
+	Affinity: Research
 	Distribution: 0.5
 	AddDummyResource(Soylent1)
 	PeriodicInfluenceCard(Cultivation, Timer = 360)

@@ -1,5 +1,6 @@
 Resource: IntelFacilities
 	Name: Intelligence Hub
+	Blurb: #RESOURCE_INTEL_BLURB
 	Description: #RESOURCE_INTEL_DESC
 	Small Icon: ResourceIcons::37
 	Icon: ResourceIcons::37

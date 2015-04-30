@@ -21,6 +21,12 @@ A_GUARDIAN_FIXED: <<
 
 	It was a risky venture, but it paid off in the end. However, the other empires know of your success - if you are to reactivate the ship, you must protect it carefully from hostile forces, and it will take quite a bit of effort to restore it to its full potential.
 >>
+A_GUARDIAN_NOTIFY_FIXED: Guardian Reactivated!
+A_GUARDIAN_NOTIFY_FIXED_DESC: A Guardian has been salvaged by the [color=$2]$1[/color] along with all of its advanced technology! Destroy the Guardian to set them back at least a little!
+A_GUARDIAN_NOTIFY_ARMOR: Progenitor Armor Salvaged!
+A_GUARDIAN_NOTIFY_ARMOR_DESC: Progenitor armor technology has been salvaged from a Guardian by the [color=$2]$1[/color]!
+A_GUARDIAN_NOTIFY_SHIELD: Progenitor Shielding Salvaged!
+A_GUARDIAN_NOTIFY_SHIELD_DESC: Progenitor shield technology has been salvaged from a Guardian by the [color=$2]$1[/color]!
 A_EQUIPMENTSTASH_NARRATIVE: <<
 	This station appears to have served as a resupply facility for the creators of the robotic 'Remnants'. It is now dormant, but your scientists believe they can command the station to jettison one of its supply containers into space, allowing you to analyze the advanced technology within. They are also certain that they have deciphered the cargo manifests, so they know what the contents of each container are.
 			

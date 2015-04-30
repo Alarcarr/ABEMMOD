@@ -1,10 +1,25 @@
+RESOURCE_SHIPYARD_BLURB: <<
+	Adds 16 Labor generation. Can upgrade fleets, granting them +40% combat effectiveness.
+
+	Cannot be exported.
+>>
 RESOURCE_SHIPYARD_DESC: <<
-	An ancient shipyard. While its purpose is unknown, you can repurpose its technology to upgrade your own ships' systems and build new ships.
+	An ancient shipyard of immense scale. While its purpose is unknown, you can repurpose its technology to upgrade your own ships' systems and build new ships.
 
 	Adds 16 Labor generation. Cannot be exported.
 >>
+RESOURCE_INTEL_BLURB: <<
+	Generates Intelligence cards against nearby empires.
+
+	Cannot be exported.
+>>
 RESOURCE_INTEL_DESC: <<
-	Abandoned ancient facilities that were designed to control an entire empire. Gives full vision of adjacent systems. Generates Intelligence cards against empires in adjacent systems. If none can be found, generates Intelligence against a random empire. Grants the 'Telescope' ability.
+	Abandoned ancient facilities that were designed to look over an entire empire. Gives full vision of adjacent systems. Generates Intelligence cards against empires in adjacent systems. If none can be found, generates Intelligence against a random empire. Grants the 'Telescope' ability.
+
+	Cannot be exported.
+>>
+RESOURCE_RESEARCH_BLURB: <<
+	Converts Labor and Energy into Research. Civilian research generation on the planet is increased by 20%.
 
 	Cannot be exported.
 >>
@@ -13,10 +28,15 @@ RESOURCE_RESEARCH_DESC: <<
 
 	Cannot be exported.
 >>
-RESOURCE_GATEWORLD_DESC: <<
+RESOURCE_HUBWORLD_BLURB: <<
+	Generates [levels=$1;#ffb4b6]1/2/3/4/5/6/7[/levels] pressure of every kind.
+
+	Provides various buffs as it levels up, culminating in access to the Progenitor tech tree at level 6. Cannot be exported.
+>>
+RESOURCE_HUBWORLD_DESC: <<
 	A sort of galactic hub, this planet's immense surface is littered with all sorts of ancient technology; indeed, considering its advanced defensive fleet, this world may have been home to the ancient race that built the automated warships known as the 'Remnants'.
 
-	Exploring the ruins adds [levels]1/2/3/4/5/6/7[/levels] pressure of every kind, based on the planet's level.
+	Exploring the ruins adds [levels=$1;#ffb4b6]1/2/3/4/5/6/7[/levels] pressure of every kind, based on the planet's level.
 
 	An advanced defense coordination system allows the planet to support an additional 1024 support ships and act as a Supply Depot once reactivated at level 1.
 
@@ -36,7 +56,23 @@ ASTEROID_LABOR_DESC: <<
 	Only counts down while the planet is using Labor.
 >>
 ELECTRONICS_DESC: Gives 0.2 energy generation.
-TECHNOFARM_DESC: Generates a Cultivation card every 6 minutes. Increases population growth by 50%.
+TECHNOFARM_BLURB: <<
+	Generates a Cultivation card every 6 minutes. Increases population growth by 50%. Does not require a third [img=ResourceClassIcons::3;20/] Food resource to reach level 3.
+
+	Cannot be exported.
+>>
+TECHNOFARM_DESC: <<
+	A huge laboratory dedicated to the creation, improvement and adaptation of new plant types to any number of environments. The facility's massive capabilities can also be used to create large quantities of food for local populations.
+
+	Once operational, the facility's food production attracts settlers, increasing population growth by 50%, and acts as a free Megafarm. Furthermore, its more scientific applications generate a Cultivation card every 6 minutes.
+
+	Cannot be exported.
+>>
+PARADISE_BLURB: <<
+	+100% population growth. +10 maximum population. +5 bonus to planet loyalty.
+
+	-50% to civilian Labor, Research, Defense and Energy generation. Cannot be exported.
+>>
 PARADISE_DESC: <<
 	A carefree, peaceful planet, this world attracts many people, some simply for holidays, others as permanent residents.
 
@@ -45,6 +81,9 @@ PARADISE_DESC: <<
 	-50% to civilian Labor, Research, Defense or Energy generation on this planet. Cannot be exported.
 >>
 TEXTILES_DESC: Increases population growth by 20%.
+QUARTZ_BLURB: <<
+	Gain [levels=$1;#ffb4b6]10/25/50/80/120/300[/levels] bonus stored labor per artifact activated.
+>>
 QUARTZ_DESC: <<
 	Every time you activate an artifact, this planet gains [levels=$1;#ffb4b6]10/25/50/80/120/200/300[/levels] stored labor, provided it has enough labor storage to hold it.
 
@@ -52,10 +91,26 @@ QUARTZ_DESC: <<
 
 	[i][color=#aaa]This resource is a scalable resource and cannot be exported or used to level up. Its bonuses depend on the level of the planet.[/color][/i]
 >>
+PHOSPHATE_BLURB: <<
+	Increases fleet strength in allied systems by [levels=$1;#ffb4b6]5%/10%/15%/25%/40%/60%/100%[/levels].
+>>
 PHOSPHATE_DESC: <<
 	Fleets fighting in any systems you control gain [levels=$1;#ffb4b6]5%/10%/15%/25%/40%/60%/100%[/levels] extra strength.
 
 	[i][color=#aaa]This resource is a scalable resource and cannot be exported or used to level up. Its bonuses depend on the level of the planet.[/color][/i]
+>>
+SULPHATE: Sulphate
+SULPHATE_BLURB: <<
+	Increases fleet strength outside owned systems by [levels=$1;#ffb4b6]5%/10%/15%/25%/40%/60%/100%[/levels].
+>>
+SULPHATE_DESC: <<
+	Fleets fighting outside any systems you control gain [levels=$1;#ffb4b6]5%/10%/15%/25%/40%/60%/100%[/levels] extra strength.
+
+	[i][color=#aaa]This resource is a scalable resource and cannot be exported or used to level up. Its bonuses depend on the level of the planet.[/color][/i]
+>>
+FTL_CRYSTALS_BLURB: <<
+	Generates [levels=$1;#00c0ff]0.1/0.5/1/2/3/8/20[/levels] [img=ResourceIcon::3;20/] FTL/s.
+	Gives special effects at [b]levels 4 and 5[/b].
 >>
 FTL_CRYSTALS_DESC: <<
 	Generates [levels=$1;#00c0ff]0.1/0.5/1/2/3/8/20[/levels] [img=ResourceIcon::3;20/] FTL per second.
