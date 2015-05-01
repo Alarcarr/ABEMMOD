@@ -736,6 +736,7 @@ class IsDerelict : StatusHook {
 			obj.damage(dmg, -1.0, vec2d(randomi(-1, 1), randomi(-1, 1)));
 		}
 		obj.engaged = true;
+		obj.rotationSpeed = 0;
 		return true;
 	}
 	

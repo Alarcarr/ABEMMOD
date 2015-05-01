@@ -36,7 +36,7 @@ Effector: QuantumArtillery
 
 	PhysicalType: Projectile
 		GfxType: Sprite
-		GfxSize: 5
+		GfxSize: 15
 		FireSfx: railgun_fire
 		FireSfx: muon_fire
 		Material: RailgunEmit

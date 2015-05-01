@@ -172,7 +172,7 @@ void ObjectAreaExplDamage(Object& obj, double Amount, double Radius, double Hits
 	vec3d center = obj.position;
 	array<Object@>@ objs = findInBox(center - vec3d(Radius), center + vec3d(Radius), obj.owner.hostileMask);
 
-	playParticleSystem("TorpExplosionRed", center, quaterniond(), Radius / 3.0, obj.visibleMask);
+	playParticleSystem("TorpExplosionRed", center, quaterniond(), Radius / 1.5, obj.visibleMask);
 
 	uint hits = round(Hits);
 	double maxDSq = Radius * Radius;
@@ -305,7 +305,7 @@ void SizeScaledAreaDamage(Event& evt, double Radius, double BaselineAmount, doub
 	vec3d center = targ.position + evt.impact.normalize(targ.radius);
 	array<Object@>@ objs = findInBox(center - vec3d(Radius), center + vec3d(Radius), evt.obj.owner.hostileMask);
 
-	playParticleSystem("GravitonCollapse", center, quaterniond(), Radius / 3.0, targ.visibleMask);
+	playParticleSystem("GravitonCollapser", center, quaterniond(), Radius / 3.0, targ.visibleMask);
 	int dmgType = getDamageType(DamageType);
 	double maxDSq = Radius * Radius;
 	
@@ -335,6 +335,7 @@ void SizeScaledAreaDamage(Event& evt, double Radius, double BaselineAmount, doub
 		dmg.source_index = evt.source_index;
 		dmg.flags |= dmgType;
 		dmg.impact = off.normalized(target.radius);
+		dmg.spillable = false;
 		
 		vec2d dir = vec2d(off.x, off.z).normalized();
 
