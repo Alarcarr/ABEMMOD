@@ -18,7 +18,7 @@ F_SENATE_NAME: Government Center
 F_SENATE_DESC: <<
 	[color=#aaa][i]Places for government officials to discuss and enforce imperial policies from, the larger of these facilities are also of some diplomatic significance.[/i][/color]
 
-	Generates 10 influence.
+	Generates 10 Influence stake.
 >>
 B_SLAVE_DESC: <<
 	Massive slave camps where all the planet's resources - and its population - are dedicated to construction.

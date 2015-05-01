@@ -1,6 +1,7 @@
 Module: NylliSenate
 	Name: Government Center
 	Description: #F_SENATE_DESC
+	Blurb: #ORB_SENATE_BLURB
 	Icon: PoliticalStrengthIcon
 	Strategic Icon: PoliticalStrengthIcon
 	Labor Cost: 125
@@ -15,7 +16,8 @@ Module: NylliSenate
 	AddInfluenceStake(10)
 Module: NylliPowerPlant
 	Name: Power Plant
-	Description: #ORB_POWERPLANT_DESC
+	Blurb: #ORB_POWERPLANT_BLURB
+	Description: #F_POWERPLANT_DESC
 	Icon: TechIcons::6
 	Strategic Icon: TechIcons::6
 	Health: 10000
@@ -37,7 +39,8 @@ Module: NylliIntel
 	Build Cost: 800
 	Labor Cost: 15
 	Maintenance: 1200
-	Description: #ORB_INTEL_DESC
+	Blurb: #ORB_INTEL_BLURB
+	Description: #F_INTEL_DESC
 	Icon: techScanner
 	Strategic Icon: techScanner
 	PeriodicNearbyIntelligence(Timer = 120)
