@@ -1,7 +1,7 @@
 Subsystem: RepairBay
 	Name: Nanite Dispenser
 	BaseColor: #5cf90e
-	Picture: SubsystemButtonArt::8
+	Picture: HyperdenseLaser::0 * #5cf90e
 	Elevation: 2
 
 	Tags: BaseCost, Category:Equipment, Ability:HullHeal
