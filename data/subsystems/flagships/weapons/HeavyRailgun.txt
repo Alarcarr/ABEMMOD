@@ -42,7 +42,6 @@ Subsystem: HeavyRailgunBattery
 		Sprite: HeavyRailgun*#ff6557
 
 		Hex.DamageResist := ShipSize / 64.0
-		DrawMode: 1
 		Effect: DamageResist
 			Resist = Hex.DamageResist
 

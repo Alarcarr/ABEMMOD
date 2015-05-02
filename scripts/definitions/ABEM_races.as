@@ -102,6 +102,8 @@ class ConvertRemnants : AbilityHook {
 		Object@ targ = objTarg.fromConstTarget(targs).obj;
 		if(targ is null)
 			return;
+		if(targ.owner !is Creeps)
+			return;
 		if(targ.hasLeaderAI) {
 			targ.takeoverFleet(abl.obj.owner, 1, false);
 			targ.sightRange = 1500; // THIS BAD. DELETE THIS WHEN IMPLEMENTING SENSORS.

@@ -1,4 +1,4 @@
-﻿ABL_OVERCHARGE_FLEET_DESC: <<
+ABL_OVERCHARGE_FLEET_DESC: <<
 	Increase the targeted fleet's effectiveness by 40%.
 
 	A fleet can only be upgraded once.
@@ -96,9 +96,7 @@ ABL_BOARDING_PARTY_DESC: <<
 	
 	Only one boarding action can be running on an object at any given time, and Verdant-owned objects cannot be boarded. Boarding actions cannot be initiated by ships which are already being boarded. Asteroids and orbitals always have 100 boarding strength.
 >>
-ABL_RECALL_DESC: <<
-	Opens a wormhole engulfing the target allied object and immediately depositing it in close proximity to the Hubworld.
->>
+ABL_RECALL_DESC: Opens a wormhole engulfing the target allied object and immediately depositing it in close proximity to the recalling object.
 ABL_PROGENITOR_COMMANDCODES: Override Remnant Programming
 ABL_PROGENITOR_COMMANDCODES_DESC: <<
 	Using our command codes, we can access the control computers of Keeper fleets, overriding the ancient directives programmed by our ancestors so that they do our bidding.
