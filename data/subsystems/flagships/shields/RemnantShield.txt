@@ -4,6 +4,7 @@ Subsystem: RemnantShield
 	BaseColor: #0044db
 	Elevation: 1
 
+	DamageOrder: -100
 
 	Tags: IsShield, Defense, Category:Shields, HasInternals
 	Tags: SecondaryDefense
@@ -12,6 +13,7 @@ Subsystem: RemnantShield
 	Size := HexSize * Hexes
 	ShieldCapacity := Size * 220
 	ShieldRegen := Size * 1
+	ShieldHexes := Hexes
 
 	Hex.Resistance := 0.5
 	Hex.HP := 12 * HexSize
@@ -19,6 +21,8 @@ Subsystem: RemnantShield
 	Hex.LaborCost := 1 * HexSize
 	Hex.BuildCost := 1 * HexSize
 	Hex.MaintainCost := 1
+
+	Effect: ShieldDamage
 
 	Requires:
 		Command = 2

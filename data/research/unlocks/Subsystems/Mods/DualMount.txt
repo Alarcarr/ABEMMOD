@@ -1,6 +1,6 @@
 Technology: DualMount
 	Icon: MassMount
-	Name: DualMount
+	Name: Dual Mount
 	Class: Unlock
 	Description: #R_DUALMOUNT_DESC
 	Point Cost: 500

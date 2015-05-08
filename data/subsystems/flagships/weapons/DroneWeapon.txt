@@ -1,30 +1,22 @@
-Subsystem: Swarmer
-	Name: Swarmer
-	Description: <<
-		A concealed tube of rockets rapidly extends, launches a volley of short range rockets, and receeds to reload.
-
-		[img=Plus]High [b][color=#ff8080]damage[/color][/b].[/img]
-		[img=Plus]No firing arc limitations.[/img]
-		[img=Plus]Very effective at piercing armor.[/img]
-		[img=Minus]Must reload after several shots.[/img]
-		[img=Minus]High [b][color=#fefc61]supply cost[/color][/b].[/img]
-	>>
-	BaseColor: #f94694
+Subsystem: DroneWeapon
+	Name: #S_DRONEWEAPON
+	Description: #S_DRONEWEAPON_DESC
+	BaseColor: #f9ec03
 	Picture: SubsystemButtonArt::1
 	Elevation: 2
 
 	Tags: BaseCost
-	Tags: WeaponBase, MissileBase, Category:Weapons, Rotatable
-	Tags: ExteriorCore, Weapon, DefaultUnlock, HasInternals, MainDPS, Homing
+	Tags: WeaponBase, MissileBase, Category:Weapons
+	Tags: ExteriorCore, Weapon, HasInternals, MainDPS, Homing
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes
-	Range := Size + 250
-	Damage := Size * 1.25
+	Range := Size + 700
+	Damage := Size * 5
 	Reload := 8 * (1.0 * Size/512)
-	Speed := max(65, Range / 6)
+	Speed := max(120, Range / 6)
 	Tracking := 6.0
-	SupplyCost := Size * 3.0
+	SupplyCost := Size * 6.0
 	out DPS := (Damage * 16) / (Reload * 2)
 	out SupplyDrain := SupplyCost / 2
 
@@ -32,6 +24,8 @@ Subsystem: Swarmer
 	Hex.Resistance := 0.2
 	Hex.Mass := HexSize
 	TypeColor: #f94694
+	Hex.BuildCost := 2.0 * Hex.BuildCost
+	Hex.MaintainCost := 3.0 * Hex.MaintainCost
 	Requires:
 		Command = 1
 
@@ -42,7 +36,7 @@ Subsystem: Swarmer
 		Hex.BuildCost := 5.0 * Hex.BuildCost
 		Hex.Mass := 5.0 * Hex.Mass
 
-		Sprite: RocketPod*#7d13ff
+		Sprite: HexagonSubsystems::9
 		DrawMode: 1
 
 		Hex.DamageResist := ShipSize / 64.0

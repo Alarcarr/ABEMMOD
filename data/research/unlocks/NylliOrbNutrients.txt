@@ -2,7 +2,7 @@ Technology: NylliOrbNutrients
 	Name: #R_NYLLI_FOOD
 	Blurb: #R_NYLLI_FOOD_BLURB
 	Description: #R_NYLLI_FOOD_DESC
-	Class: Unlock
+	Class: Keystone
 	Icon: Plantation
 	Color: #19ff19
 	Point Cost: 1000

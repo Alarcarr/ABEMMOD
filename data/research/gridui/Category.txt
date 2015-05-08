@@ -1,31 +1,37 @@
 ﻿Technology: MillitaryResearch
 	Name: Military Research
 	Icon: MilitaryStrengthIcon
+	Class: Keystone
 	Description: #R_CAT_MILITARY_DESC
 	AutomaticallyUnlocks()
 Technology: EnergyScience
 	Name: Energetics
 	Description: #R_CAT_ENERGY_DESC
 	Icon: DesignationIcons::2
+	Class: Keystone
 	AutomaticallyUnlocks()
 Technology: PlanetDev
 	Name: Planetary Development
 	Description: #R_CAT_PLANET_DESC
+	Class: Keystone
 	Icon: PlanetImage
 	AutomaticallyUnlocks()
 Technology: PolSci
 	Name: Political Science
 	Description: #R_CAT_POLITICS_DESC
 	Icon: DesignationIcons::1
+	Class: Keystone
 	AutomaticallyUnlocks()
 Technology: Metallurgy
 	Name: Industry
 	Description: #R_CAT_INDUSTRY_DESC
+	Class: Keystone
 	Icon: ResourceIcon::6
 	AutomaticallyUnlocks()
 Technology: FTLT
 	Name: Dynamics
 	Description: #R_CAT_PROPULSION_DESC
+	Class: KEystone
 	Icon: ActionBarIcons::6
 	AutomaticallyUnlocks()
 

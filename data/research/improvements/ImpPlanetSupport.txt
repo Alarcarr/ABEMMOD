@@ -3,7 +3,7 @@ Technology: ImpPlanetSupport
 	Blurb: #R_IMP_PLANET_SUPPORT_BLURB:128:64
 	Description: #R_IMP_PLANET_SUPPORT_DESC:128:64
 
-	Icon: ActionBarIcons::2 * #fff080
+	Icon: techOrganization*#fff080
 	Color: #40df8e
 
 	Point Cost: 600
@@ -19,8 +19,8 @@ Technology: ImpPlanetSupport2
 	Blurb: #R_IMP_PLANET_SUPPORT_BLURB:256:128
 	Description: #R_IMP_PLANET_SUPPORT_DESC:256:128
 
-	Icon: ActionBarIcons::2 * #fff080
-	Color: #40df8e
+	Icon: techOrganization*#fff080
+	Color: #fff080
 
 	Point Cost: 900
 	Time Cost: 100

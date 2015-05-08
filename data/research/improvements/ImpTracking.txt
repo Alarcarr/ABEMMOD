@@ -3,7 +3,7 @@ Technology: ImpTracking
 	Blurb: #R_IMP_TRACKING_BLURB:20%
 	Description: #R_IMP_TRACKING_DESC:20%:700k
 
-	Icon: TimeHaste::1
+	Icon: techHydraulics*#ffc419
 	Color: #ffc419
 
 	Point Cost: 500
@@ -18,7 +18,7 @@ Technology: ImpTracking2
 	Blurb: #R_IMP_TRACKING_BLURB:40%
 	Description: #R_IMP_TRACKING_DESC:40%:1M
 
-	Icon: TimeHaste::1
+	Icon: techHydraulics2*#ffc419
 	Color: #ffc419
 
 	Point Cost: 750

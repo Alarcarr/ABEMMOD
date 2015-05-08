@@ -4,6 +4,8 @@ Subsystem: CovariantShield
 	BaseColor: #0044db
 	Elevation: 1
 
+	DamageOrder: -100
+
 	Tags: BaseCost
 	Tags: IsShield, Defense, Category:Shields, HasInternals
 	Tags: SecondaryDefense
@@ -12,6 +14,7 @@ Subsystem: CovariantShield
 	Size := HexSize * Hexes
 	ShieldCapacity := Size * 200
 	ShieldRegen := Size * 0.2
+	ShieldHexes := Hexes
 
 	Hex.Resistance := 0.5
 	Hex.HP := 12 * HexSize
@@ -20,7 +23,9 @@ Subsystem: CovariantShield
 	Hex.LaborCost := 0.5 * HexSize 
 	Hex.BuildCost := 0.1 * HexSize 
 	Hex.MaintainCost := 1
-	
+
+	Effect: ShieldDamage	
+
 	Requires:
 		Command = 1
 		Power = 25 * Size

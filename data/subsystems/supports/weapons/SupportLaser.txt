@@ -11,12 +11,12 @@ Subsystem: SupportLaser
 	Hull: Support
 
 	Size := HexSize * Hexes
-	BeamDPS := 1.8 * Size
+	BeamDPS := 1.75 * Size
 	Duration := 4
-	Cooldown := 6
+	Cooldown := 6 * (1.0 * Size/512)
 	Range := Size + 300
 	Tracking := 0.5
-	SupplyCost := Size * 1
+	SupplyCost := Size * 1.1
 	FireArc := 0.3 * pi
 
 	Hex.HP := 12 * HexSize

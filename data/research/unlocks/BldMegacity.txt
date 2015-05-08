@@ -35,6 +35,7 @@ Technology: TaxCenter
 Technology: Housing
 	Name: Residential Area
 	Description: #R_BLD_HOUSING_DESC
+	Class: Unlock
 	Icon: city3
 	Point Cost: 500
 	Time Cost: 60

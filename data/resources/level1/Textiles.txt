@@ -9,8 +9,8 @@ Resource: Textiles
 	Level: 1
 	Affinity: Money
 
-	Terraform Cost: 400
-	Terraform Labor: 30
+	Terraform Cost: 1000
+	Terraform Labor: 60
 
 	Pressure: 3 Money
 	Artificial: True

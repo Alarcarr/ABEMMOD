@@ -3,7 +3,7 @@ Technology: ImpAllRange
 	Blurb: #R_IMP_ALL_RANGE_BLURB:7%
 	Description: #R_IMP_ALL_RANGE_DESC:7%:900
 
-	Icon: ActionBarIcons::21
+	Icon: techTargeting*#80ffea
 	Color: #80ffea
 
 	Point Cost: 800
@@ -18,7 +18,7 @@ Technology: ImpAllRange2
 	Blurb: #R_IMP_ALL_RANGE_BLURB:14%
 	Description: #R_IMP_ALL_RANGE_DESC:14%:1400
 
-	Icon: ActionBarIcons::21
+	Icon: techTargeting*#80ffea
 	Color: #80ffea
 
 	Point Cost: 1200

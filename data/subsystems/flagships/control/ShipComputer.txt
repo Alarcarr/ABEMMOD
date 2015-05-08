@@ -12,7 +12,7 @@ Subsystem: ShipComputer
 	EvaluationOrder: -10
 
 	Size := HexSize * Hexes
-	Command := Hexes * 10
+	Command := Hexes * 8
 	Repair := 4 * HexSize * (Hexes-1)
 	PowerUse := 30 * Size
 	
@@ -21,6 +21,11 @@ Subsystem: ShipComputer
 	Hex.Resistance := 0.2
 	Hex.HP := 18 * HexSize
 	Hex.Mass := HexSize
+
+	Duration := 30
+	EfficiencyBoost := 20 * (Size / ShipSize)
+
+	Hook: AddStatus(ComputerCore)
 
 	Effect: ABEMControlCore
 

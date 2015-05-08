@@ -1,3 +1,7 @@
 Template: tag/IsArmor
 	Modifier: ArmorHpFactor(factor)
 		Hex.HP := Hex.HP * factor
+
+Template: var/ImpactLevel
+	Modifier: ImpactLevelFactor(factor)
+		ImpactLevel := ImpactLevel / factor

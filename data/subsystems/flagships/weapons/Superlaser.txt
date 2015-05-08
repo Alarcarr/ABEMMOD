@@ -14,7 +14,7 @@ Subsystem: SuperLaser
 	Size := HexSize * Hexes
 	BeamDPS := 5 * Size*30
 	Duration := 5
-	Cooldown := 6*10
+	Cooldown := 60 * (1.0 + Size/512)
 	Range := Size + 700
 	Tracking := 0.5
 	SupplyCost := Size * 100

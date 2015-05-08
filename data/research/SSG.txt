@@ -2,6 +2,7 @@ Technology: SSG
 	Name: #R_STELLAR_SHIELD
 	Description: #R_STELLAR_SHIELD_DESC
 	Icon: SystemUnderAttack
+	Class: Unlock
 	Point Cost: 700
 	Time Cost: 60
 	ModAttribute(ProgenitorTechProgress, Add, 2.5)

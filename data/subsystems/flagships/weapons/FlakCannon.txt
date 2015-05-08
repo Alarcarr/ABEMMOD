@@ -12,9 +12,9 @@ Subsystem: FlakCannon
 
 	Range := Size + 750
 	Damage := Size * 1.5
-	Reload := 2
-	Speed := 100 * log(Size * 0.075 + 2) / log(2)
-	Spread := 0.02
+	Reload := 2 * (1.0 * Size/512)
+	Speed := max(100, Range / 15)
+	Spread := 0.015 / max(Range / 600, 1)
 	Tracking := 0.6
 	Pierce := 0.3
 	SupplyCost := Size * 1.5

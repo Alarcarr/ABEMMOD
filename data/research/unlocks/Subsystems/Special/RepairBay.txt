@@ -3,6 +3,7 @@ Technology: RepairBay
 	Icon: techShipYard
 	Point Cost: 2000
 	Time Cost: 360
+	Class: Unlock
 	Description: #R_SYS_REPAIRBAY_DESC
 	ModAttribute(ProgenitorTechProgress, Add, 2.5)
 	SkipOnUnlockedSubsystem(RepairBay)

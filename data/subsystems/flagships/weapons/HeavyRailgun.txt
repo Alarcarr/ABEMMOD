@@ -15,9 +15,9 @@ Subsystem: HeavyRailgunBattery
 
 	Range := Size + 500
 	Damage := Size * 5.76
-	Reload := 1.6
-	Speed := 75 * log(Size * 0.075 + 2) / log(2)
-	Spread := 0.04
+	Reload := 1.6 * (1.0 * Size/512)
+	Speed := max(75, Range / 15)
+	Spread := 0.035 / max(Range / 600, 1)
 	Tracking := 0.4
 	FireArc := 0.4
 	Pierce := 0.8

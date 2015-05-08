@@ -5,7 +5,7 @@ Technology: AdvShield
 	Icon: FtlGen
 	Blurb: +20% Shield HP, Shield Tech
 	Description: #R_ADV_SHIELD_DESC
-	Class: Unlock
+	Class: Keystone
 	Color: #bf01ff
 	ModAttribute(ProgenitorTechProgress, Add, 5)
 	UnlockModule(ShieldDiffuser)

@@ -13,7 +13,7 @@ Subsystem: SupportMissileLauncher
 	Size := HexSize * Hexes
 	Range := Size + 600
 	Damage := Size * 10.0
-	Reload := 7.0
+	Reload := 6.0 * (1.0 * Size/512)
 	Speed := 75
 	Tracking := 3
 	SupplyCost := Size * 3
