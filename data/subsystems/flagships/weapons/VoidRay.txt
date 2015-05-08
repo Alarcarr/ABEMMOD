@@ -14,7 +14,7 @@ Subsystem: VoidRay
 	Size := HexSize * Hexes
 	BeamDPS := 3 * Size
 	Duration := 6
-	Cooldown := 6 * (1.0 * Size/512)
+	Cooldown := 6 * (1.0 + Size/512)
 	Range := Size + 450
 	Tracking := 0.5
 	SupplyCost := Size * 0.75

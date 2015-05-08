@@ -19,6 +19,18 @@ int getDamageType(double type) {
 	return DT_Generic;
 }
 
+int getDRResponse(double type) {
+	int iType = int(type);
+	switch(iType) {
+		case 1:
+			return DF_IgnoreDR;
+		case 2:
+			return DF_FullDR;
+		default: return 0;
+	}
+	return 0;
+}
+
 void ABEMControlDestroyed(Event& evt) {
 	Ship@ ship = cast<Ship>(evt.obj);
 
@@ -45,6 +57,8 @@ DamageEventStatus ChannelDamage(DamageEvent& evt, const vec2u& position,
 {
 	if(evt.flags & DF_IgnoreDR != 0)
 		return DE_Continue;
+	if(evt.flags & DF_FullDR != 0)
+		MinPct = 0.01;
 
 	//Prevent internal-only effects
 	evt.flags &= ~ReachedInternals;
@@ -86,6 +100,8 @@ DamageEventStatus ChannelDamagePercentile(DamageEvent& evt, const vec2u& positio
 {
 	if(evt.flags & DF_IgnoreDR != 0)
 		return DE_Continue;
+	if(evt.flags & DF_FullDR != 0)
+		MinPct = 0.01;
 
 	//Prevent internal-only effects
 	evt.flags &= ~ReachedInternals;
@@ -129,6 +145,8 @@ DamageEventStatus ReduceDamagePercentile(DamageEvent& evt, const vec2u& position
 {
 	if(evt.flags & DF_IgnoreDR != 0)
 		return DE_Continue;
+	if(evt.flags & DF_FullDR != 0)
+		MinPct = 0.01;
 
 	//Prevent internal-only effects
 	evt.flags &= ~ReachedInternals;
@@ -286,6 +304,7 @@ void SizeScaledDamage(Event& evt, double BaselineAmount, double BaselineSize, do
 
 	@dmg.obj = evt.obj;
 	@dmg.target = evt.target;
+	dmg.spillable = false;
 	dmg.source_index = evt.source_index;
 	dmg.flags |= dmgType | ReachedInternals;
 
@@ -351,4 +370,30 @@ void SizeScaledAreaDamage(Event& evt, double Radius, double BaselineAmount, doub
 
 		target.damage(dmg, -1.0, dir);
 	}
+}
+
+DamageEventStatus DefensiveMatrixDamage(DamageEvent& evt, vec2u& position, vec2d& endPoint) {
+	Ship@ ship = cast<Ship>(evt.target);
+	if(ship !is null) {
+		if(ship.blueprint.getEfficiencySum(SV_ShieldCapacity) <= 0) {
+			ShieldDamage(evt, position, endPoint);
+		}
+	}
+	return DE_Continue;
+}
+
+void UnspillableDamage(Event& evt, double Amount, double Pierce, double DRResponse, double DamageType) {
+	DamageEvent dmg;
+	dmg.damage = Amount * double(evt.efficiency) * double(evt.partiality);
+	dmg.partiality = evt.partiality;
+	dmg.pierce = Pierce;
+	dmg.impact = evt.impact;
+
+	@dmg.obj = evt.obj;
+	@dmg.target = evt.target;
+	dmg.source_index = evt.source_index;
+	dmg.spillable = true;
+	dmg.flags |= getDamageType(DamageType) |= getDRResponse(DRResponse) |= ReachedInternals;
+
+	evt.target.damage(dmg, -1.0, evt.direction);
 }

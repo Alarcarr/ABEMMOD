@@ -5,7 +5,7 @@ Subsystem: RecallDevice
 	TypeColor: #fff980
 	Elevation: 3
 
-	Tags: BaseCost, Category:Equipment, HasInternals
+	Tags: HighMaint, Category:Equipment, HasInternals
 	Tags: Ability:Recall
 	Hull: Flagship, Station
 
@@ -17,7 +17,7 @@ Subsystem: RecallDevice
 
 	CostFactor := 0.2 / (Size / ShipSize)
 
-	Hex.BuildCost := 1.5 * Hex.BuildCost
+	Hex.BuildCost := 1.5 * HexSize
 	Requires:
 		Command = 1
 

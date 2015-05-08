@@ -2,6 +2,7 @@ Subsystem: FlagshipHull
 	Tags: DefaultUnlock, NoCore, HullSystem, Ability:ScuttleDerelict
 	Hull: Flagship
 	EvaluationOrder: -100
+	DamageOrder: -100
 
 	HexLimit := 128
 	GridWidth := 28
@@ -20,6 +21,8 @@ Subsystem: FlagshipHull
 	AddPostModifier: AddMass(ShipSize * (1.0 - max((ShipTotalHexes - Ship.ExternalHexes) / HexLimit, 0.0)))
 
 	OnCheckErrors: designs::checkGlobalDesign
+
+	Effect: DefensiveMatrixDamage
 
 	Assert: ShipTotalHexes - Ship.ExternalHexes < HexLimit + 0.001
 		Message: #ERROR_HEX_COUNT

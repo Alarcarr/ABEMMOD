@@ -2,12 +2,15 @@ Subsystem: RemnantHull
 	Tags: NoCore, HullSystem, Ability:ScuttleDerelict, RemnantComputer
 	Hull: Flagship, Station
 	EvaluationOrder: -100
+	DamageOrder: -100
 
 	HexLimit := 80
 	GridWidth := 28
 	GridHeight := 23
 
 	Ship.HexSize := ShipSize / HexLimit
+
+	Effect: DefensiveMatrixDamage
 
 	Repair := (ShipSize / HexLimit) * 16
 
@@ -38,10 +41,13 @@ Subsystem: SpecialRemnantHull
 	Tags: NoCore, HullSystem, Ability:ScuttleDerelict, RemnantComputer
 	Hull: Flagship, Station
 	EvaluationOrder: -100
+	DamageOrder: -100
 
 	GridWidth := 28
 	GridHeight := 23
 	Repair := HexSize * 16
+
+	Effect: DefensiveMatrixDamage
 
 	AddShipModifier: HpFactor(1.5)
 	AddShipModifier: DamageFactor(0.9)

@@ -14,7 +14,7 @@ Subsystem: Railgun
 
 	Range := Size + 350
 	Damage := Size * 2.5
-	Reload := 2.0 * (1.0 * Size/512)
+	Reload := 2.0 * (1.0 + Size/512)
 	Speed := max(110, Range / 15)
 	Spread := 0.07 / max(Range / 600, 1)
 	Tracking := 0.8

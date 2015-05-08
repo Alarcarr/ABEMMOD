@@ -21,7 +21,7 @@ Subsystem: Swarmer
 	Size := HexSize * Hexes
 	Range := Size + 250
 	Damage := Size * 1.25
-	Reload := 8 * (1.0 * Size/512)
+	Reload := 8 * (1.0 + Size/512)
 	Speed := max(65, Range / 6)
 	Tracking := 6.0
 	SupplyCost := Size * 3.0

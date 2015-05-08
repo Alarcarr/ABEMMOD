@@ -31,7 +31,7 @@ Technology: Metallurgy
 Technology: FTLT
 	Name: Dynamics
 	Description: #R_CAT_PROPULSION_DESC
-	Class: KEystone
+	Class: Keystone
 	Icon: ActionBarIcons::6
 	AutomaticallyUnlocks()
 

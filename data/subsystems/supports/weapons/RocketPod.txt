@@ -22,7 +22,7 @@ Subsystem: SRocketPod
 	Size := HexSize * Hexes
 	Range := Size + 300
 	Damage := Size * 6.6
-	Reload := 12 * (1.0 * Size/512)
+	Reload := 12 * (1.0 + Size/512)
 	Speed := max(65, Range / 12)
 	Tracking := 6.0
 	SupplyCost := Size * 3.0
