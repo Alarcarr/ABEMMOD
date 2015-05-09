@@ -4,8 +4,9 @@ Subsystem: ShieldBattery
 	Elevation: 1
 
 	Tags: BaseCost
-	Tags: Defense, Category:Shields, HasInternals
-	Tags: SecondaryDefense
+//	Tags: Defense, Category:Shields, HasInternals
+//	Tags: SecondaryDefense
+	Tags: Disabled
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes

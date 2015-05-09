@@ -137,6 +137,14 @@ SubsystemStat: DefensiveMatrix
 	Color: #00a0ff
 
 	Variable: DefensiveMatrixHP
+
+SubsystemStat: PodSize
+	Name: Pod Size
+	Icon: RocketPod::2
+	Color: #aaaaaa
+	Suffix: projectiles
+
+	Variable: PodSize
 	
 // *************************************
 // *********HEX-SPECIFIC STATS**********

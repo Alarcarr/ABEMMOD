@@ -22,7 +22,7 @@ Subsystem: SupShieldGen
 	Assert: Size>=5
 		Message: Support Shield Generator must be at least size 5. Add more hexes to the generator or increase the ship's size.
 
-	Effect: ShieldDamage
+	Effect: ABEMShieldDamage
 
 	Requires:
 		Command = 1

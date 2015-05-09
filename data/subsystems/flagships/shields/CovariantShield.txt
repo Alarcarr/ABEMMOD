@@ -24,7 +24,7 @@ Subsystem: CovariantShield
 	Hex.BuildCost := 0.1 * HexSize 
 	Hex.MaintainCost := 1 * HexSize
 
-	Effect: ShieldDamage	
+	Effect: ABEMShieldDamage	
 
 	Requires:
 		Command = 1

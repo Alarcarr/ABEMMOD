@@ -5,6 +5,9 @@ import components.Statuses;
 import ABEM_data;
 from empire import Creeps, Pirates;
 
+DamageFlags DF_FullShieldBleedthrough = DF_Flag6;
+DamageFlags DF_NoShieldBleedthrough = DF_Flag7;
+
 int getDamageType(double type) {
 	int iType = int(type);
 	switch(iType) {
@@ -26,6 +29,18 @@ int getDRResponse(double type) {
 			return DF_IgnoreDR;
 		case 2:
 			return DF_FullDR;
+		case 3:
+			return DF_FullShieldBleedthrough;
+		case 4:
+			return DF_NoShieldBleedthrough;
+		case 5:
+			return DF_IgnoreDR | DF_FullShieldBleedthrough;
+		case 6:
+			return DF_FullDR | DF_NoShieldBleedthrough;
+		case 7:
+			return DF_IgnoreDR | DF_NoShieldBleedthrough;
+		case 8:
+			return DF_FullDR | DF_FullShieldBleedthrough;
 		default: return 0;
 	}
 	return 0;
@@ -376,8 +391,46 @@ DamageEventStatus DefensiveMatrixDamage(DamageEvent& evt, vec2u& position, vec2d
 	Ship@ ship = cast<Ship>(evt.target);
 	if(ship !is null) {
 		if(ship.blueprint.getEfficiencySum(SV_ShieldCapacity) <= 0) {
-			ShieldDamage(evt, position, endPoint);
+			ABEMShieldDamage(evt, position, endPoint);
 		}
+	}
+	return DE_Continue;
+}
+
+DamageEventStatus ABEMShieldDamage(DamageEvent& evt, vec2u& position, vec2d& endPoint) {
+	if(evt.flags & DF_FullShieldBleedthrough != 0) // This ensures that weapons such as Progenitor drones can go through with impunity. Shield Hardeners still have a chance to block the damage, though.
+		return DE_Continue;
+
+	Ship@ ship = cast<Ship>(evt.target);
+	if(ship !is null && ship.Shield > 0) {
+		double maxShield = ship.MaxShield;
+		if(maxShield <= 0.0)
+			maxShield = ship.Shield;
+	
+		double dmgScale = (evt.damage * ship.Shield) / (maxShield * maxShield);
+		if(dmgScale < 0.01) {
+			//TODO: Simulate this effect on the client
+			if(randomd() < dmgScale / 0.001)
+				playParticleSystem("ShieldImpactLight", ship.position + evt.impact.normalized(ship.radius * 0.9), quaterniond_fromVecToVec(vec3d_front(), evt.impact), ship.radius, ship.visibleMask, networked=false);
+		}
+		else if(dmgScale < 0.05) {
+			playParticleSystem("ShieldImpactMedium", ship.position + evt.impact.normalized(ship.radius * 0.9), quaterniond_fromVecToVec(vec3d_front(), evt.impact), ship.radius, ship.visibleMask);
+		}
+		else {
+			playParticleSystem("ShieldImpactHeavy", ship.position + evt.impact.normalized(ship.radius * 0.9), quaterniond_fromVecToVec(vec3d_front(), evt.impact), ship.radius, ship.visibleMask, networked=false);
+		}
+		
+		double block;
+		if(ship.MaxShield > 0 && !(evt.flags & DF_NoShieldBleedthrough != 0)) // DF_NoShieldBleedthrough makes sure all damage is applied to shields first.
+			block = min(ship.Shield * min(ship.Shield / maxShield, 1.0), evt.damage);
+		else
+			block = min(ship.Shield, evt.damage);
+		
+		ship.Shield -= block;
+		evt.damage -= block;
+
+		if(evt.damage <= 0.0)
+			return DE_EndDamage;
 	}
 	return DE_Continue;
 }

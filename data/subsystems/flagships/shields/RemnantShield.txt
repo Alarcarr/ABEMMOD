@@ -22,7 +22,7 @@ Subsystem: RemnantShield
 	Hex.BuildCost := 1 * HexSize
 	Hex.MaintainCost := 2.5 * HexSize
 
-	Effect: ShieldDamage
+	Effect: ABEMShieldDamage
 
 	Requires:
 		Command = 2

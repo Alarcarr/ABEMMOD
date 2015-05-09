@@ -12,16 +12,17 @@ Subsystem: DroneWeapon
 
 	Size := HexSize * Hexes
 	Range := Size + 700
-	Damage := Size * 5 / 16
+	Damage := 100
+	PodSize := max(1, round(Size / 3))
 	Reload := 8 * (1.0 + Size/512)
 	Speed := max(120, Range / 6)
 	Tracking := 6.0
 	SupplyCost := Size * 6.0
-	out DPS := (Damage * 32) / (Reload * 2)
+	out DPS := (Damage * PodSize) / (Reload * 2)
 	out SupplyDrain := SupplyCost / 2
 
-	Pierce := 0.8
-	DRResponse := 0
+	Pierce := 0.2
+	DRResponse := 5
 	DamageType := 3
 
 	Hex.HP := 18 * HexSize
@@ -41,7 +42,6 @@ Subsystem: DroneWeapon
 		Hex.Mass := 5.0 * Hex.Mass
 
 		Sprite: HexagonSubsystems::9
-		DrawMode: 1
 
 		Hex.DamageResist := ShipSize / 64.0
 		Effect: DamageResist
@@ -50,12 +50,12 @@ Subsystem: DroneWeapon
 	Effector: UnspillableRockets
 		Range = Range
 		Damage = Damage
-		FireDelay = Reload / 32
-		PodSize = 32
+		FireDelay = Reload / PodSize
+		PodSize = PodSize
 		Reload = Reload
 		Speed = Speed
 		Tracking = Tracking
-		SupplyCost = SupplyCost * (Reload / 32)
+		SupplyCost = SupplyCost * (Reload / PodSize)
 		Pierce = Pierce
 		DRResponse = DRResponse
 		DamageType = DamageType

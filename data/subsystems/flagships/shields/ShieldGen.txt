@@ -22,7 +22,7 @@ Subsystem: ShieldGen
 	Hex.BuildCost := 0.5 * HexSize 
 	Hex.MaintainCost := 1 * HexSize
 
-	Effect: ShieldDamage
+	Effect: ABEMShieldDamage
 	
 	Requires:
 		Command = 1

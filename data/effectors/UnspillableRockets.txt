@@ -31,8 +31,9 @@ Effector: UnspillableRockets
 	ImpactSfx: missile_impact
 	Color: ffff00ff
 	Trail: MissileTrail
-	TrailCol: ffdd0000, 00000000
+	TrailCol: ffff00ff, 00000000
 	Material: Missile
+	FirePitchVariance: 0.2
 	ImpactGfx: ImpactFlareRocket
 
 	Effect: UnspillableDamage
