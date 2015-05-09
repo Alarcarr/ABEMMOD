@@ -22,7 +22,7 @@ Subsystem: CovariantShield
 	
 	Hex.LaborCost := 0.5 * HexSize 
 	Hex.BuildCost := 0.1 * HexSize 
-	Hex.MaintainCost := 1
+	Hex.MaintainCost := 1 * HexSize
 
 	Effect: ShieldDamage	
 

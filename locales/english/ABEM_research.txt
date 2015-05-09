@@ -397,7 +397,7 @@ R_CAT_PLANET_DESC: <<
 	[color=#aaa][i]Building... building... please come back in a few decades, my liege.[/i][/color]
 >>
 R_CAT_POLITICS_DESC: <<
-	[color=#aaa][i]I will let this Republic that has stood for a thousand years be split in two! (Also known as the art of saying very little with as many words as possible.)[/i][/color]
+	[color=#aaa][i]I will not let this Republic that has stood for a thousand years be split in two! (Also known as the art of saying very little with as many words as possible.)[/i][/color]
 >>
 R_CAT_INDUSTRY_DESC: <<
 	[color=#aaa][i]Discovering a method for building galaxy-sized starships, one star at a time.[/i][/color]

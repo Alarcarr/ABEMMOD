@@ -1,7 +1,7 @@
 Subsystem: DefensiveMatrix
 	Name: Defensive Matrix Generator
 	BaseColor: #145cf9
-	Picture: SubsystemButtonArt::8
+	Picture: SLaser * #145cf9
 	Elevation: 2
 
 	Tags: BaseCost, Category:Equipment, Ability:DefensiveMatrix

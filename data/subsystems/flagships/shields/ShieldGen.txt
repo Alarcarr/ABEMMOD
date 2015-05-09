@@ -20,7 +20,7 @@ Subsystem: ShieldGen
 	Hex.Mass := 1 * HexSize
 	Hex.LaborCost := 1 * HexSize 
 	Hex.BuildCost := 0.5 * HexSize 
-	Hex.MaintainCost := 1
+	Hex.MaintainCost := 1 * HexSize
 
 	Effect: ShieldDamage
 	

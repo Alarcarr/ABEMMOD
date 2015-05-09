@@ -1,6 +1,6 @@
 Technology: RepairBay
 	Name: Nanite Dispensers
-	Icon: techShipYard
+	Icon: HyperdenseLaser::2 * #5cf90e
 	Point Cost: 2000
 	Time Cost: 360
 	Class: Unlock
