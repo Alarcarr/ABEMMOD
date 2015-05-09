@@ -393,7 +393,7 @@ void UnspillableDamage(Event& evt, double Amount, double Pierce, double DRRespon
 	@dmg.target = evt.target;
 	dmg.source_index = evt.source_index;
 	dmg.spillable = true;
-	dmg.flags |= getDamageType(DamageType) |= getDRResponse(DRResponse) |= ReachedInternals;
+	dmg.flags |= getDamageType(DamageType) | getDRResponse(DRResponse) | ReachedInternals;
 
 	evt.target.damage(dmg, -1.0, evt.direction);
 }
