@@ -1,11 +1,15 @@
-// SUBSYSTEM CATEGORIES HERE!
+// *********************************************************
+// **************SUBSYSTEM CATEGORIES HERE!*****************
+// *********************************************************
 
 SC_Armor:[hspace=4/][img=PlateArmor;32x32/][hspace=6/]  [color=#6e7371]Armor[/color]
 SC_Power:[hspace=4/][img=DesignationIcons::2;32x32/][hspace=6/]  [color=#6e7371]Power and Supply[/color]
 SC_Manufacturing:[hspace=4/][img=ResourceIcon::6;32x32/][hspace=6/]  [color=#6e7371]Manufacturing[/color]
 SC_Shields:[hspace=4/][img=TechIcons::6;32x32/][hspace=6/]  [color=#0A50F5]Shields[/color]
 
-// SUBSYSTEM STATS HERE!
+// *********************************************************
+// ****************SUBSYSTEM STATS HERE!********************
+// *********************************************************
 
 S_FLEETREPAIR: Fleet Repair Rate
 STT_FLEETREPAIR: <<
@@ -41,8 +45,67 @@ S_SUPPLYTRANSFER: Transfer Rate
 S_SHIELDTRANSFER: Transfer Rate
 S_DEFENSIVEMATRIX: Matrix Capacity
 
-// SUBSYSTEMS HERE!
+// *********************************************************
+// ******************SUBSYSTEMS HERE!***********************
+// *********************************************************
 
+S_CONTROLCHAIR: Neural Interface Chair
+S_CONTROLCHAIR_DESC: <<
+	A neural interface linked into all the ship's systems allows a single officer to single-handedly control massive battlecruisers whilst sitting in a comfortable chair.
+
+	[img=ActionBarIcons::0;22;#00ff80][img=Plus]Provides a ludicrous amount of [b][color=#00ff80]Control[/color][/b] to operate other subsystems, enough for even the most insane of ship designs.[/img][/img]
+	[img=MenuIcons::3;20]Only one Neural Interface Chair per ship.[/img]
+	[img=Minus]Does not repair the ship at all.[/img]
+	[img=Minus]Ship is disabled or destroyed if no control remains.[/img]
+>>
+S_DRONEWEAPON: Boring Drone Launcher
+S_DRONEWEAPON_DESC: <<
+	Launches a series of nimble drones which use their speed and a superheated plasma shield to bore through the hull of their target, bypassing enemy shielding along the way.
+
+	[img=MenuIcons::3;20]Each drone deals 250 damage.[/img]
+	[img=MenuIcons::3;20]Instead of increasing drone damage, a bigger launcher will be capable of launching larger quantities of drones with each salvo.[/img]
+	[img=Plus]Bypasses all damage resistance and shields.
+		[img=MenuIcons::3;20]Shield Hardeners will still have a chance to block a drone completely, though.[/img][/img]
+	[img=Minus]Expensive.[/img]
+	[img=Minus]Takes a lot of time to reload.[/img]
+	[img=Minus]Requires power to run.[/img]
+>>
+S_PROGENITORCOMPUTER: Progenitor Control Computer
+S_PROGENITORCOMPUTER_DESC: <<
+	A resilient autonomous computer of Progenitor design, capable of controlling an incredible amount of subsystems.
+	
+	[img=ActionBarIcons::0;22;#00ff80]Provides a very large amount of [b][color=#00ff80]Control[/color][/b] to operate other subsystems.[/img]
+	[img=QuickbarIcons::6;22]For the first 60 seconds of any combat, the strength of the entire fleet is boosted by a considerable percentage dependent on the size of the Control Computer.[/img]
+	[img=Plus]Slowly repairs the vessel.[/img]
+	[img=Plus]Ship can remain indefinitely inside Radioactive Nebulae.[/img]
+	[img=Minus]Requires a lot of power to run.[/img]
+	[img=Minus]Is more expensive than a regular Control Computer.[/img]
+	[img=Minus]Ship is disabled or destroyed if no control remains.[/img]
+>>
+SHIPCOMPUTER_DESC: <<
+	An autonomous computer capable of controlling numerous ship systems.
+	
+	[img=ActionBarIcons::0;22;#00ff80]Provides a lot of [b][color=#00ff80]Control[/color][/b] to operate other subsystems.[/img]
+	[img=QuickbarIcons::6;22]For the first 30 seconds of any combat, the strength of the entire fleet is boosted by a percentage dependent on the size of the Control Computer.[/img]
+	[img=Plus]Slowly repairs the vessel.[/img]
+	[img=Minus]Requires power to run.[/img]
+	[img=Minus]Ship is disabled or destroyed if no control remains.[/img]
+>>
+CREWCONTROL_DESC: <<
+	A bridge, crew quarters, and other facilities for a crew to command a vessel.
+
+	[img=ActionBarIcons::0;22;#00ff80]Provides [b][color=#00ff80]Control[/color][/b] to operate other subsystems.[/img]
+	[img=Plus]Slowly repairs the vessel.[/img]
+	[img=Minus]Ship is disabled or destroyed if no control remains.[/img]
+>>
+S_SHRINE_DESC: <<
+	A shrine to honor the Old Gods, constructed in accordance with the blueprints they bestowed upon us. Praying to the shrine protects the ship from harm.
+
+	[img=Plus]Adds a Shield to the ship.[/img]
+	[img=Minus]At least as much Prayer must be generated as the ship has Control.[/img]
+	[img=MenuIcons::3;20]Neural Interface Chairs generate 995 Prayer. Control Computers generate a certain amount of Prayer as well.[/img]
+	[img=ResourceIconsSmall::53;22][b][color=#408fc1]Only available when the 'Devout' race option is chosen.[/color][/b][/img]
+>>
 BEAM_AMPLIFIER_DESC: <<
 	Sophisticated targeting sensors and focused emitters allow a beam weapon to more accurately find its destination and deliver more power per second, increasing its effective range and armor penetration. Unfortunately, the new systems drain the weapon's capacitors faster, and the increased capacitor size is not matched by the power conduits feeding them.
 

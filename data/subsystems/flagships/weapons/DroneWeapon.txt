@@ -12,9 +12,9 @@ Subsystem: DroneWeapon
 
 	Size := HexSize * Hexes
 	Range := Size + 700
-	Damage := 100
-	PodSize := max(1, round(Size / 3))
-	Reload := 8 * (1.0 + Size/512)
+	Damage := 250
+	PodSize := max(3, round(Size))
+	Reload := 20 * (1.0 + Size/512)
 	Speed := max(120, Range / 6)
 	Tracking := 6.0
 	SupplyCost := Size * 6.0
@@ -30,9 +30,11 @@ Subsystem: DroneWeapon
 	Hex.Mass := HexSize
 	Hex.LaborCost := 1 * HexSize
 	Hex.BuildCost := 2.5 * HexSize
+	PowerUse := 20 * Size
 	TypeColor: #f94694
 	Requires:
 		Command = 1
+		Power = PowerUse
 
 	Module: Default
 

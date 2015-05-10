@@ -10,7 +10,7 @@ GlobalStat: CombatSupplyRegen
 GlobalStat: BoardingDefense
 			Name: #S_BOARDTOTAL
 			Description: #STT_BOARDTOTAL
-			Icon: CrewControl*#9686ff
+			Icon: Bridge
 			Color: #ff8000
 			Secondary: Control
 			
@@ -94,7 +94,7 @@ SubsystemStat: ChannelPercentage
 SubsystemStat: BoardingSubsys
 	Name: #S_BOARDSUBSYS
 	Description: #STT_BOARDSUBSYS
-	Icon: CrewControl*#9686ff
+	Icon: Bridge
 	Color: #ff8000
 	
 	Variable: BoardingStrength
