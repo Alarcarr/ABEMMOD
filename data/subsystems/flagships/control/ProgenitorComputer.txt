@@ -25,7 +25,7 @@ Subsystem: ProgenitorComputer
 	Duration := 60
 	EfficiencyBoost := 50 * (Size / ShipSize)
 
-	Prayer := Sum.RequirePrayer * 14
+	Prayer := Sum.RequirePrayer * 10 * Hexes
 
 	Hook: AddStatus(ProgenitorComputer)
 

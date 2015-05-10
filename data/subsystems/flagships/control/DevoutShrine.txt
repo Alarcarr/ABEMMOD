@@ -9,6 +9,7 @@ Subsystem: DevoutShrine
 	Hull: Flagship, Station
 
 	Prayer := Hexes
+	RequirePrayer := 1
 
 	Size := HexSize * Hexes
 	ShieldCapacity := Size * 60

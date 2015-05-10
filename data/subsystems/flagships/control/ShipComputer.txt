@@ -15,6 +15,7 @@ Subsystem: ShipComputer
 	Command := Hexes * 8
 	Repair := 4 * HexSize * (Hexes-1)
 	PowerUse := 30 * Size
+	Prayer := Sum.RequirePrayer * 4 * Hexes
 	
 	BoardingStrength := 20 * Size
 
