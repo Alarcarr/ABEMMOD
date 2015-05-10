@@ -51,3 +51,11 @@ BLD_ANCIENT_CANNON_DESC: <<|
 
 	If the planet is under siege and has no defenses remaining in orbit, the weapon is deactivated.
 >>
+BLD_RECALL_DESC: <<
+	A hyperfield manipulator designed to open a wormhole between a location in orbit and any allied object in the universe.
+
+	[img=MenuIcons::3;20]Grants the Recall ability.[/img]
+	[img=ResourceIcon::2;22]Costs [b][color=#42b4bd]Energy[/color][/b] to activate.[/img]
+	[img=MenuIcons::3;20]The smaller the recalled object is, the less energy is consumed.[/img]
+	[img=MenuIcons::3;20][i][bbloc=#ABL_RECALL_DESC/][/i][/img]
+>>

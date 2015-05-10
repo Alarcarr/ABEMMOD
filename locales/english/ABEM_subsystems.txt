@@ -58,6 +58,16 @@ S_CONTROLCHAIR_DESC: <<
 	[img=Minus]Does not repair the ship at all.[/img]
 	[img=Minus]Ship is disabled or destroyed if no control remains.[/img]
 >>
+S_RECALL: Recall Device
+S_RECALL_DESC: <<
+	A hyperfield manipulator designed to open a wormhole between a nearby location and any allied object in the universe.
+
+	[img=MenuIcons::3;20]Grants the Recall ability.[/img]
+	[img=ResourceIcon::2;22]Costs [b][color=#42b4bd]Energy[/color][/b] to activate.[/img]
+	[img=MenuIcons::3;20]The smaller the recalled object is, and the larger the recalling ship is, the less energy is consumed.[/img]
+	[img=MenuIcons::3;20]The larger the Recall Device is, the less energy is consumed.[/img]
+	[img=MenuIcons::3;20][i][bbloc=#ABL_RECALL_DESC/][/i][/img]
+>>
 S_DRONEWEAPON: Boring Drone Launcher
 S_DRONEWEAPON_DESC: <<
 	Launches a series of nimble drones which use their speed and a superheated plasma shield to bore through the hull of their target, bypassing enemy shielding along the way.

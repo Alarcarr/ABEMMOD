@@ -510,6 +510,40 @@ R_ORB_POWERPLANT_DESC: <<
 	
 	[color=#d1cb6a][b]Alternate Unlock:[/b] Spend §1.5M[/color]
 >>
+R_SYS_DRONEWEAPON: Boring Drones
+R_SYS_DRONEWEAPON_DESC: <<
+	[color=#aaa][i]Research into Progenitor weapons technology unravels the mysteries of the Guardians' devastating arsenals.[/i][/color]
+
+	Unlocks the Boring Drone Launcher for use on flagships.
+
+	[i][bbloc=#S_DRONEWEAPON_DESC/][/i]
+>>
+R_SYS_CONTROLCHAIR: Neural Interfacing
+R_SYS_CONTROLCHAIR_DESC: <<
+	[color=#aaa][i]Detailed understanding of Progenitor neural interfaces allows entire starships to be commanded by a mere thought.[/i][/color]
+
+	Unlocks the Neural Interface Chair for use on flagships.
+
+	[i][bbloc=#S_CONTROLCHAIR_DESC/][/i] 
+>>
+R_SYS_PROGENITORCOMPUTER: Progenitor Computing
+R_SYS_PROGENITORCOMPUTER_DESC: <<
+	[color=#aaa][i]Investigation of Progenitor computer systems yields massive improvements to our ships' control computers.[/i][/color]
+
+	Unlocks the Progenitor Control Computer for use on flagships.
+
+	[i][bbloc=#S_PROGENITORCOMPUTER_DESC/][/i]
+>>
+R_RECALL: Targeted Wormhole Generation
+R_RECALL_DESC: <<
+	[color=#aaa][i]New ways of hyperfield manipulation spurred on by recent discoveries about the Progenitors.[/i][/color]
+
+	Unlocks the Recall Device for use on flagships, and the Recall Facility for construction on planets.
+
+	[i]Recall: 
+
+	[bbloc=#ABL_RECALL_DESC/][/i]
+>>
 
 // ARGH, DO WE STILL HAVE TO KEEP THIS STUFF?
 R_NANO_REPAIR_DESC: <<
