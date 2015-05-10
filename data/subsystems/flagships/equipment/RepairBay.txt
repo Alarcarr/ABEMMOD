@@ -19,11 +19,11 @@ Subsystem: RepairBay
 	Description: #S_REPAIRBAY_DESC
 	Requires:
 		Command = 1
-		Power = Power
+		Power = PowerUse
 
 	HullHealing := 24 * Size
 	TypeColor: #00ff18
-	Power := 15 * Size
+	PowerUse := 15 * Size
 	Module: Core
 		Sprite: HyperdenseLaser::0 * #5cf90e
 		Hex.BuildCost := Hex.BuildCost * 3

@@ -14,4 +14,6 @@ Technology: AdvShield
 	SecondaryEnergyCost(1200)
 	UnlockSubsystem(ShieldRegenerator)
 	UnlockSubsystem(ShieldTransmitter)
+	UnlockSubsystem(RechargerModule)
+	UnlockTag(ShieldCharger)
 	UnlockSubsystem(DefensiveMatrix)

@@ -15,6 +15,7 @@ Subsystem: CovariantShield
 	ShieldCapacity := Size * 200
 	ShieldRegen := Size * 0.2
 	ShieldHexes := Hexes
+	PowerUse := 25 * Size
 
 	Hex.Resistance := 0.5
 	Hex.HP := 12 * HexSize
@@ -28,7 +29,7 @@ Subsystem: CovariantShield
 
 	Requires:
 		Command = 1
-		Power = 25 * Size
+		Power = PowerUse
 
 	Module: Core
 		Sprite: TechIcons::6

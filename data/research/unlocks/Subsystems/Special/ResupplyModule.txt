@@ -4,7 +4,7 @@ Technology: ResupplyMod
 	Point Cost: 250
 	Time Cost: 60
 	Icon: GuiOrbitalIcons::7
-	Description: #R_SYS_RESUPPLY_MODULE
+	Description: #R_SYS_RESUPPLY_DESC
 	ModAttribute(ProgenitorTechProgress, Add, 1.5)
 	SkipOnUnlockedSubsystem(ResupplyModule)
 	UnlockSubsystem(ResupplyModule)

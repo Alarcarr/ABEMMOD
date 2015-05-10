@@ -17,13 +17,12 @@ Subsystem: RoboticShipyard
 	Defense := Size*0.05
 	BaseColor: #ff4a08
 	TypeColor: #ff4a08
-	Power := 5*Size
-	Requires:
-		Command = Hexes
+	PowerUse := 5*Size
 	Module: Core
 		Sprite: TechIcons::40
 	Requires:
-		Command = 1
+		Command = Hexes
+		Power = PowerUse
 
 
 	Hook: AddLocalDefense(Defense, Overflow Global = True, Global Factor = 0.5)

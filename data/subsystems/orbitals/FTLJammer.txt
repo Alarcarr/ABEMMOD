@@ -15,6 +15,7 @@ Subsystem: FTLJammer
 	Hex.HP := 12 * HexSize
 
 	Hex.LaborCost := 40
+	PowerUse := 40 * Size
 	Description: #S_FTLJAMMER_DESC
 	Effect: FTLUpkeep
 		Amount = 0.15
@@ -24,7 +25,7 @@ Subsystem: FTLJammer
 	Requires:
 		Command = Hexes
 
-		Power = Size*40
+		Power = PowerUse
 	Module: Default
 
 	Module: Core

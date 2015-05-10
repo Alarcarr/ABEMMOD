@@ -27,6 +27,6 @@ Subsystem: EngBay
 	Module: Core
 		Vital: True
 		Name: Core
-		Sprite: TechIcons::50*#32ff58
+		Sprite: TechIcons::50
 		Color: #32ff58
 		Required: True

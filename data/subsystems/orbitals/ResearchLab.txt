@@ -16,6 +16,7 @@ Subsystem: ResearchLab
 	Hex.HP := 12 * HexSize
 
 	Research := Size/1000
+	PowerUse := 40 * Size
 	Hex.LaborCost := 3* HexSize +5
 	Assert: Size>=15
 		Message: Research Lab must be at least size 15. Add more hexes to the lab or increase the station's size.
@@ -23,7 +24,7 @@ Subsystem: ResearchLab
 	Requires:
 		Command = Hexes
 
-		Power = Size*40
+		Power = PowerUse
 	Module: Default
 		Sprite: techHyperfield
 

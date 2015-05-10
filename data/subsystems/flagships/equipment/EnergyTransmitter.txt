@@ -19,11 +19,11 @@ Subsystem: EnergyTransmitter
 	Description: #S_ENERGYTRANSMITTER_DESC
 	Requires:
 		Command = 1
-		Power = Power
+		Power = PowerUse
 
 	SupplyTransferRate := 1125 * Size
 	TypeColor: #2fd6b3
-	Power := 2.5 * Size
+	PowerUse := 2.5 * Size
 	Module: Core
 		Sprite: Laser::0 * #38a2f9
 		Hex.BuildCost := Hex.BuildCost * 3

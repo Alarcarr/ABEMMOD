@@ -14,6 +14,7 @@ Subsystem: RemnantShield
 	ShieldCapacity := Size * 220
 	ShieldRegen := Size * 1
 	ShieldHexes := Hexes
+	PowerUse := 40*Size
 
 	Hex.Resistance := 0.5
 	Hex.HP := 12 * HexSize
@@ -26,7 +27,7 @@ Subsystem: RemnantShield
 
 	Requires:
 		Command = 2
-		Power = 40* Size
+		Power = PowerUse
 
 	Module: Core
 		Sprite: TechIcons::35*#60ffff

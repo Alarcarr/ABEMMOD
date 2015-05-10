@@ -1,6 +1,6 @@
 Subsystem: Miner
 	Name: Miner Hull
-	Description: #S_HAULER_HULL_DESC
+	Description: #S_MINER_HULL_DESC
 
 	Tags: Applied:Hull, Category:Hulls, NoCore,DefaultUnlock
 	Hull: Flagship

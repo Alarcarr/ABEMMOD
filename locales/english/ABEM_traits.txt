@@ -20,7 +20,7 @@ TRAIT_PACIFISTS_DESC: <<
 >>
 TRAIT_BERSERKERS: Berserkers
 TRAIT_BERSERKERS_DESC: <<
-  [vspace=3/]Starts with a [img=ResourceIconsSmall::62][/img]Phosphate on their homeworld.
+  [vspace=3/]Starts with a [img=ResourceIconsSmall::62*#f00][/img]Sulphate on their homeworld.
   [vspace=3/][img=SubsystemButtonArt::8 * #fdffa8;22][/img]Personal quests for glory reduce support capacity by 50%.
   [vspace=3/][img=StatusWar;22][/img]Centuries of conflict have resulted in a 25% increase in fleet effectiveness and a 25% reduction in supply costs.
   [vspace=3/][img=SystemUnderAttack;22][/img]All planets are Happy when at war with another empire. All civilian non-Influence generations are increased by 5% when at war, and all civilian resource generations are halved when not at war. All planets receive +0.5 Defense generation when at war.
@@ -36,8 +36,8 @@ TRAIT_RECLUSIVE_RINGWORLDERS_DESC: <<
 >>
 TRAIT_VERDANT: Verdant
 TRAIT_VERDANT_DESC: <<|
-	[vspace=3/] [img=Sinew;22]Ships must be held together by organic [b]Sinew[/b], providing control instead of having a bridge.[/img]
-	[vspace=3/] [img=Sinew;22]Ships, orbitals and asteroid mines cannot have or be targeted by Boarding Parties. Also, cannot use Improved Command Decks.[/img]
+	[vspace=3/][img=Sinew;22]Ships must be held together by organic [b]Sinew[/b], providing control instead of having a bridge.[/img]
+	[vspace=3/][img=Sinew;22]Ships, orbitals and asteroid mines cannot have or be targeted by Boarding Parties. Also, cannot use Improved Command Decks.[/img]
 	[vspace=3/][img=BuildingSprites::0;22]Does [b]not[/b] have any form of cities.[/img]
 	[vspace=3/][img=AttributeIcons::0;22]Must construct [b]Stalks[/b] on planets to be able to use pressure.[/img]
 >>

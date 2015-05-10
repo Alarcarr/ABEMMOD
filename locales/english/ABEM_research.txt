@@ -91,13 +91,6 @@ R_BLD_HOUSING_DESC: <<
 
 	[i][bbloc=#BLD_HOUSING_DESC/][/i]
 >>
-R_SYS_RESUPPLY_DESC: <<
-	[color=#aaa][i]New advancements in supply distribution allow supply depots to be equipped with more defensive equipment.[/i][/color]
-
-	Unlocks the Resupply Module subsystem for orbitals.
-
-	[i][bbloc=#S_RESUPPLYMODULE_DESC/][/i]
->>
 R_SYS_FTLJAMMER_DESC: <<
 	[color=#aaa][i]Improved hyperfield exciter technology allows us to fit weapons and improved defenses on FTL jamming stations.[/i][/color]
 
@@ -202,7 +195,7 @@ R_BLD_TAX_DESC: <<
 	
 	[i][bbloc=#B_TAXCENTER_DESC/][/i]
 >>
-R_SYS_RESUPPLY_MODULE: <<
+R_SYS_RESUPPLY_DESC: <<
 	[color=#aaa][i]New supply package dispersal systems allow for facilities equivalent to Supply Depots to be built into a space station without sacrificing defensive capabilities.[/i][/color]
 	
 	Unlocks the Resupply Module subsystem for use on stations.
@@ -442,7 +435,7 @@ R_ADV_SHIELD_DESC: <<
 
 	Quite a significant advance considering the fact that we just wanted to draw pretty pictures with the stuff...[/i][/color]
 
-	Unlocks the Shield Regenerator, Defensive Matrix Generator, and Shield Transmitter subsystems for use on flagships, as well as the Shield Diffuser and Shield Capacitor modifiers for use on shield generators. Also increases all shield HP by 20%.
+	Unlocks the Shield Regenerator, Defensive Matrix Generator, and Shield Transmitter subsystems for use on flagships, as well as the Shield Diffuser and Shield Capacitor modifiers for use on shield generators, Power Transmission Array subsystem for stations, and the Power Transmitter orbital. Also increases all shield HP by 20%.
 >>
 R_IMP_ALL_HEALTH_DESC: <<
 	[i][color=#aaa]Research on how to improve the structural integrity of starship subsystems, letting them take more damage before ceasing to function.[/color][/i]

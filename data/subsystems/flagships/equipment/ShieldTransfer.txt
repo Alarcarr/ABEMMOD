@@ -19,11 +19,11 @@ Subsystem: ShieldTransmitter
 	Description: #S_SHIELDTRANSMITTER_DESC
 	Requires:
 		Command = 1
-		Power = Power
+		Power = PowerUse
 
 	ShieldTransferRate := 25 * Size
 	TypeColor: #38a2f9
-	Power := 5 * Size
+	PowerUse := 5 * Size
 	Module: Core
 		Sprite: Laser::0 * #38a2f9
 		Hex.BuildCost := Hex.BuildCost * 3

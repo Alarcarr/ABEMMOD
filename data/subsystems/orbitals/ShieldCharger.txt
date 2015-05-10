@@ -15,7 +15,7 @@ Subsystem: RechargerModule
 	Hex.HP := 0
 
 	Hex.LaborCost := 0
-	Description: 
+	Description: #S_RECHARGERMODULE_DESC
 	Hook: AddRegionStatus(FastRecharge)
 	Requires:
 		Command = Hexes
