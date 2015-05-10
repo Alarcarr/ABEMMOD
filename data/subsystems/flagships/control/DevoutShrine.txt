@@ -4,6 +4,9 @@ Subsystem: DevoutShrine
 	BaseColor: #408fc1
 	Elevation: 1
 
+	DamageOrder: -100
+	EvaluationOrder: -20
+
 	Tags: BaseCost, Prayer
 	Tags: IsShield, Defense, Category:Control, HasInternals
 	Hull: Flagship, Station

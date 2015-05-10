@@ -25,6 +25,7 @@ Subsystem: ShipComputer
 
 	Duration := 30
 	EfficiencyBoost := 20 * (Size / ShipSize)
+	HasComputer := 1
 
 	Hook: AddStatus(ComputerCore)
 
