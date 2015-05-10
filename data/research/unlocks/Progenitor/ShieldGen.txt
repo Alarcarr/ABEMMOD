@@ -9,5 +9,5 @@ Technology: ProgenitorShield
 	Color: #000bde
 	ModAttribute(ProgenitorTechProgress, Add, 15)
 	RequireUnlockTag(ProgenitorTech)
-	SkipOnUnlockedSubsystem(RemnantShield)
+	AutoUnlockOnUnlockedTag(RemnantShield)
 	UnlockSubsystem(RemnantShield)

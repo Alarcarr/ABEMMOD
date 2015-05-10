@@ -4,6 +4,6 @@ Technology: ProgenitorScience
 	Color: #aaaaaa
 	Description: #R_PROGENITOR_SCIENCE_DESC
 	Blurb:
-	Class: Special
+	Class: Keystone
 	RequireUnlockTag(ProgenitorTech)
 	AutoUnlockOnUnlockedTag(ProgenitorTech)

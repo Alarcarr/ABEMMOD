@@ -11,8 +11,8 @@ Anomaly: BlackHole
 		Icon: Bridge
 		Result: 5%
 			NotifyAll(#A_GUARDIAN_NOTIFY_FIXED, Description = #A_GUARDIAN_NOTIFY_FIXED_DESC, Icon = SubsystemButtonArt::6)
-			UnlockSubsystem(RemnantArmor)
-			UnlockSubsystem(RemnantShield)
+			UnlockTag(RemnantArmor)
+			UnlockTag(RemnantShield)
 			SendMessage(#A_GUARDIAN_FIXED)
 			SpawnDryDock(Guardian, Funding = 0.5, Progress = 0.2, Free = True)
 		Result: 95%
@@ -21,12 +21,12 @@ Anomaly: BlackHole
 		Description: Download the schematics for the flagship's advanced shields.
 		Icon: TechIcons::35*#60ffff
 		NotifyAll(#A_GUARDIAN_NOTIFY_SHIELD, Description = #A_GUARDIAN_NOTIFY_SHIELD_DESC, Icon = TechIcons::35*#60ffff)
-		UnlockSubsystem(RemnantShield)
+		UnlockTag(RemnantShield)
 	Option: RemnantArmor
 		Description: Download the data on the flagship's advanced armor.
 		Icon: TechIcons::20*#60ffff
 		NotifyAll(#A_GUARDIAN_NOTIFY_ARMOR, Description = #A_GUARDIAN_NOTIFY_ARMOR_DESC, Icon = TechIcons::20*#60ffff)
-		UnlockSubsystem(RemnantArmor)
+		UnlockTag(RemnantArmor)
 	State: Initial
 		Narrative: #A_GUARDIAN_SCANNED
 		Choice: RemnantArmor
