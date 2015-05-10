@@ -25,7 +25,7 @@ Subsystem: ControlChair
 	Hex.Mass := HexSize
 	Assert: Sum.ControlChairs == 1
 		Unique: True
-		Message: Cannot have more than one Control Chair.
+		Message: Cannot have more than one Neural Interface Chair.
 
 	ControlChairs := Hexes
 	PowerUse := 10 * Size

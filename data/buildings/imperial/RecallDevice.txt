@@ -1,7 +1,7 @@
 Building: RecallBuilding
-	Name: #BLD_RECALL
+	Name: Recall Facility
 	Description: #BLD_RECALL_DESC
-	Sprite: PlanetThruster
+	Sprite: cloack
 
 	Category: Military
 
@@ -10,14 +10,13 @@ Building: RecallBuilding
 	Base Cost: 500
 	Tile Cost: 20
 
-	Build Affinity: Oceanic
-	Maintenance Affinity: Oceanic
+	Build Affinity: Crystallic
+	Maintenance Affinity: Crystallic
 
 	Base Maintenance: 70
 	Tile Maintenance: 5
 
 	Build Time: 300
 
-	RequireUnlockTag(PlanetaryEngineUnlock)
-	RequireNotStatus(Ringworld)
-	AddAccelerationBonus(0.5)
+	RequireUnlockTag(Recall)
+	GrantAbility(Recall)

@@ -75,7 +75,7 @@ S_DRONEWEAPON_DESC: <<
 	[img=MenuIcons::3;20]Each drone deals 250 damage.[/img]
 	[img=MenuIcons::3;20]Instead of increasing drone damage, a bigger launcher will be capable of launching larger quantities of drones with each salvo.[/img]
 	[img=Plus]Bypasses all damage resistance and shields.
-		[img=MenuIcons::3;20]Shield Hardeners will still have a chance to block a drone completely, though.[/img][/img]
+		[vspace=3/][img=MenuIcons::3;20]Shield Hardeners will still have a chance to block a drone completely, though.[/img][/img]
 	[img=Minus]Expensive.[/img]
 	[img=Minus]Takes a lot of time to reload.[/img]
 	[img=Minus]Requires power to run.[/img]
