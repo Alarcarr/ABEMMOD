@@ -29,7 +29,7 @@ Subsystem: DroneWeapon
 	Hex.Resistance := 0.2
 	Hex.Mass := HexSize
 	Hex.LaborCost := 1 * HexSize
-	Hex.BuildCost := 1.5 * HexSize
+	Hex.BuildCost := 2.5 * HexSize
 	TypeColor: #f94694
 	Requires:
 		Command = 1

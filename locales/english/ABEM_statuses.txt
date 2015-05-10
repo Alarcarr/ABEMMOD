@@ -64,3 +64,4 @@ STATUS_ENVOY_DESC: <<
 	Loyalty protection only takes effect if the planet's owner and the Envoy's owner are in an Alliance.
 >>
 STATUS_ORB_EXP_PLATFORMS_DESC: This planet is being strip-mined by automated orbital exploitation platforms.
+STATUS_PROGENITOR_COMPUTER_BOOST_DESC: Heavy computation done by the Progenitor-designed control computer aboard the flagship is significantly increasing this fleet's efficiency and combat strength for the first 60 seconds of any combat.
