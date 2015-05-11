@@ -1,7 +1,7 @@
 Technology: ImpShieldCap
 	Name: #R_IMP_SHIELDCAP
 	Blurb: #R_IMP_SHIELDCAP_BLURB:20%
-	Description: #R_IMP_SHIELDCAP_DESC:20%
+	Description: #R_IMP_SHIELDCAP_DESC:20%:800
 
 	Icon: techPhaseContainment * #4040ff
 	Color: #149080
@@ -16,7 +16,7 @@ Technology: ImpShieldCap
 Technology: ImpShieldCap2
 	Name: #R_IMP_SHIELDCAP
 	Blurb: #R_IMP_SHIELDCAP_BLURB:40%
-	Description: #R_IMP_SHIELDCAP_DESC:40%
+	Description: #R_IMP_SHIELDCAP_DESC:40%:1200
 
 	Icon: techPhaseContainment * #4040ff
 	Color: #149080
@@ -30,7 +30,7 @@ Technology: ImpShieldCap2
 Technology: ImpShieldReg
 	Name: #R_IMP_SHIELDREG
 	Blurb: #R_IMP_SHIELDREG_BLURB:20%
-	Description: #R_IMP_SHIELDREG_DESC:20%
+	Description: #R_IMP_SHIELDREG_DESC:20%:800
 	Icon: techPhaseHarmonics * #4040ff
 	Color: #429f5c
 	Point Cost: 500
@@ -40,7 +40,7 @@ Technology: ImpShieldReg
 Technology: ImpShieldReg2
 	Name: #R_IMP_SHIELDREG
 	Blurb: #R_IMP_SHIELDREG_BLURB:40%
-	Description: #R_IMP_SHIELDREG_DESC:40%
+	Description: #R_IMP_SHIELDREG_DESC:40%:1200
 	Icon: techPhaseHarmonics * #4040ff
 	Color: #429f5c
 	Point Cost: 1000
@@ -51,7 +51,8 @@ Technology: ImpShieldAll
 	Name: (I) Advanced Shielding
 	Point Cost: 1000
 	Time Cost: 200
-	Description: #R_IMPSHIELDALL_DESC
+	Description: #R_IMPSHIELDALL_DESC:10%:1500
+	Class: Keystone
 	Icon: ActionBarIcons::21 * #4040ff
 	Color: #429f5c
 	Blurb: 10% Shield HP and Regen

@@ -1,6 +1,6 @@
 Technology: Carrier
 	Icon: DesignationIcons::16
-	Name: Carrier Hull
+	Name: Carrier Architecture
 	Class: Unlock
 	Point Cost: 500
 	Time Cost: 60
@@ -9,7 +9,7 @@ Technology: Carrier
 	UnlockSubsystem(Carrier)
 Technology: Destroyer
 	Icon: DesignationIcons::16
-	Name: Destroyer Hull
+	Name: Destroyer Architecture
 	Class: Unlock
 	Point Cost: 500
 	Time Cost: 60

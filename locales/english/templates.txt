@@ -1,0 +1,3 @@
+ALTUNLOCK_ENERGY: [color=#42b4bd][b]Alternate Unlock:[/b] Spend $1 energy.[/color]
+ALTUNLOCK_MONEY: [color=#d1cb6a][b]Alternate Unlock:[/b] Spend §$1.[/color]
+ALTUNLOCK_INFLUENCE: [color=#0087c7][b]Alternate Unlock:[/b] Spend $1 influence points.[/color]
