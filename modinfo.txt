@@ -1,4 +1,4 @@
-	Name: Alternate Balance Expansion Mod GIT
+	Name: Alternate Balance Expansion Mod
 	Description: <<
 		[h1]v0.2.0[/h1]
 		Various changes.
