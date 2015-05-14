@@ -10,6 +10,7 @@ Building: Residential
 	Build Time: 120
 	Category: Infrastructure
 	RequireUnlockTag(Housing1)
+	RequireNotStatus(Ringworld)
 	ReplacesCities(Amount = 6)
 	AddMaxPopulation(2)
 

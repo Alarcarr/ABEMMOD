@@ -24,5 +24,6 @@ Trait: ReclusiveRingworlders
 	AddStatusOwnedPlanets(ReclusiveRingworlder)
 	LoadDesigns(ringworlder, Limit Shipset = False)
 	ReplaceTechnologyNodes(OrbRingworld, Science)
+	ReplaceTechnologyNodes(Housing, ImpHabitat)
 	TriggerHomeworld(DestroySystemPlanet(0, Quiet = True))
 	UnlockTag(RingworldUnlock)
