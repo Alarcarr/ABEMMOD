@@ -1,9 +1,9 @@
-Construction: Terraforming
-	Name: Expand Surface
+Construction: TransformPlanet
+	Name: Orbital Habitation Ring
 	Labor Cost: 250
 	Icon: PlanetImage
 	Category: Upgrades
-	Description: #C_TERRAFORMING_DESC
+	Description: #C_HABITATRING_DESC
 	RequireNotTrait(StarChildren)
 	ConsumeCargo(Ore, 1000)
 	RequireNotStatus(SoilEnhanced)

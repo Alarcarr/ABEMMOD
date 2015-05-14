@@ -1,8 +1,9 @@
-Construction: Developing
-	Name: Develop 25 Tiles
+Construction: Terraforming
+	Name: Terraforming
+	Description: #C_TERRAFORMING_DESC
 	Labor Cost: 25
 	Icon: PlanetImage
-	Category: Infrastructure
+	Category: Upgrades
 	ConsumeEnergy(100)
 	DevelopTiles(20)
 	RequireNotTrait(StarChildren)
