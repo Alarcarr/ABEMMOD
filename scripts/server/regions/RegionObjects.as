@@ -1801,7 +1801,7 @@ final class RegionObjects : Component_RegionObjects, Savable {
 		uint mask = 0, basicMask = 0;
 		for(uint i = 0, cnt = objectCounts.length; i < cnt; ++i) {
 			Empire@ emp = getEmpire(i);
-//			if(objectCounts[i] > 0) {
+//			if(objectCounts[i] > 0) { // TO RESTORE TO ORIGINAL SCRIPT, REMOVE ALL THESE COMMENTS.
 //				basicMask |= emp.mask;
 //				mask |= emp.mask;
 //			}
