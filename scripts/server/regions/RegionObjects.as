@@ -1798,14 +1798,23 @@ final class RegionObjects : Component_RegionObjects, Savable {
 		region.PlanetSupportMask = plSupMask;
 
 #section server
-		uint mask = 0, basicMask = 0;
+		uint mask = 0, basicMask = 0, donateMask = 0;
 		for(uint i = 0, cnt = objectCounts.length; i < cnt; ++i) {
 			Empire@ emp = getEmpire(i);
+			if(objectCounts[i] > 0) {
+				basicMask |= emp.mask;
+				mask |= emp.mask;
 			if(visionGrants[i] > 0) {
 				mask |= emp.mask;
+				donateMask |= emp.mask;
 			}
 		}
 		
+		for(uint i = 0, cnt = objectCounts.length; i < cnt; ++i) {
+			Empire@ emp = getEmpire(i);
+			if(emp.visionMask & mask != 0)
+				mask |= emp.mask;
+		}
 
 		if(region.VisionMask != mask || prevMask != playerEmpire.visionMask || basicMask != region.BasicVisionMask) {
 			region.VisionMask = mask;
@@ -1814,7 +1823,7 @@ final class RegionObjects : Component_RegionObjects, Savable {
 			updatePlane(region);
 
 			if(system.donateVision)
-				region.DonateVisionMask = mask;
+				region.DonateVisionMask = donateMask;
 			else
 				region.DonateVisionMask = 0;
 
