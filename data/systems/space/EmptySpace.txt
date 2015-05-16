@@ -13,4 +13,3 @@ System: EmptySpace
 		MakeCreepCamp(Offset = 700)
 		
 	AddRegionStatus(EmptySpace)
-	NoRegionVision()
