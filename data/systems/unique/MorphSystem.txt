@@ -15,4 +15,3 @@ System: MorphSystem
 	MakeAnomaly(MorphBlue)
 	MakeAnomaly(MorphGreen)
 	AddAdjacentAnomalies(1)
-	NoRegionVision()
