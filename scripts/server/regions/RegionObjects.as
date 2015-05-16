@@ -1801,20 +1801,20 @@ final class RegionObjects : Component_RegionObjects, Savable {
 		uint mask = 0, basicMask = 0;
 		for(uint i = 0, cnt = objectCounts.length; i < cnt; ++i) {
 			Empire@ emp = getEmpire(i);
-			if(objectCounts[i] > 0) {
-				basicMask |= emp.mask;
-				mask |= emp.mask;
-			}
+//			if(objectCounts[i] > 0) {
+//				basicMask |= emp.mask;
+//				mask |= emp.mask;
+//			}
 			if(visionGrants[i] > 0) {
 				mask |= emp.mask;
 			}
 		}
 		
-		for(uint i = 0, cnt = objectCounts.length; i < cnt; ++i) {
-			Empire@ emp = getEmpire(i);
-			if(emp.visionMask & mask != 0)
-				mask |= emp.mask;
-		}
+//		for(uint i = 0, cnt = objectCounts.length; i < cnt; ++i) {
+//			Empire@ emp = getEmpire(i);
+//			if(emp.visionMask & mask != 0)
+//				mask |= emp.mask;
+//		}
 
 		if(region.VisionMask != mask || prevMask != playerEmpire.visionMask || basicMask != region.BasicVisionMask) {
 			region.VisionMask = mask;
