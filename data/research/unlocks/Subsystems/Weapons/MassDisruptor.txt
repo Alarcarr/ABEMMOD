@@ -1,4 +1,4 @@
-Technology: Matter Disruptor
+Technology: MatterDisruptor
 	Name: Matter Disruptor
 	Class: Unlock
 	Point Cost: 700
