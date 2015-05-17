@@ -40,8 +40,8 @@ Subsystem: MFrigate
 	AddShipModifier: SupportHull::SupplyCostFactor(0.5)
 	Description: #S_MISSILEFRIGATE_DESC
 	Assert: ShipSize >= 10
-
 		Message: #ERROR_MIN_SIZE:$1:10
+		
 	Module: Default
 		Sprite: DesignationIcons::16
 		DrawMode: 3

@@ -2,13 +2,12 @@ Subsystem: BoardingParty
 	Name: Boarding Parties
 	Description: #S_BOARDING_PARTY_DESC
 
-
 	BaseColor: #c5f946
 	Picture: CrewQuarters*#9686ff
 	Elevation: 5
 
 	Tags: BaseCost, NonContiguous,Category:Equipment, Ability:BoardingParty
-	Tags: Boarders,ExteriorCore
+	Tags: Boarders, ExteriorCore
 	Tags: HasInternals
 	Hull: Flagship, Station
 
