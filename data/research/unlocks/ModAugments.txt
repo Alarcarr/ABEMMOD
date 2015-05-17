@@ -18,6 +18,7 @@ Technology: ModAugmentReload
 Technology: ModAugmentDamage
 	Name: #R_MOD_AUGMENT_DAMAGE
 	Description: #R_MOD_AUGMENT_DAMAGE_DESC
+	Class: Unlock
 
 	Point Cost: 500
 	Time Cost: 60

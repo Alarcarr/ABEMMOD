@@ -35,11 +35,7 @@ Grid: Base
 	SysIonCannon: 1,8
 	SysHyperLaser: 2,9
 	c1: 6,8
-	Antimatter2: 6,9
-	c2: 6,10
 	c1: 7,10
-	ImpAoE2: 5,11
-	ImpSupportSupplyUse2: 7,11
 	c3: 7,9
 	c1: 9,10
 	ImpShieldCap: 6,7
@@ -79,7 +75,6 @@ Grid: Base
 	ImpSupplyStorage: 9,5
 	ImpFlagDamage: 12,5
 	ImpSupportDamage: 12,-7
-	InfiniteSupport: 13,-8
 	c3: 9,7
 	c3: 15,4
 	ImpArmorHealth2: 16,4
@@ -87,7 +82,7 @@ Grid: Base
 	ImpArmorHealth: 18,4
 	ImpAllRange: 12,0
 	AdmiralCrew: 13,0
-	SysGravitonCondenser: 17,5
+	SuperLaser: 17,5
 	ImpArmorDR2: 12,1
 	ImpAllHealth: 13,-7
 	DevInfluence: -8,-1
@@ -102,7 +97,6 @@ Grid: Base
 	Flak: 6,-1
 	c3: 4,7
 	CovariantShield: 5,7
-	ImpAllRange: 3,7
 	ImpFireRate: 3,8
 	ImpSpread: -1,4
 	DevInfluenceIncome2: -7,0
@@ -147,7 +141,6 @@ Grid: Base
 	VoidRay: 1,11
 	ImpPopLvl2: -6,-5
 	ImpCivHealth: -4,-3
-	ImpDecaySpeed: -6,-6
 	ImpTileDevelopment: -5,-6
 	ImpPlanetSupport: -3,-6
 	IntelFacilities: -6,-4
@@ -187,21 +180,15 @@ Grid: Base
 	ImpAoE: 15,-1
 	ImpAoE: 7,-2
 	SysLiquidArmor: 0,-11
-	c1: 0,-12
-	ImpArmorHealth: -1,-13
-	ImpAllHealth: -1,-14
 	ImpEnergyStorage2: 9,11
 	ResearchLab: 8,9
 	c2: 9,8
-	SysOreProcessor: -5,-11
 	c3: -4,6
 	c2: -6,7
-	SSG: -6,8
 	ImpDamage: 9,0
 	ImpShieldCap2: 10,7
 	ImpShieldReg2: 11,8
 	ImpShieldCap2: 12,8
-	ImpShieldAll: 12,7
 	ImpArmorHealth: 0,-5
 	ImpTracking: -2,5
 	ImpProjSpeed: -1,6
@@ -215,17 +202,13 @@ Grid: Base
 	IonEngine: -5,3
 	SlavePopulation: -5,0
 	ImpThrust: -6,3
-	Further Development: 5,-13
-	Further Development: -1,-15
 	c2: 2,-10
 	c1: 3,-10
 	ImpProjSpeed: 0,5
 	Housing: -5,-5
 	DevFTLIncome: -3,5
 	ImpAllRange: -2,4
-	ImpSupportDamage: 6,-7
 	ModAugmentSupply: 4,-1
-	SysGravitonCondenser: -7,7
 	DevEnergy: -5,6
 	AdvShield: 7,7
 	CompositeArmor: 1,-6
@@ -235,7 +218,6 @@ Grid: Base
 	ImpShieldCap: 3,5
 	SysAntimatterGen: 4,5
 	c1: 5,6
-	HDSupply: 4,4
 	PoweredArmor: 1,-9
 	ImpShieldReg: 8,6
 	ImpShieldReg: 11,7
@@ -249,7 +231,6 @@ Grid: Base
 	ImpThrust2: -8,3
 	SysGravityEngine: -7,3
 	OrbVacuumTelescope: -10,3
-	PowerPlant: -7,-6
 	DevMoney: 2,-11
 	ImpProjSpeed: -1,7
 	ModAugmentSupply: 0,9
@@ -281,3 +262,42 @@ Grid: Base
 	ProgenitorSolarOrbital: -20,-4
 	ImpEnergyStorage2: -21,-3
 	DevEnergyIncome2: -21,-5
+	SysConstructionBay: -5,-11
+	c3: -6,-11
+	ImpAllHealth: -7,-11
+	ImpCivHealth: -6,-12
+	SysOreProcessor: -7,-12
+	ImpCivConstructionRate2: -4,-12
+	KeyBuildCost: -3,-12
+	ImpAllHealth: 0,-10
+	ImpArmorHealth: -1,-11
+	CrystalineArmor: 2,-12
+	c1: 6,-7
+	SupportReactive: 6,-8
+	ImpSupportDamage2: 7,-8
+	SysShieldHardener: 6,9
+	ModQuantumBattery: 3,7
+	Antimatter2: 7,11
+	c2: 7,12
+	c1: 8,12
+	ImpAoE2: 6,13
+	ImpSupportSupplyUse2: 8,13
+	ImpSpread2: 5,10
+	PrecisionMod: 5,11
+	c2: -2,-12
+	RepairBay: -2,-13
+	c1: 0,-12
+	c3: -1,-13
+	KeyRailgunKnockback: 8,2
+	KeyEmergencyShields: 12,7
+	SysEmergencySupplies: 4,4
+	HDSupply: 5,-11
+	SysSelfDestruct: 7,-3
+	c3: -7,7
+	SSG: -8,7
+	SysGravitonCondenser: -7,8
+	MatterDisruptor: -6,8
+	PowerPlant: -7,-6
+	ImpCivConstructionRate: -6,-6
+	ImpDecaySpeed: -7,-5
+	ResupplyMod: -8,-5
