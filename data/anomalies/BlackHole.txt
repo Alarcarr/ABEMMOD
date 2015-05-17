@@ -27,10 +27,22 @@ Anomaly: BlackHole
 		Icon: TechIcons::20*#60ffff
 		NotifyAll(#A_GUARDIAN_NOTIFY_ARMOR, Description = #A_GUARDIAN_NOTIFY_ARMOR_DESC, Icon = TechIcons::20*#60ffff)
 		UnlockTag(RemnantArmor)
+	Option: RemnantComputers
+		Description: Download the schematics for the flagship's radiation-resistant computer core.
+		Icon: TechIcons::35*#60ffff
+		NotifyAll(#A_GUARDIAN_NOTIFY_COMPUTER, Description = #A_GUARDIAN_NOTIFY_COMPUTER_DESC, Icon = TechIcons::58)
+		UnlockTag(ProgenitorComputer)
+	Option: DroneWeapons
+		Description: Download the data on the flagship's powerful drone weapons.
+		Icon: TechIcons::20*#60ffff
+		NotifyAll(#A_GUARDIAN_NOTIFY_DRONE, Description = #A_GUARDIAN_NOTIFY_DRONE_DESC, Icon = HexagonSubsystems::9)
+		UnlockTag(DroneWeapon)
 	State: Initial
 		Narrative: #A_GUARDIAN_SCANNED
 		Choice: RemnantArmor
 		Choice: RemnantShields
+		Choice: RemnantComputers
+		Choice: DroneWeapons
 		Model: TyrantFlagLarge
 		Material: TyrantMedium
 		Choice: Reactivate

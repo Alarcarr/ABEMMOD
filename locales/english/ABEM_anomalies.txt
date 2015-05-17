@@ -4,12 +4,12 @@ A_GUARDIAN_SCANNED: <<
 
 	The team's scientist accesses the core. After a few minutes, he determines that the ship's computers have one final failsafe installed to safeguard against capture; if they attempt to take control of the ship, it will trigger a self-destruct mechanism.
 
-	However, the scientists on your fleet's flagship are convinced that the boarders can download schematics for some of the flagship's advanced defensive technology onto a data module fast enough to escape the explosion. They can't take all of the data, but enough can be retrieved to reverse-engineer either its shields or its armor.
+	However, the scientists on your fleet's flagship are convinced that the boarders can download schematics for some of the flagship's advanced technology onto a data module fast enough to escape the explosion. They can't take all of the data, but enough can be retrieved to reverse-engineer its shields, its armor, its weapons or its computer core.
 
-	The scientist who first accessed the core has another idea, though. He believes that he can deactivate the self-destruct device, allowing you to repair the mothership [i]and[/i] get both its advanced shields and armor. Your advisors are certain that this will end in disaster, but [i]if[/i] it works, the rewards could drastically outweigh the risks.
+	The scientist who first accessed the core has another idea, though. He believes that he can deactivate the self-destruct device, allowing you to repair the mothership [i]and[/i] get [i]all[/i] of its advanced technology. Your advisors are certain that this will end in disaster, but [i]if[/i] it works, the rewards could drastically outweigh the risks.
 >>
 A_GUARDIAN_REACTIVATE: <<
-	Get your fleet to a safe distance from the flagship and try to reactivate it.
+	Get your fleet to a safe distance from the flagship and try to disable the self-destruct device.
 
 	[color=#f00][b]NOTE: This is an extremely hazardous option. You may lose your chance at getting the flagship's advanced technology.[/b][/color]
 >>
@@ -27,6 +27,10 @@ A_GUARDIAN_NOTIFY_ARMOR: Progenitor Armor Salvaged!
 A_GUARDIAN_NOTIFY_ARMOR_DESC: Progenitor armor technology has been salvaged from a Guardian by the [color=$2]$1[/color]!
 A_GUARDIAN_NOTIFY_SHIELD: Progenitor Shielding Salvaged!
 A_GUARDIAN_NOTIFY_SHIELD_DESC: Progenitor shield technology has been salvaged from a Guardian by the [color=$2]$1[/color]!
+A_GUARDIAN_NOTIFY_COMPUTER: Progenitor Computers Salvaged!
+A_GUARDIAN_NOTIFY_COMPUTER_DESC: Progenitor computer technology has been salvaged from a Guardian by the [color=$2]$1[/color]!
+A_GUARDIAN_NOTIFY_DRONE: Progenitor Weapons Salvaged!
+A_GUARDIAN_NOTIFY_DRONE_DESC: Progenitor weapons technology has been salvaged from a Guardian by the [color=$2]$1[/color]!
 A_EQUIPMENTSTASH_NARRATIVE: <<
 	This station appears to have served as a resupply facility for the creators of the robotic 'Remnants'. It is now dormant, but your scientists believe they can command the station to jettison one of its supply containers into space, allowing you to analyze the advanced technology within. They are also certain that they have deciphered the cargo manifests, so they know what the contents of each container are.
 			
