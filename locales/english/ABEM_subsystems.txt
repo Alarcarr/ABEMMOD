@@ -175,7 +175,7 @@ S_REMNANT_ARMOR_DESC: <<
 	[img=MenuIcons::3;20]The toughest armor in the universe, effective against most weapons.[/img]
 	[img=Minus]Very expensive.[/img]
 >>
-IONENGINE_DESC: <<
+OLD_IONENGINE_DESC: <<
 	Uses high amounts of power to expel small amounts of particles at extreme speeds. Ion thruster exhausts are very small and can more easily be rotated slightly in order to provide angular thrust.
 
 	[img=Plus]Very high turn rate.[/img]
