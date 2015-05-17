@@ -1,4 +1,4 @@
-R_DEV_FTL_INCOME_DESC: <<
+﻿R_DEV_FTL_INCOME_DESC: <<
 	[i][color=#aaa]Better control over the collection and refinement of FTL energy.[/color][/i]
 
 	Increases empire FTL income by 0.5/s.
@@ -638,6 +638,14 @@ R_SPEC_SUPPORT4_DESC: <<
 	Reduces the Labor cost of support ships by 30%, and the construction cost by 10%.
 
 	[bbloc=#R_SPEC_DISCLAIMER:Reinforced Architecture/]
+>>
+R_PROGENITOR_SOLARORBITAL: Advanced Solar Harnessing
+R_PROGENITOR_SOLARORBITAL_DESC: <<
+	[color=#aaa][i]The discovery of Progenitor blueprints for a Solar Engine increases the quality of our own versions of the device.[/i][/color]
+
+	Converts all Solar Engines into Advanced Solar Engines, which require no maintenance and produce more energy.
+
+	[i][bbloc=#ORB_PROGENITOR_SOLARORBITAL_DESC/][/i]
 >>
 
 

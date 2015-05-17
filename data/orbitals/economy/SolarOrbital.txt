@@ -1,0 +1,25 @@
+Module: SolarOrbital
+	Name: #ORB_SOLAR_ORBITAL
+	Description: #ORB_SOLAR_ORBITAL_DESC
+	Blurb: #ORB_SOLAR_ORBITAL_BLURB
+	Icon: GuiOrbitalIcons::0
+	Distant Icon: OrbitalIcons::0
+
+	Build Cost: 400
+	Maintenance: 25
+	Labor Cost: 15
+	Size: 6
+
+	Health: 4000
+	Armor: 3500
+
+	Model: CommerceStation
+	Material: VolkurGenericPBR
+
+	LimitOncePerSystem(SolarOrbitalFlag)
+	RequireUnlockTag(SolarOrbitalUnlock)
+
+	IfTagUnlocked(ProgenitorSolarOrbital, OnEnable(SpawnOrbital(ProgenitorSolarOrbital)))
+	IfTagUnlocked(ProgenitorSolarOrbital, OnEnable(Destroy(True)))
+	RequireNotUnlockTag(ProgenitorSolarOrbital)
+	AddEnergyIncomeStarTemperature(0.25, 1.0)
