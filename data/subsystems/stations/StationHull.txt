@@ -2,6 +2,9 @@ Subsystem: StationHull
 	Tags: DefaultUnlock, NoCore, HullSystem, Ability:ScuttleDerelict
 	Hull: Station
 	EvaluationOrder: -100
+	DamageOrder: -100
+	
+	Effect: DefensiveMatrixDamage
 	
 	HexLimit := 160
 	GridWidth := 28

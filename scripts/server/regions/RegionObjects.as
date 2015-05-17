@@ -1804,6 +1804,7 @@ final class RegionObjects : Component_RegionObjects, Savable {
 			if(objectCounts[i] > 0) {
 				basicMask |= emp.mask;
 				mask |= emp.mask;
+			}
 			if(visionGrants[i] > 0) {
 				mask |= emp.mask;
 				donateMask |= emp.mask;

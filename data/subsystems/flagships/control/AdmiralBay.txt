@@ -5,8 +5,6 @@ Subsystem: AdmiralBay
 	Picture: SubsystemButtonArt::8
 	Elevation: 5
 
-
-
 	Tags: BaseCost, Category:Control,NoBulkhead,Ability:LW
 	Tags: Ability:GDF
 	Tags: Ability:MEL
@@ -29,8 +27,6 @@ Subsystem: AdmiralBay
 	Hex.HP := 36 * HexSize
 	Hex.Mass := HexSize
 
-
-
 	Effect: ABEMControlCore
 
 	Provides:
@@ -49,7 +45,7 @@ Subsystem: AdmiralBay
 		Hex.Mass := 5 * Hex.Mass
 		Color: #5686ff
 
-	Ship.AdmiralBay := Ship.AdmiralBay + 1
-	Assert: Ship.AdmiralBay <= 1
+	AdmiralBay := 1
+	Assert: Sum.AdmiralBay <= 1
 		Unique: False
 		Message: Only one Admiral can operate from a flagship at any time, and no Admiral needs two command centers, right?! Right!

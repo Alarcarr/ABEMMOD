@@ -1,14 +1,6 @@
 Subsystem: Superstructure
 	Name: Superstructure
-	Description: <<
-		Light-weight metal scaffolding to give structure and definition to the ship.  Somewhat more resistant to damage than most other components, but not as protective per-weight as actual armor.
-
-		[img=Plus]Moderate [b][color=#80ff80]health[/color][/b].[/img]
-		[img=Plus]Slightly resists and reduces incoming damage.[/img]
-		[img=Plus]Superstructure on the outside of the ship does not use up
-		interior space.[/img]
-		[img=Plus]Cheap.[/img]
-	>>
+	Description: #S_SUPERSTRUCTURE_DESC
 	BaseColor: #a9a9a9
 
 	Tags: Category:Armor, NoWall, FauxExterior
