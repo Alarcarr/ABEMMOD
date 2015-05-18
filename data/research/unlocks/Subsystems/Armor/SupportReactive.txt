@@ -6,6 +6,7 @@ Technology: SupportReactive
 	Icon: TechIcons::14
 	Blurb: #SUPPORT_EQUIPMENT_BLURB
 	Description: #R_SUPPORT_REACTIVEARMOR_DESC
+	Color: #ffb326
 	ModAttribute(ProgenitorTechProgress, Add, 1)
 	SkipOnUnlockedSubsystem(SupportReactiveArmor)
 	UnlockSubsystem(SupportReactiveArmor)

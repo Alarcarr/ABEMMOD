@@ -5,6 +5,7 @@ Technology: Hyperdrive
 	Icon: TechIcons::34
 	Description: #R_SYS_HYPERDRIVE_DESC
 	Class: Keystone
+	Color: #00c0ff
 	ModAttribute(ProgenitorTechProgress, Add, 5)
 	SkipOnUnlockedSubsystem(Hyperdrive)
 	UnlockSubsystem(Hyperdrive)

@@ -108,14 +108,12 @@ Grid: Base
 	Flagship3: 14,4
 	ImpSupplyUse: 5,2
 	c1: -2,-3
-	PlanetDev: -2,-4
 	c1: 1,-4
 	c2: 2,-4
 	ImpAllHealth: 2,-5
 	ImpArmorHealth: 2,-6
 	DevEnergyIncome: 3,10
 	ImpEnergyStorage: 2,3
-	ImpTileDevelopment: -3,-4
 	ImpAllHealth: 3,-7
 	ImpArmorDR2: 3,-8
 	DevCultivation: -5,-4
@@ -140,7 +138,6 @@ Grid: Base
 	ImpFlagDamage: 2,10
 	VoidRay: 1,11
 	ImpPopLvl2: -6,-5
-	ImpCivHealth: -4,-3
 	ImpTileDevelopment: -5,-6
 	ImpPlanetSupport: -3,-6
 	IntelFacilities: -6,-4
@@ -301,3 +298,9 @@ Grid: Base
 	ImpCivConstructionRate: -6,-6
 	ImpDecaySpeed: -7,-5
 	ResupplyMod: -8,-5
+	ImpSupplyUse2: 0,10
+	SupplyTransfer: -1,11
+	PlanetDev: -3,-3
+	ImpTileDevelopment: -4,-3
+	ImpCivHealth: -5,-3
+	OrbitalThruster: -3,-5

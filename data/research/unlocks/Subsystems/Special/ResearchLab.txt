@@ -5,6 +5,7 @@ Technology: ResearchLab
 	Time Cost: 420
 	Class: Unlock
 	Icon: techHyperfield
+	Color: #6411ff
 	ModAttribute(ProgenitorTechProgress, Add, 2.5)
 	SkipOnUnlockedSubsystem(ResearchLab)
 	UnlockSubsystem(ResearchLab)

@@ -5,6 +5,7 @@ Technology: Carrier
 	Point Cost: 500
 	Time Cost: 60
 	Description: #R_SYS_CARRIER_DESC
+	Color: #0c8eff
 	ModAttribute(ProgenitorTechProgress, Add, 1.5)
 	UnlockSubsystem(Carrier)
 Technology: Destroyer
@@ -14,6 +15,7 @@ Technology: Destroyer
 	Point Cost: 500
 	Time Cost: 60
 	Description: #R_SYS_DESTROYER_DESC
+	Color: #ff6e06
 	ModAttribute(ProgenitorTechProgress, Add, 1.5)
 	UnlockSubsystem(Destroyer)
 Technology: Cloack

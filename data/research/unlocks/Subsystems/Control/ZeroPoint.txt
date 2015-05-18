@@ -5,6 +5,7 @@ Technology: ZeroPoint
 	Time Cost: 180
 	Icon: ZeroPoint
 	Description: #R_SYS_ZPG_DESC
+	Color: #24ff99
 	ModAttribute(ProgenitorTechProgress, Add, 10)
 	SkipOnUnlockedSubsystem(ZeroPoint)
 	SecondaryEnergyCost(2000)

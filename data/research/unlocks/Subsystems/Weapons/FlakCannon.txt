@@ -6,6 +6,7 @@ Technology: Flak
 	Time Cost: 60
 	Description: #R_SYS_FLAK_DESC
 	Blurb: AoE Projectile Weapon
+	Color: #b1ff08
 	ModAttribute(ProgenitorTechProgress, Add, 0.5)
 	SkipOnUnlockedSubsystem(FlakCannon)
 	UnlockSubsystem(FlakCannon)

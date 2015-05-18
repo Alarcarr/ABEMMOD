@@ -647,6 +647,25 @@ R_PROGENITOR_SOLARORBITAL_DESC: <<
 
 	[i][bbloc=#ORB_PROGENITOR_SOLARORBITAL_DESC/][/i]
 >>
+R_SYS_SUPPLYTRANSFER_DESC: <<
+	[color=#aaa][i]The development of new particle beam emitters allows for the wireless transmission of energy through vast swathes of space.[/i][/color]
+
+	Unlocks the Energy Transferral Beam subsystem.
+
+	[i][bbloc=#S_ENERGYTRANSMITTER_DESC/][/i]
+
+	[bbloc=#ALTUNLOCK_ENERGY:800/]
+>>
+R_ORBITALTHRUSTER_DESC: <<
+	[color=#aaa][i]New doctrines provoke considerable research into the process of moving a space station.[/i][/color]
+
+	Unlocks the Orbital Thruster subsystem for use on stations.
+
+	[i][bbloc=#S_ORBITALTHRUSTER_DESC/][/i]
+
+	[bbloc=#ALTUNLOCK_INFLUENCE:8/]
+>>
+
 
 
 

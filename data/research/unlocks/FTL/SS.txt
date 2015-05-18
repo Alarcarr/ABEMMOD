@@ -5,6 +5,7 @@ Technology: SS
 	Time Cost: 300
 	Description: #R_SYS_SLIPSTREAM_DESC
 	Class: Keystone
+	Color: #00c0ff
 	ModAttribute(ProgenitorTechProgress, Add, 5)
 	SkipOnUnlockedSubsystem(Slipstream)
 	UnlockSubsystem(Slipstream)

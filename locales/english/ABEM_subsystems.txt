@@ -551,4 +551,11 @@ S_SUPERSTRUCTURE_DESC: <<
 	[img=Plus]Superstructure on the outside of the ship does not use up interior space.[/img]
 	[img=Plus]Cheap.[/img]
 >>
+S_ORBITALTHRUSTER_DESC: <<
+	A large scoop that collects particulate matter floating in space and uses it to propel the station.
+
+	[img=Plus]Lack of fuel requirements makes its maintenance requirements negligible.[/img]
+	[img=Minus]Extremely low thrust.[/img]
+>>
+
 ERROR_SPECIFIC_SIZE: $1 must be exactly size $2.
