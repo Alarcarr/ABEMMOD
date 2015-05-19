@@ -39,8 +39,8 @@ S_BOARDSUBSYS: Boarding Strength
 STT_BOARDSUBSYS: <<
 	The strength this subsystem contributes to a boarding defense. Only Boarding Parties contribute to an offensive boarding action; their offensive strength is the same as their defensive strength.
 >>
-S_HULLHEAL: Repair Rate
-S_SHIELDHEAL: Regeneration Rate
+S_HULLHEALING: Repair Rate
+S_SHIELDHEALING: Regeneration Rate
 S_SUPPLYTRANSFER: Transfer Rate
 S_SHIELDTRANSFER: Transfer Rate
 S_DEFENSIVEMATRIX: Matrix Capacity

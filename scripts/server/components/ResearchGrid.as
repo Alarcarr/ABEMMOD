@@ -74,7 +74,7 @@ class ResearchGrid : Component_ResearchGrid, Savable {
 	}
 
 	double get_ResearchEfficiency() {
-		return 2000.0 / (2000.0 + totalGenerated);
+		return 4000.0 / (4000.0 + totalGenerated);
 	}
 
 	void modResearchRate(double mod) {
