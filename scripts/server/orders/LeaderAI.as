@@ -23,6 +23,7 @@ import ftl;
 import util.target_search;
 import ship_groups;
 import design_settings;
+import empire;
 
 class ActiveConstruction {
 	uint id;
@@ -49,6 +50,41 @@ class Formation : Savable {
 	vec3d getNext(Object& support) { return vec3d(); }
 };
 
+class SightModifier : Serializable, Savable {
+	uint id;
+	uint priority = 0;
+	double multiplier = 1;
+	double addedRange = 0;
+
+	void write(Message& msg) {
+		msg.writeSmall(id);
+		msg.writeSmall(priority);
+		msg << multiplier;
+		msg << addedRange;
+	}
+
+	void read(Message& msg) {
+		msg.readSmall(id);
+		msg.readSmall(priority);
+		msg >> multiplier;
+		msg >> addedRange;
+	}
+
+	void save(SaveFile& file) {
+		file << id;
+		file << priority;
+		file << multiplier;
+		file << addedRange;
+	}
+
+	void load(SaveFile& file) {
+		file >> id;
+		file >> priority;
+		file >> multiplier;
+		file >> addedRange;
+	}
+};
+
 //Factor of new design cost as minimum for retrofit
 const double RETROFIT_MIN_PCT = 0.3;
 const string TAG_SUPPORT("Support");
@@ -62,6 +98,12 @@ class LeaderAI : Component_LeaderAI, Savable {
 
 	Object@[] supports;
 	GroupData@[] groupData;
+
+	SightModifier@[] sightData;
+	uint[] sightOrder;
+	bool sightDelta = false;
+	double lastSightRange = 0;
+	uint nextInstanceID = 0;
 
 	AutoMode autoMode = AM_AreaBound;
 	EngagementBehaviour engageBehave = EB_CloseIn;
@@ -234,6 +276,18 @@ class LeaderAI : Component_LeaderAI, Savable {
 
 		if(msg >= SV_0068)
 			msg >> formation;
+
+		msg >> lastSightRange;
+		msg >> cnt;
+		sightData.length = cnt;
+		sightOrder.length = cnt;
+		for(uint i = 0; i < cnt; ++i) {
+			@sightData[i] = SightModifier();
+			sightData[i].load(msg);
+		}
+		for(uint i = 0; i < cnt; ++i)
+			sightOrder[i] >> msg;
+		msg >> nextInstanceID;
 	}
 
 	double get_GhostHP() const {
@@ -294,6 +348,16 @@ class LeaderAI : Component_LeaderAI, Savable {
 		}
 
 		msg << formation;
+
+		msg << lastSightRange;
+		cnt = sightData.length;
+		msg << cnt;
+		for(uint i = 0; i < cnt; ++i)
+			sightData[i].save(msg);
+		for(uint i = 0; i < cnt; ++)
+			msg << sightOrder[i];
+		msg << nextInstanceID;
+		
 	}
 
 	float getFleetEffectiveness() const {
@@ -1152,6 +1216,7 @@ class LeaderAI : Component_LeaderAI, Savable {
 			node.hasFleet = supports.length > 0;
 			engagementRange = 200.0 - formationRad;
 		}
+		calculateSightRange(obj);
 		formation.reset(obj.radius * 2.0, getFormationRadius(obj));
 		leaderChangeOwner(obj, null, obj.owner);
 		autoFill = !obj.isPlanet;
@@ -1177,6 +1242,7 @@ class LeaderAI : Component_LeaderAI, Savable {
 			if(supports[i] is null || !supports[i].valid)
 				supports.removeAt(i);
 		}
+		calculateSightRange(obj);
 	}
 
 	void leaderDestroy(Object& obj) {
@@ -2175,6 +2241,105 @@ class LeaderAI : Component_LeaderAI, Savable {
 		}
 	}
 
+	void calculateSightData(Object& obj) {
+		if(obj.owner is null || obj.owner is Creeps || obj.owner is defaultEmpire || obj.owner is Pirates) {
+			obj.sightRange = 0;
+			return;
+		}		
+
+		double sightRange = 0;
+		if(obj.isShip) {
+			sightRange = 250;
+			if(cast<Ship>(obj).isStation)
+				sightRange *= 2;
+		}
+		else if(obj.isOrbital)
+			sightRange = 1000;
+		else if(obj.isPlanet)
+			sightRange = 1500;
+
+		uint prevPriority = 0;
+		double currentBonus = 0;
+		for(uint i = 0; i < sightOrder; ++i) {
+			SightModifier@ data = sightData[sightOrder[i]];
+			if(data.priority != prevPriority) {
+				prevPriority = data.priority;
+				sightRange += currentBonus;
+				currentBonus = 0;
+			}
+			currentBonus += sightRange * data.multiplier + data.addedBonus;
+		}
+		obj.sightRange = sightRange;
+	}
+
+	uint addSightModifier(Object& obj, uint priority, double multiplier, double addedBonus)
+		SightModifier@ data;
+		data.id = nextInstanceID++;
+		data.priority = priority;
+		data.multiplier = multiplier;
+		data.addedBonus = addedBonus;
+		sightData.insertLast(data);
+
+		uint order;
+		uint position = sightData.length - 1;
+		if(position == 0) {
+			sightOrder[0] = 0;
+		}
+		else {
+			if(data.priority < sightData[0].priority)
+				sightOrder.insertAt(0, position);
+			else if(data.priority > sightData[sightOrder.last].priority)
+				sightOrder.insertLast(position);
+			else {
+				// This is a bit of a more complicated sorting algorithm that I'm passing it into, and it's recursive, so...
+				continueSortingSightPriority(position, sightOrder, sightData, sightOrder.length / 2, double(sightOrder.length / 2));
+			}
+		}				
+		return data.id;
+	}
+
+	void removeSightModifier(Object& obj, uint id);
+		for(uint i = 0; i < sightOrder.length; ++i) {
+			if(sightData[sightOrder[i]].id == id) {
+				sightData.removeAt(sightOrder[i]);
+				// This shifts the destination indexes of all following sightOrder entries by 1, so they don't point at the wrong SightModifier instance.
+				for(uint j = i; j < sightOrder.length; ++j) {
+					sightOrder[j] -= 1;
+				}
+				sightOrder.removeAt(i);
+				return;
+			}
+		}
+	}
+	
+	// Performs a binary search until it finds a location where it can fit in nicely.
+	void continueSortingSightPriority(uint position, array& orderArray, array& dataArray, uint pivot, double difference) {
+		// halfDiff is half of the previous difference, obviously.
+		double halfDiff = difference / 2;
+		// pivotMinOne accounts for C-like array indexing. Lets me worry about the actual logic of it, rather than whether I'm off by one or not.
+		uint pivotMinOne = pivot - 1;
+		// If the priority of the pivot (accounting for C-style array indexing) is equal to the new modifier's priority...
+		if(dataArray[position].priority == dataArray[orderArray[pivotMinOne]].priority) {
+			// Insert it before the pivot. The sorting here isn't stable, but it doesn't matter. I think. I hope. :/
+			orderArray.insertAt(pivotMinOne - 1, position);
+		}
+		// If the new modifier's priority is less than the pivot's priority...
+		else if(dataArray[position].priority < dataArray[orderArray[pivotMinOne]].priority) {
+			// If dividing by 2 isn't going to move the pivot (unless rounded accordingly), then we've found our sweet spot. Insert before the pivot.
+			if(halfDiff < 1)
+				orderArray.insertAt(pivotMinOne - 1, position);
+			else
+				continueSortingSightPriority(position, orderArray, dataArray, uint(pivot - halfDiff), halfDiff);
+		}
+		else {
+			// If dividing by 2 isn't going to move the pivot, blah blah blah... Insert after the pivot.
+			if(halfDiff < 1)
+				orderArray.insertAt(pivotMinOne, position);
+			else
+				continueSortingSightPriority(position, orderArray, dataArray, uint(pivot + halfDiff), halfDiff);
+		}
+	}
+
 	void writeOrders(const Object& obj, Message& msg) {
 		msg.writeAlign();
 		uint cntPos = msg.reserve();
@@ -2211,13 +2376,24 @@ class LeaderAI : Component_LeaderAI, Savable {
 		msg << bonusDPS;
 	}
 
+	void writeSight(Message& msg) {
+		uint cnt = sightData.length;
+		msg << cnt;
+		for(uint i = 0; i < cnt; ++i)
+			msg << sightData[i];
+		for(uint i = 0; i < cnt; ++i)
+			msg << sightOrder[i];
+		msg << NextInstanceID;
+	}
+
 	void writeLeaderAI(const Object& obj, Message& msg) {
 		writeGroup(msg);
 		writeOrders(obj, msg);
+		writeSight(msg);
 	}
 
 	bool writeLeaderAIDelta(const Object& obj, Message& msg) {
-		if(!delta && !orderDelta)
+		if(!delta && !orderDelta && !sightDelta)
 			return false;
 		msg.write1();
 
@@ -2234,6 +2410,15 @@ class LeaderAI : Component_LeaderAI, Savable {
 			msg.write1();
 			writeOrders(obj, msg);
 			orderDelta = false;
+		}
+		else {
+			msg.write0();
+		}
+
+		if(sightDelta) {
+			msg.write1();
+			writeSight(msg);
+			sightDelta = false;
 		}
 		else {
 			msg.write0();
