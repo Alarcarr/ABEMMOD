@@ -52,5 +52,6 @@ Trait: StarChildren
 	ReplaceTechnologyNodes(PowerPlant, NylliPowerPlant)
 	ReplaceTechnologyNodes(Senate, NylliSenate)
 	ReplaceTechnologyNodes(IntelFacilities, NylliIntel)
+	ReplaceTechnologyNodes(Recall, NylliRecall)
 	ReplaceTechnologyNodes(BldMegacity, NylliOrbNutrients)
 	ReplaceTechnologyNodes(BldPlanetaryEngine, ImpHabitat)

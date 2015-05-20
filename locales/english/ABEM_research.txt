@@ -564,6 +564,15 @@ R_RECALL_DESC: <<
 
 	[bbloc=#ABL_RECALL_DESC/][/i]
 >>
+R_NYLLIRECALL_DESC: <<
+	[color=#aaa][i]New ways of hyperfield manipulation spurred on by recent discoveries about the Progenitors.[/i][/color]
+
+	Unlocks the Recall Device for use on flagships, and the Recall Facility orbital.
+
+	[i]Recall: 
+
+	[bbloc=#ABL_RECALL_DESC/][/i]
+>>
 R_SYS_CARRIER_DESC: <<
 	[color=#aaa][i]Carriers are good. Carriers carry lots of fighters, and we all know a single fighter can be enough to destroy a planet-killing superweapon.
 

@@ -59,3 +59,12 @@ ORB_PROGENITOR_SOLARORBITAL_DESC: <<
 	Only one Solar Engine of any kind may be constructed per system.
 >>
 ORB_PROGENITOR_SOLARORBITAL: Advanced Solar Engine
+ORB_RECALL_BLURB: Uses Energy to Recall allied flagships and orbitals to its location.
+ORB_RECALL_DESC: <<
+	A hyperfield manipulator designed to open a wormhole between a nearby location and any allied object in the universe.
+
+	[img=MenuIcons::3;20]Grants the Recall ability.[/img]
+	[img=ResourceIcon::2;22]Costs [b][color=#42b4bd]Energy[/color][/b] to activate.[/img]
+	[img=MenuIcons::3;20]The smaller the recalled object is, the less energy is consumed.[/img]
+	[img=MenuIcons::3;20][i][bbloc=#ABL_RECALL_DESC/][/i][/img]
+>>

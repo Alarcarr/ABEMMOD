@@ -46,3 +46,20 @@ Module: NylliIntel
 	PeriodicNearbyIntelligence(Timer = 120)
 	RequireUnlockTag(NylliIntel)
 	AddHealthEmpireAttribute(StaticDamageFactor, Multiplier = 5000.0)
+Module: NylliRecall
+	Name: Recall Facility
+	Model: FTLJammer
+	Material: VolkurGenericPBR
+	Health: 10000
+	Armor: 10000
+	Build Cost: 800
+	Labor Cost: 150
+	Maintenance: 300
+	Blurb: #ORB_RECALL_BLURB
+	Description: #ORB_RECALL_DESC
+	Icon: ActionBarIcons::7
+	Strategic Icon: ActionBarIcons::7
+	RequireUnlockTag(NylliRecall)
+	RequireTrait(StarChildren)
+	GrantAbility(Recall)
+	AddHealthEmpireAttribute(StaticDamageFactor, Multiplier = 5000.0)
