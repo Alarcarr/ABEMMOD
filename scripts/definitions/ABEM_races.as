@@ -10,6 +10,8 @@ import pickups;
 import pickup_effects;
 import status_effects;
 import target_filters;
+import requirement_effects;
+import orbitals;
 #section server
 import empire;
 import influence_global;
@@ -485,4 +487,29 @@ class EmpireOnEmpireAttributeLT : EmpireEffect {
 			hook.activate(emp.HomeObj, emp);
 	}
 #section all
+};
+
+class RequireNotUnlockTag : Requirement {
+	Document doc("This requires the empire to not have a specific unlock tag.");
+	Argument tag(AT_UnlockTag, doc="The unlock tag to check. Unlock tags can be named any arbitrary thing, and will be created as specified. Use the same tag value in the UnlockTag() or similar hook that should unlock it.");
+
+	bool meets(Object& obj, bool ignoreState = false) const {
+		Empire@ owner = obj.owner;
+		if(owner is null || !owner.valid)
+			return false;
+		return !owner.isTagUnlocked(tag.integer);
+	}
+};
+
+class RequireAttributeLT : Requirement {
+	Document doc("This requires the empire's attribute to be less than a certain value.");
+	Argument attribute(AT_EmpAttribute, doc="Attribute to check.");
+	Argument value(AT_Decimal, "1", doc="Value to test against.");
+
+	bool meets(Object& obj, bool ignoreState = false) const {
+		Empire@ owner = obj.owner;
+		if(owner is null || !owner.valid)
+			return false;
+		return owner.getAttribute(attribute.integer) < value.decimal;
+	}
 };

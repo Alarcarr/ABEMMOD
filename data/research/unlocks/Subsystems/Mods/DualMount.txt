@@ -5,6 +5,7 @@ Technology: DualMount
 	Description: #R_DUALMOUNT_DESC
 	Point Cost: 500
 	Time Cost: 60
+	Color: #a8ffc5
 	ModAttribute(ProgenitorTechProgress, Add, 2)
 	UnlockModule(ExtraGun)
 	SkipOnUnlockedModule(ExtraGun)

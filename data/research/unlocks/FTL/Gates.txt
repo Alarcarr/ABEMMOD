@@ -5,6 +5,7 @@ Technology: GateTech
 	Time Cost: 400
 	Description: #R_ORB_GATE_DESC
 	Class: Keystone
+	Color: #00c0ff
 	ModAttribute(ProgenitorTechProgress, Add, 5)
 	UnlockSubsystem(GateModule)
 	SkipOnUnlockedSubsystem(GateModule)

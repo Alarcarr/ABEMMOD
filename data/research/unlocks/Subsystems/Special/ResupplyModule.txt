@@ -5,6 +5,7 @@ Technology: ResupplyMod
 	Time Cost: 60
 	Icon: GuiOrbitalIcons::7
 	Description: #R_SYS_RESUPPLY_DESC
+	Color: #38a2f9
 	ModAttribute(ProgenitorTechProgress, Add, 1.5)
 	SkipOnUnlockedSubsystem(ResupplyModule)
 	UnlockSubsystem(ResupplyModule)

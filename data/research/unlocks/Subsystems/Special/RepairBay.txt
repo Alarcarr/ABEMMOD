@@ -5,6 +5,7 @@ Technology: RepairBay
 	Time Cost: 360
 	Class: Unlock
 	Description: #R_SYS_REPAIRBAY_DESC
+	Color: #5cf90e
 	ModAttribute(ProgenitorTechProgress, Add, 2.5)
 	SkipOnUnlockedSubsystem(RepairBay)
 	SecondaryMoneyCost(3000)

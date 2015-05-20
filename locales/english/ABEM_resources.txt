@@ -1,6 +1,5 @@
 RESOURCE_SHIPYARD_BLURB: <<
 	Adds 16 Labor generation. Can upgrade fleets, granting them +40% combat effectiveness.
-
 	Cannot be exported.
 >>
 RESOURCE_SHIPYARD_DESC: <<
@@ -9,8 +8,7 @@ RESOURCE_SHIPYARD_DESC: <<
 	Adds 16 Labor generation. Cannot be exported.
 >>
 RESOURCE_INTEL_BLURB: <<
-	Generates Intelligence cards against nearby empires.
-
+	Provides various intelligence-related effects.
 	Cannot be exported.
 >>
 RESOURCE_INTEL_DESC: <<
@@ -20,7 +18,6 @@ RESOURCE_INTEL_DESC: <<
 >>
 RESOURCE_RESEARCH_BLURB: <<
 	Converts Labor and Energy into Research. Civilian research generation on the planet is increased by 20%.
-
 	Cannot be exported.
 >>
 RESOURCE_RESEARCH_DESC: <<
@@ -30,7 +27,6 @@ RESOURCE_RESEARCH_DESC: <<
 >>
 RESOURCE_HUBWORLD_BLURB: <<
 	Generates [levels=$1;#ffb4b6]1/2/3/4/5/6/7[/levels] pressure of every kind.
-
 	Provides various buffs as it levels up, culminating in access to the Progenitor tech tree at level 6. Cannot be exported.
 >>
 RESOURCE_HUBWORLD_DESC: <<
@@ -58,7 +54,6 @@ ASTEROID_LABOR_DESC: <<
 ELECTRONICS_DESC: Gives 0.2 energy generation.
 TECHNOFARM_BLURB: <<
 	Generates a Cultivation card every 6 minutes. Increases population growth by 50%. Does not require a third [img=ResourceClassIcons::3;20/] Food resource to reach level 3.
-
 	Cannot be exported.
 >>
 TECHNOFARM_DESC: <<
@@ -70,7 +65,6 @@ TECHNOFARM_DESC: <<
 >>
 PARADISE_BLURB: <<
 	+100% population growth. +10 maximum population. +5 bonus to planet loyalty.
-
 	-50% to civilian Labor, Research, Defense and Energy generation. Cannot be exported.
 >>
 PARADISE_DESC: <<

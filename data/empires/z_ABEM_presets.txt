@@ -4,10 +4,14 @@ Preset: Progenitors
 	Lore: #RACE_PROGENITORS_LORE
 	Portrait: emp_portrait_cloak
 	Shipset: Progenitor
+	Hard: True
 	
 	Trait: Communism
 	Trait: Gate
 	Trait: Progenitors
+	Trait: Poor
+	Trait: Innovative
+	Trait: Workshop
 	
 Preset: Pacifists
 	Name: #RACE_PACIFISTS
@@ -15,10 +19,12 @@ Preset: Pacifists
 	Lore: #RACE_PACIFISTS_LORE
 	Portrait: emp_portrait_slug
 	Shipset: Volkur
+	Hard: True
 	
 	Trait: Capitalism
 	Trait: Hyperdrive
 	Trait: Pacifists
+	Trait: Charismatic
 	
 Preset: Berserkers
 	Name: #RACE_BERSERKERS
@@ -30,3 +36,4 @@ Preset: Berserkers
 	Trait: Empire
 	Trait: Slipstream
 	Trait: Berserkers
+	Trait: Frugal

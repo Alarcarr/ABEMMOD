@@ -1,4 +1,4 @@
-R_DEV_FTL_INCOME_DESC: <<
+﻿R_DEV_FTL_INCOME_DESC: <<
 	[i][color=#aaa]Better control over the collection and refinement of FTL energy.[/color][/i]
 
 	Increases empire FTL income by 0.5/s.
@@ -564,6 +564,15 @@ R_RECALL_DESC: <<
 
 	[bbloc=#ABL_RECALL_DESC/][/i]
 >>
+R_NYLLIRECALL_DESC: <<
+	[color=#aaa][i]New ways of hyperfield manipulation spurred on by recent discoveries about the Progenitors.[/i][/color]
+
+	Unlocks the Recall Device for use on flagships, and the Recall Facility orbital.
+
+	[i]Recall: 
+
+	[bbloc=#ABL_RECALL_DESC/][/i]
+>>
 R_SYS_CARRIER_DESC: <<
 	[color=#aaa][i]Carriers are good. Carriers carry lots of fighters, and we all know a single fighter can be enough to destroy a planet-killing superweapon.
 
@@ -639,6 +648,33 @@ R_SPEC_SUPPORT4_DESC: <<
 
 	[bbloc=#R_SPEC_DISCLAIMER:Reinforced Architecture/]
 >>
+R_PROGENITOR_SOLARORBITAL: Advanced Solar Harnessing
+R_PROGENITOR_SOLARORBITAL_DESC: <<
+	[color=#aaa][i]The discovery of Progenitor blueprints for a Solar Engine increases the quality of our own versions of the device.[/i][/color]
+
+	Converts all Solar Engines into Advanced Solar Engines, which require no maintenance and produce more energy.
+
+	[i][bbloc=#ORB_PROGENITOR_SOLARORBITAL_DESC/][/i]
+>>
+R_SYS_SUPPLYTRANSFER_DESC: <<
+	[color=#aaa][i]The development of new particle beam emitters allows for the wireless transmission of energy through vast swathes of space.[/i][/color]
+
+	Unlocks the Energy Transferral Beam subsystem.
+
+	[i][bbloc=#S_ENERGYTRANSMITTER_DESC/][/i]
+
+	[bbloc=#ALTUNLOCK_ENERGY:800/]
+>>
+R_ORBITALTHRUSTER_DESC: <<
+	[color=#aaa][i]New doctrines provoke considerable research into the process of moving a space station.[/i][/color]
+
+	Unlocks the Orbital Thruster subsystem for use on stations.
+
+	[i][bbloc=#S_ORBITALTHRUSTER_DESC/][/i]
+
+	[bbloc=#ALTUNLOCK_INFLUENCE:8/]
+>>
+
 
 
 

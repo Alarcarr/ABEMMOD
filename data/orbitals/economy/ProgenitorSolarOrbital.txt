@@ -1,0 +1,22 @@
+Module: ProgenitorSolarOrbital
+	Name: #ORB_PROGENITOR_SOLARORBITAL
+	Description: #ORB_PROGENITOR_SOLARORBITAL_DESC
+	Blurb: #ORB_PROGENITOR_SOLARORBITAL_BLURB
+	Icon: GuiOrbitalIcons::0
+	Distant Icon: OrbitalIcons::0
+
+	Build Cost: 400
+	Labor Cost: 15
+	Size: 6
+
+	Health: 4000
+	Armor: 3500
+
+	Model: CommerceStation
+	Material: VolkurGenericPBR
+
+	LimitOncePerSystem(SolarOrbitalFlag)
+	RequireUnlockTag(ProgenitorSolarOrbital)
+
+	RequireUnlockTag(SolarOrbitalUnlock)
+	AddEnergyIncomeStarTemperature(0.5, 2.0)

@@ -10,12 +10,16 @@ Camp: MediumCamp
 		Name: Equipment Stash
 		Description: A Remnant equipment stash you can improve your technology with.
 		Verb: Analyze $1
+		Model: Depot
+		Material: VolkurGenericPBR
 		SpawnAnomaly(Type = SubsystemsUpgrade, Start Scanned = True)
 	Pickup: SolarOrbital
-		Name: Solar Engine
-		Description: A dormant Remnant Solar Engine. Will generate energy when reactivated, and does not require maintenance.
+		Name: Advanced Solar Engine
+		Description: A dormant Solar Engine of Progenitor design. Will generate energy when reactivated, and does not require maintenance. Produces more energy than a regular Solar Engine.
 		Verb: Reactivate $1
-		SpawnOrbital(SolarOrbital, Free = True)
+		Model: CommerceStation
+		Material: VolkurGenericPBR
+		SpawnOrbital(ProgenitorSolarOrbital, Free = True)
 
 	Pickup: AncientKnowledge
 		Name: #PICKUP_ANCIENT_KNOWLEDGE

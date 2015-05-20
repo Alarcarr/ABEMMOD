@@ -66,7 +66,7 @@ SubsystemStat: CompExplResist
 	Color: #aaaaaa
 	Suffix: %
 
-	Variable: DummyExplResist
+	Variable: DummyExplosiveResist
 
 SubsystemStat: CrystalEnergyResist
 	Name: Energy Resistance

@@ -1,0 +1,17 @@
+Technology: OrbitalThruster
+	Name: Orbital Maneuvering
+	Description: #R_ORBITALTHRUSTER_DESC
+	Class: Unlock
+
+	Point Cost: 700
+	Time Cost: 120
+
+	Icon: TechIcons::26
+	Color: #f9b04b
+	Blurb:  
+
+	UnlockSubsystem(OrbitalControl)
+
+	ModAttribute(ProgenitorTechProgress, Add, 1.5)
+	SkipOnUnlockedSubsystem(OrbitalControl)
+	SecondaryInfluenceCost(6)

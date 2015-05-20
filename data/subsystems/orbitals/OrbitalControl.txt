@@ -17,12 +17,7 @@ Subsystem: OrbitalControl
 	Hex.HP := 6 * HexSize
 	Hex.MaintainCost := 0
 	Thrust := 7 * Size
-	Description: <<
-		A large scoop that collects particulate matter floating in space and uses it to propel the station.
-
-		[img=Plus]Lack of fuel requirements makes its maintenance requirements negligible.[/img]
-		[img=Minus]Extremely low thrust.[/img]
-		>>
+	Description: #S_ORBITALTHRUSTER_DESC
 	Hook: ABEM_hooks::AddThrustBonus(Thrust)
 	Requires:
 		Command = 1
