@@ -108,7 +108,6 @@ class ConvertRemnants : AbilityHook {
 			return;
 		if(targ.hasLeaderAI) {
 			targ.takeoverFleet(abl.obj.owner, 1, false);
-			targ.calculateSightRange();
 		}
 		else
 			@targ.owner = abl.obj.owner;

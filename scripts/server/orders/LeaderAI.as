@@ -88,7 +88,6 @@ class LeaderAI : Component_LeaderAI, Savable {
 
 	SightModifier@[] sightData;
 	uint[] sightOrder;
-	bool sightDelta = false;
 	uint nextInstanceID = 0;
 
 	AutoMode autoMode = AM_AreaBound;
@@ -271,7 +270,7 @@ class LeaderAI : Component_LeaderAI, Savable {
 			sightData[i].load(msg);
 		}
 		for(uint i = 0; i < cnt; ++i)
-			sightOrder[i] >> msg;
+			msg >> sightOrder[i];
 		msg >> nextInstanceID;
 	}
 
@@ -338,7 +337,7 @@ class LeaderAI : Component_LeaderAI, Savable {
 		msg << cnt;
 		for(uint i = 0; i < cnt; ++i)
 			sightData[i].save(msg);
-		for(uint i = 0; i < cnt; ++)
+		for(uint i = 0; i < cnt; ++i)
 			msg << sightOrder[i];
 		msg << nextInstanceID;
 		
@@ -1260,6 +1259,7 @@ class LeaderAI : Component_LeaderAI, Savable {
 			if(newOwner !is null && newOwner.valid)
 				newOwner.registerFleet(obj);
 		}
+		calculateSightRange(obj);
 	}
 
 	void repairFleet(Object& obj, double amount, bool spread = true) {
@@ -2244,24 +2244,24 @@ class LeaderAI : Component_LeaderAI, Savable {
 
 		uint prevPriority = 0;
 		double currentBonus = 0;
-		for(uint i = 0; i < sightOrder; ++i) {
+		for(uint i = 0; i < sightOrder.length; ++i) {
 			SightModifier@ data = sightData[sightOrder[i]];
 			if(data.priority != prevPriority) {
 				prevPriority = data.priority;
 				sightRange += currentBonus;
 				currentBonus = 0;
 			}
-			currentBonus += sightRange * data.multiplier + data.addedBonus;
+			currentBonus += sightRange * data.multiplier + data.addedRange;
 		}
 		obj.sightRange = sightRange;
 	}
 
-	uint addSightModifier(Object& obj, uint priority, double multiplier, double addedBonus) {
+	uint addSightModifier(Object& obj, uint priority, double multiplier, double addedRange) {
 		SightModifier@ data;
 		data.id = nextInstanceID++;
 		data.priority = priority;
 		data.multiplier = multiplier;
-		data.addedBonus = addedBonus;
+		data.addedRange = addedRange;
 		sightData.insertLast(data);
 
 		uint order;
@@ -2301,20 +2301,20 @@ class LeaderAI : Component_LeaderAI, Savable {
 		calculateSightRange(obj);
 	}
 
-	void modifySightModifier(Object& obj, uint id, double multiplier, double addedBonus) {
+	void modifySightModifier(Object& obj, uint id, double multiplier, double addedRange) {
 		// No need to run through orders, this will be faster unless we're modifying a really recent modifier while
 		// having a lot of modifiers applied.
 		for(uint i = 0; i < sightData.length; ++i) {
 			if(sightData[i].id == id) {
 				sightData[i].multiplier = multiplier;
-				sightData[i].addedBonus = addedBonus;
+				sightData[i].addedRange = addedRange;
 			}
 		}
 		calculateSightRange(obj);
 	}
 	
 	// Performs a binary search until it finds a location where it can fit in nicely.
-	void continueSortingSightPriority(uint position, array& orderArray, array& dataArray, uint pivot, double difference) {
+	void continueSortingSightPriority(uint position, array<uint>& orderArray, array<SightModifier@>& dataArray, uint pivot, double difference) {
 		// halfDiff is half of the previous difference, obviously.
 		double halfDiff = difference / 2;
 		// pivotMinOne accounts for C-like array indexing. Lets me worry about the actual logic of it, rather than whether I'm off by one or not.
@@ -2383,7 +2383,7 @@ class LeaderAI : Component_LeaderAI, Savable {
 	}
 
 	bool writeLeaderAIDelta(const Object& obj, Message& msg) {
-		if(!delta && !orderDelta && !sightDelta)
+		if(!delta && !orderDelta)
 			return false;
 		msg.write1();
 
