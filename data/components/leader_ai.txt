@@ -137,6 +137,10 @@ server:
 	
 	void set_engageRange(double radius);
 
+	uint addSightModifier(uint priority, double multiplier, double addedBonus);
+	void removeSightModifier(uint id);
+	void modifySightModifier(uint id, double multiplier, double addedBonus);
+
 //Networking
 	void writeLeaderAI(Message& msg) const;
 	bool writeLeaderAIDelta(Message& msg) const;

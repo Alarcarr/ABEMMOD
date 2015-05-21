@@ -24,6 +24,7 @@ import util.target_search;
 import ship_groups;
 import design_settings;
 import empire;
+import ABEM_data;
 
 class ActiveConstruction {
 	uint id;
@@ -2224,7 +2225,7 @@ class LeaderAI : Component_LeaderAI, Savable {
 		}
 	}
 
-	void calculateSightData(Object& obj) {
+	void calculateSightRange(Object& obj) {
 		if(obj.owner is null || obj.owner is Creeps || obj.owner is defaultEmpire || obj.owner is Pirates) {
 			obj.sightRange = 0;
 			return;
@@ -2232,14 +2233,14 @@ class LeaderAI : Component_LeaderAI, Savable {
 
 		double sightRange = 0;
 		if(obj.isShip) {
-			sightRange = 250;
+			sightRange = SHIP_BASESIGHTRANGE;
 			if(cast<Ship>(obj).isStation)
-				sightRange *= 2;
+				sightRange *= STATION_SIGHTMULTIPLIER;
 		}
 		else if(obj.isOrbital)
-			sightRange = 1000;
+			sightRange = ORBITAL_BASESIGHTRANGE;
 		else if(obj.isPlanet)
-			sightRange = 1500;
+			sightRange = PLANET_BASESIGHTRANGE;
 
 		uint prevPriority = 0;
 		double currentBonus = 0;
@@ -2255,7 +2256,7 @@ class LeaderAI : Component_LeaderAI, Savable {
 		obj.sightRange = sightRange;
 	}
 
-	uint addSightModifier(Object& obj, uint priority, double multiplier, double addedBonus)
+	uint addSightModifier(Object& obj, uint priority, double multiplier, double addedBonus) {
 		SightModifier@ data;
 		data.id = nextInstanceID++;
 		data.priority = priority;
@@ -2277,11 +2278,14 @@ class LeaderAI : Component_LeaderAI, Savable {
 				// This is a bit of a more complicated sorting algorithm that I'm passing it into, and it's recursive, so...
 				continueSortingSightPriority(position, sightOrder, sightData, sightOrder.length / 2, double(sightOrder.length / 2));
 			}
-		}				
+		}
+		calculateSightRange(obj);
 		return data.id;
 	}
 
-	void removeSightModifier(Object& obj, uint id);
+	void removeSightModifier(Object& obj, uint id) {
+		// We need to run through the order rather than the data because we have to delete the order entry pointing at the modifier,
+		// not just the modifier itself. Also, what I wrote below.
 		for(uint i = 0; i < sightOrder.length; ++i) {
 			if(sightData[sightOrder[i]].id == id) {
 				sightData.removeAt(sightOrder[i]);
@@ -2291,9 +2295,22 @@ class LeaderAI : Component_LeaderAI, Savable {
 						sightOrder[j] -= 1;
 				}
 				sightOrder.removeAt(i);
-				return;
+				break;
 			}
 		}
+		calculateSightRange(obj);
+	}
+
+	void modifySightModifier(Object& obj, uint id, double multiplier, double addedBonus) {
+		// No need to run through orders, this will be faster unless we're modifying a really recent modifier while
+		// having a lot of modifiers applied.
+		for(uint i = 0; i < sightData.length; ++i) {
+			if(sightData[i].id == id) {
+				sightData[i].multiplier = multiplier;
+				sightData[i].addedBonus = addedBonus;
+			}
+		}
+		calculateSightRange(obj);
 	}
 	
 	// Performs a binary search until it finds a location where it can fit in nicely.

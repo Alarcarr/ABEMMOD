@@ -16,3 +16,9 @@ const StatusType@ getABEMStatus(int index) {
 	error("Unknown error has occurred in getABEMStatus.");
 	return null;
 }
+
+// Data entries for baseline sight ranges for ships, stations (multiplies SHIP_BASESIGHTRANGE), orbitals and planets.
+const double SHIP_BASESIGHTRANGE = 250;
+const double STATION_SIGHTMULTIPLIER = 2;
+const double ORBITAL_BASESIGHTRANGE = 1000;
+const double PLANET_BASESIGHTRANGE = 1500;
