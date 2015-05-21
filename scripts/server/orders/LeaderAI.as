@@ -50,25 +50,11 @@ class Formation : Savable {
 	vec3d getNext(Object& support) { return vec3d(); }
 };
 
-class SightModifier : Serializable, Savable {
+class SightModifier : Savable {
 	uint id;
 	uint priority = 0;
 	double multiplier = 1;
 	double addedRange = 0;
-
-	void write(Message& msg) {
-		msg.writeSmall(id);
-		msg.writeSmall(priority);
-		msg << multiplier;
-		msg << addedRange;
-	}
-
-	void read(Message& msg) {
-		msg.readSmall(id);
-		msg.readSmall(priority);
-		msg >> multiplier;
-		msg >> addedRange;
-	}
 
 	void save(SaveFile& file) {
 		file << id;
@@ -102,7 +88,6 @@ class LeaderAI : Component_LeaderAI, Savable {
 	SightModifier@[] sightData;
 	uint[] sightOrder;
 	bool sightDelta = false;
-	double lastSightRange = 0;
 	uint nextInstanceID = 0;
 
 	AutoMode autoMode = AM_AreaBound;
@@ -277,7 +262,6 @@ class LeaderAI : Component_LeaderAI, Savable {
 		if(msg >= SV_0068)
 			msg >> formation;
 
-		msg >> lastSightRange;
 		msg >> cnt;
 		sightData.length = cnt;
 		sightOrder.length = cnt;
@@ -349,7 +333,6 @@ class LeaderAI : Component_LeaderAI, Savable {
 
 		msg << formation;
 
-		msg << lastSightRange;
 		cnt = sightData.length;
 		msg << cnt;
 		for(uint i = 0; i < cnt; ++i)
@@ -2303,8 +2286,9 @@ class LeaderAI : Component_LeaderAI, Savable {
 			if(sightData[sightOrder[i]].id == id) {
 				sightData.removeAt(sightOrder[i]);
 				// This shifts the destination indexes of all following sightOrder entries by 1, so they don't point at the wrong SightModifier instance.
-				for(uint j = i; j < sightOrder.length; ++j) {
-					sightOrder[j] -= 1;
+				for(uint j = 0; j < sightOrder.length; ++j) {
+					if(sightOrder[j] > sightOrder[i])
+						sightOrder[j] -= 1;
 				}
 				sightOrder.removeAt(i);
 				return;
@@ -2376,20 +2360,9 @@ class LeaderAI : Component_LeaderAI, Savable {
 		msg << bonusDPS;
 	}
 
-	void writeSight(Message& msg) {
-		uint cnt = sightData.length;
-		msg << cnt;
-		for(uint i = 0; i < cnt; ++i)
-			msg << sightData[i];
-		for(uint i = 0; i < cnt; ++i)
-			msg << sightOrder[i];
-		msg << NextInstanceID;
-	}
-
 	void writeLeaderAI(const Object& obj, Message& msg) {
 		writeGroup(msg);
 		writeOrders(obj, msg);
-		writeSight(msg);
 	}
 
 	bool writeLeaderAIDelta(const Object& obj, Message& msg) {
@@ -2410,15 +2383,6 @@ class LeaderAI : Component_LeaderAI, Savable {
 			msg.write1();
 			writeOrders(obj, msg);
 			orderDelta = false;
-		}
-		else {
-			msg.write0();
-		}
-
-		if(sightDelta) {
-			msg.write1();
-			writeSight(msg);
-			sightDelta = false;
 		}
 		else {
 			msg.write0();
