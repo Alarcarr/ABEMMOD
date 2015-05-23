@@ -1,10 +1,10 @@
 EMPTY_SPACE_DESC: <<
 	Slight gravitational anomalies caused by subspace eddies in this sector have pulled in a variety of interesting objects into an otherwise featureless region of space.
 	
-	An interesting side-effect of the subspace anomalies is that shields are formed a bit more effectively. This manifests itself as a 5% boost to shield regeneration.
+	Some interesting side-effects of the subspace anomalies are that shields are formed a bit more effectively, and the gravitational anomalies they create are attracted to massive objects. This manifests itself as a 5% boost to shield regeneration and a 25% boost to sensor range.
 >>
 NEBULA_TYPE1_DESC: <<
-	A fairly unimpressive nebula. Some day it might give birth to a star, but right now it's just messing with the fleet's sensors.
+	A fairly unimpressive nebula. Some day it might give birth to a star, but right now it's just messing with the fleet's sensors. 
 	
 	There may, however, be lots of interesting objects within.
 >>

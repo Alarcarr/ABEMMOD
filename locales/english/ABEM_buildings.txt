@@ -6,7 +6,7 @@ F_INTEL_NAME: Intelligence Facilities
 F_INTEL_DESC: <<
 	[color=#aaa][i]A facility for intelligence agencies to train operatives and coordinate missions from.[/i][/color]
 
-	Generates intelligence cards against empires adjacent to this system every 2 minutes. If no such empires exist, intelligence cards are against a random empire.
+	Generates intelligence cards against empires adjacent to this system every 2 minutes.
 >>
 F_POWERPLANT_NAME: Power Plant
 F_POWERPLANT_DESC: <<
@@ -37,7 +37,7 @@ B_TAXCENTER_DESC: <<
 B_DEFENSEFACTORY_DESC: <<
 	A facility dedicated to the coordination of defensive forces across the planet.
 
-	Adds 2 Defense generation. Adds 128 support capacity.
+	Adds 2 Defense generation. Adds 128 support capacity. Adds 25 units of sensor range.
 >>
 COND_ANCIENT_CANNON: Ancient Planetary Defenses
 COND_ANCIENT_CANNON_DESC: <<|

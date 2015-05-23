@@ -11,4 +11,4 @@ Status: JamSensors
 	Name: Sensor Jammer
 	Icon: TechIcons::54*#ff00ff
 	Description: Long Range Sensors of this ship are offline
-	LimitSightRange(2000)
+	ABEM_sensors::AddSightModifier(150, 0.8)

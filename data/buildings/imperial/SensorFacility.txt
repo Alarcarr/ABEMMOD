@@ -1,0 +1,14 @@
+Building: SensorFacility
+	Name: #BLD_SENSOR
+	Description: #BLD_SENSOR_DESC
+	Sprite: TechIcons::1
+	Size: 2x2
+	Category: Military
+	Base Cost: 200
+	Tile Cost: 50
+	Base Maintenance: 50
+	Tile Maintenance: 50
+	Build Time: 120
+	Build Affinity: Mountains
+	Maintenance Affinity: Mountains
+	ABEM_sensors::AddSightModifier(AddedRange = 100)

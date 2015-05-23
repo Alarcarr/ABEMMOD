@@ -7,5 +7,5 @@ Status: Cerulean
 	ABEM_nebulae::DisableStatus(Cloaked)
 	ForceHoldFire()
 	ABEM_nebulae::StatusBlockFTLSystem()
-	LimitSightRange(1000)
+	ABEM_sensors::AddSightModifier(200, 0.66) 
 	LimitSeeableRange(1000)

@@ -5,5 +5,5 @@ Status: Tachyon
 	Color: #00aa00
 	
 	ABEM_nebulae::StatusFreeFTLSystem()
-	LimitSightRange(750)
+	ABEM_sensors::AddSightModifier(200, 0.5)
 	LimitSeeableRange(750)

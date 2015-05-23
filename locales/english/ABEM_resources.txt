@@ -12,7 +12,7 @@ RESOURCE_INTEL_BLURB: <<
 	Cannot be exported.
 >>
 RESOURCE_INTEL_DESC: <<
-	Abandoned ancient facilities that were designed to look over an entire empire. Gives full vision of adjacent systems. Generates Intelligence cards against empires in adjacent systems. If none can be found, generates Intelligence against a random empire. Grants the 'Telescope' ability.
+	Abandoned ancient facilities that were designed to look over an entire empire. Gives full vision of adjacent systems. Generates Intelligence cards against empires in adjacent systems. Grants the 'Telescope' ability.
 
 	Cannot be exported.
 >>

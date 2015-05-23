@@ -32,6 +32,15 @@ GlobalStat: ResearchGeneration
 	Suffix: /s
 
 	Variable: Research
+
+GlobalStat: SensorRange
+	Name: #S_SENSORRANGE
+	Description: #STT_SENSORRANGE
+	Icon: TechIcons::1
+	Color: #9ed6ff
+	Suffix: u
+
+	Variable: SensorRange
 	
 // *************************************
 // ******SUBSYSTEM-SPECIFIC STATS*******
@@ -145,7 +154,30 @@ SubsystemStat: PodSize
 	Suffix: projectiles
 
 	Variable: PodSize
+
+SubsystemStat: SensorRange
+	Name: #S_SENSORRANGE
+	Icon: TechIcons::1
+	Color: #9ed6ff
+	Suffix: u
+
+	Variable: SensorRange
+
+SubsystemStat: SensorMult
+	Name: #S_SENSORMULT
+	Icon: TechIcons::1
+	Color: #9ed6ff
+	Suffix: %
+
+	Variable: DummySensorMult
+
+SubsystemStat: SensorPriority
+	Name: #S_SENSORPRIORITY
+	Icon: TechIcons::1
+	Color: #9ed6ff
 	
+	Variable: SensorPriority
+
 // *************************************
 // *********HEX-SPECIFIC STATS**********
 // *************************************

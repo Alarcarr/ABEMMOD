@@ -5,5 +5,5 @@ Status: Metreon
 	Color: #ff0000
 	
 	ABEM_nebulae::DealRandomDamage()
-	LimitSightRange(750)
+	ABEM_sensors::AddSightModifier(200, 0.5)
 	LimitSeeableRange(750)

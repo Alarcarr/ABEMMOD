@@ -4,5 +4,5 @@ Status: Type1Nebula
 	Icon: VoteIcons::3
 	Color: #ff0000
 	
-	LimitSightRange(500)
+	ABEM_sensors::AddSightModifier(200, 0.33)
 	LimitSeeableRange(500)

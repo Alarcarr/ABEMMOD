@@ -4,5 +4,5 @@ Status: Metaphasic
 	Icon: ResourceIcon::5 * #429cffff * #00ff00
 	
 	ABEM_nebulae::ShieldRegenBoost(0.25)
-	LimitSightRange(1000)
+	ABEM_sensors::AddSightModifier(200, 0.66)
 	LimitSeeableRange(1000)

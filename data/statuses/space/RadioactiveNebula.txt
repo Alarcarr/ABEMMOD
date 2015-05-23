@@ -5,5 +5,5 @@ Status: Radioactive
 	Color: #aa0000
 	
 	ABEM_nebulae::KillCrew()
-	LimitSightRange(300)
+	ABEM_sensors::AddSightModifier(200, 0.2)
 	LimitSeeableRange(300)

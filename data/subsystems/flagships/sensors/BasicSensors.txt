@@ -1,0 +1,20 @@
+Subsystem: BasicSensors
+	Name: Basic Sensors
+	Description: #S_BASIC_SENSORS_DESC
+	BaseColor: #9ed6ff
+	Elevation: 1
+	Tags: BaseCost, IsSensor, Category:Sensors, HasInternals, ExteriorCore, DefaultUnlock, NonContiguous
+	Hull: Flagship, Station
+	Size := HexSize * Hexes
+	SensorRange := 150 + (Hexes * 12.5) + log(Size/(10 *ShipSize)) * Hexes
+	SensorPriority := 100
+	Hex.Mass := HexSize / 2
+	Hex.Resistance := 0.1
+	Hex.HP := 15 * HexSize
+	Ship.ExternalHexes := Ship.ExternalHexes + ExteriorHexes
+	Modifier: SensorFactor(factor)
+		SensorRange := SensorRange * factor
+	Hook: ABEM_sensors::AddScalableSubsystemSightModifier(Priority = 100, AddedRange = SensorRange)
+	Module: Core
+		Sprite: TechIcons::1
+	Module: Default
