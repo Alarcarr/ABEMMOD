@@ -5,7 +5,7 @@ import subsystem_effects;
 
 class AddSightModifier : GenericEffect {
 	Document doc("Changes the sight range of an object.");
-	Argument priority(AT_Decimal, "100", doc="The order in which the modifier is executed. The lower the number, the sooner it is executed. NOTE: Only use positive integers here!");
+	Argument priority(AT_Integer, "100", doc="The order in which the modifier is executed. The lower the number, the sooner it is executed. NOTE: Only use positive integers here!");
 	Argument multiplier(AT_Decimal, "1", doc="The number by which the object's base sight range and all previously executed modifiers are multiplied. NOTE: Same-priority modifiers do not multiply each other, they just combine their results when they're done!");
 	Argument addedRange(AT_Decimal, "0", doc="The amount of extra sight range to add, expressed in units. For reference, the sides of the biggest squares on the system grid are 500 units.");
 
@@ -52,37 +52,54 @@ class SubsystemSightData {
 	any data;
 }
 
-class AddScalableSubsystemSightModifier : SubsystemEffect {
+class AddSensor : SubsystemEffect {
 	Document doc("Changes the sight range of the ship using a subsystem. Modifier scales based on how much of the subsystem is still operational. If no scaling is required, use AddSightModifier instead.");
-	Argument priority(AT_Decimal, "100", doc="The order in which the modifier is executed. The lower the number, the sooner it is executed. NOTE: Only use positive integers here!");
-	Argument multiplier(AT_Decimal, "1", doc="The number by which the ship's base sight range and all previously executed modifiers are multiplied. NOTE: Same-priority modifiers do not multiply each other, they just combine their results when they're done!");
-	Argument addedRange(AT_Decimal, "0", doc="The amount of extra sight range to add, expressed in units. For reference, the sides of the biggest squares on the system grid are 500 units.");
+	Argument priority(AT_Integer, "100", doc="The order in which the modifier is executed. The lower the number, the sooner it is executed. NOTE: Only use positive integers here!");
+	Argument multiplier(AT_Decimal, "1.0", doc="The number by which the ship's base sight range and all previously executed modifiers are multiplied. NOTE: Same-priority modifiers do not multiply each other, they just combine their results when they're done!");
+	Argument addedRange(AT_Decimal, "0.0", doc="The amount of extra sight range to add, expressed in units. For reference, the sides of the biggest squares on the system grid are 500 units.");
 
 #section server
 	void start(SubsystemEvent& event) const {
 		SubsystemSightData info;
-		if(event.obj is null)
+		event.data.store(@info);
+		if(event.obj is null) {
+//			print("Object is currently null.");
 			return;
+		}
 		if(event.obj.hasLeaderAI) {
+//			print("Proper initialization done.");
 			info.hasLeader = true;
 			info.id = event.obj.addSightModifier(uint(priority.integer), multiplier.decimal, addedRange.decimal);
+//			print(info.hasLeader);
+//			print(event.workingPercent);
+//			print(uint(priority.integer) + "/" + priority.integer);
+//			print(multiplier.decimal);
+//			print(addedRange.decimal);
 			info.workingPercent = event.workingPercent;
 		}
-		event.data.store(@info);
 	}
 
 	void tick(SubsystemEvent& event, double time) const {
 		SubsystemSightData@ info;
 		event.data.retrieve(@info);
-		if(event.obj is null)
+		event.data.store(@info);
+		if(event.obj is null) {
+//			print("Object is null in current tick.");
 			return;
+		}
 		if(event.obj.hasLeaderAI) {
 			if(!info.hasLeader) {
+//				print("Backup initialization done.");
 				double finalMult = multiplier.decimal * event.workingPercent;
 				if(finalMult < 1.0)
 					finalMult += 1;
 				info.hasLeader = true;
 				info.id = event.obj.addSightModifier(uint(priority.integer), finalMult, addedRange.decimal * event.workingPercent);
+//				print(info.hasLeader);
+//				print(event.workingPercent);
+//				print(uint(priority.integer) + "/" + priority.integer);
+//				print(finalMult + "/" + multiplier.decimal);
+//				print(addedRange.decimal);
 				info.workingPercent = event.workingPercent;
 			}
 			else if(info.workingPercent != event.workingPercent) {
@@ -95,7 +112,6 @@ class AddScalableSubsystemSightModifier : SubsystemEffect {
 		}
 		else
 			info.hasLeader = false;
-		event.data.store(@info);
 	}
 
 	void end(SubsystemEvent& event) const {
