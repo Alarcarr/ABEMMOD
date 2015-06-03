@@ -59,3 +59,9 @@ BLD_RECALL_DESC: <<
 	[img=MenuIcons::3;20]The smaller the recalled object is, the less energy is consumed.[/img]
 	[img=MenuIcons::3;20][i][bbloc=#ABL_RECALL_DESC/][/i][/img]
 >>
+BLD_SENSOR: Sensor Complex
+BLD_SENSOR_DESC: <<
+	A series of sensor towers aimed at various parts of the sky push back the interstellar 'fog of war'.
+	
+	[img=MenuIcons::3;20]Increases the planet's sight range by 100 units.[/img]
+>>
