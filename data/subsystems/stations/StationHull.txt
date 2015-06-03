@@ -15,7 +15,7 @@ Subsystem: StationHull
 
 	Repair := (ShipSize / HexLimit) * 8
 	// Dummy for design stats - actual baseline range is in ABEM_data.
-	SensorRange := 250
+	SensorRange := 500
 	
 	OnCheckErrors: designs::checkGlobalDesign
 
