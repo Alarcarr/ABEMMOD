@@ -39,6 +39,14 @@ S_BOARDSUBSYS: Boarding Strength
 STT_BOARDSUBSYS: <<
 	The strength this subsystem contributes to a boarding defense. Only Boarding Parties contribute to an offensive boarding action; their offensive strength is the same as their defensive strength.
 >>
+S_SENSORRANGE: Base Sensor Range
+STT_SENSORRANGE: <<
+	How far the ship can see, prior to the application of any multiplying effects such as entering a nebula.
+	
+	This does not necessarily have to be the actual range of the ship's sensors, but it might provide a good idea of how big that range will be.
+>>
+S_SENSORMULT: Sensor Multiplier
+S_SENSORPRIORITY: Sensor Priority
 S_HULLHEALING: Repair Rate
 S_SHIELDHEALING: Regeneration Rate
 S_SUPPLYTRANSFER: Transfer Rate
@@ -555,5 +563,13 @@ S_ORBITALTHRUSTER_DESC: <<
 	[img=Plus]Lack of fuel requirements makes its maintenance requirements negligible.[/img]
 	[img=Minus]Extremely low thrust.[/img]
 >>
-
+S_BASIC_SENSORS_DESC: <<
+	An array of various sensors that allow the ship's crew to see into the surrounding space without taking a telescope to the nearest window.
+	
+	[img=Plus]Increases sight range by a moderate quantity.[/img]
+	[img=Plus]Sensors on the outside of the ship do not use up interior space.[/img]
+	[img=MenuIcons::3;20]Placing sensors over other sensors or armor, however, does cause the covered hexes to use up interior space, something that does not occur when covering such hexes with armor.[/img]
+	[img=MenuIcons::3;20]Is not a contiguous subsystem - only one Basic Sensor core can be present on a ship, but that core does not have to be connected to all the other Basic Sensor hexes in the ship.[/img]
+	[img=Minus]Sensor core must be external.[/img]
+>>
 ERROR_SPECIFIC_SIZE: $1 must be exactly size $2.
