@@ -1,0 +1,24 @@
+Trait: Sublight
+	Name: #TRAIT_SUBLIGHT
+	Description: #TRAIT_SUBLIGHT_DESC
+	Order: 4
+	
+	Category: FTL
+	Unique: FTL
+	
+	Icon: HexagonSubsystems::2
+	Color: #ffaaaa
+
+	Gives Points: 3
+	
+	LoadDesigns(default)
+	LoadDesigns(not_hyperdrive)
+
+	IfHaveTrait(Verdant, LoadDesigns(verdant/default))
+	IfHaveTrait(Verdant, LoadDesigns(verdant/not_hyperdrive))
+
+	IfHaveTrait(Devout, LoadDesigns(devout/default))
+	IfHaveTrait(Devout, LoadDesigns(devout/not_hyperdrive))
+
+	AddFTLStorage(-250)
+	AddFTLIncome(-1)
