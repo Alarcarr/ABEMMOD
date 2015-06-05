@@ -568,7 +568,7 @@ S_BASIC_SENSORS_DESC: <<
 	
 	[img=Plus]Increases sight range by a moderate quantity.[/img]
 	[img=Plus]Sensors on the outside of the ship do not use up interior space.[/img]
-	[img=MenuIcons::3;20]Placing sensors over other sensors or armor, however, does cause the covered hexes to use up interior space, something that does not occur when covering such hexes with armor.[/img]
+	[img=MenuIcons::3;20]Completely covering sensors with armor or other sensors will cause them to use interior space again. The opposite is also true, so covering armor with sensors will cause the armor to use interior space.[/img]
 	[img=MenuIcons::3;20]Is not a contiguous subsystem - only one Basic Sensor core can be present on a ship, but that core does not have to be connected to all the other Basic Sensor hexes in the ship.[/img]
 	[img=Minus]Sensor core must be external.[/img]
 >>
