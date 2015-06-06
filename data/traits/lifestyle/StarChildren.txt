@@ -19,11 +19,11 @@ Trait: StarChildren
 	ModAttribute(ImperialBldConstructionRate, Multiply, 0)
 	ModAttribute(CivBldConstructionRate, Multiply, 0)
 
-	IfHaveTrait(Slipstream, LoadDesigns(starchildren/slipstream))
-	IfHaveTrait(Hyperdrive, LoadDesigns(starchildren/hyperdrive))
-	IfHaveTrait(Gate, LoadDesigns(starchildren/other))
-	IfHaveTrait(Fling, LoadDesigns(starchildren/other))
-	IfHaveTrait(Sublight, LoadDesigns(starchildren/other))
+	IfHaveTrait(Slipstream, LoadDesigns(ABEM_defaults/starchildren/slipstream))
+	IfHaveTrait(Hyperdrive, LoadDesigns(ABEM_defaults/starchildren/hyperdrive))
+	IfHaveTrait(Gate, LoadDesigns(ABEM_defaults/starchildren/other))
+	IfHaveTrait(Fling, LoadDesigns(ABEM_defaults/starchildren/other))
+	IfHaveTrait(Sublight, LoadDesigns(ABEM_defaults/starchildren/other))
 
 	UnlockSubsystem(MothershipHull)
 

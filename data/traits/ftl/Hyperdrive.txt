@@ -12,11 +12,11 @@ Trait: Hyperdrive
 
 	UnlockSubsystem(Hyperdrive)
 
-	LoadDesigns(default)
-	LoadDesigns(hyperdrive)
+	LoadDesigns(ABEM_defaults/default)
+	LoadDesigns(ABEM_defaults/hyperdrive)
 
-	IfHaveTrait(Verdant, LoadDesigns(verdant/default))
-	IfHaveTrait(Verdant, LoadDesigns(verdant/hyperdrive))
+	IfHaveTrait(Verdant, LoadDesigns(ABEM_defaults/verdant/default))
+	IfHaveTrait(Verdant, LoadDesigns(ABEM_defaults/verdant/hyperdrive))
 
-	IfHaveTrait(Devout, LoadDesigns(devout/default))
-	IfHaveTrait(Devout, LoadDesigns(devout/hyperdrive))
+	IfHaveTrait(Devout, LoadDesigns(ABEM_defaults/devout/default))
+	IfHaveTrait(Devout, LoadDesigns(ABEM_defaults/devout/hyperdrive))

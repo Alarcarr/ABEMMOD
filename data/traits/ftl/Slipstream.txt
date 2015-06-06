@@ -11,16 +11,16 @@ Trait: Slipstream
 
 	UnlockSubsystem(Slipstream)
 
-	LoadDesigns(default)
-	LoadDesigns(not_hyperdrive)
-	LoadDesigns(slipstream)
+	LoadDesigns(ABEM_defaults/default)
+	LoadDesigns(ABEM_defaults/not_hyperdrive)
+	LoadDesigns(ABEM_defaults/slipstream)
 
-	IfHaveTrait(Verdant, LoadDesigns(verdant/default))
-	IfHaveTrait(Verdant, LoadDesigns(verdant/not_hyperdrive))
-	IfHaveTrait(Verdant, LoadDesigns(verdant/slipstream))
+	IfHaveTrait(Verdant, LoadDesigns(ABEM_defaults/verdant/default))
+	IfHaveTrait(Verdant, LoadDesigns(ABEM_defaults/verdant/not_hyperdrive))
+	IfHaveTrait(Verdant, LoadDesigns(ABEM_defaults/verdant/slipstream))
 
-	IfHaveTrait(Devout, LoadDesigns(devout/default))
-	IfHaveTrait(Devout, LoadDesigns(devout/not_hyperdrive))
-	IfHaveTrait(Devout, LoadDesigns(devout/slipstream))
+	IfHaveTrait(Devout, LoadDesigns(ABEM_defaults/devout/default))
+	IfHaveTrait(Devout, LoadDesigns(ABEM_defaults/devout/not_hyperdrive))
+	IfHaveTrait(Devout, LoadDesigns(ABEM_defaults/devout/slipstream))
 
 	IfNotHaveTrait(StarChildren, SpawnShip(Slipstream Generator))

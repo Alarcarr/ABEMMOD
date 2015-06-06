@@ -11,14 +11,14 @@ Trait: Gate
 
 	UnlockSubsystem(GateModule)
 
-	LoadDesigns(default)
-	LoadDesigns(not_hyperdrive)
-	LoadDesigns(gate)
+	LoadDesigns(ABEM_defaults/default)
+	LoadDesigns(ABEM_defaults/not_hyperdrive)
+	LoadDesigns(ABEM_defaults/gate)
 
-	IfHaveTrait(Verdant, LoadDesigns(verdant/default))
-	IfHaveTrait(Verdant, LoadDesigns(verdant/not_hyperdrive))
-	IfHaveTrait(Verdant, LoadDesigns(verdant/gate))
+	IfHaveTrait(Verdant, LoadDesigns(ABEM_defaults/verdant/default))
+	IfHaveTrait(Verdant, LoadDesigns(ABEM_defaults/verdant/not_hyperdrive))
+	IfHaveTrait(Verdant, LoadDesigns(ABEM_defaults/verdant/gate))
 
-	IfHaveTrait(Devout, LoadDesigns(devout/default))
-	IfHaveTrait(Devout, LoadDesigns(devout/not_hyperdrive))
-	IfHaveTrait(Devout, LoadDesigns(devout/gate))
+	IfHaveTrait(Devout, LoadDesigns(ABEM_defaults/devout/default))
+	IfHaveTrait(Devout, LoadDesigns(ABEM_defaults/devout/not_hyperdrive))
+	IfHaveTrait(Devout, LoadDesigns(ABEM_defaults/devout/gate))
