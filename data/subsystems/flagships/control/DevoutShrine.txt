@@ -17,6 +17,7 @@ Subsystem: DevoutShrine
 	Size := HexSize * Hexes
 	ShieldCapacity := Size * 60
 	ShieldRegen := Size * 0.35
+	ShieldHexes := Hexes
 
 	Hex.Resistance := 0.5
 	Hex.HP := 12 * HexSize
