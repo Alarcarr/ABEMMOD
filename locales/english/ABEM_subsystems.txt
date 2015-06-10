@@ -57,6 +57,15 @@ S_DEFENSIVEMATRIX: Matrix Capacity
 // ******************SUBSYSTEMS HERE!***********************
 // *********************************************************
 
+S_CLOAKPLATING_DESC: <<
+	Fully covering a ship in a mesh of hyperabsorbant material allows it to avoid detection by enemies outside immediate visual range.
+
+	[img=Plus]When activated, fleet cannot be seen from more than 100 units.[/img]
+	[img=ResourceIcon::2;22]Cloak slowly drains [b][color=#42b4bd]Energy[/color][/b] when active.[/img]
+	[img=Minus]Cloak is broken when the fleet enters combat.[/img]
+	[img=Minus]While cloaked, sensor range is reduced by 65%. The range reduction has a priority of 500.[/img]
+	[img=MenuIcons::3;20][color=#aaa]The ship's exterior must be fully covered in cloaking mesh in order to successfully cloak.[/color][/img]
+>>
 S_CONTROLCHAIR: Neural Interface Chair
 S_CONTROLCHAIR_DESC: <<
 	A neural interface linked into all the ship's systems allows a single officer to single-handedly control massive battlecruisers whilst sitting in a comfortable chair.

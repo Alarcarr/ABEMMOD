@@ -48,4 +48,4 @@ Subsystem: StationHull
 	AddShipModifier: FireArcFactor(2.0)
 	AddShipModifier: TrackingFactor(2.0)
 	AddShipModifier: DamageFactor(1.2)
-	AddShipModifier: SensorFactor(2.0)
+	AddShipModifier: SensorFactor(1.0)

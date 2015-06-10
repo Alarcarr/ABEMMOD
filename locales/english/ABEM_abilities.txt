@@ -1,4 +1,4 @@
-ABL_OVERCHARGE_FLEET_DESC: <<
+﻿ABL_OVERCHARGE_FLEET_DESC: <<
 	Increase the targeted fleet's effectiveness by 40%.
 
 	A fleet can only be upgraded once.
@@ -137,4 +137,9 @@ ABL_DEPLOY_EXPLOITATION_PLATFORMS_DESC: <<
 	Construct a number of orbital exploitation platforms to strip-mine a planet.
 
 	Will automatically construct an amount of exploitation platforms to match the native resource level.
+>>
+ABL_CLOAK_DESC: <<
+	Toggle whether the ship is currently cloaked.
+
+	Cloaking makes the fleet invisible to anything more than 100 units away, but it costs a small amount of energy per second to maintain and breaks as soon as the fleet enters combat. Additionally, the fleet's sensor range is reduced by 65% at a priority of 500.
 >>

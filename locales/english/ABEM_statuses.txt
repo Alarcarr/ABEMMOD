@@ -65,3 +65,8 @@ STATUS_ENVOY_DESC: <<
 >>
 STATUS_ORB_EXP_PLATFORMS_DESC: This planet is being strip-mined by automated orbital exploitation platforms.
 STATUS_PROGENITOR_COMPUTER_BOOST_DESC: Heavy computation done by the Progenitor-designed control computer aboard the flagship is significantly increasing this fleet's efficiency and combat strength for the first 60 seconds of any combat.
+STATUS_CLOAKED_DESC: <<
+	This fleet is currently cloaked, and cannot be seen from distances in excess of 100 units.
+
+	Cloaking costs a small amount of energy per second to maintain and breaks as soon as the fleet enters combat. Additionally, the fleet's sensor range is reduced by 65% with a priority of 500.
+>>
