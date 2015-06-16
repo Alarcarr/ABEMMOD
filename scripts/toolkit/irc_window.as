@@ -1,4 +1,4 @@
-import elements.BaseGuiElement;
+﻿import elements.BaseGuiElement;
 import elements.GuiDraggable;
 import elements.GuiPanel;
 import elements.GuiTextbox;
@@ -586,6 +586,7 @@ class IRCWindow : GuiDraggable {
 
 		if(IRC.channelCount == 0) {
 			IRC.join("#starruler");
+			IRC.join("#abem");
 			return;
 		}
 

@@ -1,0 +1,2 @@
+OPT_AUTO_IRC: Automatically Connect to IRC
+OPTTT_AUTO_IRC: When toggled on, the game will automatically connect to the IRC and join the #starruler and #abem channels when started.

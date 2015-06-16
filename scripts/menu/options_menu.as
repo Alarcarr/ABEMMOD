@@ -189,6 +189,14 @@ class GameOptions : OptionsBox {
 		setMarkupTooltip(toggle, locale::OPTTT_HOLD_FOR_POPUP);
 		options.insertLast(toggle);
 
+		y += 34;
+		GuiEngineToggle IRCtoggle(
+			panel, recti_area(8, y,  278, 28),
+			locale::OPT_AUTO_IRC, "bAutoEnableIRC"
+		);
+		setMarkupTooltip(IRCtoggle, locale::OPTTT_AUTO_IRC);
+		options.insertLast(IRCtoggle);
+
 		y += 38;
 		options.insertLast(GuiEngineToggle(
 			panel, recti_area(8, y,  550, 28),
