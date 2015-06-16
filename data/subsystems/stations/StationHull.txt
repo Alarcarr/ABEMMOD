@@ -32,6 +32,7 @@ Subsystem: StationHull
 		Message: #ERROR_NEED_CONTROL
 
 	RequirePrayer := 0
+	HasSinew := 0
 	Assert: (RequirePrayer == 0) || (Sum.Prayer > 0)
 		Message: #ERROR_NEED_PRAYER
 
