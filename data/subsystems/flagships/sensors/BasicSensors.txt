@@ -16,7 +16,7 @@ Subsystem: BasicSensors
 
 	Ship.ExternalHexes := Ship.ExternalHexes + ExteriorHexes
 
-	Control := round(pow(Size / ShipSize, 3) * 100 / (Sum.HasSinew * 2))
+	Control := round(pow(Size / ShipSize, 3) * 100 / (Sum.HasSinew + 1))
 
 	Modifier: SensorFactor(factor)
 		SensorRange := SensorRange * factor
