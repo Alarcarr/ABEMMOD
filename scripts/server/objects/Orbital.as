@@ -4,6 +4,7 @@ import object_creation;
 import orbitals;
 import saving;
 import util.target_search;
+import ABEMCombat;
 
 const int STRATEGIC_RING = -1;
 const double RECOVERY_TIME = 3.0 * 60.0;
@@ -25,11 +26,15 @@ class OrbitalScript {
 	bool deltaHP = false;
 	bool deltaOrbit = false;
 	bool disabled = false;
+	bool derelict = false;
 
 	double Health = 0;
 	double MaxHealth = 0;
 	double Armor = 0;
 	double MaxArmor = 0;
+	double Shield = 0;
+	double MaxShield = 0;
+	double ShieldRegen = 0;
 	double DR = 2.5;
 	double DPS = 0;
 
@@ -46,9 +51,13 @@ class OrbitalScript {
 		file << MaxHealth;
 		file << Armor;
 		file << MaxArmor;
+		file << Shield;
+		file << MaxShield;
+		file << ShieldRegen;
 		file << DR;
 		file << contestion;
 		file << disabled;
+		file << derelict;
 		file << DPS;
 		file << obj.usingLabor;
 		file << isFree;
@@ -108,11 +117,15 @@ class OrbitalScript {
 		file >> MaxHealth;
 		file >> Armor;
 		file >> MaxArmor;
+		file >> Shield;
+		file >> MaxShield;
+		file >> ShieldRegen;
 		file >> DR;
 		if(file >= SV_0014) {
 			file >> contestion;
 			file >> disabled;
 		}
+		file >> derelict;
 		if(file >= SV_0042) {
 			file >> DPS;
 			file >> obj.usingLabor;
@@ -237,6 +250,7 @@ class OrbitalScript {
 			msg << sections[i];
 		msg << contestion;
 		msg << disabled;
+		msg << derelict;
 	}
 
 	void _writeHP(const Orbital& obj, Message& msg) {
@@ -244,6 +258,9 @@ class OrbitalScript {
 		msg << MaxHealth;
 		msg << Armor;
 		msg << MaxArmor;
+		msg << Shield;
+		msg << MaxShield;
+		msg << ShieldRegen;
 		msg << DR;
 		msg << DPS;
 	}
@@ -411,6 +428,17 @@ class OrbitalScript {
 		Health = clamp(Health, 0, MaxHealth);
 		deltaHP = true;
 	}
+	
+	void modMaxShield(double value) {
+		MaxShield += value;
+		Shield = clamp(Shield, 0, MaxShield);
+		deltaHP = true;
+	}
+	
+	void modShieldRegen(double value) {
+		ShieldRegen += value;
+		deltaHP = true;
+	}
 
 	void modDR(double value) {
 		DR += value;
@@ -536,6 +564,37 @@ class OrbitalScript {
 			v *= owner.OrbitalArmorMod;
 		return v;
 	}
+	
+	double get_shield(Orbital& orb) {
+		double v = Shield;
+		Empire@ owner = orb.owner;
+		if(owner !is null)
+			v *= owner.OrbitalShieldMod;
+		return v;
+	}
+	
+	double get_maxShield(Orbital& orb) {
+		double v = MaxShield;
+		Empire@ owner = orb.owner;
+		if(owner !is null)
+			v *= owner.OrbitalShieldMod;
+		return v;
+	}
+	
+	double get_shieldRegen(Orbital& orb) {
+		double v = ShieldRegen;
+		Empire@ owner = orb.owner;
+		if(owner !is null)
+			v *= owner.OrbitalShieldMod;
+		return v;
+	}
+	
+	double get_shieldMod(Orbital& orb) {
+		Empire@ owner = orb.owner;
+		if(owner !is null)
+			return owner.OrbitalShieldMod;
+		else return 1;
+	}
 
 	void addSection(Orbital& obj, uint typeId) {
 		auto@ type = getOrbitalModule(typeId);
@@ -568,9 +627,12 @@ class OrbitalScript {
 			obj.noCollide = !type.isSolid;
 			MaxHealth = type.health;
 			MaxArmor = type.armor;
+			MaxShield = type.shield;
+			ShieldRegen = type.shieldRegen;
 
 			Health = MaxHealth;
 			Armor = MaxArmor;
+			Shield = 0;
 			if(disabled) {
 				Health *= 0.25;
 				Armor *= 0.25;
@@ -598,13 +660,16 @@ class OrbitalScript {
 				if(this.disabled || sec.shouldDisable(obj)) {
 					sec.disable(obj);
 					delta = true;
-					if(sec.type.health != 0 || sec.type.armor != 0) {
+					if(sec.type.health != 0 || sec.type.armor != 0 || sec.type.shield != 0 || sec.type.shieldRegen != 0) {
 						if(sec !is core) {
 							deltaHP = true;
 							MaxHealth -= sec.type.health;
 							Health = min(Health, MaxHealth);
 							MaxArmor -= sec.type.armor;
 							Armor = min(Armor, MaxArmor);
+							MaxShield -= sec.type.shield;
+							Shield = min(Shield, MaxShield);
+							ShieldRegen -= sec.type.shieldRegen;
 						}
 					}
 				}
@@ -612,13 +677,16 @@ class OrbitalScript {
 					if(!reqs.add(sec.type)) {
 						sec.disable(obj);
 						delta = true;
-						if(sec.type.health != 0 || sec.type.armor != 0) {
+						if(sec.type.health != 0 || sec.type.armor != 0 || sec.type.shield != 0 || sec.type.shieldRegen != 0) {
 							if(sec !is core) {
 								deltaHP = true;
 								MaxHealth -= sec.type.health;
 								Health = min(Health, MaxHealth);
 								MaxArmor -= sec.type.armor;
 								Armor = min(Armor, MaxArmor);
+								MaxShield -= sec.type.shield;
+								Shield = min(Shield, MaxShield);
+								ShieldRegen -= sec.type.shieldRegen;
 							}
 						}
 					}
@@ -629,10 +697,13 @@ class OrbitalScript {
 					if(reqs.add(sec.type)) {
 						sec.enable(obj);
 						delta = true;
-						if(sec.type.health != 0 || sec.type.armor != 0) {
+						if(sec.type.health != 0 || sec.type.armor != 0 || sec.type.shield != 0 || sec.type.shieldRegen != 0) {
 							if(sec !is core) {
 								MaxHealth += sec.type.health;
 								MaxArmor += sec.type.armor;
+								MaxShield += sec.type.shield;
+								ShieldRegen += sec.type.shieldRegen;
+								
 								deltaHP = true;
 							}
 						}
@@ -695,6 +766,9 @@ class OrbitalScript {
 				Health = min(Health, MaxHealth);
 				MaxArmor -= sec.type.armor;
 				Armor = min(Armor, MaxArmor);
+				MaxShield -= sec.type.shield;
+				Shield = min(Shield, MaxShield);
+				ShieldRegen -= sec.type.shieldRegen;
 				sections.removeAt(i);
 				checkSections(obj);
 				delta = true;
@@ -926,17 +1000,56 @@ class OrbitalScript {
 		if(!obj.valid || obj.destroying)
 			return;
 
-		double armorMod = 1.0, healthMod = 1.0;
-		double armor = Armor, health = Health;
+		double armorMod = 1.0, healthMod = 1.0, shieldMod = 1.0;
+		double armor = Armor, health = Health, shield = Shield, maxShield = MaxShield;
 		if(obj.owner !is null) {
 			armorMod = obj.owner.OrbitalArmorMod;
 			healthMod = obj.owner.OrbitalHealthMod;
+			shieldMod = obj.owner.OrbitalShieldMod;
 
 			armor *= armorMod;
 			health *= healthMod;
+			shield *= shieldMod;
+			maxShield *= shieldMod;
 		}
 
 		obj.engaged = true;
+		
+		if(shield > 0) {
+			if(evt.flags & DF_FullShieldBleedthrough == 0) { // This ensures that weapons such as Progenitor drones can go through with impunity.
+				if(maxShield <= 0.0)
+					maxShield = shield;
+					
+				double dmgScale = (evt.damage * shield) / (maxShield * maxShield);
+				if(dmgScale < 0.01) {
+				//TODO: Simulate this effect on the client
+				if(randomd() < dmgScale / 0.001)
+					playParticleSystem("ShieldImpactLight", obj.position + evt.impact.normalized(obj.radius * 0.9), quaterniond_fromVecToVec(vec3d_front(), evt.impact), obj.radius, obj.visibleMask, networked=false);
+				}
+				else if(dmgScale < 0.05) {
+					playParticleSystem("ShieldImpactMedium", obj.position + evt.impact.normalized(obj.radius * 0.9), quaterniond_fromVecToVec(vec3d_front(), evt.impact), obj.radius, obj.visibleMask);
+				}
+				else {
+					playParticleSystem("ShieldImpactHeavy", obj.position + evt.impact.normalized(obj.radius * 0.9), quaterniond_fromVecToVec(vec3d_front(), evt.impact), obj.radius, obj.visibleMask, networked=false);
+				}
+				
+				double block;
+				if(maxShield > 0 && evt.flags & DF_NoShieldBleedthrough == 0) // This makes sure all damage is applied to shields first.
+					block = min(shield * min(shield / maxShield, 1.0), evt.damage)
+				else
+					block = min(shield, evt.damage);
+					
+				shield -= block;
+				evt.damage -= block;
+				deltaHP = true;
+				
+				Shield = shield / shieldMod;
+				
+				if(evt.damage <= 0.0)
+					return;
+			}
+		}
+		
 		if(armor > 0) {
 			evt.damage = max(0.2 * evt.damage, evt.damage - DR);
 			double dealArmor = min(evt.damage, armor);
@@ -947,14 +1060,21 @@ class OrbitalScript {
 		if(evt.damage > health) {
 			evt.damage -= health;
 			health = 0.0;
-			obj.destroy();
-
-			Empire@ killer;
-			if(evt.obj !is null)
-				@killer = evt.obj.owner;
-			for(uint i = 0, cnt = sections.length; i < cnt; ++i) {
-				if(sections[i].enabled)
-					sections[i].kill(obj, killer);
+			if(!derelict && evt.obj !is null) {
+				obj.destroy();
+	
+				Empire@ killer;
+				if(evt.obj.owner !is null)
+					@killer = evt.obj.owner;
+				for(uint i = 0, cnt = sections.length; i < cnt; ++i) {
+					if(sections[i].enabled)
+						sections[i].kill(obj, killer);
+				}
+			}
+			else {
+				deltaHP = true;
+				Armor = armor / armorMod;
+				Health = health / healthMod;
 			}
 			return;
 		}
@@ -1042,7 +1162,7 @@ class OrbitalScript {
 		}
 
 		//Repair
-		if(!disabled && ((core !is null && core.type.combatRepair) || !obj.inCombat)) {
+		if(!disabled && ((core !is null && core.type.combatRepair) || !obj.inCombat) && !derelict) {
 			double recover = time * ((MaxHealth + MaxArmor) / RECOVERY_TIME);
 			if(obj.inCombat)
 				recover *= COMBAT_RECOVER_RATE;
@@ -1055,6 +1175,15 @@ class OrbitalScript {
 			}
 			if(recover > 0 && Armor < MaxArmor) {
 				Armor = clamp(Armor + recover, 0, MaxArmor);
+				deltaHP = true;
+			}
+		}
+		
+		// Regenerate shields
+		if(!disabled || (core !is null && core.type.alwaysRegenShield) && !derelict) {
+			if(Shield < MaxShield) {
+				double regen = min(ShieldRegen, MaxShield - Shield);
+				Shield = clamp(Shield + regen, 0, MaxShield);
 				deltaHP = true;
 			}
 		}

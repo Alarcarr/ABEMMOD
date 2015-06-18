@@ -5,7 +5,7 @@ Ability: DefensiveMatrix
 	Target: targ = Object
 	Range: 500
 	Cooldown: 90
-	TargetFilterType(targ, Type = Ship)
+	Either(TargetFilterFlagship(targ), TargetFilterType(targ, Orbital))
 	TargetFilterAllied(targ)
 	ABEM_hooks::AddOwnedStatus(targ, DefensiveMatrix, Duration = 60)
 	TriggerBeamEffect(targ, 0.25, #063e7b, ShieldTransfer, Width = 0.25)

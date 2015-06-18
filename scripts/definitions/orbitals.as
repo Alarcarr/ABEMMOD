@@ -76,6 +76,8 @@ class OrbitalModule {
 
 	double health = 0;
 	double armor = 0;
+	double shield = 0;
+	double shieldRegen = 0;
 	double spin = 30.0;
 
 	bool isCore = true;
@@ -84,7 +86,9 @@ class OrbitalModule {
 	bool isUnique = true;
 
 	bool combatRepair = true;
+	bool alwaysRegenShield = false;
 	bool canFling = true;
+	bool immuneToRadiation = false;
 
 	array<IOrbitalEffect@> hooks;
 
@@ -639,6 +643,12 @@ void loadOrbitalModules(const string& filename) {
 		else if(key.equals_nocase("Armor")) {
 			mod.armor = toDouble(value);
 		}
+		else if(key.equals_nocase("Shield Capacity")) {
+			mod.shield = toDouble(value);
+		}
+		else if(key.equals_nocase("Shield Regeneration")) {
+			mod.shieldRegen = toDouble(value);
+		}
 		else if(key.equals_nocase("Size")) {
 			mod.size = toDouble(value);
 		}
@@ -653,6 +663,12 @@ void loadOrbitalModules(const string& filename) {
 		}
 		else if(key.equals_nocase("Can Fling")) {
 			mod.canFling = toBool(value);
+		}
+		else if(key.equals_nocase("Always Regenerate Shields")) {
+			mod.alwaysRegenShield = toBool(value);
+		}
+		else if(key.equals_nocase("Immune To Radiation")) {
+			mod.immuneToRadiation = toBool(value);
 		}
 		else if(key.equals_nocase("Require Affinity")) {
 			array<string>@ parts = value.split(" ");

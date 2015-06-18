@@ -74,6 +74,7 @@ visible:
 	attribute double PlanetDecaySpeed = 1
 	attribute double OrbitalHealthMod = 1
 	attribute double OrbitalArmorMod = 1
+	attribute double OrbitalShieldMod = 1
 	attribute double EnergyGenerationFactor = 1
 	attribute double StaticDamageFactor = 1
 	attribute double ArtifactsActivated = 0

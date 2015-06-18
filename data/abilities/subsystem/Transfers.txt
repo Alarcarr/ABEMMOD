@@ -4,7 +4,7 @@ Ability: SupplyTransfer
 	Icon: AttributeIcons::4
 	Range: 500
 	Target: targ = Object
-	Either(ABEM_hooks::TargetRequireCommand(targ), TargetFilterType(targ, Orbital))
+	TargetFilterFlagship(targ)
 	IsToggleTarget(targ)
 	TargetFilterNotSelf(targ)
 	TargetFilterAllied(targ, Allow Null = True)
@@ -21,4 +21,4 @@ Ability: ShieldTransfer
 	TargetFilterAllied(targ, Allow Null = True)
 	TargetFilterNotSelf(targ)
 	PersistentBeamEffect(targ, #086786, ShieldTransfer, Width = 0.25)
-	ABEM_hooks::TargetRequireCommand(targ)
+	Either(TargetFilterFlagship(targ), TargetFilterType(targ, Orbital))

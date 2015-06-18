@@ -607,6 +607,22 @@ class ApplyToShips : StatusHook {
 	}
 };
 
+class ApplyToShielded : StatusHook {
+	Document doc("When this status is added to a system, it only applies to non-stellar objects capable of having shields - ships and orbitals.");
+
+	bool shouldApply(Empire@ emp, Region@ region, Object@ obj) const override {
+		return obj !is null && (obj.isShip || obj.isOrbital);
+	}
+};
+
+class ApplyToLeaderAI : StatusHook {
+	Document doc("When this status is added to a system, it only applies to objects capable of containing support ships - planets, ships and orbitals.");
+
+	bool shouldApply(Empire@ emp, Region@ region, Object@ obj) const override {
+		return obj !is null && obj.hasLeaderAI;
+	}
+};
+
 class ApplyToStars : StatusHook {
 	Document doc("When this status is added to a system, it only applies to stars.");
 	
@@ -678,8 +694,14 @@ class IsDerelict : StatusHook {
 
 #section server
 	void onCreate(Object& obj, Status@ status, any@ data) override {
-		Ship@ ship = cast<Ship>(obj);
+		Ship@ ship;
+		Orbital@ orb;
+		if(obj.isShip)
+			@ship = cast<Ship>(obj);
+		if(obj.isOrbital)
+			@orb = cast<Orbital>(obj);
 		DerelictData info;
+		data.store(@info);
 		if(obj is null || !obj.valid)
 			return;
 		if(ship !is null) {
@@ -689,7 +711,12 @@ class IsDerelict : StatusHook {
 			ship.MaxShield -= info.shield;
 			ship.Supply = 0;
 			ship.Shield = 0;
-			data.store(@info);
+		}
+		else if(orb !is null) {
+			info.shield = orb.MaxShield;
+			orb.MaxShield -= info.shield;
+			orb.Shield = 0;
+			orb.derelict = true;
 		}
 		obj.engaged = true;
 		obj.rotationSpeed = 0;
@@ -701,10 +728,19 @@ class IsDerelict : StatusHook {
 		data.retrieve(@info);
 		if(obj is null || !obj.valid)
 			return;
-		Ship@ ship = cast<Ship>(obj);
-		if(ship !is null) {
-			ship.modSupplyBonus(+info.supply);
-			ship.MaxShield += info.shield;
+		if(obj.isShip) {
+			Ship@ ship = cast<Ship>(obj);
+			if(ship !is null) {
+				ship.modSupplyBonus(+info.supply);
+				ship.MaxShield += info.shield;
+			}
+		}
+		if(obj.isOrbital) {
+			Orbital@ orb = cast<Orbital>(obj);
+			if(orb !is null) {
+				orb.derelict = false;
+				orb.MaxShield += info.shield;
+			}
 		}
 		obj.engaged = false;
 		obj.rotationSpeed = 0.1;
@@ -715,17 +751,28 @@ class IsDerelict : StatusHook {
 		data.retrieve(@info);
 		if(obj is null || !obj.valid)
 			return false;
-		Ship@ ship = cast<Ship>(obj);
-		if(ship !is null) {
-			if(ship.MaxSupply > 0)
-				info.supply += ship.MaxSupply;
-			if(ship.MaxShield > 0)
-				info.shield += ship.MaxShield;
-			ship.Supply = 0;
-			ship.Shield = 0;
-			ship.modSupplyBonus(-ship.MaxSupply);
-			ship.MaxShield -= ship.MaxShield;
+		if(obj.isShip) {
+			Ship@ ship = cast<Ship>(obj);
+			if(ship !is null) {
+				if(ship.MaxSupply > 0)
+					info.supply += ship.MaxSupply;
+				if(ship.MaxShield > 0)
+					info.shield += ship.MaxShield;
+				ship.Supply = 0;
+				ship.Shield = 0;
+				ship.modSupplyBonus(-ship.MaxSupply);
+				ship.MaxShield -= ship.MaxShield;
+			}
 		}
+		else if(obj.isOrbital) {
+			Orbital@ orb = cast<Orbital>(obj);
+			if(orb !is null) {
+				if(orb.MaxShield != 0)
+					info.shield += orb.MaxShield;
+				orb.Shield = 0;
+				orb.MaxShield -= orb.MaxShield;
+			}
+		}				
 		if(decay.boolean) {
 			DamageEvent dmg;
 			dmg.damage = 1.0 * time;
@@ -1189,7 +1236,7 @@ class AddStellarShield : StatusHook {
 }
 
 class AddShieldCapacity : StatusHook {
-	Document doc("Temporarily adds a certain amount of shield capacity to the ship affected by this status.");
+	Document doc("Temporarily adds a certain amount of shield capacity to the ship or orbital affected by this status.");
 	Argument value("Capacity Subsystem Value", AT_Custom, doc="The subsystem value to use when calculating the added shield capacity.");
 	Argument preset("Default Capacity", AT_Decimal, "500.0", doc="The default amount of shield capacity to add if the subsystem value cannot be found or is zero. Defaults to 500.0.");
 	Argument startOn("Start On", AT_Boolean, "true", doc="Whether to add additional shield HP equivalent to the added capacity. Defaults to true.");
@@ -1199,8 +1246,14 @@ class AddShieldCapacity : StatusHook {
 		// Calculating shield power.
 		double bonus = 0;
 		bool castedBySubsystem = true;
-		Ship@ ship = cast<Ship>(obj);
-		if(ship is null)
+		Ship@ ship;
+		Orbital@ orb;
+
+		if(obj.isShip)
+			@ship = cast<Ship>(obj);
+		else if(obj.isOrbital)
+			@orb = cast<Orbital>(obj);
+		if(ship is null && orb is null)
 			return;
 		Ship@ caster = cast<Ship>(status.originObject);
 		if(caster !is null)
@@ -1209,9 +1262,16 @@ class AddShieldCapacity : StatusHook {
 			castedBySubsystem = false;
 			bonus = preset.decimal;
 		
-		ship.MaxShield += bonus;
-		if(startOn.boolean)
-			ship.Shield += bonus;
+		if(obj.isShip) {
+			ship.MaxShield += bonus;
+			if(startOn.boolean)
+				ship.Shield += bonus;
+		}
+		else if(obj.isOrbital) {
+			orb.MaxShield += bonus;
+			if(startOn.boolean)
+				orb.Shield += bonus;
+		}
 		ShieldData info;
 		info.bonus = bonus;
 		info.castedBySubsystem = castedBySubsystem;
@@ -1219,14 +1279,21 @@ class AddShieldCapacity : StatusHook {
 	}
 	
 	void onDestroy(Object& obj, Status@ status, any@ data) override {
-		Ship@ ship = cast<Ship>(obj);
 		double bonus = 0;
 		ShieldData@ info;
 		data.retrieve(@info);
 		bonus = info.bonus;
-		ship.MaxShield -= bonus;
-		if(ship.MaxShield < ship.Shield)
-			ship.Shield = ship.MaxShield;
+		if(obj.isShip) {
+			Ship@ ship = cast<Ship>(obj);
+			ship.MaxShield -= bonus;
+			if(ship.MaxShield < ship.Shield)
+				ship.Shield = ship.MaxShield;
+		}
+		else if(obj.isOrbital) {
+			orb.MaxShield -= bonus;
+			if(orb.MaxShield < orb.Shield)
+				orb.Shield = orb.MaxShield;
+		}
 	}
 	
 	void save(Status@ status, any@ data, SaveFile& file) const {
@@ -1274,9 +1341,9 @@ class HealShieldFromSubsystem : AbilityHook {
 			return true;
 		if(targ.obj is null)
 			return false;
-		if(targ.obj.isShip && mode.integer == 0)
+		if((targ.obj.isShip || targ.obj.isOrbital) && mode.integer == 0)
 			return true;
-		if(targ.obj.hasLeaderAI && (targ.obj.supportCount > 0 || targ.obj.isShip))
+		if(targ.obj.hasLeaderAI && (targ.obj.supportCount > 0 || targ.obj.isShip || targ.obj.isOrbital))
 			return true;
 		return false;
 	}		
@@ -1328,6 +1395,8 @@ class HealShieldFromSubsystem : AbilityHook {
 		if(mode.integer == 0){
 			if(target.isShip)
 				cast<Ship>(target).Shield += repair;
+			else if(target.isOrbital)
+				cast<Orbital>(target).Shield += repair / cast<Orbital>(target).shieldMod;
 		}
 		else{
 			if(target.supportCount > 0) {
@@ -1359,6 +1428,8 @@ class HealShieldFromSubsystem : AbilityHook {
 			}
 			if(target.isShip)
 				cast<Ship>(target).Shield = min(cast<Ship>(target).Shield + repair, cast<Ship>(target).MaxShield);
+			else if(target.isOrbital)
+				cast<Orbital>(target).Shield = min(cast<Orbital>(target).Shield + repair / cast<Orbital>(target).shieldMod, cast<Orbital>(target).MaxShield);
 		}
 	}
 #section all

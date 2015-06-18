@@ -10,53 +10,104 @@ import empire;
 import components.Abilities;
 #section all
 
+class ShieldData {
+	double shield = 0;
+	double maxShield = 0;
+}
+
 class DisableShields : StatusHook {
-	Document doc("Disables the shields of the ship affected by this status.");
-	Argument preserve("Preserve Power", AT_Boolean, "False", doc="Whether the ship's shields should be set to their previous strength once the status is disabled.");
+	Document doc("Disables the shields of the ship or orbital affected by this status.");
+	Argument preserve("Preserve Power", AT_Boolean, "False", doc="Whether the object's shields should be set to their previous strength once the status is disabled.");
 	
 #section server
 	void onCreate(Object& obj, Status@ status, any@ data) override {
-		Ship@ ship = cast<Ship>(obj);
-		if(ship !is null) {
-			if(preserve.boolean)
-				data.store(ship.Shield);
-			else
-				data.store(0);
-			ship.Shield = 0;
-			ship.MaxShield = 0;
+		ShieldData info;
+		data.store(@info);
+		if(obj.isShip) {
+			Ship@ ship = cast<Ship>(obj);
+			if(ship !is null) {
+				if(preserve.boolean)
+					info.shield = ship.Shield;;
+				ship.Shield = 0;
+				ship.MaxShield = 0;
+			}
+		}
+		else if(obj.isOrbital) {
+			Orbital@ orb = cast<Orbital>(obj);
+			if(orb !is null) {
+				if(preserve.boolean)
+					info.shield = orb.Shield;
+				info.maxShield = orb.MaxShield;
+				orb.Shield = 0;
+				orb.MaxShield = 0;
+			}
 		}
 	}
 	
 	void onDestroy(Object& obj, Status@ status, any@ data) override {
-		Ship@ ship = cast<Ship>(obj);
-		double shield = 0;
-		if(ship !is null)
-			ship.MaxShield = ship.blueprint.getEfficiencySum(SV_ShieldCapacity);
-			data.retrieve(shield);
-			ship.Shield = shield;
+		ShieldData@ info;
+		data.retrieve(@info);
+		if(obj.isShip) {
+			Ship@ ship = cast<Ship>(obj);
+			if(ship !is null)
+				ship.MaxShield += ship.blueprint.getEfficiencySum(SV_ShieldCapacity);
+				ship.Shield = min(info.shield, ship.MaxShield);
+			}
+		}
+		else if(obj.isOrbital) {
+			Orbital@ orb = cast<Orbital>(obj);
+			if(orb !is null) {
+				orb.MaxShield += info.maxShield;
+				orb.Shield = min(info.shield, orb.MaxShield);
+			}
+		}
 	}
 	
 	bool onTick(Object& obj, Status@ status, any@ data, double time) override {
-		Ship@ ship = cast<Ship>(obj);
-		if(ship !is null) {
-			ship.Shield = 0;
-			ship.MaxShield = 0;
+		ShieldData@ info;
+		data.retrieve(@info);
+		data.store(@info);
+		if(obj.isShip) {
+			Ship@ ship = cast<Ship>(obj);
+			if(ship !is null) {
+				ship.Shield = 0;
+				ship.MaxShield = 0;
+			}
 		}
+		else if(obj.isOrbital) {
+			Orbital@ orb = cast<Orbital>(obj);
+			if(orb !is null) {
+				if(orb.MaxShield != 0) {	
+					info.maxShield += orb.MaxShield;
+					orb.MaxShield = 0;
+				}
+				orb.Shield = 0;
+			}
+		}			
 		return true;
 	}
 	
 	void save(Status@ status, any@ data, SaveFile& file) const {
-		double shield = 0;
-		data.retrieve(shield);
+		ShieldData@ info;
+		data.retrieve(@info);
 
-		file << shield;
+		if(info is null) {
+			double nil = 0;
+			file << nil;
+			file << nil;
+		}
+		else {
+			file << info.shield;
+			file << info.maxShield;
+		}
 	}
 
 	void load(Status@ status, any@ data, SaveFile& file) const {
-		double shield = 0;
+		ShieldData info;
+		data.store(@info);
 		
-		file >> shield;
-		data.store(shield);
+		file >> info.shield;
+		file >> info.maxShield;		
 	}
 #section all
 }
@@ -148,29 +199,50 @@ class DealRandomDamage : StatusHook {
 	
 #section server
 	bool onTick(Object& obj, Status@ status, any@ data, double time) override {
-		Ship@ ship = cast<Ship>(obj);
+		Ship@ ship;
+		Orbital@ orb;
+
+		if(obj.isShip)
+			@ship = cast<Ship>(obj);
+		else if(obj.isOrbital)
+			@orb = cast<Orbital>(obj);
 		double totalHP = 0;
 		if(ship !is null)
 			totalHP = ship.blueprint.design.totalHP;
 		else {
-			Orbital@ orb = cast<Orbital>(obj);
 			if(orb !is null)
 				totalHP = orb.maxHealth + orb.maxArmor;
 		}
 		DamageEvent dmg;
 		dmg.damage = (damage.decimal + damagepct.decimal * totalHP) * time;
-		if(ship !is null && ship.Shield > 0) {
-			double overflow = 0;
-			ship.Shield = max(ship.Shield - shieldpct.decimal * ship.MaxShield, 0.0);
-			overflow = dmg.damage * shieldmult.decimal - ship.Shield;
-			ship.Shield -= dmg.damage * shieldmult.decimal;
-			if(ship.Shield < 0)
-				ship.Shield = 0;
-			if(overflow > 0)
-				dmg.damage = overflow / shieldmult.decimal;
-			else
-				dmg.damage = 0;
+		if(ship !is null) {
+			if(ship.Shield > 0) {
+				double overflow = 0;
+				ship.Shield = max(ship.Shield - shieldpct.decimal * ship.MaxShield, 0.0);
+				overflow = dmg.damage * shieldmult.decimal - ship.Shield;
+				ship.Shield -= dmg.damage * shieldmult.decimal;
+				if(ship.Shield < 0)
+					ship.Shield = 0;
+				if(overflow > 0)
+					dmg.damage = overflow / shieldmult.decimal;
+				else
+					dmg.damage = 0;
+			}
 		}
+		else if(orb !is null) {
+			if(orb.Shield > 0) {
+				double overflow = 0;
+				orb.Shield = max(orb.Shield - shieldpct.decimal * orb.MaxShield, 0.0);
+				overflow = dmg.damage * shieldmult.decimal - orb.Shield * orb.shieldMod;
+				orb.Shield -= dmg.damage * shieldmult.decimal / orb.shieldMod;
+				if(orb.Shield < 0)
+					orb.Shield = 0;
+				if(overflow > 0)
+					dmg.damage = overflow / shieldmult.decimal;
+				else
+					dmg.damage = 0;
+			}
+		}					
 		if(shieldonly.boolean) {
 			dmg.damage = 0;
 		}
@@ -188,17 +260,26 @@ class DealRandomDamage : StatusHook {
 }
 
 class ShieldRegenBoost : StatusHook {
-	Document doc("Boosts the shield regeneration of a ship by a percentage of its own regenerative ability.");
+	Document doc("Boosts the shield regeneration of a ship or orbital by a percentage of its own regenerative ability.");
 	Argument percentage("Percentage", AT_Decimal, "0.1", doc="Percentage boost. Defaults to 0.1 (10% of ship's regeneration).");
 	
 #section server
 	bool onTick(Object& obj, Status@ status, any@ data, double time) override {
 		double regen = 0;
-		Ship@ ship = cast<Ship>(obj);
-		if(ship !is null) {
-			regen = ship.blueprint.getEfficiencySum(SV_ShieldRegen) * percentage.decimal;
-			ship.Shield = min(ship.Shield + regen, ship.MaxShield);
+		if(obj.isShip) {
+			Ship@ ship = cast<Ship>(obj);
+			if(ship !is null) {
+				regen = ship.blueprint.getEfficiencySum(SV_ShieldRegen) * percentage.decimal;
+				ship.Shield = min(ship.Shield + regen, ship.MaxShield);
+			}
 		}
+		else if(obj.isOrbital) {
+			Orbital@ orb = cast<Orbital>(obj);
+			if(orb !is null) {
+				regen = orb.ShieldRegen * percentage.decimal / orb.shieldMod;
+				orb.Shield = min(orb.Shield + regen, orb.MaxShield);
+			}
+		}	
 		return true;
 	}
 #section all
@@ -223,17 +304,33 @@ class KillCrew : StatusHook {
 	bool onTick(Object& obj, Status@ status, any@ data, double time) override {
 		double timeLeft = 0;
 		data.retrieve(timeLeft);
-		Ship@ ship = cast<Ship>(obj);
-		if(ship !is null) {
-			if(ship.Shield > 0) {
-				ship.Shield -= max(damage.decimal, 0.0) + damagepct.decimal * ship.MaxShield;
-				if(ship.Shield < 0)
-					ship.Shield = 0;
+		if(obj.isShip) {
+			Ship@ ship = cast<Ship>(obj);
+			if(ship !is null) {
+				if(ship.Shield > 0) {
+					ship.Shield -= max(damage.decimal, 0.0) + damagepct.decimal * ship.MaxShield;
+					if(ship.Shield < 0)
+						ship.Shield = 0;
+				}
+				if(ship.blueprint.hasTagActive(ST_RemnantComputer))
+					return true;
+				if(ship.Shield > 0 && damage.decimal != -1)
+					timeLeft += time;
 			}
-			if(ship.blueprint.hasTagActive(ST_RemnantComputer))
-				return true;
-			if(ship.Shield > 0 && damage.decimal != -1)
-				timeLeft += time;
+		}
+		else if(obj.isOrbital) {
+			Orbital@ orb = cast<Orbital>(obj);
+			if(orb !is null) {
+				if(orb.Shield > 0) {
+					orb.Shield -= max(damage.decimal / orb.shieldMod, 0.0) + damagepct.decimal * orb.MaxShield;
+					if(orb.Shield < 0)
+						orb.Shield = 0;
+				}
+				if(orb.core !is null && orb.core.type.immuneToRadiation)
+					return true;
+				if(orb.Shield > 0 && damage.decimal != -1)
+					timeLeft += time;
+			}
 		}
 		timeLeft -= time;
 		if(timeLeft < 0 && obj.owner !is Creeps) {
