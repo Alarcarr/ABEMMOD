@@ -12,3 +12,4 @@ Trait: Innovative
 	Costs Points: 1
 
 	ModAttribute(ResearchUnlockSpeed, Add, +100000)
+	ModAttribute(ResearchDecaySpeed, Add, -0.25)

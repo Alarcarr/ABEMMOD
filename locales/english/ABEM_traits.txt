@@ -1,4 +1,7 @@
 TRAIT_VIRILE_DESC: The population on your homeworld grows 30% faster.
+TRAIT_INNOVATIVE_DESC: <<|
+	Unlocking new research nodes does not take any time after purchasing them. Additionally, the rate at which research generation slows down is reduced by 25%.
+>>
 TRAIT_CAT_Handicaps:Handicaps
 
 TRAIT_PROGENITORS: Progenitor Race

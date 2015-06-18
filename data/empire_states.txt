@@ -88,6 +88,7 @@ visible:
 	attribute double ColonizeDevelopTiles = 1
 	attribute double PlanetLevelSupport = 0
 	attribute double ResearchUnlockSpeed = 1
+	attribute double ResearchDecaySpeed = 1
 	attribute double ForbidSecondaryUnlock = 0
 	attribute double DrydockCostFactor = 1
 }
