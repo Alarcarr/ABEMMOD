@@ -1,0 +1,93 @@
+Empire {
+	ResearchGrid Research
+	ResourceManager Resources
+	ObjectManager Objects
+	Attributes Attributes
+	EmpireAI AI
+	EnergyManager EnergyPowers
+	InfluenceManager Influence
+	FleetManager Fleets
+	Notifications Notify
+	Traits TraitManager
+	RandomEvents Events
+	int handicap = 0
+	synced Namespace NS
+	synced Planet$ Homeworld
+	synced Object$ HomeObj
+	synced locked_int PeaceMask
+	synced locked_int ForcedPeaceMask
+	synced locked_int AllyMask
+	synced double TotalMilitary = 0
+	synced locked_int TotalPlanets = 0
+	synced locked_int TotalFlagshipsBuilt = 0
+	synced locked_int TotalFlagshipsActive = 0
+	synced locked_int TotalSupportsBuilt = 0
+	synced locked_int TotalSupportsActive = 0
+	synced locked_int GlobalLoyalty = 0
+	int Victory = 0
+	locked_int DiplomacyPoints = 0
+	int prevPoints = 0
+	bool GlobalCharge = false
+	synced int VotesWonCounter = 0
+	string ColonizerName
+	string ColonizerModel = ColonyShip
+	string ColonizerMaterial = VolkurGenericPBR
+	string RaceName
+	
+	synced locked_double ModHP = 1
+	synced locked_double ModArmor = 1
+	synced locked_double ModShield = 1
+	synced locked_double ModSpeed = 1
+	locked_int CivilianTradeShips = 0
+visible:
+	bool major = false
+	int team = -1
+	synced locked_int points = 0
+	synced int MilitaryStrength = 0
+	synced int PoliticalStrength = 0
+	synced int EmpireStrength = 0
+	synced bool GlobalTrade = false
+	synced locked_int ContactMask = 0
+	synced locked_int TradeMask = 0
+	synced Empire SubjugatedBy
+	synced locked_int PathId = 1
+
+	attribute double RebateInfluenceBuys = 0
+	attribute double ExtraInfluenceBuyCost = 0
+	attribute double InfluencePlacementMod = 0
+	attribute double FireDamageTakenFactor = 1
+	attribute double CaptureSupplyFactor = 1
+	attribute double PopulationGrowthFactor = 1
+	attribute double TileDevelopmentFactor = 1
+	attribute double BuildingConstructRate = 1
+	attribute double FleetEfficiencyFactor = 1
+	attribute double VoteStartSupport = 0
+	attribute double VoteCardCostMod = 0
+	attribute double SupportCardCostMod = 0
+	attribute double WelfareEfficiency = 1
+	attribute double FactoryLaborMod = 0
+	attribute double PlanetSupplyMod = 0
+	attribute double PopulationLevel2Mod = 0
+	attribute double PopulationLevel3Mod = 0
+	attribute double ForgeCount = 0
+	attribute double RevenantParts = 0
+	attribute double PlanetDecaySpeed = 1
+	attribute double OrbitalHealthMod = 1
+	attribute double OrbitalArmorMod = 1
+	attribute double EnergyGenerationFactor = 1
+	attribute double StaticDamageFactor = 1
+	attribute double ArtifactsActivated = 0
+	attribute double CivBldConstructionRate = 1
+	attribute double ImperialBldConstructionRate = 1
+	attribute double FreeEnergyStorage = 0
+	attribute double PopulationPerColonizer = 0.0625
+	attribute double ForbidCityConstruction = 0
+	attribute double ForbidColonization = 0
+	attribute double PopulationDecayFactor = 1
+	attribute double OverpopulationBenefitFactor = 1
+	attribute double ColonizeDevelopTiles = 1
+	attribute double PlanetLevelSupport = 0
+	attribute double ResearchUnlockSpeed = 1
+	attribute double ForbidSecondaryUnlock = 0
+	attribute double DrydockCostFactor = 1
+}
