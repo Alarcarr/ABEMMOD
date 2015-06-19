@@ -9,6 +9,7 @@ Resource: ArtificialPlanetoid
 	Limitless Level: True
 	Can Be Terraformed: False
 	Exportable: False
+	Stealable: False
 
 	RegenSurface(6, 8, Biome Count = 1, Force Biome = Artificial)
 	OnEnable(DevelopTiles(48))
