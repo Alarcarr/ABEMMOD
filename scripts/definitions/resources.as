@@ -1409,7 +1409,8 @@ void loadResources(const string& filename) {
 			r.unique = toBool(value);
 		}
 		else if(key.equals_nocase("Stealable")) {
-			r.stealable = toBool(value);
+			r.stealable = toBool(value);¸
+		}
 		else if(key.equals_nocase("Require Contestation")) {
 			r.requireContestation = toDouble(value);
 		}
