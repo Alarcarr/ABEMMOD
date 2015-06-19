@@ -23,7 +23,7 @@ Subsystem: RechargerModule
 	Module: Default
 
 	Module: Core
-		Sprite: TechIcons::48
+		Sprite: TechIcons::16
 		Hex.BuildCost := 450
 		Hex.MaintainCost := 100
 		Hex.HP := 5000
