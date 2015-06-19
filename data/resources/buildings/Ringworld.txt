@@ -7,6 +7,7 @@ Resource: Ringworld
 	Limitless Level: True
 	Can Be Terraformed: False
 	Exportable: False
+	Stealable: False
 
 	Small Icon: ResourceIconsSmall::105
 
