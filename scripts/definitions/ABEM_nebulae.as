@@ -5,6 +5,7 @@ import artifacts;
 from bonus_effects import BonusEffect;
 import listed_values;
 import region_effects;
+import orbitals;
 #section server
 import empire;
 import components.Abilities;
@@ -27,7 +28,7 @@ class DisableShields : StatusHook {
 			Ship@ ship = cast<Ship>(obj);
 			if(ship !is null) {
 				if(preserve.boolean)
-					info.shield = ship.Shield;;
+					info.shield = ship.Shield;
 				ship.Shield = 0;
 				ship.MaxShield = 0;
 			}
@@ -36,10 +37,9 @@ class DisableShields : StatusHook {
 			Orbital@ orb = cast<Orbital>(obj);
 			if(orb !is null) {
 				if(preserve.boolean)
-					info.shield = orb.Shield;
-				info.maxShield = orb.MaxShield;
-				orb.Shield = 0;
-				orb.MaxShield = 0;
+					info.shield = orb.shield / orb.shieldMod;
+				info.maxShield = orb.maxShield / orb.shieldMod;
+				orb.modMaxShield(-info.maxShield);
 			}
 		}
 	}
@@ -49,7 +49,7 @@ class DisableShields : StatusHook {
 		data.retrieve(@info);
 		if(obj.isShip) {
 			Ship@ ship = cast<Ship>(obj);
-			if(ship !is null)
+			if(ship !is null) {
 				ship.MaxShield += ship.blueprint.getEfficiencySum(SV_ShieldCapacity);
 				ship.Shield = min(info.shield, ship.MaxShield);
 			}
@@ -57,8 +57,8 @@ class DisableShields : StatusHook {
 		else if(obj.isOrbital) {
 			Orbital@ orb = cast<Orbital>(obj);
 			if(orb !is null) {
-				orb.MaxShield += info.maxShield;
-				orb.Shield = min(info.shield, orb.MaxShield);
+				orb.modMaxShield(info.maxShield);
+				orb.repairOrbitalShield(info.shield);
 			}
 		}
 	}
@@ -77,11 +77,11 @@ class DisableShields : StatusHook {
 		else if(obj.isOrbital) {
 			Orbital@ orb = cast<Orbital>(obj);
 			if(orb !is null) {
-				if(orb.MaxShield != 0) {	
-					info.maxShield += orb.MaxShield;
-					orb.MaxShield = 0;
+				if(orb.maxShield != 0) {	
+					info.maxShield += orb.maxShield / orb.shieldMod;
+					orb.modMaxShield(orb.maxShield / orb.shieldMod);
 				}
-				orb.Shield = 0;
+				orb.repairOrbitalShield(orb.shield / orb.shieldMod);
 			}
 		}			
 		return true;
@@ -230,13 +230,11 @@ class DealRandomDamage : StatusHook {
 			}
 		}
 		else if(orb !is null) {
-			if(orb.Shield > 0) {
+			if(orb.shield > 0) {
 				double overflow = 0;
-				orb.Shield = max(orb.Shield - shieldpct.decimal * orb.MaxShield, 0.0);
-				overflow = dmg.damage * shieldmult.decimal - orb.Shield * orb.shieldMod;
-				orb.Shield -= dmg.damage * shieldmult.decimal / orb.shieldMod;
-				if(orb.Shield < 0)
-					orb.Shield = 0;
+				orb.repairOrbitalShield(-(shieldpct.decimal * orb.maxShield));
+				overflow = dmg.damage * shieldmult.decimal - orb.shield;
+				orb.repairOrbitalShield(-(dmg.damage * shieldmult.decimal / orb.shieldMod));
 				if(overflow > 0)
 					dmg.damage = overflow / shieldmult.decimal;
 				else
@@ -276,8 +274,8 @@ class ShieldRegenBoost : StatusHook {
 		else if(obj.isOrbital) {
 			Orbital@ orb = cast<Orbital>(obj);
 			if(orb !is null) {
-				regen = orb.ShieldRegen * percentage.decimal / orb.shieldMod;
-				orb.Shield = min(orb.Shield + regen, orb.MaxShield);
+				regen = orb.shieldRegen * percentage.decimal / orb.shieldMod;
+				orb.repairOrbitalShield(regen);
 			}
 		}	
 		return true;
@@ -321,14 +319,12 @@ class KillCrew : StatusHook {
 		else if(obj.isOrbital) {
 			Orbital@ orb = cast<Orbital>(obj);
 			if(orb !is null) {
-				if(orb.Shield > 0) {
-					orb.Shield -= max(damage.decimal / orb.shieldMod, 0.0) + damagepct.decimal * orb.MaxShield;
-					if(orb.Shield < 0)
-						orb.Shield = 0;
+				if(orb.shield > 0) {
+					orb.repairOrbitalShield(-(max(damage.decimal, 0.0) + damagepct.decimal * orb.maxShield) / orb.shieldMod);
 				}
-				if(orb.core !is null && orb.core.type.immuneToRadiation)
+				if(orb.coreModule != uint(-1) && getOrbitalModule(orb.coreModule).immuneToRadiation)
 					return true;
-				if(orb.Shield > 0 && damage.decimal != -1)
+				if(orb.shield > 0 && damage.decimal != -1)
 					timeLeft += time;
 			}
 		}

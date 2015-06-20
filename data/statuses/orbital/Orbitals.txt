@@ -18,3 +18,21 @@ Status: MissileTurret
 	IfType(Ship, Repeat(2, AddTurret(Missile, Range=600, Damage=50, Reload=2, Speed=90, Tracking=3)))
 	RecordBonusDPS(50)
 	IfType(Orbital, Repeat(2, AddTurret(Missile, Range=1200, Damage=50, Reload=2, Speed=90, Tracking=3)))
+
+Status: ExtraThruster
+	Name: Maneuvering Thrusters
+	Icon: TechIcons::9
+
+	AddAccelerationBonus(1)
+
+Status: OrbitalShield
+	Name: Shield Generators
+	Icon: TechIcons::35
+	
+	ABEM_hooks::AddSizeScaledShield(500, 2.5)
+	
+Status: OrbitalSensor
+	Name: Sensor Arrays
+	Icon: TechIcons::1
+
+	ABEM_sensors::AddSightModifier(100, 1, 500)

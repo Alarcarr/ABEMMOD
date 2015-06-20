@@ -818,6 +818,11 @@ class OrbitalScript {
 		disabled = value;
 		delta = true;
 	}
+	
+	void setDerelict(bool value) {
+		derelict = value;
+		delta = true;
+	}
 
 	void destroy(Orbital& obj) {
 		if(obj.inCombat && !game_ending)
@@ -995,6 +1000,23 @@ class OrbitalScript {
 		Armor = armor / armorMod;
 		Health = health / healthMod;
 	}
+	
+	void repairOrbitalShield(Orbital& obj, double amount) {
+		double shieldMod = 1.0;
+		double shield = Shield, maxShield = MaxShield;
+		if(obj.owner !is null) {
+			shieldMod = obj.owner.OrbitalShieldMod;
+			
+			shield *= shieldMod;
+			maxShield *= shieldMod;
+		}
+		
+		shield = clamp(shield + amount, 0.0, maxShield);
+		
+		deltaHP = true;
+		
+		Shield = shield / shieldMod;
+	}
 
 	void damage(Orbital& obj, DamageEvent& evt, double position, const vec2d& direction) {
 		if(!obj.valid || obj.destroying)
@@ -1035,7 +1057,7 @@ class OrbitalScript {
 				
 				double block;
 				if(maxShield > 0 && evt.flags & DF_NoShieldBleedthrough == 0) // This makes sure all damage is applied to shields first.
-					block = min(shield * min(shield / maxShield, 1.0), evt.damage)
+					block = min(shield * min(shield / maxShield, 1.0), evt.damage);
 				else
 					block = min(shield, evt.damage);
 					

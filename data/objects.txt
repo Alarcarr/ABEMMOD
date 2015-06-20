@@ -171,7 +171,8 @@ server:
 	async relocking void checkOrbit();
 	void setBuildPct(double pct);
 	void modDPS(double mod);
-	void setDisabled(bool value)
+	void setDisabled(bool value);
+	void setDerelict(bool value);
 	void setContested(bool value);
 	void addSection(uint modId);
 	void modMaxArmor(double value);
@@ -182,6 +183,7 @@ server:
 	void triggerDelta();
 	void makeFree();
 	void repairOrbital(double amount);
+	void repairOrbitalShield(double amount);
 }
 
 Region : regions.Region::RegionScript {

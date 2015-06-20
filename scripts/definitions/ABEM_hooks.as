@@ -713,10 +713,9 @@ class IsDerelict : StatusHook {
 			ship.Shield = 0;
 		}
 		else if(orb !is null) {
-			info.shield = orb.MaxShield;
-			orb.MaxShield -= info.shield;
-			orb.Shield = 0;
-			orb.derelict = true;
+			info.shield = orb.maxShield / orb.shieldMod;
+			orb.modMaxShield(-info.shield);
+			orb.setDerelict(true);
 		}
 		obj.engaged = true;
 		obj.rotationSpeed = 0;
@@ -738,8 +737,8 @@ class IsDerelict : StatusHook {
 		if(obj.isOrbital) {
 			Orbital@ orb = cast<Orbital>(obj);
 			if(orb !is null) {
-				orb.derelict = false;
-				orb.MaxShield += info.shield;
+				orb.setDerelict(false);
+				orb.modMaxShield(info.shield);
 			}
 		}
 		obj.engaged = false;
@@ -767,10 +766,9 @@ class IsDerelict : StatusHook {
 		else if(obj.isOrbital) {
 			Orbital@ orb = cast<Orbital>(obj);
 			if(orb !is null) {
-				if(orb.MaxShield != 0)
-					info.shield += orb.MaxShield;
-				orb.Shield = 0;
-				orb.MaxShield -= orb.MaxShield;
+				if(orb.maxShield != 0)
+					info.shield += orb.maxShield / orb.shieldMod;
+				orb.modMaxShield(-orb.maxShield);
 			}
 		}				
 		if(decay.boolean) {
@@ -1268,9 +1266,9 @@ class AddShieldCapacity : StatusHook {
 				ship.Shield += bonus;
 		}
 		else if(obj.isOrbital) {
-			orb.MaxShield += bonus;
+			orb.modMaxShield(bonus);
 			if(startOn.boolean)
-				orb.Shield += bonus;
+				orb.repairOrbitalShield(bonus);
 		}
 		ShieldData info;
 		info.bonus = bonus;
@@ -1290,9 +1288,8 @@ class AddShieldCapacity : StatusHook {
 				ship.Shield = ship.MaxShield;
 		}
 		else if(obj.isOrbital) {
-			orb.MaxShield -= bonus;
-			if(orb.MaxShield < orb.Shield)
-				orb.Shield = orb.MaxShield;
+			Orbital@ orb = cast<Orbital>(obj);
+			orb.modMaxShield(-bonus);
 		}
 	}
 	
@@ -1317,6 +1314,33 @@ class AddShieldCapacity : StatusHook {
 
 		file >> info.bonus;
 		file >> info.castedBySubsystem;
+	}
+#section all	
+}
+
+class AddSizeScaledShield : StatusHook {
+	Document doc("Adds a certain amount of shield capacity and regeneration to the orbital affected by this status, based on its radius.");
+	Argument capacity("Capacity Multiplier", AT_Decimal, "500.0", doc="The amount of capacity to multiply the radius with. Defaults to 500.");
+	Argument regeneration("Regeneration Multiplier", AT_Decimal, "500.0", doc="The amount of regeneration to multiply the regeneration with. Defaults to 2.5.");
+	Argument startOn("Start On", AT_Boolean, "False", doc="Whether to add additional shield HP equivalent to the added capacity. Defaults to false.");
+		
+#section server
+	void onCreate(Object& obj, Status@ status, any@ data) override {
+		if(obj.isOrbital) {
+			Orbital@ orb = cast<Orbital>(obj);
+			orb.modMaxShield(capacity.decimal * orb.radius);
+			if(startOn.boolean)
+				orb.repairOrbitalShield(capacity.decimal * orb.radius);
+			orb.modShieldRegen(regeneration.decimal * orb.radius);
+		}
+	}
+	
+	void onDestroy(Object& obj, Status@ status, any@ data) override {
+		if(obj.isOrbital) {
+			Orbital@ orb = cast<Orbital>(obj);
+			orb.modMaxShield(-capacity.decimal * orb.radius);
+			orb.modShieldRegen(-regeneration.decimal * orb.radius);
+		}
 	}
 #section all	
 }
@@ -1396,7 +1420,7 @@ class HealShieldFromSubsystem : AbilityHook {
 			if(target.isShip)
 				cast<Ship>(target).Shield += repair;
 			else if(target.isOrbital)
-				cast<Orbital>(target).Shield += repair / cast<Orbital>(target).shieldMod;
+				cast<Orbital>(target).repairOrbitalShield(repair / cast<Orbital>(target).shieldMod);
 		}
 		else{
 			if(target.supportCount > 0) {
@@ -1429,7 +1453,7 @@ class HealShieldFromSubsystem : AbilityHook {
 			if(target.isShip)
 				cast<Ship>(target).Shield = min(cast<Ship>(target).Shield + repair, cast<Ship>(target).MaxShield);
 			else if(target.isOrbital)
-				cast<Orbital>(target).Shield = min(cast<Orbital>(target).Shield + repair / cast<Orbital>(target).shieldMod, cast<Orbital>(target).MaxShield);
+				cast<Orbital>(target).repairOrbitalShield(repair / cast<Orbital>(target).shieldMod);
 		}
 	}
 #section all

@@ -143,3 +143,23 @@ ABL_CLOAK_DESC: <<
 
 	Cloaking makes the fleet invisible to anything more than 100 units away, but it costs a small amount of energy per second to maintain and breaks as soon as the fleet enters combat. Additionally, the fleet's sensor range is reduced by 65% at a priority of 500.
 >>
+ABL_ENGI_THRUSTER_DESC: <<
+	Installs a set of maneuvering thrusters to the target orbital, giving it 1 u/s^2 of acceleration. Unfortunately, the system is too bulky to be installed more than once per orbital.
+
+	Shares a cooldown with other Utility engineering upgrades.
+>>
+ABL_ENGI_SHIELD_DESC: <<
+	Installs an array of shield generators onto the target orbital, giving it additional shield capacity dependent on its size and enough shield regeneration to regenerate the added shield to full capacity in 200 seconds. Unfortunately, the power requirements of the shield are too high for a second series of generators to be installed.
+
+	Shares a cooldown with other Utility engineering upgrades.
+>>
+ABL_ENGI_SENSOR_DESC: <<
+	Installs additional sensors onto the target orbital, giving it an additional 500 units of sensor range. However, the design of the sensors is such that the upgrade can only be performed once.
+
+	Shares a cooldown with other Utility engineering upgrades.
+>>
+ABL_SPAWN_SUPPLYDEPOT_DESC: <<
+	Uses a moderate amount of energy to immediately fabricate a supply depot at a target location.
+
+	Preparing the components required for the project costs §500k.
+>>

@@ -61,17 +61,91 @@ Ability: BuyTurretM
 	ShowMoneyValue(500)
 	ConsumeMoney(500)
 
-
-
-Ability: SpawnOrbital
+Ability: SpawnOutpost
 	Target: Place = Point
 	Cooldown: 120
 	Energy Cost: 250
 	Name: Construct Outpost
 	Description: #ABL_BUILD_OUTPOST_DESC
 	Range: 100
-	Icon: OrbitalIcons::0
+	Icon: GuiOrbitalIcons::0
 
 	ShowMoneyValue(300)
 	ConsumeMoney(300)
 	SpawnOrbitalAt(Place, TradeOutpost)
+
+Ability: BuyThruster
+	Name: Install Maneuvering Thrusters
+	Description: #ABL_ENGI_THRUSTER_DESC
+	Target: targ = Object
+	Icon: TechIcons::9
+	Cooldown: 120
+	Range: 200
+
+	AddStatusTo(targ, ExtraThruster)
+
+	TargetFilterNotStatus(targ, ExtraThruster)
+	TargetFilterType(targ, Orbital)
+	TargetFilterAllied(targ)
+
+	ShareCooldown(BuyShield)
+	ShareCooldown(BuyThruster)
+	ShareCooldown(BuySensor)
+
+	ShowMoneyValue(500)
+	ConsumeMoney(500)
+
+Ability: BuyShield
+	Name: Install Shield Generators
+	Description: #ABL_ENGI_SHIELD_DESC
+	Target: targ = Object
+	Icon: TechIcons::35
+	Cooldown: 120
+	Range: 200
+
+	AddStatusTo(targ, OrbitalShield)
+
+	TargetFilterNotStatus(targ, OrbitalShield)
+	TargetFilterType(targ, Orbital)
+	TargetFilterAllied(targ)
+
+	ShareCooldown(BuyShield)
+	ShareCooldown(BuyThruster)
+	ShareCooldown(BuySensor)
+
+	ShowMoneyValue(500)
+	ConsumeMoney(500)
+
+Ability: BuySensor
+	Name: Install Sensor Array
+	Description: #ABL_ENGI_SENSOR_DESC
+	Target: targ = Object
+	Icon: TechIcons::1
+	Cooldown: 120
+	Range: 200
+
+	AddStatusTo(targ, OrbitalSensor)
+
+	TargetFilterNotStatus(targ, OrbitalSensor)
+	TargetFilterType(targ, Orbital)
+	TargetFilterAllied(targ)
+
+	ShareCooldown(BuyShield)
+	ShareCooldown(BuyThruster)
+	ShareCooldown(BuySensor)
+
+	ShowMoneyValue(500)
+	ConsumeMoney(500)
+
+Ability: SpawnSupplyDepot
+	Name: Construct Supply Depot
+	Description: #ABL_BUILD_SUPPLYDEPOT_DESC
+	Target: dest = Point
+	Icon: GuiOrbitalIcons::7
+	Energy Cost: 250
+	Cooldown: 120
+	Range: 100
+
+	ShowMoneyValue(500)
+	ConsumeMoney(500)
+	SpawnOrbitalAt(dest, SupplyDepot)	

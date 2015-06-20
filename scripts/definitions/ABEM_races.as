@@ -12,6 +12,7 @@ import status_effects;
 import target_filters;
 import requirement_effects;
 import orbitals;
+import resources;
 #section server
 import empire;
 import influence_global;
@@ -137,6 +138,38 @@ class CostFromSize : AbilityHook {
 		double rat = theirScale / size.decimal;
 		cost *= clamp(rat * factor.decimal, min_pct.decimal, max_pct.decimal);
 	}
+}
+
+class StealResources : AbilityHook {
+	Document doc("Steals all the native resources of a target planet and gives them to itself.");
+	Argument objTarg(TT_Object);
+	Argument takeUnstealables(AT_Boolean, "False", doc="Whether to take resources defined as unstealable.");
+	Argument abortIfCannotTransfer(AT_Boolean, "True", doc="Whether to cancel the process if the resources cannot be transferred to the origin object, or continue and completely destroy the target's resources.");
+
+#section server
+	void activate(Ability@ abl, any@ data, const Targets@ targs) const {
+		Object@ targ = objTarg.fromConstTarget(targs).obj;
+		if(targ is null)
+			return;
+		if(!targ.hasResources)
+			return;
+		
+		if(!abl.obj.hasResources && abortIfCannotTransfer.boolean) {
+			return;
+		}
+		else {
+			uint count = targ.nativeResourceCount();
+			for(uint i = count - 1; i >= 0; --i) { // We have to count from the last resource or risk causing trouble.
+				ResourceType@ type = getResource(targ.nativeResourceType(i));
+				if(type.stealable || takeUnstealables.boolean) {
+					if(abl.obj.hasResources)
+						abl.obj.createResource(type.id);
+					targ.removeResource(i);
+				}
+			}
+		}
+	}
+#section all
 }
 
 class CannotOverrideProtection: PickupHook {

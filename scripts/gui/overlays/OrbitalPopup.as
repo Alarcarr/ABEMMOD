@@ -225,7 +225,7 @@ class OrbitalPopup : Popup {
 		health.text = standardize(curHP)+" / "+standardize(maxHP);
 		
 		// Update shield display
-		if(obj.MaxShield != 0)
+		if(obj.maxShield != 0)
 			shield.progress = obj.shield / obj.maxShield;
 		else
 			shield.progress = 0;
