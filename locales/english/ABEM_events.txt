@@ -8,3 +8,71 @@ EVT_PROGENITOR_BREAKTHROUGH_DESC: <<
 
 	Finally, we can start taking our first steps towards rebuilding and improving upon the great wonders of our past!
 >>
+
+//********************************************
+//***********VANGUARD VICTORY TEXT************
+//********************************************
+
+V_VANGUARD_TITLE: Vanguard Victory!
+V_VANGUARD_LESSER_TITLE: Lesser Victory...
+V_VANGUARD_LESSER_TEXT: <<|
+	Your mission has failed. The Overlords will not be pleased.
+	
+	All is not lost, however. You have helped the $1 reach for the stars. They may think you a mere vassal, but when the Overlords come... you shall take up arms to assist them once more, and hope they show mercy upon you...
+>>
+V_VANGUARD_LOST_TITLE: Defeat!
+V_VANGUARD_LOST_TEXT: <<|
+	You have been [color=#f00]defeated[/color]! Your invasion force lies in ruin, and what few survivors remain now beg the leaders of the $1 for mercy, knowing that the Overlords will show them none...
+>>
+V_VANGUARD_SUCCESS_TITLE: Invasion!
+V_VANGUARD_SUCCESS_TEXT: <<|
+	As the portal opens, the Overlords' fleet emerges. Your completion of your mission will undoubtedly see your race gain great prestige.
+	
+	There are those in this region that continue to fight us. It does not matter, for the supreme might of this new armada will exterminate all resistance, and [color=#0f0]victory[/color] shall be ours...
+>>
+V_VANGUARD_WON_TITLE: Glorious Victory!
+V_VANGUARD_WON_TEXT: <<|
+	You have achieved [color=#0f0]victory[/color]! The Overlords will surely reward you and your race for such exceptional performance, and while you continue making preparations for their arrival, you will rule the galaxy in their name...
+>>
+V_VANGUARD_LESSEROTHERSUCCESS_TEXT: <<|
+	The portal opens, and the Overlords emerge, leading an armada of insurmountable might. Your race may gain prestige today, but it pains you greatly that you were forced to give the $1 the honor of allowing the Overlords' arrival.
+	
+	There are other races that do not recognize the power the Overlords represent. Perhaps you can still curry some favor with your great masters by shattering pockets of resistance; if you do not, they or your competing races most certainly will...
+>>
+V_VANGUARD_LESSEROTHER_TEXT: <<|
+	As a vassal empire, you have helped the $1 subjugate this this galaxy in the name of the Overlords. They will continue their efforts to bring forth your masters, but you cannot gain any prestige here anymore; only try to avoid losing it while you wait...
+>>
+V_VANGUARD_LOSTOTHERSUCCESS_TEXT: <<|
+	The $1 has [color=#f00]defeated[/color] you; beaten you to it. How much of your forces remains is of no consequence now; all that matters as the Overlord fleet emerges from the portal is that your failed efforts to take this great honor for yourself have caused you to lose all of it.
+	
+	Your race will be purged, a fate even worse than what awaits those empires that still resist; perhaps you could still save yourselves by allying against the Overlords...
+>>
+V_VANGUARD_LOSTOTHER_TEXT: <<|
+	The $1 has [color=#f00]defeated[/color] you and conquered the galaxy. For now, they rule in the Overlords' name, and if you survived, you have time to reflect upon the mistakes you have made, and upon the grisly fate that awaits you when the portal is opened...
+>>
+
+//********************************************
+//***********DEFAULT VICTORY TEXT*************
+//********************************************
+
+V_LESSERTOVANGUARD_TITLE: Enslaved, but not destroyed...
+V_LESSERTOVANGUARDSUCCESS_TEXT: <<|
+	You saw the wisdom of assisting the $1 in their quest. You are somewhat nervous about the arrival of their 'Overlords'; while your race will survive past this dreaded day, they will now be enslaved.
+	
+	Perhaps, someday, your race will prove its worth and regain some of the freedoms they have sacrificed. However, they will never again have hopes of galactic dominance...
+>>
+V_LESSERTOVANGUARD_TEXT: <<|
+	You saw the wisdom of assisting the $1 as they conquered the galaxy. Now, they act as stewards for the 'Overlords' they spoke of. Your race has survived, but it now exists only in slavery.
+	
+	Perhaps, someday, after the Overlords arrive, your race will gain their favor, gaining prestige and regaining some of their freedoms. Despite this, they will never again have a chance at galactic dominance...
+>>
+V_LOSTTOVANGUARDSUCCESS_TITLE: Invasion!
+V_LOSTTOVANGUARDSUCCESS_TEXT: <<|
+	The day you have feared for so long has finally come. The $1 have succeeded in their quest to summon the so-called 'Overlords'. Whether you still have any forces left is of no consequence; within the near future, the last of your race's resistance forces will be [color=#f00]destroyed[/color] and the survivors exterminated. It is over.
+>>
+V_LOSTTOVANGUARD_TITLE: Exterminated!
+V_LOSTTOVANGUARD_TEXT: <<|
+	You, and all the other races of this galaxy, have been [color=#f00]defeated[/color] by the $1 in the name of their 'Overlords'. Some would argue that you were among the less fortunate ones - your race exterminated, with what few survivors still exist doomed to die while the Overlords are summoned.
+	
+	Others would argue that you avoided a lifetime of slavery, the fate that awaits the rest of the galaxy...
+>>

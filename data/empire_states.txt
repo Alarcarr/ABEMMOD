@@ -92,4 +92,6 @@ visible:
 	attribute double ResearchDecaySpeed = 1
 	attribute double ForbidSecondaryUnlock = 0
 	attribute double DrydockCostFactor = 1
+	attribute double VictoryType = 1
+	attribute double VanguardVictoryRequirement = 5
 }

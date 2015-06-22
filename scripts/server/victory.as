@@ -24,7 +24,8 @@ void declareVictor(Empire@ emp) {
 	serverEndGame(ALL_PLAYERS);
 
 	if(emp !is null) {
-		emp.Victory = 1;
+		if(emp.Victory <= 0)
+			emp.Victory = emp.VictoryType;
 
 		int maxDiff = -1;
 		bool achieve = systemCount >= 10 && !getCheatsEverOn() && config::GAME_TIME_LIMIT <= 0.01;
@@ -32,6 +33,10 @@ void declareVictor(Empire@ emp) {
 			Empire@ other = getEmpire(i);
 			if(other.major && (emp.team < 0 || emp.team != other.team))
 				maxDiff = max(maxDiff, other.difficulty);
+			if(other.major && emp.team != -1 && emp.team == other.team) {
+				if(other.Victory >= 0 && other.VictoryType <= emp.VictoryType)
+					other.Victory = emp.VictoryType;
+			}	
 		}
 		if(emp.player !is null) {
 			if(achieve) {
@@ -122,7 +127,7 @@ void tick(double time) {
 			}
 		}
 		
-		if(other.Victory == 1)
+		if(other.Victory >= 1)
 			foundVictor = true;
 	}
 	

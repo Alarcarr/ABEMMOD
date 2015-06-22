@@ -27,3 +27,6 @@ Trait: ReclusiveRingworlders
 	ReplaceTechnologyNodes(Housing, ImpHabitat)
 	TriggerHomeworld(DestroySystemPlanet(0, Quiet = True))
 	UnlockTag(RingworldUnlock)
+
+	ModEmpireAttribute(VictoryType, Add, +1)
+	ABEM_races::EmpireOnEmpireAttributeLT(VanguardVictoryRequirement, 1, ABEM_races::CauseVictory())

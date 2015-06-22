@@ -16,6 +16,7 @@ import resources;
 #section server
 import empire;
 import influence_global;
+import victory;
 #section all
 
 class IfAtWar : IfHook {
@@ -158,16 +159,27 @@ class StealResources : AbilityHook {
 			return;
 		}
 		else {
-			uint count = targ.nativeResourceCount();
+			uint count = targ.nativeResourceCount;
 			for(uint i = count - 1; i >= 0; --i) { // We have to count from the last resource or risk causing trouble.
-				ResourceType@ type = getResource(targ.nativeResourceType(i));
-				if(type.stealable || takeUnstealables.boolean) {
+				const ResourceType@ type = getResource(targ.nativeResourceType[i]);
+				if(type !is null && (type.stealable || takeUnstealables.boolean)) {
 					if(abl.obj.hasResources)
 						abl.obj.createResource(type.id);
 					targ.removeResource(i);
 				}
 			}
 		}
+	}
+#section all
+}
+
+class CauseVictory : BonusEffect {
+	Document doc("Prematurely ends the game in a victory for the affected empire and its team.");
+	
+#section server
+	void enable(Object@ obj, Empire@ emp) {
+		if(emp !is null && emp.major)
+			declareVictor(emp);
 	}
 #section all
 }
