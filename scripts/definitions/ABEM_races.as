@@ -150,36 +150,25 @@ class StealResources : AbilityHook {
 #section server
 	void activate(Ability@ abl, any@ data, const Targets@ targs) const {
 		Object@ targ = objTarg.fromConstTarget(targs).obj;
-		if(targ is null)
+		if(targ is null || targ is abl.obj)
 			return;
 		if(!targ.hasResources)
 			return;
 		
-		if(!abl.obj.hasResources && abortIfCannotTransfer.boolean) {
+		if(!(abl.obj !is null && abl.obj.hasResources) && abortIfCannotTransfer.boolean) {
 			return;
 		}
 		else {
-			uint count = targ.nativeResourceCount;
-			for(uint i = count - 1; i >= 0; --i) { // We have to count from the last resource or risk causing trouble.
+			int count = targ.nativeResourceCount;
+			for(int i = count - 1; i >= 0; --i) { // We have to count from the last resource or risk causing trouble.
 				const ResourceType@ type = getResource(targ.nativeResourceType[i]);
 				if(type !is null && (type.stealable || takeUnstealables.boolean)) {
-					if(abl.obj.hasResources)
+					if(abl.obj !is null && abl.obj.hasResources)
 						abl.obj.createResource(type.id);
 					targ.removeResource(i);
 				}
 			}
 		}
-	}
-#section all
-}
-
-class CauseVictory : BonusEffect {
-	Document doc("Prematurely ends the game in a victory for the affected empire and its team.");
-	
-#section server
-	void enable(Object@ obj, Empire@ emp) {
-		if(emp !is null && emp.major)
-			declareVictor(emp);
 	}
 #section all
 }

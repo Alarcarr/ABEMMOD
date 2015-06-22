@@ -1,4 +1,4 @@
 import version;
 
-const string MOD_REVISION = "505";
+const string MOD_REVISION = "506";
 const string MOD_VERSION = "ABEM 0.4.0 (revision " + MOD_REVISION + ") for Star Ruler 2 v1.0.2 (revision 4740)";

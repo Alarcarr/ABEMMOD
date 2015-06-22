@@ -74,6 +74,11 @@ void tick(double time) {
 		return;
 	}
 
+	checkStandardVictory();
+	checkVanguardVictory();
+}
+
+void checkStandardVictory() {
 	if((!mpServer && playerEmpire.Victory == -1)
 			|| (config::GAME_TIME_LIMIT > 0.01 && gameTime >= config::GAME_TIME_LIMIT*60.0)) {
 		Empire@ winner;
@@ -138,6 +143,18 @@ void tick(double time) {
 				continue;
 			if(other.Victory >= 0)
 				declareVictor(other);
+		}
+	}
+}
+
+void checkVanguardVictory() {
+	for(uint i = 0, cnt = getEmpireCount(); i < cnt; ++i) {
+		Empire@ other = getEmpire(i);
+		if(!other.major)
+			continue;
+		else if(other.VanguardVictoryRequirement <= 0 && other.VictoryType == 2) {
+			declareVictor(other);
+			return;
 		}
 	}
 }

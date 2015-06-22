@@ -1,4 +1,5 @@
 Status: ReclusiveRingworlder
 	Visible To: Nobody
 
-	IfNotHaveStatus(Ringworld, IfNotHaveStatus(OrbitalExploitationPlatforms, EnableAfter(OnEnable(SpawnOrbital(ExploitationPlatform, In Orbit = True)), Start Timer = 5)))
+	IfNotHaveStatus(Ringworld, OnEnable(LosePopulation(100000000)))
+	GrantAbility(StealResources)

@@ -152,7 +152,7 @@ class VictoryTab : Tab {
 		int myVictory = playerEmpire.Victory;
 
 		for(uint i = 0, cnt = getEmpireCount(); i < cnt; ++i) {
-			if(getEmpire(i).Victory == 1) {
+			if(getEmpire(i).Victory >= 1) {
 				@winner = getEmpire(i);
 				break;
 			}
