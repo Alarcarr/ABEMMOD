@@ -41,6 +41,15 @@ GlobalStat: SensorRange
 	Suffix: u
 
 	Variable: SensorRange
+
+GlobalStat: PlanetMiningRate
+	Name: #S_PLANETMININGRATE
+	Description: #STT_PLANETMININGRATE
+	Icon: TractorGun::0 * #91692c
+	Color: #a1692c
+	Suffix: #PER_SECOND
+
+	Variable: PlanetMiningRate
 	
 // *************************************
 // ******SUBSYSTEM-SPECIFIC STATS*******

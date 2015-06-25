@@ -46,6 +46,8 @@ STT_SENSORRANGE: <<
 	
 	This does not necessarily have to be the actual range of the ship's sensors, but it might provide a good idea of how big that range will be.
 >>
+S_PLANETMININGRATE: Mining Rate
+STT_PLANETMININGRATE: The rate at which this ship can mine materials from planets and put them into cargo storage.
 S_SENSORMULT: Sensor Multiplier
 S_SENSORPRIORITY: Sensor Priority
 S_HULLHEALING: Repair Rate
@@ -599,6 +601,34 @@ S_BASIC_SENSORS_DESC: <<
 	[img=MenuIcons::3;20]Is not a contiguous subsystem - only one Basic Sensor core can be present on a ship, but that core does not have to be connected to all the other Basic Sensor hexes in the ship.[/img]
 	[img=Minus]Requires increasingly high amounts of Control as the subsystem's size increases. Sinew halves the Control requirements.[/img]
 	[img=Minus]Sensor core must be external.[/img]
+>>
+S_PLANET_MINING_LASER: Planet Devourer
+S_PLANET_MINING_LASER_DESC: <<
+	An array of tractor beams and mining lasers designed to harvest immense quantities of resources from a barren planet, destroying the planet in the process.
+
+	[img=Plus]Mines Ore from planets.[/img]
+	[img=Plus]Is 10 times faster than mining from an asteroid.[/img]
+	[img=MenuIcons::3;20]Cannot be placed on the same ship as a Mining Laser, and can only be placed on a Harvester.[/img]
+	[img=MenuIcons::3;20]Only Barren planets can be mined for Ore. Other planets must first have their resources Harvested.[/img]
+	[img=Minus]Has a significantly higher power consumption compared to a Mining Laser, and cannot mine from asteroids.[/img]
+>>
+S_HARVESTER: Harvester Hull
+S_HARVESTER_DESC: <<
+	A hull architecture designed specifically for the harvesting of resources from other planets.
+
+	[img=Plus]Can prepare planets for Harvesting by Ringworlds.[/img]
+	[img=Plus]Can use the Planet Devourer subsystem to mine Barren planets for Ore.[/img]
+	[img=Plus]All hex health is doubled.[/img]
+	[img=Plus]All damage resistance is increased by 50%.[/img]
+	[img=Plus]Shield capacity is doubled.[/img]
+	[img=Plus]Does not require Supply to fire weapons or repair itself.[/img]
+	[img=Plus]Slipstream costs are significantly reduced.[/img]
+	[img=Plus]Cargo storage capacity is multiplied tenfold.[/img]
+	[img=Minus]Mass is tripled.[/img]
+	[img=Minus]Cannot hold support ships.[/img]
+	[img=Minus]Damage output is reduced by 75%.[/img]
+	[img=Minus]Build costs are increased by 50%.[/img]
+	[img=MenuIcons::3;20]Cannot be used on ships under size 500.[/img]
 >>
 
 ERROR_SPECIFIC_SIZE: $1 must be exactly size $2.

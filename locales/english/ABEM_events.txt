@@ -8,10 +8,14 @@ EVT_PROGENITOR_BREAKTHROUGH_DESC: <<
 
 	Finally, we can start taking our first steps towards rebuilding and improving upon the great wonders of our past!
 >>
+EVT_VANGUARD_PORTAL: Portal Stabilizer constructed on [color=$4]$3[/color]!
+EVT_VANGUARD_PORTAL_DESC: <<
+	The [color=$2]$1[/color] have constructed a Portal Stabilizer on [color=$4]$3[/color]! Quickly, capture the planet to destroy the Stabilizer; if they own five Stabilizers simultaneously, they will summon the Overlords!
+>>
 
-//********************************************
-//***********VANGUARD VICTORY TEXT************
-//********************************************
+//*********************************************
+//***********VANGUARD VICTORY TEXTS************
+//*********************************************
 
 V_VANGUARD_TITLE: Vanguard Victory!
 V_VANGUARD_LESSER_TITLE: Lesser Victory...
@@ -43,7 +47,7 @@ V_VANGUARD_LESSEROTHER_TEXT: <<|
 	As a vassal empire, you have helped the $1 subjugate this this galaxy in the name of the Overlords. They will continue their efforts to bring forth your masters, but you cannot gain any prestige here anymore; only try to avoid losing it while you wait...
 >>
 V_VANGUARD_LOSTOTHERSUCCESS_TEXT: <<|
-	The $1 has [color=#f00]defeated[/color] you; beaten you to it. How much of your forces remains is of no consequence now; all that matters as the Overlord fleet emerges from the portal is that your failed efforts to take this great honor for yourself have caused you to lose all of it.
+	The $1 has [color=#f00]defeated[/color] you; beaten you to it. How many of your forces remain is of no consequence now; all that matters as the Overlord fleet emerges from the portal is that your failed efforts to take this great honor for yourself have caused you to lose all of it.
 	
 	Your race will be purged, a fate even worse than what awaits those empires that still resist; perhaps you could still save yourselves by allying against the Overlords...
 >>
@@ -51,9 +55,9 @@ V_VANGUARD_LOSTOTHER_TEXT: <<|
 	The $1 has [color=#f00]defeated[/color] you and conquered the galaxy. For now, they rule in the Overlords' name, and if you survived, you have time to reflect upon the mistakes you have made, and upon the grisly fate that awaits you when the portal is opened...
 >>
 
-//********************************************
-//***********DEFAULT VICTORY TEXT*************
-//********************************************
+//*********************************************
+//***********DEFAULT VICTORY TEXTS*************
+//*********************************************
 
 V_LESSERTOVANGUARD_TITLE: Enslaved, but not destroyed...
 V_LESSERTOVANGUARDSUCCESS_TEXT: <<|

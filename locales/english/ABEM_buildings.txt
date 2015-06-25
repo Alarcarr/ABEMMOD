@@ -55,7 +55,7 @@ BLD_RECALL_DESC: <<
 	A hyperfield manipulator designed to open a wormhole between a location in orbit and any allied object in the universe.
 
 	[img=MenuIcons::3;20]Grants the Recall ability.[/img]
-	[img=ResourceIcon::2;22]Costs [b][color=#42b4bd]Energy[/color][/b] to activate.[/img]
+	[img=ResourceIcon::2;20]Costs [b][color=#42b4bd]Energy[/color][/b] to activate.[/img]
 	[img=MenuIcons::3;20]The smaller the recalled object is, the less energy is consumed.[/img]
 	[img=MenuIcons::3;20][i][bbloc=#ABL_RECALL_DESC/][/i][/img]
 >>
@@ -64,4 +64,13 @@ BLD_SENSOR_DESC: <<
 	A series of sensor towers aimed at various parts of the sky push back the interstellar 'fog of war'.
 	
 	[img=MenuIcons::3;20]Increases the planet's sight range by 100 units.[/img]
+>>
+BLD_VANGUARDPORTAL: Portal Stabilizer
+BLD_VANGUARDPORTAL_DESC: <<
+	A powerful hyperfield manipulator of tremendous scale. When activated and targeted at a specific point in space along with four other Stabilizers, this structure will create a massive wormhole through which the Overlords' invasion force can enter this galaxy.
+
+	[img=ShieldImpactLarge*#de12de;20]Constructing five Portal Stabilizers will cause you to win a Vanguard Victory.[/img]
+	[img=Plus;20]The presence of a Portal Stabilizer inspires the owner's race to fight harder to defend the system, manifesting as a 40% boost to fleet effectiveness to all owned fleets in the system.[/img]
+	[img=MenuIcons::3;20]Intense rivalry between Vanguard races - and the desire of non-Vanguard races to keep the Overlords away - cause the Stabilizer to self-destruct or be destroyed, respectively, when the planet's owner changes for any reason.[/img]
+	[img=MenuIcons::3;20]Can only be constructed once per planet, and can only be constructed on a Ringworld or Artificial Planetoid.[/img]
 >>

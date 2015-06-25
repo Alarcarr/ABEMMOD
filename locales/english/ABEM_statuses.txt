@@ -70,3 +70,7 @@ STATUS_CLOAKED_DESC: <<
 
 	Cloaking costs a small amount of energy per second to maintain and breaks as soon as the fleet enters combat. Additionally, the fleet's sensor range is reduced by 65% with a priority of 500.
 >>
+STATUS_READYFORHARVEST: Ready for Harvesting
+STATUS_READYFORHARVEST_DESC: <<
+	A Ringworlder Harvester has prepared this planet for harvesting. Any Ringworlder empire can now transfer all the resources on the planet to one of their Ringworlds, turning it into a Barren planet.
+>>

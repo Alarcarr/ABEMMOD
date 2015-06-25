@@ -1,6 +1,6 @@
 Trait: ReclusiveRingworlders
-	Name: Reclusive Ringworlders
-	Description: #TRAIT_RECLUSIVE_RINGWORLDERS_DESC
+	Name: Vanguard (Ringworlders)
+	Description: #TRAIT_VANGUARD_RINGWORLDER_DESC
 	Order: 5
 
 	Icon: PlanetType::14
@@ -8,24 +8,31 @@ Trait: ReclusiveRingworlders
 
 	Category: Lifestyle
 	Unique: Lifestyle
+	AI Support: False
 
 	TriggerHomeworld(DestroySystemPlanet(1, Quiet = True))
 	TriggerHomeworld(DestroySystemPlanet(2, Quiet = True))
 	TriggerHomeworld(DestroySystemPlanet(3, Quiet = True))
 	TriggerHomeworld(SpawnPlanet(Ringworld, Owned = True, Add Status = RRInitialRingworld, Radius = 750, Physics = False))
-
-	TriggerHomeworld(SpawnShip(Miner, Override Disable Starting = True))
-	ReplaceTechnologyNodes(ImpPopLvl3, ImpHabitat)
-	ReplaceTechnologyNodes(ImpPopLvl2, ImpHabitat)
-	SetColonizerInfo(Name = Exploitation Vessel)
-	ModAttribute(PopulationPerColonizer, Multiply, 16)
-	ReplaceTechnologyNodes(OrbArtificialPlanetoid, ImpFactoryLabor2)
-	ModEmpireAttribute(PlanetDecaySpeed, Multiply, 0.5)
-	AddStatusOwnedPlanets(ReclusiveRingworlder)
-	LoadDesigns(ringworlder, Limit Shipset = False)
-	ReplaceTechnologyNodes(OrbRingworld, Science)
-	ReplaceTechnologyNodes(Housing, ImpHabitat)
 	TriggerHomeworld(DestroySystemPlanet(0, Quiet = True))
+
+	TriggerHomeworld(SpawnShip(Harvester, Override Disable Starting = True))
+	AddStatusOwnedPlanets(ReclusiveRingworlder)
+
+	ReplaceTechnologyNodes(OrbArtificialPlanetoid, ImpFactoryLabor2)
+	ReplaceTechnologyNodes(OrbRingworld, Science)
+	ReplaceTechnologyNodes(Housing, ImpFactoryLabor)
+
 	UnlockTag(RingworldUnlock)
+	UnlockSubsystem(HarvesterHull)
+	UnlockSubsystem(PlanetMiningLaser)
+	UnlockTag(VanguardUnlocks)
+
+	IfHaveTrait(Slipstream, LoadDesigns(ABEM_defaults/ringworlder/slipstream))
+	IfHaveTrait(Hyperdrive, LoadDesigns(ABEM_defaults/ringworlder/hyperdrive))
+	IfHaveTrait(Gate, LoadDesigns(ABEM_defaults/ringworlder/other))
+	IfHaveTrait(Fling, LoadDesigns(ABEM_defaults/ringworlder/other))
+	IfHaveTrait(Sublight, LoadDesigns(ABEM_defaults/ringworlder/other))
 
 	ModEmpireAttribute(VictoryType, Add, 1)
+	ModAttribute(ForbidColonization, Add, 1)

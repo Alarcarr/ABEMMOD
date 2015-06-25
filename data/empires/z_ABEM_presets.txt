@@ -37,3 +37,17 @@ Preset: Berserkers
 	Trait: Slipstream
 	Trait: Berserkers
 	Trait: Frugal
+
+Preset: VanguardRingworlder
+	Name: #RACE_VANGUARD_RINGWORLDER
+	Tagline: #RACE_VANGUARD_RINGWORLDER_TAGLINE
+	Lore: #RACE_VANGUARD_RINGWORLDER_LORE
+	Portrait: emp_portrait_blobman
+	Shipset: Moirai
+	Hard: True
+	AI Support: False
+
+	Trait: Theocracy
+	Trait: Fling
+	Trait: ReclusiveRingworlders
+	Trait: Prideful

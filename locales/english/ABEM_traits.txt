@@ -31,11 +31,18 @@ TRAIT_BERSERKERS_DESC: <<
   [vspace=3/][img=ThumbsDown;22][/img]The Influence cost of playing support cards during a vote is increased by 2, while the cost of starting a vote is increased by 4.
   [vspace=3/][img=ResourceIcon::5;22][/img]All planets have an additional 256 Support Capacity.
 >>
-TRAIT_RECLUSIVE_RINGWORLDERS_DESC: <<
-	[vspace=3/][img=PlanetType::14;28]Instead of planets, starts with a ring world and the technology to build more.[/img]
-	[vspace=3/][img=ActionBarIcons::1;22]Cannot properly colonize planets, instead set up exploitation platforms in orbit around uninhabited planets.  These grant access to the resource but only 1 virtual(or robot, or exile) population, and will eventually drain a planet dry, leaving a barren husk.[/img]
-	[vspace=3/][img=ResourceIcon::6;22]Exploitation platforms around barren worlds will mine and damage them over time, converting world integrity into ore.[/img]
-	[color=#996622]Note: Currently conversion to barren worlds and mining barren worlds for ore is not working.  As such, worlds will keep their resource until they explode and then leave asteroids, which will usually have some ore - you will have to mine these as usual.[/color]
+TRAIT_VANGUARD_RINGWORLDER_DESC: <<
+	[vspace=3/][img=PlanetType::14;28]Instead of planets, starts with a Ringworld and the technology to build more.[/img]
+	[vspace=3/][img=QuickbarIcons::3;22]Cannot own non-Ringworld planets. This includes Artificial Planetoids.[/img]
+	[vspace=3/][img=QuickbarIcons::2;22]Bulky Harvesters prepare planets for harvesting by Ringworlds, which steal all non-building resources from the planet's surface and turn it into a barren world.[/img]
+	[vspace=3/][img=QuickbarIcons::4;22]Harvesters can Devour barren planets, producing vast quantities of Ore and damaging the planet over time.[/img]
+	[bbloc=#TRAIT_VANGUARD_DESC/]
+>>
+TRAIT_VANGUARD_DESC: <<
+	[vspace=3/][img=ShieldImpactLarge*#de12de;22]Is a Vanguard race, with all their advantages and disadvantages:
+	
+	[vspace=3/][img=SpaceProgram;22]Can achieve a Vanguard Victory by constructing 5 Portal Stabilizers on 5 separate Ringworlds or Artificial Planetoids.[/img]
+	[vspace=3/][img=AttributeIcons::3*#f88;22][b][color=#f00]Not recommended for beginners.[/color][/b][/img][/img]
 >>
 TRAIT_VERDANT: Verdant
 TRAIT_VERDANT_DESC: <<|
