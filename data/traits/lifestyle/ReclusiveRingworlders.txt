@@ -10,13 +10,14 @@ Trait: ReclusiveRingworlders
 	Unique: Lifestyle
 	AI Support: False
 
+	TriggerHomeworld(SpawnPlanet(Ringworld, Owned = True, Add Status = RRInitialRingworld, Radius = 750, Physics = False))
 	TriggerHomeworld(DestroySystemPlanet(1, Quiet = True))
 	TriggerHomeworld(DestroySystemPlanet(2, Quiet = True))
 	TriggerHomeworld(DestroySystemPlanet(3, Quiet = True))
-	TriggerHomeworld(SpawnPlanet(Ringworld, Owned = True, Add Status = RRInitialRingworld, Radius = 750, Physics = False))
-	TriggerHomeworld(DestroySystemPlanet(0, Quiet = True))
 
-	TriggerHomeworld(SpawnShip(Harvester, Override Disable Starting = True))
+	SpawnShip(Harvester, Override Disable Starting = True)
+	SpawnShip(Harvester, Override Disable Starting = True)
+	TriggerHomeworld(DestroySystemPlanet(0, Quiet = True))
 	AddStatusOwnedPlanets(ReclusiveRingworlder)
 
 	ReplaceTechnologyNodes(OrbArtificialPlanetoid, ImpFactoryLabor2)

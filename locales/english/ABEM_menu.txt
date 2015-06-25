@@ -1,2 +1,11 @@
 OPT_AUTO_IRC: Automatically Connect to IRC
 OPTTT_AUTO_IRC: When toggled on, the game will automatically connect to the IRC and join the #starruler and #abem channels when started.
+NG_SENSOR_OPTIONS: Sensor Options
+NG_SENSOR_MULT: Global Sensor Multiplier
+NGTT_SENSOR_MULT: The number by which all sight ranges in the game are multiplied. This is applied after all other sensor modifiers; useful when modifying the System Size option among other things.
+NG_LEGACY_EXPLORATION: Legacy Exploration Mode
+NGTT_LEGACY_EXPLORATION: <<
+	When checked, entering a non-nebula system will immediately reveal everything inside, as if it were an unmodified game of Star Ruler 2.
+	
+	Sight range modifiers of all kinds will still take effect, though, making sensors useful when flying inside nebulae, flying a cloaked ship, or when searching for objects in interstellar space.
+>>

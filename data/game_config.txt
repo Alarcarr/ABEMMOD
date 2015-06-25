@@ -158,3 +158,9 @@ ENABLE_TERRAFORMING: 1
 
 //Multiplier to civilian trade activity
 CIVILIAN_TRADE_MULT: 1
+
+//Multiplier to sensor range
+SENSOR_RANGE_MULT: 1.000
+
+//Whether systems should be instantly explored when entered, if not prohibited by NoRegionVision()
+LEGACY_EXPLORATION_MODE: 0

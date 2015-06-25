@@ -36,5 +36,10 @@ class GamePage : GameSettingsPage {
 		Title(locale::NG_VICTORY_OPTIONS);
 		Number(locale::NG_TIME_LIMIT, "GAME_TIME_LIMIT", tooltip=locale::NGTT_TIME_LIMIT, halfWidth=true, step=10);
 		Toggle(locale::NG_ENABLE_REVENANT_PARTS, "ENABLE_REVENANT_PARTS", tooltip=locale::NGTT_ENABLE_REVENANT_PARTS);
+
+		emptyline();
+		Title(locale::NG_SENSOR_OPTIONS);
+		Number(locale::NG_SENSOR_MULT, "SENSOR_RANGE_MULT", tooltip=locale::NGTT_SENSOR_MULT, decimals=3, halfWidth=false, step=0.5);
+		Toggle(locale::NG_LEGACY_EXPLORATION, "LEGACY_EXPLORATION_MODE", tooltip=locale::NGTT_LEGACY_EXPLORATION);
 	}
 };

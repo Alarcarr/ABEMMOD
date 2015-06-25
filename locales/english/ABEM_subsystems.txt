@@ -42,7 +42,7 @@ STT_BOARDSUBSYS: <<
 >>
 S_SENSORRANGE: Base Sensor Range
 STT_SENSORRANGE: <<
-	How far the ship can see, prior to the application of any multiplying effects such as entering a nebula.
+	How far the ship can see, prior to the application of any multiplying effects such as entering a nebula, and prior to modification by the game's Global Sensor Multiplier.
 	
 	This does not necessarily have to be the actual range of the ship's sensors, but it might provide a good idea of how big that range will be.
 >>

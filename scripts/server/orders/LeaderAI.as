@@ -2229,7 +2229,7 @@ class LeaderAI : Component_LeaderAI, Savable {
 		if(obj.owner is null || obj.owner is Creeps || obj.owner is defaultEmpire || obj.owner is Pirates) {
 			obj.sightRange = 0;
 			return;
-		}		
+		}
 
 		double sightRange = 0;
 		if(obj.isShip) {
@@ -2261,7 +2261,7 @@ class LeaderAI : Component_LeaderAI, Savable {
 		}
 		sightRange += currentBonus;
 //		print("Final sight range: " + sightRange);
-		obj.sightRange = sightRange;
+		obj.sightRange = sightRange * max(config::SENSOR_RANGE_MULT, 0.0);
 //		print("Object sight range: " + obj.sightRange);
 	}
 
