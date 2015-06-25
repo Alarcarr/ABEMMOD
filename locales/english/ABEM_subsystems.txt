@@ -473,8 +473,15 @@ S_RECHARGERMODULE_DESC: <<
 S_ENGINEERING_BAY_DESC: <<
 	Specialized equipment and personnel for battlefield assembly or repairs.
 	
-	[img=Plus]Allows use of Engineering abilities.[/img]
+	[img=Plus]Allows use of the following Engineering abilities: Install Railgun Turret, Install Laser Turret, Install Missile Turret, Construct Outpost.[/img]
 	[img=Plus]Has a high repair rate.[/img]
+	[img=Minus]Does not grant any Control.[/img]
+>>
+S_UTILITY_BAY_DESC: <<
+	Specialized equipment and personnel for construction of military infrastructure and repairs.
+	
+	[img=Plus]Allows use of the following Engineering abilities: Install Maneuvering Thrusters, Install Shield Generators, Install Sensor Array, Construct Supply Depot.[/img]
+	[img=Plus]Has a slightly lower repair rate than a Combat Engineering Bay.[/img]
 	[img=Minus]Does not grant any Control.[/img]
 >>
 S_HAULER_HULL_DESC: <<

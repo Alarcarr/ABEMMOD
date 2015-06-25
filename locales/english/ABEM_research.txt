@@ -220,9 +220,11 @@ R_SYS_RESUPPLY_DESC: <<
 R_SYS_ENGINEERING: <<
 	[color=#aaa][i]Advances in engineering technology allow for engineering feats that previously required entire squadrons of ships to be accomplished by a single craft.[/i][/color]
 	
-	Unlocks the Engineering Bay subsystem.
+	Unlocks the Combat Engineering Bay and Utility Engineering Bay subsystems.
 	
 	[i][bbloc=#S_ENGINEERING_BAY_DESC/][/i]
+
+	[i][bbloc=#S_UTILITY_BAY_DESC/][/i]
 >>
 R_BLD_SENATE_DESC: <<
 	[i][bbloc=#F_SENATE_DESC/][/i]

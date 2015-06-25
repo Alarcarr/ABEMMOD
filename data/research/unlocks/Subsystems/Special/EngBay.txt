@@ -1,12 +1,14 @@
 Technology: EngBay
-	Name: Engineering Bay
+	Name: Engineering Systems
 	Class: Unlock
-	Point Cost: 300
-	Time Cost: 60
+	Point Cost: 500
+	Time Cost: 90
 	Icon: TechIcons::50
 	Description: #R_SYS_ENGINEERING
 	Color: #44ff47
 	Blurb: Onboard Assembly
-	ModAttribute(ProgenitorTechProgress, Add, 2.5)
+	ModAttribute(ProgenitorTechProgress, Add, 5)
 	UnlockSubsystem(EngBay)
 	SkipOnUnlockedSubsystem(EngBay)
+	UnlockSubsystem(UtilityBay)
+	SkipOnUnlockedSubsystem(UtilityBay)
