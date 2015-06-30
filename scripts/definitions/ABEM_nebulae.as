@@ -47,6 +47,10 @@ class DisableShields : StatusHook {
 	void onDestroy(Object& obj, Status@ status, any@ data) override {
 		ShieldData@ info;
 		data.retrieve(@info);
+		if(info is null)
+			info = ShieldData();
+		if(obj is null)
+			return;
 		if(obj.isShip) {
 			Ship@ ship = cast<Ship>(obj);
 			if(ship !is null) {
@@ -66,6 +70,8 @@ class DisableShields : StatusHook {
 	bool onTick(Object& obj, Status@ status, any@ data, double time) override {
 		ShieldData@ info;
 		data.retrieve(@info);
+		if(info is null)
+			info = ShieldData();
 		data.store(@info);
 		if(obj.isShip) {
 			Ship@ ship = cast<Ship>(obj);
@@ -91,15 +97,10 @@ class DisableShields : StatusHook {
 		ShieldData@ info;
 		data.retrieve(@info);
 
-		if(info is null) {
-			double nil = 0;
-			file << nil;
-			file << nil;
-		}
-		else {
-			file << info.shield;
-			file << info.maxShield;
-		}
+		if(info is null) 
+			info = ShieldData();
+		file << info.shield;
+		file << info.maxShield;
 	}
 
 	void load(Status@ status, any@ data, SaveFile& file) const {

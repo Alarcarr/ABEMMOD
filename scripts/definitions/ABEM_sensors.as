@@ -82,6 +82,8 @@ class AddSensor : SubsystemEffect {
 	void tick(SubsystemEvent& event, double time) const {
 		SubsystemSightData@ info;
 		event.data.retrieve(@info);
+		if(info is null)
+			info = SubsystemSightData();
 		event.data.store(@info);
 		if(event.obj is null) {
 //			print("Object is null in current tick.");
@@ -119,17 +121,25 @@ class AddSensor : SubsystemEffect {
 		event.data.retrieve(@info);
 		if(event.obj is null)
 			return;
-		if(event.obj.hasLeaderAI && info.hasLeader) {
+		if(event.obj.hasLeaderAI && (info !is null && info.hasLeader)) {
 			event.obj.removeSightModifier(info.id);
 		}
+		event.data.store(@info);
 	}
 
 	void save(SubsystemEvent& event, SaveFile& file) const {
 		SubsystemSightData@ info;
 		event.data.retrieve(@info);
-		file << info.hasLeader;
-		file << info.id;
-		file << info.workingPercent;
+		if(info !is null) {
+			file << info.hasLeader;
+			file << info.id;
+			file << info.workingPercent;
+		}
+		else {
+			file << false;
+			file << uint(-1);
+			file << event.workingPercent;
+		}
 	}
 
 	void load(SubsystemEvent& event, SaveFile& file) const {
@@ -139,6 +149,14 @@ class AddSensor : SubsystemEffect {
 		file >> info.hasLeader;
 		file >> info.id;
 		file >> info.workingPercent;
+		if(event.obj.hasLeaderAI && !info.hasLeader) {
+			double finalMult = multiplier.decimal * event.workingPercent;
+			if(finalMult < 1.0)
+				finalMult += 1;
+			info.hasLeader = true;
+			info.id = event.obj.addSightModifier(uint(priority.integer), finalMult, addedRange.decimal * event.workingPercent);
+			info.workingPercent = event.workingPercent;
+		}
 	}
 #section all
 }
