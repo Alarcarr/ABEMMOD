@@ -77,7 +77,7 @@ Ability: SpawnOutpost
 Ability: BuyThruster
 	Name: #ABL_ENGI_THRUSTER
 	Description: #ABL_ENGI_THRUSTER_DESC
-	Target: targ = Card
+	Target: targ = Object
 	Icon: TechIcons::9
 	Cooldown: 120
 	Range: 200
