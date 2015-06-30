@@ -20,6 +20,7 @@ Trait: Verdant
 
 	ForbidSubsystem(CrewControl)
 	ForbidSubsystem(CrewDeck)
+	ForbidSubsystem(SecurityStation)
 	UnlockSubsystem(VerdantSinew)
 	UnlockSubsystem(VerdantSupportSinew)
 

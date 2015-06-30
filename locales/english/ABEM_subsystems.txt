@@ -230,6 +230,16 @@ BEAM_AMPLIFIER_DESC: <<
 
 	[i][color=#aaa]Placing more than one beam amplifier on a weapon will continue to increase its range and burst damage, but will also skyrocket its labor costs.[/color][/i]
 >>
+S_SENSOR_PROCESSING_NODE_DESC: <<
+	Installing additional computers to process and catalogue sensor data gathered by the ship's sensors increases their effective range by a considerable margin.
+
+	[img=Plus;22;#cf00ff]Can be placed on Tachyon or Basic Sensors.[/img]
+	[img=Plus]Increases the sensor range of the subsystem by 20%.[/img]
+	[img=Minus]Increases the build cost of the subsystem by 50%.[/img]
+
+
+	[i][color=#aaa]Placing more than one processing node on a sensor will continue to increase its range, but will also skyrocket its build costs.[/color][/i]
+>>
 EXTRA_GUN_DESC: <<
 	Sophisticated ammo feeds, power conduits, capacitors and emitters allow for two turrets' worth of weapons to be mounted on a single turret. While this conserves space and building materials, it is more difficult to assemble and maintain. In effect, beam turrets receive improved emitters which double the amount of energy they can channel, while other weapons receive a second barrel/launcher which is discharged halfway through the reloading process of the first one to maintain a consistent rate of fire.
 
@@ -483,6 +493,13 @@ S_BOARDING_PARTY_DESC: <<
 	[img=Minus]Can take between 10 to 100 seconds to complete, and has a high cooldown.[/img]
 	[img=MenuIcons::3;20]Objects belonging to a Verdant race cannot be boarded.[/img]
 >>
+S_SECURITY_STATION: Security Station
+S_SECURITY_STATION_DESC: <<
+	Defensive installations designed to prevent ship capture by boarding parties.
+
+	[img=Plus]Is twice as effective at boarding defense than a Boarding Party hex.[/img]
+	[img=Minus]Cannot be used for boarding offense.[/img]
+>>
 S_CARRIER_HULL_DESC: <<
 	Specialized hull architecture allows for easier construction of dedicated carriers.
 	
@@ -677,13 +694,38 @@ S_ORBITALTHRUSTER_DESC: <<
 S_BASIC_SENSORS_DESC: <<
 	An array of various sensors that allow the ship's crew to see into the surrounding space without taking a telescope to the nearest window.
 	
-	[img=Plus]Increases sight range by a moderate quantity.[/img]
+	[img=Plus]Increases sight range by a moderate amount.[/img]
 	[img=Plus]Sensors on the outside of the ship do not use up interior space.[/img]
 	[img=MenuIcons::3;20]Completely covering sensors with armor or other sensors will cause them to use interior space again. The opposite is also true, so covering armor with sensors will cause the armor to use interior space.[/img]
 	[img=MenuIcons::3;20]Is not a contiguous subsystem - only one Basic Sensor core can be present on a ship, but that core does not have to be connected to all the other Basic Sensor hexes in the ship.[/img]
 	[img=Minus]Requires increasingly high amounts of Control as the subsystem's size increases. Sinew halves the Control requirements.[/img]
 	[img=Minus]Sensor core must be external.[/img]
 >>
+S_SENSOR_TACHYON: Tachyon Sensors
+S_SENSOR_TACHYON_DESC: <<
+	A modulating tachyon sensor grid that reveals objects within a significant area around the ship.
+	
+	[img=Plus]Increases sight range by a high amount.[/img]
+	[img=Plus]Sensors on the outside of the ship do not use up interior space.[/img]
+	[img=MenuIcons::3;20]Completely covering sensors with armor or other sensors will cause them to use interior space again. The opposite is also true, so covering armor with sensors will cause the armor to use interior space.[/img]
+	[img=MenuIcons::3;20]Is not a contiguous subsystem - only one Tachyon Sensor core can be present on a ship, but that core does not have to be connected to all the other Tachyon Sensor hexes in the ship.[/img]
+	[img=MenuIcons::3;20]Is immune to some of the sight-impairing effects of nebulae, but interference from subspace eddies negates the sight boost from Empty Space.[/img]
+	[img=Minus]Requires increasingly high amounts of Control as the subsystem's size increases. Sinew halves the Control requirements.[/img]
+	[img=Minus]Has a significantly higher maintenance cost compared to Basic Sensors, and requires more Control than an equal-sized Basic Sensor.[/img]
+	[img=Minus]Sensor core must be external.[/img]
+>>
+S_SENSOR_ARMORED: Armored Sensors
+S_SENSOR_ARMORED_DESC: <<
+	A decentralized network of armor-covered sensor nodes that can continue operating after sustaining significant damage.
+	
+	[img=Plus]Increases sight range by a small amount.[/img]
+	[img=Plus]Does not use up interior space, and requires less Control than Basic Sensors.[/img]
+	[img=Plus]Has no core, so it can continue operating to some extent until completely destroyed.[/img]
+	[img=MenuIcons::3;20]Must not have internal hexes, but can be covered by armor or other Armored Sensor hexes.[/img]
+	[img=Minus]Requires increasingly high amounts of Control as the subsystem's size increases. Sinew halves the Control requirements.[/img]
+	[img=Minus]Is heavier and slightly less effective than Plate Armor, and slightly more expensive than Basic Sensors.[/img]
+>>
+S_SENSOR_PROCESSING_NODE: Sensor Processing Node
 S_PLANET_MINING_LASER: Planet Devourer
 S_PLANET_MINING_LASER_DESC: <<
 	An array of tractor beams and mining lasers designed to harvest immense quantities of resources from a barren planet, destroying the planet in the process.

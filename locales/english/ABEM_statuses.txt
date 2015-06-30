@@ -96,3 +96,6 @@ STATUS_READYFORHARVEST: Ready for Harvesting
 STATUS_READYFORHARVEST_DESC: <<
 	A Ringworlder Harvester has prepared this planet for harvesting. Any Ringworlder empire can now transfer all the resources on the planet to one of their Ringworlds, turning it into a Barren planet.
 >>
+STATUS_HABITATRING_DESC: <<
+	A large ring-shaped station encircles this planet, providing more space for the construction of important infrastructure.
+>>

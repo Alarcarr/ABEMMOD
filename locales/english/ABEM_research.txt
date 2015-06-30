@@ -176,8 +176,38 @@ R_SYS_ZPG_DESC: <<
 
 	[color=#42b4bd][b]Alternate Unlock:[/b] Spend 2000 energy.[/color]
 >>
+R_SENSOR_ARMORED: Sensor Armoring
+R_SENSOR_ARMORED_DESC: <<
+	[color=#aaa][i]Advances in sensor networking and interference removal allow for significant amounts of sensor nodes to be embedded in a plate of armor.[/i][/color]
+
+	Unlocks the Armored Sensors subsystem.
+
+	[i][bbloc=#S_SENSOR_ARMORED_DESC/][/i]
+
+	[bbloc=#ALTUNLOCK_MONEY:2M/]
+>>
+R_SENSOR_TACHYON: Tachyon Sensors
+R_SENSOR_TACHYON_DESC: <<
+	[color=#aaa][i]A better understanding of the interactions between tachyons and regular matter opens up new ways of scanning star systems.[/i][/color]
+
+	Unlocks the Tachyon Sensors subsystem.
+
+	[i][bbloc=#S_SENSOR_TACYHON_DESC/][/i]
+
+	[bbloc=#ALTUNLOCK_ENERGY:750/]
+>>
+R_SENSOR_PROCESSING_NODE: Distributed Sensor Processing
+R_SENSOR_PROCESSING_NODE_DESC: <<
+	[color=#aaa][i]Advancements in the design of sensor processing systems allows additional computers to be cleanly and efficiently tied into the system, increasing its effectiveness.[/i][/color]
+
+	Unlocks the Sensor Processing Node subsystem.
+
+	[i][bbloc=#S_SENSOR_PROCESSING_NODE_DESC/][/i]
+
+	[bbloc=#ALTUNLOCK_ENERGY:1000/]
+>>
 R_BLD_SLAVE_DESC: <<
-	[color=#aaa][i]We have learnt much about the art of enslavement from ancient fictional works. Now, we can enslave entire populations - without making the many foolish blunders of fictional slavers![/i]
+	[color=#aaa][i]We have learnt much about the art of enslavement from ancient fictional works. Now, we can enslave entire populations - without making the many foolish blunders of fictional slavers![/i][/color]
 
 	Unlocks the Slave Barracks.
 
@@ -217,14 +247,6 @@ R_SYS_RESUPPLY_DESC: <<
 	Unlocks the Resupply Module subsystem for use on stations.
 	
 	[i][bbloc=#S_RESUPPLYMODULE_DESC/][/i]
->>
-	[color=#aaa][i]Advances in engineering technology allow for engineering feats that previously required entire squadrons of ships to be accomplished by a single craft.[/i][/color]
-	
-	Unlocks the Combat Engineering Bay and Utility Engineering Bay subsystems.
-	
-	[i][bbloc=#S_ENGINEERING_BAY_DESC/][/i]
-
-	[i][bbloc=#S_UTILITY_BAY_DESC/][/i]
 >>
 R_SYS_ENGINEERING: Engineering Systems
 R_SYS_ENGINEERING_DESC: <<
@@ -295,7 +317,6 @@ R_IMP_POP_LVL2PLANET_DESC: <<
 	[color=#d1cb6a][b]Alternate Unlock:[/b] Spend §1.5M.[/color]
 >>
 R_SYS_COVARIANT_BLURB: Anti-Burst Shield
-
 R_SYS_FLAK_DESC: <<
 	[color=#aaa][i]Ages ago, explosive canisters filled with small bits of metal were used extensively in early ground-to-air weapons. Now, we can take that highly advanced knowledge, and bring down swarms of small craft with it.[/i][/color]
 

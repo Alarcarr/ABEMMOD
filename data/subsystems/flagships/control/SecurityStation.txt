@@ -6,7 +6,7 @@ Subsystem: SecurityStation
 	Picture: CrewQuarters*#9686ff
 	Elevation: 5
 
-	Tags: BaseCost, NonContiguous,Category:Equipment, NoCore
+	Tags: BaseCost, NonContiguous,Category:Equipment, NoCore, DefaultUnlock
 	Tags: ExteriorCore
 	Tags: HasInternals
 	Hull: Flagship, Station
