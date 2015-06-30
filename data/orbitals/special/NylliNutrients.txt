@@ -1,5 +1,5 @@
 Module: NylliFood
-	Name: Hydroponics Station
+	Name: #ORB_FARM
 	Description: #ORB_FARM_DESC
 	Icon: OrbitalIcons::0
 	Strategic Icon: Megafarm
@@ -16,7 +16,7 @@ Module: NylliFood
 	AddHealthEmpireAttribute(StaticDamageFactor, Multiplier = 4000.0)
 	AddStatusToOrbitingPlanet(NylliFood, Set Origin Empire = True)
 Module: NylliWater
-	Name: Water Reclamation Facility
+	Name: #ORB_HYDROGENATOR
 	Icon: OrbitalIcons::0
 	Strategic Icon: Hydrogenator
 	Description: #ORB_HYDROGENATOR_DESC

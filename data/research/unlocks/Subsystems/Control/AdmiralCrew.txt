@@ -1,5 +1,5 @@
 Technology: AdmiralCrew
-	Name: Improved Command Deck
+	Name: #R_SYS_ADMIRAL
 	Description: #R_SYS_ADMIRAL_DESC
 	Class: Unlock
 	Point Cost: 1000

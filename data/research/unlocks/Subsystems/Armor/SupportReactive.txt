@@ -1,5 +1,5 @@
 Technology: SupportReactive
-	Name: Reactive Armor
+	Name: #REACTIVEARMOR_NAME
 	Class: Unlock
 	Point Cost: 1000
 	Time Cost: 300

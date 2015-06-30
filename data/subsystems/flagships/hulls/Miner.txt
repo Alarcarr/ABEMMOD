@@ -1,5 +1,5 @@
 Subsystem: Miner
-	Name: Miner Hull
+	Name: #S_MINER_HULL
 	Description: #S_MINER_HULL_DESC
 
 	Tags: Applied:Hull, Category:Hulls, NoCore,DefaultUnlock

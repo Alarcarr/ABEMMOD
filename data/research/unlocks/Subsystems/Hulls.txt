@@ -1,6 +1,6 @@
 Technology: Carrier
 	Icon: DesignationIcons::16
-	Name: Carrier Architecture
+	Name: #R_SYS_CARRIER
 	Class: Unlock
 	Point Cost: 500
 	Time Cost: 60
@@ -10,7 +10,7 @@ Technology: Carrier
 	UnlockSubsystem(Carrier)
 Technology: Destroyer
 	Icon: DesignationIcons::16
-	Name: Destroyer Architecture
+	Name: #R_SYS_DESTROYER
 	Class: Unlock
 	Point Cost: 500
 	Time Cost: 60

@@ -1,0 +1,12 @@
+Technology: ArmoredSensors
+	Name: #R_SENSOR_ARMORED
+	Description: #R_SENSOR_ARMORED_DESC
+	Class: Unlock
+	Point Cost: 1200
+	Time Cost: 120
+	Icon: TechIcons::17
+	Color: #898fff
+	ModAttribute(ProgenitorTechProgress, Add, 1.5)
+	SecondaryMoneyCost(2000)
+	SkipOnUnlockedSubsystem(ArmoredSensors)
+	UnlockSubsystem(ArmoredSensors)

@@ -1,5 +1,5 @@
 Subsystem: HDSupplyModule
-	Name: High Density Supply Storage
+	Name: #HDSUPPLYMODULE_NAME
 	Description: #HDSUPPLYMODULE_DESC
 	Picture: SubsystemButtonArt::8 * #b3ffef
 	BaseColor: #2fd6b3

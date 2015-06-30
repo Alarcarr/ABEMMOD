@@ -1,5 +1,5 @@
 Ability: MEL
-	Name: Mask Energy Levels
+	Name: #ABL_MEL
 	Icon: VolkurFleetIcons::1
 	Target: Flag1 = Object
 	Energy Cost: 200

@@ -1,4 +1,4 @@
 Status: SoilEnhanced
-	Name: SoilEnhanced
-	Visible To: Owner
+	Name: #C_HABITATRING
 	Icon: PlanetImage
+	Description: #STATUS_HABITATRING_DESC

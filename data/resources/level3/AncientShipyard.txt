@@ -1,5 +1,5 @@
 Resource: Ancient Shipyard
-	Name: Ancient Shipyard
+	Name: #RESOURCE_SHIPYARD
 	Level: 4
 	Pressure: 16 Defense
 	Small Icon: TechIcons::33
@@ -11,5 +11,8 @@ Resource: Ancient Shipyard
 	Artificial: True
 	Unique: True
 	Native Biome: Mountains
+	Rarity Level: 3
+	Rarity: Uncommon
+	Require Contestation: 30
 	AddLaborIncome(Amount = 16)
 	GrantAbility(OverchargeFleet)

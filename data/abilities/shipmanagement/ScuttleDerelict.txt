@@ -1,11 +1,11 @@
 Ability: ScuttleDerelict
-	Name: Scuttle Derelict Ship
+	Name: #ABL_SCUTTLEDERELICT
 	Description: #ABL_SCUTTLEDERELICT_DESC
 	Icon: Explosion_color
-	
+
 	Cooldown: 5
 	Target: targ = Object
 	Range: 300
-	
+
 	ABEM_hooks::TargetFilterStatus(targ, DerelictShip)
 	ABEM_hooks::DestroyTarget(targ)

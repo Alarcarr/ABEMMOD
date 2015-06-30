@@ -1,5 +1,5 @@
 Subsystem: ZeroPoint
-	Name: Singularity Core
+	Name: #S_ZPG
 	Description: #S_ZPG_DESC
 	BaseColor: #5ade8b
 	Elevation: 1
@@ -20,7 +20,7 @@ Subsystem: ZeroPoint
 	Hex.BuildCost := 20 * HexSize + 2
 	Hex.MaintainCost := 0
 	Assert: Size >= 100
-		Message: Singularity Core must be at least size 100. Add more hexes to the core or increase the ship's size.
+		Message: #ERROR_ZPG
 
 	Provides:
 		Power = Power

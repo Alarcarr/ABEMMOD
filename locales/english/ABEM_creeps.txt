@@ -1,1 +1,8 @@
 VERB_PICKUP_GUARDIAN: Move in closer to the $1
+PICKUP_GUARDIAN_DESC: Allows you to attempt to salvage the Guardian.
+PICKUP_EQUIPMENTSTASH: Equipment Stash
+PICKUP_EQUIPMENTSTASH_DESC: A Remnant equipment stash you can improve your technology with.
+VERB_PICKUP_EQUIPMENTSTASH: Analyze $1
+PICKUP_SOLARENGINE: Advanced Solar Engine
+PICKUP_SOLARENGINE_DESC: A dormant Solar Engine of Progenitor design. Will generate energy when reactivated. Requires no maintenance and produces more energy than a regular Solar Engine.
+VERB_PICKUP_SOLARENGINE: Reactivate $1

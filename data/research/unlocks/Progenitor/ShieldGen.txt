@@ -1,7 +1,7 @@
 Technology: ProgenitorShield
 	Icon: TechIcons::35*#60ffff
 	Description: #R_SYS_REMNANTSHIELD_DESC
-	Name: Progenitor Shield Technology
+	Name: #R_SYS_REMNANTSHIELD
 	Point Cost: 1500
 	Time Cost: 180
 	Class: Unlock

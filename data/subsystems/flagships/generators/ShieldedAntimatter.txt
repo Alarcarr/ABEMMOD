@@ -1,5 +1,5 @@
 Subsystem: ShieldedAntimatter
-	Name: Shielded Antimatter Gen
+	Name: #S_SHIELDED_AMGEN
 	Description: #S_SHIELDED_AMGEN_DESC
 	BaseColor: #5ade8b
 	Elevation: 1

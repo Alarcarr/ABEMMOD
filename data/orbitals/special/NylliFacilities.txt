@@ -1,5 +1,5 @@
 Module: NylliSenate
-	Name: Government Center
+	Name: #F_SENATE_NAME
 	Description: #F_SENATE_DESC
 	Blurb: #ORB_SENATE_BLURB
 	Icon: PoliticalStrengthIcon

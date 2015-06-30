@@ -1,6 +1,6 @@
 Technology: DevCultivation
-	Name: Sustainability
-	Blurb: 1x Cultivation
+	Name: #R_DEV_CULTIVATION
+	Blurb: #R_DEV_CULTIVATION_BLURB
 	Class: Boost
 
 	Point Cost: 700

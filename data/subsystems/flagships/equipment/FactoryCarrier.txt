@@ -1,5 +1,5 @@
 Subsystem: RoboticShipyard
-	Name: Automated Shipyard
+	Name: #S_ROBOTICSHIPYARD
 	Description: #S_ROBOTICSHIPYARD_DESC
 	Elevation: 2
 

@@ -1,5 +1,5 @@
 Subsystem: ShieldTransmitter
-	Name: Shield Transmitter
+	Name: #S_SHIELDTRANSMITTER
 	BaseColor: #38a2f9
 	Picture: SubsystemButtonArt::8
 	Elevation: 2

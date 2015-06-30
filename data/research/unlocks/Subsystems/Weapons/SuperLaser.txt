@@ -1,5 +1,5 @@
 Technology: SuperLaser
-	Name: Superlaser
+	Name: #R_SYS_SUPERLASER
 	Point Cost: 2500
 	Class: Unlock
 	Description: #R_SYS_SUPERLASER_DESC

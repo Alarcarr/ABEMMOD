@@ -1,5 +1,5 @@
 Resource: BlackHole
-	Name: Ancient Hubworld
+	Name: #RESOURCE_HUBWORLD
 	Small Icon: emp_flag_flag7
 	Class: Scalable
 	Native Biome: Forest

@@ -1,5 +1,5 @@
 Building: Residential
-	Name: Residential Area
+	Name: #BLD_HOUSING
 	Description: #BLD_HOUSING_DESC
 	Sprite: city3
 	Size: 2x2

@@ -1,6 +1,6 @@
 Building: SlaveBarracks
 	Sprite: TechIcons::21
-	Name: Slave Barracks
+	Name: #B_SLAVE
 	Description: #B_SLAVE_DESC
 	Category: Infrastructure
 	Size: 6x6

@@ -1,5 +1,5 @@
 Subsystem: PoweredArmor
-	Name: Powered Armor
+	Name: #S_POWERED_ARMOR
 	Description: #S_POWERED_ARMOR_DESC
 	BaseColor: #a9a9b9
 	Elevation: 1
@@ -17,7 +17,7 @@ Subsystem: PoweredArmor
 	Hex.Mass := 1.2 * HexSize
 	Hex.LaborCost := 0.4 * HexSize
 	Hex.BuildCost := 0.4 * HexSize
-	Hex.MaintainCost := 0.1
+	Hex.MaintainCost := 0.1 * HexSize
 
 	CompEnergyResist := 0.5
 	DummyEnergyResist := 100 * CompEnergyResist

@@ -1,5 +1,5 @@
 Resource: ResearchCenter
-	Name: Research Center
+	Name: #RESOURCE_RESEARCH
 	Blurb: #RESOURCE_RESEARCH_BLURB
 	Description: #RESOURCE_RESEARCH_DESC
 	Small Icon: ResourceIcon::3
@@ -9,9 +9,9 @@ Resource: ResearchCenter
 	Pressure: 7 Research
 	Exportable: False
 	Affinity: Research
-	Require Contestation: 40
 	Artificial: True
 	Unique: True
+	Rarity: Uncommon
 	ModCivResourceMult(Research, 0.2)
 	ConvertResource(Energy, 1, Research)
 	ConvertResource(Labor, 1, Research)

@@ -1,5 +1,5 @@
 Subsystem: StealthHull
-	Name: Stealth Hull
+	Name: #S_STEALTH_HULL
 	Description: #S_STEALTH_HULL_DESC
 
 	Tags: Applied:Hull, Category:Hulls, NoCore
@@ -22,4 +22,4 @@ Subsystem: StealthHull
 		DrawMode: 3
 
 	Assert: Sum.HyperdriveSpeed <= 0
-		Message: Stealth ships cannot use hyperdrives.
+		Message: #ERROR_STEALTH

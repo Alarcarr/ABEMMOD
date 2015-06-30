@@ -23,7 +23,7 @@ Technology: BldMetropolis
 	UnlockTag(Metropolis)
 	SecondaryInfluenceCost(5)
 Technology: TaxCenter
-	Name: Taxation Centers
+	Name: #R_BLD_TAX
 	Description: #R_BLD_TAX_DESC
 	Class: Unlock
 	Icon: tax2
@@ -33,7 +33,7 @@ Technology: TaxCenter
 	UnlockTag(Tax)
 	SkipOnUnlockedTag(Tax)
 Technology: Housing
-	Name: Residential Area
+	Name: #R_BLD_HOUSING
 	Description: #R_BLD_HOUSING_DESC
 	Class: Unlock
 	Icon: city3

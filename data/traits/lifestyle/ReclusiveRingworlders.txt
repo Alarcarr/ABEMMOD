@@ -1,5 +1,5 @@
 Trait: ReclusiveRingworlders
-	Name: Vanguard (Ringworlders)
+	Name: #TRAIT_VANGUARD_RINGWORLDER
 	Description: #TRAIT_VANGUARD_RINGWORLDER_DESC
 	Order: 5
 

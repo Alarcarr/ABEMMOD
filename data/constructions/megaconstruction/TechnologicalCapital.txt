@@ -7,6 +7,7 @@ Construction: TechnologicalCapital
 	Icon: AncientRuin
 	Category: Infrastructure
 	Description: Increase Research by 40% , Add 10 flat research.
+	RequireNever()
 	RequireNotTrait(StarChildren)
 	RequireNotStatus(TechCap)
 	TargetFilterNotStatus(a, TechCap)

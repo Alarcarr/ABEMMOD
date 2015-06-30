@@ -1,3 +1,25 @@
+STATUS_LASERTURRET: Laser Turret
+STATUS_RAILGUNTURRET: Railgun Turret
+STATUS_MISSILETURRET: Missile Turret
+STATUS_MANEUVERINGTHRUSTERS: Maneuvering Thrusters
+STATUS_EXTRATHRUSTER: Maneuvering Thrusters
+STATUS_ORBITALSHIELD: Shield Generators
+STATUS_ORBITALSENSOR: Sensor Arrays
+NEBULA_CERULEAN: Sicutmarian Nebula
+NEBULA_ECONOMIC: Pretiosian Nebula
+EMPTY_SPACE: Empty Space
+NEBULA_METAPHASIC: Metaphasic Nebula
+NEBULA_METREON: Metreon Nebula
+NEBULA_MUTARA: Mutara-class Nebula
+NEBULA_RADIOACTIVE: Radioactive Nebula
+NEBULA_TACHYON: Tachyon Nebula
+NEBULA_TYPE1: Interstellar Gas Cloud
+STATUS_BOARDED: Boarded
+STATUS_GDF: Go Down Fighting
+STATUS_MEL: Mask Energy Levels
+STATUS_LW: Rally Cry
+STATUS_EXHAUSTED: Exhausted
+STATUS_STELLAR_SHIELD: Shielded
 STATUS_POWER_CELL_DESC: <<
 	Upgraded in an ancient shipyard.
 
@@ -46,7 +68,7 @@ STATUS_VOIDRAY_DESC: <<
 	
 	Stacks up to 10 times.
 >>
-STATUS_TRANSPORTED: Hauler
+STATUS_TRANSPORTED: In Transit
 STATUS_TRANSPORTED_DESC: <<
 	This fleet is being led by a Hauler. Combat effectiveness is reduced by 50%.
 >>

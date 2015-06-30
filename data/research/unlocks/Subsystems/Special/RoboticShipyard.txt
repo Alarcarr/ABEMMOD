@@ -1,5 +1,5 @@
 Technology: RoboticShipyard
-	Name: Shipboard Construction
+	Name: #R_SYS_ROBOTICSHIPYARD
 	Description: #R_SYS_ROBOTICSHIPYARD_DESC
 	Class: Unlock
 	Point Cost: 400

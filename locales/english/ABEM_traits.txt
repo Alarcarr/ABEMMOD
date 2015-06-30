@@ -31,6 +31,7 @@ TRAIT_BERSERKERS_DESC: <<
   [vspace=3/][img=ThumbsDown;22][/img]The Influence cost of playing support cards during a vote is increased by 2, while the cost of starting a vote is increased by 4.
   [vspace=3/][img=ResourceIcon::5;22][/img]All planets have an additional 256 Support Capacity.
 >>
+TRAIT_VANGUARD_RINGWORLDER: Vanguard (Ringworlders)
 TRAIT_VANGUARD_RINGWORLDER_DESC: <<
 	[vspace=3/][img=PlanetType::14;28]Instead of planets, starts with a Ringworld and the technology to build more.[/img]
 	[vspace=3/][img=QuickbarIcons::3;22]Cannot own non-Ringworld planets. This includes Artificial Planetoids.[/img]

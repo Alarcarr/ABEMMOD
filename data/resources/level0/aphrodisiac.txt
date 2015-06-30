@@ -1,5 +1,5 @@
 Resource: Aphrodisiac
-	Name: Tropical Paradise
+	Name: #PARADISE_NAME
 	Blurb: #PARADISE_BLURB
 	Description: #PARADISE_DESC
 	Small Icon: DesignationIcons::15
@@ -10,8 +10,8 @@ Resource: Aphrodisiac
 	Pressure: 5 Money
 	Pressure: 5 Influence
 	Affinity: Money + Influence
-	Require Contestation: 20
 	Unique: True
+	Rarity: Uncommon
 	ModCivResourceMult(Labor, -0.5)
 	ModCivResourceMult(Research, -0.5)
 	ModCivResourceMult(Defense, -0.5)

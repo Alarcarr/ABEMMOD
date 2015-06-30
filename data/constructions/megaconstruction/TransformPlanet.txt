@@ -1,5 +1,5 @@
 Construction: TransformPlanet
-	Name: Orbital Habitation Ring
+	Name: #C_HABITATRING
 	Labor Cost: 250
 	Icon: PlanetImage
 	Category: Upgrades

@@ -1,0 +1,34 @@
+Subsystem: TachyonSensor
+	Name: #S_SENSOR_TACHYON
+	Description: #S_SENSOR_TACHYON_DESC
+	BaseColor: #9ed6ff
+	Elevation: 1
+
+	Tags: HighMaint, IsSensor, Category:Sensors, HasInternals, ExteriorCore, DefaultUnlock, NonContiguous
+	Hull: Flagship, Station
+
+	Size := HexSize * Hexes
+	SensorRange := 150 + (Hexes * 30) + max(log(Size), 1) * Hexes * 1.5
+	SensorPriority := 200
+	Hex.Mass := HexSize / 2
+	Hex.Resistance := 0.1
+	Hex.HP := 15 * HexSize
+
+	Ship.ExternalHexes := Ship.ExternalHexes + ExteriorHexes
+
+	Control := round(pow(Size / ShipSize, 3) * 125 / (Sum.HasSinew + 1))
+
+	Modifier: SensorFactor(factor)
+		SensorRange := SensorRange * factor
+
+	Hook: ABEM_sensors::AddSensor(SensorPriority, 1.0, SensorRange)
+
+	Hex.LaborCost := 0.15 * HexSize
+	Hex.BuildCost := 1.3 * HexSize
+	Requires:
+		Command = Control
+
+	Module: Core
+		Sprite: cloack
+
+	Module: Default

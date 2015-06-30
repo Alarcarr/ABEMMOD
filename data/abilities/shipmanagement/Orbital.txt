@@ -1,5 +1,5 @@
 Ability: BuyTurretL
-	Name: Install Laser Turret
+	Name: #ABL_TURRET_LASER
 	Description: #ABL_TURRET_LASER_DESC
 	Target: Orbital = Object
 	Icon: LaserTurret
@@ -19,7 +19,7 @@ Ability: BuyTurretL
 	ShareCooldown(BuyTurretR)
 	ShareCooldown(BuyTurretM)
 Ability: BuyTurretR
-	Name: Install Railgun Turret
+	Name: #ABL_TURRET_RAIL
 	Description: #ABL_TURRET_RAIL_DESC
 	Icon: RailTurret
 	Target: Orbital = Object
@@ -42,7 +42,7 @@ Ability: BuyTurretR
 
 	TargetFilterAllied(Orbital)
 Ability: BuyTurretM
-	Name: Install Missile Turret
+	Name: #ABL_TURRET_MISSILE
 	Description: #ABL_TURRET_MISSILE_DESC
 	Target: Orbital = Object
 	Icon: MissileTurret
@@ -65,7 +65,7 @@ Ability: SpawnOutpost
 	Target: Place = Point
 	Cooldown: 120
 	Energy Cost: 250
-	Name: Construct Outpost
+	Name: #ABL_BUILD_OUTPOST
 	Description: #ABL_BUILD_OUTPOST_DESC
 	Range: 100
 	Icon: GuiOrbitalIcons::0
@@ -75,9 +75,9 @@ Ability: SpawnOutpost
 	SpawnOrbitalAt(Place, TradeOutpost)
 
 Ability: BuyThruster
-	Name: Install Maneuvering Thrusters
+	Name: #ABL_ENGI_THRUSTER
 	Description: #ABL_ENGI_THRUSTER_DESC
-	Target: targ = Object
+	Target: targ = Card
 	Icon: TechIcons::9
 	Cooldown: 120
 	Range: 200
@@ -96,7 +96,7 @@ Ability: BuyThruster
 	ConsumeMoney(500)
 
 Ability: BuyShield
-	Name: Install Shield Generators
+	Name: #ABL_ENGI_SHIELD
 	Description: #ABL_ENGI_SHIELD_DESC
 	Target: targ = Object
 	Icon: TechIcons::35
@@ -117,7 +117,7 @@ Ability: BuyShield
 	ConsumeMoney(500)
 
 Ability: BuySensor
-	Name: Install Sensor Array
+	Name: #ABL_ENGI_SENSOR
 	Description: #ABL_ENGI_SENSOR_DESC
 	Target: targ = Object
 	Icon: TechIcons::1
@@ -138,7 +138,7 @@ Ability: BuySensor
 	ConsumeMoney(500)
 
 Ability: SpawnSupplyDepot
-	Name: Construct Supply Depot
+	Name: #ABL_BUILD_SUPPLYDEPOT
 	Description: #ABL_BUILD_SUPPLYDEPOT_DESC
 	Target: dest = Point
 	Icon: GuiOrbitalIcons::7
@@ -148,4 +148,4 @@ Ability: SpawnSupplyDepot
 
 	ShowMoneyValue(500)
 	ConsumeMoney(500)
-	SpawnOrbitalAt(dest, SupplyDepot)	
+	SpawnOrbitalAt(dest, SupplyDepot)

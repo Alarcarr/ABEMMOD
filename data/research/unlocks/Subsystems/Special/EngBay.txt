@@ -1,10 +1,10 @@
 Technology: EngBay
-	Name: Engineering Systems
+	Name: #R_SYS_ENGINEERING
 	Class: Unlock
 	Point Cost: 500
 	Time Cost: 90
 	Icon: TechIcons::50
-	Description: #R_SYS_ENGINEERING
+	Description: #R_SYS_ENGINEERING_DESC
 	Color: #44ff47
 	Blurb: Onboard Assembly
 	ModAttribute(ProgenitorTechProgress, Add, 5)

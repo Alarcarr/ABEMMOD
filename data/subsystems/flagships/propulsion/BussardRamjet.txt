@@ -1,5 +1,5 @@
 Subsystem: BussardRamjet
-	Name: Bussard Ramjet
+	Name: #S_RAMJET
 	Description: #S_RAMJET_DESC
 	BaseColor: #f99a77
 	Picture: OrbitalEngine

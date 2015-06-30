@@ -1,6 +1,6 @@
 Technology: DualMount
 	Icon: MassMount
-	Name: Dual Mount
+	Name: #EXTRA_GUN_NAME
 	Class: Unlock
 	Description: #R_DUALMOUNT_DESC
 	Point Cost: 500

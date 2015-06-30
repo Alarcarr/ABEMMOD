@@ -1,5 +1,5 @@
 Ability: Recall
-	Name: Recall
+	Name: #ABL_RECALL
 	Description: #ABL_RECALL_DESC
 	Icon: ActionBarIcons::7
 

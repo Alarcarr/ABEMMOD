@@ -1,5 +1,5 @@
 Subsystem: OrbitalControl
-	Name: Orbital Thruster
+	Name: #S_ORBITALTHRUSTER
 	BaseColor: #f99a77
 	Picture: RocketEngine
 	Elevation: 2

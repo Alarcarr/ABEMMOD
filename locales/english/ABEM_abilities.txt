@@ -1,4 +1,19 @@
-﻿ABL_OVERCHARGE_FLEET_DESC: <<
+﻿ABL_PROTO_LEVEL3: Form Planet (Tier 3)
+ABL_PROTO_LEVEL3_DESC: Manipulate the planet's formation by expending a large amount of energy. The planet will produce a random tier 3 resource.
+ABL_GDF: Go Down Fighting
+ABL_LW: Rally Cry
+ABL_MEL: Mask Energy Levels
+ABL_TURRET_LASER: Install Laser Turret
+ABL_TURRET_RAIL: Install Railgun Turret
+ABL_TURRET_MISSILE: Install Missile Turret
+ABL_BUILD_OUTPOST: Construct Outpost
+ABL_ENGI_THRUSTER: Install Maneuvering Thrusters
+ABL_ENGI_SHIELD: Install Shield Generators
+ABL_ENGI_SENSOR: Install Sensor Array
+ABL_BUILD_SUPPLYDEPOT: Construct Supply Depot
+ABL_SCUTTLEDERELICT: Scuttle Derelict Ship
+ABL_RECALL: Recall
+ABL_OVERCHARGE_FLEET_DESC: <<
 	Increase the targeted fleet's effectiveness by 40%.
 
 	A fleet can only be upgraded once.

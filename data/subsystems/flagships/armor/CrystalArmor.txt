@@ -1,5 +1,5 @@
 Subsystem: CrystalArmor
-	Name: Crystalline Armor
+	Name: #S_CRYSTAL_ARMOR
 	Description: #S_CRYSTAL_ARMOR_DESC
 	BaseColor: #a9a9a9
 	Elevation: 1
@@ -7,10 +7,10 @@ Subsystem: CrystalArmor
 	Tags: LowMaint, Category:Armor, NoWall
 	Tags: NoCore, NonContiguous, Defense, IsArmor, TankArmor, ExternalSpace
 	Hull: Flagship, Station
-	
+
 	Tags: FauxExterior
 	Ship.ExternalHexes := Ship.ExternalHexes + ExteriorHexes
-	
+
 	Size := HexSize * Hexes
 
 	Hex.Resistance := 0.5

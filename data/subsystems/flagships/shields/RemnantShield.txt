@@ -1,5 +1,5 @@
 Subsystem: RemnantShield
-	Name: Progenitor Shield Generator
+	Name: #S_REMNANTSHIELD
 	Description: #S_REMNANTSHIELD_DESC
 	BaseColor: #0044db
 	Elevation: 1

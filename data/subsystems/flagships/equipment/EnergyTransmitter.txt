@@ -1,10 +1,10 @@
 Subsystem: EnergyTransmitter
-	Name: Energy Transferral Beam
+	Name: #S_ENERGYTRANSMITTER
 	BaseColor: #2fd6b3
 	Picture: Laser::0 * #38a2f9
 	Elevation: 2
 
-	Tags: BaseCost, Category:Equipment, Ability:ShieldTransfer
+	Tags: BaseCost, Category:Equipment, Ability:SupplyTransfer
 	Tags: HasInternals, ExteriorCore
 	Hull: Flagship, Station
 

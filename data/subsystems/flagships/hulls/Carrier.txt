@@ -1,5 +1,5 @@
 Subsystem: Carrier
-	Name: Carrier Hull
+	Name: #S_CARRIER_HULL
 	Description: #S_CARRIER_HULL_DESC
 
 	Tags: Applied:Hull, Category:Hulls, NoCore

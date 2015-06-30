@@ -1,5 +1,5 @@
 Status: MEL
-	Name: Mask Energy Levels
+	Name: #STATUS_MEL
 	Visible To: Owner
 	Unique: True
 	Collapses: True

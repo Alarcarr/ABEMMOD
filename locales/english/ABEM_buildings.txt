@@ -74,3 +74,44 @@ BLD_VANGUARDPORTAL_DESC: <<
 	[img=MenuIcons::3;20]Intense rivalry between Vanguard races - and the desire of non-Vanguard races to keep the Overlords away - cause the Stabilizer to self-destruct or be destroyed, respectively, when the planet's owner changes for any reason.[/img]
 	[img=MenuIcons::3;20]Can only be constructed once per planet, and can only be constructed on a Ringworld or Artificial Planetoid.[/img]
 >>
+B_DEFENSEFACTORY: Command Center
+B_TAXCENTER: Taxation Center
+BLD_HOUSING: Residential Area
+BLD_RECALL: Recall Facility
+B_SLAVE: Slave Barracks
+B_FAKELVL1_RESEARCH: Research Complex
+B_FAKELVL1_RESEARCH_DESC: <<
+	A specialized processing plant that can replace a Level 1 resource and generates 3 Research pressure.
+
+	[img=ResourceIconsSmall::11;22;#91692c][b][color=#91692c]Requires large amounts of Ore mined from asteroids.[/color][/b][/img]
+>>
+B_FAKELVL1_MONEY: Space Market
+B_FAKELVL1_MONEY_DESC: <<
+	A specialized processing plant that can replace a Level 1 resource and generates 3 Money pressure.
+
+	[img=ResourceIconsSmall::11;22;#91692c][b][color=#91692c]Requires large amounts of Ore mined from asteroids.[/color][/b][/img]
+>>
+B_FAKELVL1_DEFENSE: Weapons Factory
+B_FAKELVL1_DEFENSE_DESC: <<
+	A specialized processing plant that can replace a Level 1 resource and generates 3 Defense pressure.
+
+	[img=ResourceIconsSmall::11;22;#91692c][b][color=#91692c]Requires large amounts of Ore mined from asteroids.[/color][/b][/img]
+>>
+B_FAKELVL2_RESEARCH: Research Complex
+B_FAKELVL2_RESEARCH_DESC: <<
+	A specialized processing plant that can replace a Level 2 resource and generates 7 Research pressure.
+
+	[img=ResourceIconsSmall::11;22;#91692c][b][color=#91692c]Requires large amounts of Ore mined from asteroids.[/color][/b][/img]
+>>
+B_FAKELVL2_MONEY: Space Market
+B_FAKELVL2_MONEY_DESC: <<
+	A specialized processing plant that can replace a Level 2 resource and generates 7 Money pressure.
+
+	[img=ResourceIconsSmall::11;22;#91692c][b][color=#91692c]Requires large amounts of Ore mined from asteroids.[/color][/b][/img]
+>>
+B_FAKELVL2_DEFENSE: Weapons Factory
+B_FAKELVL2_DEFENSE_DESC: <<
+	A specialized processing plant that can replace a Level 2 resource and generates 7 Defense pressure.
+
+	[img=ResourceIconsSmall::11;22;#91692c][b][color=#91692c]Requires large amounts of Ore mined from asteroids.[/color][/b][/img]
+>>

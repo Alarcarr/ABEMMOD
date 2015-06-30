@@ -28,7 +28,7 @@ Technology: SupShieldGen
 	SecondaryEnergyCost(500)
 	UnlockSubsystem(SupShieldGen)
 Technology: CovariantShield
-	Name: Covariant Shield Generator
+	Name: #S_COVARIANT_SHIELD
 	Blurb: #R_SYS_COVARIANT_BLURB
 	Description: #R_COVARIANTSHIELD_DESC
 	Class: Unlock

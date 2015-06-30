@@ -1,5 +1,5 @@
 Status: EmptySpace
-	Name: Empty Space
+	Name: #EMPTY_SPACE
 	Description: #EMPTY_SPACE_DESC
 	Icon: ResourceIcon::5 * #429cffff * #00ff00
 

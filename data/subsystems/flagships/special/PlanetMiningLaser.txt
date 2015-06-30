@@ -30,11 +30,11 @@ Subsystem: PlanetMiningLaser
 	Hook: AddPermanentStatus(CanGiveCargo)
 	Assert: Sum.MiningLasers == 1
 		Unique: True
-		Message: Planet Devourers cannot be placed on a ship with a Mining Laser or another Planet Devourer.
+		Message: #ERROR_PLANETDEVOURER_NOLASER
 
 	Assert: Sum.IsHarvester >= 1
 		Unique: True
-		Message: Planet Devourers can only be placed on a Harvester.
+		Message: #ERROR_PLANETDEVOURER_HARVESTERONLY
 
 	Modifier: MiningRateFactor(factor)
 		PlanetMiningRate := PlanetMiningRate * factor

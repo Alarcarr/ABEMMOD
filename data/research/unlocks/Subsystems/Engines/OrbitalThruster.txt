@@ -1,5 +1,5 @@
 Technology: OrbitalThruster
-	Name: Orbital Maneuvering
+	Name: #R_ORBITALTHRUSTER
 	Description: #R_ORBITALTHRUSTER_DESC
 	Class: Unlock
 
@@ -8,7 +8,7 @@ Technology: OrbitalThruster
 
 	Icon: TechIcons::26
 	Color: #f9b04b
-	Blurb:  
+	Blurb:
 
 	UnlockSubsystem(OrbitalControl)
 

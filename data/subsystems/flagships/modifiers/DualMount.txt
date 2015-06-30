@@ -1,6 +1,6 @@
 Template: tag/Weapon, !tag/SupportHull
 	Module: ExtraGun
-		Name: Dual Mount
+		Name: #EXTRA_GUN_NAME
 		Description: #EXTRA_GUN_DESC
 
 		Sprite: MassMount

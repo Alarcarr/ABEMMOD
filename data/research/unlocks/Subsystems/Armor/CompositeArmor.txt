@@ -1,5 +1,5 @@
 Technology: CompositeArmor
-	Name: Composite Armor
+	Name: #R_COMPOSITE_ARMOR
 	Class: Unlock
 
 	Point Cost: 500

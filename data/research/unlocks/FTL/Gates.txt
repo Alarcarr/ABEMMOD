@@ -1,5 +1,5 @@
 Technology: GateTech
-	Name: Gate Technology
+	Name: #R_ORB_GATE
 	Icon: OrbitalIcons::1
 	Point Cost: 4000
 	Time Cost: 400

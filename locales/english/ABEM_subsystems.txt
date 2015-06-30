@@ -9,6 +9,24 @@ SC_Shields:[hspace=4/][img=TechIcons::6;32x32/][hspace=6/]  [color=#0A50F5]Shiel
 SC_Sensors:[hspace=4/][img=TechIcons::1;32x32/][hspace=6/] [color=#9ed6ff]Sensors[/color]
 
 // *********************************************************
+// ****************SUBSYSTEM ERRORS HERE!*******************
+// *********************************************************
+
+ERROR_ONLY_ONE: Cannot have more than one $1 on a ship.
+ERROR_ONLYONEADMIRAL: Only one Admiral can operate from a flagship at any time, and no Admiral needs two command centers, right?! Right!
+ERROR_PROGENITOR_COMPUTERMISMATCH: Cannot combine Progenitor Control Computers with standard Control Computers.
+ERROR_ENGBAYSIZE: Engineering Bays must be at least size 5. Increase the bay's hex count or the ship's size.
+ERROR_ZPG: Singularity Core must be at least size 100. Add more hexes to the core or increase the ship's size.
+ERROR_MIN_SIZE: $1 has a minimum size of $2.
+ERROR_STEALTH: Stealth ships cannot use hyperdrives.
+ERROR_PLANETDEVOURER_NOLASER: Planet Devourers cannot be placed on a ship with a Mining Laser or another Planet Devourer.
+ERROR_PLANETDEVOURER_HARVESTERONLY: Planet Devourers can only be placed on a Harvester.
+ERROR_SUPERLASER: Superlaser must be at least size 200. Add more hexes to the superlaser or increase the ship's size.
+ERROR_RESEARCHLAB: Research Lab must be at least size 15. Add more hexes to the lab or increase the station's size.
+ERROR_FTLJAMMER: The FTL Jammer must be at least size 100. Increase the jammer's hex count or the station's size.
+ERROR_MAX_SIZE: $1 has a maximum size of $2.
+
+// *********************************************************
 // ****************SUBSYSTEM STATS HERE!********************
 // *********************************************************
 
@@ -55,11 +73,76 @@ S_SHIELDHEALING: Regeneration Rate
 S_SUPPLYTRANSFER: Transfer Rate
 S_SHIELDTRANSFER: Transfer Rate
 S_DEFENSIVEMATRIX: Matrix Capacity
+S_PROJRESIST: Projectile Resistance
+S_ENERGYRESIST: Energy Resistance
+S_EXPLRESIST: Explosive Resistance
+S_PODSIZE: Pod Size
 
 // *********************************************************
 // ******************SUBSYSTEMS HERE!***********************
 // *********************************************************
 
+HDSUPPLYMODULE: High-Density Supply Storage
+S_BOARDING_PARTY: Boarding Parties
+SYS_ADMIRALBAY: Improved Command Deck
+S_COMPOSITE_ARMOR: Composite Armor
+S_CRYSTAL_ARMOR: Crystalline Armor
+S_NANO_ARMOR: Nanite Armor
+S_POWERED_ARMOR: Powered Armor
+S_QUANTUM_ARMOR: Quantum Armor
+S_REMNANT_ARMOR: Progenitor Armor
+S_CARPETBOMB: Carpet Bomb
+S_CARPETBOMB_DESC: A heavy, multiple warhead weapon designed to devastate a planet's surface and population.
+S_ENERGYTRANSMITTER: Energy Transferral Beam
+S_ROBOTICSHIPYARD: Automated Shipyard
+S_ENGINEERING_BAY: Combat Engineering Bay
+S_UTILITY_BAY: Utility Engineering Bay
+S_REPAIRBAY: Nanite Dispenser
+S_SHIELDREGENERATOR: Shield Regenerator
+S_SHIELDTRANSMITTER: Shield Transmitter
+S_SHIELDED_AMGEN: Shielded Antimatter Generator
+S_ZPG: Singularity Core
+S_CARRIER_HULL: Carrier Hull
+S_DESTROYER_HULL: Destroyer Hull
+S_GUARDIANHULL: Guardian Hull
+S_GUARDIANHULL_DESC: Dummy subsystem only used by the Remnant Guardian. Cannot be boarded.
+S_HAULER_HULL: Hauler Hull
+S_MINER_HULL: Miner Hull
+S_STEALTH_HULL: Stealth Hull
+EXTRA_GUN_NAME: Dual Mount
+BEAM_AMPLIFIER_NAME: Beam Amplifiers
+SHIELDCAPACITOR_NAME: Shield Capacitor
+SHIELDDIFFUSER_NAME: Shield Diffuser
+S_RAMJET: Bussard Ramjet
+S_BASIC_SENSORS: Basic Sensors
+S_COVARIANT_SHIELD: Covariant Shield Generator
+S_REMNANTSHIELD: Progenitor Shield Generator
+SHIELDGEN_NAME: Shield Generator
+S_HYPERDRIVE: Hyperdrive
+S_HYPERDRIVE_DESC: Allows for hyperdrive navigation. The larger the hyperdrive the faster the FTL speed.
+S_FLAK: Flak Cannon
+S_HEAVYRAIL: Heavy Railgun
+S_MATTERDISRUPTOR: Matter Disruptor
+S_SUPERLASER: Superlaser
+S_ROCKETPOD: Rocket Pod
+S_DEFENSIVEMATRIX_NAME: Defensive Matrix Generator
+S_ROCKETPOD_DESC: <<
+	A concealed tube of rockets rapidly extends, launches a volley of short range rockets, and receeds to reload.
+
+	[img=Plus]High [b][color=#ff8080]damage[/color][/b].[/img]
+	[img=Plus]No firing arc limitations.[/img]
+	[img=Plus]Very effective at piercing armor.[/img]
+	[img=Minus]Must reload after several shots.[/img]
+	[img=Minus]High [b][color=#fefc61]supply cost[/color][/b].[/img]
+>>
+S_TORPEDO: Torpedo Launcher
+S_TORPEDO_DESC: Launches massive, slow-moving, guided bombs. These bombs explode in an area around their target.
+S_ORBITALTHRUSTER: Orbital Thruster
+S_RESEARCHLAB: Research Lab
+S_RESUPPLYMODULE: Resupply Module
+S_RECHARGERMODULE: Power Transmission Array
+S_FIGHTER: Fighter Chassis
+S_MISSILEFRIGATE: Missile Frigate Chassis
 S_CLOAKPLATING_DESC: <<
 	Fully covering a ship in a mesh of hyperabsorbant material allows it to avoid detection by enemies outside immediate visual range.
 
@@ -378,9 +461,8 @@ S_ENERGYTRANSMITTER_DESC: <<
 >>
 S_DEFENSIVEMATRIX_DESC: <<
 	Generates a highly charged plasma field, acting as a temporary shield. The device is also capable of transmitting the plasma towards an allied flagship, attaching the field to that ship instead.
-	
+
 	[img=Plus]Grants access to the 'Engage Defensive Matrix' ability.[/img]
-	[img=MenuIcons::3;20]For an increased build and maintenance cost, multiple Defensive Matrix Generators can target several flagships simultaneously, be activated sequentially to avoid the 90-second cooldown, or focus on shielding a single ship for a specific period of time.[/img]
 	[img=MenuIcons::3;20][i][bbloc=#ABL_DEFENSIVEMATRIX_DESC/][/i][/img]
 >>
 S_FLAK_DESC: <<

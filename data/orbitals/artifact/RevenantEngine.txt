@@ -9,7 +9,7 @@ Module: RevenantEngine
 	Armor: 5000
 
 	Model: Research_Station
-	Material: VolkurGnericPBR
+	Material: VolkurGenericPBR
 	Size: 32
 
 	Strategic Icon: TechIcons::24

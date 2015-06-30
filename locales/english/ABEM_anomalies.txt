@@ -48,3 +48,15 @@ A_EQUIPMENTSTASH_SUPPLY: <<
 A_EQUIPMENTSTASH_ARMOR: <<
 	This container is filled with advanced alloys and composites used in armor fabrication. Analyzing them will yield a 15% boost to all armor health.
 >>
+A_GUARDIAN: Crippled Remnant Guardian
+A_GUARDIAN_SHIELD: Download the schematics for the flagship's advanced shields.
+A_GUARDIAN_ARMOR: Download the data on the flagship's advanced armor.
+A_GUARDIAN_COMPUTER: Download the schematics for the flagship's radiation-resistant computer core.
+A_GUARDIAN_DRONE: Download the data on the flagship's powerful drone weapons.
+A_ERROR_DESC: If you see this, there is something terribly wrong with this anomaly. Contact one of ABEM's developers and tell them how you caused this text to appear.
+A_EQUIPMENTSTASH: Equipment Stash
+ANOMALY_SYSREACTOR_DISASSEMBLE: <<
+	Studying the construction of the reactor could teach us how to replicate it.
+
+	[b][color=#842cdb]Unlocks Antimatter Generators and improves their power output by 10%.[/color][/b]
+>>

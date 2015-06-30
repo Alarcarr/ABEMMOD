@@ -1,5 +1,5 @@
 Subsystem: MatterDisruptor
-	Name: Matter Disruptor
+	Name: #S_MATTERDISRUPTOR
 	Description: #S_MATTERDISRUPTOR_DESC
 	BaseColor: #c5f946
 	TypeColor: #c5f946

@@ -5,7 +5,7 @@ Building: TaxCenter
 	Tile Maintenance: 100
 	Build Time:
 	Sprite: tax2
-	Name: Taxation Center
+	Name: #B_TAXCENTER
 	Description: #B_TAXCENTER_DESC
 	Category: Infrastructure
 	Labor Cost: 100

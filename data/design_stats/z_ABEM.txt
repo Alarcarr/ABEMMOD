@@ -56,14 +56,14 @@ GlobalStat: PlanetMiningRate
 // *************************************
 
 SubsystemStat: ProjResist
-	Name: Projectile Resistance
+	Name: #S_PROJRESIST
 	Icon: DesignationIcons::16
 	Color: #aaaaaa
 
 	Variable: ProjResist
 
 SubsystemStat: CompProjResist
-	Name: Projectile Resistance
+	Name: #S_PROJRESIST
 	Icon: AttributeIcons::4
 	Color: #aaaaaa
 	Suffix: %
@@ -71,7 +71,7 @@ SubsystemStat: CompProjResist
 	Variable: DummyProjResist
 
 SubsystemStat: CompEnergyResist
-	Name: Energy Resistance
+	Name: #S_ENERGYRESIST
 	Icon: DesignationIcons::2
 	Color: #aaaaaa
 	Suffix: %
@@ -79,7 +79,7 @@ SubsystemStat: CompEnergyResist
 	Variable: DummyEnergyResist
 	
 SubsystemStat: CompExplResist
-	Name: Explosive Resistance
+	Name: #S_EXPLRESIST
 	Icon: ResourceIconsSmall::134
 	Color: #aaaaaa
 	Suffix: %
@@ -87,14 +87,14 @@ SubsystemStat: CompExplResist
 	Variable: DummyExplosiveResist
 
 SubsystemStat: CrystalEnergyResist
-	Name: Energy Resistance
+	Name: #S_ENERGYRESIST
 	Icon: DesignationIcons::2
 	Color: #aaaaaa
 
 	Variable: CrystalEnergyResist
 	
 SubsystemStat: CrystalExplResist
-	Name: Explosive Resistance
+	Name: #S_EXPLRESIST
 	Icon: ResourceIconsSmall::134
 	Color: #aaaaaa
 
@@ -157,7 +157,7 @@ SubsystemStat: DefensiveMatrix
 	Variable: DefensiveMatrixHP
 
 SubsystemStat: PodSize
-	Name: Pod Size
+	Name: #S_PODSIZE
 	Icon: RocketPod::2
 	Color: #aaaaaa
 	Suffix: projectiles

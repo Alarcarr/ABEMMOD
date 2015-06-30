@@ -1,5 +1,5 @@
 Subsystem: BasicSensors
-	Name: Basic Sensors
+	Name: #S_BASIC_SENSORS
 	Description: #S_BASIC_SENSORS_DESC
 	BaseColor: #9ed6ff
 	Elevation: 1

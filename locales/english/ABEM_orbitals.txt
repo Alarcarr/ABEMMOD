@@ -41,6 +41,8 @@ ORB_EMBASSY_DESC: <<
 	Embassies act as Commerce Stations and Outposts in that they allow trade between separated territories, and expand your empire's borders, respectively.
 >>
 ORB_EXP_PLATFORM: Exploitation Platform
+ORB_FARM: Hydroponics Station
+ORB_HYDROGENATOR: Water Reclamation Facility
 ORB_FARM_BLURB: Produces food.
 ORB_FARM_DESC: <<
 	Generates a basic food resource for the planet it orbits. Food generation only applies if the planet and Hydroponics Station are owned by the same empire.
