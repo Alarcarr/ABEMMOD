@@ -164,3 +164,6 @@ SENSOR_RANGE_MULT: 1.000
 
 //Whether systems should be instantly explored when entered, if not prohibited by NoRegionVision()
 LEGACY_EXPLORATION_MODE: 0
+
+//Whether empires have to look for each other in order to participate in diplomacy, or already know everyone at the start of the game.
+FIRST_CONTACT: 1

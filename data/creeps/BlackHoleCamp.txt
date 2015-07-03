@@ -11,5 +11,3 @@ Camp: BlackHoleCamp
 	Remnant Status: Overcharged
 	Region Status: InterdictFTL
 	Remnant Status: RemnantGuardian
-
-
