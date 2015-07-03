@@ -95,6 +95,7 @@ Ability: BuyThruster
 	ShowMoneyValue(500)
 	ConsumeMoney(500)
 
+	TargetFilterNotStatus(targ, Stationary)
 Ability: BuyShield
 	Name: #ABL_ENGI_SHIELD
 	Description: #ABL_ENGI_SHIELD_DESC

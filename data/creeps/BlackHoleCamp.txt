@@ -11,3 +11,10 @@ Camp: BlackHoleCamp
 	Remnant Status: Overcharged
 	Region Status: InterdictFTL
 	Remnant Status: RemnantGuardian
+	Pickup: BlackHole
+		Physical Size: 1
+		Name: #PICKUP_GUARDIAN
+		Description: #PICKUP_GUARDIAN_DESC
+		Material: VolkurGenericPBR
+		SendMessage(#EVT_GUARDIANSHIPYARD_FOUND_DESC, Title = #EVT_GUARDIANSHIPYARD_FOUND)
+		SpawnArtifact(GuardianShipyard, true)

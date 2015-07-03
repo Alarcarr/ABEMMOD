@@ -13,6 +13,8 @@ Anomaly: BlackHole
 			NotifyAll(#A_GUARDIAN_NOTIFY_FIXED, Description = #A_GUARDIAN_NOTIFY_FIXED_DESC, Icon = SubsystemButtonArt::6)
 			UnlockTag(RemnantArmor)
 			UnlockTag(RemnantShield)
+			UnlockTag(ProgenitorComputer)
+			UnlockTag(DroneWeapon)
 			SendMessage(#A_GUARDIAN_FIXED)
 			SpawnDryDock(Guardian, Funding = 0.5, Progress = 0.2, Free = True)
 		Result: 95%
