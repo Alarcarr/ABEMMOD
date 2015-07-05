@@ -4,7 +4,7 @@ Artifact: GuardianShipyard
 	Icon: techShipYard
 	Strategic Icon: HullIcons::1
 	Model: Shipyard
-	Physical Size: 50.0
+	Size: 50.0
 	Mass: 30000000000
 	Frequency: 0
 	Can Donate: False

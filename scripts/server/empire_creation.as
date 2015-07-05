@@ -137,6 +137,20 @@ void init() {
 	for(uint i = 0, cnt = getEmpireCount(); i < cnt; ++i)
 		getEmpire(i).preInitTraits();
 
+	// Apply First Contact Mode if necessary
+	if(config::FIRST_CONTACT == 0) {
+		for(uint i = 0, cnt = getEmpireCount(); i < cnt; ++i) {
+			Empire@ emp = getEmpire(i);
+			if(emp.major) {
+				for(uint j = 0; j < cnt; ++j) {
+					Empire@ other = getEmpire(j);
+					if(other.major)
+						emp.ContactMask |= other.mask;
+				}
+			}
+		}
+	}
+
 	//Initialize default designs into empires
 	initEmpireDesigns();
 }

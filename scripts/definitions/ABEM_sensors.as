@@ -136,7 +136,7 @@ class AddSensor : SubsystemEffect {
 			file << info.workingPercent;
 		}
 		else {
-			uint nil = -1;
+			uint nil = 0xffffffff;
 			file << false;
 			file << nil;
 			file << event.workingPercent;
