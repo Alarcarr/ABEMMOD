@@ -4,7 +4,7 @@ Subsystem: TachyonSensor
 	BaseColor: #9ed6ff
 	Elevation: 1
 
-	Tags: HighMaint, IsSensor, Category:Sensors, HasInternals, ExteriorCore, DefaultUnlock, NonContiguous
+	Tags: HighMaint, IsSensor, Category:Sensors, HasInternals, ExteriorCore, NonContiguous
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes

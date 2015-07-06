@@ -20,7 +20,7 @@ Technology: PolSci
 	Name: #R_CAT_POLITICS
 	Description: #R_CAT_POLITICS_DESC
 	Icon: DesignationIcons::1
-	Class: Special
+	Class: Keystone
 	AutomaticallyUnlocks()
 Technology: Metallurgy
 	Name: #R_CAT_INDUSTRY
