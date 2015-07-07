@@ -90,6 +90,7 @@ class AdvancedGamePage : GameSettingsPage {
 		Number(locale::NG_FIRST_CONTACT_PRIZE, "INFLUENCE_CONTACT_BONUS", step=1, tooltip=locale::NGTT_FIRST_CONTACT_PRIZE);
 		Number(locale::NG_LABOR_DUMP_TIME, "LABOR_STORAGE_DUMP_TIME", step=15, tooltip=locale::NGTT_LABOR_DUMP_TIME);
 		Number(locale::NG_LEVEL_DECAY_TIME, "LEVEL_DECAY_TIMER", step=30, tooltip=locale::NGTT_LEVEL_DECAY_TIME);
+		Occurance(locale::NG_RESEARCH_DECAY_MULT, "RESEARCH_EFFICIENCY_DECAY_MULT", max=10.0, tooltip=locale::NGTT_RESEARCH_DECAY_MULT);
 		Frequency(locale::NG_DRYDOCK_BUILDCOST_FACTOR, "DRYDOCK_BUILDCOST_FACTOR", min=0.5, max=10.0, tooltip=locale::NGTT_DRYDOCK_BUILDCOST_FACTOR);
 	}
 };

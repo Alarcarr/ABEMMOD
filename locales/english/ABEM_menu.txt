@@ -96,3 +96,10 @@ NGTT_TERRAFORM_COST_STEP: When terraforming planets from another star system, de
 
 NG_ORBITAL_LABOR_COST_STEP: Orbital Labor Cost Step
 NGTT_ORBITAL_LABOR_COST_STEP: When building orbitals from another star system, determines how much the Labor cost of construction is increased for every star system between the building planet and the desired location of the orbital. (Developer note: The shortest trade route is used, with each trade link increasing the cost by the percentage selected here.)
+
+NG_RESEARCH_DECAY_MULT: Research Efficiency Decay
+NGTT_RESEARCH_DECAY_MULT: <<
+	Affects how many research points must be generated to lower the research generation rate to a certain percentage of the empire's base generation. When set to 100%, an empire must generate 4000 - 5000 if Innovative - research points to halve its research efficiency.
+
+	Can be set to 0%, preventing research decay altogether. (Developer note: The above figures only apply in ABEM. In the base game, an empire must generate 2000 research points to halve efficiency, and Innovative does not affect research decay at all.)
+>>
