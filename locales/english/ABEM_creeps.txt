@@ -1,5 +1,6 @@
 VERB_PICKUP_GUARDIAN: Move in closer to the $1
-PICKUP_GUARDIAN_DESC: Allows you to attempt to salvage the Guardian.
+PICKUP_GUARDIAN: Unidentified Progenitor Device
+PICKUP_GUARDIAN_DESC: Insufficient data exists to determine this object's function. Perhaps it should be investigated...
 PICKUP_EQUIPMENTSTASH: Equipment Stash
 PICKUP_EQUIPMENTSTASH_DESC: A Remnant equipment stash you can improve your technology with.
 VERB_PICKUP_EQUIPMENTSTASH: Analyze $1

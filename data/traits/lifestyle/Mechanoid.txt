@@ -20,6 +20,7 @@ Trait: Mechanoid
 
 	ReplaceTechnologyNodes(ImpPopLvl3, InfMechPop)
 	ReplaceTechnologyNodes(ImpPopLvl2, MechPop)
+	ReplaceTechnologyNodes(Housing, MechPop)
 	RemoveTechnologyNodes(SlavePopulation)
 	ModAttribute(PopulationGrowthFactor, Multiply, 0)
 	ModAttribute(PopulationDecayFactor, Multiply, 0)
