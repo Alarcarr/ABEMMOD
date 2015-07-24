@@ -3,7 +3,7 @@ Ability: PrepareForHarvest
 	Description: #ABL_PREPARE_HARVEST_DESC
 	Icon: QuickbarIcons::7
 
-	Range: 100
+	Range: 250
 
 	Target: targ = Object
 
@@ -15,7 +15,6 @@ Ability: PrepareForHarvest
 	TargetFilterNotStatus(targ, ArtificialPlanetoid)
 	TargetFilterNotQuarantined(targ)
 
-	CooldownOnDeactivate(targ, 180)
 	AutoOrderOnAutoColonizeTarget()
 	OffensiveToTarget(targ)
 	IsToggleTarget(targ)

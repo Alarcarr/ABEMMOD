@@ -10,7 +10,7 @@ EVT_PROGENITOR_BREAKTHROUGH_DESC: <<
 >>
 EVT_VANGUARD_PORTAL: Portal Stabilizer constructed on [color=$4]$3[/color]!
 EVT_VANGUARD_PORTAL_DESC: <<
-	The [color=$2]$1[/color] have constructed a Portal Stabilizer on [color=$4]$3[/color]! Quickly, capture the planet to destroy the Stabilizer; if they own five Stabilizers simultaneously, they will summon the Overlords!
+	The [color=$2]$1[/color] have constructed a Portal Stabilizer on [color=$4]$3[/color]! Quickly, capture the planet to destroy the Stabilizer; if they own three Stabilizers simultaneously, they will summon the Overlords!
 >>
 EVT_GUARDIANSHIPYARD_FOUND: Analysis Complete
 EVT_GUARDIANSHIPYARD_FOUND_DESC: <<
