@@ -13,7 +13,7 @@ Module: GuardianShipyard
 	Model: Shipyard
 	Material: VolkurGenericPBR
 	Can Fling: False
-	IfNotHaveStatus(GuardianShipyardActive, IfNotHaveStatus(GuardianShipyardBuilding, AddStatus(GuardianShipyardActive)))
+	OnEnable(AddStatus(GuardianShipyardActive))
 	WorthPoints(5000)
 	ForbidLaborExport()
 	AddStatus(Stationary)

@@ -15,7 +15,7 @@ Resource: Plains
 	Exportable: False
 	Stealable: False
 
-	RegenSurface(26, 16, Biome Count = 7)
+	IfNotNative(Ringworld, IfNotNative(ArtificialPlanetoid, IfNotNative(BlackHole, (RegenSurface(26, 16, Biome Count = 7))))
 
 	ModTileDevelopRate(+1.0)
 	RepeatPlanetLevel(ModTileDevelopRate(+0.5))

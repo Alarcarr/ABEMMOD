@@ -83,7 +83,7 @@ class AddSensor : SubsystemEffect {
 		SubsystemSightData@ info;
 		event.data.retrieve(@info);
 		if(info is null)
-			info = SubsystemSightData();
+			@info = SubsystemSightData();
 		event.data.store(@info);
 		if(event.obj is null) {
 //			print("Object is null in current tick.");
