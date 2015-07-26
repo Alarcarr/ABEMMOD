@@ -46,9 +46,16 @@ TRAIT_VANGUARD_DESC: <<
 	[vspace=3/][img=AttributeIcons::3*#f88;22][b][color=#f00]Not recommended for beginners.[/color][/b][/img][/img]
 >>
 TRAIT_VERDANT: Verdant
-TRAIT_VERDANT_DESC: <<|
+TRAIT_VERDANT_DESC: <<
 	[vspace=3/][img=Sinew;22]Ships must be held together by organic [b]Sinew[/b], providing control instead of having a bridge.[/img]
 	[vspace=3/][img=Sinew;22]Ships, orbitals and asteroid mines cannot have or be targeted by Boarding Parties. Also, cannot use Improved Command Decks.[/img]
 	[vspace=3/][img=BuildingSprites::0;22]Does [b]not[/b] have any form of cities.[/img]
 	[vspace=3/][img=AttributeIcons::0;22]Must construct [b]Stalks[/b] on planets to be able to use pressure.[/img]
+>>
+TRAIT_STAR_CHILDREN_DESC: <<
+	[vspace=3/] [img=ResourceIcon::8;22]Population grows only on giant [b]Motherships[/b] that have construction capabilities.[/img]
+	[vspace=3/][img=ActionBarIcons::1;22]Motherships can move population to orbital [b]Habitats[/b] around planets, letting them use the planetary resources.[/img]
+	[vspace=3/][img=Industrious;22]The society's emphasis on survival in space results in an abundance of skilled shipwrights and better equipment, yielding a 15% decrease in build, labor and maintenance costs for all ships and orbitals.[/img]
+	[vspace=3/][img=BuildingSprites::0;22]Does [b]not[/b] use planet surfaces in any way. Planets cannot construct anything.[/img]
+	[vspace=3/][img=ResourceIcon::6;22]Resources are produced in orbit, no pressure capacity is needed. Motherships in orbit of a planet automatically gain that planet's labor income.[/img]
 >>
