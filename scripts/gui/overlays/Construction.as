@@ -1444,10 +1444,10 @@ class BuildElement : GuiListElement {
 			color = Color(0xffffffff);
 			nameText = orb.name;
 			ttText = orb.getTooltip();
-			build = orb.buildCost;
+			build = orb.buildCost * buildAt.owner.OrbitalBuildCostMod;
 			build *= buildAt.constructionCostMod;
-			labor = orb.laborCost;
-			maintain = orb.maintenance;
+			labor = orb.laborCost * buildAt.owner.OrbitalLaborCostMod;
+			maintain = orb.maintenance * buildAt.owner.OrbitalMaintMod;
 			energy = 0;
 			icon = orb.icon;
 			isSupport = false;

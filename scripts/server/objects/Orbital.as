@@ -35,6 +35,7 @@ class OrbitalScript {
 	double Shield = 0;
 	double MaxShield = 0;
 	double ShieldRegen = 0;
+	double LastMaint = 0;
 	double DR = 2.5;
 	double DPS = 0;
 
@@ -54,6 +55,7 @@ class OrbitalScript {
 		file << Shield;
 		file << MaxShield;
 		file << ShieldRegen;
+		file << LastMaint;
 		file << DR;
 		file << contestion;
 		file << disabled;
@@ -120,6 +122,7 @@ class OrbitalScript {
 		file >> Shield;
 		file >> MaxShield;
 		file >> ShieldRegen;
+		file >> LastMaint;
 		file >> DR;
 		if(file >= SV_0014) {
 			file >> contestion;
@@ -647,15 +650,14 @@ class OrbitalScript {
 		sec.makeGraphics(obj, node);
 		checkSections(obj);
 		delta = true;
-
-		if(type.maintenance != 0 && obj.owner !is null && obj.owner.valid && !isFree)
-			obj.owner.modMaintenance(type.maintenance, MoT_Orbitals);
 	}
 
 	void checkSections(Orbital& obj) {
 		reqs.init(obj, direct=true);
+		double CurrentMaint = 0;
 		for(uint i = 0, cnt = sections.length; i < cnt; ++i) {
 			auto@ sec = sections[i];
+			CurrentMaint += sec.type.maintenance;
 			if(sec.enabled) {
 				if(this.disabled || sec.shouldDisable(obj)) {
 					sec.disable(obj);
@@ -711,6 +713,13 @@ class OrbitalScript {
 				}
 			}
 		}
+		if(obj.owner !is null && obj.owner.valid && !isFree) {
+			CurrentMaint *= obj.owner.OrbitalMaintMod;
+			if(LastMaint != CurrentMaint) {
+				obj.owner.modMaintenance(CurrentMaint - LastMaint, MoT_Orbitals);
+				LastMaint = CurrentMaint;
+			}
+		}
 	}
 
 	void getSections() {
@@ -760,8 +769,6 @@ class OrbitalScript {
 				if(sec.enabled)
 					sec.disable(obj);
 				sec.destroy(obj);
-				if(sec.type.maintenance != 0 && obj.owner !is null && obj.owner.valid && !isFree)
-					obj.owner.modMaintenance(-sec.type.maintenance, MoT_Orbitals);
 				MaxHealth -= sec.type.health;
 				Health = min(Health, MaxHealth);
 				MaxArmor -= sec.type.armor;
@@ -860,15 +867,18 @@ class OrbitalScript {
 	bool onOwnerChange(Orbital& obj, Empire@ prevOwner) {
 		regionOwnerChange(obj, prevOwner);
 		obj.changeResourceOwner(prevOwner);
+		LastMaint = 0;
 		for(uint i = 0, cnt = sections.length; i < cnt; ++i) {
 			auto@ sec = sections[i];
 			if(sec.enabled)
 				sec.ownerChange(obj, prevOwner, obj.owner);
 			if(sec.type.maintenance != 0 && !isFree) {
 				if(prevOwner !is null && prevOwner.valid)
-					prevOwner.modMaintenance(-sec.type.maintenance, MoT_Orbitals);
-				if(obj.owner !is null && obj.owner.valid)
-					obj.owner.modMaintenance(sec.type.maintenance, MoT_Orbitals);
+					prevOwner.modMaintenance(-sec.type.maintenance * prevOwner.OrbitalMaintMod, MoT_Orbitals);
+				if(obj.owner !is null && obj.owner.valid) {
+					obj.owner.modMaintenance(sec.type.maintenance * obj.owner.OrbitalMaintMod, MoT_Orbitals);
+					LastMaint += sec.type.maintenance * obj.owner.OrbitalMaintMod;
+				}
 			}
 		}
 		if(obj.hasLeaderAI)

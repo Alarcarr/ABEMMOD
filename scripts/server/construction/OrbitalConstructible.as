@@ -9,8 +9,8 @@ class OrbitalConstructible : Constructible {
 
 	OrbitalConstructible(Object& obj, const OrbitalModule@ Def, const vec3d& pos) {
 		@def = Def;
-		buildCost = def.buildCost;
-		totalLabor = def.laborCost;
+		buildCost = def.buildCost * obj.owner.OrbitalBuildCostMod;
+		totalLabor = def.laborCost * obj.owner.OrbitalLaborCostMod;
 		position = pos;
 	}
 
@@ -22,8 +22,8 @@ class OrbitalConstructible : Constructible {
 		vec2d offset = random2d(def.size * 2.0, def.size * 4.0);
 		position.x += offset.x;
 		position.z += offset.y;
-		buildCost = def.buildCost;
-		totalLabor = def.laborCost;
+		buildCost = def.buildCost * obj.owner.OrbitalBuildCostMod;
+		totalLabor = def.laborCost * obj.owner.OrbitalLaborCostMod;
 		return true;
 	}
 

@@ -94,4 +94,7 @@ visible:
 	attribute double DrydockCostFactor = 1
 	attribute double VictoryType = 1
 	attribute double VanguardVictoryRequirement = 3
+	attribute double OrbitalBuildCostMod = 1
+	attribute double OrbitalMaintMod = 1
+	attribute double OrbitalLaborCostMod = 1
 }
