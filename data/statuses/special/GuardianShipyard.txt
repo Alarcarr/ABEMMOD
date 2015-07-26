@@ -8,7 +8,6 @@ Status: GuardianShipyardActive
 	ArtifactOnDestroy(GuardianShipyard)
 	AddResearchIncome(15)
 	AddLaborIncome(Amount = 100)
-	GrantAbility(BuildGuardian)
 	AddLaborStorage(5000)
 
 Status: GuardianShipyardBuilding
@@ -25,4 +24,3 @@ Status: GuardianShipyardBuilding
 	RemoveOnOwnerChange()
 	PersistentParticles(Slipstream)
 	ArtifactOnDestroy(GuardianShipyard)
-	GrantAbility(FinishGuardianConstruction)

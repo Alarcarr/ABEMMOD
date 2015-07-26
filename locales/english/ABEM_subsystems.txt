@@ -25,6 +25,7 @@ ERROR_SUPERLASER: Superlaser must be at least size 200. Add more hexes to the su
 ERROR_RESEARCHLAB: Research Lab must be at least size 15. Add more hexes to the lab or increase the station's size.
 ERROR_FTLJAMMER: The FTL Jammer must be at least size 100. Increase the jammer's hex count or the station's size.
 ERROR_MAX_SIZE: $1 has a maximum size of $2.
+ERROR_DRONEWEAPON: Boring Drone Launcher is not large enough to hold any drones. Increase the launcher's hex count or the ship's size.
 
 // *********************************************************
 // ****************SUBSYSTEM STATS HERE!********************

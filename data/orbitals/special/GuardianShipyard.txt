@@ -13,6 +13,8 @@ Module: GuardianShipyard
 	Model: Shipyard
 	Material: VolkurGenericPBR
 	Can Fling: False
+	GrantAbility(FinishGuardianConstruction)
+	GrantAbility(BuildGuardian)
 	OnEnable(AddStatus(GuardianShipyardActive))
 	WorthPoints(5000)
 	ForbidLaborExport()

@@ -16,6 +16,7 @@ Ability: BuildGuardian
 	ShareCooldown(FinishGuardianConstruction)
 	NotifyAll(#EVT_GUARDIANSHIPYARD_BUILDING, Description = #EVT_GUARDIANSHIPYARD_BUILDING_DESC, Icon = techShipYard)
 	AddStatus(GuardianShipyardBuilding)
+	ABEM_hooks::UserMustNotHaveStatus(GuardianShipyardBuilding)
 
 Ability: FinishGuardianConstruction
 	Name: #ABL_GUARDIAN_FINISH
@@ -35,3 +36,4 @@ Ability: FinishGuardianConstruction
 	UnlockTag(RemnantShield)
 	UnlockTag(ProgenitorComputer)
 	UnlockTag(DroneWeapon)
+	ABEM_hooks::UserMustNotHaveStatus(GuardianShipyardActive)

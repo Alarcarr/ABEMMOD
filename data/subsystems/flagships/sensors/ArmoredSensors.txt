@@ -29,6 +29,8 @@ Subsystem: ArmoredSensors
 	Hook: ABEM_sensors::AddSensor(SensorPriority, 1.0, SensorRange)
 	Modifier: SensorFactor(factor)
 		SensorRange := SensorRange * factor
+	Modifier: ArmorHpFactor(factor)
+		Hex.HP := Hex.HP * factor
 	Assert: ExteriorHexes == Hexes
 		Message: #ERROR_MUST_BE_EXTERIOR
 	Requires:

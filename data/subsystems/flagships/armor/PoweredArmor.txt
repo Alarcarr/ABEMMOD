@@ -24,6 +24,9 @@ Subsystem: PoweredArmor
 	DamageResist := ShipSize / 30
 
 	PowerUse := 3*Size
+	Requires:
+		Power = PowerUse
+
 	Effect: ReduceDamagePercentile
 		EnergyResist = CompEnergyResist
 		ProjResist = 0

@@ -1,9 +1,9 @@
 ORB_SHIPYARD_DESC: <<
 	A massive orbital shipyard capable of constructing fleets in space.
 
-	Has 6 innate Labor generation per minute. Planets can export their own labor to shipyards within trade range at a 75% reduced rate.
+	Has 6 innate Labor generation per minute. Planets can export their own labor to Shipyards within trade range at a 75% reduced rate. Ship construction is 20% cheaper from a Shipyard.
 
-	Gains Labor from Metallurgy factory research at a 75% reduced rate.
+	Gains Labor from Metallurgy research at a 75% reduced rate.
 >>
 ORB_SHIELD_CHARGER: Power Transmitter
 ORB_SHIELD_CHARGER_BLURB: Recharges the shields of allied flagships in the system.
