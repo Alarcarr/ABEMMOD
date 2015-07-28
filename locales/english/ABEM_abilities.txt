@@ -231,3 +231,7 @@ ABL_GUARDIAN_FINISH_DESC: <<
 
 	Other empires will be notified of the project's completion, and the Guardian Facility will resume normal operation.
 >>
+ABL_SPAWNARTIFACT: Construct Artifact
+ABL_SPAWNARTIFACT_DESC: <<
+	Instructs the Remnant computer controlling the remains of the crashed seed ship to assemble an artifact and launch it into orbit.
+>>

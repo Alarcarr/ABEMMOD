@@ -109,5 +109,9 @@ STATUS_GUARDIANSHIPYARD_BUILDING: Construction Mode
 STATUS_GUARDIANSHIPYARD_BUILDING_DESC: <<
 	This Guardian Facility is fabricating and storing modules for the assembly of a Guardian.
 
-	Consumes 10 Energy and 2.5 FTL per second, and incurs a maintenance cost of ง2M. Construction will be canceled without any refund if the facility shuts down or is donated to another empire. Lasts a minimum of 15 minutes before allowing the Guardian's construction to be completed.
+	Consumes 10 Energy and 2.5 FTL per second, and incurs a maintenance cost of ยง2M. Construction will be canceled without any refund if the facility shuts down or is donated to another empire. Lasts a minimum of 15 minutes before allowing the Guardian's construction to be completed.
+>>
+STATUS_BROKENSEEDSHIP: Crashed Seed Ship
+STATUS_BROKENSEEDSHIP_DESC: <<
+	A damaged seed ship was successfully guided to the planet's surface. Study of the ship's systems yields a 10% boost to civilian Research production and 2 Research generation on the planet, and interfacing with the ship's computer allows periodic fabrication of artifacts.
 >>

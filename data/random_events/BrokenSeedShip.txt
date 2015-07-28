@@ -1,0 +1,43 @@
+Event: BrokenSeedShip
+	Unique: False
+	Name: #EVT_BROKENSEEDSHIP
+	Text: #EVT_BROKENSEEDSHIP_DESC
+	Target: Location = Object
+	Frequency: 0.2
+	TargetFilterNotStatus(Location, BrokenSeedShip)
+	Option: Repair
+		Text: #EVT_BROKENSEEDSHIP_REPAIR
+		Icon: techShipYard
+		Result: 60%
+			SendMessage(#EVT_BROKENSEEDSHIP_REPAIR_FAIL, Title = #EVT_BROKENSEEDSHIP_REPAIR_FAIL_TITLE)
+		Result: 40%
+			SendZoomTo(Location)
+			SendMessage(#EVT_BROKENSEEDSHIP_REPAIR_SUCCESS, Title = #EVT_BROKENSEEDSHIP_REPAIR_SUCCESS_TITLE)
+			On: Location
+				RepeatTrigger(3, SpawnArtifact(In System = True, Owned = True))
+				SpawnShip(Seed Ship, Design From = Creeps, Add Status = SeedShip)
+	Option: Land
+		Safe: False
+		Text: #EVT_BROKENSEEDSHIP_LAND
+		Icon: ActionBarIcons::1
+		Result: 25%
+			On: Location
+				AddStatus(BrokenSeedShip)
+			SendMessage(#EVT_BROKENSEEDSHIP_LAND_SUCCESS, Title = #EVT_BROKENSEEDSHIP_LAND_SUCCESS_TITLE)
+		Result: 75%
+			SendMessage(#EVT_BROKENSEEDSHIP_LAND_FAIL, Title = #EVT_BROKENSEEDSHIP_LAND_FAIL_TITLE)
+			On: Location
+				RepeatTrigger(3, AddStatus(NoxiousAtmosphere, Duration = 180))
+				LosePopulation(2)
+	SelectRandomOwnedPlanet(Location)
+	Option: Scrap
+		Text: #EVT_BROKENSEEDSHIP_SCRAP
+		Default: True
+		Icon: DesignationIcons::4
+		Result: 100%
+			AddEnergy(300:450, Modified = False)
+			AddEmpireResource(Research, 600:800)
+			SendMessage(#EVT_BROKENSEEDSHIP_SCRAP_SUCCESS, Title = #EVT_BROKENSEEDSHIP_SCRAP_SUCCESS_TITLE)
+			On: Location
+				AddStoredLabor(120:160, Obey Capacity = True)
+			AddEmpireResource(Money, 1000:1500)

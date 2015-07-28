@@ -1,0 +1,7 @@
+Ability: SpawnArtifact
+	Cooldown: 60
+	Energy Cost: 250
+	Icon: ArtifactIcon::0
+	Description: #ABL_SPAWNARTIFACT_DESC
+	Name: #ABL_SPAWNARTIFACT
+	SpawnArtifact(In System = True, Owned = True)
