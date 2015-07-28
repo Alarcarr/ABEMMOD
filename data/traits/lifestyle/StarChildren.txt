@@ -22,9 +22,9 @@ Trait: StarChildren
 	ModAttribute(OrbitalMaintMod, Multiply, 0.85)
 	ModAttribute(OrbitalLaborCostMod, Multiply, 0.85)
 
-	AddModifier(BuildCostFactor, 0.85)
-	AddModifier(MaintCostFactor, 0.85)
-	AddModifier(LaborCostFactor, 0.85)
+	AddModifier(BuildCostFactor(0.85))
+	AddModifier(MaintCostFactor(0.85))
+	AddModifier(LaborCostFactor(0.85))
 
 	IfHaveTrait(Slipstream, LoadDesigns(ABEM_defaults/starchildren/slipstream))
 	IfHaveTrait(Hyperdrive, LoadDesigns(ABEM_defaults/starchildren/hyperdrive))
