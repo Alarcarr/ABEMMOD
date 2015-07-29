@@ -2,3 +2,5 @@
 ## Eclipse
 #################
 *.db
+.steam
+modinfo.txt
