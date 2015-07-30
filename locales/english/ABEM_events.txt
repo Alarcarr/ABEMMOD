@@ -126,6 +126,64 @@ EVT_PIRATEMERCS_BUYOUT_SUCCESS: <<
 
 	[b]Lost §2M. Received 1-5 'Dread Pirate' ships in orbit over [target=Location/].[/b]
 >>
+EVT_PEDDLER: A Peddler
+EVT_PEDDLER_DESC: <<
+	A moderately sized ship enters orbit of [target=Location/]. When the planetary militia targets it, its owner quickly introduces itself as a dealer in various goods and data, and offers to trade some of his goods.
+
+	The offer seems genuine enough - before you even answer, he offers to sell you 2500 tons of useful ores, useful information from his travels or something more exotic from his collection. However, he makes a point of telling you that all sales are final.
+
+	What do you want to buy?
+>>
+EVT_PEDDLER_SHOO: Refuse his offer and send him on his way.
+EVT_PEDDLER_TRINKETS: <<
+	Purchase an item from his 'exotic inventory'.
+
+	[b]You will lose §750k regardless of the outcome.[/b]
+>>
+EVT_PEDDLER_TRINKERS_JUNK: <<
+	Whether you bought a cute, furry little critter trying to breed out of control, a twisted piece of hull plating from some historically significant ship or another, or just a precious gem, it doesn't matter - the bottom line is it couldn't possibly have been worth the money you paid for it.
+
+	[b]Received nothing.[/b]
+>>
+EVT_PEDDLER_TRINKETS_ARTIFACT: <<
+	The item seems fairly worthless - but the first archaeologist to lay eyes upon it recognizes it as a cultural artifact of tremendous significance. Before long, the artifact is put on display in a museum for countless tourists from all over the galaxy to marvel at.
+
+	[b]Received +5 Influence generation.[/b]
+>>
+EVT_PEDDLER_TRINKETS_KNOWLEDGE: <<
+	Detailed examination of the item you purchased reveals it to be a data storage device. Within is a treasure trove of ancient knowledge regarding all sorts of aspects of civilization, but very little of any technological value.
+
+	[b]Received two Ancient Knowledge influence cards.[/b]
+>>
+EVT_PEDDLER_TRINKETS_RESEARCH: <<
+	Detailed examination of the item you purchased reveals it to be a data storage device. Within is a treasure trove of scientific knowledge; your scientists are already lining up to download and examine the records.
+
+	[b]Received a lot of research points.[/b]
+>>
+EVT_PEDDLER_TRINKETS_FTL: <<
+	The strange crystalline item appears to be nothing more than a precious, if somewhat rough, gem at first, so - trying to make the best of it - you order for it to be cut and prepared for use as jewelry. It is fortunate that you did; when exposed to a laser cutter, the crystal begins to glow in a fashion similar to known types of FTL crystals. It turns out to be a vastly superior form of FTL crystal, and studying it will undoubtedly improve our understanding of hyperfield particles.
+
+	[b]Received +2 FTL generation.[/b]
+>>
+EVT_PEDDLER_ORE: <<
+	Buy out the merchant's ore stockpile.
+
+	[b]You will receive 2500 Ore on [target=Location/] and lose §500k.[/b]
+EVT_PEDDLER_INFO: <<
+	Trade for the information.
+
+	[b]You will lose §400k regardless of the outcome.[/b]
+>>
+EVT_PEDDLER_INFO_LEVERAGE: <<
+	It takes some time, but eventually you manage to convince the trader to give you information that certain empires would prefer to conceal. This will no doubt come in handy during your next session in the Senate.
+
+	[b]Gained high-quality 'Leverage' influence cards against two random empires.[/b]
+>>
+EVT_PEDDLER_INFO_CHART: <<
+	After a short round of negotiations, you arrive at a deal, obtaining astrometric data detailing the resources and environments of every planet within several star systems.
+
+	[b]Received full knowledge of planets in four randomly selected systems.[/b]
+>>
 
 //*********************************************
 //***********VANGUARD VICTORY TEXTS************

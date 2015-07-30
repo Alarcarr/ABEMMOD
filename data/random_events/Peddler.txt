@@ -1,0 +1,52 @@
+Event: Peddler
+	Name: #EVT_PEDDLER
+	Text: #EVT_PEDDLER_DESC
+	Unique: False
+	Target: Location = Object
+	Option: Shoo
+		Text: #EVT_PEDDLER_SHOO
+		Default: True
+		Icon: MaskNeutral
+	Option: Trinkets
+		Text: #EVT_PEDDLER_TRINKETS
+		Icon: DesignationIcons::14
+		Result: 20%
+			SendMessage(#EVT_PEDDLER_TRINKETS_JUNK)
+			AddEmpireResource(Money, -750)
+		Result: 20%
+			SendMessage(#EVT_PEDDLER_TRINKETS_ARTIFACT)
+			AddEmpireResourceIncome(Influence, 5)
+			AddEmpireResource(Money, -750)
+		Result: 20%
+			SendMessage(#EVT_PEDDLER_TRINKETS_KNOWLEDGE)
+			AddEmpireResource(Money, -750)
+			GainInfluenceCard(AncientKnowledge, Uses = 2)
+		Result: 20%
+			SendMessage(#EVT_PEDDLER_TRINKETS_RESEARCH)
+			AddEmpireResource(Money, -750)
+			AddEmpireResource(Research, 1200)
+		Result: 20%
+			SendMessage(#EVT_PEDDLER_TRINKETS_FTL)
+			AddEmpireResource(Money, -750)
+			AddEmpireResourceIncome(FTL, 2)
+	Option: Ore
+		Text: #EVT_PEDDLER_ORE
+		Icon: adamantium
+		Result: 100%
+			On: Location
+				AddCargo(Ore, 2500)
+			AddEmpireResource(Money, -500)
+	Option: Info
+		Text: #EVT_PEDDLER_INFO
+		Icon: ResourceIcons::37
+		Default: True
+		Safe: False
+		Result: 30%
+			SendMessage(#EVT_PEDDLER_INFO_LEVERAGE)
+			GainDistinctLeverage(2, 2)
+			AddEmpireResource(Money, -400)
+		Result: 70%
+			AddEmpireResource(Money, -400)
+			SendMessage(#EVT_PEDDLER_INFO_CHART)
+			RandomMapVision(4)
+	SelectRandomOwnedPlanet(Location)
