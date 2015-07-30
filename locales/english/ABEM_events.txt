@@ -54,7 +54,7 @@ EVT_BROKENSEEDSHIP_LAND_FAIL_TITLE: Extinction
 EVT_BROKENSEEDSHIP_LAND_FAIL: <<
 	As the ship approaches [target=Location/], it becomes far too obvious that nothing can be done to stabilize its descent - but it is too late. The charges are detonated to break the ship apart; regardless, as the debris hurtles down towards the surface, it leaves nothing but death and devastation throughout the planet. Casualties are numbered in the billions - the ecological damage, however, is just as bad. The planet is just barely habitable now, and though your technology is advanced enough to compensate for the problem to a degree, it cannot negate the effects completely.
 
-	[b]Up to 2 billion inhabitants killed. [target=Location/] has significantly reduced population capacity for 180 seconds.[/b]
+	[b]Up to 2 billion inhabitants killed. [target=Location/]'s population capacity decreased by 3 for 180 seconds.[/b]
 >>
 EVT_BROKENSEEDSHIP_REPAIR: Repair the ship, but try to reprogram its computer before it leaves.
 EVT_BROKENSEEDSHIP_REPAIR_SUCCESS_TITLE: A Different Destiny
@@ -69,7 +69,63 @@ EVT_BROKENSEEDSHIP_REPAIR_FAIL: <<
 
 	[b]Nothing.[/b]
 >>
+EVT_PIRATEMERCS: Letters of Marque
+EVT_PIRATEMERCS_DESC: <<
+	You are contacted by a representative of a group of cutthroat pirates. Due to mounting tensions between your empire and the other empires in the galaxy, they feel that an armed conflict may be inevitable. Claiming patriotic tendencies for your empire, they would like to offer you the following deal:
 
+	In exchange for 500 thousand credits - or goods of equivalent value, or some combination of the two - and full pardons, they will grant you the use of their forces as privateers - harassing your empire's opposition by preying upon merchant vessels. This could divert valuable military resources away from a battle or deal a significant blow to their economy.
+
+	However, it is possible that the pirates are simply trying to milk you for easy cash and have no real intention of following through on their end of the bargain. What is your response?
+>>
+EVT_PIRATEMERCS_HIRE: <<
+	Accept the deal.
+
+	[b]You will lose §500k regardless of the outcome.[/b]
+>>
+EVT_PIRATEMERCS_HIRE_SUCCESS_TITLE: Honor Amongst Thieves
+EVT_PIRATEMERCS_HIRE_SUCCESS: <<
+	The credits are delivered as arranged, and the pardons provided. You soon receive an encrypted message containing contact information for the pirate ships. Each ship captain is willing to go up against an empire of your choosing - however, after that, they will cease contact with your empire to prevent their activities from being traced back to you. This also means calling them off will be impossible.
+
+	[b]Received 1-5 'Send Pirate Raiders' influence cards.[/b]
+>>
+EVT_PIRATEMERCS_HIRE_FAIL_TITLE: A Successful Scam
+EVT_PIRATEMERCS_HIRE_FAIL: <<
+	The credits are delivered as arranged, and the pardons provided. However, as time passes, the lack of response from the pirates speaks volumes about their intent; now that they have your money, they have no reason to keep up their end of the bargain.
+
+	[b]Received nothing.[/b]
+>>
+EVT_PIRATEMERCS_SHOO: Tell them you're not interested in their offer.
+EVT_PIRATEMERCS_SHOO_SUCCESS_TITLE: Peaceful Departure
+EVT_PIRATEMERCS_SHOO_SUCCESS: <<
+	The pirate representative seems somewhat disappointed, but graciously accepts your decision and ceases communications.
+>>
+EVT_PIRATEMERCS_SHOO_FAIL_TITLE: Many Hard Feelings
+EVT_PIRATEMERCS_SHOO_FAIL: <<
+	The pirate representative seems offended by your response. Before ending his transmission, he makes it quite clear that your refusal has made you their next target. So much for patriotism.
+
+	[b]1-5 new pirate ships will now attack your civilian shipping.[/b]
+>>
+EVT_PIRATEMERCS_SHOO_DISASTER_TITLE: Relocating Business
+EVT_PIRATEMERCS_SHOO_DISASTER: <<
+	The pirate representative appears somewhat frustrated by your response, and makes a point of noting that they will seek business with the [target=OtherEmp/] instead before he closes the channel.
+
+	[b]This event has now been started for the [target=OtherEmp/].[/b]
+>>
+EVT_PIRATEMERCS_BUYOUT: <<
+	Why buy their services when you can buy their ships instead? Offer to purchase their fleet for a significantly larger sum.
+
+	[b]Will spend §2M if successful.[/b]
+>>
+EVT_PIRATEMERCS_BUYOUT_FAIL_TITLE: Too Hardcore
+EVT_PIRATEMERCS_BUYOUT_FAIL: <<
+	Clearly surprised by your offer, the pirate representative closes the channel. After a while, you receive another message saying they're not interested.
+>>
+EVT_PIRATEMERCS_BUYOUT_SUCCESS_TITLE: Pirates No More
+EVT_PIRATEMERCS_BUYOUT_SUCCESS: <<
+	Clearly surprised by your offer, the pirate representative closes the channel. After a while, you are contacted again - once the details of the transaction are ironed out, you find yourself the proud owner of several pirate ships gathered in orbit of [target=Location/]. Whether the price was worth it, however, is open for debate.
+
+	[b]Lost §2M. Received 1-5 'Dread Pirate' ships in orbit over [target=Location/].[/b]
+>>
 
 //*********************************************
 //***********VANGUARD VICTORY TEXTS************
