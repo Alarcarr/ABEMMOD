@@ -140,7 +140,7 @@ EVT_PEDDLER_TRINKETS: <<
 
 	[b]You will lose §750k regardless of the outcome.[/b]
 >>
-EVT_PEDDLER_TRINKERS_JUNK: <<
+EVT_PEDDLER_TRINKETS_JUNK: <<
 	Whether you bought a cute, furry little critter trying to breed out of control, a twisted piece of hull plating from some historically significant ship or another, or just a precious gem, it doesn't matter - the bottom line is it couldn't possibly have been worth the money you paid for it.
 
 	[b]Received nothing.[/b]
