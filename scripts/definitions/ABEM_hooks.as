@@ -1475,6 +1475,23 @@ class ChangeOriginOnOwnerChange : StatusHook {
 #section all
 }
 
-class AddMaintenanceToOriginFromMaintenance : StatusHook {
-	Document doc("The origin empire of this status must pay a portion of this object's maintenance.");
+class ResourcelessRegenSurface : GenericEffect, TriggerableGeneric {
+	Document doc("When this hook is enabled on a planet, create a new surface with a particular size and biome count. Should be preferred to RegenSurface if both are available.");
+	Argument width(AT_Integer, doc="Surface grid width.");
+	Argument height(AT_Integer, doc="Surface grid width.");
+	Argument biome_count(AT_Integer, "3", doc="Amount of biomes on the planet.");
+	Argument force_biome(AT_PlanetBiome, EMPTY_DEFAULT, doc="Force a particular biome as the planet's base biome.");
+
+#section server
+	void enable(Object& obj, any@ data) const override {
+		if(obj.isPlanet) {
+			obj.regenSurface(width.integer, height.integer, biome_count.integer);
+			if(force_biome.str.length != 0) {
+				auto@ type = getBiome(force_biome.str);
+				if(type !is null)
+					obj.replaceFirstBiomeWith(type.id);
+			}
+		}
+	}
+#section all
 }

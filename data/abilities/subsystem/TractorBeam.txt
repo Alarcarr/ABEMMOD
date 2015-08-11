@@ -6,7 +6,7 @@ Ability: TractorBeam
 	Range: 100
 
 	Target: targ = Object
-	TargetFilterAllowTractor(targ)
+	Either(ability_effects::TargetFilterAllowTractor(targ), ABEM_hooks::TargetFilterStatus(targ, ExplicitlyTractorable))
 
 	IsToggleTarget(targ, Check Range = False, Channels = False)
 	TractorObject(targ)
