@@ -192,7 +192,7 @@ R_SENSOR_TACHYON_DESC: <<
 
 	Unlocks the Tachyon Sensors subsystem.
 
-	[i][bbloc=#S_SENSOR_TACYHON_DESC/][/i]
+	[i][bbloc=#S_SENSOR_TACHYON_DESC/][/i]
 
 	[bbloc=#ALTUNLOCK_ENERGY:750/]
 >>
