@@ -1,5 +1,5 @@
 Subsystem: CompositeArmor
-	Name: Composite Armor
+	Name: #S_COMPOSITE_ARMOR
 	Description: #S_COMPOSITE_ARMOR_DESC
 	BaseColor: #128cc1
 	Elevation: 1

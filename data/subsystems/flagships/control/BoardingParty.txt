@@ -1,5 +1,5 @@
 Subsystem: BoardingParty
-	Name: Boarding Parties
+	Name: #S_BOARDING_PARTY
 	Description: #S_BOARDING_PARTY_DESC
 
 	BaseColor: #c5f946

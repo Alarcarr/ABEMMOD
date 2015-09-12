@@ -15,6 +15,8 @@ Ability: BoardingParty
 	TargetFilterNotStatus(targ, BoardingParty)
 	TargetFilterNotStatus(targ, Radioactive)
 	TargetFilterNotStatus(targ, IsGuardian)
+	TargetFilterNotStatus(targ, GuardianShipyardActive)
+	TargetFilterNotStatus(targ, GuardianShipyardBuilding)
 	ABEM_hooks::TargetFilterNotRemnantOrPirate(targ)
 	Either(TargetFilterNotAllied(targ), ABEM_hooks::TargetFilterStatus(targ, DerelictShip))
 

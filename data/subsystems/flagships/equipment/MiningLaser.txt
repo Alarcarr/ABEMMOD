@@ -32,6 +32,9 @@ Subsystem: MiningLaser
 		Unique: True
 		Message: #ERROR_ONLY_ONE
 
+	Modifier: MiningRateFactor(factor)
+		MiningRate := MiningRate * factor
+
 	Requires:
 		Command = 1
 		Power = PowerUse

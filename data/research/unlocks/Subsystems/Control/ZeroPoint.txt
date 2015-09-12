@@ -1,5 +1,5 @@
 Technology: ZeroPoint
-	Name: Singularity Core
+	Name: #S_ZPG
 	Class: Unlock
 	Point Cost: 2000
 	Time Cost: 180

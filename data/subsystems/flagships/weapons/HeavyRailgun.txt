@@ -1,5 +1,5 @@
 Subsystem: HeavyRailgunBattery
-	Name: Heavy Railgun
+	Name: #S_HEAVYRAIL
 	Description: #S_HEAVYRAIL_DESC
 	BaseColor: #79992b
 	TypeColor: #c5f946

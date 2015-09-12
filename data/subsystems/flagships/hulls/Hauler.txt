@@ -1,5 +1,5 @@
 Subsystem: Hauler
-	Name: Hauler Hull
+	Name: #S_HAULER_HULL
 	Description: #S_HAULER_HULL_DESC
 
 	Tags: Applied:Hull, Category:Hulls, NoCore,DefaultUnlock

@@ -1,5 +1,5 @@
 Technology: PrecisionMod
-	Name: Beam Amplifiers
+	Name: #R_MOD_PRECISION
 	Description: #R_MOD_PRECISION_DESC
 	Class: Unlock
 

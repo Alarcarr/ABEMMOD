@@ -12,7 +12,7 @@ RESOURCE_INTEL_BLURB: <<
 	Cannot be exported.
 >>
 RESOURCE_INTEL_DESC: <<
-	Abandoned ancient facilities that were designed to look over an entire empire. Gives full vision of adjacent systems. Generates Intelligence cards against empires in adjacent systems. If none can be found, generates Intelligence against a random empire. Grants the 'Telescope' ability.
+	Abandoned ancient facilities that were designed to look over an entire empire. Gives full vision of adjacent systems. Generates Intelligence cards against empires in adjacent systems. Grants the 'Telescope' ability.
 
 	Cannot be exported.
 >>
@@ -146,6 +146,13 @@ ALLONDIUM_DESC: <<
 
 	[i][color=#aaa]This resource is a scalable resource and cannot be exported or used to level up. Its bonuses depend on the level of the planet.[/color][/i]
 >>
+PLAINS_DESC: <<
+	The planet has a massive surface.
+
+	Tile development speed is increased by [levels=$1;#ffb4b6]100%/150%/200%/250%/300%/350%/400%[/levels].
+
+	The total maintenance cost of buildings on this planet is reduced by up to [levels=$1;#d1cb6a]§50k/§150k/§300k/§750k/§1.2M/§1.8M/§3M[/levels].
+>>
 RINGWORLD_DESC: <<
 	An enormous ring constructed around a system's star, with habitable space on the inner surface of the ring, facing the star.
 
@@ -155,3 +162,9 @@ RINGWORLD_DESC: <<
 
 	[img=ResourceIconsSmall::11;22;#91692c][b][color=#91692c]Requires extremely large amounts of Ore mined from asteroids.[/color][/b][/img]
 >>
+PARADISE_NAME: Tropical Paradise
+RESOURCE_INTEL: Intelligence Hub
+TECHNOFARM_NAME: Technofarm
+RESOURCE_SHIPYARD: Ancient Shipyard
+RESOURCE_RESEARCH: Research Center
+RESOURCE_HUBWORLD: Ancient Hubworld

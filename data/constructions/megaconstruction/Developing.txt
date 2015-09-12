@@ -1,5 +1,5 @@
 Construction: Terraforming
-	Name: Terraforming
+	Name: #C_TERRAFORMING
 	Description: #C_TERRAFORMING_DESC
 	Labor Cost: 25
 	Icon: PlanetImage

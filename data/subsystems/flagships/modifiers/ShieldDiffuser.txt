@@ -9,5 +9,5 @@ Template: hexVar/BuildCost, hexVar/HP, tag/IsShield, !tag/SupportHull, !hexVar/P
 		AddModifier: ShieldRegenFactor(1.25)
 		AddModifier: ShieldCapacityFactor(0.85)
 
-		Name: Shield Diffuser
+		Name: #SHIELDDIFFUSER_NAME
 		AddModifier: optional MaintCostFactor(1.25)

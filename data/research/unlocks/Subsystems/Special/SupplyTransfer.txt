@@ -1,12 +1,12 @@
 Technology: SupplyTransfer
-	Name: Power Transferral
+	Name: #R_SYS_SUPPLYTRANSFER
 	Icon: Laser::2 * #38a2f9
 	Point Cost: 2000
 	Time Cost: 360
 	Class: Unlock
 	Description: #R_SYS_SUPPLYTRANSFER_DESC
 	Color: #38a2f9
-	Blurb:  
+	Blurb:
 	ModAttribute(ProgenitorTechProgress, Add, 2.5)
 	SkipOnUnlockedSubsystem(EnergyTransmitter)
 	SecondaryEnergyCost(800)

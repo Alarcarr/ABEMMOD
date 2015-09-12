@@ -12,9 +12,13 @@ import status_effects;
 import target_filters;
 import requirement_effects;
 import orbitals;
+import resources;
+import building_effects;
+import buildings;
 #section server
 import empire;
 import influence_global;
+import victory;
 #section all
 
 class IfAtWar : IfHook {
@@ -108,7 +112,6 @@ class ConvertRemnants : AbilityHook {
 			return;
 		if(targ.hasLeaderAI) {
 			targ.takeoverFleet(abl.obj.owner, 1, false);
-			targ.sightRange = 1500; // THIS BAD. DELETE THIS WHEN IMPLEMENTING SENSORS.
 		}
 		else
 			@targ.owner = abl.obj.owner;
@@ -139,6 +142,96 @@ class CostFromSize : AbilityHook {
 		cost *= clamp(rat * factor.decimal, min_pct.decimal, max_pct.decimal);
 	}
 }
+
+class StealResources : AbilityHook {
+	Document doc("Steals all the native resources of a target planet and gives them to itself.");
+	Argument objTarg(TT_Object);
+	Argument takeUnstealables(AT_Boolean, "False", doc="Whether to take resources defined as unstealable.");
+	Argument abortIfCannotTransfer(AT_Boolean, "True", doc="Whether to cancel the process if the resources cannot be transferred to the origin object, or continue and completely destroy the target's resources.");
+	Argument turnToBarren(AT_Boolean, "True", doc="Whether to turn the planet into a barren planet once complete.");
+
+#section server
+	void activate(Ability@ abl, any@ data, const Targets@ targs) const {
+		Object@ targ = objTarg.fromConstTarget(targs).obj;
+		if(targ is null || targ is abl.obj)
+			return;
+		if(!targ.hasResources)
+			return;
+		
+		if(!(abl.obj !is null && abl.obj.hasResources) && abortIfCannotTransfer.boolean) {
+			return;
+		}
+		else {
+			int count = targ.nativeResourceCount;
+			for(int i = count - 1; i >= 0; --i) { // We have to count from the last resource or risk causing trouble.
+				const ResourceType@ type = getResource(targ.nativeResourceType[i]);
+				if(type !is null && (type.stealable || takeUnstealables.boolean)) {
+					if(abl.obj !is null && abl.obj.hasResources)
+						abl.obj.createResource(type.id);
+					targ.removeResource(i);
+				}
+			}
+			if(targ.isPlanet && turnToBarren.boolean) {
+				auto@ barren = getStatusType("Barren");
+				if(barren !is null)
+					targ.addStatus(barren.id);
+				auto@ barrenType = getPlanetType("Barren");
+				if(barrenType !is null)
+					cast<Planet>(targ).PlanetType = barrenType.id;
+			}
+		}
+	}
+#section all
+}
+
+class MineCargoFromPlanet : AbilityHook {
+	Document doc("Creates cargo from a target planet, dealing damage based on the amount of cargo mined.");
+	Argument objTarg(TT_Object);
+	Argument cargoType(AT_Cargo, doc="Type of cargo to mine.");
+	Argument amount(AT_SysVar, doc="Amount of cargo to mine per second.");
+	Argument damageMult(AT_Decimal, "10000.0", doc="Amount of damage dealt per unit of cargo.");
+	Argument quiet(AT_Boolean, "False", doc="Whether to destroy the planet 'quietly' or not.");
+
+	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const {
+		return abl.obj !is null && abl.obj.hasCargo;
+	}
+
+	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const {
+		if(index != uint(objTarg.integer))
+			return true;
+		if(targ.obj is null)
+			return false;
+		return targ.obj.isPlanet;
+	}
+
+#section server
+	void tick(Ability@ abl, any@ data, double time) const {
+		const CargoType@ type = getCargoType(cargoType.integer);
+		if(type is null)
+			return;
+		if(abl.obj is null || !abl.obj.hasCargo)
+			return;
+		Target@ storeTarg = objTarg.fromTarget(abl.targets);
+		if(storeTarg is null)
+			return;
+
+		Planet@ target = cast<Planet>(storeTarg.obj);
+		if(target is null)
+			return;
+
+		double miningRate = min(amount.fromSys(abl.subsystem, efficiencyObj=abl.obj) * time, (abl.obj.cargoCapacity - abl.obj.cargoStored) / type.storageSize);
+
+		abl.obj.addCargo(cargoType.integer, miningRate);
+		if(damageMult.decimal != 0) {
+			if(target.Health <= miningRate * damageMult.decimal && quiet.boolean)
+				target.destroyQuiet();
+			else
+				target.dealPlanetDamage(miningRate * damageMult.decimal);
+		}
+	}
+#section all
+}
+		
 
 class CannotOverrideProtection: PickupHook {
 	Document doc("This pickup cannot be picked up if it is still protected, regardless of overrides such as those found in the Progenitor race. DEPRECATED.");
@@ -512,4 +605,16 @@ class RequireAttributeLT : Requirement {
 			return false;
 		return owner.getAttribute(attribute.integer) < value.decimal;
 	}
+};
+
+class SelfDestructOnOwnerChange : BuildingHook {
+	Document doc("When the planet containing this building is captured, the building will destroy itself.");
+	Argument undevelop(AT_Boolean, "False", doc="Whether to undevelop the tiles the building is on.");
+
+#section server
+	void ownerChange(Object& obj, SurfaceBuilding@ bld, Empire@ prevOwner, Empire@ newOwner) const override {
+		if(obj.hasSurfaceComponent)
+			obj.forceDestroyBuilding(vec2i(bld.position), undevelop.boolean);
+	}
+#section all
 };

@@ -1823,8 +1823,12 @@ final class RegionObjects : Component_RegionObjects, Savable {
 			region.SeenMask |= mask;
 			updatePlane(region);
 
-			if(system.donateVision)
-				region.DonateVisionMask = donateMask;
+			if(system.donateVision) {
+				if(config::LEGACY_EXPLORATION_MODE == 0)
+					region.DonateVisionMask = donateMask;
+				else
+					region.DonateVisionMask = mask;
+			}
 			else
 				region.DonateVisionMask = 0;
 

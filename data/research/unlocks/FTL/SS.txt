@@ -1,5 +1,5 @@
 Technology: SS
-	Name: Slipstream
+	Name: #R_SYS_SLIPSTREAM
 	Icon: TechIcons::57
 	Point Cost: 2500
 	Time Cost: 300

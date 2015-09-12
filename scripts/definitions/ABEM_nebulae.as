@@ -5,58 +5,110 @@ import artifacts;
 from bonus_effects import BonusEffect;
 import listed_values;
 import region_effects;
+import orbitals;
 #section server
 import empire;
 import components.Abilities;
 #section all
 
+class ShieldData {
+	double shield = 0;
+	double maxShield = 0;
+}
+
 class DisableShields : StatusHook {
-	Document doc("Disables the shields of the ship affected by this status.");
-	Argument preserve("Preserve Power", AT_Boolean, "False", doc="Whether the ship's shields should be set to their previous strength once the status is disabled.");
+	Document doc("Disables the shields of the ship or orbital affected by this status.");
+	Argument preserve("Preserve Power", AT_Boolean, "False", doc="Whether the object's shields should be set to their previous strength once the status is disabled.");
 	
 #section server
 	void onCreate(Object& obj, Status@ status, any@ data) override {
-		Ship@ ship = cast<Ship>(obj);
-		if(ship !is null) {
-			if(preserve.boolean)
-				data.store(ship.Shield);
-			else
-				data.store(0);
-			ship.Shield = 0;
-			ship.MaxShield = 0;
+		ShieldData info;
+		data.store(@info);
+		if(obj.isShip) {
+			Ship@ ship = cast<Ship>(obj);
+			if(ship !is null) {
+				if(preserve.boolean)
+					info.shield = ship.Shield;
+				ship.Shield = 0;
+				ship.MaxShield = 0;
+			}
+		}
+		else if(obj.isOrbital) {
+			Orbital@ orb = cast<Orbital>(obj);
+			if(orb !is null) {
+				if(preserve.boolean)
+					info.shield = orb.shield / orb.shieldMod;
+				info.maxShield = orb.maxShield / orb.shieldMod;
+				orb.modMaxShield(-info.maxShield);
+			}
 		}
 	}
 	
 	void onDestroy(Object& obj, Status@ status, any@ data) override {
-		Ship@ ship = cast<Ship>(obj);
-		double shield = 0;
-		if(ship !is null)
-			ship.MaxShield = ship.blueprint.getEfficiencySum(SV_ShieldCapacity);
-			data.retrieve(shield);
-			ship.Shield = shield;
+		ShieldData@ info;
+		data.retrieve(@info);
+		if(info is null)
+			info = ShieldData();
+		if(obj is null)
+			return;
+		if(obj.isShip) {
+			Ship@ ship = cast<Ship>(obj);
+			if(ship !is null) {
+				ship.MaxShield += ship.blueprint.getEfficiencySum(SV_ShieldCapacity);
+				ship.Shield = min(info.shield, ship.MaxShield);
+			}
+		}
+		else if(obj.isOrbital) {
+			Orbital@ orb = cast<Orbital>(obj);
+			if(orb !is null) {
+				orb.modMaxShield(info.maxShield);
+				orb.repairOrbitalShield(info.shield);
+			}
+		}
 	}
 	
 	bool onTick(Object& obj, Status@ status, any@ data, double time) override {
-		Ship@ ship = cast<Ship>(obj);
-		if(ship !is null) {
-			ship.Shield = 0;
-			ship.MaxShield = 0;
+		ShieldData@ info;
+		data.retrieve(@info);
+		if(info is null)
+			info = ShieldData();
+		data.store(@info);
+		if(obj.isShip) {
+			Ship@ ship = cast<Ship>(obj);
+			if(ship !is null) {
+				ship.Shield = 0;
+				ship.MaxShield = 0;
+			}
 		}
+		else if(obj.isOrbital) {
+			Orbital@ orb = cast<Orbital>(obj);
+			if(orb !is null) {
+				if(orb.maxShield != 0) {	
+					info.maxShield += orb.maxShield / orb.shieldMod;
+					orb.modMaxShield(orb.maxShield / orb.shieldMod);
+				}
+				orb.repairOrbitalShield(orb.shield / orb.shieldMod);
+			}
+		}			
 		return true;
 	}
 	
 	void save(Status@ status, any@ data, SaveFile& file) const {
-		double shield = 0;
-		data.retrieve(shield);
+		ShieldData@ info;
+		data.retrieve(@info);
 
-		file << shield;
+		if(info is null) 
+			info = ShieldData();
+		file << info.shield;
+		file << info.maxShield;
 	}
 
 	void load(Status@ status, any@ data, SaveFile& file) const {
-		double shield = 0;
+		ShieldData info;
+		data.store(@info);
 		
-		file >> shield;
-		data.store(shield);
+		file >> info.shield;
+		file >> info.maxShield;		
 	}
 #section all
 }
@@ -148,29 +200,48 @@ class DealRandomDamage : StatusHook {
 	
 #section server
 	bool onTick(Object& obj, Status@ status, any@ data, double time) override {
-		Ship@ ship = cast<Ship>(obj);
+		Ship@ ship;
+		Orbital@ orb;
+
+		if(obj.isShip)
+			@ship = cast<Ship>(obj);
+		else if(obj.isOrbital)
+			@orb = cast<Orbital>(obj);
 		double totalHP = 0;
 		if(ship !is null)
 			totalHP = ship.blueprint.design.totalHP;
 		else {
-			Orbital@ orb = cast<Orbital>(obj);
 			if(orb !is null)
 				totalHP = orb.maxHealth + orb.maxArmor;
 		}
 		DamageEvent dmg;
 		dmg.damage = (damage.decimal + damagepct.decimal * totalHP) * time;
-		if(ship !is null && ship.Shield > 0) {
-			double overflow = 0;
-			ship.Shield = max(ship.Shield - shieldpct.decimal * ship.MaxShield, 0.0);
-			overflow = dmg.damage * shieldmult.decimal - ship.Shield;
-			ship.Shield -= dmg.damage * shieldmult.decimal;
-			if(ship.Shield < 0)
-				ship.Shield = 0;
-			if(overflow > 0)
-				dmg.damage = overflow / shieldmult.decimal;
-			else
-				dmg.damage = 0;
+		if(ship !is null) {
+			if(ship.Shield > 0) {
+				double overflow = 0;
+				ship.Shield = max(ship.Shield - shieldpct.decimal * ship.MaxShield, 0.0);
+				overflow = dmg.damage * shieldmult.decimal - ship.Shield;
+				ship.Shield -= dmg.damage * shieldmult.decimal;
+				if(ship.Shield < 0)
+					ship.Shield = 0;
+				if(overflow > 0)
+					dmg.damage = overflow / shieldmult.decimal;
+				else
+					dmg.damage = 0;
+			}
 		}
+		else if(orb !is null) {
+			if(orb.shield > 0) {
+				double overflow = 0;
+				orb.repairOrbitalShield(-(shieldpct.decimal * orb.maxShield));
+				overflow = dmg.damage * shieldmult.decimal - orb.shield;
+				orb.repairOrbitalShield(-(dmg.damage * shieldmult.decimal / orb.shieldMod));
+				if(overflow > 0)
+					dmg.damage = overflow / shieldmult.decimal;
+				else
+					dmg.damage = 0;
+			}
+		}					
 		if(shieldonly.boolean) {
 			dmg.damage = 0;
 		}
@@ -188,17 +259,26 @@ class DealRandomDamage : StatusHook {
 }
 
 class ShieldRegenBoost : StatusHook {
-	Document doc("Boosts the shield regeneration of a ship by a percentage of its own regenerative ability.");
+	Document doc("Boosts the shield regeneration of a ship or orbital by a percentage of its own regenerative ability.");
 	Argument percentage("Percentage", AT_Decimal, "0.1", doc="Percentage boost. Defaults to 0.1 (10% of ship's regeneration).");
 	
 #section server
 	bool onTick(Object& obj, Status@ status, any@ data, double time) override {
 		double regen = 0;
-		Ship@ ship = cast<Ship>(obj);
-		if(ship !is null) {
-			regen = ship.blueprint.getEfficiencySum(SV_ShieldRegen) * percentage.decimal;
-			ship.Shield = min(ship.Shield + regen, ship.MaxShield);
+		if(obj.isShip) {
+			Ship@ ship = cast<Ship>(obj);
+			if(ship !is null) {
+				regen = ship.blueprint.getEfficiencySum(SV_ShieldRegen) * percentage.decimal;
+				ship.Shield = min(ship.Shield + regen, ship.MaxShield);
+			}
 		}
+		else if(obj.isOrbital) {
+			Orbital@ orb = cast<Orbital>(obj);
+			if(orb !is null) {
+				regen = orb.shieldRegen * percentage.decimal / orb.shieldMod;
+				orb.repairOrbitalShield(regen);
+			}
+		}	
 		return true;
 	}
 #section all
@@ -223,17 +303,31 @@ class KillCrew : StatusHook {
 	bool onTick(Object& obj, Status@ status, any@ data, double time) override {
 		double timeLeft = 0;
 		data.retrieve(timeLeft);
-		Ship@ ship = cast<Ship>(obj);
-		if(ship !is null) {
-			if(ship.Shield > 0) {
-				ship.Shield -= max(damage.decimal, 0.0) + damagepct.decimal * ship.MaxShield;
-				if(ship.Shield < 0)
-					ship.Shield = 0;
+		if(obj.isShip) {
+			Ship@ ship = cast<Ship>(obj);
+			if(ship !is null) {
+				if(ship.Shield > 0) {
+					ship.Shield -= max(damage.decimal, 0.0) + damagepct.decimal * ship.MaxShield;
+					if(ship.Shield < 0)
+						ship.Shield = 0;
+				}
+				if(ship.blueprint.hasTagActive(ST_RemnantComputer))
+					return true;
+				if(ship.Shield > 0 && damage.decimal != -1)
+					timeLeft += time;
 			}
-			if(ship.blueprint.hasTagActive(ST_RemnantComputer))
-				return true;
-			if(ship.Shield > 0 && damage.decimal != -1)
-				timeLeft += time;
+		}
+		else if(obj.isOrbital) {
+			Orbital@ orb = cast<Orbital>(obj);
+			if(orb !is null) {
+				if(orb.shield > 0) {
+					orb.repairOrbitalShield(-(max(damage.decimal, 0.0) + damagepct.decimal * orb.maxShield) / orb.shieldMod);
+				}
+				if(orb.coreModule != uint(-1) && getOrbitalModule(orb.coreModule).immuneToRadiation)
+					return true;
+				if(orb.shield > 0 && damage.decimal != -1)
+					timeLeft += time;
+			}
 		}
 		timeLeft -= time;
 		if(timeLeft < 0 && obj.owner !is Creeps) {

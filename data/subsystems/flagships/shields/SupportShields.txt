@@ -1,5 +1,5 @@
 Subsystem: SupShieldGen
-	Name: Shield Generator
+	Name: #SHIELDGEN_NAME
 	Description: #S_SUPSHIELD_DESC
 	BaseColor: #0044db
 	Elevation: 1
@@ -26,7 +26,7 @@ Subsystem: SupShieldGen
 
 	Requires:
 		Command = 1
-		
+
 	Modifier: LaborCostFactor(factor)
 		Hex.LaborCost := 0
 

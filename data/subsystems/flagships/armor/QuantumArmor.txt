@@ -1,5 +1,5 @@
 Subsystem: QuantumArmor
-	Name: Quantum Armor
+	Name: #S_QUANTUM_ARMOR
 	BaseColor: #898989
 	Elevation: 1
 
@@ -9,7 +9,7 @@ Subsystem: QuantumArmor
 
 	Tags: FauxExterior
 	Ship.ExternalHexes := Ship.ExternalHexes + ExteriorHexes
-	
+
 	Size := HexSize * Hexes
 
 	Hex.Resistance := 0.5
@@ -17,7 +17,7 @@ Subsystem: QuantumArmor
 	Hex.Mass := 3* HexSize
 	Hex.LaborCost := 1 * HexSize
 	Hex.BuildCost := 1 * HexSize
-	Hex.MaintainCost := 0.2
+	Hex.MaintainCost := 0.2 * HexSize
 
 	DamageResist := ShipSize /30
 	Description: #S_QUANTUM_ARMOR_DESC

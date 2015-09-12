@@ -1,5 +1,5 @@
 Subsystem: RepairBay
-	Name: Nanite Dispenser
+	Name: #S_REPAIRBAY
 	BaseColor: #5cf90e
 	Picture: HyperdenseLaser::0 * #5cf90e
 	Elevation: 2

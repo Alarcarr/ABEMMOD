@@ -21,7 +21,7 @@ Subsystem: FTLJammer
 		Amount = 0.15
 	Hook: AddStatus(Interdict)
 	Assert: Size >= 100
-		Message: The FTL Jammer must be at least size 100. Increase the jammer's hex count or the station's size.
+		Message: #ERROR_FTLJAMMER
 	Requires:
 		Command = Hexes
 

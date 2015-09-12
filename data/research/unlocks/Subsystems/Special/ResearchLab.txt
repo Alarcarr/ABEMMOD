@@ -1,5 +1,5 @@
 Technology: ResearchLab
-	Name: Research Lab
+	Name: #R_SYS_RESEARCHLAB
 	Description: #R_SYS_RESEARCHLAB_DESC
 	Point Cost: 1500
 	Time Cost: 420

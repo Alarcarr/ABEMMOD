@@ -1,5 +1,5 @@
 Subsystem: DefensiveMatrix
-	Name: Defensive Matrix Generator
+	Name: #S_DEFENSIVEMATRIX_NAME
 	BaseColor: #145cf9
 	Picture: SLaser * #145cf9
 	Elevation: 2
@@ -24,6 +24,9 @@ Subsystem: DefensiveMatrix
 	DefensiveMatrixHP := 100 * Size
 	TypeColor: #145cf9
 	PowerUse := 10 * Size
+	HasDefensiveMatrix := 1
+	Assert: Sum.HasDefensiveMatrix == 1
+		Message: #ERROR_ONLY_ONE
 	Module: Core
 		Sprite: SLaser * #145cf9
 		Hex.BuildCost := Hex.BuildCost * 3

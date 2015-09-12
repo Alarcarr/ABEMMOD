@@ -1,5 +1,5 @@
 Technology: HeavyRailgun
-	Name: Heavy Railgun
+	Name: #R_SYS_HEAVYRAIL
 	Point Cost: 700
 	Class: Unlock
 	Time Cost: 120

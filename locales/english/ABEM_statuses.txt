@@ -1,3 +1,25 @@
+STATUS_LASERTURRET: Laser Turret
+STATUS_RAILGUNTURRET: Railgun Turret
+STATUS_MISSILETURRET: Missile Turret
+STATUS_MANEUVERINGTHRUSTERS: Maneuvering Thrusters
+STATUS_EXTRATHRUSTER: Maneuvering Thrusters
+STATUS_ORBITALSHIELD: Shield Generators
+STATUS_ORBITALSENSOR: Sensor Arrays
+NEBULA_CERULEAN: Sicutmarian Nebula
+NEBULA_ECONOMIC: Pretiosian Nebula
+EMPTY_SPACE: Empty Space
+NEBULA_METAPHASIC: Metaphasic Nebula
+NEBULA_METREON: Metreon Nebula
+NEBULA_MUTARA: Mutara-class Nebula
+NEBULA_RADIOACTIVE: Radioactive Nebula
+NEBULA_TACHYON: Tachyon Nebula
+NEBULA_TYPE1: Interstellar Gas Cloud
+STATUS_BOARDED: Boarded
+STATUS_GDF: Go Down Fighting
+STATUS_MEL: Mask Energy Levels
+STATUS_LW: Rally Cry
+STATUS_EXHAUSTED: Exhausted
+STATUS_STELLAR_SHIELD: Shielded
 STATUS_POWER_CELL_DESC: <<
 	Upgraded in an ancient shipyard.
 
@@ -46,7 +68,7 @@ STATUS_VOIDRAY_DESC: <<
 	
 	Stacks up to 10 times.
 >>
-STATUS_TRANSPORTED: Hauler
+STATUS_TRANSPORTED: In Transit
 STATUS_TRANSPORTED_DESC: <<
 	This fleet is being led by a Hauler. Combat effectiveness is reduced by 50%.
 >>
@@ -65,3 +87,31 @@ STATUS_ENVOY_DESC: <<
 >>
 STATUS_ORB_EXP_PLATFORMS_DESC: This planet is being strip-mined by automated orbital exploitation platforms.
 STATUS_PROGENITOR_COMPUTER_BOOST_DESC: Heavy computation done by the Progenitor-designed control computer aboard the flagship is significantly increasing this fleet's efficiency and combat strength for the first 60 seconds of any combat.
+STATUS_CLOAKED_DESC: <<
+	This fleet is currently cloaked, and cannot be seen from distances in excess of 100 units.
+
+	Cloaking costs a small amount of energy per second to maintain and breaks as soon as the fleet enters combat. Additionally, the fleet's sensor range is reduced by 65% with a priority of 500.
+>>
+STATUS_READYFORHARVEST: Ready for Harvesting
+STATUS_READYFORHARVEST_DESC: <<
+	A Ringworlder Harvester has prepared this planet for harvesting. Any Ringworlder empire can now transfer all the resources on the planet to one of their Ringworlds, turning it into a Barren planet.
+>>
+STATUS_HABITATRING_DESC: <<
+	A large ring-shaped station encircles this planet, providing more space for the construction of important infrastructure.
+>>
+STATUS_GUARDIANSHIPYARD_ACTIVE: Standby Mode
+STATUS_GUARDIANSHIPYARD_ACTIVE_DESC: <<
+	This Guardian Facility is being studied and used to perform comparably minor construction projects.
+
+	Generates 15 Research per second and 100 Labor per minute. Can import Labor, has 5000 Labor storage, and can construct anything like a planet would.
+>>
+STATUS_GUARDIANSHIPYARD_BUILDING: Construction Mode
+STATUS_GUARDIANSHIPYARD_BUILDING_DESC: <<
+	This Guardian Facility is fabricating and storing modules for the assembly of a Guardian.
+
+	Consumes 10 Energy and 2.5 FTL per second, and incurs a maintenance cost of §2M. Construction will be canceled without any refund if the facility shuts down or is donated to another empire. Lasts a minimum of 15 minutes before allowing the Guardian's construction to be completed.
+>>
+STATUS_BROKENSEEDSHIP: Crashed Seed Ship
+STATUS_BROKENSEEDSHIP_DESC: <<
+	A damaged seed ship was successfully guided to the planet's surface. Study of the ship's systems yields a 10% boost to civilian Research production and 2 Research generation on the planet, and interfacing with the ship's computer allows periodic fabrication of artifacts.
+>>

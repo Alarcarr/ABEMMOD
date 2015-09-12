@@ -1,5 +1,5 @@
 Subsystem: RechargerModule
-	Name: Power Transmission Array
+	Name: #S_RECHARGERMODULE
 	BaseColor: #683db8
 	TypeColor: #683db8
 	Elevation: 2
@@ -23,7 +23,7 @@ Subsystem: RechargerModule
 	Module: Default
 
 	Module: Core
-		Sprite: TechIcons::48
+		Sprite: TechIcons::16
 		Hex.BuildCost := 450
 		Hex.MaintainCost := 100
 		Hex.HP := 5000

@@ -29,7 +29,7 @@ Trait: Handicap3
 	Category: Handicaps
 	ModAttribute(FleetEfficiencyFactor, Add, 0.1)
 
-	
+
 	Unique: Handicap
 
 Trait: Handicap0
@@ -40,7 +40,7 @@ Trait: Handicap0
 	Category: Handicaps
 	Default: True
 
-	
+
 	Unique: Handicap
 Trait: Handicap4
 	Name: Veteran Player
@@ -50,7 +50,7 @@ Trait: Handicap4
 	Description: Reduce Fleet Eficiency by 10%
 	ModAttribute(FleetEfficiencyFactor, Add, -0.1)
 
-	
+
 	Unique: Handicap
 
 
@@ -62,7 +62,7 @@ Trait: Handicap5
 	Color: #ff1b0f
 	ModAttribute(FleetEfficiencyFactor, Add, -0.2)
 
-	
+
 	Unique: Handicap
 Trait: Handicap6
 	Color: #ff0000
@@ -72,5 +72,5 @@ Trait: Handicap6
 	Category: Handicaps
 	ModAttribute(FleetEfficiencyFactor, Add, -0.3)
 
-	
+
 	Unique: Handicap

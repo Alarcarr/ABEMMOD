@@ -1,0 +1,24 @@
+Trait: Sublight
+	Name: #TRAIT_SUBLIGHT
+	Description: #TRAIT_SUBLIGHT_DESC
+	Order: 4
+	
+	Category: FTL
+	Unique: FTL
+	
+	Icon: HexagonSubsystems::2
+	Color: #ffaaaa
+
+	Gives Points: 3
+	
+	LoadDesigns(ABEM_defaults/default)
+	LoadDesigns(ABEM_defaults/not_hyperdrive)
+
+	IfHaveTrait(Verdant, LoadDesigns(ABEM_defaults/verdant/default))
+	IfHaveTrait(Verdant, LoadDesigns(ABEM_defaults/verdant/not_hyperdrive))
+
+	IfHaveTrait(Devout, LoadDesigns(ABEM_defaults/devout/default))
+	IfHaveTrait(Devout, LoadDesigns(ABEM_defaults/devout/not_hyperdrive))
+
+	AddFTLStorage(-250)
+	AddFTLIncome(-1)

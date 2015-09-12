@@ -1,5 +1,5 @@
 Ability: LW
-	Name: Rally Cry
+	Name: #ABL_LW
 	Target: OwnShip = Object
 	Range: 100
 	Icon: GDF

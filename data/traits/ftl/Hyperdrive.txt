@@ -1,0 +1,22 @@
+Trait: Hyperdrive
+	Name: #TRAIT_HYPERDRIVE
+	Description: #TRAIT_HYPERDRIVE_DESC
+	Category: FTL
+	Order: 0
+
+	Icon: HexagonSubsystems::10
+	Color: #a767ad
+
+	Default: True
+	Unique: FTL
+
+	UnlockSubsystem(Hyperdrive)
+
+	LoadDesigns(ABEM_defaults/default)
+	LoadDesigns(ABEM_defaults/hyperdrive)
+
+	IfHaveTrait(Verdant, LoadDesigns(ABEM_defaults/verdant/default))
+	IfHaveTrait(Verdant, LoadDesigns(ABEM_defaults/verdant/hyperdrive))
+
+	IfHaveTrait(Devout, LoadDesigns(ABEM_defaults/devout/default))
+	IfHaveTrait(Devout, LoadDesigns(ABEM_defaults/devout/hyperdrive))

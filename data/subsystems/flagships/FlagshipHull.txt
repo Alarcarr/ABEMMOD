@@ -12,6 +12,8 @@ Subsystem: FlagshipHull
 	Ship.HexSize := ShipSize / HexLimit
 
 	Repair := (ShipSize / HexLimit) * 8
+	// Dummy for design stats - actual baseline range is in ABEM_data.
+	SensorRange := 250
 
 	Hex.LaborCost := 0.1 * ShipSize
 	Hex.BuildCost := 1.1 * ShipSize
@@ -31,5 +33,6 @@ Subsystem: FlagshipHull
 		Message: #ERROR_NEED_CONTROL
 
 	RequirePrayer := 0
+	HasSinew := 0
 	Assert: (Sum.RequirePrayer == 0) || (Sum.Prayer > 0)
 		Message: #ERROR_NEED_PRAYER

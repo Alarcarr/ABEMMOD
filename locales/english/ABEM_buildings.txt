@@ -6,7 +6,7 @@ F_INTEL_NAME: Intelligence Facilities
 F_INTEL_DESC: <<
 	[color=#aaa][i]A facility for intelligence agencies to train operatives and coordinate missions from.[/i][/color]
 
-	Generates intelligence cards against empires adjacent to this system every 2 minutes. If no such empires exist, intelligence cards are against a random empire.
+	Generates intelligence cards against empires adjacent to this system every 2 minutes.
 >>
 F_POWERPLANT_NAME: Power Plant
 F_POWERPLANT_DESC: <<
@@ -37,7 +37,7 @@ B_TAXCENTER_DESC: <<
 B_DEFENSEFACTORY_DESC: <<
 	A facility dedicated to the coordination of defensive forces across the planet.
 
-	Adds 2 Defense generation. Adds 128 support capacity.
+	Adds 2 Defense generation. Adds 128 support capacity. Adds 25 units of sensor range.
 >>
 COND_ANCIENT_CANNON: Ancient Planetary Defenses
 COND_ANCIENT_CANNON_DESC: <<|
@@ -55,7 +55,63 @@ BLD_RECALL_DESC: <<
 	A hyperfield manipulator designed to open a wormhole between a location in orbit and any allied object in the universe.
 
 	[img=MenuIcons::3;20]Grants the Recall ability.[/img]
-	[img=ResourceIcon::2;22]Costs [b][color=#42b4bd]Energy[/color][/b] to activate.[/img]
+	[img=ResourceIcon::2;20]Costs [b][color=#42b4bd]Energy[/color][/b] to activate.[/img]
 	[img=MenuIcons::3;20]The smaller the recalled object is, the less energy is consumed.[/img]
 	[img=MenuIcons::3;20][i][bbloc=#ABL_RECALL_DESC/][/i][/img]
+>>
+BLD_SENSOR: Sensor Complex
+BLD_SENSOR_DESC: <<
+	A series of sensor towers aimed at various parts of the sky push back the interstellar 'fog of war'.
+	
+	[img=MenuIcons::3;20]Increases the planet's sight range by 100 units.[/img]
+>>
+BLD_VANGUARDPORTAL: Portal Stabilizer
+BLD_VANGUARDPORTAL_DESC: <<
+	A powerful hyperfield manipulator of tremendous scale. When activated and targeted at a specific point in space along with two other Stabilizers, this structure will create a massive wormhole through which the Overlords' invasion force can enter this galaxy.
+
+	[img=ShieldImpactLarge*#de12de;20]Constructing five Portal Stabilizers will cause you to win a Vanguard Victory.[/img]
+	[img=Plus;20]The presence of a Portal Stabilizer inspires the owner's race to fight harder to defend the system, manifesting as a 40% boost to fleet effectiveness to all owned fleets in the system.[/img]
+	[img=MenuIcons::3;20]Intense rivalry between Vanguard races - and the desire of non-Vanguard races to keep the Overlords away - cause the Stabilizer to self-destruct or be destroyed, respectively, when the planet's owner changes for any reason.[/img]
+	[img=MenuIcons::3;20]Can only be constructed once per planet, and can only be constructed on a Ringworld or Artificial Planetoid.[/img]
+>>
+B_DEFENSEFACTORY: Command Center
+B_TAXCENTER: Taxation Center
+BLD_HOUSING: Residential Area
+BLD_RECALL: Recall Facility
+B_SLAVE: Slave Barracks
+B_FAKELVL1_RESEARCH: Research Complex
+B_FAKELVL1_RESEARCH_DESC: <<
+	A specialized processing plant that can replace a Level 1 resource and generates 3 Research pressure.
+
+	[img=ResourceIconsSmall::11;22;#91692c][b][color=#91692c]Requires large amounts of Ore mined from asteroids.[/color][/b][/img]
+>>
+B_FAKELVL1_MONEY: Space Market
+B_FAKELVL1_MONEY_DESC: <<
+	A specialized processing plant that can replace a Level 1 resource and generates 3 Money pressure.
+
+	[img=ResourceIconsSmall::11;22;#91692c][b][color=#91692c]Requires large amounts of Ore mined from asteroids.[/color][/b][/img]
+>>
+B_FAKELVL1_DEFENSE: Weapons Factory
+B_FAKELVL1_DEFENSE_DESC: <<
+	A specialized processing plant that can replace a Level 1 resource and generates 3 Defense pressure.
+
+	[img=ResourceIconsSmall::11;22;#91692c][b][color=#91692c]Requires large amounts of Ore mined from asteroids.[/color][/b][/img]
+>>
+B_FAKELVL2_RESEARCH: Research Complex
+B_FAKELVL2_RESEARCH_DESC: <<
+	A specialized processing plant that can replace a Level 2 resource and generates 7 Research pressure.
+
+	[img=ResourceIconsSmall::11;22;#91692c][b][color=#91692c]Requires large amounts of Ore mined from asteroids.[/color][/b][/img]
+>>
+B_FAKELVL2_MONEY: Space Market
+B_FAKELVL2_MONEY_DESC: <<
+	A specialized processing plant that can replace a Level 2 resource and generates 7 Money pressure.
+
+	[img=ResourceIconsSmall::11;22;#91692c][b][color=#91692c]Requires large amounts of Ore mined from asteroids.[/color][/b][/img]
+>>
+B_FAKELVL2_DEFENSE: Weapons Factory
+B_FAKELVL2_DEFENSE_DESC: <<
+	A specialized processing plant that can replace a Level 2 resource and generates 7 Defense pressure.
+
+	[img=ResourceIconsSmall::11;22;#91692c][b][color=#91692c]Requires large amounts of Ore mined from asteroids.[/color][/b][/img]
 >>

@@ -1,0 +1,11 @@
+Template: !tag/NoCore, tag/IsSensor, !tag/SupportHull
+	Module: SensorProcessingNode
+		Name: #S_SENSOR_PROCESSING_NODE
+		Description: #S_SENSOR_PROCESSING_NODE_DESC
+
+		Color: #9ed6ff
+		Sprite: TechIcons::54
+
+
+		AddModifier: SensorFactor(1.2)
+		AddModifier: optional BuildCostFactor(1.5)

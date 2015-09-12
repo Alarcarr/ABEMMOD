@@ -1,1 +1,9 @@
 VERB_PICKUP_GUARDIAN: Move in closer to the $1
+PICKUP_GUARDIAN: Unidentified Progenitor Device
+PICKUP_GUARDIAN_DESC: Insufficient data exists to determine this object's function. Perhaps it should be investigated...
+PICKUP_EQUIPMENTSTASH: Equipment Stash
+PICKUP_EQUIPMENTSTASH_DESC: A Remnant equipment stash you can improve your technology with.
+VERB_PICKUP_EQUIPMENTSTASH: Analyze $1
+PICKUP_SOLARENGINE: Advanced Solar Engine
+PICKUP_SOLARENGINE_DESC: A dormant Solar Engine of Progenitor design. Will generate energy when reactivated. Requires no maintenance and produces more energy than a regular Solar Engine.
+VERB_PICKUP_SOLARENGINE: Reactivate $1

@@ -23,7 +23,7 @@ Subsystem: FlakCannon
 	Hex.HP := 18 * HexSize
 	Hex.Resistance := 0.2
 	Hex.Mass := HexSize
-	Name: Flak Cannon
+	Name: #S_FLAK
 	Description: #S_FLAK_DESC
 
 	FireArc := pi

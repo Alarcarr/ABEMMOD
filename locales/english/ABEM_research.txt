@@ -40,6 +40,7 @@ R_MOD_PRECISION_DESC: <<
 
 	[color=#d1cb6a][b]Alternate Unlock:[/b] Spend §750k.[/color]
 >>
+R_SYS_SHIELDED_AMGEN_BLURB: In-Combat Resupply
 R_SYS_SHIELDED_AMGEN_DESC: <<
 	[color=#aaa][i]New advances in shield compacting unlock the Shielded Antimatter Generator subsystem.[/i][/color]
 
@@ -175,8 +176,38 @@ R_SYS_ZPG_DESC: <<
 
 	[color=#42b4bd][b]Alternate Unlock:[/b] Spend 2000 energy.[/color]
 >>
+R_SENSOR_ARMORED: Sensor Armoring
+R_SENSOR_ARMORED_DESC: <<
+	[color=#aaa][i]Advances in sensor networking and interference removal allow for significant amounts of sensor nodes to be embedded in a plate of armor.[/i][/color]
+
+	Unlocks the Armored Sensors subsystem.
+
+	[i][bbloc=#S_SENSOR_ARMORED_DESC/][/i]
+
+	[bbloc=#ALTUNLOCK_MONEY:2M/]
+>>
+R_SENSOR_TACHYON: Tachyon Sensors
+R_SENSOR_TACHYON_DESC: <<
+	[color=#aaa][i]A better understanding of the interactions between tachyons and regular matter opens up new ways of scanning star systems.[/i][/color]
+
+	Unlocks the Tachyon Sensors subsystem.
+
+	[i][bbloc=#S_SENSOR_TACHYON_DESC/][/i]
+
+	[bbloc=#ALTUNLOCK_ENERGY:750/]
+>>
+R_SENSOR_PROCESSING_NODE: Distributed Sensor Processing
+R_SENSOR_PROCESSING_NODE_DESC: <<
+	[color=#aaa][i]Advancements in the design of sensor processing systems allows additional computers to be cleanly and efficiently tied into the system, increasing its effectiveness.[/i][/color]
+
+	Unlocks the Sensor Processing Node subsystem.
+
+	[i][bbloc=#S_SENSOR_PROCESSING_NODE_DESC/][/i]
+
+	[bbloc=#ALTUNLOCK_ENERGY:1000/]
+>>
 R_BLD_SLAVE_DESC: <<
-	[color=#aaa][i]We have learnt much about the art of enslavement from ancient fictional works. Now, we can enslave entire populations - without making the many foolish blunders of fictional slavers![/i]
+	[color=#aaa][i]We have learnt much about the art of enslavement from ancient fictional works. Now, we can enslave entire populations - without making the many foolish blunders of fictional slavers![/i][/color]
 
 	Unlocks the Slave Barracks.
 
@@ -217,12 +248,15 @@ R_SYS_RESUPPLY_DESC: <<
 	
 	[i][bbloc=#S_RESUPPLYMODULE_DESC/][/i]
 >>
-R_SYS_ENGINEERING: <<
+R_SYS_ENGINEERING: Engineering Systems
+R_SYS_ENGINEERING_DESC: <<
 	[color=#aaa][i]Advances in engineering technology allow for engineering feats that previously required entire squadrons of ships to be accomplished by a single craft.[/i][/color]
 	
-	Unlocks the Engineering Bay subsystem.
+	Unlocks the Combat Engineering Bay and Utility Engineering Bay subsystems.
 	
 	[i][bbloc=#S_ENGINEERING_BAY_DESC/][/i]
+
+	[i][bbloc=#S_UTILITY_BAY_DESC/][/i]
 >>
 R_BLD_SENATE_DESC: <<
 	[i][bbloc=#F_SENATE_DESC/][/i]
@@ -283,7 +317,6 @@ R_IMP_POP_LVL2PLANET_DESC: <<
 	[color=#d1cb6a][b]Alternate Unlock:[/b] Spend §1.5M.[/color]
 >>
 R_SYS_COVARIANT_BLURB: Anti-Burst Shield
-
 R_SYS_FLAK_DESC: <<
 	[color=#aaa][i]Ages ago, explosive canisters filled with small bits of metal were used extensively in early ground-to-air weapons. Now, we can take that highly advanced knowledge, and bring down swarms of small craft with it.[/i][/color]
 
@@ -674,6 +707,60 @@ R_ORBITALTHRUSTER_DESC: <<
 
 	[bbloc=#ALTUNLOCK_INFLUENCE:8/]
 >>
+R_DEV_CULTIVATION: Sustainability
+R_DEV_CULTIVATION_BLURB: 1x Cultivation
+R_DEV_PLANET: Planetary Branding
+R_DEV_PLANET_BLURB: 1x Name Planet(***)
+R_CAT_MILITARY: Military Research
+R_CAT_ENERGY: Energetics
+R_CAT_PLANET: Planetary Development
+R_CAT_POLITICS: Political Science
+R_CAT_INDUSTRY: Industry
+R_CAT_PROPULSION: Dynamics
+R_LINK: LINK
+R_SPEC_FLAGSHIP1: Battleship Development
+R_SPEC_FLAGSHIP2: Streamlined Battleships
+R_SPEC_FLAGSHIP3: Battleship Manufacturing
+R_SPEC_FLAGSHIP4: Reinforced Architecture
+R_SPEC_SUPPORT1: Carrier Development
+R_SPEC_SUPPORT2: Small Arms Development
+R_SPEC_SUPPORT3: Targeting Sensor Shunt
+R_SPEC_SUPPORT4: Support Ship Manufacturing
+R_ORB_FLING: Fling Beacons
+R_ORB_GATE: Gate Technology
+R_SYS_HYPERDRIVE: Hyperdrive
+R_SYS_SLIPSTREAM: Slipstream
+R_SYS_REMNANT_ARMOR: Progenitor Armoring
+R_PROGENITOR_SCIENCE: Progenitor Knowledge
+R_SYS_REMNANTSHIELD: Progenitor Shield Technology
+R_COMPOSITE_ARMOR: Composite Armor
+R_CRYSTAL_ARMOR: Crystalline Armor
+R_NANO_ARMOR: Nanite Armor
+R_POWERED_ARMOR: Powered Armor
+R_SYS_QUANTUM_ARMOR: Quantum Armor
+REACTIVEARMOR_NAME: Reactive Armor
+R_SYS_ADMIRAL: Improved Command Deck
+R_ORBITALTHRUSTER: Orbital Maneuvering
+R_MOD_PRECISION: Beam Amplifiers
+R_ADV_SHIELD_BLURB: +20% Shield HP, Shield Tech
+R_ADV_SHIELD: Advanced Shield Manipulation
+R_BOARDING_PARTY: Boarding Parties
+R_SYS_REPAIRBAY: Nanite Dispensers
+R_SYS_RESEARCHLAB: Research Lab
+R_SYS_RESUPPLYMODULE: Resupply Module
+R_SYS_ROBOTICSHIPYARD: Shipboard Construction
+R_SYS_SUPPLYTRANSFER: Power Transferral
+R_SYS_HEAVYRAIL: Heavy Railgun
+R_SYS_MATTERDISRUPTOR: Matter Disruptor
+R_SYS_SUPERLASER: Superlaser
+R_VOIDRAY: Adaptive Laser
+R_SYS_CARRIER: Carrier Architecture
+R_SYS_DESTROYER: Destroyer Architecture
+R_BLD_TAX: Taxation Centers
+R_BLD_HOUSING: Residential Area
+R_INTEL: Intelligence Facilities
+R_POWERPLANT: Power Plant
+R_BLD_SLAVE: Slave Barracks
 
 
 

@@ -88,7 +88,7 @@ class ResearchGrid : Component_ResearchGrid, Savable {
 		{
 			WriteLock lock(mtx);
 			double genPts = researchRate * time * ResearchEfficiency;
-			totalGenerated += genPts;
+			totalGenerated += genPts * emp.ResearchDecaySpeed * config::RESEARCH_EFFICIENCY_DECAY_MULT;
 			points += genPts;
 
 			for(uint i = 0; i < grid.nodes.length; ++i) {

@@ -304,3 +304,6 @@ Grid: Base
 	ImpTileDevelopment: -4,-3
 	ImpCivHealth: -5,-3
 	OrbitalThruster: -3,-5
+	ArmoredSensors: 0,-8
+	TachyonSensor: -6,5
+	SensorProcessingNode: -7,-3

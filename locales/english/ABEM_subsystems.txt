@@ -6,6 +6,26 @@ SC_Armor:[hspace=4/][img=PlateArmor;32x32/][hspace=6/]  [color=#6e7371]Armor[/co
 SC_Power:[hspace=4/][img=DesignationIcons::2;32x32/][hspace=6/]  [color=#6e7371]Power and Supply[/color]
 SC_Manufacturing:[hspace=4/][img=ResourceIcon::6;32x32/][hspace=6/]  [color=#6e7371]Manufacturing[/color]
 SC_Shields:[hspace=4/][img=TechIcons::6;32x32/][hspace=6/]  [color=#0A50F5]Shields[/color]
+SC_Sensors:[hspace=4/][img=TechIcons::1;32x32/][hspace=6/] [color=#9ed6ff]Sensors[/color]
+
+// *********************************************************
+// ****************SUBSYSTEM ERRORS HERE!*******************
+// *********************************************************
+
+ERROR_ONLY_ONE: Cannot have more than one $1 on a ship.
+ERROR_ONLYONEADMIRAL: Only one Admiral can operate from a flagship at any time, and no Admiral needs two command centers, right?! Right!
+ERROR_PROGENITOR_COMPUTERMISMATCH: Cannot combine Progenitor Control Computers with standard Control Computers.
+ERROR_ENGBAYSIZE: Engineering Bays must be at least size 5. Increase the bay's hex count or the ship's size.
+ERROR_ZPG: Singularity Core must be at least size 100. Add more hexes to the core or increase the ship's size.
+ERROR_MIN_SIZE: $1 has a minimum size of $2.
+ERROR_STEALTH: Stealth ships cannot use hyperdrives.
+ERROR_PLANETDEVOURER_NOLASER: Planet Devourers cannot be placed on a ship with a Mining Laser or another Planet Devourer.
+ERROR_PLANETDEVOURER_HARVESTERONLY: Planet Devourers can only be placed on a Harvester.
+ERROR_SUPERLASER: Superlaser must be at least size 200. Add more hexes to the superlaser or increase the ship's size.
+ERROR_RESEARCHLAB: Research Lab must be at least size 15. Add more hexes to the lab or increase the station's size.
+ERROR_FTLJAMMER: The FTL Jammer must be at least size 100. Increase the jammer's hex count or the station's size.
+ERROR_MAX_SIZE: $1 has a maximum size of $2.
+ERROR_DRONEWEAPON: Boring Drone Launcher is not large enough to hold any drones. Increase the launcher's hex count or the ship's size.
 
 // *********************************************************
 // ****************SUBSYSTEM STATS HERE!********************
@@ -39,16 +59,100 @@ S_BOARDSUBSYS: Boarding Strength
 STT_BOARDSUBSYS: <<
 	The strength this subsystem contributes to a boarding defense. Only Boarding Parties contribute to an offensive boarding action; their offensive strength is the same as their defensive strength.
 >>
+S_SENSORRANGE: Base Sensor Range
+STT_SENSORRANGE: <<
+	How far the ship can see, prior to the application of any multiplying effects such as entering a nebula, and prior to modification by the game's Global Sensor Multiplier.
+	
+	This does not necessarily have to be the actual range of the ship's sensors, but it might provide a good idea of how big that range will be.
+>>
+S_PLANETMININGRATE: Mining Rate
+STT_PLANETMININGRATE: The rate at which this ship can mine materials from planets and put them into cargo storage.
+S_SENSORMULT: Sensor Multiplier
+S_SENSORPRIORITY: Sensor Priority
 S_HULLHEALING: Repair Rate
 S_SHIELDHEALING: Regeneration Rate
 S_SUPPLYTRANSFER: Transfer Rate
 S_SHIELDTRANSFER: Transfer Rate
 S_DEFENSIVEMATRIX: Matrix Capacity
+S_PROJRESIST: Projectile Resistance
+S_ENERGYRESIST: Energy Resistance
+S_EXPLRESIST: Explosive Resistance
+S_PODSIZE: Pod Size
 
 // *********************************************************
 // ******************SUBSYSTEMS HERE!***********************
 // *********************************************************
 
+HDSUPPLYMODULE: High-Density Supply Storage
+S_BOARDING_PARTY: Boarding Parties
+SYS_ADMIRALBAY: Improved Command Deck
+S_COMPOSITE_ARMOR: Composite Armor
+S_CRYSTAL_ARMOR: Crystalline Armor
+S_NANO_ARMOR: Nanite Armor
+S_POWERED_ARMOR: Powered Armor
+S_QUANTUM_ARMOR: Quantum Armor
+S_REMNANT_ARMOR: Progenitor Armor
+S_CARPETBOMB: Carpet Bomb
+S_CARPETBOMB_DESC: A heavy, multiple warhead weapon designed to devastate a planet's surface and population.
+S_ENERGYTRANSMITTER: Energy Transferral Beam
+S_ROBOTICSHIPYARD: Automated Shipyard
+S_ENGINEERING_BAY: Combat Engineering Bay
+S_UTILITY_BAY: Utility Engineering Bay
+S_REPAIRBAY: Nanite Dispenser
+S_SHIELDREGENERATOR: Shield Regenerator
+S_SHIELDTRANSMITTER: Shield Transmitter
+S_SHIELDED_AMGEN: Shielded Antimatter Generator
+S_ZPG: Singularity Core
+S_CARRIER_HULL: Carrier Hull
+S_DESTROYER_HULL: Destroyer Hull
+S_GUARDIANHULL: Guardian Hull
+S_GUARDIANHULL_DESC: Dummy subsystem only used by the Remnant Guardian. Cannot be boarded.
+S_HAULER_HULL: Hauler Hull
+S_MINER_HULL: Miner Hull
+S_STEALTH_HULL: Stealth Hull
+EXTRA_GUN_NAME: Dual Mount
+BEAM_AMPLIFIER_NAME: Beam Amplifiers
+SHIELDCAPACITOR_NAME: Shield Capacitor
+SHIELDDIFFUSER_NAME: Shield Diffuser
+S_RAMJET: Bussard Ramjet
+S_BASIC_SENSORS: Basic Sensors
+S_COVARIANT_SHIELD: Covariant Shield Generator
+S_REMNANTSHIELD: Progenitor Shield Generator
+SHIELDGEN_NAME: Shield Generator
+S_HYPERDRIVE: Hyperdrive
+S_HYPERDRIVE_DESC: Allows for hyperdrive navigation. The larger the hyperdrive the faster the FTL speed.
+S_FLAK: Flak Cannon
+S_HEAVYRAIL: Heavy Railgun
+S_MATTERDISRUPTOR: Matter Disruptor
+S_SUPERLASER: Superlaser
+S_ROCKETPOD: Rocket Pod
+S_DEFENSIVEMATRIX_NAME: Defensive Matrix Generator
+S_ROCKETPOD_DESC: <<
+	A concealed tube of rockets rapidly extends, launches a volley of short range rockets, and receeds to reload.
+
+	[img=Plus]High [b][color=#ff8080]damage[/color][/b].[/img]
+	[img=Plus]No firing arc limitations.[/img]
+	[img=Plus]Very effective at piercing armor.[/img]
+	[img=Minus]Must reload after several shots.[/img]
+	[img=Minus]High [b][color=#fefc61]supply cost[/color][/b].[/img]
+>>
+S_TORPEDO: Torpedo Launcher
+S_TORPEDO_DESC: Launches massive, slow-moving, guided bombs. These bombs explode in an area around their target.
+S_ORBITALTHRUSTER: Orbital Thruster
+S_RESEARCHLAB: Research Lab
+S_RESUPPLYMODULE: Resupply Module
+S_RECHARGERMODULE: Power Transmission Array
+S_FIGHTER: Fighter Chassis
+S_MISSILEFRIGATE: Missile Frigate Chassis
+S_CLOAKPLATING_DESC: <<
+	Fully covering a ship in a mesh of hyperabsorbant material allows it to avoid detection by enemies outside immediate visual range.
+
+	[img=Plus]When activated, fleet cannot be seen from more than 100 units.[/img]
+	[img=ResourceIcon::2;22]Cloak slowly drains [b][color=#42b4bd]Energy[/color][/b] when active.[/img]
+	[img=Minus]Cloak is broken when the fleet enters combat.[/img]
+	[img=Minus]While cloaked, sensor range is reduced by 65%. The range reduction has a priority of 500.[/img]
+	[img=MenuIcons::3;20][color=#aaa]The ship's exterior must be fully covered in cloaking mesh in order to successfully cloak.[/color][/img]
+>>
 S_CONTROLCHAIR: Neural Interface Chair
 S_CONTROLCHAIR_DESC: <<
 	A neural interface linked into all the ship's systems allows a single officer to single-handedly control massive battlecruisers whilst sitting in a comfortable chair.
@@ -126,6 +230,16 @@ BEAM_AMPLIFIER_DESC: <<
 
 
 	[i][color=#aaa]Placing more than one beam amplifier on a weapon will continue to increase its range and burst damage, but will also skyrocket its labor costs.[/color][/i]
+>>
+S_SENSOR_PROCESSING_NODE_DESC: <<
+	Installing additional computers to process and catalogue sensor data gathered by the ship's sensors increases their effective range by a considerable margin.
+
+	[img=Plus;22;#cf00ff]Can be placed on Tachyon or Basic Sensors.[/img]
+	[img=Plus]Increases the sensor range of the subsystem by 20%.[/img]
+	[img=Minus]Increases the build cost of the subsystem by 50%.[/img]
+
+
+	[i][color=#aaa]Placing more than one processing node on a sensor will continue to increase its range, but will also skyrocket its build costs.[/color][/i]
 >>
 EXTRA_GUN_DESC: <<
 	Sophisticated ammo feeds, power conduits, capacitors and emitters allow for two turrets' worth of weapons to be mounted on a single turret. While this conserves space and building materials, it is more difficult to assemble and maintain. In effect, beam turrets receive improved emitters which double the amount of energy they can channel, while other weapons receive a second barrel/launcher which is discharged halfway through the reloading process of the first one to maintain a consistent rate of fire.
@@ -358,9 +472,8 @@ S_ENERGYTRANSMITTER_DESC: <<
 >>
 S_DEFENSIVEMATRIX_DESC: <<
 	Generates a highly charged plasma field, acting as a temporary shield. The device is also capable of transmitting the plasma towards an allied flagship, attaching the field to that ship instead.
-	
+
 	[img=Plus]Grants access to the 'Engage Defensive Matrix' ability.[/img]
-	[img=MenuIcons::3;20]For an increased build and maintenance cost, multiple Defensive Matrix Generators can target several flagships simultaneously, be activated sequentially to avoid the 90-second cooldown, or focus on shielding a single ship for a specific period of time.[/img]
 	[img=MenuIcons::3;20][i][bbloc=#ABL_DEFENSIVEMATRIX_DESC/][/i][/img]
 >>
 S_FLAK_DESC: <<
@@ -380,6 +493,13 @@ S_BOARDING_PARTY_DESC: <<
 	[img=Minus]Only one boarding party can attempt to capture an object at any given moment.[/img]
 	[img=Minus]Can take between 10 to 100 seconds to complete, and has a high cooldown.[/img]
 	[img=MenuIcons::3;20]Objects belonging to a Verdant race cannot be boarded.[/img]
+>>
+S_SECURITY_STATION: Security Station
+S_SECURITY_STATION_DESC: <<
+	Defensive installations designed to prevent ship capture by boarding parties.
+
+	[img=Plus]Is twice as effective at boarding defense than a Boarding Party hex.[/img]
+	[img=Minus]Cannot be used for boarding offense.[/img]
 >>
 S_CARRIER_HULL_DESC: <<
 	Specialized hull architecture allows for easier construction of dedicated carriers.
@@ -455,8 +575,15 @@ S_RECHARGERMODULE_DESC: <<
 S_ENGINEERING_BAY_DESC: <<
 	Specialized equipment and personnel for battlefield assembly or repairs.
 	
-	[img=Plus]Allows use of Engineering abilities.[/img]
+	[img=Plus]Allows use of the following Engineering abilities: Install Railgun Turret, Install Laser Turret, Install Missile Turret, Construct Outpost.[/img]
 	[img=Plus]Has a high repair rate.[/img]
+	[img=Minus]Does not grant any Control.[/img]
+>>
+S_UTILITY_BAY_DESC: <<
+	Specialized equipment and personnel for construction of military infrastructure and repairs.
+	
+	[img=Plus]Allows use of the following Engineering abilities: Install Maneuvering Thrusters, Install Shield Generators, Install Sensor Array, Construct Supply Depot.[/img]
+	[img=Plus]Has a slightly lower repair rate than a Combat Engineering Bay.[/img]
 	[img=Minus]Does not grant any Control.[/img]
 >>
 S_HAULER_HULL_DESC: <<
@@ -467,9 +594,19 @@ S_HAULER_HULL_DESC: <<
 	[img=Plus]Maintenance costs are reduced by 80%.[/img]
 	[img=Plus]Slightly increases grid size.[/img]
 	[img=Minus]Mass is increased by 100%.[/img]
-	[img=Minus]Weapon base damage is reduced by 70%. This is in addition to being unable to hold supplies.[/img]
+	[img=Minus]Weapon base damage is reduced by 80%. This is in addition to being unable to hold supplies.[/img]
 	[img=Minus]Base fleet effectiveness is reduced by 50%.[/img]
 	[img=MenuIcons::3;20]Cannot be used on ships under size 50.[/img]
+>>
+S_MINER_HULL_DESC: <<
+	A specialized hull designed for the extraction and transportation of large quantities of ore from asteroids.
+
+	[img=Plus]Increases shield capacity by 50%.[/img]
+	[img=Plus]Reduces maintenance costs by 90%.[/img]
+	[img=Plus]Mining rate and cargo storage are increased by 25%.[/img]
+	[img=Plus]Slightly increases grid size.[/img]
+	[img=Minus]Weapon base damage is reduced by 90%. Cannot hold supplies.[/img]
+	[img=Minus]Cannot have support ships.[/img]
 >>
 S_AUGMENT_RELOAD: Coolant System
 S_AUGMENT_RELOAD_DESC: <<
@@ -554,6 +691,69 @@ S_ORBITALTHRUSTER_DESC: <<
 
 	[img=Plus]Lack of fuel requirements makes its maintenance requirements negligible.[/img]
 	[img=Minus]Extremely low thrust.[/img]
+>>
+S_BASIC_SENSORS_DESC: <<
+	An array of various sensors that allow the ship's crew to see into the surrounding space without taking a telescope to the nearest window.
+	
+	[img=Plus]Increases sight range by a moderate amount.[/img]
+	[img=Plus]Sensors on the outside of the ship do not use up interior space.[/img]
+	[img=MenuIcons::3;20]Completely covering sensors with armor or other sensors will cause them to use interior space again. The opposite is also true, so covering armor with sensors will cause the armor to use interior space.[/img]
+	[img=MenuIcons::3;20]Is not a contiguous subsystem - only one Basic Sensor core can be present on a ship, but that core does not have to be connected to all the other Basic Sensor hexes in the ship.[/img]
+	[img=Minus]Requires increasingly high amounts of Control as the subsystem's size increases. Sinew halves the Control requirements.[/img]
+	[img=Minus]Sensor core must be external.[/img]
+>>
+S_SENSOR_TACHYON: Tachyon Sensors
+S_SENSOR_TACHYON_DESC: <<
+	A modulating tachyon sensor grid that reveals objects within a significant area around the ship.
+	
+	[img=Plus]Increases sight range by a high amount.[/img]
+	[img=Plus]Sensors on the outside of the ship do not use up interior space.[/img]
+	[img=MenuIcons::3;20]Completely covering sensors with armor or other sensors will cause them to use interior space again. The opposite is also true, so covering armor with sensors will cause the armor to use interior space.[/img]
+	[img=MenuIcons::3;20]Is not a contiguous subsystem - only one Tachyon Sensor core can be present on a ship, but that core does not have to be connected to all the other Tachyon Sensor hexes in the ship.[/img]
+	[img=MenuIcons::3;20]Is immune to some of the sight-impairing effects of nebulae, but interference from subspace eddies negates the sight boost from Empty Space.[/img]
+	[img=Minus]Requires increasingly high amounts of Control as the subsystem's size increases. Sinew halves the Control requirements.[/img]
+	[img=Minus]Has a significantly higher maintenance cost compared to Basic Sensors, and requires more Control than an equal-sized Basic Sensor.[/img]
+	[img=Minus]Sensor core must be external.[/img]
+>>
+S_SENSOR_ARMORED: Armored Sensors
+S_SENSOR_ARMORED_DESC: <<
+	A decentralized network of armor-covered sensor nodes that can continue operating after sustaining significant damage.
+	
+	[img=Plus]Increases sight range by a small amount.[/img]
+	[img=Plus]Does not use up interior space, and requires less Control than Basic Sensors.[/img]
+	[img=Plus]Has no core, so it can continue operating to some extent until completely destroyed.[/img]
+	[img=MenuIcons::3;20]Must not have internal hexes, but can be covered by armor or other Armored Sensor hexes.[/img]
+	[img=Minus]Requires increasingly high amounts of Control as the subsystem's size increases. Sinew halves the Control requirements.[/img]
+	[img=Minus]Is heavier and slightly less effective than Plate Armor, and slightly more expensive than Basic Sensors.[/img]
+>>
+S_SENSOR_PROCESSING_NODE: Sensor Processing Node
+S_PLANET_MINING_LASER: Planet Devourer
+S_PLANET_MINING_LASER_DESC: <<
+	An array of tractor beams and mining lasers designed to harvest immense quantities of resources from a barren planet, destroying the planet in the process.
+
+	[img=Plus]Mines Ore from planets.[/img]
+	[img=Plus]Is 10 times faster than mining from an asteroid.[/img]
+	[img=MenuIcons::3;20]Cannot be placed on the same ship as a Mining Laser, and can only be placed on a Harvester.[/img]
+	[img=MenuIcons::3;20]Only Barren planets can be mined for Ore. Other planets must first have their resources Harvested.[/img]
+	[img=Minus]Has a significantly higher power consumption compared to a Mining Laser, and cannot mine from asteroids.[/img]
+>>
+S_HARVESTER: Harvester Hull
+S_HARVESTER_DESC: <<
+	A hull architecture designed specifically for the harvesting of resources from other planets.
+
+	[img=Plus]Can prepare planets for Harvesting by Ringworlds.[/img]
+	[img=Plus]Can use the Planet Devourer subsystem to mine Barren planets for Ore.[/img]
+	[img=Plus]All hex health is doubled.[/img]
+	[img=Plus]All damage resistance is increased by 50%.[/img]
+	[img=Plus]Shield capacity is doubled.[/img]
+	[img=Plus]Does not require Supply to fire weapons or repair itself.[/img]
+	[img=Plus]Slipstream costs are significantly reduced.[/img]
+	[img=Plus]Cargo storage capacity is multiplied tenfold.[/img]
+	[img=Minus]Mass is tripled.[/img]
+	[img=Minus]Cannot hold support ships.[/img]
+	[img=Minus]Damage output is reduced by 75%.[/img]
+	[img=Minus]Build costs are increased by 50%.[/img]
+	[img=MenuIcons::3;20]Cannot be used on ships under size 500.[/img]
 >>
 
 ERROR_SPECIFIC_SIZE: $1 must be exactly size $2.

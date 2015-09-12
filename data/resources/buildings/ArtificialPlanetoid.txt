@@ -9,8 +9,10 @@ Resource: ArtificialPlanetoid
 	Limitless Level: True
 	Can Be Terraformed: False
 	Exportable: False
+	Stealable: False
 
-	RegenSurface(6, 8, Biome Count = 1, Force Biome = Artificial)
+	IfNotHaveStatus(NoSurfaceRegen, IfNotHaveStatus(MoonBase, IfNotHaveStatus(FloatingContinent, IfNotHaveStatus(SoilEnhanced, ABEM_hooks::ResourcelessRegenSurface(6, 8, Biome Count = 1, Force Biome = Artificial)))))
+	AddStatus(NoSurfaceRegen)
 	OnEnable(DevelopTiles(48))
 
 	AddResource(Labor, 5)

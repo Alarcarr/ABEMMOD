@@ -1,5 +1,5 @@
 Subsystem: ShieldRegenerator
-	Name: Shield Regenerator
+	Name: #S_SHIELDREGENERATOR
 	BaseColor: #38a2f9
 	Picture: SubsystemButtonArt::8
 	Elevation: 2

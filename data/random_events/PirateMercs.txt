@@ -1,0 +1,49 @@
+Event: PirateMercs
+	Unique: False
+	Target: OtherEmp = Empire
+	Name: #EVT_PIRATEMERCS
+	Text: #EVT_PIRATEMERCS_DESC
+	Target: Location = Object
+	Option: BuyOut
+		Text: #EVT_PIRATEMERCS_BUYOUT
+		Icon: MilitaryStrengthIcon
+		Safe: False
+		Result: 50%
+			SendMessage(#EVT_PIRATEMERCS_BUYOUT_FAIL, Title = #EVT_PIRATEMERCS_BUYOUT_FAIL_TITLE)
+		Result: 50%
+			SendZoomTo(Location)
+			SendMessage(#EVT_PIRATEMERCS_BUYOUT_SUCCESS, Title = #EVT_PIRATEMERCS_BUYOUT_SUCCESS_TITLE)
+			AddEmpireResource(Money, -2000)
+			On: Location
+				RepeatTrigger(4, RandomTrigger(0.2, SpawnShip(Dread Pirate, Design From = Creeps)))
+				SpawnShip(Dread Pirate, Design From = Creeps)
+	Option: Shoo
+		Text: #EVT_PIRATEMERCS_SHOO
+		Icon: MaskAngry
+		Safe: False
+		Result: 20%
+			On: OtherEmp
+				TriggerRandomEvent(PirateMercs)
+			SendMessage(#EVT_PIRATEMERCS_SHOO_DISASTER, Title = #EVT_PIRATEMERCS_SHOO_DISASTER_TITLE)
+		Result: 40%
+			SendMessage(#EVT_PIRATEMERCS_SHOO_SUCCESS, Title = #EVT_PIRATEMERCS_SHOO_SUCCESS_TITLE)
+		Result: 40%
+			SendMessage(#EVT_PIRATEMERCS_SHOO_FAIL, Title = #EVT_PIRATEMERCS_SHOO_FAIL_TITLE)
+			RepeatTrigger(4, RandomTrigger(0.35, SpawnPirateAgainst()))
+			SpawnPirateAgainst()
+	Option: Hire
+		Text: #EVT_PIRATEMERCS_HIRE
+		Icon: PointsIcon
+		Default: True
+		Result: 20%
+			SendMessage(#EVT_PIRATEMERCS_HIRE_FAIL, Title = #EVT_PIRATEMERCS_HIRE_FAIL_TITLE)
+			AddEmpireResource(Money, -500)
+		Result: 80%
+			RepeatTrigger(4, RandomTrigger(0.35, GainInfluenceCard(PirateRaiders)))
+			GainInfluenceCard(PirateRaiders)
+			SendMessage(#EVT_PIRATEMERCS_HIRE_SUCCESS, Title = #EVT_PIRATEMERCS_HIRE_SUCCESS_TITLE)
+			AddEmpireResource(Money, -500)
+	TargetFilterAttackable(OtherEmp)
+	SelectRandomEmpire(OtherEmp)
+	SelectRandomOwnedPlanet(Location)
+	RequireContact()

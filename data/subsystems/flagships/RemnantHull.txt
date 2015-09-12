@@ -13,6 +13,9 @@ Subsystem: RemnantHull
 	Effect: DefensiveMatrixDamage
 
 	Repair := (ShipSize / HexLimit) * 16
+	HasSinew := 0
+
+	Hook: ABEM_sensors::AddSensor(0, 3, 0)
 
 	AddShipModifier: HpFactor(1.5)
 	AddShipModifier: DamageFactor(0.9)
@@ -48,6 +51,9 @@ Subsystem: SpecialRemnantHull
 	Repair := HexSize * 16
 
 	Effect: DefensiveMatrixDamage
+	HasSinew := 0
+
+	Hook: ABEM_sensors::AddSensor(0, 3, 0)
 
 	AddShipModifier: HpFactor(1.5)
 	AddShipModifier: DamageFactor(0.9)

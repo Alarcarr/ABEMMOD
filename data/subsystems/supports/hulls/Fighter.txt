@@ -1,6 +1,6 @@
 Subsystem: FighterHull
 	Tags: Applied:Hull, Category:Hulls, NoCore
-	Name: Fighter Chassis
+	Name: #S_FIGHTER
 	Hull: Support
 	EvaluationOrder: -200
 	BaseColor: #cc0b04
@@ -16,14 +16,14 @@ Subsystem: FighterHull
 	SupportSupplyCapacity := 100 * ShipSize
 	Description: #S_FIGHTER_DESC
 	Assert: ShipSize <= 5
-		Message: #ERROR_MIN_SIZE:$1:100
+		Message: #ERROR_MAX_SIZE:$1:5
 	Module: Default
 		Sprite: DesignationIcons::16
 		DrawMode: 3
 
 Subsystem: MFrigate
 	Tags: Applied:Hull, Category:Hulls, NoCore
-	Name: Missile Frigate Chassis
+	Name: #S_MISSILEFRIGATE
 	Hull: Support
 	EvaluationOrder: -200
 	BaseColor: #cc0b04
@@ -41,7 +41,7 @@ Subsystem: MFrigate
 	Description: #S_MISSILEFRIGATE_DESC
 	Assert: ShipSize >= 10
 		Message: #ERROR_MIN_SIZE:$1:10
-		
+
 	Module: Default
 		Sprite: DesignationIcons::16
 		DrawMode: 3

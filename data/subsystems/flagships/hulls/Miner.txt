@@ -1,5 +1,5 @@
 Subsystem: Miner
-	Name: Miner Hull
+	Name: #S_MINER_HULL
 	Description: #S_MINER_HULL_DESC
 
 	Tags: Applied:Hull, Category:Hulls, NoCore,DefaultUnlock
@@ -17,6 +17,8 @@ Subsystem: Miner
 	AddShipModifier: DamageFactor(0.1)
 	AddShipModifier: MaintCostFactor(0.10)
 	AddShipModifier: SupplyCapacityFactor(0)
+	AddShipModifier: MiningRateFactor(1.25)
+	AddShipModifier: CargoStorageFactor(1.25)
 
 	Module: Default
 		Sprite: adamantium

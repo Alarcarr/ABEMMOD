@@ -1,5 +1,5 @@
 Technology: Flagship
-	Name: Battleship Development
+	Name: #R_SPEC_FLAGSHIP1
 	Icon: GevronFleetIcons::1
 	Color: #ff0021
 	Description: #R_SPEC_FLAGSHIP1_DESC
@@ -14,7 +14,7 @@ Technology: Flagship
 
 	ReplaceTechnologyNodes(Support, c2)
 Technology: Flagship2
-	Name: Streamlined Battleships
+	Name: #R_SPEC_FLAGSHIP2
 	Icon: GevronFleetIcons::1
 	Color: #ff0021
 	Description: #R_SPEC_FLAGSHIP2_DESC
@@ -29,7 +29,7 @@ Technology: Flagship2
 
 	ReplaceTechnologyNodes(Support2, c3)
 Technology: Flagship3
-	Name: Battleship Manufacturing
+	Name: #R_SPEC_FLAGSHIP3
 	Icon: GevronFleetIcons::1
 	Color: #ff0021
 	Description: #R_SPEC_FLAGSHIP3_DESC
@@ -44,7 +44,7 @@ Technology: Flagship3
 
 	ReplaceTechnologyNodes(Support3, c3)
 Technology: Flagship4
-	Name: Reinforced Architecture
+	Name: #R_SPEC_FLAGSHIP4
 	Icon: GevronFleetIcons::1
 	Color: #ff0021
 	Description: #R_SPEC_FLAGSHIP4_DESC
@@ -60,7 +60,7 @@ Technology: Flagship4
 
 	ReplaceTechnologyNodes(Support4, c3)
 Technology: Support
-	Name: Carrier Development
+	Name: #R_SPEC_SUPPORT1
 	Icon: SupportTech
 	Description: #R_SPEC_SUPPORT1_DESC
 	Point Cost: 1
@@ -74,9 +74,9 @@ Technology: Support
 
 
 	ReplaceTechnologyNodes(Flagship, c3)
-	
+
 Technology: Support2
-	Name: Small Arms Development
+	Name: #R_SPEC_SUPPORT2
 	Icon: SupportTech
 	Description: #R_SPEC_SUPPORT2_DESC
 	Point Cost: 1
@@ -90,7 +90,7 @@ Technology: Support2
 
 	ReplaceTechnologyNodes(Flagship2, c3)
 Technology: Support3
-	Name: Targeting Sensor Shunt
+	Name: #R_SPEC_SUPPORT3
 	Icon: SupportTech
 	Description: #R_SPEC_SUPPORT3_DESC
 	Point Cost: 1
@@ -104,7 +104,7 @@ Technology: Support3
 
 	ReplaceTechnologyNodes(Flagship3, c3)
 Technology: Support4
-	Name: Support Ship Manufacturing
+	Name: #R_SPEC_SUPPORT4
 	Icon: SupportTech
 	Description: #R_SPEC_SUPPORT4_DESC
 	Point Cost: 1

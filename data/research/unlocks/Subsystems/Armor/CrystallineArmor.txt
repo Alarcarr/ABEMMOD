@@ -1,5 +1,5 @@
 Technology: CrystalineArmor
-	Name: Crystalline Armor
+	Name: #R_CRYSTAL_ARMOR
 	Class: Unlock
 	Description: #R_CRYSTAL_ARMOR_DESC
 

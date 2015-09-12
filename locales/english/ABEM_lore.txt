@@ -99,3 +99,15 @@ We must teach them the value of peace...
 
 ... just as we had learnt it so long ago...
 >>
+RACE_VANGUARD_RINGWORLDER: Bluuhbi
+RACE_VANGUARD_RINGWORLDER_TAGLINE: The comfort of serving the Overlords.
+RACE_VANGUARD_RINGWORLDER_LORE: <<
+Many ages ago, our great Overlords sought to conquer this distant galaxy. They were thwarted by a small group of the locals, the Ulthaar.
+In their failure, however, they planted the seeds of their victory. 
+
+The Ulthaar were forced into hibernation by a radiation surge from the destroyed portal; most of them unaware of the truth of what had transpired, they became vulnerable. Protected by their 'Keepers', they had to be destroyed through more clandestine means. As the Overlords recovered over the following eons, 'natural' disasters of one kind or another destroyed many former Ulthaar strongholds and potential allies. All the while, various younger races were manipulated - even created - to become willing or unwilling allies of our masters should the war be reignited.
+
+That is in the past, though. The Bluuhbi have served the Overlords for a great deal of time, gaining a great deal of prestige among the lesser races. We have become complacent. Now that the Overlords are finally ready to embark upon their quest to take what belongs to them, we have been sent out into the galaxy to secure a means of arrival for the full might of the Grand Armada.
+
+We are the Vanguard. To fail in our mission is to be exterminated. To achieve this goal before the other races of the Vanguard is to solidify and increase our power and prestige once more.
+>>

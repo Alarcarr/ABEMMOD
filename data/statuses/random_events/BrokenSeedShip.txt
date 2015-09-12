@@ -1,0 +1,8 @@
+Status: BrokenSeedShip
+	Unique: True
+	Name: #STATUS_BROKENSEEDSHIP
+	Description: #STATUS_BROKENSEEDSHIP_DESC
+	Icon: ArtifactIcon::0
+	GrantAbility(SpawnArtifact)
+	ModCivResourceMult(Research, 0.1)
+	AddResource(Research, 2)

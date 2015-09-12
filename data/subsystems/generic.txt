@@ -56,3 +56,7 @@ Template: var/PowerUse
 Template: var/Repair
 	Modifier: RepairFactor(factor)
 		Repair := Repair * factor
+
+Template: var/CargoStorage
+	Modifier: CargoStorageFactor(factor)
+		CargoStorage := CargoStorage * factor

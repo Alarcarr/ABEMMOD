@@ -18,12 +18,19 @@ Trait: StarChildren
 	ModAttribute(ForbidColonization, Add, 1)
 	ModAttribute(ImperialBldConstructionRate, Multiply, 0)
 	ModAttribute(CivBldConstructionRate, Multiply, 0)
+	ModAttribute(OrbitalBuildCostMod, Multiply, 0.85)
+	ModAttribute(OrbitalMaintMod, Multiply, 0.85)
+	ModAttribute(OrbitalLaborCostMod, Multiply, 0.85)
 
-	IfHaveTrait(Slipstream, LoadDesigns(starchildren/slipstream))
-	IfHaveTrait(Hyperdrive, LoadDesigns(starchildren/hyperdrive))
-	IfHaveTrait(Gate, LoadDesigns(starchildren/other))
-	IfHaveTrait(Fling, LoadDesigns(starchildren/other))
-	IfHaveTrait(Sublight, LoadDesigns(starchildren/other))
+	AddModifier(BuildCostFactor(0.85))
+	AddModifier(MaintCostFactor(0.85))
+	AddModifier(LaborCostFactor(0.85))
+
+	IfHaveTrait(Slipstream, LoadDesigns(ABEM_defaults/starchildren/slipstream))
+	IfHaveTrait(Hyperdrive, LoadDesigns(ABEM_defaults/starchildren/hyperdrive))
+	IfHaveTrait(Gate, LoadDesigns(ABEM_defaults/starchildren/other))
+	IfHaveTrait(Fling, LoadDesigns(ABEM_defaults/starchildren/other))
+	IfHaveTrait(Sublight, LoadDesigns(ABEM_defaults/starchildren/other))
 
 	UnlockSubsystem(MothershipHull)
 

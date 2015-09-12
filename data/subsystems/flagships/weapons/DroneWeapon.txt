@@ -13,7 +13,7 @@ Subsystem: DroneWeapon
 	Size := HexSize * Hexes
 	Range := Size + 700
 	Damage := 250
-	PodSize := max(3, round(Size))
+	PodSize := round(Size)
 	Reload := 20 * (1.0 + Size/512)
 	Speed := max(120, Range / 6)
 	Tracking := 6.0
@@ -38,9 +38,13 @@ Subsystem: DroneWeapon
 
 	Module: Default
 
+	Assert: PodSize > 0
+		Message: #ERROR_DRONEWEAPON
+
 	Module: Core
 		Hex.HP := Hex.HP * 2
 		Hex.BuildCost := 5.0 * Hex.BuildCost
+		Hex.MaintainCost := 1.5 * Hex.MaintainCost
 		Hex.Mass := 5.0 * Hex.Mass
 
 		Sprite: HexagonSubsystems::9

@@ -1,5 +1,5 @@
 Subsystem: NanoArmor
-	Name: Nanite Armor
+	Name: #S_NANO_ARMOR
 	Description: #S_NANO_ARMOR_DESC
 	BaseColor: #128cc1
 	Elevation: 1
@@ -18,7 +18,7 @@ Subsystem: NanoArmor
 	Hex.Mass := 1.5 * HexSize
 	Hex.LaborCost := 1 * HexSize
 	Hex.BuildCost := 0.5 * HexSize
-	Hex.MaintainCost := 0.5
+	Hex.MaintainCost := 0.5 * HexSize
 	Regeneration := ShipSize / 32
 
 	Hook: ABEM_hooks::Regeneration(Regeneration, false);

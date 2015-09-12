@@ -1,5 +1,5 @@
 Subsystem: ResearchLab
-	Name: Research Lab
+	Name: #S_RESEARCHLAB
 	Description: #S_RESEARCHLAB_DESC
 	BaseColor: #b88b00
 	TypeColor: #b88b00
@@ -19,7 +19,7 @@ Subsystem: ResearchLab
 	PowerUse := 40 * Size
 	Hex.LaborCost := 3* HexSize +5
 	Assert: Size>=15
-		Message: Research Lab must be at least size 15. Add more hexes to the lab or increase the station's size.
+		Message: #ERROR_RESEARCHLAB
 	Hook: AddResearchIncome(Research)
 	Requires:
 		Command = Hexes

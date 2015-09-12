@@ -1,6 +1,6 @@
 Subsystem: CarpetBomb
-	Name: Carpet Bomb
-	Description: A heavy, multiple warhead weapon designed to devastate a planet's surface and population.
+	Name: #S_CARPETBOMB
+	Description: #S_CARPETBOMB_DESC
 	BaseColor: #ff8931
 	TypeColor: #ff8931
 	Elevation: 2
@@ -29,7 +29,7 @@ Subsystem: CarpetBomb
 
 	Modifier: DamageFactor(factor)
 		BombardDuration := BombardDuration * factor
-		
+
 	Modifier: SupplyCostFactor(factor)
 		BombardCost := BombardCost * factor
 

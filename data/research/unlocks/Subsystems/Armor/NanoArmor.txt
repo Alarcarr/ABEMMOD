@@ -1,5 +1,5 @@
 Technology: NanoArmor
-	Name: Nanite Armor
+	Name: #R_NANO_ARMOR
 	Class: Unlock
 
 	Point Cost: 1800

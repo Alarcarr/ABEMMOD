@@ -1,4 +1,11 @@
 Status: ReclusiveRingworlder
 	Visible To: Nobody
 
-	IfNotHaveStatus(Ringworld, IfNotHaveStatus(OrbitalExploitationPlatforms, EnableAfter(OnEnable(SpawnOrbital(ExploitationPlatform, In Orbit = True)), Start Timer = 5)))
+	IfNotHaveStatus(Ringworld, OnEnable(AbandonPlanet()))
+	GrantAbility(StealResources)
+
+Status: ReadyForHarvest
+	Name: #STATUS_READYFORHARVEST
+	Description: #STATUS_READYFORHARVEST_DESC
+	Icon: QuickbarIcons::4
+	Unique: True

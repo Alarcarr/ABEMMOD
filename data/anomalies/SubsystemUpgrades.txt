@@ -1,9 +1,9 @@
 Anomaly: SubsystemsUpgrade
-	Name: Equipment Stash
+	Name: #A_EQUIPMENTSTASH
 	Frequency: 0
 	Model: Depot
 	Material: VolkurGenericPBR
-	Description: If you see this, there is something terribly wrong with this anomaly. Contact one of ABEM's developers and tell them how you caused this text to appear.
+	Description: #A_ERROR_DESC
 	Option: Weapons
 		Icon: FusionTorpedo
 		Description: #A_EQUIPMENTSTASH_WEAPONS
@@ -22,7 +22,7 @@ Anomaly: SubsystemsUpgrade
 		AddModifier(tag/IsArmor::HpFactor(1.15))
 	State: SubsystemUpg
 		Narrative: #A_EQUIPMENTSTASH_NARRATIVE
-		
+
 		Model: Depot
 		Material: VolkurGenericPBR
 		Choice: Armor

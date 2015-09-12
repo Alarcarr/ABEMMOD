@@ -34,7 +34,7 @@ Subsystem: ProgenitorComputer
 
 	Assert: Sum.HasComputer == 0
 		Unique: True
-		Message: Cannot combine Progenitor Control Computers with standard Control Computers.
+		Message: #ERROR_PROGENITOR_COMPUTERMISMATCH
 
 	Requires:
 		Power = PowerUse

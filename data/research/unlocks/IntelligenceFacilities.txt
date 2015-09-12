@@ -1,5 +1,5 @@
 Technology: IntelFacilities
-	Name: Intelligence Facilities
+	Name: #R_INTEL
 	Point Cost: 1000
 	Time Cost: 120
 	Icon: techScanner
@@ -11,7 +11,7 @@ Technology: IntelFacilities
 	SkipOnUnlockedTag(IntelligenceFacil)
 	UnlockTag(IntelligenceFacil)
 Technology: NylliIntel
-	Name: Intelligence Facilities
+	Name: #R_INTEL
 	Description: #R_ORB_INTEL_DESC
 	Class: Unlock
 	Icon: techScanner

@@ -1,5 +1,5 @@
 Technology: ResupplyMod
-	Name: Resupply Module
+	Name: #R_SYS_RESUPPLYMODULE
 	Class: Unlock
 	Point Cost: 250
 	Time Cost: 60

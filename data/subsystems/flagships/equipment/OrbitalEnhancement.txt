@@ -1,12 +1,12 @@
 Subsystem: EngBay
 
-	Name: Engineering Bay
+	Name: #S_ENGINEERING_BAY
 
 	Tags: HighMaint, Category:Manufacturing, NoBackWall
 	Tags: Ability:BuyTurretL
 	Tags: Ability:BuyTurretR
 	Tags: Ability:BuyTurretM
-	Tags: Ability:SpawnOrbital
+	Tags: Ability:SpawnOutpost
 	Hull: Flagship
 	Description: #S_ENGINEERING_BAY_DESC
 
@@ -19,7 +19,7 @@ Subsystem: EngBay
 	RepairSupplyCost := 1.5 * Repair
 	out SupplyDrain := RepairSupplyCost
 	Assert: Size >= 5
-		Message: Engineering Bay must be at least size 5. Increase the bay's hex count or the ship's size.
+		Message: #ERROR_ENGBAYSIZE
 
 
 
@@ -30,3 +30,30 @@ Subsystem: EngBay
 		Sprite: TechIcons::50
 		Color: #32ff58
 		Required: True
+
+Subsystem: UtilityBay
+	Name: #S_UTILITY_BAY
+	Description: #S_UTILITY_BAY_DESC
+
+	Tags: HighMaint, Category:Manufacturing, NoBackWall
+	Tags: Ability:BuyShield
+	Tags: Ability:BuyThruster
+	Tags: Ability:BuySensor
+	Tags: Ability:SpawnSupplyDepot
+
+	Hull: Flagship
+
+	Size := HexSize * Hexes
+	Hex.Resistance := 0.2
+	Hex.HP := 36 * HexSize
+	Hex.Mass := HexSize
+
+	Repair := max((Size-5)*6, 0)
+	RepairSupplyCost := 1.5 * Repair
+	out SupplyDrain := RepairSupplyCost
+	Assert: Size >= 5
+		Message: #ERROR_ENGBAYSIZE
+
+	Module: Core
+		Sprite: TechIcons::40
+		Color: #32ff58

@@ -1,6 +1,6 @@
 Status: GDF
 	Unique: True
-	Name: Go Down Fighting
+	Name: #STATUS_GDF
 	Icon: GDF*#ff1010
 	Color: #ff1010
 	Description: #STATUS_GDF_DESC

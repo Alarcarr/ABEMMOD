@@ -1,5 +1,5 @@
 Technology: BoardingParty
-	Name: Boarding Parties
+	Name: #R_BOARDING_PARTY
 	Description: #R_BOARDING_PARTY_DESC
 	Class: Unlock
 	Icon: shuttle

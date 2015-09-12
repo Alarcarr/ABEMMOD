@@ -1,5 +1,5 @@
 Resource: Technofarm
-	Name: Technofarm
+	Name: #TECHNOFARM_NAME
 	Small Icon: ResourceIconsSmall::72
 	Icon: ResourceIconsSmall::72
 	Native Biome: Forest
@@ -12,7 +12,7 @@ Resource: Technofarm
 	Artificial: True
 	Affinity: Money
 	Affinity: Research
-	Distribution: 0.5
+	Rarity: Uncommon
 	AddDummyResource(Soylent1)
 	PeriodicInfluenceCard(Cultivation, Timer = 360)
 	ModPopulationGrowth(0.5)

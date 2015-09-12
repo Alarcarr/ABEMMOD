@@ -1,5 +1,5 @@
 Technology: SlavePopulation
-	Name: Slave Barracks
+	Name: #R_BLD_SLAVE
 	Icon: TechIcons::21
 	Color: #ff073d
 	Description: #R_BLD_SLAVE_DESC

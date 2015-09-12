@@ -1,9 +1,9 @@
 ORB_SHIPYARD_DESC: <<
 	A massive orbital shipyard capable of constructing fleets in space.
 
-	Has 6 innate Labor generation per minute. Planets can export their own labor to shipyards within trade range at a 75% reduced rate.
+	Has 6 innate Labor generation per minute. Planets can export their own labor to Shipyards within trade range at a 75% reduced rate. Ship construction is 20% cheaper from a Shipyard.
 
-	Gains Labor from Metallurgy factory research at a 75% reduced rate.
+	Gains Labor from Metallurgy research at a 75% reduced rate.
 >>
 ORB_SHIELD_CHARGER: Power Transmitter
 ORB_SHIELD_CHARGER_BLURB: Recharges the shields of allied flagships in the system.
@@ -41,6 +41,8 @@ ORB_EMBASSY_DESC: <<
 	Embassies act as Commerce Stations and Outposts in that they allow trade between separated territories, and expand your empire's borders, respectively.
 >>
 ORB_EXP_PLATFORM: Exploitation Platform
+ORB_FARM: Hydroponics Station
+ORB_HYDROGENATOR: Water Reclamation Facility
 ORB_FARM_BLURB: Produces food.
 ORB_FARM_DESC: <<
 	Generates a basic food resource for the planet it orbits. Food generation only applies if the planet and Hydroponics Station are owned by the same empire.
@@ -67,4 +69,15 @@ ORB_RECALL_DESC: <<
 	[img=ResourceIcon::2;22]Costs [b][color=#42b4bd]Energy[/color][/b] to activate.[/img]
 	[img=MenuIcons::3;20]The smaller the recalled object is, the less energy is consumed.[/img]
 	[img=MenuIcons::3;20][i][bbloc=#ABL_RECALL_DESC/][/i][/img]
+>>
+ORB_GUARDIAN: Guardian Facility
+ORB_GUARDIAN_BLURB: Acts as a Research-generating super-shipyard, or constructs a powerful Guardian.
+ORB_GUARDIAN_DESC: <<
+	An ancient shipyard of tremendous scale used to construct Guardians, the so-called 'Guardian Facility' is as valuable as the knowledge on the nearby Hubworld.
+
+	The advanced nature of the facility's matter fabricators and the phase shifting it uses to store finished components produce an immense quantity of Research. The technology itself allows the facility to construct anything as if it were a planet, import Labor from other planets, generate 100 Labor per minute and store 5000 Labor. It cannot, however, be used to export Labor to other shipyards.
+
+	The sheer size of the facility makes it impossible to move through conventional means, while its phasing technology causes complications when attempting to use FTL systems to propel it. Additionally, automated security systems of considerable complexity prevent boarding parties from making any progress while attacking it.
+
+	If damaged severely enough, the Guardian Facility will shut down and phase-shift; while its location is no longer a mystery, it will have to be reactivated and repaired again.
 >>

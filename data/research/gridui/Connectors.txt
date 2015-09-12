@@ -1,15 +1,15 @@
 Technology: c1
 	Icon: c1
-	Name: LINK
+	Name: #R_LINK
 	Color: #a3ff04
 	AutomaticallyUnlocks()
 Technology: c2
 	Icon: c2
 	Color: #a3ff04
-	Name: LINK
+	Name: #R_LINK
 	AutomaticallyUnlocks()
 Technology: c3
 	Icon: c3
-	Name: LINK
+	Name: #R_LINK
 	Color: #a3ff04
 	AutomaticallyUnlocks()

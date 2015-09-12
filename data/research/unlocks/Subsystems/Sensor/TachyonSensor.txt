@@ -1,0 +1,12 @@
+Technology: TachyonSensor
+	Icon: cloack
+	Color: #9ed6ff
+	Class: Unlock
+	Point Cost: 700
+	Time Cost: 60
+	Name: #R_SENSOR_TACHYON
+	Description: #R_SENSOR_TACHYON_DESC
+	ModAttribute(ProgenitorTechProgress, Add, 3)
+	SecondaryEnergyCost(750)
+	SkipOnUnlockedSubsystem(TachyonSensor)
+	UnlockSubsystem(TachyonSensor)

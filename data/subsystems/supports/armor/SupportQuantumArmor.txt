@@ -1,5 +1,5 @@
 Subsystem: SupportQuantumArmor
-	Name: Quantum Armor
+	Name: #S_QUANTUM_ARMOR
 	Description: #S_QUANTUM_ARMOR_DESC
 	BaseColor: #37b306
 	Picture: SubsystemButtonArt::0

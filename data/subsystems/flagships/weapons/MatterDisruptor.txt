@@ -1,5 +1,5 @@
 Subsystem: MatterDisruptor
-	Name: Matter Disruptor
+	Name: #S_MATTERDISRUPTOR
 	Description: #S_MATTERDISRUPTOR_DESC
 	BaseColor: #c5f946
 	TypeColor: #c5f946
@@ -15,7 +15,7 @@ Subsystem: MatterDisruptor
 
 	Range := Size + 500
 	Damage := Size * 3.2
-	Reload := 2 * (1.0 * Size/512)
+	Reload := 2 * (1.0 + Size/512)
 	Speed := max(110, Range / 15)
 	Spread := 0.035 / max(Range / 600, 1)
 	Tracking := 0.4

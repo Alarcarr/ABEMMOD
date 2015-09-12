@@ -1,5 +1,5 @@
 Building: Residential
-	Name: Residential Area
+	Name: #BLD_HOUSING
 	Description: #BLD_HOUSING_DESC
 	Sprite: city3
 	Size: 2x2
@@ -12,6 +12,6 @@ Building: Residential
 	RequireUnlockTag(Housing1)
 	RequireNotStatus(Ringworld)
 	ReplacesCities(Amount = 6)
-	AddMaxPopulation(2)
+	AddOverpopulation(2)
 
 	ConstructibleIfAttribute(ForbidCityConstruction, 0)

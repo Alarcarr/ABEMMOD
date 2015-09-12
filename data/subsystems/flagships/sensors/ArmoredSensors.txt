@@ -1,0 +1,40 @@
+Subsystem: ArmoredSensors
+	Name: #S_SENSOR_ARMORED
+	Description: #S_SENSOR_ARMORED_DESC
+	BaseColor: #898fff
+	Elevation: 1
+
+	Tags: Category:Sensors, NoWall
+	Tags: NoCore, NonContiguous, IsSensor, ExternalSpace, FauxExterior
+	Hull: Flagship, Station
+
+	Size := HexSize * Hexes
+
+	Ship.ExternalHexes := Ship.ExternalHexes + ExteriorHexes
+
+	Hex.Resistance := 0.4
+	Hex.HP := 50 * HexSize
+	Hex.Mass := 4* HexSize
+
+	Hex.LaborCost := 0.4 * HexSize
+	Hex.BuildCost := 1.3 * HexSize
+	Hex.MaintainCost := 3 * HexSize / ShipSize^0.5
+
+	//Effect: DamageResist
+	//	Resist = DamageResist
+
+	Control := round(pow(Size / ShipSize, 4) * 100 / (Sum.HasSinew + 1))
+	SensorPriority := 100
+	SensorRange := 75 + (Hexes * 15) + max(log(Size), 1) * Hexes * 0.75
+	Hook: ABEM_sensors::AddSensor(SensorPriority, 1.0, SensorRange)
+	Modifier: SensorFactor(factor)
+		SensorRange := SensorRange * factor
+	Modifier: ArmorHpFactor(factor)
+		Hex.HP := Hex.HP * factor
+	Assert: ExteriorHexes == Hexes
+		Message: #ERROR_MUST_BE_EXTERIOR
+	Requires:
+		Command = Control
+	Module: Default
+
+		Sprite: TechIcons::17

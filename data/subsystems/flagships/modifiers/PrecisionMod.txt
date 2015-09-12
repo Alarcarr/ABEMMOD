@@ -1,6 +1,6 @@
 Template: hexVar/LaborCost, hexVar/HP, tag/IsBeamWeapon, var/BeamDPS, var/Range, var/Cooldown, var/Duration, !tag/SupportHull
 	Module: PrecisionMod
-		Name: Beam Amplifiers
+		Name: #BEAM_AMPLIFIER_NAME
 
 		Color: #00ff00
 		Sprite: SpaceProgram

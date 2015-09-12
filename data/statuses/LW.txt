@@ -1,5 +1,5 @@
 Status: LW
-	Name: Rally Cry
+	Name: #STATUS_LW
 	Icon: GDF
 	Unique: True
 	Description: #STATUS_LW_DESC
@@ -10,10 +10,9 @@ Status: LW
 
 Status: Exhausted
 
-	Name: Exhausted
+	Name: #STATUS_EXHAUSTED
 	Icon: Exhaust
 	Description: #STATUS_EXHAUSTED_DESC
 	Unique: True
 	AddFleetEffectiveness(-0.5)
 	TriggerPeriodic(RemoveStatus(LW), Interval = 1)
-	

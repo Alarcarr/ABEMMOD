@@ -1,6 +1,6 @@
 Subsystem: SuperLaser
-	Name: Super Laser
-	Description: S_SUPERLASER_DESC
+	Name: #S_SUPERLASER
+	Description: #S_SUPERLASER_DESC
 	BaseColor: #f9464d
 	TypeColor: #f9464d
 	Picture: SubsystemButtonArt::7
@@ -25,7 +25,7 @@ Subsystem: SuperLaser
 	Hex.Resistance := 0.2
 	Hex.Mass := HexSize
 	Assert: Size >= 200
-		Message: Superlaser must be at least size 200. Add more hexes to the superlaser or increase the ship's size.
+		Message: #ERROR_SUPERLASER
 
 	Requires:
 		Command = Hexes

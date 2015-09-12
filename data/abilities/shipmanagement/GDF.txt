@@ -1,6 +1,6 @@
 Ability: GDF
 	Target: OwnShip = Object
-	Name: Go Down Fighting
+	Name: #ABL_GDF
 	Icon: GDF*#ff1010
 	Range: 100
 	Description: #ABL_GDF_DESC

@@ -1,0 +1,12 @@
+Card: PirateRaiders
+	Name: #CARD_PIRATERAIDERS
+	Description: #CARD_PIRATERAIDERS_DESC
+	Icon: CardIcons::16*#55ff00
+	Color: #793009
+	Class: Action
+	Rarity: Basic
+	Frequency: 0
+	Target: targ = Object
+	Can Overquality: False
+	Trigger(targ, SpawnPirateAgainst())
+	TargetFilterNotAllied(targ)
