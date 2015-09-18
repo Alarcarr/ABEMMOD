@@ -447,7 +447,7 @@ class TransferSupplyFromSubsystem : AbilityHook {
 		return true;
 	}
 
-	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const override {
+	bool isValidTarget(const Ability@ abl, uint index, const Target@ targ) const override {
 		if(index != uint(objTarg.integer))
 			return true;
 		if(targ.obj is null)
@@ -516,7 +516,7 @@ class TransferShieldFromSubsystem : AbilityHook {
 		return true;
 	}
 
-	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const override {
+	bool isValidTarget(const Ability@ abl, uint index, const Target@ targ) const override {
 		if(index != uint(objTarg.integer))
 			return true;
 		if(targ.obj is null)
@@ -637,11 +637,11 @@ class AddOwnedStatus : AbilityHook {
 	Argument status(AT_Custom, doc="Type of status effect to create.");
 	Argument duration(AT_Decimal, "-1", doc="How long the status effect should last. If set to -1, the status effect acts as long as this effect hook does.");
 	
-	string getFailReason(Empire@ emp, uint index, const Target@ targ) const override {
+	string getFailReason(const Ability@ abl, uint index, const Target@ targ) const override {
 		return "Target must be capable of having statuses.";
 	}
 	
-	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const override {
+	bool isValidTarget(const Ability@ abl, uint index, const Target@ targ) const override {
 		if(index != uint(objTarg.integer))
 			return true;
 		if(targ.obj is null)
@@ -1013,7 +1013,7 @@ class HealFromSubsystem : AbilityHook {
 		return true;
 	}
 
-	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const override {
+	bool isValidTarget(const Ability@ abl, uint index, const Target@ targ) const override {
 		if(index != uint(objTarg.integer))
 			return true;
 		if(targ.obj is null)
@@ -1346,7 +1346,7 @@ class HealShieldFromSubsystem : AbilityHook {
 		return true;
 	}
 
-	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const override {
+	bool isValidTarget(const Ability@ abl, uint index, const Target@ targ) const override {
 		if(index != uint(objTarg.integer))
 			return true;
 		if(targ.obj is null)

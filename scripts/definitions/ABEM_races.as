@@ -92,17 +92,17 @@ class ConvertRemnants : AbilityHook {
 	Document doc("Takes control of the target Remnant object. Also takes control of any support ships in the area.");
 	Argument objTarg(TT_Object);
 
-	string getFailReason(Empire@ emp, uint index, const Target@ targ) const override {
+	string getFailReason(const Ability@ abl, uint index, const Target@ targ) const override {
 		return "Must target Remnants.";
 	}
 
 #section server	
-	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const override {
+	bool isValidTarget(const Ability@ abl, uint index, const Target@ targ) const override {
 		if(index != uint(objTarg.integer))
 			return true;
 		if(targ.obj is null)
 			return false;
-		if(emp is null)
+		if(abl.emp is null)
 			return false;
 		return targ.obj.owner is Creeps;
 	}
@@ -113,10 +113,10 @@ class ConvertRemnants : AbilityHook {
 		if(targ.owner !is Creeps)
 			return;
 		if(targ.hasLeaderAI) {
-			targ.takeoverFleet(abl.obj.owner, 1, false);
+			targ.takeoverFleet(abl.emp, 1, false);
 		}
 		else
-			@targ.owner = abl.obj.owner;
+			@targ.owner = abl.emp;
 	}
 #section all
 }
@@ -198,7 +198,7 @@ class MineCargoFromPlanet : AbilityHook {
 		return abl.obj !is null && abl.obj.hasCargo;
 	}
 
-	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const override {
+	bool isValidTarget(const Ability@ abl, uint index, const Target@ targ) const override {
 		if(index != uint(objTarg.integer))
 			return true;
 		if(targ.obj is null)
@@ -304,7 +304,7 @@ class IfStatusHook: StatusHook {
 	}
 
 #section server
-	void onCreate(Object& obj, Status@ status, any@ data) const override {
+	void onCreate(Object& obj, Status@ status, any@ data) override {
 		IfData info;
 		info.enabled = condition(obj, status);
 		data.store(@info);
@@ -313,7 +313,7 @@ class IfStatusHook: StatusHook {
 			hook.onCreate(obj, status, info.data);
 	}
 
-	void onDestroy(Object& obj, Status@ status, any@ data) const override {
+	void onDestroy(Object& obj, Status@ status, any@ data) override {
 		IfData@ info;
 		data.retrieve(@info);
 
@@ -321,7 +321,7 @@ class IfStatusHook: StatusHook {
 			hook.onDestroy(obj, status, info.data);
 	}
 
-	bool onTick(Object& obj, Status@ status, any@ data, double time) const override {
+	bool onTick(Object& obj, Status@ status, any@ data, double time) override {
 		IfData@ info;
 		data.retrieve(@info);
 
@@ -339,20 +339,22 @@ class IfStatusHook: StatusHook {
 		return true;
 	}
 
-	void onOwnerChange(Object& obj, Status@ status, any@ data, Empire@ prevOwner, Empire@ newOwner) const override {
+	bool onOwnerChange(Object& obj, Status@ status, any@ data, Empire@ prevOwner, Empire@ newOwner) override {
 		IfData@ info;
 		data.retrieve(@info);
 
 		if(info.enabled)
 			hook.onOwnerChange(obj, status, info.data, prevOwner, newOwner);
+		return true;
 	}
 
-	void onRegionChange(Object& obj, Status@ status, any@ data, Region@ fromRegion, Region@ toRegion) const override {
+	bool onRegionChange(Object& obj, Status@ status, any@ data, Region@ fromRegion, Region@ toRegion) override {
 		IfData@ info;
 		data.retrieve(@info);
 
 		if(info.enabled)
 			hook.onRegionChange(obj, status, info.data, fromRegion, toRegion);
+		return true;
 	}
 
 	void save(Status@ status, any@ data, SaveFile& file) override {
@@ -389,7 +391,7 @@ class IfAlliedWithOriginEmpire : IfStatusHook {
 	}
 	
 #section server
-	bool condition(Object& obj, Status@ status) override {
+	bool condition(Object& obj, Status@ status) const override {
 		Empire@ owner = obj.owner;
 		if(owner is null)
 			return false;
@@ -618,7 +620,7 @@ class SelfDestructOnOwnerChange : BuildingHook {
 class TimeBasedRepeat : GenericRepeatHook {
 	Document doc("Repeat a hook a certain amount of times, with a repeat count dependent on the game time.");
 	Argument hookID("Hook", AT_Hook, "planet_effects::GenericEffect");
-	Argument base(AT_Decimal, "0", "doc="Base amount of repeats to perform.");
+	Argument base(AT_Decimal, "0", doc="Base amount of repeats to perform.");
 	Argument per_gametime_bonus(AT_Decimal, "-1", doc="Adds/removes repeats for every minute of game time. Accepts negative values, unlike RepeatExtended.");
 
 	bool instantiate() override {
@@ -631,13 +633,13 @@ class TimeBasedRepeat : GenericRepeatHook {
 	uint getRepeats(Object& obj, any@ data) const override {
 		double cnt = base.decimal;
 		cnt += per_gametime_bonus.decimal * (gameTime / 60.0);
-		return max(cnt, 0);
+		return max(cnt, 0.0);
 	}
 
 	uint getRepeats(Empire& emp, any@ data) const override {
 		double cnt = base.decimal;
 		cnt += per_gametime_bonus.decimal * (gameTime / 60.0);
-		return max(cnt, 0);
+		return max(cnt, 0.0);
 	}
 #section all
 };

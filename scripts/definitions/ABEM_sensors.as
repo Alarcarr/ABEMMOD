@@ -29,14 +29,14 @@ class AddSightModifier : GenericEffect {
 		}
 	}
 
-	void save(any@ data, SaveFile& file) override {
+	void save(any@ data, SaveFile& file) const override {
 		uint id = 0;
 		data.retrieve(id);
 
 		file << id;
 	}
 
-	void load(any@ data, SaveFile& file) override {
+	void load(any@ data, SaveFile& file) const override {
 		uint id = 0;
 
 		file >> id;
@@ -125,7 +125,7 @@ class AddSensor : SubsystemEffect {
 		event.data.store(@info);
 	}
 
-	void save(SubsystemEvent& event, SaveFile& file) override {
+	void save(SubsystemEvent& event, SaveFile& file) const override {
 		SubsystemSightData@ info;
 		event.data.retrieve(@info);
 
@@ -134,7 +134,7 @@ class AddSensor : SubsystemEffect {
 		file << info.workingPercent;
 	}
 
-	void load(SubsystemEvent& event, SaveFile& file) override {
+	void load(SubsystemEvent& event, SaveFile& file) const override {
 		SubsystemSightData info;
 		event.data.store(@info);
 
