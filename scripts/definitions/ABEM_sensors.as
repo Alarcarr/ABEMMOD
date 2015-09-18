@@ -10,7 +10,7 @@ class AddSightModifier : GenericEffect {
 	Argument addedRange(AT_Decimal, "0", doc="The amount of extra sight range to add, expressed in units. For reference, the sides of the biggest squares on the system grid are 500 units.");
 
 #section server
-	void enable(Object& obj, any@ data) const {
+	void enable(Object& obj, any@ data) const override {
 		if(obj is null)
 			return;
 		if(obj.hasLeaderAI) {
@@ -19,7 +19,7 @@ class AddSightModifier : GenericEffect {
 		}
 	}
 
-	void disable(Object& obj, any@ data) const {
+	void disable(Object& obj, any@ data) const override {
 		if(obj is null)
 			return;
 		if(obj.hasLeaderAI) {
@@ -29,14 +29,14 @@ class AddSightModifier : GenericEffect {
 		}
 	}
 
-	void save(any@ data, SaveFile& file) const {
+	void save(any@ data, SaveFile& file) override {
 		uint id = 0;
 		data.retrieve(id);
 
 		file << id;
 	}
 
-	void load(any@ data, SaveFile& file) const {
+	void load(any@ data, SaveFile& file) override {
 		uint id = 0;
 
 		file >> id;
@@ -59,7 +59,7 @@ class AddSensor : SubsystemEffect {
 	Argument addedRange(AT_Decimal, "0.0", doc="The amount of extra sight range to add, expressed in units. For reference, the sides of the biggest squares on the system grid are 500 units.");
 
 #section server
-	void start(SubsystemEvent& event) const {
+	void start(SubsystemEvent& event) const override {
 		SubsystemSightData info;
 		event.data.store(@info);
 		if(event.obj is null) {
@@ -79,11 +79,9 @@ class AddSensor : SubsystemEffect {
 		}
 	}
 
-	void tick(SubsystemEvent& event, double time) const {
+	void tick(SubsystemEvent& event, double time) const override {
 		SubsystemSightData@ info;
 		event.data.retrieve(@info);
-		if(info is null)
-			@info = SubsystemSightData();
 		event.data.store(@info);
 		if(event.obj is null) {
 //			print("Object is null in current tick.");
@@ -116,7 +114,7 @@ class AddSensor : SubsystemEffect {
 			info.hasLeader = false;
 	}
 
-	void end(SubsystemEvent& event) const {
+	void end(SubsystemEvent& event) const override {
 		SubsystemSightData@ info;
 		event.data.retrieve(@info);
 		if(event.obj is null)
@@ -127,23 +125,16 @@ class AddSensor : SubsystemEffect {
 		event.data.store(@info);
 	}
 
-	void save(SubsystemEvent& event, SaveFile& file) const {
+	void save(SubsystemEvent& event, SaveFile& file) override {
 		SubsystemSightData@ info;
 		event.data.retrieve(@info);
-		if(info !is null) {
-			file << info.hasLeader;
-			file << info.id;
-			file << info.workingPercent;
-		}
-		else {
-			uint nil = 0xffffffff;
-			file << false;
-			file << nil;
-			file << event.workingPercent;
-		}
+
+		file << info.hasLeader;
+		file << info.id;
+		file << info.workingPercent;
 	}
 
-	void load(SubsystemEvent& event, SaveFile& file) const {
+	void load(SubsystemEvent& event, SaveFile& file) override {
 		SubsystemSightData info;
 		event.data.store(@info);
 

@@ -47,8 +47,6 @@ class DisableShields : StatusHook {
 	void onDestroy(Object& obj, Status@ status, any@ data) override {
 		ShieldData@ info;
 		data.retrieve(@info);
-		if(info is null)
-			info = ShieldData();
 		if(obj is null)
 			return;
 		if(obj.isShip) {
@@ -70,8 +68,6 @@ class DisableShields : StatusHook {
 	bool onTick(Object& obj, Status@ status, any@ data, double time) override {
 		ShieldData@ info;
 		data.retrieve(@info);
-		if(info is null)
-			info = ShieldData();
 		data.store(@info);
 		if(obj.isShip) {
 			Ship@ ship = cast<Ship>(obj);
@@ -93,17 +89,15 @@ class DisableShields : StatusHook {
 		return true;
 	}
 	
-	void save(Status@ status, any@ data, SaveFile& file) const {
+	void save(Status@ status, any@ data, SaveFile& file) override {
 		ShieldData@ info;
 		data.retrieve(@info);
 
-		if(info is null) 
-			info = ShieldData();
 		file << info.shield;
 		file << info.maxShield;
 	}
 
-	void load(Status@ status, any@ data, SaveFile& file) const {
+	void load(Status@ status, any@ data, SaveFile& file) override {
 		ShieldData info;
 		data.store(@info);
 		
@@ -135,7 +129,7 @@ class DisableStatus : StatusHook {
 		return true;
 	}
 	
-	void load(Status@ status, any@ data, SaveFile& file) const {
+	void load(Status@ status, any@ data, SaveFile& file) override {
 		const StatusType@ type = getStatusType(arg_type.str);
 		if(type !is null)
 			data.store(@type);
@@ -180,7 +174,7 @@ class DisableAbility : StatusHook {
 		return true;
 	}
 	
-	void load(Status@ status, any@ data, SaveFile& file) const {
+	void load(Status@ status, any@ data, SaveFile& file) override {
 		const AbilityType@ type = getAbilityType(arg_type.str);
 		if(type !is null)
 			data.store(@type);
@@ -347,14 +341,14 @@ class KillCrew : StatusHook {
 		return true;
 	}
 	
-	void save(Status@ status, any@ data, SaveFile& file) const {
+	void save(Status@ status, any@ data, SaveFile& file) override {
 		double timeLeft = 0;
 		data.retrieve(timeLeft);
 
 		file << timeLeft;
 	}
 
-	void load(Status@ status, any@ data, SaveFile& file) const {
+	void load(Status@ status, any@ data, SaveFile& file) override {
 		double timeLeft = 0;
 		
 		file >> timeLeft;

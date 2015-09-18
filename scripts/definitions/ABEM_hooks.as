@@ -292,14 +292,14 @@ class CombinedExpiration : StatusHook {
 		return timer < arguments[0].decimal;
 	}
 	
-	void save(Status@ status, any@ data, SaveFile& file) const {
+	void save(Status@ status, any@ data, SaveFile& file) override {
 		double timer = 0;
 		data.retrieve(timer);
 
 		file << timer;
 	}
 
-	void load(Status@ status, any@ data, SaveFile& file) const {
+	void load(Status@ status, any@ data, SaveFile& file) override {
 		double timer = 0;
 		
 		file >> timer;
@@ -403,7 +403,7 @@ class Boarders : StatusHook {
 		return true;
 	}
 	
-	void save(Status@ status, any@ data, SaveFile& file) const {
+	void save(Status@ status, any@ data, SaveFile& file) override {
 		BoardingData@ info;
 		data.retrieve(@info);
 
@@ -422,7 +422,7 @@ class Boarders : StatusHook {
 		}
 	}
 
-	void load(Status@ status, any@ data, SaveFile& file) const {
+	void load(Status@ status, any@ data, SaveFile& file) override {
 		BoardingData info;
 		data.store(@info);
 
@@ -440,14 +440,14 @@ class TransferSupplyFromSubsystem : AbilityHook {
 	Argument value("Subsystem Value", AT_SysVar, doc="The subsystem value you wish to use to regulate the transfer. For example, HyperdriveSpeed would be Sys.HyperdriveSpeed - the transfer rate is 1 unit of supply per unit of HyperdriveSpeed in such a case.");
 	Argument preset("Default Rate", AT_Decimal, "500.0", doc="The default transfer rate, used if the subsystem value could not be found (or is less than 0). Defaults to 500.");
 
-	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const {
+	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const override {
 		Ship@ caster = cast<Ship>(abl.obj);
 		if(caster !is null && caster.Supply == 0)
 			return false;
 		return true;
 	}
 
-	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const {
+	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const override {
 		if(index != uint(objTarg.integer))
 			return true;
 		if(targ.obj is null)
@@ -460,7 +460,7 @@ class TransferSupplyFromSubsystem : AbilityHook {
 	}		
 
 #section server
-	void tick(Ability@ abl, any@ data, double time) const {
+	void tick(Ability@ abl, any@ data, double time) const override {
 		if(abl.obj is null)
 			return;
 		Target@ storeTarg = objTarg.fromTarget(abl.targets);
@@ -509,14 +509,14 @@ class TransferShieldFromSubsystem : AbilityHook {
 	Argument value("Subsystem Value", AT_SysVar, doc="The subsystem value you wish to use to regulate the transfer. For example, HyperdriveSpeed would be Sys.HyperdriveSpeed - the transfer rate is 1 shield HP per unit of HyperdriveSpeed in such a case.");
 	Argument preset("Default Rate", AT_Decimal, "500.0", doc="The default transfer rate, used if the subsystem value could not be found (or is less than 0). Defaults to 500.");
 
-	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const {
+	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const override {
 		Ship@ caster = cast<Ship>(abl.obj);
 		if(caster !is null && caster.Shield == 0)
 			return false;
 		return true;
 	}
 
-	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const {
+	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const override {
 		if(index != uint(objTarg.integer))
 			return true;
 		if(targ.obj is null)
@@ -529,7 +529,7 @@ class TransferShieldFromSubsystem : AbilityHook {
 	}		
 
 #section server
-	void tick(Ability@ abl, any@ data, double time) const {
+	void tick(Ability@ abl, any@ data, double time) const override {
 		if(abl.obj is null)
 			return;
 		Target@ storeTarg = objTarg.fromTarget(abl.targets);
@@ -637,11 +637,11 @@ class AddOwnedStatus : AbilityHook {
 	Argument status(AT_Custom, doc="Type of status effect to create.");
 	Argument duration(AT_Decimal, "-1", doc="How long the status effect should last. If set to -1, the status effect acts as long as this effect hook does.");
 	
-	string getFailReason(Empire@ emp, uint index, const Target@ targ) const {
+	string getFailReason(Empire@ emp, uint index, const Target@ targ) const override {
 		return "Target must be capable of having statuses.";
 	}
 	
-	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const {
+	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const override {
 		if(index != uint(objTarg.integer))
 			return true;
 		if(targ.obj is null)
@@ -650,7 +650,7 @@ class AddOwnedStatus : AbilityHook {
 	}
 	
 #section server
-	void activate(Ability@ abl, any@ data, const Targets@ targs) const {
+	void activate(Ability@ abl, any@ data, const Targets@ targs) const override {
 		Object@ targ = objTarg.fromConstTarget(targs).obj;
 		Empire@ dummyEmp = null;
 		Region@ dummyReg = null;
@@ -666,7 +666,7 @@ class UserMustNotHaveStatus : AbilityHook {
 	Argument status(AT_Custom, doc="Type of status effect to avoid.");
 		
 #section server
-	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const {
+	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const override {
 		if(abl.obj is null)
 			return false;
 		if(!abl.obj.hasStatuses) {
@@ -785,7 +785,7 @@ class IsDerelict : StatusHook {
 		return true;
 	}
 	
-	void save(Status@ status, any@ data, SaveFile& file) const {
+	void save(Status@ status, any@ data, SaveFile& file) override {
 		DerelictData@ info;
 		data.retrieve(@info);
 
@@ -800,7 +800,7 @@ class IsDerelict : StatusHook {
 		}
 	}
 
-	void load(Status@ status, any@ data, SaveFile& file) const {
+	void load(Status@ status, any@ data, SaveFile& file) override {
 		DerelictData info;
 		data.store(@info);
 
@@ -815,7 +815,7 @@ class DestroyTarget: AbilityHook {
 	Argument objTarg(TT_Object);
 	
 #section server
-	void activate(Ability@ abl, any@ data, const Targets@ targs) const {
+	void activate(Ability@ abl, any@ data, const Targets@ targs) const override {
 		Object@ obj = objTarg.fromConstTarget(targs).obj;
 		if(obj !is null && obj.valid)
 			obj.destroy();
@@ -1006,14 +1006,14 @@ class HealFromSubsystem : AbilityHook {
 	Argument preset("Default Rate", AT_Decimal, "500.0", doc="The default healing rate, used if the subsystem value could not be found (or is less than 0). Defaults to 500.");
 	Argument mode("Mode", AT_Integer, "2", doc="How the healing behaves. Mode 0 heals only the target object, mode 1 heals each ship in the target fleet by the value, and mode 2 divides the healing evenly across every member of the target fleet. Defaults to mode 2, and uses mode 2 if an invalid mode is passed to the hook.");
 
-	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const {
+	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const override {
 		Ship@ caster = cast<Ship>(abl.obj);
 		if(caster !is null && caster.Supply == 0 && cost.decimal > 0)
 			return false;
 		return true;
 	}
 
-	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const {
+	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const override {
 		if(index != uint(objTarg.integer))
 			return true;
 		if(targ.obj is null)
@@ -1026,7 +1026,7 @@ class HealFromSubsystem : AbilityHook {
 	}		
 
 #section server
-	void tick(Ability@ abl, any@ data, double time) const {
+	void tick(Ability@ abl, any@ data, double time) const override {
 		if(abl.obj is null)
 			return;
 		Target@ storeTarg = objTarg.fromTarget(abl.targets);
@@ -1097,7 +1097,7 @@ class ABEMDealStellarDamageOverTime : AbilityHook {
 	Argument dmg_per_second(AT_SysVar, doc="Damage to deal per second.");
 
 #section server
-	void tick(Ability@ abl, any@ data, double time) const {
+	void tick(Ability@ abl, any@ data, double time) const override {
 		if(abl.obj is null)
 			return;
 		Target@ storeTarg = objTarg.fromTarget(abl.targets);
@@ -1208,22 +1208,15 @@ class AddStellarShield : StatusHook {
 		return true;
 	}
 	
-	void save(Status@ status, any@ data, SaveFile& file) const {
+	void save(Status@ status, any@ data, SaveFile& file) override {
 		ShieldData@ info;
 		data.retrieve(@info);
 
-		if(info is null) {
-			double nil = 0;
-			file << nil;
-			file << false;
-		}
-		else {
-			file << info.bonus;
-			file << info.castedBySubsystem;
-		}
+		file << info.bonus;
+		file << info.castedBySubsystem;
 	}
 
-	void load(Status@ status, any@ data, SaveFile& file) const {
+	void load(Status@ status, any@ data, SaveFile& file) override {
 		ShieldData info;
 		data.store(@info);
 
@@ -1293,22 +1286,15 @@ class AddShieldCapacity : StatusHook {
 		}
 	}
 	
-	void save(Status@ status, any@ data, SaveFile& file) const {
+	void save(Status@ status, any@ data, SaveFile& file) override {
 		ShieldData@ info;
 		data.retrieve(@info);
 
-		if(info is null) {
-			double nil = 0;
-			file << nil;
-			file << false;
-		}
-		else {
-			file << info.bonus;
-			file << info.castedBySubsystem;
-		}
+		file << info.bonus;
+		file << info.castedBySubsystem;
 	}
 
-	void load(Status@ status, any@ data, SaveFile& file) const {
+	void load(Status@ status, any@ data, SaveFile& file) override {
 		ShieldData info;
 		data.store(@info);
 
@@ -1353,14 +1339,14 @@ class HealShieldFromSubsystem : AbilityHook {
 	Argument preset("Default Rate", AT_Decimal, "500.0", doc="The default healing rate, used if the subsystem value could not be found (or is less than 0). Defaults to 500.");
 	Argument mode("Mode", AT_Integer, "2", doc="How the healing behaves. Mode 0 heals only the target object, mode 1 heals each ship in the target fleet by the value, and mode 2 divides the healing evenly across every member of the target fleet with shield capacity. Defaults to mode 2, and uses mode 2 if an invalid mode is passed to the hook.");
 
-	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const {
+	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const override {
 		Ship@ caster = cast<Ship>(abl.obj);
 		if(caster !is null && caster.Supply == 0 && cost.decimal > 0)
 			return false;
 		return true;
 	}
 
-	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const {
+	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const override {
 		if(index != uint(objTarg.integer))
 			return true;
 		if(targ.obj is null)
@@ -1373,7 +1359,7 @@ class HealShieldFromSubsystem : AbilityHook {
 	}		
 
 #section server
-	void tick(Ability@ abl, any@ data, double time) const {
+	void tick(Ability@ abl, any@ data, double time) const override {
 		if(abl.obj is null)
 			return;
 		Target@ storeTarg = objTarg.fromTarget(abl.targets);
@@ -1465,7 +1451,7 @@ class ChangeOriginOnOwnerChange : StatusHook {
 	Argument refreshduration("Refreshed Duration", AT_Decimal, "-1", doc="The duration of the status after it is refreshed. Does not apply if Refresh Status is set to false. Defaults to -1 (never expires).");
 	
 #section server
-	bool onOwnerChange(Object& obj, Status@ status, any@ data, Empire@ prevOwner, Empire@ newOwner) {
+	bool onOwnerChange(Object& obj, Status@ status, any@ data, Empire@ prevOwner, Empire@ newOwner) override {
 		if(newOwner !is null)
 			@status.originEmpire = newOwner;
 		if(refresh.boolean)
@@ -1485,7 +1471,7 @@ class ResourcelessRegenSurface : GenericEffect, TriggerableGeneric {
 #section server
 	void enable(Object& obj, any@ data) const override {
 		if(obj.isPlanet) {
-			obj.regenSurface(width.integer, height.integer, biome_count.integer);
+			obj.regenSurface(width.integer, height.integer, max(biome_count.integer, 1));
 			if(force_biome.str.length != 0) {
 				auto@ type = getBiome(force_biome.str);
 				if(type !is null)

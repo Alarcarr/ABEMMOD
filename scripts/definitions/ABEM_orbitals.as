@@ -19,7 +19,7 @@ class LimitTwicePerSystem : OrbitalEffect {
 	Argument flag(AT_SystemFlag, doc="System flag to base the limit on. Can be set to any arbitrary unique name.");
 	Argument flag2(AT_SystemFlag, doc="Second system flag to base the limit on. Can be set to any arbitrary unique name.");
 	
-	bool canBuildAt(Object@ obj, const vec3d& pos) const {
+	bool canBuildAt(Object@ obj, const vec3d& pos) const override {
 		auto@ system = getRegion(pos);
 		if(system is null)
 			return false;
@@ -31,7 +31,7 @@ class LimitTwicePerSystem : OrbitalEffect {
 		return true;
 	}
 
-	string getBuildError(Object@ obj, const vec3d& pos) const {
+	string getBuildError(Object@ obj, const vec3d& pos) const override {
 		return "You can only build this orbital twice per system.";
 	}
 

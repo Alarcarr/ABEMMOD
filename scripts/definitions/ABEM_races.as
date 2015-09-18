@@ -81,7 +81,7 @@ class AllyRemnants : TraitEffect {
 	Document doc("Empires with this trait cannot attack or be attacked by the Remnants.");
 
 #section server
-	void postInit(Empire& emp, any@ data) const {
+	void postInit(Empire& emp, any@ data) const override {
 		Creeps.setHostile(emp, false);
 		emp.setHostile(Creeps, false);
 	}
@@ -92,12 +92,12 @@ class ConvertRemnants : AbilityHook {
 	Document doc("Takes control of the target Remnant object. Also takes control of any support ships in the area.");
 	Argument objTarg(TT_Object);
 
-	string getFailReason(Empire@ emp, uint index, const Target@ targ) const {
+	string getFailReason(Empire@ emp, uint index, const Target@ targ) const override {
 		return "Must target Remnants.";
 	}
 
 #section server	
-	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const {
+	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const override {
 		if(index != uint(objTarg.integer))
 			return true;
 		if(targ.obj is null)
@@ -106,7 +106,7 @@ class ConvertRemnants : AbilityHook {
 			return false;
 		return targ.obj.owner is Creeps;
 	}
-	void activate(Ability@ abl, any@ data, const Targets@ targs) const {
+	void activate(Ability@ abl, any@ data, const Targets@ targs) const override {
 		Object@ targ = objTarg.fromConstTarget(targs).obj;
 		if(targ is null)
 			return;
@@ -153,7 +153,7 @@ class StealResources : AbilityHook {
 	Argument turnToBarren(AT_Boolean, "True", doc="Whether to turn the planet into a barren planet once complete.");
 
 #section server
-	void activate(Ability@ abl, any@ data, const Targets@ targs) const {
+	void activate(Ability@ abl, any@ data, const Targets@ targs) const override {
 		Object@ targ = objTarg.fromConstTarget(targs).obj;
 		if(targ is null || targ is abl.obj)
 			return;
@@ -194,11 +194,11 @@ class MineCargoFromPlanet : AbilityHook {
 	Argument damageMult(AT_Decimal, "10000.0", doc="Amount of damage dealt per unit of cargo.");
 	Argument quiet(AT_Boolean, "False", doc="Whether to destroy the planet 'quietly' or not.");
 
-	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const {
+	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const override {
 		return abl.obj !is null && abl.obj.hasCargo;
 	}
 
-	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const {
+	bool isValidTarget(Empire@ emp, uint index, const Target@ targ) const override {
 		if(index != uint(objTarg.integer))
 			return true;
 		if(targ.obj is null)
@@ -207,7 +207,7 @@ class MineCargoFromPlanet : AbilityHook {
 	}
 
 #section server
-	void tick(Ability@ abl, any@ data, double time) const {
+	void tick(Ability@ abl, any@ data, double time) const override {
 		const CargoType@ type = getCargoType(cargoType.integer);
 		if(type is null)
 			return;
@@ -240,7 +240,7 @@ class CannotOverrideProtection: PickupHook {
 	Argument allow_same(AT_Boolean, "True", doc="Whether the pickup can still be picked up if it is owned by the empire trying to pick it up.");
 	
 #section server
-	bool canPickup(Pickup& pickup, Object& obj) const {
+	bool canPickup(Pickup& pickup, Object& obj) const override {
 		return pickup.isPickupProtected || (allow_same.boolean && pickup.owner is obj.owner);
 	}
 #section all
@@ -251,7 +251,7 @@ class GenerateResearchInCombat : StatusHook {
 	Argument amount(AT_Decimal, doc="How much research is generated each second.");
 	
 #section server
-	void onDestroy(Object& obj, Status@ status, any@ data) {
+	void onDestroy(Object& obj, Status@ status, any@ data) override {
 		bool inCombat = false;
 		data.retrieve(inCombat);
 		if(inCombat)
@@ -259,7 +259,7 @@ class GenerateResearchInCombat : StatusHook {
 		data.store(false);
 	}
 	
-	bool onTick(Object& obj, Status@ status, any@ data, double time) {
+	bool onTick(Object& obj, Status@ status, any@ data, double time) override {
 		bool inCombat = false;
 		data.retrieve(inCombat);
 		
@@ -271,14 +271,14 @@ class GenerateResearchInCombat : StatusHook {
 		return true;
 	}
 	
-	void save(Status@ status, any@ data, SaveFile& file) const {
+	void save(Status@ status, any@ data, SaveFile& file) override {
 		bool inCombat = false;
 		data.retrieve(inCombat);
 
 		file << inCombat;
 	}
 
-	void load(Status@ status, any@ data, SaveFile& file) const {
+	void load(Status@ status, any@ data, SaveFile& file) override {
 		bool inCombat = false;
 		
 		file >> inCombat;
@@ -304,7 +304,7 @@ class IfStatusHook: StatusHook {
 	}
 
 #section server
-	void onCreate(Object& obj, Status@ status, any@ data) const {
+	void onCreate(Object& obj, Status@ status, any@ data) const override {
 		IfData info;
 		info.enabled = condition(obj, status);
 		data.store(@info);
@@ -313,7 +313,7 @@ class IfStatusHook: StatusHook {
 			hook.onCreate(obj, status, info.data);
 	}
 
-	void onDestroy(Object& obj, Status@ status, any@ data) const {
+	void onDestroy(Object& obj, Status@ status, any@ data) const override {
 		IfData@ info;
 		data.retrieve(@info);
 
@@ -321,7 +321,7 @@ class IfStatusHook: StatusHook {
 			hook.onDestroy(obj, status, info.data);
 	}
 
-	bool onTick(Object& obj, Status@ status, any@ data, double time) const {
+	bool onTick(Object& obj, Status@ status, any@ data, double time) const override {
 		IfData@ info;
 		data.retrieve(@info);
 
@@ -339,7 +339,7 @@ class IfStatusHook: StatusHook {
 		return true;
 	}
 
-	void onOwnerChange(Object& obj, Status@ status, any@ data, Empire@ prevOwner, Empire@ newOwner) const {
+	void onOwnerChange(Object& obj, Status@ status, any@ data, Empire@ prevOwner, Empire@ newOwner) const override {
 		IfData@ info;
 		data.retrieve(@info);
 
@@ -347,7 +347,7 @@ class IfStatusHook: StatusHook {
 			hook.onOwnerChange(obj, status, info.data, prevOwner, newOwner);
 	}
 
-	void onRegionChange(Object& obj, Status@ status, any@ data, Region@ fromRegion, Region@ toRegion) const {
+	void onRegionChange(Object& obj, Status@ status, any@ data, Region@ fromRegion, Region@ toRegion) const override {
 		IfData@ info;
 		data.retrieve(@info);
 
@@ -355,22 +355,16 @@ class IfStatusHook: StatusHook {
 			hook.onRegionChange(obj, status, info.data, fromRegion, toRegion);
 	}
 
-	void save(Status@ status, any@ data, SaveFile& file) const {
+	void save(Status@ status, any@ data, SaveFile& file) override {
 		IfData@ info;
 		data.retrieve(@info);
 
-		if(info is null) {
-			bool enabled = false;
-			file << enabled;
-		}
-		else {
-			file << info.enabled;
-			if(info.enabled)
-				hook.save(status, info.data, file);
-		}
+		file << info.enabled;
+		if(info.enabled)
+			hook.save(status, info.data, file);
 	}
 
-	void load(Status@ status, any@ data, SaveFile& file) const {
+	void load(Status@ status, any@ data, SaveFile& file) override {
 		IfData info;
 		data.store(@info);
 
@@ -395,7 +389,7 @@ class IfAlliedWithOriginEmpire : IfStatusHook {
 	}
 	
 #section server
-	bool condition(Object& obj, Status@ status) {
+	bool condition(Object& obj, Status@ status) override {
 		Empire@ owner = obj.owner;
 		if(owner is null)
 			return false;
@@ -413,12 +407,12 @@ class ProtectPlanet : GenericEffect {
 	Document doc("Planets affected by this status cannot be captured.");
 	
 #section server
-	void disable(Object& obj, any@ data) const {
+	void disable(Object& obj, any@ data) const override {
 		if(obj.hasSurfaceComponent)
 			obj.clearProtectedFrom();
 	}
 
-	void tick(Object& obj, any@ data, double time) const {
+	void tick(Object& obj, any@ data, double time) const override {
 		uint mask = ~0;
 		for(uint i = 0, cnt = getEmpireCount(); i < cnt; ++i)
 			mask &= getEmpire(i).mask;
@@ -588,7 +582,7 @@ class RequireNotUnlockTag : Requirement {
 	Document doc("This requires the empire to not have a specific unlock tag.");
 	Argument tag(AT_UnlockTag, doc="The unlock tag to check. Unlock tags can be named any arbitrary thing, and will be created as specified. Use the same tag value in the UnlockTag() or similar hook that should unlock it.");
 
-	bool meets(Object& obj, bool ignoreState = false) const {
+	bool meets(Object& obj, bool ignoreState = false) const override {
 		Empire@ owner = obj.owner;
 		if(owner is null || !owner.valid)
 			return false;
@@ -601,7 +595,7 @@ class RequireAttributeLT : Requirement {
 	Argument attribute(AT_EmpAttribute, doc="Attribute to check.");
 	Argument value(AT_Decimal, "1", doc="Value to test against.");
 
-	bool meets(Object& obj, bool ignoreState = false) const {
+	bool meets(Object& obj, bool ignoreState = false) const override {
 		Empire@ owner = obj.owner;
 		if(owner is null || !owner.valid)
 			return false;
