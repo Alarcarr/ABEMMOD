@@ -15,6 +15,8 @@ import orbitals;
 import resources;
 import building_effects;
 import buildings;
+import generic_hooks;
+import repeat_hooks;
 #section server
 import empire;
 import influence_global;
@@ -615,6 +617,33 @@ class SelfDestructOnOwnerChange : BuildingHook {
 	void ownerChange(Object& obj, SurfaceBuilding@ bld, Empire@ prevOwner, Empire@ newOwner) const override {
 		if(obj.hasSurfaceComponent)
 			obj.forceDestroyBuilding(vec2i(bld.position), undevelop.boolean);
+	}
+#section all
+};
+
+class TimeBasedRepeat : GenericRepeatHook {
+	Document doc("Repeat a hook a certain amount of times, with a repeat count dependent on the game time.");
+	Argument hookID("Hook", AT_Hook, "planet_effects::GenericEffect");
+	Argument base(AT_Decimal, "0", "doc="Base amount of repeats to perform.");
+	Argument per_gametime_bonus(AT_Decimal, "-1", doc="Adds/removes repeats for every minute of game time. Accepts negative values, unlike RepeatExtended.");
+
+	bool instantiate() override {
+		if(!withHook(hookID.str))
+			return false;
+		return GenericEffect::instantiate();
+	}
+
+#section server
+	uint getRepeats(Object& obj, any@ data) const override {
+		double cnt = base.decimal;
+		cnt += per_gametime_bonus.decimal * (gameTime / 60.0);
+		return max(cnt, 0);
+	}
+
+	uint getRepeats(Empire& emp, any@ data) const override {
+		double cnt = base.decimal;
+		cnt += per_gametime_bonus.decimal * (gameTime / 60.0);
+		return max(cnt, 0);
 	}
 #section all
 };
