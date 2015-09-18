@@ -129,9 +129,17 @@ class AddSensor : SubsystemEffect {
 		SubsystemSightData@ info;
 		event.data.retrieve(@info);
 
-		file << info.hasLeader;
-		file << info.id;
-		file << info.workingPercent;
+		if(info !is null) {  
+			file << info.hasLeader;  
+			file << info.id;  
+			file << info.workingPercent;  
+		}  
+		else {  
+			uint nil = 0xffffffff;  
+			file << false;  
+			file << nil;  
+			file << event.workingPercent;  
+		}  
 	}
 
 	void load(SubsystemEvent& event, SaveFile& file) const override {

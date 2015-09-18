@@ -23,6 +23,7 @@ Trait: ReclusiveRingworlders
 	ReplaceTechnologyNodes(OrbArtificialPlanetoid, ImpFactoryLabor2)
 	ReplaceTechnologyNodes(OrbRingworld, Science)
 	ReplaceTechnologyNodes(Housing, ImpFactoryLabor)
+	ReplaceTechnologyNodes(BldPlanetaryEngine, ImpThrust2)
 
 	UnlockTag(RingworldUnlock)
 	UnlockSubsystem(HarvesterHull)
