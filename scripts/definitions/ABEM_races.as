@@ -643,3 +643,30 @@ class TimeBasedRepeat : GenericRepeatHook {
 	}
 #section all
 };
+
+class TriggerOnGenerate : ResourceHook {
+	Document doc("Executes a hook during planet generation as opposed to performing it when the resource is added to the planet. DISCLAIMER: This is a very dangerous hook if misused. Exercise extreme caution.");
+	Argument hookID("Hook", AT_Hook, "planet_effects::GenericEffect");
+	GenericEffect@ hook;
+
+	bool withHook(const string& str) {
+		@hook = cast<GenericEffect>(parseHook(str, "planet_effects::"));
+		if(hook is null) {
+			error("If<>(): could not find inner hook: "+escape(str));
+			return false;
+		}
+		return true;
+	}
+
+	bool instantiate() override {
+		if(!withHook(arguments[0].str))
+			return false;
+		return ResourceHook::instantiate();
+	}
+
+#section server
+	void onGenerate(Object& obj, Resource@ native) const override {
+		hook.enable(obj, native.data[hookIndex]);
+	}
+#section all
+};

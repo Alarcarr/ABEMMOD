@@ -12,7 +12,7 @@ Ability: TractorBeam
 	TractorObject(targ)
 	PersistentBeamEffect(targ, #b8b8d8, Tractor)
 
-	TargetFilterNotStatus(targ, Untractorable)
 	ABEM_hooks::TargetFilterNotRemnantOrPirate(targ)
+	Either(Either(TargetFilterType(targ, Asteroid), TargetFilterType(targ, Artifact)), TargetFilterNotStatus(targ, Untractorable))
 	ApplyTargetStatusEffect(targ, InterdictFTL)
 	OffensiveToTarget(targ)
