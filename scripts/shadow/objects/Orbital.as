@@ -83,6 +83,13 @@ class OrbitalScript {
 		return v;
 	}
 
+	double get_shieldMod(Orbital& orb) {
+		Empire@ owner = orb.owner;
+		if(owner !is null)
+			return owner.OrbitalShieldMod;
+		else return 1;
+	}
+
 	double get_dps() {
 		return DPS;
 	}
