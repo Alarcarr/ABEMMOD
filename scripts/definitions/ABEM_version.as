@@ -1,15 +1,15 @@
 import version;
 
-const string MOD_REVISION = "556";
+const string MOD_REVISION = "557";
 const array<string> VERSIONS = {
 	"v1.0.2",
 	"v1.0.3"
 };
 
 const array<string> REVISIONS = {
-	"r4740",
-	"r4744", 
-	"r4746"
+	"4740",
+	"4744", 
+	"4746"
 };
 const string MOD_NAME = "ABEM 0.4.0";
 const string MOD_VERSION = MOD_NAME + " (revision " + MOD_REVISION + ") for Star Ruler 2 " + VERSIONS[0] + " (revision " + REVISIONS[0] + ", currently using " + GAME_VERSION + " " + SCRIPT_VERSION + ")";
@@ -30,7 +30,7 @@ bool checkSupported() {
 	}
 	if(resultA) {
 		for(uint i = 0; i < REVISIONS.length; ++i) {
-			if(REVISIONS[i].equals_nocase(SCRIPT_VERSION)) {
+			if(("r" + REVISIONS[i]).equals_nocase(SCRIPT_VERSION)) {
 				resultB = true;
 				break;
 			}
