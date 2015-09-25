@@ -61,10 +61,17 @@ string latestSave;
 
 void init() {
 	//Show the version
-	@version = GuiText(null, Alignment(Right-600, Bottom-20, Right-4, Bottom));
+	@version = GuiText(null, Alignment(Right-1000, Bottom-20, Right-4, Bottom));
 	version.horizAlign = 1.0;
 	version.text = "Mod: " + MOD_VERSION;
 	version.color = Color(0xaaaaaaaa);
+	// Check if mod is compatible with current game version, spew out alarming colors and errors if not
+	//if(!MOD_SUPPORTS_VERSION) {
+	if(!checkSupported()) {
+		version.color = Color(0xff0000ff);
+		//version.text += "(UNSUPPORTED VERSION)";
+		version.text = version.text + " (UNSUPPORTED VERSION)";
+	}
 
 	//Create logo
 	@menu_logo = GuiSprite(null, Alignment(
