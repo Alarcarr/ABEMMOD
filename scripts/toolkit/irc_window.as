@@ -11,6 +11,7 @@ import elements.MarkupTooltip;
 import dialogs.InputDialog;
 import version;
 #include "dialogs/include/UniqueDialogs.as"
+#priority draw 200
 
 #section gui
 from tabs.WikiTab import showWikiPage, openGeneralLink;

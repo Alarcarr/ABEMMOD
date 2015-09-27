@@ -170,3 +170,9 @@ FIRST_CONTACT: 1
 
 //How much a research point contributes to research decay (when set to 1, 4000 research points will halve the empire's research generation rate - 5000 if playing an Innovative race).
 RESEARCH_EFFICIENCY_DECAY_MULT: 1
+
+//Multiplier to black hole frequency.
+BLACK_HOLE_FREQ_MULT: 1
+
+//Multiplier to spatial anomaly (nebulae, empty space) frequency.
+ANOMALY_SYSTEM_FREQ_MULT: 1

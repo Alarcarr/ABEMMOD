@@ -1,5 +1,5 @@
 System: MutaraNebula
-	Frequency: 0.01
+	Frequency: 0.01 * $ANOMALY_SYSTEM_FREQ_MULT
 	
 	ExpandSystem(1000)
 	

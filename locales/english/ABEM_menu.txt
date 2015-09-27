@@ -1,6 +1,16 @@
 OPT_AUTO_IRC: Automatically Connect to IRC
 OPTTT_AUTO_IRC: When toggled on, the game will automatically connect to the IRC and join the #starruler and #abem channels when started.
 
+NG_ANOMALY_SYSTEM_OCCURANCE: Spatial Anomaly Occurrence
+NGTT_ANOMALY_SYSTEM_OCCURANCE: <<
+	Multiplier to the base frequency at which anomalous systems (nebulae, empty space) occur in the universe. Does not affect black holes at all.
+>>
+
+NG_BLACK_HOLE_OCCURANCE: Black Hole Occurrence
+NGTT_BLACK_HOLE_OCCURANCE: <<
+	Multiplier to the base frequency at which black hole systems occur in the universe. Does not affect the black holes spawned at the center of large galaxies.
+>>
+
 NG_SENSOR_OPTIONS: Sensor Options
 NG_SENSOR_MULT: Global Sensor Multiplier
 NGTT_SENSOR_MULT: The number by which all sight ranges in the game are multiplied. This is applied after all other sensor modifiers; useful when modifying the System Size option among other things.
@@ -19,10 +29,10 @@ NG_ADVANCED_OPTIONS_DESC: <<
 	[i][b]Multiplayer hosts: It is recommended that these options not be used without the knowledge and consent of the people you are playing with.[/b][/i]
 >>
 
-NG_PLANET_MOON_CHANCE: Moon Occurance
+NG_PLANET_MOON_CHANCE: Moon Occurrence
 NGTT_PLANET_MOON_CHANCE: The probability that a planet will have a moon. (Developer note: I suspect that the game will add moons to a planet until the random number generator fails to produce an acceptable number. Therefore, to prevent instances of locking up the game by telling it to spawn moons ad infinitum, this is capped at 50%. Also, odds are you'll change the amount of moons significantly even by slightly modifying this number.)
 
-NG_PLANET_CONDITION_CHANCE: Condition Occurance
+NG_PLANET_CONDITION_CHANCE: Condition Occurrence
 NGTT_PLANET_CONDITION_CHANCE: The probability that a planet will have a planetary condition. Planetary conditions can have various effects on a planet and its behavior, ranging from a reduced population cap to powerful ancient weapons.
 
 NG_HIDE_EMPIRE_RELATIONS: Hide Empire Relations

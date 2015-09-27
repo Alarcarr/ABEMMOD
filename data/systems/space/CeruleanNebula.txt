@@ -1,5 +1,5 @@
 System: CeruleanNebula
-	Frequency: 0.005
+	Frequency: 0.005 * $ANOMALY_SYSTEM_FREQ_MULT
 	
 	ExpandSystem(1000)
 	

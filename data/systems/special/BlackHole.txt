@@ -1,6 +1,6 @@
 System: Blackhole
 
-	Frequency: 0.01
+	Frequency: 0.01 * $BLACK_HOLE_FREQ_MULT
 	MakeBlackhole(Radius = 30.0)
 	
 	RepeatModified(1, $PLANET_FREQUENCY)
