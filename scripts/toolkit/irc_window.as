@@ -11,6 +11,7 @@ import elements.MarkupTooltip;
 import dialogs.InputDialog;
 import version;
 #include "dialogs/include/UniqueDialogs.as"
+#priority init 100
 #priority draw 200
 
 #section gui
