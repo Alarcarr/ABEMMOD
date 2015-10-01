@@ -37,6 +37,17 @@ class ShipInfoBar : InfoBar {
 	GuiText@ supplyLabel;
 	GuiProgressbar@ supply;
 
+	GuiSprite@ energyIcon;
+	GuiText@ energyLabel;
+	GuiProgressbar@ energy;
+
+	GuiSprite@ ftlIcon;
+	GuiText@ ftlLabel;
+	GuiProgressbar@ ftl;
+
+	GuiProgressbar@ ftlCrystals;
+	GuiSprite@ ftlCrystalsIcon;
+
 	GuiSprite@ strengthIcon;
 	GuiText@ strengthLabel;
 	GuiProgressbar@ strength;
@@ -62,15 +73,15 @@ class ShipInfoBar : InfoBar {
 
 	ShipInfoBar(IGuiElement@ parent) {
 		super(parent);
-		@alignment = Alignment(Left, Bottom-263, Left+395, Bottom);
+		@alignment = Alignment(Left, Bottom-297, Left+395, Bottom);
 
-		@actions = ActionBar(this, vec2i(385, 207));
+		@actions = ActionBar(this, vec2i(385, 241));
 		actions.noClip = true;
 
 		int y = -8;
 
 		y += 38;
-		@bpdisp = GuiBlueprint(this, Alignment(Left+4, Top+y, Right-128, Bottom-70));
+		@bpdisp = GuiBlueprint(this, Alignment(Left+4, Top+y, Right-128, Bottom-104));
 		bpdisp.noClip = true;
 		bpdisp.popHover = true;
 		bpdisp.popSize = vec2i(77, 40);
@@ -96,7 +107,7 @@ class ShipInfoBar : InfoBar {
 		expandButton.noClip = true;
 		expandButton.style = SS_IconButton;
 
-		@health = GuiProgressbar(this, Alignment(Left+8, Bottom-68, Left+200, Bottom-38));
+		@health = GuiProgressbar(this, Alignment(Left+8, Bottom-102, Left+200, Bottom-72));
 		health.textHorizAlign = 0.9;
 
 		@healthIcon = GuiSprite(health, Alignment(Left-8, Top-9, Left+24, Bottom-8), icons::Health);
@@ -106,7 +117,7 @@ class ShipInfoBar : InfoBar {
 		healthLabel.text = locale::HEALTH;
 		healthLabel.stroke = colors::Black;
 
-		@shield = GuiProgressbar(this, Alignment(Left+9, Bottom-48, Left+199, Bottom-38));
+		@shield = GuiProgressbar(this, Alignment(Left+9, Bottom-82, Left+199, Bottom-72));
 		shield.noClip = true;
 		shield.textHorizAlign = 0.85;
 		shield.textVertAlign = 1.65;
@@ -117,7 +128,7 @@ class ShipInfoBar : InfoBar {
 		@shieldIcon = GuiSprite(shield, Alignment(Right-25, Bottom-25, Width=30, Height=30), icons::Shield);
 		shieldIcon.noClip = true;
 
-		@supply = GuiProgressbar(this, Alignment(Left+206, Bottom-68, Right-22, Bottom-38));
+		@supply = GuiProgressbar(this, Alignment(Left+206, Bottom-102, Right-22, Bottom-72));
 		supply.textHorizAlign = 0.9;
 
 		@supplyIcon = GuiSprite(supply, Alignment(Left-5, Top-6, Left+24, Bottom-8), icons::Supply);
@@ -126,6 +137,37 @@ class ShipInfoBar : InfoBar {
 		supplyLabel.font = FT_Bold;
 		supplyLabel.text = locale::SUPPLY;
 		supplyLabel.stroke = colors::Black;
+
+		@ftl = GuiProgressbar(this, Alignment(Left+8, Bottom-68, Left+200, Bottom-38));
+		ftl.textHorizAlign = 0.9;
+		ftl.frontColor = colors::FTLResource;
+
+		@ftlIcon = GuiSprite(ftl, Alignment(Left-8, Top-9, Left+24, Bottom-8), icons::FTL);
+		ftlIcon.noClip = true;
+		@ftlLabel = GuiText(ftl, Alignment(Left+23, Top, Left+100, Bottom));
+		ftlLabel.font = FT_Bold;
+		ftlLabel.text = locale::SHIP_FTL;
+		ftlLabel.stroke = colors::Black;
+
+		@ftlCrystals = GuiProgressbar(this, Alignment(Left+9, Bottom-48, Left+199, Bottom-38));
+		ftlCrystals.noClip = true;
+		ftlCrystals.textHorizAlign = 0.85;
+		ftlCrystals.textVertAlign = 1.65;
+		ftlCrystals.frontColor = Color(0xcd20ddff);
+		ftlCrystals.backColor = Color(0xc88bcd20);
+
+		@ftlCrystalsIcon = GuiSprite(ftlCrystals, Alignment(Right-25, Bottom-25, Width=30, Height=30), Sprite(spritesheet::ResourceIcons, 22));
+		ftlCrystalsIcon.noClip = true;
+
+		@energy = GuiProgressbar(this, Alignment(Left+206, Bottom-68, Right-22, Bottom-38));
+		energy.textHorizAlign = 0.9;
+
+		@energyIcon = GuiSprite(energy, Alignment(Left-5, Top-6, Left+24, Bottom-8), icons::Energy);
+		energyIcon.noClip = true;
+		@energyLabel = GuiText(energy, Alignment(Left+23, Top, Left+100, Bottom));
+		energyLabel.font = FT_Bold;
+		energyLabel.text = locale::SHIP_ENERGY;
+		energyLabel.stroke = colors::Black;
 
 		@strength = GuiProgressbar(this, Alignment(Left+8, Bottom-34, Left+200, Bottom-4));
 		strength.textHorizAlign = 0.9;
@@ -443,6 +485,116 @@ class ShipInfoBar : InfoBar {
 			width = 350);
 	}
 
+	void updateFTLBar() {
+		if(ship is null)
+			return;
+
+		double curFTL = 0.0;
+		double maxFTL = 0.0;
+		double curCrystals = 0.0;
+		double maxCrystals = 0.0;
+	
+		Ship@ leader = cast<Ship>(groupdisp.leader);
+		const Design@ design;
+		if(leader !is null) {
+			curFTL = leader.blueprint.currentHP;
+			maxFTL = leader.blueprint.design.totalHP;
+			curCrystals = leader.Shield;
+			maxCrystals = leader.MaxShield;
+			@design = leader.blueprint.design;
+		}
+
+		if(maxFTL == 0) {
+			ftl.progress = 0.f;
+			ftl.text = "-";
+		}
+		else {
+			ftl.progress = curFTL / maxFTL;
+			if(ftl.progress > 1.001f) {
+				ftl.progress = 1.f;
+				ftl.font = FT_Bold;
+			}
+			else
+				ftl.font = FT_Normal;
+		
+			ftl.text = standardize(curFTL)+" / "+standardize(maxFTL);
+		}
+
+		double regen = 0.0;
+		double emergencyRegen = 0.0;
+		double resupply = 0.0;
+		if(design !is null) {
+			regen = design.total(SV_SupplyRate);
+			emergencyRegen = (design.total(SV_Power) - design.variable(ShV_REQUIRES_Power)) / 100;
+			resupply = design.total(SV_ShieldRegen);
+		}
+
+		string tt = format(locale::TT_SHIP_FTL_1, standardize(curFTL), standardize(maxFTL)) + "\n\n" + format(locale::TT_SHIP_FTL_2,
+			standardize(emergencyRegen), standardize(regen), standardize(curCrystals), standardize(maxCrystals), standardize(resupply));
+		
+		if(maxCrystals == 0) {
+			ftlCrystals.visible = false;
+			ftl.textHorizAlign = 0.9;
+			ftlLabel.visible = true;
+		}
+		else {
+			ftlCrystals.visible = true;
+			ftl.textHorizAlign = 0.25;
+			ftlLabel.visible = false;
+
+			ftlCrystals.progress = min(curCrystals / max(maxCrystals, 0.01), 1.0);
+			ftlCrystals.text = standardize(curCrystals, true);
+		}
+
+		setMarkupTooltip(ftl, tt, width = 350);
+		@ftlCrystals.tooltipObject = ftl.tooltipObject;
+	}
+
+	void updateEnergyBar() {
+		if(ship is null)
+			return;
+
+		double curEnergy = 0.0;
+		double maxEnergy = 0.0;
+		const Design@ design = ship.blueprint.design;
+		curEnergy = ship.Supply;
+		maxEnergy = ship.MaxSupply;
+
+		if(!ship.visible)
+			curEnergy = maxEnergy;
+
+		if(maxEnergy == 0) {
+			energy.progress = 0.f;
+			energy.frontColor = colors::Energy;
+			energy.text = "-";
+		}
+		else {
+			energy.progress = curEnergy / maxEnergy;
+			if(energy.progress > 1.001f) {
+				energy.progress = 1.f;
+				energy.font = FT_Bold;
+			}
+			else {
+				energy.font = FT_Normal;
+			}
+
+			if(energy.progress > 0.4f)
+				energy.frontColor = colors::Energy;
+			else
+				energy.frontColor = Color(0xec370fff).interpolate(colors::Energy, energy.progress/0.4f);
+
+			energy.text = standardize(curEnergy);
+		}
+
+		double regen = 0.0;
+		if(design !is null)
+			regen = design.total(SV_Power) - design.variable(ShV_REQUIRES_Power);
+		setMarkupTooltip(energy, format(locale::TT_SHIP_ENERGY,
+			standardize(curEnergy), standardize(maxEnergy),
+			standardize(regen)),
+			width = 350);
+	}
+
 	void updateSupplyBar() {
 		double curSup = 0.0;
 		double totSup = 0.0;
@@ -564,6 +716,8 @@ class ShipInfoBar : InfoBar {
 		updateHealthBar();
 		updateSupplyBar();
 		updateStrengthBar();
+		updateFTLBar();
+		updateEnergyBar();
 
 		//Update group
 		groupdisp.update(ship);

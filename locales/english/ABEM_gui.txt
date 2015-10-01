@@ -1,0 +1,30 @@
+SHIP_FTL: FTL
+SHIP_FTL_CRYSTALS: FTL Crystals
+TT_SHIP_FTL_1: <<
+	[font=Medium]FTL Energy[/font]
+	Ships use FTL energy to activate hyperdrives and slipstream generators. The less FTL energy is available, the shorter the distance that can be traversed using an FTL drive.
+
+	[b]Current FTL Energy[/b] [offset=230]$1[/offset]
+	[b]FTL Energy Storage[/b] [offset=230]$2[/offset]
+>>
+TT_SHIP_FTL_2: <<
+	Ships use FTL crystals to generate FTL energy. If none are available, the ship's reactor will be used to generate FTL energy at a vastly reduced rate. FTL crystals are taken from the empire's reserves when in friendly space.
+
+	[b]FTL Crystals Stored[/b] [offset=230]$3[/offset]
+	[b]FTL Crystal Capacity[/b] [offset=230]$4[/offset]
+
+	[b]FTL Regeneration (Emergency)[/b] [offset=230]$1/sec[/offset]
+	[b]FTL Regeneration (Crystals)[/b] [offset=230]$2/sec[/offset]
+
+	[b]FTL Crystal Resupply[/b] [offset=230]$5/sec[/offset]
+>>
+SHIP_ENERGY: Energy
+TT_SHIP_ENERGY: <<
+	[font=Medium]Energy[/font]
+	Ships use energy to use certain equipment, including most weapons and shields. If insufficient energy is available, that equipment may become less effective or cease to function altogether.
+
+	[b]Current Energy[/b] [offset=230]$1[/offset]
+	[b]Energy Storage[/b] [offset=230]$2[/offset]
+
+	[b]Energy Regeneration[/b] [offset=230]$3/sec[/offset]
+>>
