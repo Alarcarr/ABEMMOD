@@ -108,6 +108,14 @@ class ShipScript {
 			msg >> ship.MaxShield;
 			ship.Shield = msg.readFixed(0.f, ship.MaxShield, 16);
 		}
+		if(msg.readBit()) {
+			msg >> ship.MaxFTL;
+			ship.FTL = msg.readFixed(0.f, ship.MaxFTL, 16);
+		}
+		if(msg.readBit()) {
+			msg >> ship.MaxCrystals;
+			ship.Crystals = msg.readFixed(0.f, ship.MaxCrystals, 16);
+		}
 
 		if(msg.readBit()) {
 			ship.activateAbilities();
@@ -151,6 +159,10 @@ class ShipScript {
 		msg >> ship.MaxSupply;
 		msg >> ship.Shield;
 		msg >> ship.MaxShield;
+		msg >> ship.FTL;
+		msg >> ship.MaxFTL;
+		msg >> ship.Crystals;
+		msg >> ship.MaxCrystals;
 		ship.isFTLing = msg.readBit();
 		ship.inCombat = msg.readBit();
 		if(ship.hasAbilities)
@@ -183,6 +195,9 @@ class ShipScript {
 		ship.MaxDPS = dsg.total(SV_DPS);
 		ship.MaxSupply = dsg.total(SV_SupplyCapacity);
 		ship.MaxShield = dsg.total(SV_ShieldCapacity);
+		ship.MaxCrystals = dsg.total(SV_CrystalCapacity);
+		ship.MaxFTL = dsg.total(SV_FTLCapacity);
+		ship.MaxEnergy = dsg.total(SV_EnergyCapacity);
 		commandUsed = dsg.variable(ShV_REQUIRES_Command);
 	}
 
@@ -229,6 +244,14 @@ class ShipScript {
 				msg >> ship.Supply;
 			else
 				ship.Supply = 0;
+			if(msg.readBit())
+				msg >> ship.FTL;
+			else
+				ship.FTL = 0;
+			if(msg.readBit())
+				msg >> ship.Crystals;
+			else
+				ship.Crystals = 0;
 			
 			ship.isFTLing = msg.readBit();
 			ship.inCombat = msg.readBit();

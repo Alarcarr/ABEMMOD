@@ -152,7 +152,7 @@ class ShipPopup : Popup {
 			health.textVertAlign = 0.5;
 		}
 
-		if(ship.MaxShield > 0) {
+		if(ship.MaxCrystals > 0) {
 			ftlCrystals.visible = true;
 			ftlCrystalsIcon.visible = true;
 			ftl.textHorizAlign = 0.35;
@@ -459,10 +459,10 @@ class ShipPopup : Popup {
 		Ship@ leader = cast<Ship>(groupdisp.leader);
 		const Design@ design;
 		if(leader !is null) {
-			curFTL = leader.blueprint.currentHP;
-			maxFTL = leader.blueprint.design.totalHP;
-			curCrystals = leader.Shield;
-			maxCrystals = leader.MaxShield;
+			curFTL = leader.FTL;
+			maxFTL = leader.MaxFTL;
+			curCrystals = leader.Crystals;
+			maxCrystals = leader.MaxCrystals;
 			@design = leader.blueprint.design;
 		}
 
@@ -498,8 +498,8 @@ class ShipPopup : Popup {
 		double curEnergy = 0.0;
 		double maxEnergy = 0.0;
 		const Design@ design = ship.blueprint.design;
-		curEnergy = ship.Supply;
-		maxEnergy = ship.MaxSupply;
+		curEnergy = ship.Energy;
+		maxEnergy = ship.MaxEnergy;
 
 		if(!ship.visible)
 			curEnergy = maxEnergy;

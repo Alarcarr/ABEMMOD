@@ -497,10 +497,10 @@ class ShipInfoBar : InfoBar {
 		Ship@ leader = cast<Ship>(groupdisp.leader);
 		const Design@ design;
 		if(leader !is null) {
-			curFTL = leader.blueprint.currentHP;
-			maxFTL = leader.blueprint.design.totalHP;
-			curCrystals = leader.Shield;
-			maxCrystals = leader.MaxShield;
+			curFTL = leader.FTL;
+			maxFTL = leader.MaxFTL;
+			curCrystals = leader.Crystals;
+			maxCrystals = leader.MaxCrystals;
 			@design = leader.blueprint.design;
 		}
 
@@ -524,9 +524,9 @@ class ShipInfoBar : InfoBar {
 		double emergencyRegen = 0.0;
 		double resupply = 0.0;
 		if(design !is null) {
-			regen = design.total(SV_SupplyRate);
-			emergencyRegen = (design.total(SV_Power) - design.variable(ShV_REQUIRES_Power)) / 100;
-			resupply = design.total(SV_ShieldRegen);
+			regen = ship.blueprint.getEfficiencySum(SV_FTLRegen);
+			emergencyRegen = (ship.blueprint.getEfficiencySum(SV_Power) - design.variable(ShV_REQUIRES_Power)) / 100;
+			resupply = ship.blueprint.getEfficiencySum(SV_CrystalRate);
 		}
 
 		string tt = format(locale::TT_SHIP_FTL_1, standardize(curFTL), standardize(maxFTL)) + "\n\n" + format(locale::TT_SHIP_FTL_2,
@@ -557,8 +557,8 @@ class ShipInfoBar : InfoBar {
 		double curEnergy = 0.0;
 		double maxEnergy = 0.0;
 		const Design@ design = ship.blueprint.design;
-		curEnergy = ship.Supply;
-		maxEnergy = ship.MaxSupply;
+		curEnergy = ship.Energy;
+		maxEnergy = ship.MaxEnergy;
 
 		if(!ship.visible)
 			curEnergy = maxEnergy;
@@ -588,7 +588,7 @@ class ShipInfoBar : InfoBar {
 
 		double regen = 0.0;
 		if(design !is null)
-			regen = design.total(SV_Power) - design.variable(ShV_REQUIRES_Power);
+			regen = ship.blueprint.getEfficiencySum(SV_Power) - design.variable(ShV_REQUIRES_Power);
 		setMarkupTooltip(energy, format(locale::TT_SHIP_ENERGY,
 			standardize(curEnergy), standardize(maxEnergy),
 			standardize(regen)),

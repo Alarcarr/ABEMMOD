@@ -7,3 +7,9 @@ Subsystem: ABEMDummy
   SupplyTransferRate := 0
   ShieldTransferRate := 0
   EnergyBuildCost := 0
+	CrystalCapacity := 0
+	FTLCapacity := 0
+	CrystalConsumption := 0
+	FTLRegen := 0
+	EnergyCapacity := 0
+	CrystalRate := 0

@@ -53,11 +53,16 @@ class ShipScript {
 	float suppression = 0.f;
 	float wreckage = 0.f;
 	float shieldRegen = 0.f;
+	float ftlRegen = 0.f;
+	float crystalConsumption = 0.f;
+	float emergencyFTLRegen = 0.f;
+	float energyRegen = 0.f;
 	Object@ cachedLeader;
 	const Design@ retrofitTo;
 	const Design@ queuedRetrofit;
 	float timer = 0.f, bpTimer = 0.f;
 	float supplyBonus = 0.f;
+	float crystalBonus = 0.f;
 	int disableRegionVision = 0;
 	int holdFire = 0;
 	float movementAccel = 0;
@@ -152,6 +157,10 @@ class ShipScript {
 		file << disableRegionVision;
 		file << holdFire;
 		file << movementAccel;
+		file << ship.FTL;
+		file << ship.MaxFTL;
+		file << ship.Crystals;
+		file << ship.MaxCrystals;
 	}
 	
 	void load(Ship& ship, SaveFile& file) {
@@ -244,6 +253,11 @@ class ShipScript {
 		}
 		if(file >= SV_0117)
 			file >> movementAccel;
+		
+		file >> ship.FTL;
+		file >> ship.MaxFTL;
+		file >> ship.Crystals;
+		file >> ship.MaxCrystals;
 
 		getDesignMesh(ship.blueprint.design, shipMesh);
 		bindMesh(ship, shipMesh);
@@ -328,10 +342,17 @@ class ShipScript {
 	void postInit(Ship& ship) {
 		cacheStats(ship);
 		updateStats(ship, true);
-		if(ship.hasLeaderAI)
+		if(ship.hasLeaderAI) {
 			ship.Supply = ship.MaxSupply;
-		else
+			ship.FTL = ship.MaxFTL;
+			ship.Crystals = ship.MaxCrystals;
+		}
+		else {
 			ship.Supply = 0;
+			ship.FTL = 0;
+			ship.Crystals = 0;
+		}
+
 
 		if(ship.hasLeaderAI) {
 			ship.leaderInit();
@@ -441,13 +462,14 @@ class ShipScript {
 
 	void cacheStats(Ship& ship) {
 		ship.MaxDPS = ship.blueprint.design.total(SV_DPS);
-		if(ship.hasLeaderAI)
+		if(ship.hasLeaderAI) {
 			ship.MaxSupply = ship.blueprint.design.total(SV_SupplyCapacity) + supplyBonus;
+			ship.MaxCrystals = ship.blueprint.design.total(SV_CrystalCapacity) + crystalBonus;
+		}
 		else
 			ship.MaxSupply = ship.blueprint.design.total(SV_SupportSupplyCapacity) + supplyBonus;
 		mass = ship.blueprint.design.total(HV_Mass);
-		/*ship.MaxEnergy = ship.blueprint.design.total(SV_EnergyCapacity);*/
-		ship.MaxEnergy = 0;
+		//ship.MaxEnergy = 0;
 
 		const Design@ dsg = ship.blueprint.design;
 		ship.hasVectorMovement = ship.isStation || (dsg.hasTag(ST_VectorThrust) && !dsg.hasTag(ST_TurnToThrust));
@@ -461,6 +483,14 @@ class ShipScript {
 			ship.MaxSupply = ship.blueprint.design.total(SV_SupportSupplyCapacity) + supplyBonus;
 		if(ship.MaxSupply > 0 && amount < 0)
 			ship.Supply += (ship.Supply / ship.MaxSupply) * amount;
+	}
+
+	void modCrystalBonus(Ship& ship, float amount) {
+		crystalBonus += amount;
+		if(ship.hasLeaderAI)
+			ship.MaxCrystals = ship.blueprint.design.total(SV_CrystalCapacity) + crystalBonus;
+		if(ship.MaxCrystals > 0 && amount < 0)
+			ship.Crystals += (ship.Crystals / ship.MaxCrystals) * amount;
 	}
 
 	void updateAccel(Ship& ship) {
@@ -510,7 +540,7 @@ class ShipScript {
 			}
 			else if(ship.MaxShield > 0) {
 				ship.Shield = maxShield * (ship.Shield / ship.MaxShield);
-				ship.MaxShield = maxShield;;
+				ship.MaxShield = maxShield;
 				shieldRegen = ship.blueprint.getEfficiencySum(SV_ShieldRegen);
 			}
 			else {
@@ -518,6 +548,37 @@ class ShipScript {
 				shieldRegen = ship.blueprint.getEfficiencySum(SV_ShieldRegen);
 			}
 			shieldDelta = true;
+		}
+
+		// Update FTL stats
+		double maxFTL = ship.blueprint.getEfficiencySum(SV_FTLCapacity);
+		if(maxFTL != ship.MaxFTL) {
+			if(maxFTL == 0) {
+				ship.FTL = 0;
+			}
+			else if(ship.MaxFTL > 0) {
+				ship.FTL = maxFTL * (ship.FTL / ship.MaxFTL);
+			}
+			ship.MaxFTL = maxFTL;
+			barDelta = true;
+		}
+
+		ftlRegen = ship.blueprint.getEfficiencySum(SV_FTLRegen);
+		crystalConsumption = ship.blueprint.getEfficiencySum(SV_CrystalConsumption);
+		emergencyFTLRegen = (ship.blueprint.getEfficiencySum(SV_Power) - powerUsed) / 100;
+		
+		energyRegen = ship.blueprint.getEfficiencySum(SV_Power) - powerUsed;
+				
+		double maxEnergy = ship.blueprint.getEfficiencySum(SV_EnergyCapacity);
+		if(maxEnergy != ship.MaxEnergy) {
+			if(maxEnergy == 0) {
+				ship.Energy = 0;
+			}
+			else if(ship.MaxEnergy > 0) {
+				ship.Energy = maxEnergy * (ship.Energy / ship.MaxEnergy);
+			}
+			ship.MaxEnergy = maxEnergy;
+			barDelta = true;
 		}
 
 		//Set the supply capacity of the ship
@@ -710,6 +771,7 @@ class ShipScript {
 		if(ship.Energy < amount)
 			return false;
 		ship.Energy -= amount;
+		barDelta = true;
 		return true;
 	}
 	
@@ -928,19 +990,19 @@ class ShipScript {
 
 		//Deal with energy charge
 		float fleetEffectiveness = 1.f;
-		if(ship.MaxEnergy > 0 && ship.Energy < ship.MaxEnergy) {
-			if((reg !is null && reg.TradeMask & owner.TradeMask.value != 0 && !engaged)
-					|| owner.GlobalCharge) {
-				/*float chargeRate = ship.blueprint.getEfficiencySum(SV_ChargeRate);*/
-				float chargeRate = 0.f;
-				float amt = min(chargeRate * time, ship.MaxEnergy - ship.Energy);
-				amt = owner.consumeEnergy(amt);
-				if(amt > 0.f) {
-					ship.Energy = min(ship.Energy + amt, ship.MaxEnergy);
-					barDelta = true;
-				}
-			}
-		}
+//		if(ship.MaxEnergy > 0 && ship.Energy < ship.MaxEnergy) {
+//			if((reg !is null && reg.TradeMask & owner.TradeMask.value != 0 && !engaged)
+//					|| owner.GlobalCharge) {
+//				/*float chargeRate = ship.blueprint.getEfficiencySum(SV_ChargeRate);*/
+//				float chargeRate = 0.f;
+//				float amt = min(chargeRate * time, ship.MaxEnergy - ship.Energy);
+//				amt = owner.consumeEnergy(amt);
+//				if(amt > 0.f) {
+//					ship.Energy = min(ship.Energy + amt, ship.MaxEnergy);
+//					barDelta = true;
+//				}
+//			}
+//		}
 
 		if(ship.hasSupportAI) {
 			ship.supportTick(time);
@@ -951,12 +1013,12 @@ class ShipScript {
 		}
 		else if(ship.hasLeaderAI) {
 			ship.commandTick();
-			if(ship.Energy > 0) {
-				//Calculate extra fleet effectiveness based on energy
-				//relative to ship size and supply.
-				float size = ship.blueprint.design.size;
-				fleetEffectiveness *= 1.f + ENERGY_EFFECTIVENESS * (ship.Energy / size);
-			}
+		//	if(ship.Energy > 0) {
+		//		//Calculate extra fleet effectiveness based on energy
+		//		//relative to ship size and supply.
+		//		float size = ship.blueprint.design.size;
+		//		fleetEffectiveness *= 1.f + ENERGY_EFFECTIVENESS * (ship.Energy / size);
+		//	}
 
 			if(ship.MaxSupply > 0) {
 				//Supply recharge
@@ -987,6 +1049,24 @@ class ShipScript {
 			}
 			else {
 				fleetEffectiveness *= SUPPLY_EFFICIENCY;
+			}
+			if(ship.MaxCrystals > 0) {
+				// FTL crystal resupply
+				if(ship.Crystals < ship.MaxCrystals) {
+					float chargeRate = ship.blueprint.getEfficiencySum(SV_CrystalRate);
+					float amt = chargeRate * time;
+
+					if(isContested || reg is null || reg.owner !is ship.owner) {
+						amt = 0.f;
+					}
+
+					amt = min(ship.MaxCrystals - ship.Crystals, ship.owner.consumeFTL(amt));
+					
+					if(amt > 0) {
+						ship.Crystals = min(ship.MaxCrystals, ship.Crystals + amt);
+						barDelta = true;
+					}
+				}
 			}
 
 			//Efficiency decrease due to debt
@@ -1103,6 +1183,27 @@ class ShipScript {
 		if(ship.Shield < ship.MaxShield) {
 			ship.Shield = min(ship.Shield + shieldRegen * time, ship.MaxShield);
 			shieldDelta = true;
+		}
+		if(ship.FTL < ship.MaxFTL) {
+			double amt = ftlRegen * time;
+			double consumed = crystalConsumption * time;
+			if(amt > ship.MaxFTL - ship.FTL) {
+				double ratio = (ship.MaxFTL - ship.FTL) / amt;
+				amt *= ratio;
+				consumed *= ratio;
+			}
+			if(consumed > ship.Crystals) {
+				double ratio = (ship.Crystals / consumed);
+				amt *= ratio;
+				consumed = ship.Crystals;
+				amt += emergencyFTLRegen * (1 - ratio); // The percentage of missing crystals is also the percentage of emergency regeneration used.
+			}
+			ship.FTL += amt;
+			barDelta = true;
+		}
+		if(ship.Energy < ship.MaxEnergy) {
+			ship.Energy = min(ship.MaxEnergy, ship.Energy + energyRegen);
+			barDelta = true;
 		}
 
 		//Repair out of combat
@@ -1263,7 +1364,25 @@ class ShipScript {
 		else {
 			msg.write0();
 		}
+
+		if(ship.MaxFTL > 0) {
+			msg.write1();
+			msg << ship.MaxFTL;
+			msg.writeFixed(ship.FTL, 0.f, ship.MaxFTL, 16);
+		}
+		else {
+			msg.write0();
+		}
 		
+		if(ship.MaxCrystals > 0) {
+			msg.write1();
+			msg << ship.MaxCrystals;
+			msg.writeFixed(ship.Crystals, 0.f, ship.MaxCrystals, 16);
+		}
+		else {
+			msg.write0();
+		}
+
 		if(ship.hasAbilities) {
 			msg.write1();
 			ship.writeAbilities(msg);
@@ -1332,6 +1451,10 @@ class ShipScript {
 		msg << ship.MaxSupply;
 		msg << ship.Shield;
 		msg << ship.MaxShield;
+		msg << ship.FTL;
+		msg << ship.MaxFTL;
+		msg << ship.Crystals;
+		msg << ship.MaxCrystals;
 		msg.writeBit(ship.isFTLing);
 		msg.writeBit(ship.inCombat);
 		if(ship.hasAbilities)
@@ -1431,6 +1554,14 @@ class ShipScript {
 			msg.writeBit(ship.Supply > 0);
 			if(ship.Supply > 0)
 				msg << ship.Supply;
+
+			msg.writeBit(ship.FTL > 0);
+			if(ship.FTL > 0)
+				msg << ship.FTL;
+
+			msg.writeBit(ship.Crystals > 0);
+			if(ship.Crystals > 0)
+				msg << ship.Crystals;
 			
 			msg.writeBit(ship.isFTLing);
 			msg.writeBit(ship.inCombat);

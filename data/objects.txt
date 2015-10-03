@@ -24,6 +24,10 @@ visible:
 	float MaxSupply = 0
 	float Shield = 0
 	float MaxShield = 0
+	float FTL = 0
+	float MaxFTL = 0
+	float Crystals = 0
+	float MaxCrystals = 0
 	bool isFTLing = false
 	bool isFree = false
 	quaterniond formationDest
@@ -51,6 +55,7 @@ server:
 	void makeNotFree();
 	void setHealthPct(float pct);
 	void modSupplyBonus(float amount);
+	void modCrystalBonus(float amount);
 	void modMass(float amount);
 	safe float getMass();
 	safe float getBaseMass();
