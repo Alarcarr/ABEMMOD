@@ -1,0 +1,55 @@
+	Name: Alternate Balance Expansion Mod
+	Description: <<
+		[h1]v0.4.0[/h1]
+		-New Feature Sensors Rework
+
+		-Rework Ringworlders.
+
+		- The IRC will now automatically join the #abem channel in addition to #starruler
+		 * Added a new toggleable option for the IRC:
+		 *Located under Options/Game
+		 *Is toggled on by default
+		 *When toggled on, automatically connects to the IRC whenever the game is started
+
+		[h1]v0.3.0[/h1]
+
+		Mod is now compatible with 1.0.2 version of Star Ruler
+
+		[h1]v0.2.0[/h1]
+		Version Numbers matches de GitHub proyect commit number 
+		Lot of bug fixing 
+		Reclusive Ringworlds by Darloth added. 
+		Shields can now be modified by subsystems mods .(By Darloth) 
+		Nylli can build Food and Water orbitals. 
+		Research Flagships or Support path no longer block the another non flagship/support specializations 
+		Feel free to throw suggestions into the forum.
+
+		[h1]v0.180[/h1]
+
+		The new Races are here! (They are WIP but they are playable atm)
+		Changes on research.
+		New subsystems.
+
+		[h1]v0.174[/h1]
+		Tweaks on research
+		[h1]v0.173[/h1]
+		Compatibility
+		[h1]v0.172[/h1]
+		A quick summary of what is new in 0.170:
+
+		- Multiple nebula types
+		- New weapons
+		- Derelicts and Boarding Parties (Dalo: Graphics TBA, but all functionality has been implemented.)
+		- Reworked the Black Hole system (Dalo: Again.)
+		- New hull types (Carrier, Destroyer, Hauler)
+		- New pickups for the Kyllaros
+		- Added and changed some art
+
+		Feel free to throw suggestions into the forum.
+		Note: The localization (tooltips, names, descriptions etc.) will be updated as we go. Some of it is not done yet.
+
+
+		Full patch notes in the Discussion Thread.
+
+		Special Thanks to the Star Ruler 2 developer team for their constant support with everything ranging from coding advice, bug fixes and new hooks to even the mod's logo - thanks for that one, Firgof!!
+	>>
