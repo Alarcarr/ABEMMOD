@@ -18,13 +18,23 @@ TT_SHIP_FTL_2: <<
 
 	[b]FTL Crystal Resupply[/b] [offset=230]$5/sec[/offset]
 >>
-SHIP_ENERGY: Energy
+SHIP_ENERGY: Power
 TT_SHIP_ENERGY: <<
-	[font=Medium]Energy[/font]
-	Ships use energy to use certain equipment, including most weapons and shields. If insufficient energy is available, that equipment may become less effective or cease to function altogether.
+	[font=Medium]Power[/font]
+	Ships use power to use certain equipment, including most weapons and shields. If insufficient power is available, that equipment may become less effective or cease to function altogether.
 
-	[b]Current Energy[/b] [offset=230]$1[/offset]
-	[b]Energy Storage[/b] [offset=230]$2[/offset]
+	[b]Current Power[/b] [offset=230]$1[/offset]
+	[b]Power Storage[/b] [offset=230]$2[/offset]
 
-	[b]Energy Regeneration[/b] [offset=230]$3/sec[/offset]
+	[b]Power Regeneration[/b] [offset=230]$3/sec[/offset]
+>>
+GTT_FTL: <<
+	[font=Medium]FTL Crystals[/font]
+	[i]FTL Crystals are used to generate FTL energy on ships, allowing them to engage their faster-than-light drives. Over time, the crystals decay and must be periodically replaced.
+
+	FTL Jammers, Fling Beacons and Gates consume FTL Crystals directly from the imperial reserve, but ships equipped with Hyperdrives or Slipstream Generators must return to an owned star system to replenish their stash, or be resupplied by a Support Station or Supply Depot.[/i]
+
+	Available Crystals: [right]$1[/right]
+	Maximum Storage: [right]$2[/right]
+	Harvesting Rate: [right]$3[/right]
 >>

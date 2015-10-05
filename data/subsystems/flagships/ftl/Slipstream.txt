@@ -1,6 +1,6 @@
 Subsystem: Slipstream
-	Name: Slipstream Generator
-	Description: Grants the ability to generate slipstream portals.
+	Name: #S_SLIPSTREAM
+	Description: #S_SLIPSTREAM_DESC
 	BaseColor: #67a7ad
 	TypeColor: #67a7ad
 	Picture: SubsystemButtonArt::10

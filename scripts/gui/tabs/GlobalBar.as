@@ -194,7 +194,7 @@ class FTLResource : ResourceDisplay {
 		super(parent, align);
 
 		color = colors::FTLResource;
-		addIcon(icons::FTL);
+		addIcon(Sprite(spritesheet::ResourceIcons, 22));
 		addTexts();
 	}
 

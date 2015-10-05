@@ -5,6 +5,26 @@ ORB_SHIPYARD_DESC: <<
 
 	Gains Labor from Metallurgy research at a 75% reduced rate.
 >>
+ORB_SUPPLY_DEPOT_DESC: <<|
+	Infrastructure specially set up to resupply fleets at an accelerated rate.
+
+	All fleets in the system the Supply Depot is in resupply much faster. FTL Crystal resupply is equally bolstered.
+>>
+STATUS_FAST_RESUPPLY_DESC: <<|
+	Is receiving supplies from a Supply Depot in the system. Regenerating
+	supplies and FTL Crystals at a significantly increased rate while not in combat.
+>>
+ORB_FTL_STORAGE_DESC: <<
+	Stores 300 FTL Crystals.
+>>
+ORB_FTL_JAMMER_DESC: <<|
+	An array of precise hyperfield excitors calibrated to specific frequencies
+	can block the use of particular makes of FTL drive.
+
+	Empires you are at war with cannot use their FTL inside this system.
+
+	[b][color=#00c0ff]Costs 0.15 FTL Crystals per second to maintain.[/color][/b]
+>>
 ORB_SHIELD_CHARGER: Power Transmitter
 ORB_SHIELD_CHARGER_BLURB: Recharges the shields of allied flagships in the system.
 ORB_SHIELD_CHARGER_DESC: <<

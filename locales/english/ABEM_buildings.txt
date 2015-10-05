@@ -8,11 +8,24 @@ F_INTEL_DESC: <<
 
 	Generates intelligence cards against empires adjacent to this system every 2 minutes.
 >>
+BLD_FTLSTORE_DESC: <<
+	A large storage chamber built inside a subspace isolation field to store FTL crystals.
+	
+	Stores 250 FTL Crystals.
+	Storage doubled when placed on a planet with native FTL crystals.
+>>
 F_POWERPLANT_NAME: Power Plant
 F_POWERPLANT_DESC: <<
 	[color=#aaa][i]A massive power plant dedicated to the production of large amounts of clean energy.[/i][/color]
 
 	Provides Energy generation equivalent to 10 pressure.
+>>
+BLD_FTLBREEDER_DESC: <<
+	A large reactor that uses FTL energy to excite and extract more FTL energy from the hyperfield, followed by infusing drained FTL crystals with that energy. Unfortunately, the reactor gives off radiation deadly to all organic life in the process.
+
+	[b]Can only be constructed by Mechanoid races.[/b]
+
+	[b][color=#ff8080]When completed, 1B mechanoid population will be expended to be integrated into the massive facility.[/color][/b]
 >>
 F_SENATE_NAME: Government Center
 F_SENATE_DESC: <<

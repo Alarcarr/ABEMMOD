@@ -13,6 +13,14 @@ ABL_ENGI_SENSOR: Install Sensor Array
 ABL_BUILD_SUPPLYDEPOT: Construct Supply Depot
 ABL_SCUTTLEDERELICT: Scuttle Derelict Ship
 ABL_RECALL: Recall
+ABL_SUPPORT_BEAM_DESC: <<
+	Target the station's support beam on a particular fleet.
+
+	Support beams repair the flagship of the fleet they're targeting by 1% of its hp per second, resupply the flagship by 1% of its total supply/FTL Crystal capacities per second, even in combat, and improve the fleet's strength by 20% while active.
+>>
+ABL_GATE_UNPACK_DESC: <<
+	Unpack the gate at the targeted location. The gate will move there using its maneuvering thrusters, then unpack and reactivate itself. Activating a gate has a single-time FTL Crystal cost.
+>>
 ABL_OVERCHARGE_FLEET_DESC: <<
 	Increase the targeted fleet's effectiveness by 40%.
 
@@ -63,7 +71,7 @@ ABL_INFILTRATE_DESC: <<
 ABL_GDF_DESC: <<
 	Orders a flagship to overcharge its primary reactors. Boosts the damage output of the fleet, but the flagship is destroyed in a catastrophic overload.
 
-	Effectiveness boost starts at 10%, increasing by 5% every 5 seconds until the ship explodes 60 seconds after activation. Explosion deals damage equivalent to the square root of 5*Power to all targets within a radius of the square root of 2*Power units. Cannot be used on a fleet that is under the effects of - or recovering from - Rally Cry.
+	Effectiveness boost starts at 10%, increasing by 5% every 5 seconds until the ship explodes 60 seconds after activation. Explosion deals damage equivalent to the square root of 5*ReactorPower to all targets within a radius of the square root of 2*ReactorPower units. Cannot be used on a fleet that is under the effects of - or recovering from - Rally Cry.
 >>
 ABL_LW_DESC: <<
 	Orders a fleet to redouble its efforts to defeat an enemy. The additional effort is a significant strain on the fleet's personnel and equipment, however, and they will need to recuperate before they can fight again.
@@ -96,7 +104,7 @@ ABL_TURRET_MISSILE_DESC: <<
 	Shares a cooldown with other turret construction.
 >>
 ABL_BUILD_OUTPOST_DESC: <<
-	Uses a moderate amount of energy to immediately fabricate an outpost at a target location.
+	Uses a moderate amount of the empire's energy to immediately fabricate an outpost at a target location.
 
 	Preparing the components required for the project costs §300k. Evangelical races construct a Star Temple instead.
 >>
@@ -128,19 +136,19 @@ ABL_HULLHEAL: Nano-Repair
 ABL_HULLHEAL_DESC: <<
 	Emits a stream of repair nanites towards an allied fleet, repairing their ships.
 	
-	Heals the target fleet, spreading the repairs evenly across the entire fleet. Drains 2 Supply for each HP of healing. If inactive, will automatically target the strongest allied fleet currently in combat, then shut down after combat has ceased.
+	Heals the target fleet, spreading the repairs evenly across the entire fleet. Drains 2 Power for each HP of healing. If inactive, will automatically target the strongest allied fleet currently in combat, then shut down after combat has ceased.
 >>
 ABL_SHIELDHEAL: Regenerate Shields
 ABL_SHIELDHEAL_DESC: <<
 	Transmits a stream of energy towards an allied fleet, which is channeled into the fleet's shield generators, effectively regenerating their shields.
 	
-	Heals the target fleet's shields, spreading the regeneration evenly across all shield-capable ships. Drains 2 Supply for each HP of regeneration. If inactive, will automatically target the strongest allied fleet currently in combat, then shut down after combat has ceased.
+	Heals the target fleet's shields, spreading the regeneration evenly across all shield-capable ships. Drains 2 Power for each HP of regeneration. If inactive, will automatically target the strongest allied fleet currently in combat, then shut down after combat has ceased.
 >>
 ABL_SUPPLYTRANSFER: Transfer Energy
 ABL_SUPPLYTRANSFER_DESC: <<
 	Transmits a stream of energy towards an allied fleet, which is stored in the target fleet's batteries.
 	
-	Transfers Supply to the target fleet.
+	Transfers Supply and Power to the target fleet.
 >>
 ABL_SHIELDTRANSFER: Transfer Shields
 ABL_SHIELDTRANSFER_DESC: <<
@@ -215,9 +223,9 @@ ABL_GUARDIAN_BUILD: Commence Guardian Construction
 ABL_GUARDIAN_BUILD_DESC: <<
 	Uses the ancient blueprints stored in the facility's databanks to construct the components for a powerful Remnant Guardian. This construction project will take a substantial amount of time and resources, and we will not be able to use the facility for any other purpose.
 
-	Building a Guardian takes a minimum of 15 minutes, during which the Guardian Facility will no longer be able to use or store Labor, stop generating Research, and consume 10 Energy per second, 2.5 FTL per second, and incur a maintenance of §2M per budget cycle.
+	Building a Guardian takes a minimum of 15 minutes, during which the Guardian Facility will no longer be able to use or store Labor, stop generating Research, and consume 10 Energy per second, 2.5 FTL Crystals per second, and incur a maintenance of §2M per budget cycle.
 
-	Once ready, the Guardian's construction will require a bulk payment of 2000 Energy, 1000 FTL and §5M to finalize.
+	Once ready, the Guardian's construction will require a bulk payment of 2000 Energy, 1000 FTL Crystals and §5M to finalize.
 
 	[b][color=#f00]WARNING: Losing the Guardian Facility for any reason while construction is in progress will cancel the project without refunding any spent resources! Aside from this, there is no way of canceling construction of a Guardian, so be absolutely certain you want to do it!
 

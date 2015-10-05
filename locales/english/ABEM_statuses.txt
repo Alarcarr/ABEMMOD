@@ -1,4 +1,4 @@
-STATUS_LASERTURRET: Laser Turret
+﻿STATUS_LASERTURRET: Laser Turret
 STATUS_RAILGUNTURRET: Railgun Turret
 STATUS_MISSILETURRET: Missile Turret
 STATUS_MANEUVERINGTHRUSTERS: Maneuvering Thrusters
@@ -20,6 +20,11 @@ STATUS_MEL: Mask Energy Levels
 STATUS_LW: Rally Cry
 STATUS_EXHAUSTED: Exhausted
 STATUS_STELLAR_SHIELD: Shielded
+STATUS_SUPPORTED_DESC: <<
+	This fleet is being empowered by a support beam.
+
+	Support beams repair the flagship of the fleet they're targeting by 1% of its hp per second, resupply the flagship by 1% of its total supply/FTL Crystal capacities per second, even in combat, and improve the fleet's strength by 20% while active.
+>>
 STATUS_POWER_CELL_DESC: <<
 	Upgraded in an ancient shipyard.
 

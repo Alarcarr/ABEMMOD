@@ -120,7 +120,9 @@ S_COVARIANT_SHIELD: Covariant Shield Generator
 S_REMNANTSHIELD: Progenitor Shield Generator
 SHIELDGEN_NAME: Shield Generator
 S_HYPERDRIVE: Hyperdrive
-S_HYPERDRIVE_DESC: Allows for hyperdrive navigation. The larger the hyperdrive the faster the FTL speed.
+S_HYPERDRIVE_DESC: Allows for hyperdrive navigation. The larger the hyperdrive the faster the FTL speed. Requires FTL Energy to operate.
+S_SLIPSTREAM: Slipstream Generator
+S_SLIPSTREAM_DESC: Grants the ability to generate slipstream portals. Requires FTL Energy to operate.
 S_FLAK: Flak Cannon
 S_HEAVYRAIL: Heavy Railgun
 S_MATTERDISRUPTOR: Matter Disruptor
@@ -322,14 +324,14 @@ S_FTLJAMMER_DESC: <<
 	[img=Plus]Jams all enemy FTL in its star system.[/img]
 	[img=Minus]Requires a high amount of power and Control.[/img]
 	[img=Minus]Making it bigger than is absolutely necessary does nothing but use up space.[/img]
-	[img=Minus]Costs 0.25 FTL per second.[/img]
+	[img=Minus]Consumes 0.25 FTL Crystals per second.[/img]
 >>
 S_FLING_DESC: <<
 	A compact fling accelerator is fitted to the station's hull, allowing fling-based FTL near it.
 	
 	[img=Plus]Ships and stations within 10 thousand units of the station can be FTLed to anywhere in the galaxy.[/img]
 	[img=Plus]Takes 25 seconds to reach any destination, no matter what the distance is.[/img]
-	[img=Plus]FTL cost is determined solely by the size of the fleet being flinged.[/img]
+	[img=Plus]FTL Crystal cost is determined solely by the size of the fleet being flinged.[/img]
 	[img=Plus]Can be flinged by other beacons and defend itself from attackers, unlike a standard fling beacon.[/img]
 	[img=Minus]Without a Hyperdrive or Slipstream Generator, at least one flagship/station must remain at the target location or use sublight propulsion for the return trip.[/img]
 	[img=MenuIcons::3;20]Only the core is required for the subsystem to operate. Additional hexes provide no benefits whatsoever.[/img]
@@ -339,8 +341,16 @@ S_GATE_CORE_DESC: <<
 	
 	[img=Plus]Allows instantaneous travel to any other gate, provided the traveler has at least a small sublight engine.[/img]
 	[img=Plus]Can be flinged by fling beacons and defend itself from attackers unlike a standard gate.[/img]
-	[img=Plus][img=Minus]No spike FTL cost. Instead, costs 0.15 FTL per second to maintain.[/img][/img]
+	[img=Plus][img=Minus]No spike FTL cost. Instead, costs 0.15 FTL Crystals per second to maintain.[/img][/img]
 	[img=MenuIcons::3;20]Only the core is required for the subsystem to operate. Additional hexes provide no benefits whatsoever.[/img]
+>>
+S_GATE_MODULE_DESC: <<
+	An FTL gate module that can be added to a station.
+
+	[img=Plus]Allows ships to move from any gate to any other gate.[/img]
+	[img=Plus]Can be packed up and moved, then unpacked at a new location.[/img]
+	[img=Minus]Must cover at least a third of the entire station.[/img]
+	[img=ResourceIcons::22;20]Requires 0.15 FTL Crystals per second. Gates get disabled when you run out of FTL Crystals.[/img]
 >>
 S_CRYSTAL_ARMOR_DESC: <<
 	A resilient crystalline lattice capable of absorbing energy from attacks and channeling it into a ship's shields.

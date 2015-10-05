@@ -1,7 +1,7 @@
 ﻿R_DEV_FTL_INCOME_DESC: <<
-	[i][color=#aaa]Better control over the collection and refinement of FTL energy.[/color][/i]
+	[i][color=#aaa]Better control over the collection and refinement of FTL crystals.[/color][/i]
 
-	Increases empire FTL income by 0.5/s.
+	Increases empire FTL Crystal income by 0.5/s.
 
 	[color=#42b4bd][b]Alternate Unlock:[/b] Spend 800 energy.[/color]
 >>
@@ -20,9 +20,9 @@ R_DEV_PLANET_DESC: <<
 	[color=#d1cb6a][b]Alternate Unlock:[/b] Spend §500k.[/color]
 >>
 R_DEV_FTL_DESC: <<
-	[i][color=#aaa]New technologies to store and transport FTL energy.[/color][/i]
+	[i][color=#aaa]New technologies to store and transport FTL crystals.[/color][/i]
 
-	When unlocked, immediately increases your stored FTL and FTL storage capacity by $1.
+	When unlocked, immediately increases your stored FTL Crystals and FTL Crystal storage capacity by $1.
 
 	[color=#d1cb6a][b]Alternate Unlock:[/b] Spend §800k.[/color]
 >>
@@ -296,7 +296,7 @@ R_SYS_HYPERDRIVE_DESC: <<
 
 	Unlocks the Hyperdrive subsystem for use on flagships if it is not already available.
 
-	[i]Allows for hyperspace navigation. The larger the hyperdrive the faster the FTL speed.[/i]
+	[i][bbloc=#S_HYPERDRIVE_DESC/][/i]
 >>
 
 R_IMP_POP_LVL1PLANET: Soil Improvement

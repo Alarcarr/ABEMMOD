@@ -103,11 +103,11 @@ SULPHATE_DESC: <<
 	[i][color=#aaa]This resource is a scalable resource and cannot be exported or used to level up. Its bonuses depend on the level of the planet.[/color][/i]
 >>
 FTL_CRYSTALS_BLURB: <<
-	Generates [levels=$1;#00c0ff]0.1/0.5/1/2/3/8/20[/levels] [img=ResourceIcon::3;20/] FTL/s.
+	Produces [levels=$1;#00c0ff]0.1/0.5/1/2/3/8/20[/levels] [img=ResourceIcon::3;20/] FTL/s.
 	Gives special effects at [b]levels 4 and 5[/b].
 >>
 FTL_CRYSTALS_DESC: <<
-	Generates [levels=$1;#00c0ff]0.1/0.5/1/2/3/8/20[/levels] [img=ResourceIcon::3;20/] FTL per second.
+	Produces [levels=$1;#00c0ff]0.1/0.5/1/2/3/8/20[/levels] [img=ResourceIcon::3;20/] FTL Crystals per second.
 
 	[b]If this planet is Level 4 or higher:[/b]
 	[offset=30]Grants vision over all fleets currently in FTL anywhere.[/offset]
@@ -161,6 +161,11 @@ RINGWORLD_DESC: <<
 	For each resource type, if the ringworld is receiving any pressure at all for that resource, it gains [levels=$1;#ffb4b6]2/4/6/8/10/12/14[/levels] extra pressure of that resource.
 
 	[img=ResourceIconsSmall::11;22;#91692c][b][color=#91692c]Requires extremely large amounts of Ore mined from asteroids.[/color][/b][/img]
+>>
+ASTEROID_FTL_DESC: <<|
+	Produces 0.5 FTL Crystals per second while active. Adds 50 FTL storage to the empire while owned.
+	
+	Does not need to be exported.
 >>
 PARADISE_NAME: Tropical Paradise
 RESOURCE_INTEL: Intelligence Hub

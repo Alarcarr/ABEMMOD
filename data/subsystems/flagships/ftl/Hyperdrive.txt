@@ -1,6 +1,6 @@
 Subsystem: Hyperdrive
-	Name: Hyperdrive
-	Description: Allows for hyperdrive navigation. The larger the hyperdrive the faster the FTL speed.
+	Name: #S_HYPERDRIVE
+	Description: #S_HYPERDRIVE_DESC
 	BaseColor: #a767ad
 	TypeColor: #a767ad
 	Picture: SubsystemButtonArt::10
