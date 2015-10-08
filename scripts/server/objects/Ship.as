@@ -767,12 +767,17 @@ class ShipScript {
 		return false;
 	}
 
-	bool consumeEnergy(Ship& ship, double amount) {
+	bool consumeMinEnergy(Ship& ship, double amount) {
 		if(ship.Energy < amount)
 			return false;
 		ship.Energy -= amount;
 		barDelta = true;
 		return true;
+	}
+
+	void consumeEnergy(Ship& ship, double amount) {
+		ship.Energy = max(0.0, ship.Energy - amount);
+		barDelta = true;
 	}
 	
 	bool consumeMinSupply(Ship& ship, double amount) {
@@ -784,6 +789,22 @@ class ShipScript {
 		else {
 			return false;
 		}
+	}
+
+	bool consumeMinFTL(Ship& ship, double amount) {
+		if(ship.FTL >= amount) {
+			ship.FTL = max(0.0, ship.FTL - amount);
+			barDelta = true;
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+	void consumeFTL(Ship& ship, double amount) {
+		ship.FTL = max(0.0, ship.FTL - amount);
+		barDelta = true;
 	}
 
 	void consumeSupply(Ship& ship, double amount) {
@@ -818,6 +839,18 @@ class ShipScript {
 
 	void refundSupply(Ship& ship, double amount) {
 		ship.Supply = min(ship.MaxSupply, ship.Supply + amount);
+		barDelta = true;
+	}
+
+	void refundFTL(Ship& ship, double amount) {
+		double refund = ship.FTL + amount;
+		double crystalRefund = 0;
+		if(refund > ship.MaxFTL) {
+			crystalRefund = ship.MaxFTL - refund;
+			refund = ship.MaxFTL - ship.FTL;
+			ship.Crystals = min(ship.MaxCrystals, ship.Crystals + crystalRefund);
+		}
+		ship.FTL += refund;
 		barDelta = true;
 	}
 
@@ -1199,6 +1232,7 @@ class ShipScript {
 				amt += emergencyFTLRegen * (1 - ratio); // The percentage of missing crystals is also the percentage of emergency regeneration used.
 			}
 			ship.FTL += amt;
+			ship.Crystals -= consumed;
 			barDelta = true;
 		}
 		if(ship.Energy < ship.MaxEnergy) {

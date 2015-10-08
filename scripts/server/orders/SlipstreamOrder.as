@@ -61,18 +61,23 @@ class SlipstreamOrder : Order {
 		if(charge >= SLIPSTREAM_CHARGE_TIME || charge < 0.0)
 			return false;
 
-		//Refund a part of the ftl cost
-		if(cost > 0) {
+		//Mark ship as no longer FTLing, refund a part of the FTL cost
+		Ship@ ship = cast<Ship>(obj);
+		if(ship !is null) {
+			ship.isFTLing = false;
+			if(cost > 0) {
+				double pct = 1.0 - min(charge / SLIPSTREAM_CHARGE_TIME, 1.0);
+				double refund = cost * pct;
+				ship.refundFTL(refund);
+				cost = 0;
+			}
+		}
+		else if(cost > 0) {
 			double pct = 1.0 - min(charge / SLIPSTREAM_CHARGE_TIME, 1.0);
 			double refund = cost * pct;
 			obj.owner.modFTLStored(refund);
 			cost = 0;
 		}
-
-		//Mark ship as no longer FTLing
-		Ship@ ship = cast<Ship>(obj);
-		if(ship !is null)
-			ship.isFTLing = false;
 		return true;
 	}
 
@@ -111,8 +116,7 @@ class SlipstreamOrder : Order {
 			cost = slipstreamCost(obj, scale, dist);
 
 			if(cost > 0) {
-				double consumed = obj.owner.consumeFTL(cost, false);
-				if(consumed < cost)
+				if(!ship.consumeMinFTL(cost))
 					return OS_COMPLETED;
 			}
 			charge = 0.001;

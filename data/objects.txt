@@ -45,11 +45,14 @@ remote restricted:
 
 server:
 	async void retrofit(const Design@ toDesign);
-	bool consumeEnergy(double amount);
+	bool consumeMinEnergy(double amount);
 	void refundEnergy(double amount);
+	void refundFTL(double amount);
 	void consumeSupply(double amount);
+	void consumeEnergy(double amount);
 	void consumeSupplyPct(double pct);
 	bool consumeMinSupply(double amount);
+	bool consumeMinFTL(double amount);
 	void refundSupply(double amount);
 	void repairShip(double amount);
 	void makeNotFree();

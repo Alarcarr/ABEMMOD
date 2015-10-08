@@ -3,8 +3,8 @@ from regions.regions import getRegion;
 #section all
 import orbitals;
 
-const double HYPERDRIVE_COST = 0.08;
-const double HYPERDRIVE_START_COST = 25.0;
+const double HYPERDRIVE_COST = 0.8;
+const double HYPERDRIVE_START_COST = 250.0;
 const double HYPERDRIVE_CHARGE_TIME = 15.0;
 
 bool canHyperdrive(Object& obj) {

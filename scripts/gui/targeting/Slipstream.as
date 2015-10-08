@@ -24,7 +24,10 @@ class SlipstreamTarget : PointTarget {
 	bool hover(const vec2i& mpos) override {
 		PointTarget::hover(mpos);
 		cost = slipstreamCost(obj, scale, distance);
-		range = slipstreamRange(obj, scale, playerEmpire.FTLStored);
+		if(obj.isShip)
+			range = slipstreamRange(obj, scale, cast<Ship>(obj).FTL);
+		else
+			range = slipstreamRange(obj, scale, playerEmpire.FTLStored);
 		return canSlipstreamTo(obj, hovered) && (distance <= range || shiftKey);
 	}
 
