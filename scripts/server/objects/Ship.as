@@ -1089,7 +1089,7 @@ class ShipScript {
 					float chargeRate = ship.blueprint.getEfficiencySum(SV_CrystalRate);
 					float amt = chargeRate * time;
 
-					if(isContested || reg is null || reg.PlanetsMask & ship.owner.mask != 0) {
+					if(isContested || reg is null || reg.PlanetsMask & ship.owner.mask == 0) {
 						amt = 0.f;
 					}
 
