@@ -38,3 +38,4 @@ GTT_FTL: <<
 	Maximum Storage: [right]$2[/right]
 	Harvesting Rate: [right]$3[/right]
 >>
+RESOURCE_FTL: FTL Crystals
