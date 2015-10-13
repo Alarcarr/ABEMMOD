@@ -9,7 +9,7 @@ Subsystem: AntimatterGen
 
 	Size := HexSize * Hexes
 	Power := 100 * Size
-	EnergyCapacity := Size * 500
+	EnergyCapacity := Power * 5
 	SupplyCapacity := Size * 1200
 	SupplyRate := Size * 125
 
