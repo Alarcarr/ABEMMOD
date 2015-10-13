@@ -13,7 +13,10 @@ Effector: RailgunBattery
 	Value: SupplyCost = 0
 	Value: IgnoreDR = 0
 	Value: Impulse = 0
-
+	Value: EnergyCost = 0
+	Value: ResourceResponse = 1
+	
+	
 	Range: Range
 	Speed: Speed
 	Tracking: Tracking

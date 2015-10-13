@@ -12,7 +12,10 @@ Effector: Flak
 	Value: Pierce = 0.5
 	Value: SupplyCost = 0
 	Value: Radius
-
+	Value: EnergyCost = 0
+	Value: ResourceResponse = 1
+	
+	
 	Range: Range
 	Speed: Speed
 	Tracking: Tracking
