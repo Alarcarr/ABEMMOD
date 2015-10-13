@@ -35,7 +35,6 @@ Subsystem: MatterDisruptor
 
 	Requires:
 		Command = 1
-		Power = PowerUse
 
 	Module: Default
 
@@ -62,6 +61,7 @@ Subsystem: MatterDisruptor
 		TargetTolerance = max(pi,FireArc + pi/4)
 		FireTolerance = Spread * 3
 		SupplyCost = SupplyCost * Reload
+		EnergyCost = PowerUse * Reload
 		CapOnTarget = 24
 		SizeMultiplier = SizeMultiplier
 		AmountPerSize = AmountPerSize

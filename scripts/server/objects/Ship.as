@@ -63,6 +63,7 @@ class ShipScript {
 	float timer = 0.f, bpTimer = 0.f;
 	float supplyBonus = 0.f;
 	float crystalBonus = 0.f;
+	float ftlUse = 0.f;
 	int disableRegionVision = 0;
 	int holdFire = 0;
 	float movementAccel = 0;
@@ -161,6 +162,8 @@ class ShipScript {
 		file << ship.MaxFTL;
 		file << ship.Crystals;
 		file << ship.MaxCrystals;
+		file << crystalBonus;
+		file << ftlUse;
 	}
 	
 	void load(Ship& ship, SaveFile& file) {
@@ -258,6 +261,8 @@ class ShipScript {
 		file >> ship.MaxFTL;
 		file >> ship.Crystals;
 		file >> ship.MaxCrystals;
+		file >> crystalBonus;
+		file >> ftlUse;
 
 		getDesignMesh(ship.blueprint.design, shipMesh);
 		bindMesh(ship, shipMesh);
@@ -491,6 +496,10 @@ class ShipScript {
 			ship.MaxCrystals = ship.blueprint.design.total(SV_CrystalCapacity) + crystalBonus;
 		if(ship.MaxCrystals > 0 && amount < 0)
 			ship.Crystals += (ship.Crystals / ship.MaxCrystals) * amount;
+	}
+	
+	void modFTLUse(Ship& ship, float amount) {
+		ftlUse += amount;
 	}
 
 	void updateAccel(Ship& ship) {
@@ -831,6 +840,16 @@ class ShipScript {
 		ship.Supply = max(0.0, ship.Supply - pct * ship.MaxSupply);
 		barDelta = true;
 	}
+	
+	void consumeEnergyPct(Ship& ship, double pct) {
+		ship.Energy = max(0.0, ship.Energy - pct * ship.MaxEnergy);
+		barDelta = true;
+	}
+	
+	void consumeCrystalPct(Ship& ship, double pct) {
+		ship.Crystals = max(0.0, ship.Crystals - pct * ship.MaxCrystals);
+		barDelta = true;
+	}
 
 	void refundEnergy(Ship& ship, double amount) {
 		ship.Energy = min(ship.MaxEnergy, ship.Energy + amount);
@@ -846,11 +865,11 @@ class ShipScript {
 		double refund = ship.FTL + amount;
 		double crystalRefund = 0;
 		if(refund > ship.MaxFTL) {
-			crystalRefund = ship.MaxFTL - refund;
+			crystalRefund = (refund - ship.MaxFTL) * (ftlRegen / crystalConsumption);
 			refund = ship.MaxFTL - ship.FTL;
 			ship.Crystals = min(ship.MaxCrystals, ship.Crystals + crystalRefund);
 		}
-		ship.FTL += refund;
+		ship.FTL = refund;
 		barDelta = true;
 	}
 
@@ -1232,6 +1251,7 @@ class ShipScript {
 				consumed = ship.Crystals;
 				amt += emergencyFTLRegen * (1 - ratio); // The percentage of missing crystals is also the percentage of emergency regeneration used.
 			}
+			amt -= ftlUse;
 			ship.FTL += amt;
 			ship.Crystals -= consumed;
 			barDelta = true;
