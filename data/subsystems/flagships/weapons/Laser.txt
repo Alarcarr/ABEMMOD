@@ -17,18 +17,15 @@ Subsystem: Laser
 	Cooldown := 6 * (1.0 + Size/512)
 	Range := Size + 450
 	Tracking := 0.5
-	SupplyCost := Size * 0.75
+	SupplyCost := Size * 0.2
 	FireArc := 0.25 * pi
 	PowerUse := 3 * Size
-	EnergyCost = PowerUse * Duration
-	EnergyCostS = EnergyCost/(Duration+Cooldown)
 	Hex.HP := 12 * HexSize
 	Hex.Resistance := 0.2
 	Hex.Mass := HexSize
 	
 	Requires:
 		Command = 1
-		
 
 	Module: Default
 
@@ -47,10 +44,10 @@ Subsystem: Laser
 	Effector: Laser
 		Range = Range
 		DPS = BeamDPS
-		SupplyCost = SupplyCost * Reload
-		EnergyCost = EnergyCost
+		EnergyCost = PowerUse * Duration
 		Duration = Duration
 		Cooldown = Cooldown
 		Tracking = Tracking
 		SupplyCost = SupplyCost * Duration
+		ResourceResponse = 2
 		FireArc = FireArc

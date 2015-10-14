@@ -17,9 +17,9 @@ Subsystem: VoidRay
 	Cooldown := 6 * (1.0 + Size/512)
 	Range := Size + 450
 	Tracking := 0.5
-	SupplyCost := Size * 0.75
+	SupplyCost := Size * 0.2
 	FireArc := 0.25 * pi
-	PowerUse := 5 * Size
+	PowerUse := 3 * Size
 	Multiplier := 0.05
 	Amount := 0
 	StatusIncrement := 1
@@ -35,7 +35,6 @@ Subsystem: VoidRay
 
 	Requires:
 		Command = 1
-		Power = PowerUse
 
 	Module: Default
 
@@ -63,4 +62,6 @@ Subsystem: VoidRay
 		StatusIncrement = StatusIncrement
 		DamageType = DamageType
 		SupplyCost = SupplyCost * Duration
+		EnergyCost = PowerUse * Duration
+		ResourceResponse = 2
 		FireArc = FireArc

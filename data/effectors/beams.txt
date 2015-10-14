@@ -7,7 +7,7 @@ Effector: Laser
 	Value: SupplyCost = 0
 	Value: FireArc = pi
 	Value: EnergyCost = 0
-	Value: ResourceResponse = 2
+	Value: ResourceResponse = 1
 	
 	Range: Range
 	Lifetime: Duration
