@@ -13,6 +13,7 @@ Effector: VoidRay
 	Value: DamageType
 	Value: EnergyCost = 0
 	Value: ResourceResponse = 1
+
 	Range: Range
 	Lifetime: Duration
 	Tracking: Tracking

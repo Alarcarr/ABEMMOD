@@ -5,6 +5,8 @@
 	Value: Cooldown
 	Value: Tracking
 	Value: SupplyCost = 0
+	Value: EnergyCost = 0
+	Value: ResourceResponse = 1
 
 	Range: Range
 	Lifetime: Duration
@@ -16,7 +18,7 @@
 
 	EfficiencyMode: Duration Partial
 	Activation: VariableTimed(Cooldown+Duration, 0.25)
-	OnTrigger: combat::WeaponFire(SupplyCost)
+	OnTrigger: ABEMEffects::ABEMWeaponFire(SupplyCost, EnergyCost, ResourceResponse)
 
 	PhysicalType: Beam
 	GfxSize: 0.4
@@ -144,6 +146,8 @@ Effector: WaveBeam
 	Value: Cooldown
 	Value: Tracking
 	Value: SupplyCost = 0
+	Value: EnergyCost = 0
+	Value: ResourceResponse = 1
 
 	Range: Range
 	Lifetime: Duration
@@ -155,7 +159,7 @@ Effector: WaveBeam
 
 	EfficiencyMode: Duration Partial
 	Activation: VariableTimed(Cooldown+Duration, 0.25)
-	OnTrigger: combat::WeaponFire(SupplyCost)
+	OnTrigger: ABEMEffects::ABEMWeaponFire(SupplyCost, EnergyCost, ResourceResponse)
 
 	PhysicalType: Beam
 	GfxSize: 0.9

@@ -5,6 +5,8 @@ Effector: SuperLaser
 	Value: Cooldown
 	Value: Tracking
 	Value: SupplyCost = 0
+	Value: EnergyCost = 0
+	Value: ResourceResponse = 1
 	Value: FireArc = pi
 
 	Range: Range

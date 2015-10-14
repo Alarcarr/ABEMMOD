@@ -11,6 +11,8 @@ Effector: Railgun
 	Value: FireTolerance = 0
 	Value: Pierce = 0.5
 	Value: SupplyCost = 0
+	Value: EnergyCost = 0
+	Value: ResourceResponse = 1
 	Value: IgnoreDR = 0
 
 	Range: Range
@@ -29,7 +31,7 @@ Effector: Railgun
 
 	EfficiencyMode: Reload Partial
 	Activation: StaggeredTimed(Reload, 0.25)
-	OnTrigger: combat::WeaponFire(SupplyCost)
+	OnTrigger: ABEMEffects::ABEMWeaponFire(SupplyCost, EnergyCost, ResourceResponse)
 
 	Effect: ProjDamage
 		Amount = Damage
