@@ -8,7 +8,7 @@ Subsystem: FissionGen
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes
-	Power := 10 * Size
+	Power :=2*Size
 	EnergyCapacity := Power * 5
 	SupplyCapacity := Size * 1000
 	SupplyRate := Size * 40
