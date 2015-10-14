@@ -4,7 +4,7 @@ Subsystem:	Battery
 	BaseColor: #5ade8b
 	Elevation: 1
 
-	Tags: Category:Power 
+	Tags: Category:Power ,NonContiguous,NoCore
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes
@@ -20,9 +20,6 @@ Subsystem:	Battery
 
 	
 
-	Module: Core
-		Sprite: Battery
-
 	Module: Default
-
+		Sprite: Battery
 	
