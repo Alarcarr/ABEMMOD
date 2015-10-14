@@ -21,7 +21,7 @@ Subsystem:	Battery
 	
 
 	Module: Core
-		Sprite: AntimatterReactor
+		Sprite: Battery
 
 	Module: Default
 
