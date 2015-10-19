@@ -1249,7 +1249,7 @@ class ShipScript {
 				double ratio = (ship.Crystals / consumed);
 				amt *= ratio;
 				consumed = ship.Crystals;
-				amt += emergencyFTLRegen * (1 - ratio); // The percentage of missing crystals is also the percentage of emergency regeneration used.
+				amt += emergencyFTLRegen * (1 - ratio) * time; // The percentage of missing crystals is also the percentage of emergency regeneration used.
 			}
 			amt -= ftlUse;
 			ship.FTL += amt;
@@ -1257,7 +1257,7 @@ class ShipScript {
 			barDelta = true;
 		}
 		if(ship.Energy < ship.MaxEnergy) {
-			ship.Energy = min(ship.MaxEnergy, ship.Energy + energyRegen);
+			ship.Energy = min(ship.MaxEnergy, ship.Energy + energyRegen * time);
 			barDelta = true;
 		}
 
