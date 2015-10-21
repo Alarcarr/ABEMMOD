@@ -116,6 +116,7 @@ GlobalStat: CrystalCapacity
 
 		Variable: CrystalRate
 	
+	
 // *************************************
 // ******SUBSYSTEM-SPECIFIC STATS*******
 // *************************************

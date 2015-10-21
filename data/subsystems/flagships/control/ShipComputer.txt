@@ -29,14 +29,10 @@ Subsystem: ShipComputer
 
 	Hook: AddStatus(ComputerCore)
 
-	Effect: ABEMControlCore
-
-	Requires:
-		Power = PowerUse
 
 	Provides:
 		Command = Command
-
+		Power = -PowerUse
 	Module: Default
 		Sprite: HexagonSubsystems::4 * #ffa4a0
 

@@ -141,7 +141,25 @@ GlobalStat: TimetoFullPowerCapacity
 	Variable: EnergyCapacity
 	DivBy: Power
 	
-	
+GlobalStat: PowerUseSec
+		Name: Max Avg Power Use
+		Description: Power used firing all weapons
+		Secondary: Power
+		Color: #aaa
+		
+		Variable: PowerperSec
+		Suffix: /s	
+GlobalStat: PowerLifetime
+		Name: Power Lifetime
+		Description: Amount of times the batteries can hold all weapons firing without any gen.
+		Secondary: Power
+		Color: #aaa
+		
+		Variable: EnergyCapacity
+		DivBy: PowerperSec
+		Suffix: Seconds
+
+		
 GlobalStat: Control
 	Name: #S_CONTROL
 	Description: #STT_CONTROL
