@@ -15,7 +15,7 @@ Subsystem: IonEngine
 	Size := HexSize * Hexes
 	Thrust := 22 * Size
 	TurnThrust := 2.0 * Size
-	PowerUse := 1.5 * Size
+	Power:= -1 * Size
 	Hex.Mass := HexSize
 
 	Hex.Resistance := 0.2
@@ -23,8 +23,9 @@ Subsystem: IonEngine
 
 	Requires:
 		Command = 1
-		Power = PowerUse
-
+		
+	Provides:
+		Power = Power
 	Module: Default
 
 	Module: Core

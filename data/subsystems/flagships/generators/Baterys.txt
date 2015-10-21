@@ -8,7 +8,7 @@ Subsystem:	Battery
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes
-	EnergyCapacity := Size * 600
+	EnergyCapacity := Size * 1200
 		
 	Hex.Resistance := 0.5
 	Hex.HP := 18 * HexSize
