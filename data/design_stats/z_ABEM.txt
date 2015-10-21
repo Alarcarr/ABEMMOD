@@ -121,12 +121,21 @@ GlobalStat: CrystalCapacity
 // ******SUBSYSTEM-SPECIFIC STATS*******
 // *************************************
 SubsystemStat: PowerUseS
-	Name: Average Power Use
-	Description: Blablal
+	Name: Avg Power Use
+	Description: Power Used per Second .
 	Secondary: Power
 	Color: #aaa
 	Icon: ResourceIcon::2
 	Variable: PowerperSec
+	Suffix: /s	
+
+SubsystemStat: DPowerUseS
+	Name: Avg Power Use
+	Description: Power that is directly taken from the generator
+	Secondary: Power
+	Color: #aaa
+	Icon: ResourceIcon::2
+	Variable: DummyPowerperSec
 	Suffix: /s	
 	
 SubsystemStat: SPowerCapacity

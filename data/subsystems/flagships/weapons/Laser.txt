@@ -12,10 +12,10 @@ Subsystem: Laser
 	Hull: Flagship, Station
 	
 	Size := HexSize * Hexes
-	BeamDPS := 4.0 * Size
+	BeamDPS := 5.0 * Size
 	Duration := 4
 	Cooldown := 6 * (1.0 + Size/512)
-	Range := Size + 400
+	Range := Size + 700
 	Tracking := 0.5
 	SupplyCost := Size * 0.2
 	FireArc := 0.25 * pi
