@@ -25,6 +25,10 @@ Subsystem: Laser
 	Hex.Resistance := 0.2
 	Hex.Mass := HexSize
 	
+
+	PowerperSec:=(PowerUse*Duration)/(Duration+Cooldown)
+	
+	
 	Requires:
 		Command = 1
 
