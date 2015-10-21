@@ -60,13 +60,8 @@ GlobalStat: OptimumPower
 
 	UsedVariable: PowerUse
 
-GlobalStat: PowerCapacity
-	Name: #S_POWERCAPACITY
-	Description: #STT_POWERCAPACITY
-	Secondary: Power
-	Color: #aaa
 
-	Variable: EnergyCapacity
+	
 
 GlobalStat: FTLCapacity
 	Name: #S_FTLCAPACITY
@@ -124,6 +119,13 @@ GlobalStat: CrystalCapacity
 // *************************************
 // ******SUBSYSTEM-SPECIFIC STATS*******
 // *************************************
+SubsystemStat: SPowerCapacity
+	Name: #S_POWERCAPACITY
+	Description: #STT_POWERCAPACITY
+	Secondary: Power
+	Color: #aaa
+
+	Variable: EnergyCapacity
 
 SubsystemStat: ProjResist
 	Name: #S_PROJRESIST

@@ -119,7 +119,29 @@ GlobalStat: Power
 	Suffix: /s
 	Variable: Ship.Power
 	//UsedVariable: Ship.REQUIRES_Power
+//They need to be in the same file otherwise the divby its not working
 
+GlobalStat: PowerCapacity
+	Name: #S_POWERCAPACITY
+	Description: #STT_POWERCAPACITY
+	Secondary: Power
+	Color: #aaa
+
+	Variable: EnergyCapacity
+
+
+
+GlobalStat: TimetoFullPowerCapacity
+	Name: Time to Recharge
+	Description: #STT_POWERCAPACITY
+	Secondary: Power
+	Color: #aaa
+	Suffix: Seconds
+	
+	Variable: EnergyCapacity
+	DivBy: Power
+	
+	
 GlobalStat: Control
 	Name: #S_CONTROL
 	Description: #STT_CONTROL
