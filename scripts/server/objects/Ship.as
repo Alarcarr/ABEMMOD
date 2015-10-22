@@ -1233,20 +1233,37 @@ class ShipScript {
 		if(d < delay)
 			delay = d;
 		
+		double amt;
+		double consumed;
+		double ratio;
 		if(ship.Shield < ship.MaxShield) {
-			ship.Shield = min(ship.Shield + shieldRegen * time, ship.MaxShield);
+			amt = shieldRegen * time;
+			consumed = ship.blueprint.getEfficiencySum(SV_PowerUse, ST_IsShield) * time;
+			consumed *= ship.blueprint.getEfficiencyFactor(SV_PowerUse, ST_IsShield);
+			if(amt > ship.MaxShield - ship.Shield) {
+				ratio = (ship.MaxShield - ship.Shield) / amt;
+				amt *= ratio;
+				consumed *= ratio;
+			}
+			if(consumed > ship.Energy) {
+				ratio = (ship.Energy / consumed);
+				amt *= ratio;
+				consumed *= ratio;
+			}
+			ship.Shield += amt;
+			ship.Energy -= consumed;
 			shieldDelta = true;
 		}
 		if(ship.FTL < ship.MaxFTL) {
-			double amt = ftlRegen * time;
-			double consumed = crystalConsumption * time;
+			amt = ftlRegen * time;
+			consumed = crystalConsumption * time;
 			if(amt > ship.MaxFTL - ship.FTL) {
-				double ratio = (ship.MaxFTL - ship.FTL) / amt;
+				ratio = (ship.MaxFTL - ship.FTL) / amt;
 				amt *= ratio;
 				consumed *= ratio;
 			}
 			if(consumed > ship.Crystals) {
-				double ratio = (ship.Crystals / consumed);
+				ratio = (ship.Crystals / consumed);
 				amt *= ratio;
 				consumed = ship.Crystals;
 				amt += emergencyFTLRegen * (1 - ratio) * time; // The percentage of missing crystals is also the percentage of emergency regeneration used.
