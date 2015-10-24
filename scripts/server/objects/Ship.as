@@ -2,6 +2,8 @@ import resources;
 import util.target_search;
 import regions.regions;
 import saving;
+import statuses;
+from statuses import getStatusID;
 from generic_effects import RegionChangeable, LeaderChangeable;
 from influence_global import giveRandomReward, DiplomacyEdictType;
 from designs import getDesignMesh;
@@ -550,8 +552,14 @@ class ShipScript {
 			else if(ship.MaxShield > 0) {
 				ship.Shield = maxShield * (ship.Shield / ship.MaxShield);
 				ship.MaxShield = maxShield;
-				shieldRegen = ship.blueprint.getEfficiencySum(SV_ShieldRegen);
-			}
+				if (ship.hasStatusEffect(getStatusID("ShieldModAdd"))){
+		
+					shieldRegen = 2* ship.blueprint.getEfficiencySum(SV_ShieldRegen);}
+					else {
+					
+					shieldRegen = ship.blueprint.getEfficiencySum(SV_ShieldRegen);
+					}
+				}
 			else {
 				ship.MaxShield = maxShield;
 				shieldRegen = ship.blueprint.getEfficiencySum(SV_ShieldRegen);
@@ -559,6 +567,8 @@ class ShipScript {
 			shieldDelta = true;
 		}
 
+
+		
 		// Update FTL stats
 		double maxFTL = ship.blueprint.getEfficiencySum(SV_FTLCapacity);
 		if(maxFTL != ship.MaxFTL) {

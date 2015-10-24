@@ -7,6 +7,8 @@ Subsystem: EngBay
 	Tags: Ability:BuyTurretR
 	Tags: Ability:BuyTurretM
 	Tags: Ability:SpawnOutpost
+	Tags: Ability:ShieldTest
+	Tags: Ability:PowerToS
 	Hull: Flagship
 	Description: #S_ENGINEERING_BAY_DESC
 

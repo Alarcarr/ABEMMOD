@@ -1,0 +1,5 @@
+Status: ShieldModAdd
+	Icon: GDF
+	Name: Shield Mod
+	Description: ShieldMod
+	Collapses: True
