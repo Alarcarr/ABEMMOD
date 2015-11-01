@@ -1,0 +1,9 @@
+Effect: PoweredArmor
+	Value: ProjResist
+	Value: EnergyResist
+	Value: ExplResist
+	Value: Resist
+	Value: PowerUse
+	Value: MinimumPercent = 0
+
+	Damage: ABEMArmor::PoweredArmor

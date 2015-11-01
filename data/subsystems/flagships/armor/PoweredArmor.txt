@@ -23,17 +23,16 @@ Subsystem: PoweredArmor
 	DummyEnergyResist := 100 * CompEnergyResist
 	DamageResist := ShipSize / 30
 
-	PowerUse := 3*Size
-	Requires:
-		Power = PowerUse
+	PowerUse := 0.5 * HexSize
 
-	Effect: ReduceDamagePercentile
+	// This new effect drains Power when the armor is damaged.
+	// Because each hex calls the effect on its own, PowerUse should use HexSize rather than Size.
+	Effect: PoweredArmor
 		EnergyResist = CompEnergyResist
 		ProjResist = 0
 		ExplResist = 0
-	Effect: DamageResist
 		Resist = DamageResist
+		PowerUse = PowerUse
 
-		MinimumPercent = 0
 	Module: Default
 		Sprite: PoweredArmor
