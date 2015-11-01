@@ -168,6 +168,15 @@ S_MATTERDISRUPTOR: Matter Disruptor
 S_SUPERLASER: Superlaser
 S_ROCKETPOD: Rocket Pod
 S_DEFENSIVEMATRIX_NAME: Defensive Matrix Generator
+S_BATTERY_NAME: Batteries
+S_BATTERY_DESC: <<
+	A basic power storage system.
+
+	[img=ResourceIcon::2;22]Stores a [b][color=#0f0]high[/color][/b] amount of [b][color=#42b4bd]Power[/color][/b] to operate other subsystems.[/img]
+	[img=MenuIcons::3;20]Subsystems such as lasers and shields cannot operate if [b][color=#42b4d]Power[/color][/b] storage is empty.[/img]
+	[img=Plus]Stores much more Power than a generator.[/img]
+	[img=Minus]Does not generate Power or Supply in any way.[/img]
+>>
 S_ROCKETPOD_DESC: <<
 	A concealed tube of rockets rapidly extends, launches a volley of short range rockets, and receeds to reload.
 

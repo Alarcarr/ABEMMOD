@@ -14,11 +14,8 @@ Subsystem: ShieldGen
 	ShieldCapacity := Size * 100
 	ShieldRegen := Size * 0.83
 	ShieldHexes := Hexes
-	PowerUse := -5 * Size
+	PowerUse := 5 * Size
 
-	//Its just for the desing Stats
-	DummyPowerperSec:=-PowerUse
-	
 	Hex.Resistance := 0.5
 	Hex.HP := 12 * HexSize
 	Hex.Mass := 1 * HexSize
@@ -28,9 +25,6 @@ Subsystem: ShieldGen
 
 	Effect: ABEMShieldDamage
 	
-	Provides:
-	//Temporal until we discuss how to interact shields and power.
-		Power = PowerUse
 	Requires:
 		Command = 1
 		

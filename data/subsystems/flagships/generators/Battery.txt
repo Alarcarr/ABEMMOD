@@ -1,10 +1,10 @@
-Subsystem:	Battery
-	Name: Battery
-	Description: #AMGEN_DESC
+Subsystem: Battery
+	Name: #S_BATTERY_NAME
+	Description: #S_BATTERY_DESC
 	BaseColor: #5ade8b
 	Elevation: 1
 
-	Tags: Category:Power ,NonContiguous,NoCore
+	Tags: Category:Power, NonContiguous, NoCore
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes

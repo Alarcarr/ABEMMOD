@@ -60,8 +60,38 @@ GlobalStat: OptimumPower
 
 	UsedVariable: PowerUse
 
+GlobalStat: PeakPowerTime
+	Name: #S_PEAKPOWERTIME
+	Description: #STT_PEAKPOWERTIME
+	Icon: ResourceIcon::2
+	Color: #42b4bd
+	Suffix: s
 
-	
+	Variable: PeakPowerTime
+
+GlobalStat: PowerCapacity
+	Name: #S_POWERCAPACITY
+	Description: #STT_POWERCAPACITY
+	Secondary: PeakPowerTime
+	Color: #aaa
+
+	Variable: EnergyCapacity
+
+	GlobalStat: PowerUsePerSec
+		Name: #S_POWERUSEPERSEC
+		Description: #S_POWERUSEPERSEC
+		Secondary: PeakPowerTime
+		Color: #aaa
+
+		Variable: PowerUsePerSec
+
+	GlobalStat: PowerGenPerSec
+		Name: #S_POWERGENPERSEC
+		Description: #STT_POWERGENPERSEC
+		Secondary: PeakPowerTime
+		Color: #aaa
+
+		Variable: PowerGenPerSec
 
 GlobalStat: FTLCapacity
 	Name: #S_FTLCAPACITY
@@ -70,7 +100,6 @@ GlobalStat: FTLCapacity
 	Color: #00c0ff
 
 	Variable: FTLCapacity
-
 
 	GlobalStat: FTLPerCrystal
 		Name: #S_FTLPERCRYSTAL
@@ -120,29 +149,16 @@ GlobalStat: CrystalCapacity
 // *************************************
 // ******SUBSYSTEM-SPECIFIC STATS*******
 // *************************************
-SubsystemStat: PowerUseS
-	Name: Avg Power Use
-	Description: Power Used per Second .
-	Secondary: Power
-	Color: #aaa
+SubsystemStat: SPowerUseSec
+	Name: #S_POWERUSESEC
+	Color: #42b4bd
 	Icon: ResourceIcon::2
-	Variable: PowerperSec
-	Suffix: /s	
-
-SubsystemStat: DPowerUseS
-	Name: Avg Power Use
-	Description: Power that is directly taken from the generator
-	Secondary: Power
-	Color: #aaa
-	Icon: ResourceIcon::2
-	Variable: DummyPowerperSec
+	Variable: PowerUse
 	Suffix: /s	
 	
 SubsystemStat: SPowerCapacity
 	Name: #S_POWERCAPACITY
-	Description: #STT_POWERCAPACITY
-	Secondary: Power
-	Color: #aaa
+	Color: #42b4bd
 
 	Variable: EnergyCapacity
 
