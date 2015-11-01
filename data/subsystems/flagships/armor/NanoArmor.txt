@@ -20,6 +20,7 @@ Subsystem: NanoArmor
 	Hex.BuildCost := 0.5 * HexSize
 	Hex.MaintainCost := 0.5 * HexSize
 	Regeneration := ShipSize / 32
+	PowerUse = Size*10
 
 	Hook: ABEM_hooks::Regeneration(Regeneration, false);
 
@@ -28,7 +29,7 @@ Subsystem: NanoArmor
 	//ImpactLevel := ShipSize*4
 	MinPct := 1/6
 	Requires:
-		Power = Size*10
+		Power = PowerUse
 
 	//Effect: CapDamage
 	//	MaxDamage = ImpactLevel

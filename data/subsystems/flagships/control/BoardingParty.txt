@@ -20,7 +20,6 @@ Subsystem: BoardingParty
 	Hex.HP := 36 * HexSize
 	Hex.Mass := HexSize
 	Module: Core
-		Name: Boarding Parties
 		Sprite: shuttle
 
 	Module: Default
