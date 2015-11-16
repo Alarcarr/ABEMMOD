@@ -75,10 +75,13 @@ Material:shuttle
 	Inherit: ABEMSubsystem
 	Texture: data/images/subsystems/shuttle.png	
 
-	Material: Battery
+Material: Battery
 	Inherit: ABEMSubsystem
 	Texture: data/images/subsystems/Battery.png
 
+Material: Sensors
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/Sensors.png
 
 Material: Stargate
 	Inherit: ABEMSubsystem

@@ -27,6 +27,6 @@ Subsystem: BasicSensors
 		Command = Control
 
 	Module: Core
-		Sprite: TechIcons::1
+		Sprite: Sensors
 
 	Module: Default
