@@ -15,7 +15,7 @@ Subsystem: IonEngine
 	Size := HexSize * Hexes
 	Thrust := 22 * Size
 	TurnThrust := 2.0 * Size
-	PowerUse := -1 * Size
+	PowerUse := 1 * Size
 	Hex.Mass := HexSize
 
 	Hex.Resistance := 0.2
