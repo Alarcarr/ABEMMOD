@@ -27,8 +27,7 @@ Subsystem: ShieldedAntimatter
 		Power = Power
 
 	Module: Core
-		Sprite: TechIcons::7
-
+		Sprite: SAmatter
 	Module: Default
 
 	Modifier: SupplyCapacityFactor(factor)
