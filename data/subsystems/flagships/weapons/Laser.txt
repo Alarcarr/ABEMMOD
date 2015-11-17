@@ -15,12 +15,11 @@ Subsystem: Laser
 	BeamDPS := 5.0 * Size
 	Duration := 4
 	Cooldown := 6 * (1.0 + Size/512)
-	Range := Size + 700
+	Range := Size^0.8 + 500
 	Tracking := 0.5
 	SupplyCost := Size * 0.2
 	FireArc := 0.25 * pi
-	PowerUse := 3 * Size
-	
+	PowerUse := 5 * Size
 	Hex.HP := 12 * HexSize
 	Hex.Resistance := 0.2
 	Hex.Mass := HexSize
