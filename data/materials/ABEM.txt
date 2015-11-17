@@ -85,7 +85,10 @@ Material: Sensors
 Material: Sensors2
 	Inherit: ABEMSubsystem
 	Texture: data/images/subsystems/Sensors2.png
-
+Material: ArmorSensor
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/armorsensor.png
+	
 Material: SAmatter
 	Inherit: ABEMSubsystem
 	Texture: data/images/subsystems/SAmmater.png	

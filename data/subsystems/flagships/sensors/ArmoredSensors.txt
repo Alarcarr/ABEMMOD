@@ -37,4 +37,4 @@ Subsystem: ArmoredSensors
 		Command = Control
 	Module: Default
 
-		Sprite: TechIcons::17
+		Sprite: ArmorSensor
