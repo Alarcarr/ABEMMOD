@@ -31,4 +31,4 @@ Subsystem: BasicSensors
 
 	Module: Default
 		Sprite: Sensors2
-Sprite: Sensors2
+
