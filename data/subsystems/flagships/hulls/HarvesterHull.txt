@@ -8,9 +8,7 @@ Subsystem: HarvesterHull
 	EvaluationOrder: -200
 	BaseColor: #cc6a3a
 
-	AddShipModifier: FlagshipHull::HexLimitFactor(2)
-	AddShipModifier: FlagshipHull::GridWidthFactor(sqrt(1.5))
-	AddShipModifier: FlagshipHull::GridHeightFactor(sqrt(1.5))
+	AddShipModifier: FlagshipHull::HexLimitFactor(0.25)
 	AddShipModifier: HPFactor(2.0)
 	AddShipModifier: DamageResistFactor(1.5)
 	AddShipModifier: ShieldCapacityFactor(2)
