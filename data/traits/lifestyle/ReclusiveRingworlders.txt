@@ -10,6 +10,8 @@ Trait: ReclusiveRingworlders
 	Unique: Lifestyle
 	AI Support: False
 
+	LoadDesigns(ABEM_defaults\ringworlder\other)
+	
 	TriggerHomeworld(SpawnPlanet(Ringworld, Owned = True, Add Status = RRInitialRingworld, Radius = 750, Physics = False))
 	TriggerHomeworld(DestroySystemPlanet(1, Quiet = True))
 	TriggerHomeworld(DestroySystemPlanet(2, Quiet = True))
