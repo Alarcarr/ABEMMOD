@@ -9,7 +9,7 @@ class HyperdriveTarget : PointTarget {
 	double avgCost = 0.0;
 	Object@ obj;
 	array<vec3d>@ offsets;
-	array<int> costs;
+	array<double> costs;
 	array<uint> invalidObjs;
 	array<Object@> objs;
 
@@ -37,6 +37,8 @@ class HyperdriveTarget : PointTarget {
 			auto@ positions = getFleetTargetPositions(objs, hovered);
 			avgCost = 0;
 			uint validJumps = 0;
+			invalidObjs.length = 0;
+			costs.length = 0;
 			for(uint i = 0, cnt = objs.length; i < cnt; ++i) {
 				avgCost += hyperdriveCost(objs[i], positions[i]);
 				costs.insertLast(hyperdriveCost(objs[i], positions[i]));
@@ -75,7 +77,7 @@ class HyperdriveDisplay : PointDisplay {
 			color = Color(0xff0000ff);
 
 		font::DroidSans_11_Bold.draw(mousePos + vec2i(16, 0),
-			format(locale::AVG_FTLCOST, toString(ht.avgCost), toString(ht.distance, 0)),
+			format(locale::AVG_FTLCOST, standardize(ht.avgCost), toString(ht.distance, 0)),
 			color);
 		
 		if(ht.distance > ht.range) {
@@ -85,7 +87,7 @@ class HyperdriveDisplay : PointDisplay {
 			for(uint i = 0, cnt = ht.invalidObjs.length; i < cnt; ++i) {
 				Ship@ ship = cast<Ship>(ht.objs[ht.invalidObjs[i]]);
 				font::OpenSans_11_Italic.draw(mousePos + vec2i(16, 32 + 16*i),
-				format(locale::NEEDS_MORE_FTL, ship.name, toString(ht.costs[ht.invalidObjs[i]]), toString(ship.FTL), toString(ship.MaxFTL)),
+				format(locale::NEEDS_MORE_FTL, ship.name, standardize(ht.costs[ht.invalidObjs[i]]), standardize(ship.FTL), standardize(ship.MaxFTL)),
 				color);		
 			}
 		}
