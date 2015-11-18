@@ -1830,7 +1830,7 @@ class LeaderAI : Component_LeaderAI, Savable {
 		Planet@ pl = cast<Planet>(obj);
 		if(pl !is null)
 			return pl.OrbitSize;
-		return obj.radius * 10.0 + 20.0;
+		return obj.radius * 6.0 + 20.0;
 	}
 	
 	double get_slowestSupportAccel() const {

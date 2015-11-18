@@ -12,7 +12,7 @@ Subsystem: BasicSensors
 	SensorPriority := 100
 	Hex.Mass := HexSize / 2
 	Hex.Resistance := 0.1
-	Hex.HP := 15 * HexSize
+	Hex.HP := 4 * HexSize
 
 	Ship.ExternalHexes := Ship.ExternalHexes + ExteriorHexes
 

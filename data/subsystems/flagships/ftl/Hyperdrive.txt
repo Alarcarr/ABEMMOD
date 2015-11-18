@@ -12,10 +12,10 @@ Subsystem: Hyperdrive
 	
 	Size := HexSize * Hexes
 	HyperdriveSpeed := 3200.0 * Size / ShipSize
-	CrystalCapacity := 0.15 * ShipSize
-	FTLCapacity := 15 * ShipSize
+	CrystalCapacity := 0.25 * ShipSize
+	FTLCapacity := 7 * ShipSize
 	// For now, I'm going with a conversion of 1 FTL crystal -> 10 FTL energy - the hyperdrive cost constants in definitions/ftl.as are also configured accordingly.
-	FTLRegen := 1 * ShipSize
+	FTLRegen := 0.5 * ShipSize
 	CrystalConsumption := 0.1 * ShipSize
 	CrystalRate := 0.01 * ShipSize
 	Hex.Mass := HexSize
