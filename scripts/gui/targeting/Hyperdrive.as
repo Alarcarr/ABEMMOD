@@ -10,7 +10,7 @@ class HyperdriveTarget : PointTarget {
 	Object@ obj;
 	array<vec3d>@ offsets;
 	array<int> costs;
-	array<int> invalidObjs;
+	array<uint> invalidObjs;
 	array<Object@> objs;
 
 	HyperdriveTarget(Object@ Obj) {
@@ -82,7 +82,7 @@ class HyperdriveDisplay : PointDisplay {
 			font::OpenSans_11_Italic.draw(mousePos + vec2i(16, 16),
 				locale::INSUFFICIENT_FTL,
 				color);
-			for(uint i = 0; cnt = invalidObjs.length; i < cnt; ++i) {
+			for(uint i = 0, cnt = invalidObjs.length; i < cnt; ++i) {
 				Ship@ ship = cast<Ship>(objs[invalidObjs[i]]);
 				font::OpenSans_11_Italic.draw(mousePos + vec2i(16, 32 + 16*i),
 				format(locale::NEEDS_MORE_FTL, ship.name, toString(costs[invalidObjs[i]]), toString(ship.FTL), toString(ship.MaxFTL)),
