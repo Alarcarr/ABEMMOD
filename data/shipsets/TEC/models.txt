@@ -1,0 +1,43 @@
+Model: Ragnarov
+	Tangents: on
+	Mesh: data/shipsets/TEC/Ragnarov.obj
+
+Model: Marza
+	Tangents: on
+	Mesh: data/shipsets/TEC/Marza.obj
+
+Model: Kol
+	Tangents: on
+	Mesh: data/shipsets/TEC/Kol.obj
+
+Model: Sova
+	Tangents: on
+	Mesh: data/shipsets/TEC/Sova.obj
+
+Model: Akkan
+	Tangents: on
+	Mesh: data/shipsets/TEC/Akkan.obj
+
+Model: Dunov
+	Tangents: on
+	Mesh: data/shipsets/TEC/Dunov.obj
+
+Model: Garda
+	Tangents: on
+	Mesh: data/shipsets/TEC/Garda.obj
+
+Model: TECFreighter
+	Tangents: on
+	Mesh: data/shipsets/TEC/TECFreighter.obj
+
+Model: Krosov
+	Tangents: on
+	Mesh: data/shipsets/TEC/Krosov.obj
+
+Model: CobaltTEC
+	Tangents: on
+	Mesh: data/shipsets/TEC/CobaltTEC.obj
+
+Model: Argonev
+	Tangents: on
+	Mesh: data/shipsets/TEC/Argonev.obj
