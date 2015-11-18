@@ -92,7 +92,10 @@ Material: ArmorSensor
 Material: SAmatter
 	Inherit: ABEMSubsystem
 	Texture: data/images/subsystems/SAmmater.png	
-	
+Material: Coolant
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/Coolant.png	
+		
 	
 Material: Stargate
 	Inherit: ABEMSubsystem
