@@ -36,7 +36,7 @@ class HyperdriveTarget : PointTarget {
 		//if(selectedObjects.length > 1) {
 			auto@ positions = getFleetTargetPositions(objs, hovered);
 			avgCost = 0;
-			int validJumps = 0;
+			uint validJumps = 0;
 			for(uint i = 0, cnt = objs.length; i < cnt; ++i) {
 				avgCost += hyperdriveCost(objs[i], positions[i]);
 				costs.insertLast(hyperdriveCost(objs[i], positions[i]));
@@ -82,10 +82,10 @@ class HyperdriveDisplay : PointDisplay {
 			font::OpenSans_11_Italic.draw(mousePos + vec2i(16, 16),
 				locale::INSUFFICIENT_FTL,
 				color);
-			for(uint i = 0, cnt = invalidObjs.length; i < cnt; ++i) {
-				Ship@ ship = cast<Ship>(objs[invalidObjs[i]]);
+			for(uint i = 0, cnt = ht.invalidObjs.length; i < cnt; ++i) {
+				Ship@ ship = cast<Ship>(ht.objs[ht.invalidObjs[i]]);
 				font::OpenSans_11_Italic.draw(mousePos + vec2i(16, 32 + 16*i),
-				format(locale::NEEDS_MORE_FTL, ship.name, toString(costs[invalidObjs[i]]), toString(ship.FTL), toString(ship.MaxFTL)),
+				format(locale::NEEDS_MORE_FTL, ship.name, toString(ht.costs[ht.invalidObjs[i]]), toString(ship.FTL), toString(ship.MaxFTL)),
 				color);		
 			}
 		}

@@ -58,7 +58,7 @@ GlobalStat: OptimumPower
 	Color: #aaa
 	Suffix: /s
 
-	UsedVariable: PowerUse
+	Variable: PowerUse
 
 GlobalStat: PeakPowerTime
 	Name: #S_PEAKPOWERTIME
