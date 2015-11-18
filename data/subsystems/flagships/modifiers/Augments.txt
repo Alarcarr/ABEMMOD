@@ -5,7 +5,7 @@ Template: hexVar/HP, tag/Weapon, !tag/NoAugment
 		Unique: True
 
 		Color: #ffff00
-		Sprite: SupportCommand * #ffff00
+		Sprite: Coolant
 
 		Hex.HP := 3.0 * Hex.HP
 		Hex.BuildCost := Size
