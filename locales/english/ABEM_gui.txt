@@ -39,3 +39,5 @@ GTT_FTL: <<
 	Harvesting Rate: [right]$3[/right]
 >>
 RESOURCE_FTL: FTL Crystals
+AVG_FTLCOST: Average cost: $1 FTL ($2u)
+NEEDS_MORE_FTL: $1 needs $2 FTL, has only $3 FTL

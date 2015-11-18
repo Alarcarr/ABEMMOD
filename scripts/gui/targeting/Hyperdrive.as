@@ -6,9 +6,11 @@ import targeting.targeting;
 from targeting.MoveTarget import getFleetTargetPositions;
 
 class HyperdriveTarget : PointTarget {
-	double cost = 0.0;
+	double avgCost = 0.0;
 	Object@ obj;
 	array<vec3d>@ offsets;
+	array<int> costs;
+	array<int> invalidObjs;
 	array<Object@> objs;
 
 	HyperdriveTarget(Object@ Obj) {
@@ -33,10 +35,18 @@ class HyperdriveTarget : PointTarget {
 
 		//if(selectedObjects.length > 1) {
 			auto@ positions = getFleetTargetPositions(objs, hovered);
-			cost = 0;
-			for(uint i = 0, cnt = objs.length; i < cnt; ++i)
-				cost += hyperdriveCost(objs[i], positions[i]);
-			range = cost > playerEmpire.FTLStored ? 0.0 : INFINITY;
+			avgCost = 0;
+			int validJumps = 0;
+			for(uint i = 0, cnt = objs.length; i < cnt; ++i) {
+				avgCost += hyperdriveCost(objs[i], positions[i]);
+				costs.insertLast(hyperdriveCost(objs[i], positions[i]));
+				if(costs[i] < cast<Ship>(objs[i]).FTL)
+					validJumps++;
+				else
+					invalidObjs.insertLast(i);
+			}
+			avgCost /= objs.length;
+			range = objs.length == validJumps ? 0.0 : INFINITY;
 		//}
 		//else {
 		//	range = hyperdriveRange(obj);
@@ -65,14 +75,19 @@ class HyperdriveDisplay : PointDisplay {
 			color = Color(0xff0000ff);
 
 		font::DroidSans_11_Bold.draw(mousePos + vec2i(16, 0),
-			toString(int(ht.cost)) + " " + locale::FTL
-			 + " (" + toString(ht.distance, 0) + "u)",
+			format(locale::AVG_FTLCOST, toString(ht.avgCost), toString(ht.distance, 0)),
 			color);
 		
 		if(ht.distance > ht.range) {
 			font::OpenSans_11_Italic.draw(mousePos + vec2i(16, 16),
 				locale::INSUFFICIENT_FTL,
 				color);
+			for(uint i = 0; cnt = invalidObjs.length; i < cnt; ++i) {
+				Ship@ ship = cast<Ship>(objs[invalidObjs[i]]);
+				font::OpenSans_11_Italic.draw(mousePos + vec2i(16, 32 + 16*i),
+				format(locale::NEEDS_MORE_FTL, ship.name, toString(costs[invalidObjs[i]]), toString(ship.FTL), toString(ship.MaxFTL)),
+				color);		
+			}
 		}
 	}
 
