@@ -46,7 +46,7 @@ class HyperdriveTarget : PointTarget {
 					invalidObjs.insertLast(i);
 			}
 			avgCost /= objs.length;
-			range = objs.length == validJumps ? 0.0 : INFINITY;
+			range = objs.length != validJumps ? 0.0 : INFINITY;
 		//}
 		//else {
 		//	range = hyperdriveRange(obj);
