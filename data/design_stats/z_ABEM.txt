@@ -60,38 +60,23 @@ GlobalStat: OptimumPower
 
 	Variable: PowerUse
 
-GlobalStat: PeakPowerTime
-	Name: #S_PEAKPOWERTIME
-	Description: #STT_PEAKPOWERTIME
-	Icon: ResourceIcon::2
-	Color: #42b4bd
-	Suffix: s
-
-	Variable: PeakPowerTime
 
 GlobalStat: PowerCapacity
 	Name: #S_POWERCAPACITY
 	Description: #STT_POWERCAPACITY
-	Secondary: PeakPowerTime
+	Secondary: Power
 	Color: #aaa
 
 	Variable: EnergyCapacity
 
-	GlobalStat: PowerUsePerSec
-		Name: #S_POWERUSEPERSEC
-		Description: #S_POWERUSEPERSEC
-		Secondary: PeakPowerTime
-		Color: #aaa
-
-		Variable: PowerUsePerSec
-
-	GlobalStat: PowerGenPerSec
-		Name: #S_POWERGENPERSEC
-		Description: #STT_POWERGENPERSEC
-		Secondary: PeakPowerTime
-		Color: #aaa
-
-		Variable: PowerGenPerSec
+GlobalStat: PowerLifeTime
+	Name: #S_PowerLifeTime
+	Description: #STT_POWERLIFETIME
+	Secondary: Power
+	Color: #aaa
+	Suffix: Seconds
+	Variable: EnergyCapacity
+	DivBy: Power
 
 GlobalStat: FTLCapacity
 	Name: #S_FTLCAPACITY
