@@ -111,7 +111,7 @@ class PickupPopup : Popup {
 			ship.update();
 			ship.visible = true;
 
-			objOffset = vec2i(200, 0);
+			objOffset = vec2i(235, 0);
 			mouseOffset = objOffset;
 
 			title.text = locale::PICKUP_PROTECTING;
