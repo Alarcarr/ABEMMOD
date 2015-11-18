@@ -16,6 +16,7 @@ Subsystem: MissileLauncher
 	Damage := Size * 15.0
 	Reload := 4.75 * (1.0 + Size/512)
 	Speed := 2*Range / Reload
+	Tracking := 3
 	SupplyCost := Size * 3.0
 
 	Hex.HP := 18 * HexSize
