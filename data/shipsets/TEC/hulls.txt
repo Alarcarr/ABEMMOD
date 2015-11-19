@@ -1,0 +1,203 @@
+Hull: Ragnarov
+	Name: Ragnarov-class Titan
+	Background: Ragnarov
+	BackgroundScale: 1.2
+	Material: Ragnarov
+	Model: Ragnarov
+	Subsystem: FlagshipHull
+	MinSize: 16
+	Tags: Flagship
+
+Hull: Marza
+	Name: Marza-class Dreadnought
+	Background: Marza
+	BackgroundScale: 1.1
+	Material: Marza
+	Model: Marza
+	Subsystem: FlagshipHull
+	MinSize: 16
+	Tags: Flagship
+
+Hull: Kol
+	Name: Kol-class Battleship
+	Background: Kol
+	BackgroundScale: 1.1
+	Material: Kol
+	Model: Kol
+	Subsystem: FlagshipHull
+	MinSize: 16
+	Tags: Flagship
+
+Hull: Sova
+	Name: Sova-class Carrier
+	Background: Sova
+	BackgroundScale: 1.1
+	Material: Sova
+	Model: Sova
+	Subsystem: FlagshipHull
+	MinSize: 16
+	Tags: Flagship
+
+Hull: Akkan
+	Name: Akkan-class Battlecruiser
+	Background: Akkan
+	BackgroundScale: 1.2
+	Material: Akkan
+	Model: Akkan
+	Subsystem: FlagshipHull
+	MinSize: 16
+	Tags: Flagship
+
+Hull: Dunov
+	Name: Dunov-class Battlecruiser
+	Background: Dunov
+	BackgroundScale: 1.2
+	Material: Dunov
+	Model: Dunov
+	Subsystem: FlagshipHull
+	MinSize: 16
+	Tags: Flagship
+
+Hull: Garda
+	Name: Garda-class Flak Frigate
+	Background: Garda
+	BackgroundScale: 1.3
+	Material: Garda
+	Model: Garda
+	Subsystem: FlagshipHull
+	MinSize: 16
+	Tags: Flagship
+
+Hull: TECFreighter
+	Name: Fortune-class Freighter
+	Background: TECFreighter
+	BackgroundScale: 1.2
+	Material: TECFreighter
+	Model: TECFreighter
+	Subsystem: FlagshipHull
+	MinSize: 16
+	Tags: Flagship
+
+Hull: Krosov
+	Name: Krosov-class Siege Frigate
+	Background: Krosov
+	BackgroundScale: 1.3
+	Material: Krosov
+	Model: Krosov
+	Subsystem: FlagshipHull
+	MinSize: 16
+	Tags: Flagship
+
+Hull: CobaltTEC
+	Name: Cobalt-class Light Frigate
+	Background: CobaltTEC
+	BackgroundScale: 1.3
+	Material: CobaltTEC
+	Model: CobaltTEC
+	Subsystem: FlagshipHull
+	MinSize: 16
+	Tags: Flagship
+
+// END FLAGSHIP LIST
+
+Hull: Argonev
+	Name: Argonev-class Starbase
+	Background: Argonev
+	BackgroundScale: 1.1
+	Material: Argonev
+	Model: Argonev
+	Subsystem: StationHull
+	MinSize: 16
+	Tags: Station
+
+// END STATION LIST
+
+Hull: SRagnarov
+	Name: Ragnarov-class Titan
+	Background: Ragnarov
+	BackgroundScale: 1.2
+	Material: Ragnarov
+	Model: Ragnarov
+	Subsystem: SupportHull
+	Tags: Support
+
+Hull: SMarza
+	Name: Marza-class Dreadnought
+	Background: Marza
+	BackgroundScale: 1.1
+	Material: Marza
+	Model: Marza
+	Subsystem: SupportHull
+	Tags: Support
+
+Hull: SKol
+	Name: Kol-class Battleship
+	Background: Kol
+	BackgroundScale: 1.1
+	Material: Kol
+	Model: Kol
+	Subsystem: SupportHull
+	Tags: Support
+
+Hull: SSova
+	Name: Sova-class Carrier
+	Background: Sova
+	BackgroundScale: 1.1
+	Material: Sova
+	Model: Sova
+	Subsystem: SupportHull
+	Tags: Support
+
+Hull: SAkkan
+	Name: Akkan-class Battlecruiser
+	Background: Akkan
+	BackgroundScale: 1.2
+	Material: Akkan
+	Model: Akkan
+	Subsystem: SupportHull
+	Tags: Support
+
+Hull: SDunov
+	Name: Dunov-class Battlecruiser
+	Background: Dunov
+	BackgroundScale: 1.2
+	Material: Dunov
+	Model: Dunov
+	Subsystem: SupportHull
+	Tags: Support
+
+Hull: SGarda
+	Name: Garda-class Flak Frigate
+	Background: Garda
+	BackgroundScale: 1.3
+	Material: Garda
+	Model: Garda
+	Subsystem: SupportHull
+	Tags: Support
+
+Hull: STECFreighter
+	Name: Fortune-class Freighter
+	Background: TECFreighter
+	BackgroundScale: 1.2
+	Material: TECFreighter
+	Model: TECFreighter
+	Subsystem: SupportHull
+	Tags: Support
+
+Hull: SKrosov
+	Name: Krosov-class Siege Frigate
+	Background: Krosov
+	BackgroundScale: 1.3
+	Material: Krosov
+	Model: Krosov
+	Subsystem: SupportHull
+	Tags: Support
+
+Hull: SCobaltTEC
+	Name: Cobalt-class Light Frigate
+	Background: CobaltTEC
+	BackgroundScale: 1.3
+	Material: CobaltTEC
+	Model: CobaltTEC
+	Subsystem: SupportHull
+	Tags: Support

@@ -1,0 +1,62 @@
+Material: TECTemplate
+	Texture2: data/shipsets/TEC/normal.png
+	Texture4: data/shipsets/TEC/gloss.png
+	Texture5: data/images/skybox.png
+	Texture6: data/shipsets/TEC/gloss.png
+	Shader: SupportShip
+	Shininess: 12
+
+Material: Ragnarov
+	Inherit: TECTemplate
+	Texture: data/shipsets/TEC/Ragnarov.png
+	Texture3: data/shipsets/TEC/Ragnarov.png
+
+Material: Marza
+	Inherit: TECTemplate
+	Texture: data/shipsets/TEC/Marza.png
+	Texture3: data/shipsets/TEC/Marza.png
+
+Material: Kol
+	Inherit: TECTemplate
+	Texture: data/shipsets/TEC/Kol.png
+	Texture3: data/shipsets/TEC/Kol.png
+
+Material: Sova
+	Inherit: TECTemplate
+	Texture: data/shipsets/TEC/Sova.png
+	Texture3: data/shipsets/TEC/Sova.png
+
+Material: Akkan
+	Inherit: TECTemplate
+	Texture: data/shipsets/TEC/Akkan.png
+	Texture3: data/shipsets/TEC/Akkan.png
+
+Material: Dunov
+	Inherit: TECTemplate
+	Texture: data/shipsets/TEC/Dunov.png
+	Texture3: data/shipsets/TEC/Dunov.png
+
+Material: Garda
+	Inherit: TECTemplate
+	Texture: data/shipsets/TEC/Garda.png
+	Texture3: data/shipsets/TEC/Garda.png
+
+Material: TECFreighter
+	Inherit: TECTemplate
+	Texture: data/shipsets/TEC/TECFreighter.png
+	Texture3: data/shipsets/TEC/TECFreighter.png
+
+Material: Krosov
+	Inherit: TECTemplate
+	Texture: data/shipsets/TEC/Krosov.png
+	Texture3: data/shipsets/TEC/Krosov.png
+
+Material: CobaltTEC
+	Inherit: TECTemplate
+	Texture: data/shipsets/TEC/CobaltTEC.png
+	Texture3: data/shipsets/TEC/CobaltTEC.png
+
+Material: Argonev
+	Inherit: TECTemplate
+	Texture: data/shipsets/TEC/Argonev.png
+	Texture3: data/shipsets/TEC/Argonev.png

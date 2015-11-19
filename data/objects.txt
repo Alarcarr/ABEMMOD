@@ -61,6 +61,13 @@ server:
 	void setHealthPct(float pct);
 	void modSupplyBonus(float amount);
 	void modCrystalBonus(float amount);
+	void modShieldRegenBonus(float amount);
+	void modShieldRegenMod(float amount);
+	void modEnergyUse(float amount);
+	void modEnergyRegenMod(float amount);
+	void modFTLRegenMod(float amount);
+	void modRepairMod(float amount);
+	void modShieldBonus(float amount);
 	void modMass(float amount);
 	void modFTLUse(float amount);
 	safe float getMass();

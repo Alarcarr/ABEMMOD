@@ -1,0 +1,27 @@
+Shipset: TEC
+	Name: Terran
+	Available: Yes
+
+	Hull: Kol
+	Hull: CobaltTEC
+	Hull: Garda
+	Hull: TECFreighter
+	Hull: Dunov
+	Hull: Akkan
+	Hull: Sova
+	Hull: Krosov
+	Hull: Marza
+	Hull: Ragnarov
+
+	Hull: Argonev
+
+	Hull: SCobaltTEC
+	Hull: SKrosov
+	Hull: SGarda
+	Hull: STECFreighter
+	Hull: SDunov
+	Hull: SAkkan
+	Hull: SSova
+	Hull: SKol
+	Hull: SMarza
+	Hull: SRagnarov
