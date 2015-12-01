@@ -97,7 +97,7 @@ Material: Coolant
 	Texture: data/images/subsystems/Coolant.png	
 		
 	
-Material: Stargate
+Material: ABEMStargate
 	Inherit: ABEMSubsystem
 	Texture: data/images/subsystems/stargate.png
 Material: FtlGen

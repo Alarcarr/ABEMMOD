@@ -23,7 +23,7 @@ Subsystem: GateCore
 	Module: Default
 	
 	Module: Core
-		Sprite: Stargate
+		Sprite: ABEMStargate
 		Hex.BuildCost := 400
 		Hex.MaintainCost := 200
 		Hex.LaborCost := 20
