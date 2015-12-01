@@ -9,7 +9,7 @@ Effector: Missile
 	Range: Range
 	Speed: Speed
 	Tracking: Tracking
-	Lifetime: 1.05 * Range / Speed
+	Lifetime: 1.10 * Range / Speed
 
 	TargetAlgorithm: SingleTarget
 	CanTarget: isEnemy && isDamageable
