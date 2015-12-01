@@ -1,6 +1,6 @@
 import version;
 
-const string MOD_REVISION = "628";
+const string MOD_REVISION = "632";
 const array<string> VERSIONS = {
 	"v1.0.2",
 	"v1.0.3"

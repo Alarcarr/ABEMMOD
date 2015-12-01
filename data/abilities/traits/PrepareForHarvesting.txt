@@ -15,7 +15,7 @@ Ability: PrepareForHarvest
 	TargetFilterNotStatus(targ, ArtificialPlanetoid)
 	TargetFilterNotQuarantined(targ)
 
-	TriggerTargetPeriodic(targ, SendMessage(A planet its ready for being Harvested., Title = Ready For Harvest), Interval = 360)
+	ABEM_races::TriggerTargetForCasterPeriodic(targ, ABEM_races::NotifyEmpire(#ALERT_READY_FOR_HARVESTING, #ALERT_READY_FOR_HARVESTING_DESC), Interval = 360, 1)
 	AutoOrderOnAutoColonizeTarget()
 	OffensiveToTarget(targ)
 	IsToggleTarget(targ)

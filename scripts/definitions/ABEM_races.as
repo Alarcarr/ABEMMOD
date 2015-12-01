@@ -670,3 +670,231 @@ class TriggerOnGenerate : ResourceHook {
 	}
 #section all
 };
+
+class TriggerSelfPeriodic : AbilityHook {
+	BonusEffect@ hook;
+
+	Document doc("Trigger a bonus effect every set interval on the object casting the ability, so long as it's still being performed on the same target.");
+	Argument objTarg(TT_Object, doc="The target being checked.");
+	Argument function(AT_Hook, "bonus_effects::BonusEffect");
+	Argument interval(AT_Decimal, "60", doc="Interval in seconds between triggers.");
+	Argument max_triggers(AT_Integer, "-1", doc="Maximum amount of times to trigger the hook before stopping. -1 indicates no maximum triggers.");
+	Argument trigger_immediate(AT_Boolean, "False", doc="Whether to first trigger the effect right away before starting the timer.");
+
+	bool instantiate() override {
+		@hook = cast<BonusEffect>(parseHook(function.str, "bonus_effects::", required=false));
+		if(hook is null) {
+			error("TriggerSelfPeriodic(): could not find inner hook: "+escape(function.str));
+			return false;
+		}
+		return AbilityHook::instantiate();
+	}
+
+#section server
+	void changeTarget(Ability@ abl, any@ data, uint index, Target@ oldTarget, Target@ newTarget) const {
+		if(index != uint(objTarg.integer))
+			return;
+		if(oldTarget.obj is newTarget.obj)
+			return;
+
+		PeriodicData@ dat;
+		data.retrieve(@dat);
+
+		if(dat !is null) {
+			if(trigger_immediate.boolean)
+				dat.timer = interval.decimal;
+			else
+				dat.timer = 0;
+			dat.count = 0;
+		}
+	}
+
+	void create(Ability@ abl, any@ data) const override {
+		PeriodicData dat;
+		data.store(@dat);
+
+		if(trigger_immediate.boolean)
+			dat.timer = interval.decimal;
+		else
+			dat.timer = 0;
+		dat.count = 0;
+	}
+
+	void tick(Ability@ abl, any@ data, double time) const override {
+		PeriodicData@ dat;
+		data.retrieve(@dat);
+
+		Target@ storeTarg = objTarg.fromTarget(abl.targets);
+		if(abl.obj is null || storeTarg is null || storeTarg.obj is null) {
+			if(trigger_immediate.boolean)
+				dat.timer = interval.decimal;
+			else
+				dat.timer = 0;
+			dat.count = 0;
+			return;
+		}
+
+		Object@ target = abl.obj;
+		if(dat.timer >= interval.decimal) {
+			if(max_triggers.integer < 0 || dat.count < uint(max_triggers.integer)) {
+				if(hook !is null)
+					hook.activate(target, target.owner);
+				dat.count += 1;
+			}
+			dat.timer = 0.0;
+		}
+		else {
+			dat.timer += time;
+		}
+	}
+
+	void save(Ability@ abl, any@ data, SaveFile& file) const override {
+		PeriodicData@ dat;
+		data.retrieve(@dat);
+
+		file << dat.timer;
+		file << dat.count;
+	}
+
+	void load(Ability@ abl, any@ data, SaveFile& file) const override {
+		PeriodicData dat;
+		data.store(@dat);
+
+		file >> dat.timer;
+		if(file >= SV_0096)
+			file >> dat.count;
+	}
+#section all
+};
+
+class TriggerTargetForCasterPeriodic : AbilityHook {
+	BonusEffect@ hook;
+
+	Document doc("Trigger a bonus effect every set interval on the target, performing it for the caster's empire.");
+	Argument objTarg(TT_Object, doc="The target to trigger the effect on.");
+	Argument function(AT_Hook, "bonus_effects::BonusEffect");
+	Argument interval(AT_Decimal, "60", doc="Interval in seconds between triggers.");
+	Argument max_triggers(AT_Integer, "-1", doc="Maximum amount of times to trigger the hook before stopping. -1 indicates no maximum triggers.");
+	Argument trigger_immediate(AT_Boolean, "False", doc="Whether to first trigger the effect right away before starting the timer.");
+
+	bool instantiate() override {
+		@hook = cast<BonusEffect>(parseHook(function.str, "bonus_effects::", required=false));
+		if(hook is null) {
+			error("TriggerTargetForCasterPeriodic(): could not find inner hook: "+escape(function.str));
+			return false;
+		}
+		return AbilityHook::instantiate();
+	}
+
+#section server
+	void changeTarget(Ability@ abl, any@ data, uint index, Target@ oldTarget, Target@ newTarget) const {
+		if(index != uint(objTarg.integer))
+			return;
+		if(oldTarget.obj is newTarget.obj)
+			return;
+
+		PeriodicData@ dat;
+		data.retrieve(@dat);
+
+		if(dat !is null) {
+			if(trigger_immediate.boolean)
+				dat.timer = interval.decimal;
+			else
+				dat.timer = 0;
+			dat.count = 0;
+		}
+	}
+
+	void create(Ability@ abl, any@ data) const override {
+		PeriodicData dat;
+		data.store(@dat);
+
+		if(trigger_immediate.boolean)
+			dat.timer = interval.decimal;
+		else
+			dat.timer = 0;
+		dat.count = 0;
+	}
+
+	void tick(Ability@ abl, any@ data, double time) const override {
+		PeriodicData@ dat;
+		data.retrieve(@dat);
+
+		Target@ storeTarg = objTarg.fromTarget(abl.targets);
+		if(abl.obj.owner is null || storeTarg is null || storeTarg.obj is null) {
+			if(trigger_immediate.boolean)
+				dat.timer = interval.decimal;
+			else
+				dat.timer = 0;
+			dat.count = 0;
+			return;
+		}
+
+		Object@ target = storeTarg.obj;
+		if(dat.timer >= interval.decimal) {
+			if(max_triggers.integer < 0 || dat.count < uint(max_triggers.integer)) {
+				if(hook !is null)
+					hook.activate(target, abl.obj.owner);
+				dat.count += 1;
+			}
+			dat.timer = 0.0;
+		}
+		else {
+			dat.timer += time;
+		}
+	}
+
+	void save(Ability@ abl, any@ data, SaveFile& file) const override {
+		PeriodicData@ dat;
+		data.retrieve(@dat);
+
+		file << dat.timer;
+		file << dat.count;
+	}
+
+	void load(Ability@ abl, any@ data, SaveFile& file) const override {
+		PeriodicData dat;
+		data.store(@dat);
+
+		file >> dat.timer;
+		if(file >= SV_0096)
+			file >> dat.count;
+	}
+#section all
+};
+
+class NotifyEmpire : EmpireTrigger {
+	Document doc("Notify the target empire of an event.");
+	Argument title("Title", AT_Custom, doc="Title of the notification.");
+	Argument desc("Description", AT_Custom, EMPTY_DEFAULT, doc="Description of the notification.");
+	Argument icon("Icon", AT_Sprite, EMPTY_DEFAULT, doc="Sprite specifier for the notification icon.");
+
+#section server
+	void activate(Object@ obj, Empire@ emp) const override {
+		if(emp !is null && emp.major) {
+			emp.notifyGeneric(arguments[0].str, arguments[1].str, arguments[2].str, emp, obj);
+		}
+	}
+#section all
+};
+
+class NotifyOwner : EmpireTrigger {
+	Document doc("Notify the owner of the target object of an event.");
+	Argument title("Title", AT_Custom, doc="Title of the notification.");
+	Argument desc("Description", AT_Custom, EMPTY_DEFAULT, doc="Description of the notification.");
+	Argument icon("Icon", AT_Sprite, EMPTY_DEFAULT, doc="Sprite specifier for the notification icon.");
+	Argument use_owner("Use Owner", AT_Boolean, "False", doc="Whether to localize the notification using the object's owner or the empire it is being called from.");
+
+#section server
+	void activate(Object@ obj, Empire@ emp) const override {
+		if(obj !is null) {
+			if(obj.owner !is null && obj.owner.major) {
+				if(!use_owner.boolean)
+					obj.owner.notifyGeneric(arguments[0].str, arguments[1].str, arguments[2].str, emp, obj);
+				else
+					obj.owner.notifyGeneric(arguments[0].str, arguments[1].str, arguments[2].str, obj.owner, obj);
+			}
+		}
+	}
+#section all
+};
