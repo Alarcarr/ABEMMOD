@@ -15,6 +15,7 @@ Ability: PrepareForHarvest
 	TargetFilterNotStatus(targ, ArtificialPlanetoid)
 	TargetFilterNotQuarantined(targ)
 
+	TriggerTargetPeriodic(targ, SendMessage(A planet its ready for being Harvested., Title = Ready For Harvest), Interval = 360)
 	AutoOrderOnAutoColonizeTarget()
 	OffensiveToTarget(targ)
 	IsToggleTarget(targ)
