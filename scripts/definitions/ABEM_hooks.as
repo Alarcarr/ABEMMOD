@@ -1003,12 +1003,13 @@ class HealFromSubsystem : AbilityHook {
 	Argument objTarg(TT_Object);
 	Argument value("Subsystem Value", AT_SysVar, doc="The subsystem value you wish to use to regulate the healing. For example, HyperdriveSpeed would be Sys.HyperdriveSpeed - the healing rate is 1 HP per unit of HyperdriveSpeed in such a case.");
 	Argument cost("Cost per HP", AT_Decimal, "2.0", doc="Amount of supplies drained per HP of repairs. Does not apply if the caster is not a ship. Defaults to 2.0. Is fully applied even if not all repairs are used in modes 1 and 2.");
+	Argument powerCost("Power per HP", AT_Decimal, "2.0", doc="Amount of Power drained per HP of regeneration. Does not apply if the caster is not a ship. Defaults to 2.0. Is fully applied even if not all regeneration is used in modes 1 and 2.");
 	Argument preset("Default Rate", AT_Decimal, "500.0", doc="The default healing rate, used if the subsystem value could not be found (or is less than 0). Defaults to 500.");
 	Argument mode("Mode", AT_Integer, "2", doc="How the healing behaves. Mode 0 heals only the target object, mode 1 heals each ship in the target fleet by the value, and mode 2 divides the healing evenly across every member of the target fleet. Defaults to mode 2, and uses mode 2 if an invalid mode is passed to the hook.");
 
 	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const override {
 		Ship@ caster = cast<Ship>(abl.obj);
-		if(caster !is null && caster.Supply == 0 && cost.decimal > 0)
+		if(caster !is null || cost.decimal > caster.Supply || powerCost.decimal > caster.Energy)
 			return false;
 		return true;
 	}
@@ -1068,9 +1069,13 @@ class HealFromSubsystem : AbilityHook {
 
 		if(castedByShip && caster.Supply < (repair * cost.decimal))
 			repair = caster.Supply / cost.decimal;
+		if(castedByShip && caster.Energy < (repair * powerCost.decimal))
+			repair = caster.Energy / powerCost.decimal;
 		
-		if(castedByShip)
+		if(castedByShip) {
 			caster.consumeSupply(repair * cost.decimal);
+			caster.consumeEnergy(repair * powerCost.decimal);
+		}
 		if(mode.integer == 0){
 			if(target.isShip)
 				cast<Ship>(target).repairShip(repair);
@@ -1254,7 +1259,7 @@ class AddShieldCapacity : StatusHook {
 			bonus = preset.decimal;
 		
 		if(obj.isShip) {
-			ship.MaxShield += bonus;
+			ship.modShieldBonus(bonus);
 			if(startOn.boolean)
 				ship.Shield += bonus;
 		}
@@ -1276,7 +1281,7 @@ class AddShieldCapacity : StatusHook {
 		bonus = info.bonus;
 		if(obj.isShip) {
 			Ship@ ship = cast<Ship>(obj);
-			ship.MaxShield -= bonus;
+			ship.modShieldBonus(-bonus);
 			if(ship.MaxShield < ship.Shield)
 				ship.Shield = ship.MaxShield;
 		}
@@ -1336,12 +1341,13 @@ class HealShieldFromSubsystem : AbilityHook {
 	Argument objTarg(TT_Object);
 	Argument value("Subsystem Value", AT_SysVar, doc="The subsystem value you wish to use to regulate the healing. For example, HyperdriveSpeed would be Sys.HyperdriveSpeed - the healing rate is 1 HP per unit of HyperdriveSpeed in such a case.");
 	Argument cost("Cost per HP", AT_Decimal, "2.0", doc="Amount of supplies drained per HP of regeneration. Does not apply if the caster is not a ship. Defaults to 2.0. Is fully applied even if not all regeneration is used in modes 1 and 2.");
+	Argument powerCost("Power per HP", AT_Decimal, "2.0", doc="Amount of Power drained per HP of regeneration. Does not apply if the caster is not a ship. Defaults to 2.0. Is fully applied even if not all regeneration is used in modes 1 and 2.");
 	Argument preset("Default Rate", AT_Decimal, "500.0", doc="The default healing rate, used if the subsystem value could not be found (or is less than 0). Defaults to 500.");
 	Argument mode("Mode", AT_Integer, "2", doc="How the healing behaves. Mode 0 heals only the target object, mode 1 heals each ship in the target fleet by the value, and mode 2 divides the healing evenly across every member of the target fleet with shield capacity. Defaults to mode 2, and uses mode 2 if an invalid mode is passed to the hook.");
 
 	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const override {
 		Ship@ caster = cast<Ship>(abl.obj);
-		if(caster !is null && caster.Supply == 0 && cost.decimal > 0)
+		if(caster !is null || cost.decimal > caster.Supply || powerCost.decimal > caster.Energy)
 			return false;
 		return true;
 	}
@@ -1399,9 +1405,13 @@ class HealShieldFromSubsystem : AbilityHook {
 
 		if(castedByShip && caster.Supply < (repair * cost.decimal))
 			repair = caster.Supply / cost.decimal;
+		if(castedByShip && caster.Energy < (repair * powerCost.decimal))
+			repair = caster.Energy / powerCost.decimal;
 		
-		if(castedByShip)
+		if(castedByShip) {
 			caster.consumeSupply(repair * cost.decimal);
+			caster.consumeEnergy(repair * powerCost.decimal);
+		}
 		if(mode.integer == 0){
 			if(target.isShip)
 				cast<Ship>(target).Shield += repair;

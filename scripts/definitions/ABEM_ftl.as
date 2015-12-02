@@ -10,6 +10,8 @@ import icons;
 import ABEM_icons;
 import constructions;
 import listed_values;
+import abilities;
+import generic_effects;
 from constructions import IConstructionHook;
 
 #section server
@@ -103,6 +105,33 @@ class TransferPowerFromSubsystem : AbilityHook {
 		if(castedByShip)
 			caster.consumeEnergy(resupply);
 		targetShip.refundEnergy(resupply);
+	}
+#section all
+};
+
+class RechargePower : GenericEffect {
+	Document doc("Recharge the fleet's Power reserves over time.");
+	Argument base(AT_Decimal, doc="Base rate to recharge at per second.");
+	Argument percent(AT_Decimal, "0", doc="Percentage of maximum Power to recharge per second.");
+	Argument in_combat(AT_Boolean, "False", doc="Whether the recharge rate should apply in combat.");
+
+#section server
+	void tick(Object& obj, any@ data, double time) const override {
+		if(!obj.isShip)
+			return;
+		if(!in_combat.boolean && obj.inCombat)
+			return;
+
+		Ship@ ship = cast<Ship>(obj);
+		if(ship.Energy >= ship.MaxEnergy)
+			return;
+
+		double rate = time * base.decimal;
+		if(percent.decimal != 0)
+			rate += time * percent.decimal * ship.MaxEnergy;
+		ship.Energy += rate;
+		if(ship.Energy > ship.MaxEnergy)
+			ship.Energy = ship.MaxEnergy;
 	}
 #section all
 };

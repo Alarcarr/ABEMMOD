@@ -8,14 +8,14 @@ Ability: HullHeal
 	IsToggleTarget(targ)
 	TargetFilterAllied(targ, Allow Null = True)
 	PersistentBeamEffect(targ, #078507, Tractor, Width = 5.0)
-	ABEM_hooks::HealFromSubsystem(targ, Sys.HullHealing)
+	ABEM_hooks::HealFromSubsystem(targ, Sys.HullHealing, Cost per HP = 2, Power per HP = 0)
 Ability: ShieldHeal
 	Name: #ABL_SHIELDHEAL
 	Description: #ABL_SHIELDHEAL_DESC
 	Icon: Plus * #00a0ff
 	Target: targ = Object
 	Range: 500
-	ABEM_hooks::HealShieldFromSubsystem(targ, Sys.ShieldHealing)
+	ABEM_hooks::HealShieldFromSubsystem(targ, Sys.ShieldHealing, Cost per HP = 2, Power per HP = 0)
 	IsToggleTarget(targ)
 	TargetFilterAllied(targ, Allow Null = True)
 	PersistentBeamEffect(targ, #086786, Tractor, Width = 5.0)
