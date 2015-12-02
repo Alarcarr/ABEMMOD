@@ -11,7 +11,7 @@ Trait: ReclusiveRingworlders
 	AI Support: False
 
 	LoadDesigns(ABEM_defaults\ringworlder\other)
-	
+
 	TriggerHomeworld(SpawnPlanet(Ringworld, Owned = True, Add Status = RRInitialRingworld, Radius = 750, Physics = False))
 	TriggerHomeworld(DestroySystemPlanet(1, Quiet = True))
 	TriggerHomeworld(DestroySystemPlanet(2, Quiet = True))
@@ -38,5 +38,7 @@ Trait: ReclusiveRingworlders
 	IfHaveTrait(Fling, LoadDesigns(ABEM_defaults/ringworlder/other))
 	IfHaveTrait(Sublight, LoadDesigns(ABEM_defaults/ringworlder/other))
 
+	ReplaceTechnologyNodes(TaxCenter, DevBudgetSmall)
+	ReplaceTechnologyNodes(BldMegacity, ImpPlanetSupport2)
 	ModEmpireAttribute(VictoryType, Add, 1)
 	ModAttribute(ForbidColonization, Add, 1)
