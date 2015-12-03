@@ -35,10 +35,10 @@ Effector: Flak
 
 	PhysicalType: Projectile
 	GfxType: Sprite
-	GfxSize: 4.5
-	FireSfx: railgun_fire
-	FireSfx: muon_fire
-	Material: Railgun
+	GfxSize: 2
+	FireSfx: flakcannon
+	FireSfx: flakcannon
+	Material: FlakCannon
 	Trail: RailTrail
 	TrailCol: 8888ffff, 00000000
 	ImpactGfx: ImpactFlareRailBlue

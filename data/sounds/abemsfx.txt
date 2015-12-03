@@ -4,3 +4,6 @@ Sound: heavyrail
 Sound: impactrail
 	File: data\sounds\weapons\impact_particle.ogg
 	Volume: 0.10
+Sound: flakcannon
+	File: data\sounds\weapons\assault_cannon.ogg
+	Volume: 0.10

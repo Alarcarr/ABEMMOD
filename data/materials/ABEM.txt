@@ -199,3 +199,7 @@ Material: ShieldTransfer
 Material: PreparingHarvest
 	Inherit: ShieldTransfer
 	Texture: data/images/sprites/beam2.png
+	
+	Material: FlakCannon
+	Inherit: ABEMSubsystem
+	Texture: data/images/sprites/chaingun_salvo2.png
