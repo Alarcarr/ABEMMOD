@@ -1,22 +1,12 @@
 Grid: Base
 	Science: 0,0
-	c1: -1,-1
-	c1: 0,1
-	c3: 1,0
-	c3: -1,0
-	c2: -1,1
-	c2: 0,-1
 	MillitaryResearch: 2,0
 	PolSci: -2,0
-	c1: 1,2
 	DevDefenseIncome: 2,1
-	c2: 1,-2
 	Metallurgy: 1,-3
 	EnergyScience: 1,3
-	c1: -1,-2
 	DevMoney: -4,1
 	DevBudget: -4,-1
-	c2: -1,2
 	FTLT: -2,3
 	SysSkipDrive: -3,6
 	DevFTLIncome: -4,7
@@ -46,7 +36,6 @@ Grid: Base
 	ImpFireRate: 7,1
 	ImpAllHealth: 8,0
 	DevBudgetSmall: -3,0
-	TaxCenter: -4,0
 	DevInfluence: -5,-1
 	DevInfluence: -6,1
 	ImpAllHealth: 5,3
@@ -90,7 +79,6 @@ Grid: Base
 	DevNegotiate: -9,-1
 	DePlanet: -9,1
 	ImpAllHealth2: 14,0
-	DevInfluenceIncome: -3,1
 	DevInfluenceIncome: -5,1
 	DevInfluenceIncome: -6,-1
 	DevInfluenceIncome2: -9,0
@@ -107,7 +95,6 @@ Grid: Base
 	Flagship2: 11,4
 	Flagship3: 14,4
 	ImpSupplyUse: 5,2
-	c1: -2,-3
 	c1: 1,-4
 	c2: 2,-4
 	ImpAllHealth: 2,-5
@@ -197,7 +184,6 @@ Grid: Base
 	c3: -3,3
 	ImpThrust: -4,3
 	IonEngine: -5,3
-	SlavePopulation: -5,0
 	ImpThrust: -6,3
 	c2: 2,-10
 	c1: 3,-10
@@ -300,10 +286,14 @@ Grid: Base
 	ResupplyMod: -8,-5
 	ImpSupplyUse2: 0,10
 	SupplyTransfer: -1,11
-	PlanetDev: -3,-3
 	ImpTileDevelopment: -4,-3
 	ImpCivHealth: -5,-3
 	OrbitalThruster: -3,-5
 	ArmoredSensors: 0,-8
 	TachyonSensor: -6,5
 	SensorProcessingNode: -7,-3
+	PlanetDev: -2,-3
+	DevCultivation: -3,-3
+	DevEnhance: -3,1
+	TaxCenter: -5,0
+	SlavePopulation: -4,0

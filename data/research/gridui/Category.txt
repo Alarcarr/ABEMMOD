@@ -3,48 +3,57 @@ Technology: MillitaryResearch
 	Icon: MilitaryStrengthIcon
 	Class: Keystone
 	Description: #R_CAT_MILITARY_DESC
+	Default Unlock: True
 	AutomaticallyUnlocks()
 Technology: EnergyScience
 	Name: #R_CAT_ENERGY
 	Description: #R_CAT_ENERGY_DESC
 	Icon: DesignationIcons::2
 	Class: Keystone
+	Default Unlock: True
 	AutomaticallyUnlocks()
 Technology: PlanetDev
 	Name: #R_CAT_PLANET
 	Description: #R_CAT_PLANET_DESC
 	Class: Keystone
 	Icon: PlanetImage
+	Default Unlock: True
 	AutomaticallyUnlocks()
 Technology: PolSci
 	Name: #R_CAT_POLITICS
 	Description: #R_CAT_POLITICS_DESC
 	Icon: DesignationIcons::1
 	Class: Keystone
+	Default Unlock: True
 	AutomaticallyUnlocks()
 Technology: Metallurgy
 	Name: #R_CAT_INDUSTRY
 	Description: #R_CAT_INDUSTRY_DESC
 	Class: Keystone
 	Icon: ResourceIcon::6
+	Default Unlock: True
 	AutomaticallyUnlocks()
 Technology: FTLT
 	Name: #R_CAT_PROPULSION
 	Description: #R_CAT_PROPULSION_DESC
 	Class: Keystone
 	Icon: ActionBarIcons::6
+	Default Unlock: True
 	AutomaticallyUnlocks()
 
 Technology: SelfDetermination
 	Name: Self-Determination
 	Icon: Revolutionaries
+	Default Unlock: True
 	AutomaticallyUnlocks()
 Technology: Empire
 	Name: Empire
 	Icon: MilitaryStrengthIcon
+	Default Unlock: True
 	AddModifier(FlagshipHull::MaintCostFactor(0.25))
 Technology: Pacifist
 	Icon: CardIcons::6
+	Default Unlock: True
 Technology: Warmonger
 Technology: Researcher
 Technology: Merchantilist

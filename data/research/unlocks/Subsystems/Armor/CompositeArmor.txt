@@ -8,7 +8,9 @@ Technology: CompositeArmor
 	Icon: CompositeArmor
 	Color: #676210
 	Description: #R_COMPOSITE_ARMOR_DESC
+	Blurb: +10% Armor HP
 
+	AddModifier(tag/IsArmor::HpFactor(1.10))
 	ModAttribute(ProgenitorTechProgress, Add, 2.5)
 	SkipOnUnlockedSubsystem(CompositeArmor)
 	UnlockSubsystem(CompositeArmor)
