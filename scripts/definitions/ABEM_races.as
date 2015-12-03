@@ -880,19 +880,20 @@ class NotifyEmpire : EmpireTrigger {
 
 class NotifyOwner : EmpireTrigger {
 	Document doc("Notify the owner of the target object of an event.");
+	Argument use_owner("Use Owner", AT_Boolean, "False", doc="Whether to localize the notification using the object's owner or the empire it is being called from.");
 	Argument title("Title", AT_Custom, doc="Title of the notification.");
 	Argument desc("Description", AT_Custom, EMPTY_DEFAULT, doc="Description of the notification.");
 	Argument icon("Icon", AT_Sprite, EMPTY_DEFAULT, doc="Sprite specifier for the notification icon.");
-	Argument use_owner("Use Owner", AT_Boolean, "False", doc="Whether to localize the notification using the object's owner or the empire it is being called from.");
+	
 
 #section server
 	void activate(Object@ obj, Empire@ emp) const override {
 		if(obj !is null) {
 			if(obj.owner !is null && obj.owner.major) {
 				if(!use_owner.boolean)
-					obj.owner.notifyGeneric(arguments[0].str, arguments[1].str, arguments[2].str, emp, obj);
+					obj.owner.notifyGeneric(arguments[1].str, arguments[2].str, arguments[3].str, emp, obj);
 				else
-					obj.owner.notifyGeneric(arguments[0].str, arguments[1].str, arguments[2].str, obj.owner, obj);
+					obj.owner.notifyGeneric(arguments[1].str, arguments[2].str, arguments[3].str, obj.owner, obj);
 			}
 		}
 	}

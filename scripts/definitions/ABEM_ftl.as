@@ -2,7 +2,7 @@ import hooks;
 import buildings;
 from buildings import IBuildingHook;
 import abilities;
-from abilities import IAbilityHook;
+from abilities import IAbilityHook, Ability, AbilityHook;
 import statuses;
 from statuses import IStatusHook;
 import util.formatting;
@@ -10,7 +10,6 @@ import icons;
 import ABEM_icons;
 import constructions;
 import listed_values;
-import abilities;
 import generic_effects;
 from constructions import IConstructionHook;
 
