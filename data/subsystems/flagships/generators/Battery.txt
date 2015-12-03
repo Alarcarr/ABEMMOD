@@ -4,7 +4,7 @@ Subsystem: Battery
 	BaseColor: #5ade8b
 	Elevation: 1
 
-	Tags: Category:Power, NonContiguous, NoCore
+	Tags: Category:Power, NonContiguous, NoCore,DefaultUnlock
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes

@@ -1,7 +1,7 @@
 {
 	"__VERSION__": 1,
 	"name": "Dreadnaught",
-	"size": 64,
+	"size": 70,
 	"hull": "$1FlagTiny",
 	"type": "Flagship",
 	"gridWidth": 28,
