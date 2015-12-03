@@ -2,7 +2,7 @@
 	"__VERSION__": 1,
 	"name": "Beamship",
 	"size": 4,
-	"hull": "$1Medium",
+	"hull": "$Medium",
 	"type": "Support",
 	"gridWidth": 19,
 	"gridHeight": 16,
@@ -312,6 +312,22 @@
 				[
 					10,
 					3
+				],
+				[
+					13,
+					3
+				],
+				[
+					13,
+					11
+				],
+				[
+					14,
+					10
+				],
+				[
+					14,
+					5
 				]
 			]
 		},
@@ -339,5 +355,9 @@
 				]
 			]
 		}
-	]
+	],
+	"settings": {
+		"behavior": "Cannon",
+		"range": "Auto"
+	}
 }
