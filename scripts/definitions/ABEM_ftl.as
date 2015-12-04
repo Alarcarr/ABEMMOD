@@ -139,7 +139,7 @@ class RequirePower : AbilityHook {
 	Document doc("Requires a certain amount of Power to activate the ability.");
 	Argument base(AT_Decimal, doc="Base Power to consume.");
 	Argument sysVar(AT_SysVar, doc="Subsystem value to consume Power from.");
-	Argument percent(AT_Decimal, "0", doc="Percentage of maximum Power to consume.")
+	Argument percent(AT_Decimal, "0", doc="Percentage of maximum Power to consume.");
 	
 	bool canActivate(const Ability@ abl, const Targets@ targs, bool ignoreCost) const override {
 		Ship@ caster = cast<Ship>(abl.obj);
