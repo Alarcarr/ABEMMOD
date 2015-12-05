@@ -1,0 +1,38 @@
+Subsystem: EnergyConverter
+	Name: Energy Converter
+	Description:
+	BaseColor: #a767ad
+	TypeColor: #a767ad
+	Picture: AntimatterReactor
+	Elevation: 0
+	
+	Tags: BaseCost, Category:Propulsion
+	Tags: Engine, HasInternals
+	Hull: Flagship
+	
+	Size := HexSize * Hexes
+
+	
+	
+	//Placeholder i dont know how to make this work well.
+	FTLRegen := 0.5 * ShipSize
+	
+	Hex.Mass := HexSize
+	
+	Hex.Resistance := 0.2
+	Hex.HP := 18 * HexSize
+	Power:=2*Size
+	
+	
+	
+	Requires:
+		Command = 1
+		Power = Power
+	Modifier: SpeedFactor(factor)
+		HyperdriveSpeed := HyperdriveSpeed * factor
+	
+	Module: Default
+	
+	Module: Core
+		Sprite: AntimatterReactor
+		Hex.BuildCost := 2 * Hex.BuildCost

@@ -1,0 +1,31 @@
+Subsystem: CrystalStorage
+	Name: #S_CRYSTALSTORAGENAME
+	BaseColor: #774a7c
+	Picture: AntimatterReactor
+	Elevation: 0
+
+	Tags: BaseCost, Category:Propulsion
+	Tags: Engine,  HasInternals
+	Hull: Flagship
+
+	
+	//We need a ability /option in the contextual menu to refill this on allie space.
+	Size := HexSize * Hexes
+	CrystalCapacity := 10 * Size
+	Hex.Mass := HexSize
+
+	Hex.Resistance := 0.2
+	Hex.HP := 18 * HexSize
+	Name: CrystalStorage
+
+	Requires:
+		Command = 1
+
+	Modifier: SpeedFactor(factor)
+		HyperdriveSpeed := HyperdriveSpeed * factor
+
+	Module: Default
+
+	Module: Core
+		Sprite: AntimatterReactor
+		Hex.BuildCost := 2 * Hex.BuildCost
