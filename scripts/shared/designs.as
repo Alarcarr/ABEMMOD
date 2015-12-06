@@ -219,7 +219,7 @@ bool checkExposedLeftRight(Design& design, Subsystem& sys) {
 
 #section server-side
 void getDesignMesh(const Design& design, MeshDesc& mesh) {
-	if(design.hasTag(ST_Gate) && design.hasTag(ST_Station)) {
+	if(design.hasTag(ST_Gate) && design.hasTag(ST_Station) && !design.hasTag(ST_GateHull)) {
 		@mesh.model = model::Warpgate;
 		@mesh.material = material::VolkurGenericPBR;
 	}
