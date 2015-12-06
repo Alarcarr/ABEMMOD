@@ -10,6 +10,8 @@ Trait: Slipstream
 	Unique: FTL
 
 	UnlockSubsystem(Slipstream)
+	UnlockSubsystem(FTLGenerator)
+	UnlockSubsystem(CrystalStorage)
 
 	LoadDesigns(ABEM_defaults/default)
 	LoadDesigns(ABEM_defaults/not_hyperdrive)

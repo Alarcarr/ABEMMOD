@@ -6,7 +6,7 @@ Subsystem: Hyperdrive
 	Picture: SubsystemButtonArt::10
 	Elevation: 0
 	
-	Tags: BaseCost, Category:Propulsion
+	Tags: BaseCost, Category:FTL
 	Tags: Engine, Hyperdrive, HasInternals
 	Hull: Flagship
 	

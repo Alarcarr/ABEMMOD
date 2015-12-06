@@ -9,3 +9,5 @@ Technology: SS
 	ModAttribute(ProgenitorTechProgress, Add, 5)
 	SkipOnUnlockedSubsystem(Slipstream)
 	UnlockSubsystem(Slipstream)
+	UnlockSubsystem(CrystalStorage)
+	UnlockSubsystem(FTLGenerator)

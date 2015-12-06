@@ -4,25 +4,22 @@ Subsystem: CrystalStorage
 	Picture: AntimatterReactor
 	Elevation: 0
 
-	Tags: BaseCost, Category:Propulsion
-	Tags: Engine,  HasInternals
+	Tags: BaseCost, Category:FTL
+	Tags: HasInternals
 	Hull: Flagship
 
 	
 	//We need a ability /option in the contextual menu to refill this on allie space.
 	Size := HexSize * Hexes
 	CrystalCapacity := 10 * Size
+	CrystalRate := 0.25 * Size
 	Hex.Mass := HexSize
 
 	Hex.Resistance := 0.2
 	Hex.HP := 18 * HexSize
-	Name: CrystalStorage
 
 	Requires:
 		Command = 1
-
-	Modifier: SpeedFactor(factor)
-		HyperdriveSpeed := HyperdriveSpeed * factor
 
 	Module: Default
 

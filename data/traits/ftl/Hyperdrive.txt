@@ -12,7 +12,7 @@ Trait: Hyperdrive
 
 	UnlockSubsystem(Hyperdrive)
 	UnlockSubsystem(CrystalStorage)
-	UnlockSubsystem(EnergyConverter)
+	UnlockSubsystem(FTLGenerator)
 	
 	LoadDesigns(ABEM_defaults/default)
 	LoadDesigns(ABEM_defaults/hyperdrive)
