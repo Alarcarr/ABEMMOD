@@ -9,6 +9,7 @@ Subsystem: RemnantHull
 	GridHeight := 23
 
 	Ship.HexSize := ShipSize / HexLimit
+	BaseHexLimit := 80
 
 	Effect: DefensiveMatrixDamage
 
@@ -32,6 +33,7 @@ Subsystem: RemnantSupportHull
 
 	HexLimit := 40
 	Ship.HexSize := ShipSize / HexLimit
+	BaseHexLimit := 40
 
 	Repair := (ShipSize / HexLimit) * 16
 
@@ -49,6 +51,7 @@ Subsystem: SpecialRemnantHull
 	GridWidth := 28
 	GridHeight := 23
 	Repair := HexSize * 16
+	BaseHexLimit := 128
 
 	Effect: DefensiveMatrixDamage
 	HasSinew := 0

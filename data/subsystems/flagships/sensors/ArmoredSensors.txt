@@ -25,7 +25,7 @@ Subsystem: ArmoredSensors
 
 	Control := round(pow(Size / ShipSize, 4) * 100 / (Sum.HasSinew + 1))
 	SensorPriority := 100
-	SensorRange := 75 + (Hexes * 15) + max(log(Size), 1) * Hexes * 0.75
+	SensorRange := (75 + (Hexes * 15)) * (HexLimit / Sum.BaseHexLimit) + max(log(Size), 1) * Hexes * 0.75
 	Hook: ABEM_sensors::AddSensor(SensorPriority, 1.0, SensorRange)
 	Modifier: SensorFactor(factor)
 		SensorRange := SensorRange * factor

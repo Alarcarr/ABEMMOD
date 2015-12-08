@@ -10,6 +10,7 @@ Subsystem: FlagshipHull
 
 	Ship.ExternalHexes := 0
 	Ship.HexSize := ShipSize / HexLimit
+	BaseHexLimit := 128
 
 	// Doing some math for design stats.
 	PowerUsePerSec := Sum.PowerUse - Ship.REQUIRES_Power
