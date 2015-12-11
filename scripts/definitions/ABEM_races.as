@@ -219,8 +219,8 @@ class MineCargoFromPlanet : AbilityHook {
 		double percent = 1;
 		if(abl.obj.isShip)
 		{
-			ship = cast<Ship>(abl.obj);
-			percent = clamp(ship.Energy / (time * power.fromSys(abl.subsystem, efficiencyObj=abl.obj)), 0, 1);
+			@ship = cast<Ship>(abl.obj);
+			percent = clamp(ship.Energy / (time * powerUse.fromSys(abl.subsystem, efficiencyObj=abl.obj)), 0, 1);
 		}
 		Target@ storeTarg = objTarg.fromTarget(abl.targets);
 		if(storeTarg is null)
@@ -232,7 +232,7 @@ class MineCargoFromPlanet : AbilityHook {
 
 		// Diminish the mined cargo by the percentage of the consumed power.
 		if(abl.obj.isShip)
-			ship.consumeEnergy(time * power.fromSys(abl.subsystem, efficiencyObj=abl.obj));
+			ship.consumeEnergy(time * powerUse.fromSys(abl.subsystem, efficiencyObj=abl.obj));
 		double miningRate = min(amount.fromSys(abl.subsystem, efficiencyObj=abl.obj) * time * percent, (abl.obj.cargoCapacity - abl.obj.cargoStored) / type.storageSize);
 
 		abl.obj.addCargo(cargoType.integer, miningRate);
