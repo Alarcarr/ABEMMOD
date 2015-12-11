@@ -148,3 +148,36 @@ class RequirePower : AbilityHook {
 		return true;
 	}
 }
+
+class PoweredMineCargoFrom : AbilityHook {
+	Document doc("Mine cargo from the targeted object over time, while consuming Power to do so.");
+	Argument objTarg(TT_Object);
+	Argument rate(AT_SysVar, "1", doc="Maximum rate to mine cargo at.");
+	Argument power(AT_SysVar, "1", doc="Power to consume per second.")
+
+#section server
+	void tick(Ability@ abl, any@ data, double time) const {
+		if(abl.obj is null || !abl.obj.hasCargo)
+			return;
+			
+		Ship@ ship;
+		double percent = 1;
+		if(abl.obj.isShip)
+		{
+			ship = cast<Ship>(abl.obj);
+			percent = clamp(ship.Energy / (time * power.fromSys(abl.subsystem, efficiencyObj=abl.obj), 0, 1));
+		}
+		Target@ storeTarg = objTarg.fromTarget(abl.targets);
+		if(storeTarg is null)
+			return;
+
+		Object@ target = storeTarg.obj;
+		if(target is null || !target.hasCargo)
+			return;
+		// Diminish the mined cargo by the percentage of the consumed power.
+		if(abl.obj.isShip)
+			ship.consumeEnergy(time * power.fromSys(abl.subsystem, efficiencyObj=abl.obj));
+		target.transferPrimaryCargoTo(abl.obj, time * rate.fromSys(abl.subsystem. efficiencyObj=abl.obj) * percent);
+	}
+#section all
+};

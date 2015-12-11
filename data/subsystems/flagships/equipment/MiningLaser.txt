@@ -37,7 +37,6 @@ Subsystem: MiningLaser
 
 	Requires:
 		Command = 1
-		Power = PowerUse
 
 	Module: Core
 		Sprite: Laser::0 * #91692c

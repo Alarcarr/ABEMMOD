@@ -41,7 +41,6 @@ Subsystem: PlanetMiningLaser
 
 	Requires:
 		Command = 1
-		Power = PowerUse
 
 	Module: Core
 		Sprite: TractorGun::0 * #a1692c
