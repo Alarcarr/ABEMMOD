@@ -220,7 +220,7 @@ class MineCargoFromPlanet : AbilityHook {
 		if(abl.obj.isShip)
 		{
 			ship = cast<Ship>(abl.obj);
-			percent = clamp(ship.Energy / (time * power.fromSys(abl.subsystem, efficiencyObj=abl.obj), 0, 1));
+			percent = clamp(ship.Energy / (time * power.fromSys(abl.subsystem, efficiencyObj=abl.obj)), 0, 1);
 		}
 		Target@ storeTarg = objTarg.fromTarget(abl.targets);
 		if(storeTarg is null)

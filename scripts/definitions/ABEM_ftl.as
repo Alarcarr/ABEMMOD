@@ -153,7 +153,7 @@ class PoweredMineCargoFrom : AbilityHook {
 	Document doc("Mine cargo from the targeted object over time, while consuming Power to do so.");
 	Argument objTarg(TT_Object);
 	Argument rate(AT_SysVar, "1", doc="Maximum rate to mine cargo at.");
-	Argument power(AT_SysVar, "1", doc="Power to consume per second.")
+	Argument power(AT_SysVar, "1", doc="Power to consume per second.");
 
 #section server
 	void tick(Ability@ abl, any@ data, double time) const {
@@ -165,7 +165,7 @@ class PoweredMineCargoFrom : AbilityHook {
 		if(abl.obj.isShip)
 		{
 			ship = cast<Ship>(abl.obj);
-			percent = clamp(ship.Energy / (time * power.fromSys(abl.subsystem, efficiencyObj=abl.obj), 0, 1));
+			percent = clamp(ship.Energy / (time * power.fromSys(abl.subsystem, efficiencyObj=abl.obj)), 0, 1);
 		}
 		Target@ storeTarg = objTarg.fromTarget(abl.targets);
 		if(storeTarg is null)
