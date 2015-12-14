@@ -305,7 +305,7 @@ class KillCrew : StatusHook {
 					if(ship.Shield < 0)
 						ship.Shield = 0;
 				}
-				if(ship.blueprint.hasTagActive(ST_RemnantComputer))
+				if(ship.blueprint.hasTagActive(ST_RemnantComputer) || obj.owner.ImmuneToRadiation != 0)
 					return true;
 				if(ship.Shield > 0 && damage.decimal != -1)
 					timeLeft += time;
@@ -317,7 +317,7 @@ class KillCrew : StatusHook {
 				if(orb.shield > 0) {
 					orb.repairOrbitalShield(-(max(damage.decimal, 0.0) + damagepct.decimal * orb.maxShield) / orb.shieldMod);
 				}
-				if(orb.coreModule != uint(-1) && getOrbitalModule(orb.coreModule).immuneToRadiation)
+				if(obj.owner.ImmuneToRadiation != 0 || orb.coreModule != uint(-1) && getOrbitalModule(orb.coreModule).immuneToRadiation)
 					return true;
 				if(orb.shield > 0 && damage.decimal != -1)
 					timeLeft += time;

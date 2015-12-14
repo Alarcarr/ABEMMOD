@@ -97,4 +97,5 @@ visible:
 	attribute double OrbitalBuildCostMod = 1
 	attribute double OrbitalMaintMod = 1
 	attribute double OrbitalLaborCostMod = 1
+	attribute double ImmuneToRadiation = 0
 }
