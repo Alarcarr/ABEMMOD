@@ -1,6 +1,6 @@
 import version;
 
-const string MOD_REVISION = "655";
+const string MOD_REVISION = "656";
 const array<string> VERSIONS = {
 	"v1.0.2",
 	"v1.0.3"
@@ -42,6 +42,14 @@ bool checkSupported() {
 		error("Mod " + MOD_NAME + " does not support current game version " + GAME_VERSION + "(" + SCRIPT_VERSION + "), use with caution!");
 		return false;
 	}
+}
+
+bool checkDOF() {
+	auto@ gateHull = getSubsystemDef("GateHull");
+	bool result = gateHull !is null;
+	if(!result)
+		error("DOF Support Library missing or out of date - Stargate Integration is missing!");
+	return result;
 }
 
 //bool MOD_SUPPORTS_VERSION = checkSupported();
