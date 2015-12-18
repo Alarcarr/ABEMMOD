@@ -133,14 +133,14 @@ void init() {
 		defaultBackground.load("data/images/title_shot_BG.png");
 	}
 	
-	/*if(!checkDOF()) {
-		if(STEAM_EQUIV_BUILD) {
+	if(!checkDOF()) {
+		/*if(STEAM_EQUIV_BUILD) {
 			message(locale::DOF_MISSING_STEAM);
 		}
 		else {
 			message(locale::DOF_MISSING_OTHER);
-		}
-	}*/
+		}*/
+	}
 }
 
 void tick(double time) {
