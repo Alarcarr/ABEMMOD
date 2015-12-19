@@ -169,6 +169,7 @@ S_SUPERLASER: Superlaser
 S_ROCKETPOD: Rocket Pod
 S_DEFENSIVEMATRIX_NAME: Defensive Matrix Generator
 S_BATTERY_NAME: Batteries
+S_CRYSTALSTORAGENAME: Crystal Storage
 S_BATTERY_DESC: <<
 	A basic power storage system.
 
