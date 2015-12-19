@@ -143,6 +143,11 @@ Material: adamantium
 	Inherit: ABEMSubsystem
 	Texture: data/images/Adamantium.png
 	
+Material: crystalstorage
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/crystalstorage.png
+		
+	
 	
 	//Artificial Resources
 Material: lvl1r
