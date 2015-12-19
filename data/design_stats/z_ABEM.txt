@@ -51,7 +51,7 @@ GlobalStat: PlanetMiningRate
 
 	Variable: PlanetMiningRate
 
-GlobalStat: OptimumPower
+GlobalStat: OptimumPower //this name is counter intuitive care
 	Name: #S_OPTIMUMPOWER
 	Description: #STT_OPTIMUMPOWER
 	Secondary: Power
@@ -76,7 +76,7 @@ GlobalStat: PowerLifeTime
 	Color: #aaa
 	Suffix: Seconds
 	Variable: EnergyCapacity
-	DivBy: Power
+	DivBy: OptimumPower
 
 GlobalStat: FTLCapacity
 	Name: #S_FTLCAPACITY
