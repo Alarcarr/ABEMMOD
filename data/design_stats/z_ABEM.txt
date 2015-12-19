@@ -278,6 +278,22 @@ SubsystemStat: SensorPriority
 	Color: #9ed6ff
 	
 	Variable: SensorPriority
+	
+SubsystemStat: CrystalCapacity
+	Name: #S_CRYSTALCAPACITY
+	Description: #STT_CRYSTALCAPACITY
+	Icon: ResourceIcons::22
+	Color: #9bd29c
+	
+	Variable: CrystalCapacity
+
+SubsystemStat: CrystalRate
+	Name: #S_CRYSTALRATE
+	Description: #STT_CRYSTALRATE
+	Color: #aaa
+	Suffix: /s
+	Variable: CrystalRate
+
 
 // *************************************
 // *********HEX-SPECIFIC STATS**********
