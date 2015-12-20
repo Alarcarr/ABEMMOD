@@ -14,4 +14,4 @@ Ability: MineAsteroid
 	IsToggleTarget(targ)
 	PersistentBeamEffect(targ, #91692c, Tractor)
 
-	ABEM_ftl::MineCargoFrom(targ, Sys.MiningRate:1, Sys.PowerUse:1)
+	ABEM_ftl::PoweredMineCargoFrom(targ, Sys.MiningRate:1, Sys.PowerUse:1)

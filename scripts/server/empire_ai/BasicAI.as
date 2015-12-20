@@ -839,13 +839,8 @@ final class BasicAI : AIController {
 		needsStalks = empire.hasTrait(getTraitID("Verdant"));
 		needsMainframes = empire.hasTrait(getTraitID("Linked"));
 		
-		//Prevent the IA from designing new ships
-		cannotDesign = empire.hasTrait(getTraitID("Hyperdrive"));
-		cannotDesign = empire.hasTrait(getTraitID("Slipstream"))
-		cannotDesign = empire.hasTrait(getTraitID("Gate"))
-		cannotDesign = empire.hasTrait(getTraitID("Fling"))
-		cannotDesign = empire.hasTrait(getTraitID("Sublight"))
-		//cannotDesign = empire.hasTrait(getTraitID("Flux"))
+		//Prevent the AI from designing new ships
+		cannotDesign = true;
 		
 		
 		
