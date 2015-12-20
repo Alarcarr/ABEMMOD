@@ -25,4 +25,5 @@ Trait: Slipstream
 	IfHaveTrait(Devout, LoadDesigns(ABEM_defaults/devout/not_hyperdrive))
 	IfHaveTrait(Devout, LoadDesigns(ABEM_defaults/devout/slipstream))
 
+	ReplaceTechnologyNodes(SS, c1)
 	IfNotHaveTrait(StarChildren, SpawnShip(Slipstream Generator))
