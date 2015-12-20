@@ -12,7 +12,7 @@ Subsystem: CrystalStorage
 	//We need a ability /option in the contextual menu to refill this on allie space.
 	Size := HexSize * Hexes
 	CrystalCapacity := 25 * Size
-	CrystalRate := 0.625 * Size
+	CrystalRate := 2 * Size
 	Hex.Mass := HexSize
 
 	Hex.Resistance := 0.2

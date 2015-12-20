@@ -12,7 +12,7 @@ Subsystem: ReactiveArmor
 	Ship.ExternalHexes := Ship.ExternalHexes + ExteriorHexes
 	
 	Size := HexSize * Hexes
-	ImpactLevel := ShipSize
+	ImpactLevel := ShipSize/2
 	MinPct := 1/6
 
 	Hex.Resistance := 0.4

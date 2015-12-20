@@ -20,7 +20,7 @@ Effector: RailgunBattery
 	Range: Range
 	Speed: Speed
 	Tracking: Tracking
-	Lifetime: Range / Speed
+	Lifetime: 1.1*Range / Speed
 	CapTarget: CapOnTarget
 	Spread: Spread
 	FireArc: FireArc
