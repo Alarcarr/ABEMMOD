@@ -19,7 +19,6 @@ Trait: Gate
 	IfHaveTrait(Verdant, LoadDesigns(ABEM_defaults/verdant/not_hyperdrive))
 	IfHaveTrait(Verdant, LoadDesigns(ABEM_defaults/verdant/gate))
 
-	ReplaceTechnologyNodes(GateTech, c1)
 	IfHaveTrait(Devout, LoadDesigns(ABEM_defaults/devout/default))
 	IfHaveTrait(Devout, LoadDesigns(ABEM_defaults/devout/not_hyperdrive))
 	IfHaveTrait(Devout, LoadDesigns(ABEM_defaults/devout/gate))

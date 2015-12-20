@@ -20,5 +20,4 @@ Trait: Fling
 	IfHaveTrait(Devout, LoadDesigns(ABEM_defaults/devout/default))
 	IfHaveTrait(Devout, LoadDesigns(ABEM_defaults/devout/not_hyperdrive))
 
-	ReplaceTechnologyNodes(FlingBeacons, c2)
 	SpawnOrbital(FlingCore, Free = True)

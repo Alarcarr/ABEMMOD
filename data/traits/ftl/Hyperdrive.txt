@@ -13,13 +13,12 @@ Trait: Hyperdrive
 	UnlockSubsystem(Hyperdrive)
 	UnlockSubsystem(CrystalStorage)
 	UnlockSubsystem(FTLGenerator)
-
+	
 	LoadDesigns(ABEM_defaults/default)
 	LoadDesigns(ABEM_defaults/hyperdrive)
 
 	IfHaveTrait(Verdant, LoadDesigns(ABEM_defaults/verdant/default))
 	IfHaveTrait(Verdant, LoadDesigns(ABEM_defaults/verdant/hyperdrive))
 
-	ReplaceTechnologyNodes(Hyperdrive, c2)
 	IfHaveTrait(Devout, LoadDesigns(ABEM_defaults/devout/default))
 	IfHaveTrait(Devout, LoadDesigns(ABEM_defaults/devout/hyperdrive))
