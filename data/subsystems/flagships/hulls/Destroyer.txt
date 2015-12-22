@@ -8,8 +8,7 @@ Subsystem: Destroyer
 	BaseColor: #cc0b04
 
 	AddShipModifier: FlagshipHull::HexLimitFactor(1.0)
-	AddShipModifier: FlagshipHull::GridWidthFactor(sqrt(2.0))
-	AddShipModifier: FlagshipHull::GridHeightFactor(sqrt(2.0))
+	
 
 	AddShipModifier: HyperdriveSpeedFactor(0.9)
 	AddShipModifier: MassFactor(1.2)
@@ -19,8 +18,8 @@ Subsystem: Destroyer
 	AddShipModifier: SupportCapacityFactor(0.5)
 	AddShipModifier: ShieldCapacityFactor(1.3)
 
-	Assert: ShipSize >= 100
-		Message: #ERROR_MIN_SIZE:$1:100
+	Assert: ShipSize >= 300
+		Message: #ERROR_MIN_SIZE:$1:300
 
 	Module: Default
 		Sprite: DesignationIcons::16

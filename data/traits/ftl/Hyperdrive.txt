@@ -12,7 +12,10 @@ Trait: Hyperdrive
 
 	UnlockSubsystem(Hyperdrive)
 	UnlockSubsystem(CrystalStorage)
-	UnlockSubsystem(FTLGenerator)
+	UnlockSubsystem(FTLGenerator)	
+	UnlockSubsystem(FtlBattery)
+	UnlockSubsystem(FtlEnergy)
+	
 	
 	LoadDesigns(ABEM_defaults/default)
 	LoadDesigns(ABEM_defaults/hyperdrive)
@@ -22,3 +25,5 @@ Trait: Hyperdrive
 
 	IfHaveTrait(Devout, LoadDesigns(ABEM_defaults/devout/default))
 	IfHaveTrait(Devout, LoadDesigns(ABEM_defaults/devout/hyperdrive))
+
+	SpawnShip(FTL Deposit)

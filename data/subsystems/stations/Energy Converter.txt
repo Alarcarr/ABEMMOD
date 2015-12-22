@@ -1,0 +1,65 @@
+Subsystem: FtlEnergy
+	Name: Energy Converter
+	BaseColor: #a767ad
+	TypeColor: #a767ad
+	Picture: AntimatterReactor
+	Elevation: 0
+
+	Tags: BaseCost, Category:FTL
+	Tags: HasInternals
+	Hull: Station
+
+	Size := HexSize * Hexes
+
+	FTLRegen := 3 * Size
+	PowerUse := 30 * Size
+	
+		
+
+	Hex.Mass := HexSize
+
+	Hex.Resistance := 0.2
+	Hex.HP := 18 * HexSize
+
+	Requires:
+		Command = 1
+		Power = PowerUse
+	
+	Module: Default
+
+	Module: Core
+		Sprite: AntimatterReactor*#ffggad
+		Hex.BuildCost := 2 * Hex.BuildCost
+		
+		
+Subsystem: FtlBattery
+	Name: FTL Battery
+	BaseColor: #a767ad
+	TypeColor: #a767ad
+	Picture: Battery
+	Elevation: 0
+
+	Tags: BaseCost, Category:FTL
+	Tags: HasInternals
+	Hull: Station
+
+	Size := HexSize * Hexes
+
+	FTLCapacity :=1700 * (log(Size))^2
+	
+		
+
+	Hex.Mass := HexSize
+
+	Hex.Resistance := 0.2
+	Hex.HP := 18 * HexSize
+
+	Requires:
+		Command = 1
+		
+		
+	Module: Default
+
+	Module: Core
+		Sprite: Battery*#ffggad
+		Hex.BuildCost := 2 * Hex.BuildCost

@@ -283,7 +283,6 @@ Grid: Base
 	PowerPlant: -7,-6
 	ImpCivConstructionRate: -6,-6
 	ImpDecaySpeed: -7,-5
-	ResupplyMod: -8,-5
 	ImpSupplyUse2: 0,10
 	SupplyTransfer: -1,11
 	ImpTileDevelopment: -4,-3
