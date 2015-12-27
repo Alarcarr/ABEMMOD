@@ -27,6 +27,8 @@ Subsystem: ShipComputer
 	EfficiencyBoost := 20 * (Size / ShipSize)
 	HasComputer := 1
 
+	Effect: ABEMControlCore
+
 	Hook: AddStatus(ComputerCore)
 
 	Requires:
