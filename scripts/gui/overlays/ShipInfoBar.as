@@ -198,8 +198,8 @@ class ShipInfoBar : InfoBar {
 			return;
 		expanded = value;
 
-		bpdisp.alignment.set(Left+4, Top+30, Right-128, Bottom-70);
 		if(expanded) {
+			bpdisp.alignment.set(Left+4, Top+30, Right-128, Bottom-70);
 			bpdisp.alignment.padded(0,
 					-480.0/1920.0*double(screenSize.width),
 					-610.0/1080.0*double(screenSize.height),
@@ -210,6 +210,7 @@ class ShipInfoBar : InfoBar {
 			expandButton.setIcon(icons::Minus);
 		}
 		else {
+			bpdisp.alignment.set(Left+4, Top-4, Right-128, Bottom-104);
 			bpdisp.horizAlign = 0.25;
 			bpdisp.vertAlign = 1.0;
 			expandButton.alignment.set(Right+75, Bottom-20, Right+75+20, Bottom-20+20);
