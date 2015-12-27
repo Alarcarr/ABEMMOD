@@ -4,7 +4,7 @@ Subsystem: QuantumArmor
 	Elevation: 1
 
 	Tags: Category:Armor
-	Tags: NoCore, NonContiguous, Defense, IsArmor, TankArmor, ExternalSpace
+	Tags: NoCore, NonContiguous, Defense,  TankArmor, ExternalSpace
 	Hull: Flagship, Station
 
 	Tags: FauxExterior

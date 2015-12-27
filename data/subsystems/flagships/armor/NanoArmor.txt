@@ -5,7 +5,7 @@ Subsystem: NanoArmor
 	Elevation: 1
 
 	Tags: LowMaint, Category:Armor
-	Tags: NoCore, NonContiguous, Defense, IsArmor, TankArmor, ExternalSpace
+	Tags: NoCore, NonContiguous, Defense,  TankArmor, ExternalSpace
 	Hull: Flagship, Station
 
 	Tags: FauxExterior
