@@ -23,7 +23,7 @@ Technology: ImpDamage2
 	Point Cost: 1500
 	Time Cost: 180
 
-	AddModifier(tag/Weapon::DamageFactor(1.5))
+	AddModifier(tag/Weapon::DamageFactor(1.15))
 
 	ModAttribute(WeaponsDmg, Add, 2)
 Technology: ImpDamageSmall
