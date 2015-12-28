@@ -19,7 +19,7 @@ Subsystem: AntimatterGen
 
 	Hex.LaborCost := 0.4 * HexSize + 1
 	Hex.BuildCost := 12 * HexSize + 4
-	Hex.MaintainCost := 50 //discourage the use in small ships
+	Hex.MaintainCost := 40 //discourage the use in small ships
 
 	Provides:
 		Power = Power

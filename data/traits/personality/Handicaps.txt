@@ -3,34 +3,36 @@ Trait: Handicap1
 	Icon: PlanetLevelIcons::2
 	Color: #50ff1a
 	Category: Handicaps
-	Description: Increase Fleet Eficiency by 60%
+	Description: Increase Fleet Eficiency by 30% and 450$ worth of pressure on the homeworld and add 30% pressure to all resources
 
 
 	Unique: Handicap
-	ModAttribute(FleetEfficiencyFactor, Add, 0.6)
-
+	ModAttribute(FleetEfficiencyFactor, Add, 0.3)
+	AddMoneyIncome(450)
+	AddStatusOwnedPlanets(ULTRANOOB)
 Trait: Handicap2
 
 	Category: Handicaps
 	Icon: PlanetLevelIcons::1
 	Name: Newbie
-	Description: Increase your Fleet Eficiency by 40%
-	ModAttribute(FleetEfficiencyFactor, Add, 0.4)
-
+	Description: Increase your Fleet Eficiency by 20% and 300$ worth of pressure on the homeworld and add 20% pressure to all resources
+	ModAttribute(FleetEfficiencyFactor, Add, 0.2)
+	AddMoneyIncome(300)
 
 	Unique: Handicap
-
+AddStatusOwnedPlanets(SUPERNOOB)
 
 Trait: Handicap3
 	Color: #ff0000
 	Icon: PlanetLevelIcons::0
 	Name: Casual Gamer
-	Description: Increase your Fleet Eficiency by 20%
+	Description: Increase your Fleet Eficiency by 10% and 150$ Worth of pressure on the homeworld and  add 10% pressure to all resources
 	Category: Handicaps
-	ModAttribute(FleetEfficiencyFactor, Add, 0.2)
-
+	ModAttribute(FleetEfficiencyFactor, Add, 0.1)
+	AddMoneyIncome(150)
 
 	Unique: Handicap
+AddStatusOwnedPlanets(NOOB)
 
 Trait: Handicap0
 	Color: #ff0000
