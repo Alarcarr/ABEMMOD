@@ -3,6 +3,8 @@ import hooks;
 
 enum RandomTriggerMode {
 	RTM_Random,
+	RTM_Colonization,
+	RTM_Moon, // We don't actually have moons that would support random events yet. Still, it -was- one of the planned event types...
 };
 
 class RandomEvent {
@@ -265,6 +267,9 @@ class RandomOptionHook : Hook, IRandomOptionHook {
 RandomEvent@[] randomEvents;
 uint optionId = 0;
 dictionary idents;
+// This is a bit of a kludge, because I'm coding a new array (and a new response for half a dozen functions)
+// for every event type, but I can't think of a better solution right now.
+uint[] randomIDs, colonizationIDs, moonIDs;
 
 const RandomEvent@ getRandomEvent(uint id) {
 	if(id >= randomEvents.length)
@@ -295,6 +300,31 @@ string getRandomEventIdent(int id) {
 
 uint getRandomEventCount() {
 	return randomEvents.length;
+}
+
+RandomTriggerMode getRandomTriggerMode(const string& ident) {
+	if(ident.equals_nocase("Random"))
+		return RTM_Random;
+	else if(ident.equals_nocase("Colonization")) 
+		return RTM_Colonization;
+	else if(ident.equals_nocase("Moon"))
+		return RTM_Moon;
+	else return -1;
+}
+
+const RandomEvent@ getRandomEventByType(RandomTriggerMode mode) {
+	switch(mode) {
+		case RTM_Random:
+			return randomIDs[randomi(0, randomIDs.length)];
+		case RTM_Colonization:
+			return colonizationIDs[randomi(0, colonizationIDs.length)];
+		case RTM_Moon:
+			return moonIDs[randomi(0, moonIDs.length)];
+		default:
+			error("Warning: Unknown random event type: "+mode+".");
+			error("  Selecting from all events instead...");
+			return randomEvents[randomi(0, randomEvents.length)];
+	}
 }
 
 void addRandomEvent(RandomEvent@ type) {
@@ -375,6 +405,10 @@ bool loadEvent(ReadFile@ file) {
 			else if(file.key.equals_nocase("Mode")) {
 				if(file.value.equals_nocase("Random"))
 					evt.mode = RTM_Random;
+				else if(file.value.equals_nocase("Colonization"))
+					evt.mode = RTM_Colonization;
+				else if(file.value.equals_nocase("Moon"))
+					evt.mode = RTM_Moon;
 				else
 					file.error("Unknown random event mode: "+file.value);
 			}

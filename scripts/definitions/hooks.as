@@ -94,6 +94,7 @@ enum ArgumentType {
 	AT_Custom,
 	AT_VarArgs,
 	AT_EmpireResource,
+	AT_RandomEventType,
 };
 
 enum EmpireResource {
@@ -619,6 +620,14 @@ final class Argument {
 			case AT_EmpireResource:
 				integer = empResources.find(value);
 				return integer >= 0;
+			case AT_RandomEventType: {
+				integer = getRandomTriggerMode(value);
+				str = value;
+				if(integer == -1) {
+					error("Unknown random event type: "+val);
+					return false;
+				}
+			} return true;
 			case AT_Custom:
 			default:
 				str = value;
