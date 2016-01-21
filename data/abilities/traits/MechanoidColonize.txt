@@ -21,3 +21,24 @@ Ability: MechanoidColonize
 	ConsumeDistanceFTL(targ, Base Cost = 20, Distance Cost = 0.002, Path Distance = True)
 
 	AutoCastAsColonizePopTransfer()
+
+Ability: MechanoidColonize5
+	Name: #ABL_MECHANOID_COLONIZE5
+	Description: #ABL_MECHANOID_COLONIZE5_DESC
+	Icon: ActionBarIcons::1
+
+	Target: targ = Object
+	TargetFilterType(targ, Planet)
+	TargetFilterNotQuarantined(targ)
+	TargetFilterNotSelf(targ)
+	RequireNotUnderSiege()
+	RequirePopulation(5)
+	ForClient(Either(TargetFilterSpace(targ), TargetFilterOwned(targ)))
+
+	TriggerIfOwnedOrSpace(targ, TakeControl())
+	TriggerIfOwnedOrSpace(targ, GivePopulation(5))
+
+	IfTargetOwnedOrSpace(targ, LosePopulation(5))
+	Trigger(targ, GiveMemory())
+
+	ConsumeDistanceFTL(targ, Base Cost = 100, Distance Cost = 0.01, Path Distance = True)

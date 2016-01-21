@@ -18,3 +18,26 @@ Construction: MechanoidPopulation
 	OnCancel(ModAttribute(MechPopulationBuilt, Add, -1))
 
 	AddLaborCostAttribute(MechPopulationBuilt, 0, 2.5)
+	AddLaborCostAttribute(PopMatrixLevel, 12.5, 0)
+
+Construction: MechanoidPopulation10
+	Name: #MECH_BUILD_POPULATION10
+	Description: #MECH_BUILD_POPULATION10_DESC
+
+	Category: Infrastructure
+
+	Labor Cost: 50
+	Build Cost: 1500
+	Always Borrowable: True
+
+	RequireTrait(Mechanoid)
+	RequirePlanet()
+
+	GivePopulation(10)
+	SlowDownDebtGrowthFactor() #version>=117
+
+	OnStart(ModAttribute(MechPopulationBuilt, Add, 10))
+	OnCancel(ModAttribute(MechPopulationBuilt, Add, -10))
+
+	AddLaborCostAttribute(MechPopulationBuilt, 0, 25)
+	AddLaborCostAttribute(PopMatrixLevel, 125, 0)
