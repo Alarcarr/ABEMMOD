@@ -18,7 +18,7 @@ Construction: MechanoidPopulation
 	OnCancel(ModAttribute(MechPopulationBuilt, Add, -1))
 
 	AddLaborCostAttribute(MechPopulationBuilt, 0, 2.5)
-	AddLaborCostAttribute(PopMatrixLevel, 12.5, 0)
+	AddLaborCostAttribute(PopMatrixLevel, -12.5, 0)
 
 Construction: MechanoidPopulation10
 	Name: #MECH_BUILD_POPULATION10
@@ -40,4 +40,4 @@ Construction: MechanoidPopulation10
 	OnCancel(ModAttribute(MechPopulationBuilt, Add, -10))
 
 	AddLaborCostAttribute(MechPopulationBuilt, 0, 25)
-	AddLaborCostAttribute(PopMatrixLevel, 125, 0)
+	AddLaborCostAttribute(PopMatrixLevel, -125, 0)
