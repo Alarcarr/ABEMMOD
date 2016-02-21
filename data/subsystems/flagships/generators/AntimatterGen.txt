@@ -25,7 +25,7 @@ Subsystem: AntimatterGen
 		Power = Power
 
 	Module: Core
-		Sprite: AntimatterReactor
+		Sprite: AntimatterGen
 
 	Module: Default
 

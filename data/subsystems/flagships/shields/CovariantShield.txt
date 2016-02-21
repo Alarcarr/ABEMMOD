@@ -31,4 +31,4 @@ Subsystem: CovariantShield
 		Command = 1
 
 	Module: Core
-		Sprite: TechIcons::6
+		Sprite: CovariantShield

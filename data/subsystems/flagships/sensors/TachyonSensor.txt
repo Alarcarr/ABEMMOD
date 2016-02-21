@@ -29,6 +29,6 @@ Subsystem: TachyonSensor
 		Command = Control
 
 	Module: Core
-		Sprite: cloack
+		Sprite: TachyonSensors
 
 	Module: Default

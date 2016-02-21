@@ -1,7 +1,7 @@
 Artifact: GuardianShipyard
 	Name: #ART_GUARDIAN_INACTIVE
 	Description: #ART_GUARDIAN_INACTIVE_DESC
-	Icon: techShipYard
+	Icon: HullIcons::1
 	Strategic Icon: HullIcons::1
 	Model: Shipyard
 	Size: 50.0

@@ -3,5 +3,5 @@ Artifact: CommandComputer
 	Description: #ART_COMMAND_COMPUTER_DESC
 
 	Ability: ExpandFleet
-	Icon: ActionBarIcons::2
-	Strategic Icon: ActionBarIcons::2 
+	Icon: ProgenitorComputer
+	Strategic Icon: ProgenitorComputer

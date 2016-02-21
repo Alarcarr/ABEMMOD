@@ -25,7 +25,7 @@ Subsystem: FusionGen
 		Power = Power
 
 	Module: Core
-		Sprite: FusionReactor
+		Sprite: FusionGen
 
 	Module: Default
 

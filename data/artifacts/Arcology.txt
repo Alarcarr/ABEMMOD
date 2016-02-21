@@ -6,6 +6,8 @@ Artifact: Arcology
 
 	Ability: DevelopPlanet
 	Time Frequency: 0.1
+	Icon: Arcology
+	Strategic Icon: Arcology
 
 Artifact: NatureDevice
 	Name: #ART_ARCOLOGY

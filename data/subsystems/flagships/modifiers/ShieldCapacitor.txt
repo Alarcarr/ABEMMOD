@@ -3,7 +3,7 @@ Template: hexVar/BuildCost, hexVar/HP, tag/IsShield, !tag/SupportHull, !hexVar/P
 		Description: #SHIELDCAPACITOR_DESC
 
 		Color: #8a37ff
-		Sprite: SupportCommand * #8a37ff
+		Sprite: ShieldCapacitor
 
 		AddModifier: BuildCostFactor(1.75)
 		AddModifier: ShieldRegenFactor(0.85)

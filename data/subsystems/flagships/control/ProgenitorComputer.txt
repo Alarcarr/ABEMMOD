@@ -2,7 +2,7 @@ Subsystem: ProgenitorComputer
 	Name: #S_PROGENITORCOMPUTER
 	Description: #S_PROGENITORCOMPUTER_DESC
 	BaseColor: #ffa4a0
-	Picture: SubsystemButtonArt::8 * #ffa4a0
+	Picture: ProgenitorComputer
 	Elevation: 4
 
 	Tags: BaseCost, Category:Control
@@ -46,7 +46,7 @@ Subsystem: ProgenitorComputer
 		Sprite: TechIcons::36
 
 	Module: Core
-		Sprite: TechIcons::58
+		Sprite: ProgenitorComputer
 		Hex.HP := 2.5 * Hex.HP
 		Hex.Resistance := 0.5
 		Hex.BuildCost := 5 * Hex.BuildCost

@@ -1,6 +1,6 @@
 import version;
 
-const string MOD_REVISION = "683";
+const string MOD_REVISION = "684";
 const array<string> VERSIONS = {
 	"v1.0.2",
 	"v1.0.3"
@@ -11,7 +11,7 @@ const array<string> REVISIONS = {
 	"4744", 
 	"4746"
 };
-const string MOD_NAME = "ABEM 0.5.0";
+const string MOD_NAME = "ABEM 0.5.0 Alpha";
 const string MOD_VERSION = MOD_NAME + " (revision " + MOD_REVISION + ") for Star Ruler 2 " + VERSIONS[0] + " (revision " + REVISIONS[0] + ", currently using " + GAME_VERSION + " " + SCRIPT_VERSION + ")";
 
 string getLowestSupported(string input) {

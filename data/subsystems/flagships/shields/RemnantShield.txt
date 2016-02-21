@@ -29,5 +29,5 @@ Subsystem: RemnantShield
 		Command = 2
 
 	Module: Core
-		Sprite: TechIcons::35*#60ffff
+		Sprite: ProgenitorShield
 		Hex.BuildCost := 2 * Hex.BuildCost

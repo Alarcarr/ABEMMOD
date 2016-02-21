@@ -38,7 +38,7 @@ Effector: Flak
 	GfxSize: 2
 	FireSfx: flakcannon
 	FireSfx: flakcannon
-	Material: FlakCannon
+	Material: RailgunEmit
 	Trail: RailTrail
 	TrailCol: 8888ffff, 00000000
 	ImpactGfx: ImpactFlareRailBlue
