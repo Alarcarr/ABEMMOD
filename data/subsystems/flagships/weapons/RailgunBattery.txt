@@ -21,14 +21,14 @@ Subsystem: RailgunBattery
 	FireArc := 1.5
 	Pierce := 0.6
 	SupplyCost := Size * 1.5
-	
-	PowerUse :=0.4 * Size
-	
-	PowerperSec:=PowerUse/	Reload
-	
-	
+
+	PowerUse := 0.4 * Size
+
+	PowerperSec := PowerUse/	Reload
+
+
 	Impulse := 0
-	
+
 	Hex.HP := 18 * HexSize
 	Hex.Resistance := 0.2
 	Hex.Mass := HexSize
@@ -38,8 +38,8 @@ Subsystem: RailgunBattery
 
 	Requires:
 		Command = 1
-		
-	
+
+
 	Module: Default
 
 	Module: Core
@@ -62,11 +62,12 @@ Subsystem: RailgunBattery
 		Tracking = Tracking
 		Spread = Spread
 		FireArc = FireArc
-		EnergyCost = PowerUse 
-		
+		EnergyCost = PowerUse
+
 		TargetTolerance = max(pi,FireArc + pi/4)
 		FireTolerance = Spread * 3
 		Pierce = Pierce
 		SupplyCost = SupplyCost * Reload
 		CapOnTarget = 24
 		Impulse = Impulse
+		ResourceResponse = 2

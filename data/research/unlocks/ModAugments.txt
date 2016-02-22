@@ -7,7 +7,7 @@ Technology: ModAugmentReload
 	Time Cost: 60
 
 	Color: #ffff00
-	Icon: SupportCommand * #ffff00
+	Icon: Coolant
 
 	UnlockModule(AugmentReload)
 	SkipOnUnlockedModule(AugmentReload)

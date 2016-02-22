@@ -6,7 +6,7 @@ Technology: SysShipComupter
 	Point Cost: 1000
 	Time Cost: 80
 
-	Icon: ComputerCore
+	Icon: ABEMComputer
 	Color: #ffa4a0
 
 	UnlockSubsystem(ShipComputer)

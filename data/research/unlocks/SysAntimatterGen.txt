@@ -6,7 +6,7 @@ Technology: SysAntimatterGen
 	Point Cost: 800
 	Time Cost: 120
 
-	Icon: AntimatterReactor
+	Icon: AntimatterGen
 	Color: #5ade8b
 
 	UnlockSubsystem(AntimatterGen)

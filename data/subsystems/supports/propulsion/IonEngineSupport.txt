@@ -7,7 +7,7 @@ Subsystem: IonEngineSupport
 	Elevation: 0
 
 	Tags: Category:Propulsion, NoBackWall, TurnToThrust
-	Tags: ExteriorCore, DefaultUnlock, Engine, GivesThrust, HasInternals
+	Tags: ExteriorCore,  Engine, GivesThrust, HasInternals
 	Hull: Support
 
 	OnCheckErrors: designs::checkCoreFacingBackwards

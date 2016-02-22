@@ -23,7 +23,7 @@ Subsystem: EnergyTransmitter
 
 	SupplyTransferRate := 1125 * Size
 	TypeColor: #2fd6b3
-	PowerUse := 2.5 * Size
+	PowerTransferRate := 2500 * Size
 	Module: Core
 		Sprite: Laser::0 * #38a2f9
 		Hex.BuildCost := Hex.BuildCost * 3

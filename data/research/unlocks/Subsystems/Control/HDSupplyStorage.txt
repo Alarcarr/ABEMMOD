@@ -1,6 +1,6 @@
 Technology: HDSupply
 	Name: #HDSUPPLYMODULE
-	Icon: SupplyStorage*#9e17ff
+	Icon: HDSupplyStorage
 	Class: Unlock
 	Point Cost: 600
 	Time Cost: 60

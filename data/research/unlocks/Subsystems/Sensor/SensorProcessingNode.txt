@@ -2,7 +2,7 @@ Technology: SensorProcessingNode
 	Name: #R_SENSOR_PROCESSING_NODE
 	Description: #R_SENSOR_PROCESSING_NODE_DESC
 	Class: Unlock
-	Icon: TechIcons::54
+	Icon: techScanner
 	Point Cost: 1000
 	Time Cost: 90
 	Color: #9ed6ff

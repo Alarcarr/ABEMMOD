@@ -1,5 +1,5 @@
 Technology: ProgenitorComputer
-	Icon: TechIcons::58
+	Icon: ProgenitorComputer
 	Description: #R_SYS_PROGENITORCOMPUTER_DESC
 	Name: #R_SYS_PROGENITORCOMPUTER
 	Point Cost: 1500

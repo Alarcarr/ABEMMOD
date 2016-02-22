@@ -4,6 +4,7 @@ Ability: SupplyTransfer
 	Icon: AttributeIcons::4
 	Range: 500
 	Target: targ = Object
+	ABEM_ftl::TransferPowerFromSubsystem(targ, Sys.PowerTransferRate)
 	TargetFilterFlagship(targ)
 	IsToggleTarget(targ)
 	TargetFilterNotSelf(targ)
