@@ -19,7 +19,6 @@ Subsystem: EnergyTransmitter
 	Description: #S_ENERGYTRANSMITTER_DESC
 	Requires:
 		Command = 1
-		Power = PowerUse
 
 	SupplyTransferRate := 1125 * Size
 	TypeColor: #2fd6b3
