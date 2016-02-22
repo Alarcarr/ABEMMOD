@@ -425,7 +425,7 @@ S_COMPOSITE_ARMOR_DESC: <<
 
 	[img=Plus]Reduces all incoming damage by a fixed percentage.[/img]
 	[img=MenuIcons::3;20]Just as heavy as Remnant or Reactive Armor. Slightly tougher than Ablative, but weaker than Plate Armor.[/img]
-	[img=Minus]Requires a low amount of maintenance, and is twice as labor-intensive as - and slightly more expensive than - Plate Armor.[/img]
+	[img=Minus]Twice as labor-intensive as Plate Armor, and slightly more expensive.[/img]
 >>
 S_POWERED_ARMOR_DESC: <<
 	Targeted electromagnetic deflectors placed on the ship's exterior.
@@ -619,7 +619,7 @@ S_MATTERDISRUPTOR_DESC: <<
 	An energy weapon which abuses the gravitational attraction between the parts of its target to deal additional damage.
 	
 	[img=Plus]Deals up to 400% of listed damage based on the relative sizes of the ship and its target. Scaling cuts off at 400% size.[/img]
-	[img=Minus]Deals as little as 50% of listed damage if the target is smaller than the ship. Scaling cuts off at 50% size.[/img]
+	[img=Minus]Deals as little as 30% of listed damage if the target is smaller than the ship. Scaling cuts off at 30% size.[/img]
 	[img=Minus]Fires 10 times slower than a Railgun Battery, and deals only 5 times as much damage per shot as a Railgun Battery does.[/img]
 	[img=MenuIcons::3;20]Behaves like a Railgun Battery in every other way, except that it deals energy damage.[/img]
 >>

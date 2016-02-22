@@ -1,4 +1,4 @@
-R_DEV_FTL_INCOME_DESC: <<
+﻿R_DEV_FTL_INCOME_DESC: <<
 	[i][color=#aaa]Better control over the collection and refinement of FTL crystals.[/color][/i]
 
 	Increases empire FTL Crystal income by 0.5/s.
@@ -124,7 +124,7 @@ R_SYS_ADMIRAL_DESC: <<
 R_COMPOSITE_ARMOR_DESC: <<
 	[color=#aaa][i]Advances in composite materials allow us to make better armor.[/i][/color]
 
-	Unlocks Composite Armor. Also Increases all [color=#567][b]Armor HP[/b][/color] by 10%
+	Unlocks Composite Armor and increases all armor HP by 10%.
 
 	[i][bbloc=#S_COMPOSITE_ARMOR_DESC/][/i]
 >>

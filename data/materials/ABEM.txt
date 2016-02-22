@@ -177,6 +177,13 @@ Material: BusterMachine
 Material: ProgenitorComputer
 	Inherit: ABEMSubsystem
 	Texture: data/images/subsystems/progenitorcomputer.png
+Material: ControlChair
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/controlchair.png
+Material: CargoBay
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/cargostorage.png
+
 
 
 Material: city1

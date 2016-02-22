@@ -37,7 +37,7 @@ Subsystem: AdmiralBay
 		Sprite: CrewQuarters*#5686ff
 
 	Module: Core
-		Sprite: Bridge*#5686ff
+		Sprite: HexagonSubsystems::3
 		Hex.HP := 2 * Hex.HP
 		Hex.Resistance := 0.35
 

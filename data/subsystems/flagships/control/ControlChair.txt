@@ -38,7 +38,7 @@ Subsystem: ControlChair
 		Command = Command
 
 	Module: Core
-		Sprite: HexagonSubsystems::3
+		Sprite: ControlChair
 		Hex.HP := 2 * Hex.HP
 		Hex.Resistance := 0.35
 
