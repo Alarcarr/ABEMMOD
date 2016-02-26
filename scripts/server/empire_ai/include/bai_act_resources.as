@@ -896,11 +896,7 @@ class BuildOrbital : Action {
 								orbID = getOrbitalModuleID("FlingCore");
 								break;
 							case OT_Mainframe:
-								//orbID = getOrbitalModuleID("Mainframe");
-								if(ai.isBSGCylon)
-									orbID = getOrbitalModuleID("BSGCylonResurrectionShip");
-								else
-									orbID = getOrbitalModuleID("Mainframe");
+								orbID = getOrbitalModuleID("Mainframe");
 								break;
 						}
 						
@@ -943,35 +939,10 @@ class BuildOrbital : Action {
 							orbID = getOrbitalModuleID("FlingCore");
 							break;
 						case OT_Mainframe:
-							//orbID = getOrbitalModuleID("Mainframe");
-							if(ai.isBSGCylon)
-								orbID = getOrbitalModuleID("BSGCylonResurrectionShip");
-							else
-								orbID = getOrbitalModuleID("Mainframe");
+							orbID = getOrbitalModuleID("Mainframe");
 							break;
 						case OT_Gate:
-							//@station = ai.empire.getDesign("Gate");
-							//DOF design add-in
-							if(ai.isAncients || ai.isAncientsSojourners)
-								@station = ai.empire.getDesign("ANC Gate");
-							else if(ai.isAsgard)
-								@station = ai.empire.getDesign("ASG Gate");
-							else if(ai.isSWEmpire)
-								@station = ai.empire.getDesign("EMP Gate Mk I");
-							else if(ai.isGoauld)
-								@station = ai.empire.getDesign("GLD Gate");
-							else if(ai.isSWRepublic)
-								@station = ai.empire.getDesign("REP Gate Mk I");
-							else if(ai.isTauri)
-								@station = ai.empire.getDesign("SGC Gate");
-							else if(ai.isWraith)
-								@station = ai.empire.getDesign("WRA Gate");
-							else if(ai.isBSGColonial)
-								@station = ai.empire.getDesign("COL Gate");
-							else if(ai.isBSGCylon)
-								@station = ai.empire.getDesign("CYL Gate");
-							else
-								@station = ai.empire.getDesign("Gate");
+							@station = ai.empire.getDesign("Gate");
 							break;
 					}
 					
