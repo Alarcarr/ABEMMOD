@@ -12,23 +12,18 @@ Subsystem: RailgunBattery
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes
-	Range := Size^0.85 + 300
-	Damage := Size * 0.75
-	Reload := 0.1 * (1.0 + Size/512)
-	Speed := Range / 6
-	Spread := 0.12 / max(Range / 600, 1)
+	Range := Size + 500
+	Damage := Size * 0.64
+	Reload := 0.2 * (1.0 + Size/512)
+	Speed := max(110, Range / 15)
+	Spread := 0.035 / max(Range / 600, 1)
 	Tracking := 0.4
 	FireArc := 1.5
 	Pierce := 0.6
 	SupplyCost := Size * 1.5
-
-	PowerUse := 0.4 * Size
-
-	PowerperSec := PowerUse/	Reload
-
-
+	PowerUse := 2.5 * Size
 	Impulse := 0
-
+	
 	Hex.HP := 18 * HexSize
 	Hex.Resistance := 0.2
 	Hex.Mass := HexSize

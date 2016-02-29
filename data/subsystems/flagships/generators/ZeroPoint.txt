@@ -8,8 +8,7 @@ Subsystem: ZeroPoint
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes
-	Power := 0.20*(60*log((Size/70)^2)+128)*Size
-	EnergyCapacity := Power * 5
+	Power := (60*log((Size/70)^2)+128)*Size
 	SupplyCapacity := Size * 1200
 	SupplyRate := Size * 70
 

@@ -20,15 +20,6 @@ Subsystem: Miner
 	AddShipModifier: MiningRateFactor(1.25)
 	AddShipModifier: CargoStorageFactor(1.25)
 
-	Assert: Sum.SupportCapacity == 0
-		Message: #ERROR_CANNOT_HAVE_SUPPORT
-	
-	Assert: Sum.SensorRange <= 300
-		Message: Cannot have Sensors
-	
-	Assert: Sum.BoardingStrength <= 2*ShipSize
-		Message: Cannot be used as boarding ship.	
-		
 	Module: Default
 		Sprite: adamantium
 		DrawMode: 3

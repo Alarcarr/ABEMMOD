@@ -14,7 +14,7 @@ Subsystem: ShieldGen
 	ShieldCapacity := Size * 100
 	ShieldRegen := Size * 0.83
 	ShieldHexes := Hexes
-	PowerUse := 5 * Size
+	PowerUse := 25 * Size
 
 	Hex.Resistance := 0.5
 	Hex.HP := 12 * HexSize

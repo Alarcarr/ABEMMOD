@@ -15,7 +15,7 @@ Subsystem: PlanetMiningLaser
 	PlanetMiningRate := Size * 10 / 28
 	MiningLasers := 1
 
-	PowerUse := Size * 40
+	PowerUse := Size * 100
 
 	Hex.Resistance := 0.2
 	Hex.HP := 18 * HexSize

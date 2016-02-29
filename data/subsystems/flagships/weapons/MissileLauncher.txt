@@ -12,10 +12,10 @@ Subsystem: MissileLauncher
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes
-	Range := Size^0.90 + 850
+	Range := Size + 650
 	Damage := Size * 15.0
 	Reload := 4.75 * (1.0 + Size/512)
-	Speed := Range/6 
+	Speed := max(85, Range / 30)
 	Tracking := 3
 	SupplyCost := Size * 3.0
 

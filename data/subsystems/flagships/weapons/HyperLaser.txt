@@ -17,8 +17,8 @@ Subsystem: HyperLaser
 	Cooldown := 6 * (1.0 + Size/512)
 	Range := Size + 350
 	Tracking := 0.5
-	SupplyCost := Size * 1.2
-	PowerUse := 6 * Size
+	SupplyCost := Size * 4.5
+	PowerUse := 10 * Size
 	FireArc := 0.22 * pi
 
 	Hex.HP := 12 * HexSize
@@ -51,6 +51,4 @@ Subsystem: HyperLaser
 		Cooldown = Cooldown
 		Tracking = Tracking
 		SupplyCost = SupplyCost * Duration
-		EnergyCost = PowerUse * Duration
-		ResourceResponse = 2
 		FireArc = FireArc

@@ -4,7 +4,7 @@ Subsystem: RemnantArmor
 	Elevation: 1
 
 	Tags: LowMaint, Category:Armor
-	Tags: NoCore, NonContiguous, Defense,  TankArmor, ExternalSpace
+	Tags: NoCore, NonContiguous, Defense, IsArmor, TankArmor, ExternalSpace
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes

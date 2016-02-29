@@ -18,8 +18,8 @@ Subsystem: Destroyer
 	AddShipModifier: SupportCapacityFactor(0.5)
 	AddShipModifier: ShieldCapacityFactor(1.3)
 
-	Assert: ShipSize >= 300
-		Message: #ERROR_MIN_SIZE:$1:300
+	Assert: ShipSize >= 100
+		Message: #ERROR_MIN_SIZE:$1:100
 
 	Module: Default
 		Sprite: DesignationIcons::16

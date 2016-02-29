@@ -15,8 +15,8 @@ Subsystem: Carrier
 	AddShipModifier: SupportCapacityFactor(1.5)
 	AddShipModifier: ArmorHpFactor(0.50)
 
-	Assert: ShipSize >= 300
-		Message: #ERROR_MIN_SIZE:$1:300
+	Assert: ShipSize >= 100
+		Message: #ERROR_MIN_SIZE:$1:100
 
 	Module: Default
 		Sprite: DesignationIcons::16

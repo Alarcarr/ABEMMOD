@@ -22,11 +22,6 @@ Subsystem: Hauler
 	Assert: ShipSize >= 50
 		Message: #ERROR_MIN_SIZE:$1:50
 
-	Assert: Sum.SensorRange <= 300
-		Message: Cannot have Sensors
-	
-	Assert: Sum.BoardingStrength <= 2*ShipSize
-		Message: Cannot be used as boarding ship.	
 	Module: Default
 		Sprite: DesignationIcons::16
 		DrawMode: 3
