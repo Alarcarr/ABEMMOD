@@ -36,5 +36,7 @@ Trait: ReclusiveRingworlders
 	IfHaveTrait(Fling, LoadDesigns(ABEM_defaults/ringworlder/other))
 	IfHaveTrait(Sublight, LoadDesigns(ABEM_defaults/ringworlder/other))
 
+	ReplaceTechnologyNodes(TaxCenter, DevBudgetSmall)
+	ReplaceTechnologyNodes(BldMegacity, ImpPlanetSupport2)
 	ModEmpireAttribute(VictoryType, Add, 1)
 	ModAttribute(ForbidColonization, Add, 1)

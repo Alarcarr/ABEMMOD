@@ -1,5 +1,5 @@
 Technology: ProgenitorShield
-	Icon: TechIcons::35*#60ffff
+	Icon: ProgenitorShield
 	Description: #R_SYS_REMNANTSHIELD_DESC
 	Name: #R_SYS_REMNANTSHIELD
 	Point Cost: 1500

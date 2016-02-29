@@ -11,26 +11,25 @@ Subsystem: MuonBattery
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes
-	
-	Range := Size + 400
-	Damage := Size * 0.49
+
+	Range := Size^0.8+ 375
+	Damage := Size* 0.65
 	Reload := 0.2 * (1.0 + Size/512)
-	Speed := max(90, Range / 16)
+	Speed := Range / 5
 	Spread := 0.035 / max(Range / 600, 1)
 	Tracking := 0.4
 	FireArc := 1.5
 	Pierce := 1.15
 	SupplyCost := Size * 1.5
 	PowerUse := 3.5 * Size
-	
+
 	Hex.HP := 18 * HexSize
 	Hex.Resistance := 0.2
 	Hex.Mass := HexSize
 
 	Requires:
 		Command = 1
-		Power = PowerUse
-	
+
 	Module: Default
 
 	Module: Core
@@ -60,3 +59,5 @@ Subsystem: MuonBattery
 		SupplyCost = SupplyCost * Reload
 		CapOnTarget = 24
 		IgnoreDR = 1
+		EnergyCost = PowerUse * Reload
+		ResourceResponse = 2

@@ -4,7 +4,7 @@ Technology: ArmoredSensors
 	Class: Unlock
 	Point Cost: 1200
 	Time Cost: 120
-	Icon: TechIcons::17
+	Icon: ArmorSensor
 	Color: #898fff
 	ModAttribute(ProgenitorTechProgress, Add, 1.5)
 	SecondaryMoneyCost(2000)

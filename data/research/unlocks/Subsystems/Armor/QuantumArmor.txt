@@ -10,7 +10,9 @@ Technology: QuantumArmor
 	Description: #R_SYS_QUANTUM_ARMOR_DESC
 
 	UnlockSubsystem(QuantumArmor)
+	UnlockSubsystem(SupportQuantumArmor)
 
 	ModAttribute(ProgenitorTechProgress, Add, 5)
 	SkipOnUnlockedSubsystem(QuantumArmor)
+	SkipOnUnlockedSubsystem(SupportQuantumArmor)
 	SecondaryMoneyCost(3000)

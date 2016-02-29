@@ -13,3 +13,27 @@ Technology: c3
 	Name: #R_LINK
 	Color: #a3ff04
 	AutomaticallyUnlocks()
+Technology: c1_manual
+	Icon: c1
+	Name: #R_LINK
+	Color: #a3ff04
+	Point Cost: 1
+	Time Cost: 1
+	SecondaryMoneyCost(1)
+	AutomaticallyUnlocks()
+Technology: c2_manual
+	Icon: c2
+	Color: #a3ff04
+	Name: #R_LINK
+	Point Cost: 1
+	Time Cost: 1
+	SecondaryMoneyCost(1)
+	AutomaticallyUnlocks()
+Technology: c3_manual
+	Icon: c3
+	Name: #R_LINK
+	Color: #a3ff04
+	Point Cost: 1
+	Time Cost: 1
+	SecondaryMoneyCost(1)
+	AutomaticallyUnlocks()

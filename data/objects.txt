@@ -51,6 +51,8 @@ server:
 	void consumeSupply(double amount);
 	void consumeEnergy(double amount);
 	void consumeSupplyPct(double pct);
+	void consumeEnergyPct(double pct);
+	void consumeCrystalPct(double pct);
 	bool consumeMinSupply(double amount);
 	bool consumeMinFTL(double amount);
 	void refundSupply(double amount);
@@ -59,7 +61,15 @@ server:
 	void setHealthPct(float pct);
 	void modSupplyBonus(float amount);
 	void modCrystalBonus(float amount);
+	void modShieldRegenBonus(float amount);
+	void modShieldRegenMod(float amount);
+	void modEnergyUse(float amount);
+	void modEnergyRegenMod(float amount);
+	void modFTLRegenMod(float amount);
+	void modRepairMod(float amount);
+	void modShieldBonus(float amount);
 	void modMass(float amount);
+	void modFTLUse(float amount);
 	safe float getMass();
 	safe float getBaseMass();
 	int get_maintenanceCost();

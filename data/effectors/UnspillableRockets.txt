@@ -7,6 +7,8 @@ Effector: UnspillableRockets
 	Value: Speed
 	Value: Tracking = 6
 	Value: SupplyCost = 0
+	Value: EnergyCost = 0
+	Value: ResourceResponse = 1
 	Value: Pierce = 0
 	Value: DRResponse = 0
 	Value: DamageType = 3
@@ -22,7 +24,7 @@ Effector: UnspillableRockets
 
 	EfficiencyMode: Reload Only
 	Activation: Magazine(FireDelay, PodSize, Reload)
-	OnTrigger: combat::WeaponFire(SupplyCost)
+	OnTrigger: ABEMEffects::ABEMWeaponFire(SupplyCost, EnergyCost, ResourceResponse)
 
 	PhysicalType: Missile
 	GfxType: Sprite

@@ -1,5 +1,5 @@
 Subsystem: ABEMDummy
-  Tags: Disabled
+  Tags: Disabled, GateHull
 
 	DummySensorMult := 0
   HullHealing := 0

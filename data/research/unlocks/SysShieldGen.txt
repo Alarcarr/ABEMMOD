@@ -6,7 +6,7 @@ Technology: SysShieldGen
 	Point Cost: 800
 	Time Cost: 120
 
-	Icon: FissionReactor
+	Icon: ShieldGen
 	Color: #000bde
 
 	UnlockSubsystem(ShieldGen)
@@ -20,7 +20,7 @@ Technology: SupShieldGen
 	Name: #R_SYS_SHIELDGEN
 	Description: #R_SYS_SUPSHIELD_DESC
 	Class: Unlock
-	Icon: FissionReactor
+	Icon: SupportShield
 	Color: #000bde
 	Point Cost: 600
 	Time Cost: 120
@@ -32,7 +32,7 @@ Technology: CovariantShield
 	Blurb: #R_SYS_COVARIANT_BLURB
 	Description: #R_COVARIANTSHIELD_DESC
 	Class: Unlock
-	Icon: TechIcons::6
+	Icon: CovariantShield
 	Color: #000bde
 	Point Cost: 700
 	Time Cost: 100

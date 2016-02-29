@@ -113,8 +113,10 @@ void updateHighlights(IRCChannel@ chan, const string& myNick) {
 				if(highlight) {
 					sound::notify.play(priority=true);
 
-					if(window is null || !window.visible)
+					if(window is null || !window.visible) {
 						ircButton.flash();
+						sound::order_complete.play(priority=true);
+					}
 					if(window is null || window.activeChannel !is chan)
 						chan.highlight = true;
 				}

@@ -75,9 +75,29 @@ Material:shuttle
 	Inherit: ABEMSubsystem
 	Texture: data/images/subsystems/shuttle.png	
 
+Material: Battery
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/Battery.png
 
-
-Material: Stargate
+Material: Sensors
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/Sensors.png
+Material: Sensors2
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/Sensors2.png
+Material: ArmorSensor
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/armorsensor.png
+	
+Material: SAmatter
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/SAmmater.png	
+Material: Coolant
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/Coolant.png	
+		
+	
+Material: ABEMStargate
 	Inherit: ABEMSubsystem
 	Texture: data/images/subsystems/stargate.png
 Material: FtlGen
@@ -96,6 +116,74 @@ Material: WaveEmitter
 Material: FusionTorpedo
 	Inherit: ABEMSubsystem
 	Texture: data/images/subsystems/fusion_torpedo.png
+
+Material: ShieldGen
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/shieldgen.png
+Material: SingularityCore
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/singularitycore.png
+Material: ABEMSupplyStorage
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/supply_normal.png
+Material: HDSupplyStorage
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/supply_hd.png
+Material: AntimatterGen
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/amgen.png
+Material: ShieldedAntimatterGen
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/shielded_amgen.png
+Material: FusionGen
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/fusiongen.png
+Material: BasicSensors
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/newsensors.png
+Material: TachyonSensors
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/tachyonsensors.png
+Material: BoardingParty
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/boardingparty.png
+Material: SecurityStation
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/securityparty.png
+Material: CovariantShield
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/covariantshield.png
+Material: SupportShield
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/supportshield.png
+Material: ProgenitorShield
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/progenitorshield.png
+Material: ShieldHardener
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/shieldstuff.png
+Material: ShieldCapacitor
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/shieldcapacitor.png
+Material: Arcology
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/arcology.png
+Material: ABEMComputer
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/computer.png
+Material: BusterMachine
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/buster.png
+Material: ProgenitorComputer
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/progenitorcomputer.png
+Material: ControlChair
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/controlchair.png
+Material: CargoBay
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/cargostorage.png
+
 
 
 Material: city1
@@ -122,6 +210,11 @@ Material: orbital
 Material: adamantium
 	Inherit: ABEMSubsystem
 	Texture: data/images/Adamantium.png
+	
+Material: crystalstorage
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/crystalstorage.png
+		
 	
 	
 	//Artificial Resources
@@ -179,3 +272,7 @@ Material: ShieldTransfer
 Material: PreparingHarvest
 	Inherit: ShieldTransfer
 	Texture: data/images/sprites/beam2.png
+	
+Material: FlakCannon
+	Inherit: ABEMSubsystem
+	Texture: data/images/sprites/chaingun_salvo2.png

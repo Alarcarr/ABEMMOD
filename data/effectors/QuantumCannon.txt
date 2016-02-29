@@ -12,6 +12,8 @@ Effector: QuantumArtillery
 	Value: FireTolerance = 0
 	Value: Pierce = 0.5
 	Value: SupplyCost = 0
+	Value: EnergyCost = 0
+	Value: ResourceResponse = 1
 	Value: BaselineSize = 100
 	Value: MinRatio = 0.2
 	Value: MaxRatio = 15

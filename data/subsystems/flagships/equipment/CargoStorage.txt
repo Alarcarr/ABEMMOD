@@ -23,4 +23,4 @@ Subsystem: CargoStorage
 	Hook: AddPermanentStatus(CanGiveCargo)
 	Hook: AddPermanentStatus(CanTakeCargo)
 	Module: Default
-		Sprite: SupplyStorage * #91692c
+		Sprite: CargoBay

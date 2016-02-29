@@ -30,7 +30,6 @@ Subsystem: HeavyRailgunBattery
 
 	Requires:
 		Command = 1
-		Power = PowerUse
 
 	Module: Default
 
@@ -58,3 +57,5 @@ Subsystem: HeavyRailgunBattery
 		Pierce = Pierce
 		SupplyCost = SupplyCost * Reload
 		CapOnTarget = 24
+		EnergyCost = PowerUse * Reload
+		ResourceResponse = 2

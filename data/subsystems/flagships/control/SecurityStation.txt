@@ -3,7 +3,6 @@ Subsystem: SecurityStation
 	Description: #S_SECURITY_STATION_DESC
 
 	BaseColor: #9686ff
-	Picture: CrewQuarters*#c5f946
 	Elevation: 5
 
 	Tags: BaseCost, NonContiguous,Category:Equipment, NoCore, DefaultUnlock
@@ -20,4 +19,4 @@ Subsystem: SecurityStation
 	Hex.HP := 36 * HexSize
 	Hex.Mass := HexSize
 	Module: Default
-		Sprite: CrewQuarters*#c5f946
+		Sprite: SecurityStation

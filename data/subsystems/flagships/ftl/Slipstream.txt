@@ -18,7 +18,7 @@ Subsystem: Slipstream
 	// For now, I'm going with a conversion of 1 FTL crystal -> 10 FTL energy - the hyperdrive cost constants in definitions/ftl.as are also configured accordingly.
 	FTLRegen := 2 * ShipSize
 	CrystalConsumption := 0.2 * ShipSize
-	CrystalRate = 0.01 * ShipSize
+	CrystalRate := 0.01 * ShipSize
 	
 	Hex.Resistance := 0.2
 	Hex.HP := 18 * HexSize

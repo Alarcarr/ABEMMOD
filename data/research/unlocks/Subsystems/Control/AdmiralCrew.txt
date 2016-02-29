@@ -4,7 +4,7 @@ Technology: AdmiralCrew
 	Class: Unlock
 	Point Cost: 1000
 	Time Cost: 120
-	Icon: Bridge*#5686ff
+	Icon: HexagonSubsystems::3
 	Color: #5686ff
 	ModAttribute(ProgenitorTechProgress, Add, 1)
 	SkipOnUnlockedSubsystem(AdmiralBay)

@@ -124,7 +124,7 @@ R_SYS_ADMIRAL_DESC: <<
 R_COMPOSITE_ARMOR_DESC: <<
 	[color=#aaa][i]Advances in composite materials allow us to make better armor.[/i][/color]
 
-	Unlocks Composite Armor.
+	Unlocks Composite Armor and increases all armor HP by 10%.
 
 	[i][bbloc=#S_COMPOSITE_ARMOR_DESC/][/i]
 >>

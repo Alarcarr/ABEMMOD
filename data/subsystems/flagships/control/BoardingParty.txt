@@ -3,7 +3,6 @@ Subsystem: BoardingParty
 	Description: #S_BOARDING_PARTY_DESC
 
 	BaseColor: #c5f946
-	Picture: CrewQuarters*#9686ff
 	Elevation: 5
 
 	Tags: BaseCost, NonContiguous,Category:Equipment, Ability:BoardingParty
@@ -20,8 +19,7 @@ Subsystem: BoardingParty
 	Hex.HP := 36 * HexSize
 	Hex.Mass := HexSize
 	Module: Core
-		Name: Boarding Parties
 		Sprite: shuttle
 
 	Module: Default
-		Sprite: CrewQuarters*#9686ff
+		Sprite: BoardingParty

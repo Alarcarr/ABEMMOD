@@ -30,7 +30,7 @@ Technology: ImpAllHealth2
 	AddModifier(ImpactLevelFactor(1.2))
 	ModAttribute(OrbitalHealthMod, Multiply, 1.2)
 Technology: Further Development
-	Name: (I) Material Development
+	Name: (I) Material Development (THIS IS BROKEN STOP TRYING TO USE IT)
 	Class: Keystone
 	Icon: AttributeIcons::6
 	Point Cost: 1500

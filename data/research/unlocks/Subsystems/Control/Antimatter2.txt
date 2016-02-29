@@ -4,7 +4,7 @@ Technology: Antimatter2
 	Class: Unlock
 	Point Cost: 1500
 	Time Cost: 180
-	Icon: TechIcons::7
+	Icon: ShieldedAntimatterGen
 	Description: #R_SYS_SHIELDED_AMGEN_DESC
 	Color: #33ffcc
 	ModAttribute(ProgenitorTechProgress, Add, 5)

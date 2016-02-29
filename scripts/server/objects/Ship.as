@@ -63,6 +63,14 @@ class ShipScript {
 	float timer = 0.f, bpTimer = 0.f;
 	float supplyBonus = 0.f;
 	float crystalBonus = 0.f;
+	float shieldRegenBonus = 0.f;
+	float shieldRegenMod = 1;
+	float shieldBonus = 0.f;
+	float ftlRegenMod = 1;
+	float energyUse = 0.f;
+	float energyRegenMod = 1;
+	float repairMod = 1;
+	float ftlUse = 0.f;
 	int disableRegionVision = 0;
 	int holdFire = 0;
 	float movementAccel = 0;
@@ -161,6 +169,15 @@ class ShipScript {
 		file << ship.MaxFTL;
 		file << ship.Crystals;
 		file << ship.MaxCrystals;
+		file << crystalBonus;
+		file << ftlUse;
+		file << shieldRegenBonus;
+		file << shieldRegenMod;
+		file << ftlRegenMod;
+		file << energyUse;
+		file << energyRegenMod;
+		file << repairMod;
+		file << shieldBonus;
 	}
 	
 	void load(Ship& ship, SaveFile& file) {
@@ -258,6 +275,15 @@ class ShipScript {
 		file >> ship.MaxFTL;
 		file >> ship.Crystals;
 		file >> ship.MaxCrystals;
+		file >> crystalBonus;
+		file >> ftlUse;
+		file >> shieldRegenBonus;
+		file >> shieldRegenMod;
+		file >> ftlRegenMod;
+		file >> energyUse;
+		file >> energyRegenMod;
+		file >> repairMod;
+		file >> shieldBonus;
 
 		getDesignMesh(ship.blueprint.design, shipMesh);
 		bindMesh(ship, shipMesh);
@@ -492,6 +518,38 @@ class ShipScript {
 		if(ship.MaxCrystals > 0 && amount < 0)
 			ship.Crystals += (ship.Crystals / ship.MaxCrystals) * amount;
 	}
+	
+	void modFTLUse(Ship& ship, float amount) {
+		ftlUse += amount;
+	}
+	
+	void modEnergyUse(Ship& ship, float amount) {
+		energyUse += amount;
+	}
+	
+	void modShieldRegenBonus(Ship& ship, float amount) {
+		shieldRegenBonus += amount;
+	}
+	
+	void modShieldRegenMod(Ship& ship, float amount) {
+		shieldRegenMod += amount;
+	}
+	
+	void modFTLRegenMod(Ship& ship, float amount) {
+		ftlRegenMod += amount;
+	}
+	
+	void modEnergyRegenMod(Ship& ship, float amount) {
+		energyRegenMod += amount;
+	}
+	
+	void modRepairMod(Ship& ship, float amount) {
+		repairMod += amount;
+	}
+	
+	void modShieldBonus(Ship& ship, float amount) {
+		shieldBonus += amount;
+	}
 
 	void updateAccel(Ship& ship) {
 		float leaderAccel = ship.blueprint.getEfficiencySum(SV_Thrust) / max(mass + massBonus, 0.01f);
@@ -525,13 +583,13 @@ class ShipScript {
 
 		//Record the used command
 		float commandUsed = dsg.variable(ShV_REQUIRES_Command);
-		float powerUsed = dsg.variable(ShV_REQUIRES_Power);
+		float powerUsed = dsg.variable(ShV_REQUIRES_Power) + energyUse;
 
 		//Record DPS
 		ship.DPS = ship.blueprint.getEfficiencySum(SV_DPS);
 		
 		//Update shield stats
-		double maxShield = ship.blueprint.getEfficiencySum(SV_ShieldCapacity);
+		double maxShield = ship.blueprint.getEfficiencySum(SV_ShieldCapacity) + shieldBonus;
 		if(maxShield != ship.MaxShield) {
 			if(maxShield == 0) {
 				ship.Shield = 0;
@@ -547,9 +605,10 @@ class ShipScript {
 				ship.MaxShield = maxShield;
 				shieldRegen = ship.blueprint.getEfficiencySum(SV_ShieldRegen);
 			}
+			shieldRegen =(shieldRegen * shieldRegenMod) + shieldRegenBonus;
 			shieldDelta = true;
 		}
-
+		
 		// Update FTL stats
 		double maxFTL = ship.blueprint.getEfficiencySum(SV_FTLCapacity);
 		if(maxFTL != ship.MaxFTL) {
@@ -563,11 +622,11 @@ class ShipScript {
 			barDelta = true;
 		}
 
-		ftlRegen = ship.blueprint.getEfficiencySum(SV_FTLRegen);
-		crystalConsumption = ship.blueprint.getEfficiencySum(SV_CrystalConsumption);
-		emergencyFTLRegen = (ship.blueprint.getEfficiencySum(SV_Power) - powerUsed) / 100;
+		ftlRegen = ship.blueprint.getEfficiencySum(SV_FTLRegen) * ftlRegenMod;
+		crystalConsumption = ship.blueprint.getEfficiencySum(SV_CrystalConsumption) * ftlRegenMod;
+		emergencyFTLRegen = (ship.blueprint.getEfficiencySum(SV_Power) * energyRegenMod - powerUsed) / 100;
 		
-		energyRegen = ship.blueprint.getEfficiencySum(SV_Power) - powerUsed;
+		energyRegen = ship.blueprint.getEfficiencySum(SV_Power) * energyRegenMod - powerUsed;
 				
 		double maxEnergy = ship.blueprint.getEfficiencySum(SV_EnergyCapacity);
 		if(maxEnergy != ship.MaxEnergy) {
@@ -599,7 +658,7 @@ class ShipScript {
 
 		//Low power also decreases effectiveness
 		if(powerUsed > 0) {
-			float powerAvail = ship.blueprint.getEfficiencySum(SV_Power);
+			float powerAvail = ship.blueprint.getEfficiencySum(SV_Power) * energyRegenMod;
 			if(powerAvail < powerUsed)
 				shipEffectiveness *= sqr(powerAvail / powerUsed);
 		}
@@ -642,8 +701,8 @@ class ShipScript {
 		}
 
 		//Store the amount of repair we have available
-		currentRepair = ship.blueprint.getEfficiencySum(SV_Repair);
-		currentRepairCost = ship.blueprint.getEfficiencySum(SV_RepairSupplyCost);
+		currentRepair = ship.blueprint.getEfficiencySum(SV_Repair) * repairMod;
+		currentRepairCost = ship.blueprint.getEfficiencySum(SV_RepairSupplyCost) * repairMod;
 
 		//Check if we should update our maintenance
 		if(!ship.isFree && ship.owner !is null && ship.owner.valid) {
@@ -831,6 +890,16 @@ class ShipScript {
 		ship.Supply = max(0.0, ship.Supply - pct * ship.MaxSupply);
 		barDelta = true;
 	}
+	
+	void consumeEnergyPct(Ship& ship, double pct) {
+		ship.Energy = max(0.0, ship.Energy - pct * ship.MaxEnergy);
+		barDelta = true;
+	}
+	
+	void consumeCrystalPct(Ship& ship, double pct) {
+		ship.Crystals = max(0.0, ship.Crystals - pct * ship.MaxCrystals);
+		barDelta = true;
+	}
 
 	void refundEnergy(Ship& ship, double amount) {
 		ship.Energy = min(ship.MaxEnergy, ship.Energy + amount);
@@ -846,11 +915,11 @@ class ShipScript {
 		double refund = ship.FTL + amount;
 		double crystalRefund = 0;
 		if(refund > ship.MaxFTL) {
-			crystalRefund = ship.MaxFTL - refund;
+			crystalRefund = (refund - ship.MaxFTL) * (ftlRegen / crystalConsumption);
 			refund = ship.MaxFTL - ship.FTL;
 			ship.Crystals = min(ship.MaxCrystals, ship.Crystals + crystalRefund);
 		}
-		ship.FTL += refund;
+		ship.FTL = refund;
 		barDelta = true;
 	}
 
@@ -1214,30 +1283,48 @@ class ShipScript {
 		if(d < delay)
 			delay = d;
 		
+		double amt;
+		double consumed;
+		double ratio;
 		if(ship.Shield < ship.MaxShield) {
-			ship.Shield = min(ship.Shield + shieldRegen * time, ship.MaxShield);
+			amt = shieldRegen * time;
+			consumed = ship.blueprint.getEfficiencySum(SV_PowerUse, ST_IsShield) * time;
+			consumed *= ship.blueprint.getEfficiencyFactor(SV_PowerUse, ST_IsShield);
+			if(amt > ship.MaxShield - ship.Shield) {
+				ratio = (ship.MaxShield - ship.Shield) / amt;
+				amt *= ratio;
+				consumed *= ratio;
+			}
+			if(consumed > ship.Energy) {
+				ratio = (ship.Energy / consumed);
+				amt *= ratio;
+				consumed *= ratio;
+			}
+			ship.Shield += amt;
+			ship.Energy -= consumed;
 			shieldDelta = true;
 		}
 		if(ship.FTL < ship.MaxFTL) {
-			double amt = ftlRegen * time;
-			double consumed = crystalConsumption * time;
+			amt = ftlRegen * time;
+			consumed = crystalConsumption * time;
 			if(amt > ship.MaxFTL - ship.FTL) {
-				double ratio = (ship.MaxFTL - ship.FTL) / amt;
+				ratio = (ship.MaxFTL - ship.FTL) / amt;
 				amt *= ratio;
 				consumed *= ratio;
 			}
 			if(consumed > ship.Crystals) {
-				double ratio = (ship.Crystals / consumed);
+				ratio = (ship.Crystals / consumed);
 				amt *= ratio;
 				consumed = ship.Crystals;
-				amt += emergencyFTLRegen * (1 - ratio); // The percentage of missing crystals is also the percentage of emergency regeneration used.
+				amt += emergencyFTLRegen * (1 - ratio) * time; // The percentage of missing crystals is also the percentage of emergency regeneration used.
 			}
+			amt -= ftlUse;
 			ship.FTL += amt;
 			ship.Crystals -= consumed;
 			barDelta = true;
 		}
 		if(ship.Energy < ship.MaxEnergy) {
-			ship.Energy = min(ship.MaxEnergy, ship.Energy + energyRegen);
+			ship.Energy = min(ship.MaxEnergy, ship.Energy + energyRegen * time);
 			barDelta = true;
 		}
 

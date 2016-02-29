@@ -4,7 +4,7 @@ Subsystem: FusionGenSupport
 	BaseColor: #db0083
 	Elevation: 1
 
-	Tags: DefaultUnlock, IsReactor, Category:Control
+	Tags: IsReactor, Category:Control
 	Hull: Support
 
 	Size := HexSize * Hexes
@@ -13,15 +13,15 @@ Subsystem: FusionGenSupport
 	Hex.Resistance := 0.5
 	Hex.HP := 18 * HexSize
 	Hex.Mass := 4 * HexSize
-	
+
 	Hex.LaborCost := 0.15 * HexSize + 0.18
 	Hex.BuildCost := 2.5 * HexSize + 0.8
 	Hex.MaintainCost := 0
-	
+
 	Provides:
 		Power = Power
 
 	Module: Core
 		Sprite: FusionReactor
-	
+
 	Module: Default

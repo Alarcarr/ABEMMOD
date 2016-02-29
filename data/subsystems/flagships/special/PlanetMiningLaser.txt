@@ -15,7 +15,7 @@ Subsystem: PlanetMiningLaser
 	PlanetMiningRate := Size * 10 / 28
 	MiningLasers := 1
 
-	PowerUse := Size * 100
+	PowerUse := Size * 40
 
 	Hex.Resistance := 0.2
 	Hex.HP := 18 * HexSize
@@ -41,7 +41,6 @@ Subsystem: PlanetMiningLaser
 
 	Requires:
 		Command = 1
-		Power = PowerUse
 
 	Module: Core
 		Sprite: TractorGun::0 * #a1692c

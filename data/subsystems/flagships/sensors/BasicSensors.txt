@@ -8,11 +8,11 @@ Subsystem: BasicSensors
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes
-	SensorRange := 100 + (Hexes * 20) + max(log(Size), 1) * Hexes
+	SensorRange := (100 + (Hexes * 20)) * (Sum.HexLimit / Sum.BaseHexLimit) + max(log(Size), 1) * Hexes
 	SensorPriority := 100
 	Hex.Mass := HexSize / 2
 	Hex.Resistance := 0.1
-	Hex.HP := 15 * HexSize
+	Hex.HP := 4 * HexSize
 
 	Ship.ExternalHexes := Ship.ExternalHexes + ExteriorHexes
 
@@ -27,6 +27,6 @@ Subsystem: BasicSensors
 		Command = Control
 
 	Module: Core
-		Sprite: TechIcons::1
+		Sprite: BasicSensors
 
 	Module: Default

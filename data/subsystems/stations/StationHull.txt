@@ -12,6 +12,7 @@ Subsystem: StationHull
 
 	Ship.ExternalHexes := 0
 	Ship.HexSize := ShipSize / HexLimit
+	BaseHexLimit := 160
 
 	Repair := (ShipSize / HexLimit) * 8
 	// Dummy for design stats - actual baseline range is in ABEM_data.

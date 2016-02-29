@@ -34,7 +34,6 @@ Subsystem: DroneWeapon
 	TypeColor: #f94694
 	Requires:
 		Command = 1
-		Power = PowerUse
 
 	Module: Default
 
@@ -65,3 +64,5 @@ Subsystem: DroneWeapon
 		Pierce = Pierce
 		DRResponse = DRResponse
 		DamageType = DamageType
+		EnergyCost = PowerUse * (Reload / PodSize)
+		ResourceResponse = 2

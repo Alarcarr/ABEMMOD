@@ -1,0 +1,25 @@
+Subsystem: Battery
+	Name: #S_BATTERY_NAME
+	Description: #S_BATTERY_DESC
+	BaseColor: #5ade8b
+	Elevation: 1
+
+	Tags: Category:Power, NonContiguous, NoCore,DefaultUnlock
+	Hull: Flagship, Station
+
+	Size := HexSize * Hexes
+	EnergyCapacity := Size * 1200
+		
+	Hex.Resistance := 0.5
+	Hex.HP := 18 * HexSize
+	Hex.Mass := 2.5 * HexSize
+
+	Hex.LaborCost := 0.4 * HexSize + 1
+	Hex.BuildCost := 10 * HexSize + 2
+	Hex.MaintainCost := 0
+
+	
+
+	Module: Default
+		Sprite: Battery
+	

@@ -40,7 +40,7 @@ Technology: MechPop
 	Point Cost: 1000
 	Time Cost: 300
 	SecondaryEnergyCost(1500)
-	ModAttribute(MechPopulationBuilt, Add, -5)
+	ModAttribute(PopMatrixLevel, Add, 1)
 Technology: InfMechPop
 	Name: (I) Improved Population Matrix
 	Description: #R_INF_MECHPOP_DESC
@@ -49,4 +49,4 @@ Technology: InfMechPop
 	Time Cost: 300
 	ResetWhenUnlocked()
 	SecondaryMoneyCost(6000)
-	ModAttribute(MechPopulationBuilt, Add, -10)
+	ModAttribute(PopMatrixLevel, Add, 2)

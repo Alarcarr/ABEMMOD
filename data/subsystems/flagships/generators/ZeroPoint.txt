@@ -8,7 +8,8 @@ Subsystem: ZeroPoint
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes
-	Power := (60*log((Size/70)^2)+128)*Size
+	Power := 0.20*(60*log((Size/70)^2)+128)*Size
+	EnergyCapacity := Power * 5
 	SupplyCapacity := Size * 1200
 	SupplyRate := Size * 70
 
@@ -26,7 +27,7 @@ Subsystem: ZeroPoint
 		Power = Power
 
 	Module: Core
-		Sprite: ZeroPoint
+		Sprite: SingularityCore
 
 	Module: Default
 

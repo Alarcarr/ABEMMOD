@@ -1,5 +1,5 @@
 Technology: TachyonSensor
-	Icon: cloack
+	Icon: TachyonSensors
 	Color: #9ed6ff
 	Class: Unlock
 	Point Cost: 700

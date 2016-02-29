@@ -10,6 +10,14 @@ Subsystem: FlagshipHull
 
 	Ship.ExternalHexes := 0
 	Ship.HexSize := ShipSize / HexLimit
+	BaseHexLimit := 128
+
+	// Doing some math for design stats.
+	PowerUsePerSec := Sum.PowerUse - Ship.REQUIRES_Power
+	PowerGenPerSec := Ship.Power - Ship.REQUIRES_Power
+	// This is how long the ship's systems can operate at full power.
+	PeakPowerTime := if(PowerUsePerSec < PowerGenPerSec, -1, Sum.EnergyCapacity / (PowerUsePerSec - PowerGenPerSec))
+	
 
 	Repair := (ShipSize / HexLimit) * 8
 	// Dummy for design stats - actual baseline range is in ABEM_data.

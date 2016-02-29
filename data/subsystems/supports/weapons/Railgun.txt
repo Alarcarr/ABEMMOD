@@ -21,7 +21,9 @@ Subsystem: Railgun
 	FireArc := 0.5 * pi
 	Pierce := 0.75
 	SupplyCost := Size * 1.5
-
+	PowerUse :=0.4 * Size
+	
+	
 	Hex.HP := 18 * HexSize
 	Hex.Resistance := 0.2
 	Hex.Mass := HexSize

@@ -113,3 +113,18 @@ NGTT_RESEARCH_DECAY_MULT: <<
 
 	Can be set to 0%, preventing research decay altogether. (Developer note: The above figures only apply in ABEM. In the base game, an empire must generate 2000 research points to halve efficiency, and Innovative does not affect research decay at all.)
 >>
+DOF_MISSING_BASE: <<
+	You do not appear to have the latest version of the DOF support library installed. This may cause certain assets to fail to load, and will also prevent various shipsets from functioning.
+>>
+DOF_MISSING_STEAM: <<
+	[bbloc=#DOF_MISSING_BASE/]
+
+	You can download the library from the Steam Workshop [b](recommended)[/b] at
+	[b]http://steamcommunity.com/sharedfiles/filedetails/?id=505348416[/b], 
+	or get the .zip file from dolynick's website at [b]http://www.olynick.net/sr2/mods/DOFShipsetCommonLibrary.zip[/b].
+>>
+DOF_MISSING_OTHER: <<
+	[bbloc=#DOF_MISSING_BASE/]
+
+	You can download the library from dolynick's website at [b]http://www.olynick.net/sr2/mods/DOFShipsetCommonLibrary.zip[/b].
+>>

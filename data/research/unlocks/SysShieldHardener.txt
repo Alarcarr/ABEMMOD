@@ -6,7 +6,7 @@ Technology: SysShieldHardener
 	Point Cost: 800
 	Time Cost: 120
 
-	Icon: FissionReactor
+	Icon: ShieldHardener
 	Color: #681be3
 
 	UnlockSubsystem(ShieldHardener)

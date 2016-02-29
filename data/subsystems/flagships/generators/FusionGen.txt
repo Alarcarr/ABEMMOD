@@ -8,7 +8,8 @@ Subsystem: FusionGen
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes
-	Power := 25 * Size
+	Power := 15 * Size
+	EnergyCapacity := Power * 5
 	SupplyCapacity := Size * 1000
 	SupplyRate := Size * 20
 
@@ -16,7 +17,7 @@ Subsystem: FusionGen
 	Hex.HP := 18 * HexSize
 	Hex.Mass := 4 * HexSize
 
-	Hex.LaborCost := 0.3 * HexSize + 0.18
+	Hex.LaborCost := 0.3 * HexSize + 0.5
 	Hex.BuildCost := 5 * HexSize + 0.8
 	Hex.MaintainCost := 4 * HexSize / ShipSize^0.5 + 3.5 * HexSize + 2
 
@@ -24,7 +25,7 @@ Subsystem: FusionGen
 		Power = Power
 
 	Module: Core
-		Sprite: FusionReactor
+		Sprite: FusionGen
 
 	Module: Default
 

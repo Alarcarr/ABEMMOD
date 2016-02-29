@@ -8,7 +8,7 @@ TT_SHIP_FTL_1: <<
 	[b]FTL Energy Storage[/b] [offset=230]$2[/offset]
 >>
 TT_SHIP_FTL_2: <<
-	Ships use FTL crystals to generate FTL energy. If none are available, the ship's reactor will be used to generate FTL energy at a vastly reduced rate. FTL crystals are taken from the empire's reserves when in friendly space.
+	Ships use FTL crystals to generate FTL energy. If none are available, the ship's reactor will be used to generate FTL energy at a vastly reduced rate. FTL crystals are taken from the empire's reserves when in an uncontested star system containing at least one owned planet.
 
 	[b]FTL Crystals Stored[/b] [offset=230]$3[/offset]
 	[b]FTL Crystal Capacity[/b] [offset=230]$4[/offset]
@@ -39,3 +39,5 @@ GTT_FTL: <<
 	Harvesting Rate: [right]$3[/right]
 >>
 RESOURCE_FTL: FTL Crystals
+AVG_FTLCOST: Average cost: $1 FTL ($2u)
+NEEDS_MORE_FTL: $1 needs $2 FTL, has only $3/$4 FTL

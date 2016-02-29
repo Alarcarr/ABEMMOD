@@ -5,6 +5,8 @@ Effector: SuperLaser
 	Value: Cooldown
 	Value: Tracking
 	Value: SupplyCost = 0
+	Value: EnergyCost = 0
+	Value: ResourceResponse = 1
 	Value: FireArc = pi
 
 	Range: Range
@@ -18,7 +20,7 @@ Effector: SuperLaser
 
 	EfficiencyMode: Duration Partial
 	Activation: VariableTimed(Cooldown+Duration, 0.25)
-	OnTrigger: combat::WeaponFire(SupplyCost)
+	OnTrigger: ABEMEffects::ABEMWeaponFire(SupplyCost, EnergyCost, ResourceResponse)
 
 	Effect: EnergyDamage
 		Amount = DPS

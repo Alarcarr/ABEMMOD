@@ -13,11 +13,14 @@ Effector: RailgunBattery
 	Value: SupplyCost = 0
 	Value: IgnoreDR = 0
 	Value: Impulse = 0
-
+	Value: EnergyCost = 0
+	Value: ResourceResponse = 1
+	
+	
 	Range: Range
 	Speed: Speed
 	Tracking: Tracking
-	Lifetime: Range / Speed
+	Lifetime: 1.1*Range / Speed
 	CapTarget: CapOnTarget
 	Spread: Spread
 	FireArc: FireArc
@@ -30,7 +33,7 @@ Effector: RailgunBattery
 
 	EfficiencyMode: Reload Partial
 	Activation: StaggeredTimed(Reload, 0.25)
-	OnTrigger: combat::WeaponFire(SupplyCost)
+	OnTrigger: ABEMEffects::ABEMWeaponFire(SupplyCost, EnergyCost, ResourceResponse)
 
 	Effect: ProjImpact
 		Damage = Damage

@@ -11,6 +11,8 @@ Effector: VoidRay
 	Value: Status
 	Value: StatusIncrement
 	Value: DamageType
+	Value: EnergyCost = 0
+	Value: ResourceResponse = 1
 
 	Range: Range
 	Lifetime: Duration
@@ -23,7 +25,7 @@ Effector: VoidRay
 
 	EfficiencyMode: Normal
 	Activation: VariableTimed(Duration+Cooldown, 0.25)
-	OnTrigger: combat::WeaponFire(SupplyCost)
+	OnTrigger: ABEMEffects::ABEMWeaponFire(SupplyCost, EnergyCost, ResourceResponse)
 
 	Effect: VoidRay
 		Amount = DPS

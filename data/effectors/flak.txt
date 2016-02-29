@@ -12,7 +12,10 @@ Effector: Flak
 	Value: Pierce = 0.5
 	Value: SupplyCost = 0
 	Value: Radius
-
+	Value: EnergyCost = 0
+	Value: ResourceResponse = 1
+	
+	
 	Range: Range
 	Speed: Speed
 	Tracking: Tracking
@@ -28,14 +31,14 @@ Effector: Flak
 	AutoTarget: isEnemy && (isShip || (isOrbital || isColonyShip || isCivilian || isFreighter) * 0.5)
 
 	Activation: StaggeredTimed(Reload, 0.25)
-	OnTrigger: combat::WeaponFire(SupplyCost)
+	OnTrigger: ABEMEffects::ABEMWeaponFire(SupplyCost, EnergyCost, ResourceResponse)
 
 	PhysicalType: Projectile
 	GfxType: Sprite
-	GfxSize: 4.5
-	FireSfx: railgun_fire
-	FireSfx: muon_fire
-	Material: Railgun
+	GfxSize: 2
+	FireSfx: flakcannon
+	FireSfx: flakcannon
+	Material: RailgunEmit
 	Trail: RailTrail
 	TrailCol: 8888ffff, 00000000
 	ImpactGfx: ImpactFlareRailBlue

@@ -1,0 +1,30 @@
+Status: NOOB
+	Visible To: Nobody
+
+	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Influence, 1.1), Base = 110, Per Gametime Bonus = -1)
+	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Money, 1.1), Base = 110, Per Gametime Bonus = -1)
+	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Research, -0.01), Base = 110, Per Gametime Bonus = -1)
+	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Defense, -0.01), Base = 110, Per Gametime Bonus = -1)
+	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Labor, -0.01), Base = 110, Per Gametime Bonus = -1)
+	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Energy, -0.01), Base = 110, Per Gametime Bonus = -1)
+
+Status: SUPERNOOB
+	Visible To: Nobody
+
+	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Influence, -0.01), Base = 120, Per Gametime Bonus = -1)
+	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Money, -0.01), Base = 120, Per Gametime Bonus = -1)
+	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Research, -0.01), Base = 120, Per Gametime Bonus = -1)
+	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Defense, -0.01), Base = 120, Per Gametime Bonus = -1)
+	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Labor, -0.01), Base = 120, Per Gametime Bonus = -1)
+	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Energy, -0.01), Base = 120, Per Gametime Bonus = -1)
+
+	
+Status: ULTRANOOB
+	Visible To: Nobody
+
+	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Influence, -0.01), Base = 130, Per Gametime Bonus = -1)
+	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Money, -0.01), Base = 130, Per Gametime Bonus = -1)
+	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Research, -0.01), Base = 130, Per Gametime Bonus = -1)
+	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Defense, -0.01), Base = 130, Per Gametime Bonus = -1)
+	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Labor, -0.01), Base = 130, Per Gametime Bonus = -1)
+	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Energy, -0.01), Base = 130, Per Gametime Bonus = -1)
