@@ -30,7 +30,7 @@ Subsystem: DroneWeapon
 	Hex.Mass := HexSize
 	Hex.LaborCost := 1 * HexSize
 	Hex.BuildCost := 2.5 * HexSize
-	PowerUse := 20 * Size
+	PowerUse := 40 * Size
 	TypeColor: #f94694
 	Requires:
 		Command = 1

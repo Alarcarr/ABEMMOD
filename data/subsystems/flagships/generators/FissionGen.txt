@@ -9,6 +9,7 @@ Subsystem: FissionGen
 
 	Size := HexSize * Hexes
 	Power := 10 * Size
+	EnergyCapacity := 2.5 * Power
 	SupplyCapacity := Size * 1000
 	SupplyRate := Size * 40
 

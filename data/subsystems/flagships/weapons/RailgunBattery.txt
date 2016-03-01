@@ -21,7 +21,7 @@ Subsystem: RailgunBattery
 	FireArc := 1.5
 	Pierce := 0.6
 	SupplyCost := Size * 1.5
-	PowerUse := 2.5 * Size
+	PowerUse := 3.75 * Size
 	Impulse := 0
 	
 	Hex.HP := 18 * HexSize

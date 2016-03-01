@@ -17,9 +17,9 @@ Subsystem: SuperLaser
 	Cooldown := 60 * (1.0 + Size/512)
 	Range := Size + 700
 	Tracking := 0.5
-	SupplyCost := Size * 100
+	SupplyCost := Size * 25
 	FireArc := 0.25 * pi
-	PowerUse := 75 * Size
+	PowerUse := 300 * Size
 
 	Hex.HP := 12 * HexSize
 	Hex.Resistance := 0.2

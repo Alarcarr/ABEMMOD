@@ -9,6 +9,7 @@ Subsystem: ShieldedAntimatter
 
 	Size := HexSize * Hexes
 	Power := 75 * Size
+	EnergyCapacity := 2.5 * Power
 	SupplyCapacity := Size * 800
 	SupplyRate := Size * 75
 	CombatSupplyRate := SupplyRate / 10

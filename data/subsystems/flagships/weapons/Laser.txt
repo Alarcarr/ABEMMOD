@@ -17,9 +17,9 @@ Subsystem: Laser
 	Cooldown := 6 * (1.0 + Size/512)
 	Range := Size + 450
 	Tracking := 0.5
-	SupplyCost := Size * 0.75
+	SupplyCost := Size * 0.375
 	FireArc := 0.25 * pi
-	PowerUse := 5 * Size
+	PowerUse := 10 * Size
 
 	Hex.HP := 12 * HexSize
 	Hex.Resistance := 0.2

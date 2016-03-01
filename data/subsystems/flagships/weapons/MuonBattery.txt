@@ -21,7 +21,7 @@ Subsystem: MuonBattery
 	FireArc := 1.5
 	Pierce := 1.15
 	SupplyCost := Size * 1.5
-	PowerUse := 3.5 * Size
+	PowerUse := 5.25 * Size
 	
 	Hex.HP := 18 * HexSize
 	Hex.Resistance := 0.2
