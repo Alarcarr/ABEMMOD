@@ -50,6 +50,89 @@ GlobalStat: PlanetMiningRate
 	Suffix: #PER_SECOND
 
 	Variable: PlanetMiningRate
+
+GlobalStat: OptimumPower
+	Name: #S_OPTIMUMPOWER
+	Description: #STT_OPTIMUMPOWER
+	Secondary: Power
+	Color: #aaa
+
+	UsedVariable: PowerUse
+
+GlobalStat: PowerRate
+	Name: #S_POWERRATE
+	Description: #STT_POWERRATE
+	Secondary: Power
+	Color: #aaa
+
+GlobalStat: PowerCapacity
+	Name: #S_POWERCAPACITY
+	Description: #STT_POWERCAPACITY
+	Secondary: Power
+	Color: #aaa
+
+	Variable: EnergyCapacity
+
+GlobalStat: PeakPowerTime
+	Name: #S_PEAKPOWERTIME
+	Description: #STT_PEAKPOWERTIME
+	Color: #aaa
+	Suffix: s
+
+	Variable: PeakPowerTime
+
+GlobalStat: FTLCapacity
+	Name: #S_FTLCAPACITY
+	Description: #STT_FTLCAPACITY
+	Icon: ResourceIcon::3
+	Color: #00c0ff
+	
+	Variable: FTLCapacity
+
+	GlobalStat: FTLPerCrystal
+		Name: #S_FTLPERCRYSTAL
+		Description: #STT_FTLPERCRYSTAL
+		Color: #aaa
+		Secondary: FTLCapacity
+
+		Variable: FTLRegen
+		DivBy: CrystalConsumption
+
+	GlobalStat: FTLRegen
+		Name: #S_FTLREGEN
+		Description: #STT_FTLREGEN
+		Color: #aaa
+		Secondary: FTLCapacity
+		Suffix: #PER_SECOND
+
+		Variable: FTLRegen
+
+	GlobalStat: CrystalConsumption
+		Name: #S_CRYSTALCONSUMPTION
+		Description: #STT_CRYSTALCONSUMPTION
+		Color: #aaa
+		Secondary: FTLCapacity
+		Suffix: #PER_SECOND
+
+		Variable: CrystalConsumption
+
+GlobalStat: CrystalCapacity
+	Name: #S_CRYSTALCAPACITY
+	Description: #STT_CRYSTALCAPACITY
+	Icon: ResourceIcons::22
+	Color: #9bd29c
+	
+	Variable: CrystalCapacity
+
+	GlobalStat: CrystalRate
+		Name: #S_CRYSTALRATE
+		Description: #STT_CRYSTALRATE
+		Color: #aaa
+		Secondary: CrystalCapacity
+		Suffix: #PER_SECOND
+
+		Variable: CrystalRate
+	
 	
 // *************************************
 // ******SUBSYSTEM-SPECIFIC STATS*******

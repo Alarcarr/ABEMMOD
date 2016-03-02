@@ -11,6 +11,12 @@ Subsystem: RemnantHull
 	Ship.HexSize := ShipSize / HexLimit
 	BaseHexLimit := 80
 
+	// Doing some math for design stats.
+	PowerUsePerSec := Sum.PowerUse - Ship.REQUIRES_Power
+	PowerGenPerSec := Ship.Power - Ship.REQUIRES_Power
+	// This is how long the ship's systems can operate at full power.
+	PeakPowerTime := if(PowerUsePerSec < PowerGenPerSec, (-1), Sum.EnergyCapacity / (PowerUsePerSec - PowerGenPerSec))
+
 	Effect: DefensiveMatrixDamage
 
 	Repair := (ShipSize / HexLimit) * 16
@@ -52,6 +58,12 @@ Subsystem: SpecialRemnantHull
 	GridHeight := 23
 	Repair := HexSize * 16
 	BaseHexLimit := 128
+
+	// Doing some math for design stats.
+	PowerUsePerSec := Sum.PowerUse - Ship.REQUIRES_Power
+	PowerGenPerSec := Ship.Power - Ship.REQUIRES_Power
+	// This is how long the ship's systems can operate at full power.
+	PeakPowerTime := if(PowerUsePerSec < PowerGenPerSec, (-1), Sum.EnergyCapacity / (PowerUsePerSec - PowerGenPerSec))
 
 	Effect: DefensiveMatrixDamage
 	HasSinew := 0

@@ -10,6 +10,12 @@ Subsystem: StationHull
 	GridWidth := 28
 	GridHeight := 23
 
+	// Doing some math for design stats.
+	PowerUsePerSec := Sum.PowerUse - Ship.REQUIRES_Power
+	PowerGenPerSec := Ship.Power - Ship.REQUIRES_Power
+	// This is how long the ship's systems can operate at full power.
+	PeakPowerTime := if(PowerUsePerSec < PowerGenPerSec, (-1), Sum.EnergyCapacity / (PowerUsePerSec - PowerGenPerSec))
+
 	Ship.ExternalHexes := 0
 	Ship.HexSize := ShipSize / HexLimit
 	BaseHexLimit := 160

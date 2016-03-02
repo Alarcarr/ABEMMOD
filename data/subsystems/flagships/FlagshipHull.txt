@@ -16,7 +16,7 @@ Subsystem: FlagshipHull
 	PowerUsePerSec := Sum.PowerUse - Ship.REQUIRES_Power
 	PowerGenPerSec := Ship.Power - Ship.REQUIRES_Power
 	// This is how long the ship's systems can operate at full power.
-	PeakPowerTime := if(PowerUsePerSec < PowerGenPerSec, -1, Sum.EnergyCapacity / (PowerUsePerSec - PowerGenPerSec))
+	PeakPowerTime := if(PowerUsePerSec < PowerGenPerSec, (-1), Sum.EnergyCapacity / (PowerUsePerSec - PowerGenPerSec))
 	
 
 	Repair := (ShipSize / HexLimit) * 8
