@@ -1,30 +1,29 @@
 Status: NOOB
 	Visible To: Nobody
 
-	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Influence, 1.1), Base = 110, Per Gametime Bonus = -1)
-	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Money, 1.1), Base = 110, Per Gametime Bonus = -1)
-	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Research, -0.01), Base = 110, Per Gametime Bonus = -1)
-	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Defense, -0.01), Base = 110, Per Gametime Bonus = -1)
-	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Labor, -0.01), Base = 110, Per Gametime Bonus = -1)
-	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Energy, -0.01), Base = 110, Per Gametime Bonus = -1)
+	ModCivResourceMult(Money, 0.1)
+	ModCivResourceMult(Influence, 0.1)
+	ModCivResourceMult(Research, 0.1)
+	ModCivResourceMult(Defense, 0.1)
+	ModCivResourceMult(Labor, 0.1)
+	ModCivResourceMult(Energy, 0.1)
 
 Status: SUPERNOOB
 	Visible To: Nobody
 
-	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Influence, -0.01), Base = 120, Per Gametime Bonus = -1)
-	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Money, -0.01), Base = 120, Per Gametime Bonus = -1)
-	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Research, -0.01), Base = 120, Per Gametime Bonus = -1)
-	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Defense, -0.01), Base = 120, Per Gametime Bonus = -1)
-	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Labor, -0.01), Base = 120, Per Gametime Bonus = -1)
-	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Energy, -0.01), Base = 120, Per Gametime Bonus = -1)
-
+	ModCivResourceMult(Money, 0.2)
+	ModCivResourceMult(Influence, 0.2)
+	ModCivResourceMult(Research, 0.2)
+	ModCivResourceMult(Defense, 0.2)
+	ModCivResourceMult(Labor, 0.2)
+	ModCivResourceMult(Energy, 0.2)
 	
 Status: ULTRANOOB
 	Visible To: Nobody
 
-	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Influence, -0.01), Base = 130, Per Gametime Bonus = -1)
-	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Money, -0.01), Base = 130, Per Gametime Bonus = -1)
-	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Research, -0.01), Base = 130, Per Gametime Bonus = -1)
-	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Defense, -0.01), Base = 130, Per Gametime Bonus = -1)
-	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Labor, -0.01), Base = 130, Per Gametime Bonus = -1)
-	ABEM_races::TimeBasedRepeat(ModCivResourceMult(Energy, -0.01), Base = 130, Per Gametime Bonus = -1)
+	ModCivResourceMult(Money, 0.3)
+	ModCivResourceMult(Influence, 0.3)
+	ModCivResourceMult(Research, 0.3)
+	ModCivResourceMult(Defense, 0.3)
+	ModCivResourceMult(Labor, 0.3)
+	ModCivResourceMult(Energy, 0.3)
