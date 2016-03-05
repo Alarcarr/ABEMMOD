@@ -444,13 +444,13 @@ S_POWERED_ARMOR_DESC: <<
 	[img=Plus]Impervious to all damage below or at the listed damage resistance.[/img]
 	[img=Plus]Extremely low mass.[/img]
 	[img=Minus]Half the damage resistance of - and just as little health as - Ablative Armor.[/img]
-	[img=Minus]Just as costly as Composite Armor, but also requires power.[/img]
+	[img=Minus]Just as costly as Composite Armor, but also requires Power to block damage.[/img]
 >>
 S_ZPG_DESC: <<
 	An artificial quantum singularity harnessed to provide immense quantities of power.
 
 	[img=ResourceIcon::2;22]Provides a [b][color=#0f0]huge[/color][/b] amount of [b][color=#42b4bd]Power[/color][/b] to operate other subsystems.[/img]
-	[img=AttributeIcons::4;22]Provides a [b][color=#0f0]high[/color][/b] [color=#fefc61]Resupply Rate[/color][/b], somewhat lower than that of Antimatter Generators.[/img]
+	[img=AttributeIcons::4;22]Provides a [b][color=#0f0]high[/color][/b] [b][color=#fefc61]Resupply Rate[/color][/b], somewhat lower than that of Antimatter Generators.[/img]
 	[img=Plus]No maintenance cost.[/img]
 	[img=Minus]Very high construction and Labor costs.[/img]
 	>>

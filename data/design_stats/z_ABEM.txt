@@ -57,13 +57,15 @@ GlobalStat: OptimumPower
 	Secondary: Power
 	Color: #aaa
 
-	UsedVariable: PowerUse
+	Variable: PowerUse
 
 GlobalStat: PowerRate
 	Name: #S_POWERRATE
 	Description: #STT_POWERRATE
 	Secondary: Power
 	Color: #aaa
+
+	Variable: PowerGenPerSec
 
 GlobalStat: PowerCapacity
 	Name: #S_POWERCAPACITY
@@ -76,7 +78,7 @@ GlobalStat: PowerCapacity
 GlobalStat: PeakPowerTime
 	Name: #S_PEAKPOWERTIME
 	Description: #STT_PEAKPOWERTIME
-	Color: #aaa
+	Color: #42b4bd
 	Suffix: s
 
 	Variable: PeakPowerTime
@@ -269,6 +271,43 @@ SubsystemStat: SensorPriority
 	Color: #9ed6ff
 	
 	Variable: SensorPriority
+
+SubsystemStat: SysPower
+	Name: #S_POWER
+	Icon: ResourceIcon::2
+	Color: #42b4bd
+	Suffix: #PER_SECOND
+
+	Variable: Power
+
+SubsystemStat: SysPowerCapacity
+	Name: #S_POWERCAPACITY
+	Icon: ResourceIcon::2
+	Color: #42b4bd
+
+	Variable: EnergyCapacity
+
+SubsystemStat: SysFTLCapacity
+	Name: #S_FTLCAPACITY
+	Icon: ResourceIcon::3
+	Color: #00c0ff
+
+	Variable: FTLCapacity
+
+SubsystemStat: SysFTLRegen
+	Name: #S_FTLREGEN
+	Icon: ResourceIcon::3
+	Color: #00c0ff
+	Suffix: #PER_SECOND
+	
+	Variable: FTLRegen
+
+SubsystemStat: SysCrystalCapacity
+	Name: #S_CRYSTALCAPACITY
+	Icon: ResourceIcons::22
+	Color: #9bd29c
+
+	Variable: CrystalCapacity
 
 // *************************************
 // *********HEX-SPECIFIC STATS**********

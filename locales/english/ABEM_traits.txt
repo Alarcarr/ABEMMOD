@@ -10,6 +10,7 @@ TRAIT_PROGENITORS_DESC: <<|
   [vspace=3/][img=Plantation;22][/img]Homeworld cannot export its food or water.
   [vspace=3/][img=BuildingSprites::0;22][/img]All civilian resource generation is reduced by 80%. Production slowly returns to normal over the first 80 minutes of the game.
   [vspace=3/][img=techHyperfield;22][/img]Cannot attack or be attacked by Remnant ships, but can use the Override Remnant Programming ability to take control of non-Guardian Remnant fleets.
+  [vspace=3/][img=ResourceIcon::4;22][/img]Researching enough technologies allows access to Progenitor tech tree, opening up powerful new techs without the requirement for a level 6 Ancient Hubworld.
 >>
 TRAIT_PACIFISTS: Pacifists
 TRAIT_PACIFISTS_DESC: <<|
