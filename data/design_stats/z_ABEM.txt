@@ -54,8 +54,8 @@ GlobalStat: PlanetMiningRate
 GlobalStat: OptimumPower
 	Name: #S_OPTIMUMPOWER
 	Description: #STT_OPTIMUMPOWER
-	Secondary: Power
-	Color: #aaa
+	Icon: ResourceIcon::2
+	Color: #42b4bd
 
 	Variable: PowerUse
 
@@ -65,23 +65,30 @@ GlobalStat: PowerRate
 	Secondary: Power
 	Color: #aaa
 
-	Variable: PowerGenPerSec
+	Variable: Power
+	SubtractVariable: Ship.REQUIRES_Power
 
 GlobalStat: PowerCapacity
 	Name: #S_POWERCAPACITY
 	Description: #STT_POWERCAPACITY
-	Secondary: Power
-	Color: #aaa
+	Icon: ResourceIcon::2
+	Color: #42b4bd
 
 	Variable: EnergyCapacity
 
 GlobalStat: PeakPowerTime
 	Name: #S_PEAKPOWERTIME
 	Description: #STT_PEAKPOWERTIME
+	Icon: ResourceIcon::2
 	Color: #42b4bd
 	Suffix: s
 
-	Variable: PeakPowerTime
+	// This variable uses a custom behavior mode. Don't change this without consulting me.
+	Mode: PeakPowerTime
+	Variable: Ship.Power
+	UsedVariable: Ship.REQUIRES_Power
+	SubtractVariable: EnergyCapacity
+	DivBy: PowerUse
 
 GlobalStat: FTLCapacity
 	Name: #S_FTLCAPACITY

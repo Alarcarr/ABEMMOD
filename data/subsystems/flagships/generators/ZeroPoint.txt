@@ -9,7 +9,7 @@ Subsystem: ZeroPoint
 
 	Size := HexSize * Hexes
 	Power := (60*log((Size/70)^2)+128)*Size
-	EnergyCapacity := 2.5 * Power
+	EnergyCapacity := 0.25 * Power
 	SupplyCapacity := Size * 1200
 	SupplyRate := Size * 70
 

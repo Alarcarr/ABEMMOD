@@ -21,6 +21,12 @@ enum StatDisplayMode {
 	SDM_Short,
 };
 
+// A hack to implement complex design stats like Peak Power Time.
+enum CustomDSBehavior {
+	CDSB_Normal,
+	CDSB_PeakPowerTime,
+};
+
 class DesignStat {
 	uint index = 0;
 	string ident;
@@ -40,8 +46,11 @@ class DesignStat {
 	int variable;
 	int usedVariable;
 
-	SysVariableType divType;
+	SysVariableType divType, subType;
+	int subVar = -1;
 	int divVar = -1;
+	
+	CustomDSBehavior behavior = CDSB_Normal;
 
 	int importance;
 
@@ -152,16 +161,37 @@ DesignStats@ getDesignStats(const Design@ dsg) {
 		if(stat.reqTag != -1 && !dsg.hasTag(SubsystemTag(stat.reqTag)))
 			continue;
 		bool has = false;
-		double val = design_stats::getValue(dsg, null, vec2u(uint(-1)), stat.varType, stat.variable, stat.aggregate);
+		double val;
 		double used = -1.0;
-		if(stat.usedVariable != -1)
-			used = design_stats::getValue(dsg, null, vec2u(uint(-1)), stat.varType, stat.usedVariable, stat.aggregate);
-		if(stat.divVar != -1) {
-			double div = design_stats::getValue(dsg, null, vec2u(uint(-1)), stat.divType, stat.divVar, stat.aggregate);
-			if(div != 0.0)
-				val /= div;
+		if(stat.behavior == CDSB_PeakPowerTime) {
+			double powerGen = design_stats::getValue(dsg, null, vec2u(uint(-1)), stat.varType, stat.variable, stat.aggregate);
+			double powerRequired = design_stats::getValue(dsg, null, vec2u(uint(-1)), stat.varType, stat.usedVariable, stat.aggregate);
+			double powerUse = design_stats::getValue(dsg, null, vec2u(uint(-1)), stat.divType, stat.divVar, stat.aggregate);
+			double powerCap = design_stats::getValue(dsg, null, vec2u(uint(-1)), stat.subType, stat.subVar, stat.aggregate);
+			powerGen -= powerRequired;
+			powerUse -= powerRequired;
+			if(powerGen > powerUse)
+				val = -1;
+			else {
+				val = powerCap / (powerUse - powerGen);
+			}
 		}
-
+		else {
+			val = design_stats::getValue(dsg, null, vec2u(uint(-1)), stat.varType, stat.variable, stat.aggregate);
+			if(stat.usedVariable != -1)
+				used = design_stats::getValue(dsg, null, vec2u(uint(-1)), stat.varType, stat.usedVariable, stat.aggregate);
+			if(stat.divVar != -1) {
+				double div = design_stats::getValue(dsg, null, vec2u(uint(-1)), stat.divType, stat.divVar, stat.aggregate);
+				if(div != 0.0)
+					val /= div;
+			}
+			if(stat.subVar != 1) {
+				double sub = design_stats::getValue(dsg, null, vec2u(uint(-1)), stat.subType, stat.subVar, stat.aggregate);
+				if(sub != 0.0)
+					val -= sub;
+			}
+		}
+		
 		if(val != 0.0) {
 			stats.stats.insertLast(stat);
 			stats.values.insertLast(val);
@@ -332,6 +362,30 @@ void loadStats(const string& filename) {
 			else {
 				stat.divType = SVT_SubsystemVariable;
 				stat.divVar = getSubsystemVariable(value);
+			}
+		}
+		else if(key == "SubtractVariable") {
+			if(value.startswith("Hex.")) {
+				value = value.substr(4);
+				stat.subType = SVT_HexVariable;
+				stat.subVar = getHexVariable(value);
+			}
+			else if(value.startswith("Ship.")) {
+				value = value.substr(5);
+				stat.subType = SVT_ShipVariable;
+				stat.subVar = getShipVariable(value);
+			}
+			else {
+				stat.subType = SVT_SubsystemVariable;
+				stat.subVar = getSubsystemVariable(value);
+			}
+		}
+		else if(key == "Mode") {
+			if(value.equals_nocase("PeakPowerTime")) {
+				stat.behavior = CDSB_PeakPowerTime;
+			}
+			else {
+				stat.behavior = CDSB_Normal;
 			}
 		}
 	}

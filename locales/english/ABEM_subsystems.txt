@@ -132,7 +132,7 @@ S_PODSIZE: Pod Size
 // ******************SUBSYSTEMS HERE!***********************
 // *********************************************************
 
-HDSUPPLYMODULE: High-Density Supply Storage
+HDSUPPLYMODULE_NAME: High-Density Supply Storage
 S_BOARDING_PARTY: Boarding Parties
 SYS_ADMIRALBAY: Improved Command Deck
 S_COMPOSITE_ARMOR: Composite Armor
@@ -184,7 +184,7 @@ S_BATTERY_DESC: <<
 	A basic power storage system.
 
 	[img=ResourceIcon::2;22]Stores a [b][color=#0f0]high[/color][/b] amount of [b][color=#42b4bd]Power[/color][/b] to operate other subsystems.[/img]
-	[img=MenuIcons::3;20]Subsystems such as lasers and shields cannot operate if [b][color=#42b4d]Power[/color][/b] storage is empty.[/img]
+	[img=MenuIcons::3;20]Subsystems such as lasers and shields cannot operate if [b][color=#42b4bd]Power[/color][/b] storage is empty.[/img]
 	[img=Plus]Stores much more Power than a generator.[/img]
 	[img=Minus]Does not generate Power or Supply in any way.[/img]
 >>
