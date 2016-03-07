@@ -107,7 +107,7 @@ void updateHighlights(IRCChannel@ chan, const string& myNick) {
 				}
 				else {
 					string msg = chan.messages[i];
-					highlight = msg.contains_nocase(myNick);
+					highlight = msg.contains_nocase(myNick) || msg.contains_nocase("%everyone%");
 				}
 
 				if(highlight) {
