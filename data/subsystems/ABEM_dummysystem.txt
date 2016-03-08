@@ -1,5 +1,5 @@
 Subsystem: ABEMDummy
-  Tags: Disabled, GateHull
+  Tags: Disabled, GateHull, CannotDonate, Hyperdrive, Slipstream
 
 	DummySensorMult := 0
   HullHealing := 0
@@ -7,6 +7,9 @@ Subsystem: ABEMDummy
   SupplyTransferRate := 0
   ShieldTransferRate := 0
   EnergyBuildCost := 0
+	SlipstreamOverhead = 0
+	SlipstreamDistCost = 0
+	SlipstreamDuration = 0
 	CrystalCapacity := 0
 	FTLCapacity := 0
 	CrystalConsumption := 0
