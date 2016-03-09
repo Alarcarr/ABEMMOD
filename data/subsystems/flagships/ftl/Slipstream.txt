@@ -14,7 +14,7 @@ Subsystem: Slipstream
 	Hex.Mass := HexSize
 
 	CrystalCapacity := 0.15 * ShipSize
-	FTLCapacity := 10 * ShipSize
+	FTLCapacity := 20 * ShipSize
 	// For now, I'm going with a conversion of 1 FTL crystal -> 10 FTL energy - the hyperdrive cost constants in definitions/ftl.as are also configured accordingly.
 	FTLRegen := 2 * ShipSize
 	CrystalConsumption := 0.2 * ShipSize
@@ -26,9 +26,9 @@ Subsystem: Slipstream
 	Hex.BuildCost := 2.0 * HexSize
 	Hex.MaintainCost := 1.25 * HexSize
 
-	SlipstreamOverhead := max(600 * (Size/32), 600)
-	SlipstreamDistCost := (4 + (1 - (Size/ShipSize)) * 8) * 10
-	SlipstreamDuration := if(Sum.SlipstreamDuration == 0, 90, 0) + 150 * (Size/32) * (Size/ShipSize)
+	SlipstreamOverhead := max(600 * (Size/32), 600) / 2
+	SlipstreamDistCost := (4 + (1 - (Size/ShipSize)) * 8) * 5
+	SlipstreamDuration := if(Sum.SlipstreamDuration == 0, 90, 0) + (150 * (Size/32) * (Size/ShipSize)) * 2
 	
 	Requires:
 		Command = 1
