@@ -20,29 +20,6 @@ void EndLocalFTLUpkeep(Event& evt, double amount) {
 	}
 }
 
-// Preserved this code in case ABEMWeaponFire doesn't work out.
-// Will probably delete in next commit.
-/*bool RequiresEnergy(const Effector& efftr, Object& obj, Object& target, float& efficiency, double energy) {
-	Ship@ ship = cast<Ship>(obj);
-	if(ship is null)
-		return true;
-
-	return ship.consumeMinEnergy(energy);
-}
-
-bool RequiresEnergyAndSupply(const Effector& efftr, Object& obj, Object& target, float& efficiency, double energy, double supply) {
-	Ship@ ship = cast<Ship>(obj);
-	if(ship is null)
-		return true;
-
-	if(ship.Energy > energy && ship.Supply > supply) {
-		ship.consumeEnergy(energy);
-		ship.consumeSupply(supply);
-		return true;
-	}
-	else return false;
-}*/
-
 enum WeaponResponse {
 	// This stuff is important, as it defines how effectors (weapons) interact with the new Power mechanic.
 	

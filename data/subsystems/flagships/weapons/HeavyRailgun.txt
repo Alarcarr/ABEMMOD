@@ -58,4 +58,4 @@ Subsystem: HeavyRailgunBattery
 		SupplyCost = SupplyCost * Reload
 		CapOnTarget = 24
 		EnergyCost = PowerUse * Reload
-		ResourceResponse = 2
+		ResourceResponse = 4

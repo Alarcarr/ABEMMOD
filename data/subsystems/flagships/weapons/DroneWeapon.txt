@@ -65,4 +65,4 @@ Subsystem: DroneWeapon
 		DRResponse = DRResponse
 		DamageType = DamageType
 		EnergyCost = PowerUse * (Reload / PodSize)
-		ResourceResponse = 2
+		ResourceResponse = 4

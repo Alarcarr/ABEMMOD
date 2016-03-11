@@ -46,3 +46,4 @@ Subsystem: SupportMissileLauncher
 		Speed = Speed
 		Tracking = Tracking
 		SupplyCost = SupplyCost * Reload
+		ResourceResponse = 4

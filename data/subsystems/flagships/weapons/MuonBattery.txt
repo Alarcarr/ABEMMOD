@@ -60,4 +60,4 @@ Subsystem: MuonBattery
 		CapOnTarget = 24
 		IgnoreDR = 1
 		EnergyCost = PowerUse * Reload
-		ResourceResponse = 2
+		ResourceResponse = 4

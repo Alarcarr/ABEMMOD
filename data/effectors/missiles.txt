@@ -5,6 +5,8 @@ Effector: Missile
 	Value: Speed
 	Value: Tracking = 3
 	Value: SupplyCost = 0
+	Value: EnergyCost = 0
+	Value: ResourceResponse = 1
 
 	Range: Range
 	Speed: Speed
@@ -17,7 +19,7 @@ Effector: Missile
 
 	EfficiencyMode: Reload Only
 	Activation: StaggeredTimed(Reload, 1.0)
-	OnTrigger: combat::WeaponFire(SupplyCost)
+	OnTrigger: ABEMEffects::ABEMWeaponFire(SupplyCost, EnergyCost, ResourceResponse)
 
 	Effect: ExplDamage
 		Amount = Damage

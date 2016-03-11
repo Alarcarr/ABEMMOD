@@ -68,4 +68,4 @@ Subsystem: MatterDisruptor
 		MinRatio = MinRatio
 		MaxRatio = MaxRatio
 		DamageType = DamageType
-		ResourceResponse = 2
+		ResourceResponse = 4

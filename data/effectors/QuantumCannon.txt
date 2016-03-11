@@ -35,6 +35,7 @@ Effector: QuantumArtillery
 
 	EfficiencyMode: Reload Partial
 	Activation: VariableTimed(Reload, 0)
+	OnTrigger: ABEMEffects::ABEMWeaponFire(SupplyCost, EnergyCost, ResourceResponse)
 
 	PhysicalType: Projectile
 		GfxType: Sprite

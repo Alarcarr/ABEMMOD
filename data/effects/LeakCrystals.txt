@@ -1,0 +1,4 @@
+Effect: LeakCrystals
+	Value: LeakPctPerSec
+
+	Tick: ABEMEffects::LeakCrystals

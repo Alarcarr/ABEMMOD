@@ -59,3 +59,4 @@ Subsystem: MuonCannon
 		Pierce = Pierce
 		SupplyCost = SupplyCost * Reload
 		IgnoreDR = 1
+		ResourceResponse = 4

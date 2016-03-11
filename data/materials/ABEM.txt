@@ -70,7 +70,7 @@ Material: PoweredArmor
 	Texture: data/images/subsystems/armor_powered.png
 Material: CrystalArmor
 	Inherit: ABEMSubsystem
-	Texture: data/images/subsystems/armor_crystal.png
+	Texture: data/images/subsystems/armor_crystal2.png
 Material:shuttle
 	Inherit: ABEMSubsystem
 	Texture: data/images/subsystems/shuttle.png	
@@ -168,6 +168,9 @@ Material: ShieldCapacitor
 Material: Arcology
 	Inherit: ABEMSubsystem
 	Texture: data/images/subsystems/arcology.png
+Material: PlanetGenerator
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/planetgenerator.png
 Material: ABEMComputer
 	Inherit: ABEMSubsystem
 	Texture: data/images/subsystems/computer.png
@@ -183,6 +186,12 @@ Material: ControlChair
 Material: CargoBay
 	Inherit: ABEMSubsystem
 	Texture: data/images/subsystems/cargostorage.png
+Material: HyperfieldCatalyzer
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/am_converter2.png
+Material: AdvancedHyperfieldCatalyzer
+	Inherit: ABEMSubsystem
+	Texture: data/images/subsystems/amgen2.png
 
 
 
@@ -211,9 +220,9 @@ Material: adamantium
 	Inherit: ABEMSubsystem
 	Texture: data/images/Adamantium.png
 	
-Material: crystalstorage
+Material: CrystalStorage
 	Inherit: ABEMSubsystem
-	Texture: data/images/subsystems/crystalstorage.png
+	Texture: data/images/subsystems/crystalstorage2.png
 		
 	
 	

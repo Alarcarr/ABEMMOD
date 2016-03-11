@@ -116,6 +116,7 @@ STT_CRYSTALRATE: <<
 	
 	A ship's supply of FTL Crystals is only refilled when out of combat and in an uncontested star system in your empire's territory.
 >>
+STT_SUPPLYUSE: Amount of supply used by this ship per second while firing all weapons in combat. If no supplies are available, all weapons will cease functioning!
 S_SENSORMULT: Sensor Multiplier
 S_SENSORPRIORITY: Sensor Priority
 S_HULLHEALING: Repair Rate
@@ -179,7 +180,34 @@ S_SUPERLASER: Superlaser
 S_ROCKETPOD: Rocket Pod
 S_DEFENSIVEMATRIX_NAME: Defensive Matrix Generator
 S_BATTERY_NAME: Batteries
-S_CRYSTALSTORAGENAME: Crystal Storage
+S_CRYSTALSTORAGE_NAME: Crystal Storage
+S_CRYSTALSTORAGE_DESC: <<
+	A portable subspace isolation field used to transport FTL crystals.
+
+	[img=ResourceIcons::22;22]Stores a [b][color=#0f0]high[/color][/b] amount of [b][color=#9bd29c]FTL Crystals[/color][/b] to power FTL subsystems.[/img]
+	[img=MenuIcons::3;20]Subsystems such as Hyperfield Energizers will not function without [b][color=#42b4bd]FTL Crystals[/color][/b].[/img]
+	[img=Plus]High crystal storage allows prolonged usage of FTL drives without resupply.[/img]
+	[img=Minus]Does not store or generate [b][color=#00c0ff]FTL Energy[/color][/b], or improve FTL drives in any way.[/img]
+	[img=Minus]Cannot resupply FTL Crystals outside owned space.[/img]
+>>
+S_FTLCAPACITOR: Hyperfield Capacitor
+S_FTLCAPACITOR_DESC: <<
+	Large quantities of hyperfield particles stabilized inside a plasma field for ease of use.
+
+	[img=ResourceIcon::3;22]Stores a [b][color=#0f0]high[/color][/b] amount of [b][color=#00c0ff]FTL Energy[/color][/b] to power FTL drives.[/img]
+	[img=MenuIcons::3;20]Subsystems such as Hyperdrives and Slipstream Generators will not function without [b][color=#00c0ff]FTL Energy[/color][/b].[/img]
+	[img=Plus]Stores much more FTL Energy than a Hyperfield Energizer, allowing for greater distances to be crossed in one jump.[/img]
+	[img=Minus]Does not generate FTL Energy in any way.[/img]
+>>
+S_HYPERFIELDENERGIZER: Hyperfield Energizer
+S_HYPERFIELDENERGIZER_DESC: <<
+	A reactor which feeds power into FTL crystals, gradually releasing the hyperfield particles captured within.
+
+	[img=ResourceIcon::3;22]Generates a [b][color=#0f0]high[/color][/b] amount of [b][color=#00c0ff]FTL Energy[/color][/b]to power FTL drives.[/img]
+	[img=MenuIcons::3;20]Subsystems such as Hyperdrives and Slipstream Generators will not function without [b][color=#00c0ff]FTL Energy.[/color][/b].[/img]
+	[img=Plus]High FTL generation allows a ship to enter FTL more frequently.[/img]
+	[img=Minus]Has only minimal FTL storage, and does not store FTL crystals or improve FTL drives in any way.[/img]
+>>
 S_BATTERY_DESC: <<
 	A basic power storage system.
 
@@ -251,7 +279,7 @@ S_DRONEWEAPON_DESC: <<
 		[vspace=3/][img=MenuIcons::3;20]Shield Hardeners will still have a chance to block a drone completely, though.[/img][/img]
 	[img=Minus]Expensive.[/img]
 	[img=Minus]Takes a lot of time to reload.[/img]
-	[img=Minus]Requires power to run.[/img]
+	[img=Minus]Requires Power to run.[/img]
 >>
 S_PROGENITORCOMPUTER: Progenitor Control Computer
 S_PROGENITORCOMPUTER_DESC: <<
@@ -346,14 +374,14 @@ S_REMNANTSHIELD_DESC: <<
 	[img=Plus]Stronger than covariant shields.[/img]
 	[img=Plus]Regenerates faster than standard shields.[/img]
 	[img=Minus]Weakened shields allow some damage through.[/img]
-	[img=Minus]Very expensive, and requires a lot of power.[/img]
+	[img=Minus]Very expensive, and requires a lot of Power.[/img]
 >>
 S_REMNANT_ARMOR_DESC: <<
 	Incredibly advanced Progenitor armor. Lighter than Quantum Armor, but tougher than Neutronium Armor.
 
 	[img=Plus]Damage hits exceeding the [b][color=#c33ac6]damage threshold[/color][/b] are reduced significantly.[/img]
 	[img=Plus]Increases the [b][color=#80ff80]health[/color][/b] of surrounding hexes. Resists damage and is impervious to armor penetration.[/img]
-	[img=MenuIcons::3;20]The toughest armor in the universe, effective against most weapons.[/img]
+	[img=MenuIcons::3;20]The toughest armor in the known universe, effective against most weapons.[/img]
 	[img=Minus]Very expensive.[/img]
 >>
 OLD_IONENGINE_DESC: <<
@@ -414,10 +442,10 @@ S_GATE_MODULE_DESC: <<
 S_CRYSTAL_ARMOR_DESC: <<
 	A resilient crystalline lattice capable of absorbing energy from attacks and channeling it into a ship's shields.
 
-	[img=Plus]All damage resisted is channeled into shields.[/img]
+	[img=Plus]All damage resisted is channeled into shields. Excess damage is converted into Power.[/img]
 	[img=MenuIcons::3;20]Particularly resistant to energy weapons, weakest against projectile weapons with a moderate explosive resistance.[/img]
 	[img=MenuIcons::3;20]Goes very well with low-regeneration shields, such as the Covariant shield.[/img]
-	[img=Minus]Somewhat wasteful if ship has no shields.[/img]
+	[img=Minus]Slightly wasteful if ship has no shields, or has a nonstandard form of shielding, as most shields consume more than 1 Power per HP regenerated.[/img]
 >>
 S_NANO_ARMOR_DESC: <<
 	A pseudo-liquid block of armor consisting of a high quantity of nanites. The nanites use power from the ship's reactor to repair each other, resulting in an armor with considerable regenerative ability.

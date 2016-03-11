@@ -52,3 +52,4 @@ Subsystem: HyperLaser
 		Tracking = Tracking
 		SupplyCost = SupplyCost * Duration
 		FireArc = FireArc
+		ResourceResponse = 4

@@ -65,4 +65,4 @@ Subsystem: RailgunBattery
 		SupplyCost = SupplyCost * Reload
 		CapOnTarget = 24
 		Impulse = Impulse
-		ResourceResponse = 2
+		ResourceResponse = 4

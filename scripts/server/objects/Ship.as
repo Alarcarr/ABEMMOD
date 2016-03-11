@@ -18,10 +18,10 @@ const double COMBAT_REPAIR_MOD = 1.0 / 4.0;
 const float ENERGY_EFFECTIVENESS = 1.25f;
 
 //Threshold at which lack of supply starts causing efficiency loss
-const float SUPPLY_THRESHOLD = 0.5f;
+const float SUPPLY_THRESHOLD = 0f;
 
 //Lowest efficiency supply can make a fleet go down to
-const float SUPPLY_EFFICIENCY = 0.25f;
+const float SUPPLY_EFFICIENCY = 1f;
 
 //Supply rate in trade border systems
 const float SUPPLY_TRADE_RATE = 0.26f;

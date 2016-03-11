@@ -40,6 +40,8 @@ Effector: Rockets
 	Value: Speed
 	Value: Tracking = 6
 	Value: SupplyCost = 0
+	Value: EnergyCost = 0
+	Value: ResourceResponse = 1
 
 	Range: Range
 	Speed: Speed
@@ -52,7 +54,7 @@ Effector: Rockets
 
 	EfficiencyMode: Reload Only
 	Activation: Magazine(FireDelay, PodSize, Reload)
-	OnTrigger: combat::WeaponFire(SupplyCost)
+	OnTrigger: ABEMEffects::ABEMWeaponFire(SupplyCost, EnergyCost, ResourceResponse)
 
 	PhysicalType: Missile
 	GfxType: Sprite
@@ -75,6 +77,8 @@ Effector: Torpedo
 	Value: Tracking
 	Value: Radius
 	Value: SupplyCost = 0
+	Value: EnergyCost = 0
+	Value: ResourceResponse = 1
 
 	Range: Range
 	Speed: Speed
@@ -86,7 +90,7 @@ Effector: Torpedo
 	AutoTarget: isEnemy && (isShip || (isOrbital ) * 0.5)
 
 	Activation: VariableTimed(Reload, 0.025)
-	OnTrigger: combat::WeaponFire(SupplyCost)
+	OnTrigger: ABEMEffects::ABEMWeaponFire(SupplyCost, EnergyCost, ResourceResponse)
 
 	PhysicalType: Missile
 	GfxType: Sprite

@@ -56,3 +56,4 @@ Subsystem: Railgun
 		TargetTolerance = Spread / 2
 		Pierce = Pierce
 		SupplyCost = SupplyCost * Reload
+		ResourceResponse = 4

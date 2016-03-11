@@ -63,5 +63,5 @@ Subsystem: VoidRay
 		DamageType = DamageType
 		SupplyCost = SupplyCost * Duration
 		EnergyCost = PowerUse * Duration
-		ResourceResponse = 2
+		ResourceResponse = 4
 		FireArc = FireArc

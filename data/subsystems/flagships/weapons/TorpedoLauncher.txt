@@ -51,3 +51,4 @@ Subsystem: TorpedoLauncher
 		Tracking = Tracking
 		Radius = Radius
 		SupplyCost = SupplyCost * Reload
+		ResourceResponse = 4

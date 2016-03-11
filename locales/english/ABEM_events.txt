@@ -180,7 +180,7 @@ EVT_PEDDLER_INFO_LEVERAGE: <<
 	[b]Gained high-quality 'Leverage' influence cards against two random empires.[/b]
 >>
 EVT_PEDDLER_INFO_CHART: <<
-	After a short round of negotiations, you arrive at a deal, obtaining astrometric data detailing the resources and environments of every planet within several star systems.
+	After a short round of negotiations, you arrive at a deal, obtaining astrometric and ecological data detailing the locations, resources and environments of every planet within several star systems.
 
 	[b]Received full knowledge of planets in four randomly selected systems.[/b]
 >>

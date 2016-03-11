@@ -50,5 +50,5 @@ Subsystem: Laser
 		Cooldown = Cooldown
 		Tracking = Tracking
 		SupplyCost = SupplyCost * Duration
-		ResourceResponse = 2
+		ResourceResponse = 4
 		FireArc = FireArc

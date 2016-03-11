@@ -101,7 +101,9 @@ DamageEventStatus ChannelDamage(DamageEvent& evt, const vec2u& position,
 	if(ship !is null) {
 		double Recharge = min(dr * evt.partiality, minDmg) * RechargePercent;
 		if((ship.Shield + Recharge) > ship.MaxShield) {
+			double PowerRecharge = (ship.Shield + Recharge) - ship.MaxShield;
 			ship.Shield = ship.MaxShield;
+			ship.refundEnergy(PowerRecharge);
 		}
 		else {
 			ship.Shield += Recharge;
@@ -146,7 +148,9 @@ DamageEventStatus ChannelDamagePercentile(DamageEvent& evt, const vec2u& positio
 	if(ship !is null) {
 		double Recharge = dr * RechargePercent;
 		if((ship.Shield + Recharge) > ship.MaxShield) {
+			double PowerRecharge = (ship.Shield + Recharge) - ship.MaxShield;
 			ship.Shield = ship.MaxShield;
+			ship.refundEnergy(PowerRecharge);
 		}
 		else {
 			ship.Shield += Recharge;

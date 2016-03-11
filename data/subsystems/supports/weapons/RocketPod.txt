@@ -51,3 +51,4 @@ Subsystem: SRocketPod
 		Speed = Speed
 		Tracking = Tracking
 		SupplyCost = SupplyCost * (Reload / 8)
+		ResourceResponse = 4
