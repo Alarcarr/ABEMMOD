@@ -50,8 +50,8 @@ bool ABEMWeaponFire(const Effector& efftr, Object& obj, Object& target, float& e
 	if(Response != WR_AlwaysFire) {
 		if(ship.Energy < energy) 
 			valid = Response == WR_FireIfSupply;
-		if(ship.Supply < supply) 
-			valid = Response == WR_FireIfEnergy;
+		if(!ship.canConsumeSupply(supply))
+			valid = Response == WR_FireIfEnergy;			
 	}
 	if(!valid)
 		return false;

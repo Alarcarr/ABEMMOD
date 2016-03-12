@@ -18,10 +18,10 @@ const double COMBAT_REPAIR_MOD = 1.0 / 4.0;
 const float ENERGY_EFFECTIVENESS = 1.25f;
 
 //Threshold at which lack of supply starts causing efficiency loss
-const float SUPPLY_THRESHOLD = 0f;
+const float SUPPLY_THRESHOLD = 0.0f;
 
 //Lowest efficiency supply can make a fleet go down to
-const float SUPPLY_EFFICIENCY = 1f;
+const float SUPPLY_EFFICIENCY = 1.0f;
 
 //Supply rate in trade border systems
 const float SUPPLY_TRADE_RATE = 0.26f;
@@ -885,6 +885,24 @@ class ShipScript {
 			}
 		}
 	}
+	
+	bool canConsumeSupply(Ship& ship, double amount) {
+		if(ship.hasLeaderAI) {
+			return ship.Supply > amount;
+		}
+		else {
+			if(ship.isDetached) {
+				return ship.Supply > amount;
+			}
+			else {
+				Ship@ lead = cast<Ship>(cachedLeader);
+				if(lead !is null) {
+					return lead.Supply > amount;
+				}
+				else return true;
+			}
+		}
+	}
 
 	void consumeSupplyPct(Ship& ship, double pct) {
 		ship.Supply = max(0.0, ship.Supply - pct * ship.MaxSupply);
@@ -1143,11 +1161,6 @@ class ShipScript {
 						barDelta = true;
 					}
 				}
-
-				//Supply effectiveness
-				float sup = ship.Supply / ship.MaxSupply;
-				if(sup < SUPPLY_THRESHOLD)
-					fleetEffectiveness *= SUPPLY_EFFICIENCY + sup * ((1.f - SUPPLY_EFFICIENCY) / SUPPLY_THRESHOLD);
 			}
 			else {
 				fleetEffectiveness *= SUPPLY_EFFICIENCY;

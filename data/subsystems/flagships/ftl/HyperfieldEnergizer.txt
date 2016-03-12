@@ -11,10 +11,10 @@ Subsystem: HyperfieldEnergizer
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes
-	FTLCapacity := 2.5 * Size
+	FTLCapacity := 5 * Size
 	// For now, I'm going with a conversion of 1 FTL crystal -> 10 FTL energy - the hyperdrive cost constants in definitions/ftl.as are also configured accordingly.
-	FTLRegen := 0.5 * Size
-	CrystalConsumption := 0.05 * Size
+	FTLRegen := 3 * Size
+	CrystalConsumption := 0.3 * Size
 	Hex.Mass := HexSize
 
 	Hex.Resistance := 0.2

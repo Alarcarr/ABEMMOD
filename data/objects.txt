@@ -49,6 +49,7 @@ server:
 	void refundEnergy(double amount);
 	void refundFTL(double amount);
 	void consumeSupply(double amount);
+	bool canConsumeSupply(double amount);
 	void consumeEnergy(double amount);
 	void consumeSupplyPct(double pct);
 	void consumeEnergyPct(double pct);
