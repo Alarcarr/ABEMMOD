@@ -14,9 +14,9 @@ Subsystem: Slipstream
 	Hex.Mass := HexSize
 
 	CrystalCapacity := if(Sum.SlipstreamDuration == 0, 0.15 * ShipSize, 0)
-	FTLCapacity := if(Sum.SlipstreamDuration == 0, 10 * ShipSize, 0)
+	FTLCapacity := if(Sum.SlipstreamDuration == 0, 10 * ShipSize * $FTL_MULT, 0)
 	// For now, I'm going with a conversion of 1 FTL crystal -> 10 FTL energy - the hyperdrive cost constants in definitions/ftl.as are also configured accordingly.
-	FTLRegen := if(Sum.SlipstreamDuration == 0, 0.5 * ShipSize, 0)
+	FTLRegen := if(Sum.SlipstreamDuration == 0, 0.5 * ShipSize * $FTL_MULT, 0)
 	CrystalConsumption := if(Sum.SlipstreamDuration == 0, 0.05 * ShipSize, 0)
 	CrystalRate := if(Sum.SlipstreamDuration == 0, 0.01 * ShipSize, 0)
 	

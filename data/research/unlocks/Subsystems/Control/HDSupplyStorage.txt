@@ -1,5 +1,5 @@
 Technology: HDSupply
-	Name: #HDSUPPLYMODULE
+	Name: #HDSUPPLYMODULE_NAME
 	Icon: HDSupplyStorage
 	Class: Unlock
 	Point Cost: 600

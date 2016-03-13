@@ -13,9 +13,9 @@ Subsystem: Hyperdrive
 	Size := HexSize * Hexes
 	HyperdriveSpeed := 7200.0 * Size / ShipSize
 	CrystalCapacity := if(Sum.HyperdriveSpeed == 0, 0.25 * ShipSize, 0)
-	FTLCapacity := if(Sum.HyperdriveSpeed == 0, 5 * ShipSize, 0)
+	FTLCapacity := if(Sum.HyperdriveSpeed == 0, 5 * ShipSize * $FTL_MULT, 0)
 	// For now, I'm going with a conversion of 1 FTL crystal -> 10 FTL energy - the hyperdrive cost constants in definitions/ftl.as are also configured accordingly.
-	FTLRegen := if(Sum.HyperdriveSpeed == 0, 0.5 * ShipSize, 0)
+	FTLRegen := if(Sum.HyperdriveSpeed == 0, 0.5 * ShipSize * $FTL_MULT, 0)
 	CrystalConsumption := if(Sum.HyperdriveSpeed == 0, 0.05 * ShipSize, 0)
 	CrystalRate := if(Sum.HyperdriveSpeed == 0, 0.01 * ShipSize, 0)
 	Hex.Mass := HexSize

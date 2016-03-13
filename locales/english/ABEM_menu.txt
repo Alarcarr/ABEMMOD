@@ -15,6 +15,13 @@ NG_SENSOR_OPTIONS: Sensor Options
 NG_SENSOR_MULT: Global Sensor Multiplier
 NGTT_SENSOR_MULT: The number by which all sight ranges in the game are multiplied. This is applied after all other sensor modifiers; useful when modifying the System Size option among other things.
 
+NG_FTL_MULT: FTL Storage/Generation Multiplier
+NGTT_FTL_MULT: <<
+	The number by which the storage capacity and generation rate of FTL Energy on a starship are multiplied. Increases the amount of FTL Energy generated from one FTL Crystal.
+
+	Useful when modifying galaxy spacing. For every 6500 units of spacing added, it is recommended that you increase this number by approximately 1.0. (Developer note: For example, 6500 spacing is 1.0, 12000 spacing is 2.0... you get the point.)
+>>
+
 NG_LEGACY_EXPLORATION: Legacy Exploration Mode
 NGTT_LEGACY_EXPLORATION: <<
 	When checked, entering a non-nebula system will immediately reveal everything inside, as if it were an unmodified game of Star Ruler 2.

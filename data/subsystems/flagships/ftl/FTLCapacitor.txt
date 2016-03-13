@@ -11,7 +11,7 @@ Subsystem: FTLCapacitor
 	Hull: Flagship, Station
 
 	Size := HexSize * Hexes
-	FTLCapacity := 300 * Size
+	FTLCapacity := 300 * Size * $FTL_MULT
 	// For now, I'm going with a conversion of 1 FTL crystal -> 10 FTL energy - the hyperdrive cost constants in definitions/ftl.as are also configured accordingly.
 	Hex.Mass := HexSize
 

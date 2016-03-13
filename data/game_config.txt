@@ -176,3 +176,6 @@ BLACK_HOLE_FREQ_MULT: 1
 
 //Multiplier to spatial anomaly (nebulae, empty space) frequency.
 ANOMALY_SYSTEM_FREQ_MULT: 1
+
+//Multiplier to FTL-related stats (FTL storage, FTL generation rate, FTL per crystal)
+FTL_MULT: 1.000

@@ -13,7 +13,7 @@ bool canHyperdrive(Object& obj) {
 		return false;
 	if(isFTLBlocked(ship))
 		return false;
-	return ship.blueprint.hasTagActive(ST_Hyperdrive);
+	return ship.blueprint.getEfficiencySum(SV_HyperdriveSpeed) > 0;
 }
 
 double hyperdriveSpeed(Object& obj) {
@@ -142,7 +142,7 @@ bool canSlipstream(Object& obj) {
 		return false;
 	if(isFTLBlocked(ship))
 		return false;
-	return ship.blueprint.hasTagActive(ST_Slipstream);
+	return ship.blueprint.getEfficiencySum(SV_SlipstreamDuration) > 0;
 }
 
 int slipstreamCost(Object& obj, int scale, double distance) {
