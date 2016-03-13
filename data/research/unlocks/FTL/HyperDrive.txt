@@ -9,3 +9,6 @@ Technology: Hyperdrive
 	ModAttribute(ProgenitorTechProgress, Add, 5)
 	SkipOnUnlockedSubsystem(Hyperdrive)
 	UnlockSubsystem(Hyperdrive)
+	UnlockSubsystem(FTLCapacitor)
+	UnlockSubsystem(HyperfieldEnergizer)
+	UnlockSubsystem(CrystalStorage)

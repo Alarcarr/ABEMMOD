@@ -11,6 +11,9 @@ Trait: Hyperdrive
 	Unique: FTL
 
 	UnlockSubsystem(Hyperdrive)
+	UnlockSubsystem(FTLCapacitor)
+	UnlockSubsystem(HyperfieldEnergizer)
+	UnlockSubsystem(CrystalStorage)
 
 	LoadDesigns(ABEM_defaults/default)
 	LoadDesigns(ABEM_defaults/hyperdrive)

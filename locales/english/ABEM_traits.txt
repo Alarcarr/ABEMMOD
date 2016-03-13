@@ -6,31 +6,31 @@ TRAIT_CAT_Handicaps:Handicaps
 
 TRAIT_PROGENITORS: Progenitor Race
 TRAIT_PROGENITORS_DESC: <<|
-  [vspace=3/]Starts with a [img=ResourceIconsSmall::60][/img]Quartz and a [img=ResourceIconsSmall::63][/img]Cyllium on their homeworld.
-  [vspace=3/][img=Plantation;22][/img]Homeworld cannot export its food or water.
-  [vspace=3/][img=BuildingSprites::0;22][/img]All civilian resource generation is reduced by 80%. Production slowly returns to normal over the first 80 minutes of the game.
-  [vspace=3/][img=techHyperfield;22][/img]Cannot attack or be attacked by Remnant ships, but can use the Override Remnant Programming ability to take control of non-Guardian Remnant fleets.
-  [vspace=3/][img=ResourceIcon::4;22][/img]Researching enough technologies allows access to Progenitor tech tree, opening up powerful new techs without the requirement for a level 6 Ancient Hubworld.
+  [vspace=3/][img=ResourceIconsSmall::60][img=ResourceIconsSmall::63]Starts with a Quartz and a Cyllium on their homeworld.
+  [vspace=3/][img=Plantation;22]Homeworld cannot export its food or water.[/img]
+  [vspace=3/][img=BuildingSprites::0;22]All civilian resource generation is reduced by 80%. Production slowly returns to normal over the first 80 minutes of the game.[/img]
+  [vspace=3/][img=techHyperfield;22]Cannot attack or be attacked by Remnant ships, but can use the Override Remnant Programming ability to take control of non-Guardian Remnant fleets.[/img]
+  [vspace=3/][img=ResourceIcon::4;22]Researching enough technologies allows access to Progenitor tech tree, opening up powerful new techs without the requirement for a level 6 Ancient Hubworld.[/img]
 >>
 TRAIT_PACIFISTS: Pacifists
 TRAIT_PACIFISTS_DESC: <<|
-  [vspace=3/]Starts with an [img=ResourceIconsSmall::61][/img]Allondium on their homeworld.
-  [vspace=3/][img=ThumbsUp;22][/img]The Influence cost of playing support cards during a vote is reduced by 1, while the cost of starting a vote is reduced by 2.
-  [vspace=3/][img=ResourceIcon::1;22][/img]Civilian Influence generation is increased by 25% when not at war with another empire.
-  [vspace=3/][img=StatusWar;22][/img]Civilian Money, Energy and Research generations are decreased by 20% when at war with another empire.
-  [vspace=3/][img=HappyFace;22][/img]All planets are Happy when not at war with another empire.
-  [vspace=3/][img=LoyaltyIcon;22][/img]Civilian Labor and Defense generations, as well as fleet effectiveness, are reduced by 15%.
-  [vspace=3/][img=CardIcons::7;22][/img]Embassies automatically send [b]Envoys[/b] to nearby planets, giving various benefits.
+  [vspace=3/][img=ResourceIconsSmall::61]Starts with an Allondium on their homeworld.[/img]
+  [vspace=3/][img=ThumbsUp;22]The Influence cost of playing support cards during a vote is reduced by 1, while the cost of starting a vote is reduced by 2.[/img]
+  [vspace=3/][img=ResourceIcon::1;22]Civilian Influence generation is increased by 25% when not at war with another empire.[/img]
+  [vspace=3/][img=StatusWar;22]Civilian Money, Energy and Research generations are decreased by 20% when at war with another empire.[/img]
+  [vspace=3/][img=HappyFace;22]All planets are Happy when not at war with another empire.[/img]
+  [vspace=3/][img=LoyaltyIcon;22]Civilian Labor and Defense generations, as well as fleet effectiveness, are reduced by 15%.[/img]
+  [vspace=3/][img=CardIcons::7;22]Embassies automatically send [b]Envoys[/b] to nearby planets, giving various benefits.[/img]
 >>
 TRAIT_BERSERKERS: Berserkers
 TRAIT_BERSERKERS_DESC: <<|
-  [vspace=3/]Starts with a [img=ResourceIconsSmall::62*#f00][/img]Sulphate on their homeworld.
-  [vspace=3/][img=SubsystemButtonArt::8 * #fdffa8;22][/img]Personal quests for glory reduce support capacity by 50%.
-  [vspace=3/][img=StatusWar;22][/img]Centuries of conflict have resulted in a 25% increase in fleet effectiveness and a 25% reduction in supply costs.
-  [vspace=3/][img=SystemUnderAttack;22][/img]All planets are Happy when at war with another empire. All civilian non-Influence generations are increased by 5% when at war, and all civilian resource generations are halved when not at war. All planets receive +0.5 Defense generation when at war.
-  [vspace=3/][img=ResourceIcon::4;22][/img]Fleets generate 0.5 Research per second when in combat.
-  [vspace=3/][img=ThumbsDown;22][/img]The Influence cost of playing support cards during a vote is increased by 2, while the cost of starting a vote is increased by 4.
-  [vspace=3/][img=ResourceIcon::5;22][/img]All planets have an additional 256 Support Capacity.
+  [vspace=3/][img=ResourceIconsSmall::62*#f00]Starts with a Sulphate on their homeworld.[/img]
+  [vspace=3/][img=SubsystemButtonArt::8 * #fdffa8;22]Personal quests for glory reduce support capacity by 50%.[/img]
+  [vspace=3/][img=StatusWar;22]Centuries of conflict have resulted in a 25% increase in fleet effectiveness and a 25% reduction in supply costs.[/img]
+  [vspace=3/][img=SystemUnderAttack;22]All planets are Happy when at war with another empire. All civilian non-Influence generations are increased by 5% when at war, and all civilian resource generations are halved when not at war. All planets receive +0.5 Defense generation when at war.[/img]
+  [vspace=3/][img=ResourceIcon::4;22]Fleets generate 0.5 Research per second when in combat.[/img]
+  [vspace=3/][img=ThumbsDown;22]The Influence cost of playing support cards during a vote is increased by 2, while the cost of starting a vote is increased by 4.[/img]
+  [vspace=3/][img=ResourceIcon::5;22]All planets have an additional 256 Support Capacity.[/img]
 >>
 TRAIT_VANGUARD_RINGWORLDER: Vanguard (Ringworlders)
 TRAIT_VANGUARD_RINGWORLDER_DESC: <<|
