@@ -4,8 +4,8 @@
 	"size": 16,
 	"hull": "$1FlagTiny",
 	"type": "Flagship",
-	"gridWidth": 28,
-	"gridHeight": 23,
+	"gridWidth": 30,
+	"gridHeight": 25,
 	"class": "Exploration",
 	"subsystems": [
 		{
@@ -709,5 +709,8 @@
 	"settings": {
 		"behavior": "Cannon",
 		"range": "Auto"
-	}
+	},
+	"appliedSubsystems": [
+		"Miner"
+	]
 }
