@@ -50,6 +50,8 @@ final class PlanetScript {
 		file << planet.renamed;
 		file << bonusSupply << bonusPop;
 		file << planet.Health << planet.MaxHealth;
+		file << planet.Shield << planet.MaxShield;
+		file << planet.damageable;
 		file << ringStyle;
 		file.writeIdentifier(SI_PlanetType, planet.PlanetType);
 
@@ -99,6 +101,8 @@ final class PlanetScript {
 		if(file >= SV_0083) {
 			if(file >= SV_0102) {
 				file >> planet.Health >> planet.MaxHealth;
+				file >> planet.Shield >> planet.MaxShield;
+				file >> planet.damageable;
 			}
 			else {
 				float hp = 0, maxhp = 0;
@@ -174,36 +178,50 @@ final class PlanetScript {
 	
 	void destroy(Planet& planet) {
 		if(!game_ending && !quietDestruction) {
-			playParticleSystem("PlanetExplosion", planet.position, planet.rotation, planet.radius, planet.visibleMask);
-
-			double totChance = config::ASTEROID_OCCURANCE + config::RESOURCE_ASTEROID_OCCURANCE;
-			double resChance = config::RESOURCE_ASTEROID_OCCURANCE;
-			if(totChance > 0) {
-				for(uint i = 0, cnt = randomi(0,4); i < cnt; ++i) {
-					vec3d pos = planet.position;
-					pos += random3d(80 + planet.radius);
-
-					Asteroid@ roid = createAsteroid(pos);
-					Region@ reg = planet.region;
-					if(reg !is null) {
-						roid.orbitAround(reg.position);
-						roid.orbitSpin(randomd(20.0, 60.0));
-					}
-
-					double roll = randomd(0, totChance);
-
-					if(roll >= resChance) {
-						auto@ cargo = getCargoType("Ore");
-						if(cargo !is null)
-							roid.addCargo(cargo.id, randomd(500, 5000));
-					}
-					else {
-						do {
-							const ResourceType@ type = getDistributedAsteroidResource();
-							roid.addAvailable(type.id, type.asteroidCost);
+			if(!planet.damageable) {
+				playParticleSystem("PlanetExplosion", planet.position, planet.rotation, planet.radius, planet.visibleMask);
+	
+				double totChance = config::ASTEROID_OCCURANCE + config::RESOURCE_ASTEROID_OCCURANCE;
+				double resChance = config::RESOURCE_ASTEROID_OCCURANCE;
+				if(totChance > 0) {
+					for(uint i = 0, cnt = randomi(0,4); i < cnt; ++i) {
+						vec3d pos = planet.position;
+						pos += random3d(80 + planet.radius);
+	
+						Asteroid@ roid = createAsteroid(pos);
+						Region@ reg = planet.region;
+						if(reg !is null) {
+							roid.orbitAround(reg.position);
+							roid.orbitSpin(randomd(20.0, 60.0));
 						}
-						while(randomd() < 0.4);
+	
+						double roll = randomd(0, totChance);
+	
+						if(roll >= resChance) {
+							auto@ cargo = getCargoType("Ore");
+							if(cargo !is null)
+								roid.addCargo(cargo.id, randomd(500, 5000));
+						}
+						else {
+							do {
+								const ResourceType@ type = getDistributedAsteroidResource();
+								roid.addAvailable(type.id, type.asteroidCost);
+							}
+							while(randomd() < 0.4);
+						}
 					}
+				}
+			}
+			else {
+				playParticleSystem("ShipExplosion", planet.position, planet.rotation, planet.radius, planet.visibleMask);
+				playParticleSystem("ShipExplosionExtra", planet.position, planet.rotation, planet.radius, planet.visibleMask);
+				playParticleSystem("ShipExplosionLong", planet.position, planet.rotation, planet.radius, planet.visibleMask);
+				
+				auto@ region = planet.region;
+				if(region !is null) {
+					uint debris = uint((log(planet.radius) / log(2.0)) / 2.0);
+					if(debris > 0)
+						region.addShipDebris(planet.position, debris);
 				}
 			}
 		}
@@ -379,6 +397,9 @@ final class PlanetScript {
 	void syncInitial(const Planet& planet, Message& msg) {
 		msg << float(planet.Health);
 		msg << float(planet.MaxHealth);
+		msg << float(planet.Shield);
+		msg << float(planet.MaxShield);
+		msg.writeBit(planet.damageable);
 		msg.writeSmall(planet.PlanetType);
 		msg << planet.renamed;
 		msg << planet.OrbitSize;
@@ -461,6 +482,9 @@ final class PlanetScript {
 			msg.write1();
 			msg << float(planet.Health);
 			msg << float(planet.MaxHealth);
+			msg << float(planet.Shield);
+			msg << float(planet.MaxShield);
+			msg.writeBit(planet.damageable);
 		}
 		else
 			msg.write0();
@@ -481,6 +505,9 @@ final class PlanetScript {
 	void syncDetailed(const Planet& planet, Message& msg) {
 		msg << float(planet.Health);
 		msg << float(planet.MaxHealth);
+		msg << float(planet.Shield);
+		msg << float(planet.MaxShield);
+		msg.writeBit(planet.damageable);
 		planet.writeResources(msg);
 		planet.writeSurface(msg);
 		planet.writeConstruction(msg);

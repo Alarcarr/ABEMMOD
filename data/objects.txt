@@ -125,8 +125,11 @@ visible:
 	double Population
 	int PlanetType
 	bool renamed = false
+	bool damageable = false
 	double Health = 1000000000 // 1G
 	double MaxHealth = 1000000000 // 1G
+	double Shield = 0
+	double MaxShield = 0
 	
 	local safe uint get_moonCount() const;
 	
@@ -134,6 +137,7 @@ server:
 	void giveHistoricMemory(Empire@ emp);
 	void dealPlanetDamage(double amount);
 	void setRing(uint ring);
+	void setDamageable(bool damageable);
 	void destroyQuiet();
 	void addMoon(float size = 0, uint style = 0);
 }

@@ -55,6 +55,9 @@ class PlanetScript {
 		//Read planet data
 		planet.Health = msg.read_float();
 		planet.MaxHealth = msg.read_float();
+		planet.Shield = msg.read_float();
+		planet.MaxShield = msg.read_float();
+		planet.damageable = msg.readBit();
 		planet.PlanetType = msg.readSmall();
 		msg >> planet.renamed;
 		msg >> planet.OrbitSize;
@@ -135,6 +138,9 @@ class PlanetScript {
 		if(msg.readBit()) {
 			planet.Health = msg.read_float();
 			planet.MaxHealth = msg.read_float();
+			planet.Shield = msg.read_float();
+			planet.MaxShield = msg.read_float();
+			planet.damageable = msg.readBit();
 		}
 		if(msg.readBit()) {
 			if(!planet.hasMover)
@@ -148,6 +154,9 @@ class PlanetScript {
 	void syncDetailed(Planet& planet, Message& msg, double tDiff) {
 		planet.Health = msg.read_float();
 		planet.MaxHealth = msg.read_float();
+		planet.Shield = msg.read_float();
+		planet.MaxShield = msg.read_float();
+		planet.damageable = msg.readBit();
 		planet.readResources(msg);
 		planet.readSurface(msg);
 		planet.readConstruction(msg);
