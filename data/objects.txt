@@ -125,7 +125,6 @@ visible:
 	double Population
 	int PlanetType
 	bool renamed = false
-	bool damageable = false
 	double Health = 1000000000 // 1G
 	double MaxHealth = 1000000000 // 1G
 	double Shield = 0

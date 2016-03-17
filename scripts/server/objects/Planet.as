@@ -176,6 +176,69 @@ final class PlanetScript {
 		planet.destroy();
 	}
 	
+	void setDamageable(Planet& planet, bool damageable) {
+		planet.notDamageable = !damageable;
+	}
+	
+	void damage(Planet& planet, DamageEvent& evt, double position, const vec2d& direction) {
+		if(planet.notDamageable)
+			return;
+			
+		double curPop = planet.population;
+		double hpDmg = evt.damage;
+		
+		if(hpDmg > 0 && evt.flags & DF_FullShieldBleedthrough != 0 && planet.Shield > 0) {
+			hpDelta = true;
+			double maxShield = planet.MaxShield;
+			if(maxShield <= 0.0)
+				maxShield = planet.Shield;
+	
+			double dmgScale = (hpDmg * planet.Shield) / (maxShield * maxShield);
+			if(dmgScale < 0.01) {
+				//TODO: Simulate this effect on the client
+				if(randomd() < dmgScale / 0.001)
+					playParticleSystem("ShieldImpactLight", planet.position + evt.impact.normalized(planet.radius * 0.9), quaterniond_fromVecToVec(vec3d_front(), planet.impact), planet.radius, planet.visibleMask, networked=false);
+			}
+			else if(dmgScale < 0.05) {
+				playParticleSystem("ShieldImpactMedium", planet.position + evt.impact.normalized(planet.radius * 0.9), quaterniond_fromVecToVec(vec3d_front(), evt.impact), planet.radius, planet.visibleMask);
+			}
+			else {
+				playParticleSystem("ShieldImpactHeavy", planet.position + evt.impact.normalized(planet.radius * 0.9), quaterniond_fromVecToVec(vec3d_front(), evt.impact), planet.radius, planet.visibleMask, networked=false);
+			}
+			
+			double block;
+			if(planet.MaxShield > 0 && !(evt.flags & DF_NoShieldBleedthrough != 0)) // DF_NoShieldBleedthrough makes sure all damage is applied to shields first.
+				block = min(planet.Shield * min(planet.Shield / maxShield, 1.0), hpDmg);
+			else
+				block = min(planet.Shield, hpDmg);
+			
+			planet.Shield -= block;
+			hpDmg -= block;
+			if(hpDmg <= 0.0)
+				return;
+		}
+
+		if(curPop > 1.0) {
+			popDmg = 0.4 * hpDmg;
+		}
+
+		if(hpDmg > 0) {
+			hpDelta = true;
+			planet.Health -= hpDmg * 0.8; // Nylli Star Cities have 20% damage resistance
+
+			if(planet.Health <= 0) {
+				planet.Health = 0;
+				planet.destroy();
+				return;
+			}
+		}
+
+		if(popDmg > 0) {
+			double popLost = popDmg / planet.MaxHealth * 3.0 * planet.maxPopulation;
+			planet.removePopulation(popLost, 1.0);
+		}
+	}
+	
 	void destroy(Planet& planet) {
 		if(!game_ending && !quietDestruction) {
 			if(!planet.damageable) {
