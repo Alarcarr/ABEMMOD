@@ -8,7 +8,7 @@ Effector: CarpetBomb
 	Lifetime: Range / 10
 
 	TargetAlgorithm: SingleTarget
-	CanTarget: min(isAttackable, isPlanet)
+	CanTarget: min(isAttackable, isPlanet && !isDamageable)
 	AutoTarget: isEnemy
 
 	Activation: VariableTimed(Reload, 0.1)
@@ -18,5 +18,5 @@ Effector: CarpetBomb
 		GfxSize: 2
 		Material: EnergyBall
 
-	Effect: BombardDamage
+	Effect: ABEMBombardDamage
 		Amount = Damage

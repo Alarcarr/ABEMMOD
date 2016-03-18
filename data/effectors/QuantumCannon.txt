@@ -31,7 +31,7 @@ Effector: QuantumArtillery
 
 	TargetAlgorithm: SingleTarget
 	CanTarget: isEnemy && isDamageable
-	AutoTarget: isEnemy && (isOrbital || isShip * 0.5)
+	AutoTarget: isEnemy && (isOrbital || isPlanet || isShip * 0.5)
 
 	EfficiencyMode: Reload Partial
 	Activation: VariableTimed(Reload, 0)

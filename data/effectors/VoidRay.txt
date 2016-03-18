@@ -21,7 +21,7 @@ Effector: VoidRay
 
 	TargetAlgorithm: SingleTarget
 	CanTarget: isEnemy && isDamageable
-	AutoTarget: isEnemy && (isShip || (isOrbital || isColonyShip || isCivilian || isFreighter) * 0.5)
+	AutoTarget: isEnemy && (isShip || (isOrbital || isPlanet || isColonyShip || isCivilian || isFreighter) * 0.5)
 
 	EfficiencyMode: Normal
 	Activation: VariableTimed(Duration+Cooldown, 0.25)
