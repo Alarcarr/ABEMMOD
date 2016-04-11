@@ -1,0 +1,3 @@
+Model: NylliStarCity
+	Tangents: on
+	Model: data/shipsets/ABEMgenerics/NylliStarCity.obj

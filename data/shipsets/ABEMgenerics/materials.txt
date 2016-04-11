@@ -1,0 +1,16 @@
+Material: ABEMTemplate
+	Shader: DOFSupportShipLCX
+	Shininess: 12
+	Texture2: data/shipsets/ABEMgenerics/normal.png
+	Texture3: data/shipsets/ABEMgenerics/gloss.png
+	Texture4: data/shipsets/ABEMgenerics/gloss.png
+	Texture5: data/images/skybox.png
+	Texture6: data/shipsets/ABEMgenerics/gloss.png
+
+Material: NylliStarCity
+	Inherit: ABEMTemplate
+	Texture: data/shipsets/ABEMgenerics/NylliStarCity.png
+	Texture2: data/shipsets/ABEMgenerics/NylliStarCity_normal.png
+	Texture3: data/shipsets/ABEMgenerics/NylliStarCity_specular.png
+	Texture4: data/shipsets/ABEMgenerics/NylliStarCity_gloss.png
+	Texture6: data/shipsets/ABEMgenerics/NylliStarCity_masks.png
