@@ -651,6 +651,22 @@ class AudioOptions : OptionsBox {
 		y += 32;
 		options.insertLast(GuiAudioOption(
 			panel, recti_area(8, y, 550, 32)));
+
+		y += 34;
+		GuiEngineToggle MTEtoggle(
+			panel, recti_area(8, y,  278, 28),
+			locale::OPT_MTE, "bEnableMTE"
+		);
+		setMarkupTooltip(MTEtoggle, locale::OPTTT_MTE);
+		options.insertLast(MTEtoggle);
+
+		y += 34;
+		GuiEngineToggle themeLooptoggle(
+			panel, recti_area(8, y,  278, 28),
+			locale::OPT_THEME_LOOP, "bLoopTheme"
+		);
+		setMarkupTooltip(themeLooptoggle, locale::OPTTT_THEME_LOOP);
+		options.insertLast(themeLooptoggle);
 	}
 };
 

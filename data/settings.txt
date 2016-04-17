@@ -42,6 +42,10 @@ Category: Audio
 		Default: 0.6
 		Min: 0.0
 		Max: 3.0
+	Bool: bEnableMTE
+		Default: False
+	Bool: bLoopTheme
+		Default: True
 Category: Graphics
 	Bool: bShowGalaxyGas
 		Default: True
